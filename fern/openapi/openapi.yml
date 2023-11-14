@@ -67,6 +67,7 @@ paths:
               - REALPAGE_RPX
               - MRI
               - RESMAN
+            example: ENTRATA
             description: The integration vendor associated with the data diff
           required: false
           name: integration_vendor
