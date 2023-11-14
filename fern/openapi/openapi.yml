@@ -133,7 +133,7 @@ paths:
                         id:
                           type: string
                           description: The unique identifier for the data diff
-                          format: cuid
+                          format: uuid
                         model:
                           type: string
                           description: The name of the model the data diff is for
