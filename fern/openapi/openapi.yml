@@ -133,14 +133,15 @@ paths:
                         id:
                           type: string
                           description: The unique identifier for the data diff
+                          format: cuid
                         model:
                           type: string
                           description: The name of the model the data diff is for
                         event_type:
                           type: string
                           enum:
-                            - NEW
-                            - UPDATE
+                            - DATA_NEW
+                            - DATA_UPDATE
                           description: The data diff event type
                         data_diff:
                           type: object
@@ -155,6 +156,7 @@ paths:
                             - string
                             - "null"
                           description: The ID of the job that affected this data diff
+                          format: cuid
                         integration_id:
                           type: string
                           description: The integration id
