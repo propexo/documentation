@@ -1,0 +1,91 @@
+instances:
+  - url: propexo.docs.buildwithfern.com
+    custom-domain: docs.propexo.com
+
+title: Propexo | Docs
+
+tabs: 
+  documentation: 
+    display-name: Documentation
+    icon: book
+  api: 
+    display-name: API Reference
+    icon: code
+  use-cases:
+    display-name: Use Cases
+    icon: puzzle-piece
+
+navigation:
+  - tab: documentation
+    layout:
+    - section: Introduction
+      contents: 
+        - page: Overview
+          path: ./docs/pages/overview.mdx
+    - section: About the API
+      contents: 
+        - page: Authentication 
+          path: ./docs/pages/authentication.mdx
+        - page: Custom Data Objects
+          path: ./docs/pages/custom-data.mdx
+        - page: Deleted Records
+          path: ./docs/pages/deleted-records.mdx
+        - page: Filtering Results 
+          path: ./docs/pages/filtering.mdx
+        - page: Pagination
+          path: ./docs/pages/pagination.mdx
+        - page: Sorting Results
+          path: ./docs/pages/sorting.mdx
+        - page: Rate Limiting
+          path: ./docs/pages/rate-limiting.mdx
+        - page: Sync Frequency 
+          path: ./docs/pages/sync-frequency.mdx
+        - page: Write Requests
+          path: ./docs/pages/write-requests.mdx
+    - section: Webhooks 
+      contents: 
+        - page: How to Use Webhooks
+          path: ./docs/pages/webhooks/how.mdx
+        - page: Sync Complete Webhook
+          path: ./docs/pages/webhooks/sync-complete.mdx
+  - tab: api          
+    layout: 
+      - api: API Reference
+  - tab: use-cases 
+    layout:
+      - section: Use Cases 
+        contents: 
+          - page: Charge to Ledger 
+            path: ./docs/pages/use-cases/charge-ledger.mdx
+          - page: Lead to Lease 
+            path: ./docs/pages/use-cases/lead-lease.mdx
+          - page: Create a Lead 
+            path: ./docs/pages/use-cases/create-lead.mdx
+          - page: Maintenance Read Update 
+            path: ./docs/pages/use-cases/maintenance.mdx
+
+navbar-links: 
+  - type: primary
+    text: Login
+    url: https://app.propexo.com/
+
+colors:
+  accentPrimary:
+    dark: "#877EF3"
+    light: "#5849EC"
+
+logo:
+  height: 40
+  href: https://propexo.com/
+  dark: ./docs/assets/propexo-dark-bg.png
+  light: ./docs/assets/propexo-lt-bg.png
+
+typography:
+  headingsFont:
+    path: ./docs/fonts/Inter-Bold.woff2
+  bodyFont:
+    path: ./docs/fonts/Inter-Regular.woff2
+  codeFont: 
+    path: ./docs/fonts/Roboto-Mono-regular.woff2
+
+favicon: ./docs/assets/favicon.png

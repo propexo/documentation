@@ -1,0 +1,37 @@
+## Workflow
+
+Insert charge into resident payment ledger.
+
+## Relevant Business Types
+
+Resident benefits & amenities, rent payments, security deposit alternatives, services that charge resident a fee.
+
+## Description
+
+Your business may find it valuable to add charges directly to a resident's payment ledger. This allows residents to pay for your service from within the property management software while you can collect fees from the property management company. 
+
+## Steps
+
+**Proptech generates a charge with associated metadata**
+<CodeBlock title="Example transaction for $50.00">
+```bash 
+curl --request POST \
+  --url https://api.propexo.com/v1/transactions \
+  --data '{
+    "integration_id": "<integration_id>",
+    "invoice_date": "2023-07-15",
+    "due_date": "2023-08-01",
+    "memo": "This is a charge for pet insurance",
+    "lines": [
+        {
+            "x_accounting_entity_type": "abc",
+            "x_accounting_entity_id": 123,
+            "x_gl_account_id": 456,
+            "amount_in_cents": 5000
+        }
+    ]
+}'
+```
+</CodeBlock>
+
+**That charge is pushed into the resident payment ledger, and will be collected by the property manager via the payment portal**

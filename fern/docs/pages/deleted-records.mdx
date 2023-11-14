@@ -1,0 +1,18 @@
+## Overview
+Property Management Systems will occasionally delete a record as a part of normal business operation.  Because these records are not annotated as deleted, detecting deleted records is a difficult challenge for any downstream system.  Propexo's philosophy for managing this complex problem is documented here.
+
+## What is a deleted record?
+Unlike some enterprise software which will merely mark a record as deleted, some Property Management Systems will simply delete the entire record, leaving no trace of the record in the API.  For example, a user may delete a resident, lease, unit, or application which was accidentally created or no longer needed.  Note that a deleted record is not the same as a single value being modified or removed.  Generally, records which are edited to remove some data (such as when a resident's middle name is removed) are handled as a part of our built-in Data History and Webhooks functionality.
+
+## The Challenge
+Detecting a deleted record is problematic due to the record suddenly disappearing from the Property Management System's API responses.  The absence of evidence is not evidence of absence.  In other words, Propexo cannot always confidently know that a missing record was in fact deleted.  When a given record is no longer seen by our system, the most frequent cause is due to date range filters—not deletion.  There are three kinds of date range filters that are applied by Property Management System interfaces.
+- Implicit date range filters will automatically apply a date range filter (for example, a rolling 30 day window) which cannot be modified by Propexo.
+- Explicit date range filters are configurable filters which are passed in by Propexo to the API and enable the Property Management System to filter out rows which are not relevant.  Many APIs are limited to filtering on a day/month/year and do not have the ability to filter by time.
+- Undocumented date range filters are filters which Propexo has discovered while exploring the APIs offered by Property Management Systems but which are missing from the official API documentation.
+
+Common to all of these filters is the inconsistent implementation of filtering. The behavior of date range filters varies not only between Property Management Systems but also between individual models.  Likewise, even when a date range filter is documented for an API, the time zone and daylight savings time logic is inconsistently applied to endpoints, requiring careful investigation and testing by Propexo.
+
+## The Solution
+Propexo acts as a caching layer for your data. Since PMS APIs can be unreliable, we hydrate our cache with data that we receive from the PMS and only delete data by request. This means that we will never delete data that we have previously seen. This is a key feature of Propexo that allows us to provide a reliable, consistent, and accurate data set.
+
+Although we do not delete data, we do record each time we see data during every sync against a PMS. We expose this as a timestamp in a field called `last_seen` on each of our data models. We are careful not to make assumptions about data so that you are fully empowered to make business decisions about what a missing record might mean for your use case. Many of our customers, however, choose to leverage the `last_seen` field to make decisions about whether or not to delete data in their systems. For example, if a record has not been seen in more than 30 days, perhaps you want to treat it as having been deleted. The record and history will continue to exist in Propexo, but you can choose to ignore it.

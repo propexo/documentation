@@ -1,0 +1,8 @@
+{
+    "cSpell.enableFiletypes": [
+        "mdx"
+    ],
+"[mdx]": {
+    "editor.wordWrap": "on"
+}
+}

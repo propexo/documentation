@@ -1,0 +1,17 @@
+## Overview
+
+Understanding how often Propexo syncs with your property management system must be underscored first by an understanding of how Propexo works fundamentally.
+
+In order to provide you with the most reliable API possible, Propexo periodically syncs with your property management system, retrieves data, transforms data and caches that transformed data. This means that the data you see in Propexo is not live data, but rather a snapshot of the data at the time of the last sync.
+
+To that end, sync frequency is an important concept to understand as it can impact your business processes. For example, if you are using Propexo to manage your maintenance requests, you may want to know how often the data is updated so that you can ensure that your maintenance team is working with the most up-to-date information.
+
+## Sync Frequency
+
+By default, new integrations are set to run a sync every 12 hours. This means that every 12 hours, Propexo will sync with your property management system, retrieve data, transform data and cache that transformed data.
+
+However, the default sync frequency is not always the best option for every integration. For example, if you are using Propexo to perform background checks on prospective tenants, you may want more frequent syncs so that you can provide a faster turnaround for your customers who may be actively waiting to hear the result. In this case, we can increase the sync frequency. Contact us for pricing details.
+
+## Write Requests
+
+The sync schedule mentioned above refers strictly to read requests. Write requests, such as updating an applicant record, are not subject to the same sync schedule. Write requests are sent to the PMS immediately and, for enterprise customers, are followed up with an immediate data pull for that individual record so that Propexo's cached data is as fresh as possible. Note that this is an optional add-on feature and not all PMS integrations are supported.

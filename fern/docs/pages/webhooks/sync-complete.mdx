@@ -1,0 +1,44 @@
+This webhook triggers when a scheduled (READ) sync completes.
+
+## Why use `SYNC_COMPLETE` webhooks?
+
+Oftentimes, customers want to be able to react knowing that they have the most recent copy of any given data from a PMS.
+This webhook will allow you to be alerted as soon as one of your syncs has finished, regardless of the runtime or PMS.
+
+## Webhook Payload
+
+The payload for the `SYNC_COMPLETE` webhook looks like the following:
+
+<CodeBlock title ="SYNC_COMPLETE payload">
+```json
+{
+    "integration_id": string,
+    "successful_job_count": integer,
+    "failed_job_count": integer,
+    "is_sync_finished": boolean,
+    "vendor": IntegrationVendorEnum
+}
+```
+</CodeBlock>
+
+In this payload, you're provided with the ID of the integration associated with this completed sync, the number of successful jobs ran, the number of failed jobs ran, and whether the sync has been completed or not.
+
+The reason we include `is_sync_finished` here is in the case of a prolonged PMS outage or any situation where a sync would run for a significant amount of time (upwards of 12 hours) and not complete.
+This is an unexpected case and should not occur except for exceptional cases.
+
+Due to the complexities of PMS retries, we include the number of successful jobs and failed jobs in case you want to be alerted of increased failures for a given sync.
+Some number of failed jobs is normal for a sync, as network blips or load on the PMS is encountered. This will automatically be retried by our system. If you notice a significant increase in failed jobs, there may be cause to check for expired credential access or other related issues.
+
+## Example use cases
+
+### Alerts for completed new customer syncs
+
+If you create new integrations for your users via our API, this webhook gives you a quick way to be alerted as to when their initial data import has been completed.
+With this, you may want to alert them to a successful onboarding or reveal an appropriate UI to them.
+
+### Periodic System Syncs
+
+On reception of this webhook, you know that Propexo has finished querying all new data for your PMS.
+This may be a great way to know that you can begin querying our API to get the freshest data related to an integration.
+
+In this case, though, we'd also like to mention the `DATA_NEW` and `DATA_UPDATE` webhooks as a potential solution as well.

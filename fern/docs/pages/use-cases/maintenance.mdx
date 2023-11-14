@@ -1,0 +1,36 @@
+## Workflow
+See work orders filed by residents in their portal and update the work order when a maintenance pro has been assigned.
+
+## Relevant Business Types
+Resident benefits, maintenance-as-a-service, resident amenities, facilities management
+
+## Description
+If your company fulfills work orders filed by residents or site staff within a property management system, you will need to ingest these work orders on an ongoing basis and then update them as you resolve the issues.
+
+## Steps
+
+**Read an existing work order**
+
+**Update work order**
+
+<CodeBlock title = "PUT /<work_order_id>">
+```bash
+curl --request PUT \
+  --url 'https://api.propexo.com/v1/work-orders/<work_order_id>' \
+  --data '{
+    "invoice_date": "2023-07-15",
+    "due_date": "2023-08-01",
+    "memo": "This is a charge for pet insurance",
+    "lines": [
+        {
+            "x_accounting_entity_type": "abc",
+            "x_accounting_entity_id": 123,
+            "x_gl_account_id": 456,
+            "amount_in_cents": 5000
+        }
+    ]
+}'
+```
+</CodeBlock>
+
+**That charge is pushed into the resident payment ledger, and will be collected by the property manager via the payment portal**

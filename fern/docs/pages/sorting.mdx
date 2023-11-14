@@ -1,0 +1,34 @@
+## Overview
+
+Propexo provides a sorting mechanism that can be used to sort results by one or more fields. The `orderBy` parameter is used to define the sort order. The `orderBy` parameter is an array of objects, where each object contains a `field` and `direction` property.
+
+## `order-by` Query Parameter
+
+The `order-by` parameter is used to define the sort order. It is a combination of `field_name` and `direction` separated by a colon. For example, if you wanted to sort by the `id` field in ascending order, you would use `order-by=id:asc` as a query parameter in the URL. If you wanted to sort by the `id` field in descending order, you would use `order-by=id:desc` as a query parameter in the URL.
+
+If you wanted to sort by multiple fields, you would provide a comma-separated list of fields and directions. For example, if you wanted to sort by the `id` field in ascending order, and then by the `name` field in descending order, you would use `order-by=id:asc,name:desc` as a query parameter in the URL.
+
+<CodeBlock title = "Example use of order-by">
+```json 
+// GET https://api.propexo.com/v1/<model_name>?order-by=id:asc,name:desc
+
+{
+  "meta": {
+    "offset": 0,
+    "limit": 100,
+    "orderBy": [
+      {
+        "field": "id",
+        "direction": "asc"
+      },
+      {
+        "field": "name",
+        "direction": "desc"
+      }
+    ],
+    "hasMore": true // or false
+  },
+  "results": []
+}
+```
+</CodeBlock>

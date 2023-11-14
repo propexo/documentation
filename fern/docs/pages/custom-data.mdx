@@ -1,0 +1,37 @@
+If the data you need is not available in the standard Propexo data model, you can create custom data objects to store any data you need.
+
+## Overview
+We work hard to provide a universal and comprehensive data model for our customers. But sometimes a customer's needs are so unique that our standard data model doesn't account for a specific requirement. In such cases, we provide the ability to create custom data objects to store any data you need.
+
+## Reading Non-Standardized Data
+Let's take a hypothetical scenario where you have an agreement with a property manager to store a resident's favorite color in a custom field in their property management system. Propexo can set up a customized transform to account for this non-standard field coming from your PMS integration and then serve it to you in our `custom_data` object on the `residents` model.
+
+<CodeBlock title = "GET /v1/residents/12345">
+```json
+{
+  "results": {
+    "id": "12345",
+    "first_name": "John",
+    "last_name": "Doe",
+    "custom_data": {
+      "favorite_color": "blue"
+    }
+  }
+}
+```
+</CodeBlock>
+
+## Writing Custom Data
+You can also write custom data back to the PMS via the Propexo API. Let's say you want to update the resident's favorite color to "red". You can do this by sending a `PUT` request to the `residents` endpoint with the new value in the `custom_data` object.
+
+<CodeBlock title = "PUT /v1/residents/12345">
+```json
+{
+  "custom_data": {
+    "favorite_color": "red"
+  }
+}
+```
+</CodeBlock>
+
+Propexo will work with you to set up a custom data transformation so we are sending your unique data to your customer's PMS in the format and location they expect.

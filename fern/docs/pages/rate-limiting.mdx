@@ -1,0 +1,18 @@
+## Overview
+
+There are two types of rate limits to consider when using the Propexo API:
+
+1. Property Management System (PMS) Rate Limits 
+2. Propexo Rate Limits
+
+## Property Management System (PMS) Rate Limits
+
+Respecting rate limit agreements with each of your integration partners is an important part of how Propexo works. Since each customer can have unique rate limit agreements with each PMS, Propexo can customize frequency and concurrency for each of your integrations as a unique configuration. All requests, whether read or write, will conform to the rate limit configuration.
+
+## Propexo Rate Limits
+
+One of Propexo's core values is to simplify the integration process for our customers. To that end, Propexo treats all requests to our API the same, regardless of the PMS. Currently, we offer very high rate limits by default at 150 requests per minute. Here are a few guidelines that we ask our customers to follow:
+
+1. **Please do not poll the API.** If you need to check for time-sensitive updates, webhooks are the absolute best option.
+
+2. Our data cache gets updated each time we run a _sync_ request to your PMS integration, or (in many cases) after a successful write request. Most of the time (this can be customized per customer per integration), that sync request occurs every 12 hours. Polling the Propexo API more frequently than that will not return any new data outside of the syncing schedule.

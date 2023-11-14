@@ -1,0 +1,72 @@
+
+## Overview
+
+Many Propexo GET endpoints return an array of results. To make it easier to work with these results, we provide standard pagination and sorting options to be used in the query string.
+
+## Parameters 
+
+There are two optional parameters that can be used to control pagination of results: `offset` and `limit`. Each can be used independently, or together.
+
+## Meta Object
+
+The `meta` object is returned at the root with every paginated response payload. It contains information about the query that was performed.
+
+<CodeBlock title = "Example meta object">
+```json 
+{
+  "meta": {
+    "offset": 0, // default is 0
+    "limit": 100, // default is 100
+    "orderBy": [], // default is no sorting
+    "hasMore": Boolean // (no default)
+  },
+  results: [] // the data you requested
+}
+```
+</CodeBlock>
+
+## Limit
+
+The `limit` parameter is used to limit the number of results returned. For example, if you wanted to limit the results to 10, you would use `limit=10` as a query string parameter in the URL. If you do not define a limit, the default is 100.
+
+<CodeBlock title = "Example use of limit">
+```json 
+// GET https://api.propexo.com/v1/<model_name>?limit=10
+
+{
+  "meta": {
+    "offset": 0,
+    "limit": 10,
+    "orderBy": [],
+    "hasMore": true // or false
+  },
+  "results": [] // 10 results
+}
+```
+</CodeBlock>
+
+## Offset
+
+The `offset` parameter is used to skip results. For example, if you wanted to skip the first 10 results, you would use `offset=10` as a query string parameter in the URL. If you do not define an offset, the default is 0.
+
+The below example would skip the first 10 results, and return the next 100 results.
+
+<CodeBlock title = "Example use of offset">
+```json 
+// GET https://api.propexo.com/v1/<model_name>?offset=10
+
+{
+  "meta": {
+    "offset": 10,
+    "limit": 100,
+    "orderBy": [],
+    "hasMore": true // or false
+  },
+  "results": [] // 100 results
+}
+```
+</CodeBlock>
+
+## hasMore
+
+The `hasMore` parameter is used to indicate if there are more results available. If there are more results available, the value will be `true`. If there are no more results available, the value will be `false`. This can be used to determine if you should make another request to get more results, or optionally increase the `limit` value.

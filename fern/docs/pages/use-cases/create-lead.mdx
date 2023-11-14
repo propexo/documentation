@@ -1,0 +1,35 @@
+## Workflow
+Create a prospective tenant within property management system.
+
+## Relevant Business Types
+Listings, leasing chatbot, leasing automation, tenant screening, rental application.
+
+## Description
+If your business generates or screens prospective tenants to fill vacant units, adding these new contacts to property management software is an important step to ensure the site team is aware of the work you've done.
+
+## Steps
+
+**Generate a new lead**
+```bash
+curl --request POST \
+  --url https://api.propexo.com/v1/leads \
+  --data '{
+    "integration_id": "<integration_id>",
+    "last_name": "Doe",
+    "first_name": "Jane",
+    "email_1": "jane@doe.com",
+    "phone_1": "+16175551234",
+    "phone_1_type": "CELL"
+}'
+```
+
+**Update existing lead**
+```bash
+curl --request PUT \
+  --url 'https://api.propexo.com/v1/leads/<lead_id>' \
+  --data '{
+    "last_name": "Doe",
+    "first_name": "Jill",
+    "email_1": "jill@doe.com"
+}'
+```
