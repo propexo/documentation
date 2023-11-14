@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   version: 1.0.0
-  title: Propify API
+  title: Propexo API
 servers:
   - url: https://api.propexo.com
     x-fern-server-name: Production
@@ -232,13 +232,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use Propify property_id instead"
+            description: "Deprecated: Use Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
@@ -257,13 +257,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -322,13 +322,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the amenity
+                          description: The Propexo unique identifier for the amenity
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -539,13 +539,13 @@ paths:
                           description: List of unit ids associated with the amenity
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -589,10 +589,10 @@ paths:
                   type: string
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
                 name:
                   type: string
                   description: The name associated with the amenity
@@ -758,13 +758,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the amenity
+                        description: The Propexo unique identifier for the amenity
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -975,13 +975,13 @@ paths:
                         description: List of unit ids associated with the amenity
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -1056,13 +1056,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propify property_id instead"
+            description: "Deprecated: Use the Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
@@ -1075,13 +1075,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -1140,13 +1140,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the applicant
+                          description: The Propexo unique identifier for the applicant
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -1338,13 +1338,13 @@ paths:
                           description: The zip code associated with the applicant
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -1405,10 +1405,10 @@ paths:
                   type: string
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
                 originating_lead_source_id:
                   type: string
                   description: The external ID of the lead source from the integration vendor
@@ -1502,7 +1502,7 @@ paths:
                     properties:
                       unit_id:
                         type: string
-                        description: The Propify unique identifier for the unit
+                        description: The Propexo unique identifier for the unit
                       x_type_id:
                         type: string
                         description: The PMS id for the event type.
@@ -1577,7 +1577,7 @@ paths:
                   description: The middle name associated with the applicant
                 lead_id:
                   type: string
-                  description: The Propify unique identifier for the lead
+                  description: The Propexo unique identifier for the lead
                 application_date:
                   type: string
                   format: date-time
@@ -1708,13 +1708,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the applicant
+                        description: The Propexo unique identifier for the applicant
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -1905,13 +1905,13 @@ paths:
                         description: The zip code associated with the applicant
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -2010,16 +2010,16 @@ paths:
                   description: Type of the secondary phone number
                 applicant_id:
                   type: string
-                  description: The Propify unique identifier for the applicant
+                  description: The Propexo unique identifier for the applicant
                 application_id:
                   type: string
-                  description: The Propify unique identifier for the application
+                  description: The Propexo unique identifier for the application
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 originating_lead_source_id:
                   type: string
                   description: The external ID of the lead source from the integration vendor
@@ -2075,7 +2075,7 @@ paths:
                     properties:
                       unit_id:
                         type: string
-                        description: The Propify unique identifier for the unit
+                        description: The Propexo unique identifier for the unit
                       x_type_id:
                         type: string
                         description: The PMS id for the event type.
@@ -2112,7 +2112,7 @@ paths:
                         description: The reason the event occured.
                       id:
                         type: string
-                        description: The Propify unique identifier for the event. Only required if
+                        description: The Propexo unique identifier for the event. Only required if
                           attempting to update an existing event.
                     required:
                       - x_type_id
@@ -2220,13 +2220,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propify property_id instead"
+            description: "Deprecated: Use the Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
@@ -2239,13 +2239,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify property id
+            description: The Propexo property id
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -2304,13 +2304,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the application
+                          description: The Propexo unique identifier for the application
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -2373,13 +2373,13 @@ paths:
                           description: Applicants associated with the application
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -2483,13 +2483,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the application
+                        description: The Propexo unique identifier for the application
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -2551,13 +2551,13 @@ paths:
                         description: Applicants associated with the application
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -2632,38 +2632,38 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the lead
+            description: The Propexo unique identifier for the lead
           required: false
           name: lead_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the applicant
+            description: The Propexo unique identifier for the applicant
           required: false
           name: applicant_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the resident
+            description: The Propexo unique identifier for the resident
           required: false
           name: resident_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -2722,13 +2722,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the event
+                          description: The Propexo unique identifier for the event
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -2792,13 +2792,13 @@ paths:
                           description: Reasons that the event occurred
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -2907,13 +2907,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the event
+                        description: The Propexo unique identifier for the event
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -2977,13 +2977,13 @@ paths:
                         description: Reasons that the event occurred
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -3027,10 +3027,10 @@ paths:
                   type: string
                 applicant_id:
                   type: string
-                  description: The Propify unique identifier for the applicant
+                  description: The Propexo unique identifier for the applicant
                 event_type_id:
                   type: string
-                  description: The Propify unique identifier for the event type
+                  description: The Propexo unique identifier for the event type
                 name:
                   type: string
                   description: The name associated with the event type
@@ -3075,7 +3075,7 @@ paths:
                   type: string
                 lead_id:
                   type: string
-                  description: The Propify unique identifier for the lead
+                  description: The Propexo unique identifier for the lead
                 event_name:
                   type: string
                   enum:
@@ -3102,7 +3102,7 @@ paths:
                   description: Notes to associate with the event.
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
                 x_leasing_agent_id:
                   type: string
                   description: The external ID of the leasing agent from the integration vendor
@@ -3195,10 +3195,10 @@ paths:
                   type: string
                 resident_id:
                   type: string
-                  description: The Propify unique identifier for the resident
+                  description: The Propexo unique identifier for the resident
                 event_type_id:
                   type: string
-                  description: The Propify unique identifier for the event type
+                  description: The Propexo unique identifier for the event type
                 name:
                   type: string
                   description: The name associated with the event type
@@ -3279,14 +3279,14 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
@@ -3300,7 +3300,7 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -3359,13 +3359,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the event type
+                          description: The Propexo unique identifier for the event type
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -3399,13 +3399,13 @@ paths:
                           description: The name associated with the event type
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -3508,13 +3508,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the event type
+                        description: The Propexo unique identifier for the event type
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -3548,13 +3548,13 @@ paths:
                         description: The name associated with the event type
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -3628,14 +3628,14 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the file type
+            description: The Propexo unique identifier for the file type
           required: false
           name: property_id
           in: query
@@ -3655,7 +3655,7 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -3714,13 +3714,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the file type
+                          description: The Propexo unique identifier for the file type
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -3757,13 +3757,13 @@ paths:
                           description: The type associated with the file type
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -3867,13 +3867,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the file type
+                        description: The Propexo unique identifier for the file type
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -3910,13 +3910,13 @@ paths:
                         description: The type associated with the file type
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -3985,13 +3985,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propify property_id instead"
+            description: "Deprecated: Use the Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
@@ -4016,13 +4016,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify property id
+            description: The Propexo property id
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -4081,13 +4081,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the lead
+                          description: The Propexo unique identifier for the lead
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -4317,10 +4317,10 @@ paths:
                           description: The zip code associated with the lead
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
@@ -4453,7 +4453,7 @@ paths:
                   description: The name of the source of the lead
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 x_lead_source_id:
                   type: string
                   description: The external ID of the lead source from the integration vendor
@@ -4573,13 +4573,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the lead
+                        description: The Propexo unique identifier for the lead
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -4809,10 +4809,10 @@ paths:
                         description: The zip code associated with the lead
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
@@ -4950,13 +4950,13 @@ paths:
                   description: The name of the source of the lead
                 lead_id:
                   type: string
-                  description: The Propify unique identifier for the lead
+                  description: The Propexo unique identifier for the lead
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
                 x_leasing_agent_id:
                   type: string
                   description: The external ID of the leasing agent from the integration vendor
@@ -5022,7 +5022,7 @@ paths:
                       event_datetime:
                         type: string
                         format: date-time
-                        description: The date and time that the event occured.
+                        description: The date and time that the event occurred.
                       notes:
                         type: string
                         maxLength: 256
@@ -5037,15 +5037,14 @@ paths:
                           registered inside of the PMS.
                       reasons_for_event:
                         type: string
-                        description: The reason the event occured.
+                        description: The reason the event occurred.
                       unit_id:
                         type: string
-                        description: The Propify unit ID to associated with the lead event. Only some
-                          PMS events use this, including "Show" and
-                          "Appointment".
+                        description: The Propexo unit ID associated with the lead event. Only some PMS
+                          events use this, including "Show" and "Appointment".
                       id:
                         type: string
-                        description: The Propify unique identifier for the event. Required if attempting
+                        description: The Propexo unique identifier for the event. Required if attempting
                           to update an existing event
                     required:
                       - event_name
@@ -5130,44 +5129,44 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propify property_id instead"
+            description: "Deprecated: Use the Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propify unit_id instead"
+            description: "Deprecated: Use the Propexo unit_id instead"
           required: false
           name: x_unit_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the unit
+            description: The Propexo unique identifier for the unit
           required: false
           name: unit_id
           in: query
         - schema:
             type: string
-            description: The Propify resident id.
+            description: The Propexo resident id.
           required: false
           name: resident_id
           in: query
         - schema:
             type: string
-            description: The Propify property id
+            description: The Propexo property id
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -5226,13 +5225,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the lease
+                          description: The Propexo unique identifier for the lease
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -5261,7 +5260,7 @@ paths:
                             properties:
                               resident_id:
                                 type: string
-                                description: The Propify unique identifier for the resident
+                                description: The Propexo unique identifier for the resident
                               x_resident_type:
                                 type:
                                   - string
@@ -5276,7 +5275,7 @@ paths:
                                   - SECONDARY
                                   - GUARANTOR
                                   - OTHER
-                                description: Resident type from Propify
+                                description: Resident type from Propexo
                               move_in_date:
                                 type:
                                   - string
@@ -5397,7 +5396,7 @@ paths:
                             - OTHER
                             - PENDING
                             - EVICTED
-                          description: The Propify normalized status of the lease
+                          description: The Propexo normalized status of the lease
                         status_raw:
                           type:
                             - string
@@ -5417,13 +5416,13 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: The Propify unique identifier for the unit
+                          description: The Propexo unique identifier for the unit
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           enum:
@@ -5623,10 +5622,10 @@ paths:
                     vendor
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
                 floor_plan_id:
                   type: string
                   description: The external ID of the floor plan from the integration vendor
@@ -5666,8 +5665,8 @@ paths:
                   description: The move-out date associated with the lease
                 primary_contact_id:
                   type: string
-                  description: The Propify unique identifier of the primary contact. This must
-                    either be a lead, applicant, or resident in Propify
+                  description: The Propexo unique identifier of the primary contact. This must
+                    either be a lead, applicant, or resident in Propexo
                 tenants:
                   type: array
                   items:
@@ -5675,10 +5674,10 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the lead, applicant, or resident
+                        description: The Propexo unique identifier for the lead, applicant, or resident
                     required:
                       - id
-                  description: An array of Propify lead, applicant, or resident IDs. This must
+                  description: An array of Propexo lead, applicant, or resident IDs. This must
                     also include the primary contact ID
                 status:
                   type: string
@@ -5795,13 +5794,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the lease
+                        description: The Propexo unique identifier for the lease
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -5830,7 +5829,7 @@ paths:
                           properties:
                             resident_id:
                               type: string
-                              description: The Propify unique identifier for the resident
+                              description: The Propexo unique identifier for the resident
                             x_resident_type:
                               type:
                                 - string
@@ -5845,7 +5844,7 @@ paths:
                                 - SECONDARY
                                 - GUARANTOR
                                 - OTHER
-                              description: Resident type from Propify
+                              description: Resident type from Propexo
                             move_in_date:
                               type:
                                 - string
@@ -5966,7 +5965,7 @@ paths:
                           - OTHER
                           - PENDING
                           - EVICTED
-                        description: The Propify normalized status of the lease
+                        description: The Propexo normalized status of the lease
                       status_raw:
                         type:
                           - string
@@ -5986,13 +5985,13 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: The Propify unique identifier for the unit
+                        description: The Propexo unique identifier for the unit
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         enum:
@@ -6095,16 +6094,16 @@ paths:
                     the expiration of the lease
                 lease_id:
                   type: string
-                  description: The Propify unique identifier for the lease
+                  description: The Propexo unique identifier for the lease
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
                 resident_id:
                   type: string
-                  description: The Propify unique identifier for the resident
+                  description: The Propexo unique identifier for the resident
                 scheduled_move_in_date:
                   type: string
                   format: date-time
@@ -6163,8 +6162,8 @@ paths:
                   description: The move-out date associated with the lease
                 primary_contact_id:
                   type: string
-                  description: The Propify unique identifier of the primary contact. This must
-                    either be a lead, applicant, or resident in Propify
+                  description: The Propexo unique identifier of the primary contact. This must
+                    either be a lead, applicant, or resident in Propexo
                 tenants:
                   type: array
                   items:
@@ -6172,10 +6171,10 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the lead, applicant, or resident
+                        description: The Propexo unique identifier for the lead, applicant, or resident
                     required:
                       - id
-                  description: An array of Propify lead, applicant, or resident IDs. This must
+                  description: An array of Propexo lead, applicant, or resident IDs. This must
                     also include the primary contact ID
                 status:
                   type: string
@@ -6255,13 +6254,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use Propify property_id instead"
+            description: "Deprecated: Use Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
@@ -6274,13 +6273,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify property id
+            description: The Propexo property id
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -6339,13 +6338,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the listing
+                          description: The Propexo unique identifier for the listing
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -6516,10 +6515,10 @@ paths:
                           description: The zip code associated with the listing
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
@@ -6652,13 +6651,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the listing
+                        description: The Propexo unique identifier for the listing
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -6829,10 +6828,10 @@ paths:
                         description: The zip code associated with the listing
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
@@ -7029,14 +7028,14 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -7095,13 +7094,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -7252,7 +7251,7 @@ paths:
                           description: The zip code associated with the property
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
@@ -7415,13 +7414,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -7572,7 +7571,7 @@ paths:
                         description: The zip code associated with the property
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
@@ -7638,7 +7637,7 @@ paths:
                   type: string
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 abbreviation:
                   type: string
                   description: "The abbreviation of the property. Example: PROP1"
@@ -7775,32 +7774,32 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use Propify property_id instead"
+            description: "Deprecated: Use Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify property id
+            description: The Propexo property id
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify lease id
+            description: The Propexo lease id
           required: false
           name: lease_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -7859,13 +7858,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the resident
+                          description: The Propexo unique identifier for the resident
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -7886,7 +7885,7 @@ paths:
                             properties:
                               lease_id:
                                 type: string
-                                description: The Propify unique identifier for the lease
+                                description: The Propexo unique identifier for the lease
                               x_resident_type:
                                 type:
                                   - string
@@ -7901,7 +7900,7 @@ paths:
                                   - SECONDARY
                                   - GUARANTOR
                                   - OTHER
-                                description: Resident type from Propify
+                                description: Resident type from Propexo
                               move_in_date:
                                 type:
                                   - string
@@ -8075,13 +8074,13 @@ paths:
                           description: The zip code associated with the resident
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -8246,7 +8245,7 @@ paths:
                   description: Custom data
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 rent_period:
                   type: string
                   enum:
@@ -8273,7 +8272,7 @@ paths:
                     properties:
                       file_type_id:
                         type: string
-                        description: The Propify unique identifier for the file type. This file_type
+                        description: The Propexo unique identifier for the file type. This file_type
                           must contain a "type" value of "file"
                       file_data:
                         type: string
@@ -8398,13 +8397,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the resident
+                        description: The Propexo unique identifier for the resident
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -8425,7 +8424,7 @@ paths:
                           properties:
                             lease_id:
                               type: string
-                              description: The Propify unique identifier for the lease
+                              description: The Propexo unique identifier for the lease
                             x_resident_type:
                               type:
                                 - string
@@ -8440,7 +8439,7 @@ paths:
                                 - SECONDARY
                                 - GUARANTOR
                                 - OTHER
-                              description: Resident type from Propify
+                              description: Resident type from Propexo
                             move_in_date:
                               type:
                                 - string
@@ -8614,13 +8613,13 @@ paths:
                         description: The zip code associated with the resident
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -8801,7 +8800,7 @@ paths:
                     properties:
                       unit_id:
                         type: string
-                        description: The Propify unique identifier for the unit
+                        description: The Propexo unique identifier for the unit
                       x_type_id:
                         type: string
                         description: The PMS id for the event type.
@@ -8838,14 +8837,14 @@ paths:
                         description: The reason the event occured.
                       id:
                         type: string
-                        description: The Propify unique identifier for the event. Only required if
+                        description: The Propexo unique identifier for the event. Only required if
                           attempting to update an existing event.
                     required:
                       - x_type_id
                   description: Array of events associated with this resident.
                 resident_id:
                   type: string
-                  description: The Propify unique identifier for the resident
+                  description: The Propexo unique identifier for the resident
                 rent_period:
                   type: string
                   enum:
@@ -8930,26 +8929,26 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the unit
+            description: The Propexo unique identifier for the unit
           required: false
           name: unit_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -9008,13 +9007,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the service request
+                          description: The Propexo unique identifier for the service request
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -9102,18 +9101,18 @@ paths:
                           description: Details about the service request
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                         unit_id:
                           type:
                             - string
                             - "null"
-                          description: The Propify unique identifier for the unit
+                          description: The Propexo unique identifier for the unit
                       required:
                         - id
                         - created_at
@@ -9161,7 +9160,7 @@ paths:
                   type: string
                 property_id:
                   type: string
-                  description: The Propify unique identifier for the property
+                  description: The Propexo unique identifier for the property
                 service_description:
                   type: string
                   description: A description of the service request
@@ -9186,16 +9185,16 @@ paths:
                   description: The date the service request is scheduled
                 service_request_category_id:
                   type: string
-                  description: The Propify unique identifier for the service request category
+                  description: The Propexo unique identifier for the service request category
                 service_request_priority_id:
                   type: string
-                  description: The Propify unique identifier for the service request priority
+                  description: The Propexo unique identifier for the service request priority
                 service_request_status_id:
                   type: string
-                  description: The Propify unique identifier for the service request status
+                  description: The Propexo unique identifier for the service request status
                 unit_id:
                   type: string
-                  description: The Propify unique identifier for the unit
+                  description: The Propexo unique identifier for the unit
               required:
                 - integration_id
       responses:
@@ -9302,13 +9301,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the service request
+                        description: The Propexo unique identifier for the service request
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -9396,18 +9395,18 @@ paths:
                         description: Details about the service request
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                       unit_id:
                         type:
                           - string
                           - "null"
-                        description: The Propify unique identifier for the unit
+                        description: The Propexo unique identifier for the unit
                     required:
                       - id
                       - created_at
@@ -9492,20 +9491,20 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -9564,13 +9563,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the service request category
+                          description: The Propexo unique identifier for the service request category
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -9611,13 +9610,13 @@ paths:
                           description: The name associated with the service request category
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -9721,13 +9720,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the service request category
+                        description: The Propexo unique identifier for the service request category
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -9768,13 +9767,13 @@ paths:
                         description: The name associated with the service request category
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -9849,20 +9848,20 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -9921,13 +9920,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the service request category
+                          description: The Propexo unique identifier for the service request category
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -9968,13 +9967,13 @@ paths:
                           description: The name associated with the service request category
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -10078,13 +10077,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the service request category
+                        description: The Propexo unique identifier for the service request category
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -10125,13 +10124,13 @@ paths:
                         description: The name associated with the service request category
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -10206,20 +10205,20 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the property
+            description: The Propexo unique identifier for the property
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: false
           name: integration_id
           in: query
@@ -10278,13 +10277,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the service request category
+                          description: The Propexo unique identifier for the service request category
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -10325,13 +10324,13 @@ paths:
                           description: The name associated with the service request category
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -10435,13 +10434,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the service request category
+                        description: The Propexo unique identifier for the service request category
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -10482,13 +10481,13 @@ paths:
                         description: The name associated with the service request category
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -10557,13 +10556,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propify property_id instead"
+            description: "Deprecated: Use the Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
@@ -10594,13 +10593,13 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propify property id
+            description: The Propexo property id
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -10659,13 +10658,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the transaction
+                          description: The Propexo unique identifier for the transaction
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -10856,13 +10855,13 @@ paths:
                           description: The source of the transaction
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -10975,7 +10974,7 @@ paths:
                   description: Line items associated with the bill
                 lease_id:
                   type: string
-                  description: The Propify unique identifier for the lease
+                  description: The Propexo unique identifier for the lease
                 ar_code_id:
                   type: string
                   description: The id of the accounts receivable code associated with the
@@ -11100,13 +11099,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the transaction
+                        description: The Propexo unique identifier for the transaction
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -11297,13 +11296,13 @@ paths:
                         description: The source of the transaction
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -11393,26 +11392,26 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propify property_id instead"
+            description: "Deprecated: Use the Propexo property_id instead"
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
-            description: The Propify unique identifier for the location associated with the
+            description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
           in: query
         - schema:
             type: string
-            description: The Propify property id
+            description: The Propexo property id
           required: false
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propify integration id
+            description: The Propexo integration id
           required: false
           name: integration_id
           in: query
@@ -11471,13 +11470,13 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propify unique identifier for the unit
+                          description: The Propexo unique identifier for the unit
                         created_at:
                           type: string
-                          description: The date record first entered Propify
+                          description: The date record first entered Propexo
                         updated_at:
                           type: string
-                          description: The date record was last updated in Propify
+                          description: The date record was last updated in Propexo
                         last_seen:
                           type:
                             - string
@@ -11618,13 +11617,13 @@ paths:
                           description: The zip code associated with the unit
                         integration_id:
                           type: string
-                          description: The Propify unique identifier for the integration
+                          description: The Propexo unique identifier for the integration
                         integration_vendor:
                           type: string
                           description: The property management system of record
                         property_id:
                           type: string
-                          description: The Propify unique identifier for the property
+                          description: The Propexo unique identifier for the property
                       required:
                         - id
                         - created_at
@@ -11680,7 +11679,7 @@ paths:
               properties:
                 integration_id:
                   type: string
-                  description: The Propify unique identifier for the integration
+                  description: The Propexo unique identifier for the integration
                 property_id:
                   type: string
                 number:
@@ -11926,13 +11925,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propify unique identifier for the unit
+                        description: The Propexo unique identifier for the unit
                       created_at:
                         type: string
-                        description: The date record first entered Propify
+                        description: The date record first entered Propexo
                       updated_at:
                         type: string
-                        description: The date record was last updated in Propify
+                        description: The date record was last updated in Propexo
                       last_seen:
                         type:
                           - string
@@ -12073,13 +12072,13 @@ paths:
                         description: The zip code associated with the unit
                       integration_id:
                         type: string
-                        description: The Propify unique identifier for the integration
+                        description: The Propexo unique identifier for the integration
                       integration_vendor:
                         type: string
                         description: The property management system of record
                       property_id:
                         type: string
-                        description: The Propify unique identifier for the property
+                        description: The Propexo unique identifier for the property
                     required:
                       - id
                       - created_at
@@ -13715,7 +13714,7 @@ paths:
     post:
       tags:
         - amenities
-      summary: Create Amenities - Units | Propify Documentation
+      summary: Create Amenities | Units
       description: Create a unit amenity for any integration. This is a convenience
         endpoint that acts as a generic proxy for all amenity creation
         endpoints.
@@ -14720,7 +14719,7 @@ paths:
       parameters:
         - schema:
             type: string
-            description: The Propify unique identifier for the integration
+            description: The Propexo unique identifier for the integration
           required: true
           name: integration_id
           in: path
