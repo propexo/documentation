@@ -67,7 +67,6 @@ paths:
               - REALPAGE_RPX
               - MRI
               - RESMAN
-            example: ENTRATA
             description: The integration vendor associated with the data diff
           required: false
           name: integration_vendor
@@ -150,6 +149,7 @@ paths:
                         created_at:
                           type: string
                           description: The date the data diff was created
+                          format: date-time
                         job_id:
                           type:
                             - string
