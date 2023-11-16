@@ -133,15 +133,14 @@ paths:
                         id:
                           type: string
                           description: The unique identifier for the data diff
-                          format: uuid
                         model:
                           type: string
                           description: The name of the model the data diff is for
                         event_type:
                           type: string
                           enum:
-                            - DATA_NEW
-                            - DATA_UPDATE
+                            - NEW
+                            - UPDATE
                           description: The data diff event type
                         data_diff:
                           type: object
@@ -150,13 +149,11 @@ paths:
                         created_at:
                           type: string
                           description: The date the data diff was created
-                          format: date-time
                         job_id:
                           type:
                             - string
                             - "null"
                           description: The ID of the job that affected this data diff
-                          format: cuid
                         integration_id:
                           type: string
                           description: The integration id
@@ -13711,6 +13708,58 @@ paths:
                       - roles
                 required:
                   - result
+        "400":
+          description: invalid input
+  /v1/admin/write-status/{root_job_id}:
+    get:
+      tags:
+        - admin
+      summary: Check the status of a write operation
+      description: Query for the status of a write operation created via the API. The
+        status of the write operation, as well as any encountered errors, is
+        provided.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The job ID of the write job to check the status of
+          required: true
+          name: root_job_id
+          in: path
+      responses:
+        "200":
+          description: Query for the status of a write operation created via the API. The
+            status of the write operation, as well as any encountered errors, is
+            provided.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  write_status:
+                    type: string
+                    enum:
+                      - SUCCESS
+                      - PARTIAL_SUCCESS
+                      - FAILURE
+                    description: The status for the write operation. "SUCCESS" means that the write
+                      operation was seen as a complete success and the data has
+                      been written. "PARTIAL_SUCCESS" means that a portion of
+                      the write operation succeeded, but it was not fully
+                      successful. "FAILURE" means that the write operation
+                      completely failed.
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                    description: ' For "PARTIAL_SUCCESS" and "FAILURE" statuses, an array of error
+                      messages provided by the PMS may be present. This array
+                      could be incomplete if the PMS does not provide error
+                      messages.'
+                required:
+                  - write_status
+                  - errors
         "400":
           description: invalid input
   /v1/amenities/units/{id}:
