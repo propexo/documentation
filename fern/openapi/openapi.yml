@@ -1345,6 +1345,40 @@ paths:
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
+                        screenings:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo ID of the screening
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              last_seen:
+                                type: string
+                                description: The date the record was last seen from the PMS
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              status_raw:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The status/results of the screening
+                              screening_date:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the screening took place
+                            required:
+                              - id
+                              - created_at
+                              - last_seen
+                              - x_id
+                              - status_raw
+                              - screening_date
                       required:
                         - id
                         - created_at
@@ -1383,6 +1417,7 @@ paths:
                         - integration_id
                         - integration_vendor
                         - property_id
+                        - screenings
                 required:
                   - meta
                   - results
@@ -1912,6 +1947,40 @@ paths:
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
+                      screenings:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo ID of the screening
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            last_seen:
+                              type: string
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            status_raw:
+                              type:
+                                - string
+                                - "null"
+                              description: The status/results of the screening
+                            screening_date:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the screening took place
+                          required:
+                            - id
+                            - created_at
+                            - last_seen
+                            - x_id
+                            - status_raw
+                            - screening_date
                     required:
                       - id
                       - created_at
@@ -1950,6 +2019,7 @@ paths:
                       - integration_id
                       - integration_vendor
                       - property_id
+                      - screenings
                 required:
                   - meta
                   - results
@@ -4324,6 +4394,40 @@ paths:
                         integration_vendor:
                           type: string
                           description: The property management system of record
+                        screenings:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo ID of the screening
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              last_seen:
+                                type: string
+                                description: The date the record was last seen from the PMS
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              status_raw:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The status/results of the screening
+                              screening_date:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the screening took place
+                            required:
+                              - id
+                              - created_at
+                              - last_seen
+                              - x_id
+                              - status_raw
+                              - screening_date
                       required:
                         - id
                         - created_at
@@ -4377,6 +4481,7 @@ paths:
                         - property_id
                         - integration_id
                         - integration_vendor
+                        - screenings
                 required:
                   - meta
                   - results
@@ -4816,6 +4921,40 @@ paths:
                       integration_vendor:
                         type: string
                         description: The property management system of record
+                      screenings:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo ID of the screening
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            last_seen:
+                              type: string
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            status_raw:
+                              type:
+                                - string
+                                - "null"
+                              description: The status/results of the screening
+                            screening_date:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the screening took place
+                          required:
+                            - id
+                            - created_at
+                            - last_seen
+                            - x_id
+                            - status_raw
+                            - screening_date
                     required:
                       - id
                       - created_at
@@ -4869,6 +5008,7 @@ paths:
                       - property_id
                       - integration_id
                       - integration_vendor
+                      - screenings
                 required:
                   - meta
                   - results
