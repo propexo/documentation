@@ -3364,7 +3364,8 @@ paths:
             type: array
             items:
               type: string
-            description: The models associated with the event type
+            description: The Propexo data models (e.g. units, residents, applicants, etc.)
+              associated with the event type
           required: false
           name: models
           in: query
@@ -3463,7 +3464,8 @@ paths:
                           type: array
                           items:
                             type: string
-                          description: The models associated with the event type
+                          description: The Propexo data models (e.g. units, residents, applicants, etc.)
+                            associated with the event type
                         name:
                           type: string
                           description: The name associated with the event type
@@ -3612,7 +3614,8 @@ paths:
                         type: array
                         items:
                           type: string
-                        description: The models associated with the event type
+                        description: The Propexo data models (e.g. units, residents, applicants, etc.)
+                          associated with the event type
                       name:
                         type: string
                         description: The name associated with the event type
@@ -3719,7 +3722,8 @@ paths:
             type: array
             items:
               type: string
-            description: The models associated with the file type
+            description: The Propexo data models (e.g. units, residents, applicants, etc.)
+              associated with the file type
           required: false
           name: models
           in: query
@@ -3818,7 +3822,8 @@ paths:
                           type: array
                           items:
                             type: string
-                          description: The models associated with the file type
+                          description: The Propexo data models (e.g. units, residents, applicants, etc.)
+                            associated with the file type
                         name:
                           type: string
                           description: The name associated with the file type
@@ -3852,6 +3857,58 @@ paths:
                 required:
                   - meta
                   - results
+        "400":
+          description: invalid input
+    post:
+      tags:
+        - files
+      summary: Create file type
+      description: Create a file type for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                location_id:
+                  type: string
+                  description: The Propexo unique identifier for the location
+                model:
+                  type: string
+                  enum:
+                    - units
+                    - residents
+                    - properties
+                  description: The Propexo data model (e.g. units, residents, applicants, etc.)
+                    for which you are attempting to upload a file
+                name:
+                  type: string
+                  description: The name associated with the file type
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a file type for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/file-types/{file_type_id}:
@@ -3971,7 +4028,8 @@ paths:
                         type: array
                         items:
                           type: string
-                        description: The models associated with the file type
+                        description: The Propexo data models (e.g. units, residents, applicants, etc.)
+                          associated with the file type
                       name:
                         type: string
                         description: The name associated with the file type
@@ -12940,6 +12998,11 @@ paths:
                         is_archived:
                           type: boolean
                           description: Whether or not the integration is archived
+                        last_completed_sync:
+                          type:
+                            - string
+                            - "null"
+                          description: The timestamp of the last time a sync was completed.
                         integration_interfaces:
                           type: array
                           items:
@@ -13065,6 +13128,7 @@ paths:
                         - max_request_cadence
                         - base_url
                         - is_archived
+                        - last_completed_sync
                         - integration_interfaces
                         - models
                         - can_authenticate
@@ -13883,12 +13947,14 @@ paths:
                       - SUCCESS
                       - PARTIAL_SUCCESS
                       - FAILURE
+                      - PENDING
                     description: The status for the write operation. "SUCCESS" means that the write
                       operation was seen as a complete success and the data has
                       been written. "PARTIAL_SUCCESS" means that a portion of
                       the write operation succeeded, but it was not fully
                       successful. "FAILURE" means that the write operation
-                      completely failed.
+                      completely failed."PENDING" means that the write operation
+                      is pending completion of any status.
                   errors:
                     type: array
                     items:
@@ -14427,6 +14493,11 @@ paths:
                       is_archived:
                         type: boolean
                         description: Whether or not the integration is archived
+                      last_completed_sync:
+                        type:
+                          - string
+                          - "null"
+                        description: The timestamp of the last time a sync was completed.
                       integration_interfaces:
                         type: array
                         items:
@@ -14552,6 +14623,7 @@ paths:
                       - max_request_cadence
                       - base_url
                       - is_archived
+                      - last_completed_sync
                       - integration_interfaces
                       - models
                       - can_authenticate
