@@ -9361,9 +9361,11 @@ paths:
                   description: The Propexo unique identifier for the property
                 service_description:
                   type: string
+                  maxLength: 127
                   description: A description of the service request
                 service_details:
                   type: string
+                  maxLength: 65535
                   description: Details about the service request
                 access_is_authorized:
                   type: boolean
@@ -9393,6 +9395,44 @@ paths:
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                service_request_vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request vendor
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
+                service_priority:
+                  type: string
+                  enum:
+                    - Low
+                    - Normal
+                    - High
+                  description: The priority level associated with the service request
+                service_status:
+                  type: string
+                  enum:
+                    - New
+                    - InProgress
+                    - Completed
+                    - Deferred
+                    - Closed
+                  description: The status associated with the service request
+                access_notes:
+                  type: string
+                  maxLength: 65535
+                  description: Notes regarding access to the unit associated with the service
+                    request
+                invoice_number:
+                  type: string
+                  description: The invoice or reference number that the vendor assigned to the
+                    service request
+                notes:
+                  type: string
+                  maxLength: 65535
+                  description: Notes associated with the service request
               required:
                 - integration_id
       responses:
