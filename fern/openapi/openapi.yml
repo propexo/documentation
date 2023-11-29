@@ -9576,7 +9576,7 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: The date the service request is due
+                          description: The due date associated with the service request
                         date_scheduled:
                           type:
                             - string
@@ -9683,7 +9683,7 @@ paths:
                 date_due:
                   type: string
                   format: date-time
-                  description: The date the service request is due
+                  description: The due date associated with the service request
                 date_scheduled:
                   type: string
                   format: date-time
@@ -9700,15 +9700,44 @@ paths:
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
+                service_request_location_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request location
+                service_request_problem_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request problem
                 employee_id:
                   type: string
                   description: The Propexo unique identifier for the employee
-                service_request_vendor_id:
+                due_date:
                   type: string
-                  description: The Propexo unique identifier for the service request vendor
+                  format: date-time
+                  description: The due date associated with the service request
+                is_floating:
+                  type: boolean
+                scheduled_end_date:
+                  type: string
+                  format: date-time
+                  description: The scheduled end date associated with the request. If provided,
+                    scheduled_start_date must be provided as well, and they must
+                    be the same day (Entrata restriction).
+                scheduled_start_date:
+                  type: string
+                  format: date-time
+                  description: The scheduled start date associated with the request. If provided,
+                    scheduled_end_date must be provided as well, and they must
+                    be the same day (Entrata restriction).
+                phone_1:
+                  type: string
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
+                lease_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease
+                service_request_vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request vendor
                 service_priority:
                   type: string
                   enum:
@@ -9910,7 +9939,7 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: The date the service request is due
+                        description: The due date associated with the service request
                       date_scheduled:
                         type:
                           - string
@@ -9978,6 +10007,83 @@ paths:
                 required:
                   - meta
                   - results
+        "400":
+          description: invalid input
+    put:
+      tags:
+        - service-requests
+      summary: Update service request
+      description: Update a service request for an integration.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the service request
+          required: false
+          name: service_request_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                service_request_category_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request category
+                service_request_priority_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request priority
+                service_request_location_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request location
+                service_request_problem_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request problem
+                service_description:
+                  type: string
+                  description: A description of the service request
+                phone_1:
+                  type: string
+                  description: "'Primary phone number associated with the service request"
+                phone_2:
+                  type: string
+                  description: "'Secondary phone number associated with the service request"
+                email_1:
+                  type: string
+                  description: The primary email address associated with the service request
+                scheduled_start_date:
+                  type: string
+                  format: date-time
+                  description: The scheduled start date associated with the request.
+                due_date:
+                  type: string
+                  format: date-time
+                  description: The due date associated with the service request
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update a service request for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/service-request-categories:
@@ -11043,6 +11149,674 @@ paths:
                       - description
                       - is_active
                       - name
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/service-request-locations:
+    get:
+      tags:
+        - service-requests
+      summary: Get all service request locations
+      description: Get all service request locations
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all service request locations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the service request location
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        name:
+                          type: string
+                          description: The name of the service request location
+                        type:
+                          type:
+                            - string
+                            - "null"
+                          description: The type of location
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - name
+                        - type
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/service-request-locations/{service_request_location_id}:
+    get:
+      tags:
+        - service-requests
+      summary: Get a service request location by ID
+      description: Get a service request location by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: service_request_location_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get a service request location by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the service request location
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      name:
+                        type: string
+                        description: The name of the service request location
+                      type:
+                        type:
+                          - string
+                          - "null"
+                        description: The type of location
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - name
+                      - type
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/service-request-problems:
+    get:
+      tags:
+        - service-requests
+      summary: Get all service request problems
+      description: Get all service request problems
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all service request problems
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the service request location
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        name:
+                          type: string
+                          description: The name of the service request problem
+                        service_request_category_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the service request category
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - name
+                        - service_request_category_id
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/service-request-problems/{service_request_problem_id}:
+    get:
+      tags:
+        - service-requests
+      summary: Get a service request problem by ID
+      description: Get a service request problem by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: service_request_problem_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get a service request problem by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the service request location
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      name:
+                        type: string
+                        description: The name of the service request problem
+                      service_request_category_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the service request category
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - name
+                      - service_request_category_id
                       - integration_id
                       - integration_vendor
                       - property_id
