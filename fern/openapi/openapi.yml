@@ -13533,6 +13533,515 @@ paths:
                   - data
         "400":
           description: invalid input
+  /v1/webhooks:
+    get:
+      tags:
+        - webhooks
+      summary: Get all webhooks
+      description: Get all webhooks
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type:
+              - boolean
+              - "null"
+            default: true
+            description: Filter by active status
+          required: false
+          name: active
+          in: query
+        - schema:
+            type: string
+            enum:
+              - PRODUCTION
+              - SANDBOX
+            description: "Filter by system "
+          required: false
+          name: system
+          in: query
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get all webhooks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier for the webhook
+                        created_at:
+                          type: string
+                          description: The date the webhook was created
+                        updated_at:
+                          type: string
+                          description: The date the webhook was last updated
+                        url:
+                          type: string
+                          description: The url to send the webhook to
+                        headers:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              header:
+                                type: string
+                              value:
+                                type: string
+                            required:
+                              - header
+                              - value
+                          description: Optional headers to send with the webhook
+                        active:
+                          type: boolean
+                          description: The status of the webhook
+                        secret:
+                          type: string
+                          description: The secret used to sign the webhook
+                        system:
+                          type: string
+                          enum:
+                            - PRODUCTION
+                            - SANDBOX
+                          description: The environment in which the webhook runs
+                        triggers:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The ID of the trigger
+                              trigger:
+                                type: string
+                                description: The name of the trigger
+                              model:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The model that triggers the webhook
+                            required:
+                              - id
+                              - trigger
+                              - model
+                          description: The webhook event triggers
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - url
+                        - active
+                        - secret
+                        - system
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+    post:
+      tags:
+        - webhooks
+      summary: Create a webhook
+      description: Create a webhook
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: The url to send the webhook to
+                headers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      header:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                      - header
+                      - value
+                  description: Optional headers to send with the webhook
+                triggers:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - DATA_UPDATE
+                      - DATA_NEW
+                      - JOB_FAILURE
+                      - JOB_SUCCESS
+                      - SYNC_COMPLETE
+                      - FIRST_SYNC_COMPLETE
+                  minItems: 1
+                  description: The events that will trigger the webhook
+                system:
+                  type: string
+                  enum:
+                    - PRODUCTION
+                    - SANDBOX
+                  description: The environment in which to run the webhook
+                active:
+                  type: boolean
+                  default: false
+                  description: Whether the webhook is active
+                secret:
+                  type: string
+                  minLength: 10
+                  description: The secret to use to sign the webhook payload. If you do not
+                    provide a secret, one will be generated for you.
+                model:
+                  type: string
+                  enum:
+                    - amenities
+                    - applicants
+                    - applications
+                    - employees
+                    - events
+                    - leads
+                    - leases
+                    - listings
+                    - locations
+                    - properties
+                    - residents
+                    - screenings
+                    - service_requests
+                    - transactions
+                    - units
+                    - vendors
+                  description: The model for the webhook trigger to monitor. Only applies to
+                    DATA_UPDATE and DATA_NEW triggers
+              required:
+                - url
+                - triggers
+                - system
+                - active
+      responses:
+        "200":
+          description: Create a webhook
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the webhook
+                      created_at:
+                        type: string
+                        description: The date the webhook was created
+                      updated_at:
+                        type: string
+                        description: The date the webhook was last updated
+                      url:
+                        type: string
+                        description: The url to send the webhook to
+                      headers:
+                        type:
+                          - array
+                          - "null"
+                        items:
+                          type: object
+                          properties:
+                            header:
+                              type: string
+                            value:
+                              type: string
+                          required:
+                            - header
+                            - value
+                        description: Optional headers to send with the webhook
+                      active:
+                        type: boolean
+                        description: The status of the webhook
+                      secret:
+                        type: string
+                        description: The secret used to sign the webhook
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The environment in which the webhook runs
+                      triggers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The ID of the trigger
+                            trigger:
+                              type: string
+                              description: The name of the trigger
+                            model:
+                              type:
+                                - string
+                                - "null"
+                              description: The model that triggers the webhook
+                          required:
+                            - id
+                            - trigger
+                            - model
+                        description: The webhook event triggers
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - url
+                      - headers
+                      - active
+                      - secret
+                      - system
+                required:
+                  - result
+        "400":
+          description: invalid input
+  /v1/webhooks/{webhook_id}:
+    put:
+      tags:
+        - webhooks
+      summary: Update a webhook
+      description: Update a webhook
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the webhook to update
+          required: true
+          name: webhook_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: The url to send the webhook to
+                headers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      header:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                      - header
+                      - value
+                  description: Optional headers to send with the webhook
+                system:
+                  type: string
+                  enum:
+                    - PRODUCTION
+                    - SANDBOX
+                  description: The environment in which to run the webhook
+                active:
+                  type: boolean
+                  description: Whether the webhook is active
+                secret:
+                  type: string
+                  minLength: 10
+                  description: The secret to use to sign the webhook payload.
+      responses:
+        "200":
+          description: Update a webhook
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the webhook
+                      created_at:
+                        type: string
+                        description: The date the webhook was created
+                      updated_at:
+                        type: string
+                        description: The date the webhook was last updated
+                      url:
+                        type: string
+                        description: The url to send the webhook to
+                      headers:
+                        type:
+                          - array
+                          - "null"
+                        items:
+                          type: object
+                          properties:
+                            header:
+                              type: string
+                            value:
+                              type: string
+                          required:
+                            - header
+                            - value
+                        description: Optional headers to send with the webhook
+                      active:
+                        type: boolean
+                        description: The status of the webhook
+                      secret:
+                        type: string
+                        description: The secret used to sign the webhook
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The environment in which the webhook runs
+                      triggers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The ID of the trigger
+                            trigger:
+                              type: string
+                              description: The name of the trigger
+                            model:
+                              type:
+                                - string
+                                - "null"
+                              description: The model that triggers the webhook
+                          required:
+                            - id
+                            - trigger
+                            - model
+                        description: The webhook event triggers
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - url
+                      - headers
+                      - active
+                      - secret
+                      - system
+                required:
+                  - result
+        "400":
+          description: invalid input
+    delete:
+      tags:
+        - webhooks
+      summary: Delete a webhook
+      description: Delete a webhook
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the webhook to delete
+          required: true
+          name: webhook_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Delete a webhook
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The ID of the webhook that was deleted
+                    required:
+                      - id
+                required:
+                  - result
+        "400":
+          description: invalid input
   /v1/admin/job-logs/{job_log_id}:
     get:
       tags:
@@ -14696,7 +15205,7 @@ paths:
                           description: The unique identifier for the user
                         created_at:
                           type: string
-                          description: The date the users was created
+                          description: The date the user was created
                         updated_at:
                           type: string
                           description: The date the user was last updated
@@ -15468,6 +15977,185 @@ paths:
                 required:
                   - job_id
                   - data
+        "400":
+          description: invalid input
+  /v1/webhooks/{webhook_id}/triggers:
+    post:
+      tags:
+        - webhooks
+      summary: Create a webhook trigger
+      description: Create a webhook trigger
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the webhook to create a trigger for
+          required: true
+          name: webhook_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                trigger:
+                  type: string
+                  enum:
+                    - DATA_UPDATE
+                    - DATA_NEW
+                    - JOB_FAILURE
+                    - JOB_SUCCESS
+                    - SYNC_COMPLETE
+                    - FIRST_SYNC_COMPLETE
+                  description: The event that will trigger the webhook
+                model:
+                  type: string
+                  enum:
+                    - amenities
+                    - applicants
+                    - applications
+                    - employees
+                    - events
+                    - leads
+                    - leases
+                    - listings
+                    - locations
+                    - properties
+                    - residents
+                    - screenings
+                    - service_requests
+                    - transactions
+                    - units
+                    - vendors
+                  description: The model for the webhook trigger to monitor. Only applies to
+                    DATA_UPDATE and DATA_NEW triggers
+              required:
+                - trigger
+      responses:
+        "200":
+          description: Create a webhook trigger
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the webhook
+                      created_at:
+                        type: string
+                        description: The date the webhook was created
+                      updated_at:
+                        type: string
+                        description: The date the webhook was last updated
+                      url:
+                        type: string
+                        description: The url to send the webhook to
+                      headers:
+                        type:
+                          - array
+                          - "null"
+                        items:
+                          type: object
+                          properties:
+                            header:
+                              type: string
+                            value:
+                              type: string
+                          required:
+                            - header
+                            - value
+                        description: Optional headers to send with the webhook
+                      active:
+                        type: boolean
+                        description: The status of the webhook
+                      secret:
+                        type: string
+                        description: The secret used to sign the webhook
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The environment in which the webhook runs
+                      triggers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The ID of the trigger
+                            trigger:
+                              type: string
+                              description: The name of the trigger
+                            model:
+                              type:
+                                - string
+                                - "null"
+                              description: The model that triggers the webhook
+                          required:
+                            - id
+                            - trigger
+                            - model
+                        description: The webhook event triggers
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - url
+                      - headers
+                      - active
+                      - secret
+                      - system
+                required:
+                  - result
+        "400":
+          description: invalid input
+  /v1/webhooks/triggers/{webhook_trigger_id}:
+    delete:
+      tags:
+        - webhooks
+      summary: Delete a webhook trigger
+      description: Delete a webhook trigger
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the webhook to delete
+          required: true
+          name: webhook_trigger_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Delete a webhook trigger
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The ID of the webhook trigger that was deleted
+                    required:
+                      - id
+                required:
+                  - result
         "400":
           description: invalid input
   /v1/admin/integrations/{integration_id}:
