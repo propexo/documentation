@@ -9697,6 +9697,9 @@ paths:
                 service_request_status_id:
                   type: string
                   description: The Propexo unique identifier for the service request status
+                service_request_vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request vendor
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
@@ -9735,9 +9738,6 @@ paths:
                 lease_id:
                   type: string
                   description: The Propexo unique identifier for the lease
-                service_request_vendor_id:
-                  type: string
-                  description: The Propexo unique identifier for the service request vendor
                 service_priority:
                   type: string
                   enum:
