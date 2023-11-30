@@ -13553,15 +13553,6 @@ paths:
           in: query
         - schema:
             type: string
-            enum:
-              - PRODUCTION
-              - SANDBOX
-            description: "Filter by system "
-          required: false
-          name: system
-          in: query
-        - schema:
-            type: string
             default: created_at:desc
             description: "Order the results by a field. Optionally include asc or desc
               preceded by a colon (default is asc). Example:
@@ -13742,12 +13733,6 @@ paths:
                       - FIRST_SYNC_COMPLETE
                   minItems: 1
                   description: The events that will trigger the webhook
-                system:
-                  type: string
-                  enum:
-                    - PRODUCTION
-                    - SANDBOX
-                  description: The environment in which to run the webhook
                 active:
                   type: boolean
                   default: false
@@ -13781,7 +13766,6 @@ paths:
               required:
                 - url
                 - triggers
-                - system
                 - active
       responses:
         "200":
@@ -13905,12 +13889,6 @@ paths:
                       - header
                       - value
                   description: Optional headers to send with the webhook
-                system:
-                  type: string
-                  enum:
-                    - PRODUCTION
-                    - SANDBOX
-                  description: The environment in which to run the webhook
                 active:
                   type: boolean
                   description: Whether the webhook is active
