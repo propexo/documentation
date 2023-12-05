@@ -11157,6 +11157,373 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/service-request-vendors:
+    get:
+      tags:
+        - service-request-vendors
+      summary: Get all service request vendors
+      description: Get all service request vendors
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all service request vendors
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the service request vendor
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        account_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The account number associated with the service request vendor
+                        is_active:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the service request vendor is active
+                        name:
+                          type:
+                            - string
+                            - "null"
+                          description: The name associated with the service request vendor
+                        notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Notes associated with the service request vendor
+                        tax_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The tax payer identification number associated with the service
+                            request vendor
+                        type:
+                          type:
+                            - string
+                            - "null"
+                          description: The type associated with the service request vendor
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - account_number
+                        - is_active
+                        - name
+                        - notes
+                        - tax_id
+                        - type
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/service-request-vendors/{service_request_vendor_id}:
+    get:
+      tags:
+        - service-request-vendors
+      summary: Get service request vendor by ID
+      description: Get service request vendor by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: service_request_vendor_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get service request vendor by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the service request vendor
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      account_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The account number associated with the service request vendor
+                      is_active:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the service request vendor is active
+                      name:
+                        type:
+                          - string
+                          - "null"
+                        description: The name associated with the service request vendor
+                      notes:
+                        type:
+                          - string
+                          - "null"
+                        description: Notes associated with the service request vendor
+                      tax_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The tax payer identification number associated with the service
+                          request vendor
+                      type:
+                        type:
+                          - string
+                          - "null"
+                        description: The type associated with the service request vendor
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - account_number
+                      - is_active
+                      - name
+                      - notes
+                      - tax_id
+                      - type
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
   /v1/service-request-locations:
     get:
       tags:
@@ -13760,7 +14127,6 @@ paths:
                     - service_requests
                     - transactions
                     - units
-                    - vendors
                   description: The model for the webhook trigger to monitor. Only applies to
                     DATA_UPDATE and DATA_NEW triggers
               required:
@@ -15957,6 +16323,176 @@ paths:
                   - data
         "400":
           description: invalid input
+  /v1/service-request-vendors/properties/{property_id}:
+    get:
+      tags:
+        - service-request-vendors
+      summary: Get all service request vendors by property ID
+      description: Get all service request vendors by property ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: property_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get all service request vendors by property ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the service request vendor
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        account_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The account number associated with the service request vendor
+                        is_active:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the service request vendor is active
+                        name:
+                          type:
+                            - string
+                            - "null"
+                          description: The name associated with the service request vendor
+                        notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Notes associated with the service request vendor
+                        tax_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The tax payer identification number associated with the service
+                            request vendor
+                        type:
+                          type:
+                            - string
+                            - "null"
+                          description: The type associated with the service request vendor
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - account_number
+                        - is_active
+                        - name
+                        - notes
+                        - tax_id
+                        - type
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
   /v1/webhooks/{webhook_id}/triggers:
     post:
       tags:
@@ -16006,7 +16542,6 @@ paths:
                     - service_requests
                     - transactions
                     - units
-                    - vendors
                   description: The model for the webhook trigger to monitor. Only applies to
                     DATA_UPDATE and DATA_NEW triggers
               required:
