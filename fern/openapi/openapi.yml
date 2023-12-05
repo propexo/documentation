@@ -7598,6 +7598,9 @@ paths:
                         id:
                           type: string
                           description: The Propexo unique identifier for the property
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
                         created_at:
                           type: string
                           description: The date record first entered Propexo
@@ -7617,6 +7620,9 @@ paths:
                         x_id:
                           type: string
                           description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
                         city:
                           type:
                             - string
@@ -7760,11 +7766,13 @@ paths:
                           description: The property management system of record
                       required:
                         - id
+                        - property_id
                         - created_at
                         - updated_at
                         - last_seen
                         - x_created_at
                         - x_id
+                        - x_property_id
                         - city
                         - country
                         - county
@@ -7918,6 +7926,9 @@ paths:
                       id:
                         type: string
                         description: The Propexo unique identifier for the property
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
                       created_at:
                         type: string
                         description: The date record first entered Propexo
@@ -7937,6 +7948,9 @@ paths:
                       x_id:
                         type: string
                         description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
                       city:
                         type:
                           - string
@@ -8080,11 +8094,13 @@ paths:
                         description: The property management system of record
                     required:
                       - id
+                      - property_id
                       - created_at
                       - updated_at
                       - last_seen
                       - x_created_at
                       - x_id
+                      - x_property_id
                       - city
                       - country
                       - county
