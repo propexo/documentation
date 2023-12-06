@@ -61,8 +61,6 @@ navigation:
             path: ./docs/pages/use-cases/lead-lease.mdx
           - page: Create a Lead 
             path: ./docs/pages/use-cases/create-lead.mdx
-          - page: Maintenance Read Update 
-            path: ./docs/pages/use-cases/maintenance.mdx
 
 navbar-links: 
   - type: primary
