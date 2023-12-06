@@ -17515,7 +17515,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  result:
+                  results:
                     type: object
                     properties:
                       id:
@@ -17573,7 +17573,7 @@ paths:
                       - sync_cadence
                       - parameters
                 required:
-                  - result
+                  - results
         "400":
           description: invalid input
 webhooks: {}
