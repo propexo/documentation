@@ -7,6 +7,25 @@ servers:
     x-fern-server-name: Production
   - url: https://api.sandbox.propexo.com
     x-fern-server-name: Sandbox
+tags:
+  - name: amenities
+  - name: applicants
+  - name: applications
+  - name: employees
+  - name: events
+  - name: files
+  - name: general-ledger
+  - name: leads
+  - name: leases
+  - name: listings
+  - name: locations
+  - name: properties
+  - name: residents
+  - name: service-requests
+  - name: service-request-vendors
+  - name: units
+  - name: webhooks
+  - name: admin
 components:
   securitySchemes:
     bearerAuth:
