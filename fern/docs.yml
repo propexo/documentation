@@ -50,6 +50,10 @@ navigation:
           path: ./docs/pages/webhooks/sync-complete.mdx
   - tab: api          
     layout: 
+      - section: Introduction
+        contents:
+          - page: Getting started
+            path: ./docs/pages/authentication.mdx
       - api: API Reference
   - tab: use-cases 
     layout:
