@@ -6146,14 +6146,9 @@ paths:
                     - 15
                     - 18
                   description: The amount of months for the lease term
-                x_property_id:
+                resident_id:
                   type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the property from the integration vendor
-                x_resident_id:
-                  type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the resident from the integration vendor
+                  description: The Propexo unique identifier for the resident
                 scheduled_move_out_date:
                   type: string
                   format: date-time
@@ -6166,6 +6161,14 @@ paths:
                   type: string
                   format: date-time
                   description: The move-out date associated with the lease
+                x_property_id:
+                  type: string
+                  pattern: ^[0-9]+$
+                  description: The external ID of the property from the integration vendor
+                x_resident_id:
+                  type: string
+                  pattern: ^[0-9]+$
+                  description: The external ID of the resident from the integration vendor
                 primary_contact_id:
                   type: string
                   description: The Propexo unique identifier of the primary contact. This must
@@ -6214,7 +6217,7 @@ paths:
                   - data
         "400":
           description: invalid input
-  /v1/leases/{id}:
+  /v1/leases/{lease_id}:
     get:
       tags:
         - leases
@@ -6227,7 +6230,7 @@ paths:
             type: string
             description: The ID of the resource.
           required: true
-          name: id
+          name: lease_id
           in: path
         - schema:
             type: string
@@ -6559,7 +6562,7 @@ paths:
             type: string
             description: The ID of the resource.
           required: true
-          name: id
+          name: lease_id
           in: path
       requestBody:
         content:
@@ -6595,9 +6598,6 @@ paths:
                   default: false
                   description: Whether residents should be set to "past" status automatically at
                     the expiration of the lease
-                lease_id:
-                  type: string
-                  description: The Propexo unique identifier for the lease
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
@@ -6643,14 +6643,6 @@ paths:
                   type: string
                   format: date-time
                   description: The date of birth associated with the resident
-                x_property_id:
-                  type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the property from the integration vendor
-                x_resident_id:
-                  type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the resident from the integration vendor
                 scheduled_move_out_date:
                   type: string
                   format: date-time
