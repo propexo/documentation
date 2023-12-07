@@ -233,6 +233,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -357,6 +358,7 @@ paths:
                             - "null"
                           description: 'DEPRECATED: Please use the "units" field to see the associated
                             units with this amenity'
+                          deprecated: true
                         cost_in_cents:
                           type:
                             - number
@@ -793,6 +795,7 @@ paths:
                           - "null"
                         description: 'DEPRECATED: Please use the "units" field to see the associated
                           units with this amenity'
+                        deprecated: true
                       cost_in_cents:
                         type:
                           - number
@@ -1057,6 +1060,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use the Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -1168,6 +1172,7 @@ paths:
                             - string
                             - "null"
                           description: "DEPRECATED: Not in use."
+                          deprecated: true
                         x_lead_id:
                           type:
                             - string
@@ -1207,6 +1212,7 @@ paths:
                                   - string
                                   - "null"
                                 description: DEPRECATED. Use status_raw
+                                deprecated: true
                               status_raw:
                                 type:
                                   - string
@@ -1771,6 +1777,7 @@ paths:
                           - string
                           - "null"
                         description: "DEPRECATED: Not in use."
+                        deprecated: true
                       x_lead_id:
                         type:
                           - string
@@ -1810,6 +1817,7 @@ paths:
                                 - string
                                 - "null"
                               description: DEPRECATED. Use status_raw
+                              deprecated: true
                             status_raw:
                               type:
                                 - string
@@ -2291,6 +2299,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use the Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -2425,6 +2434,7 @@ paths:
                                   - string
                                   - "null"
                                 description: DEPRECATED. Use status_raw
+                                deprecated: true
                               status_raw:
                                 type:
                                   - string
@@ -2604,6 +2614,7 @@ paths:
                                 - string
                                 - "null"
                               description: DEPRECATED. Use status_raw
+                              deprecated: true
                             status_raw:
                               type:
                                 - string
@@ -4419,6 +4430,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use the Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -5633,12 +5645,14 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use the Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
         - schema:
             type: string
             description: "Deprecated: Use the Propexo unit_id instead"
+            deprecated: true
           required: false
           name: x_unit_id
           in: query
@@ -5751,6 +5765,7 @@ paths:
                             - string
                             - "null"
                           description: Deprecated. Use residents_meta_data instead
+                          deprecated: true
                         x_unit_id:
                           type:
                             - string
@@ -5838,11 +5853,13 @@ paths:
                             - string
                             - "null"
                           description: "DEPRECATED: Reference residents_meta_data instead"
+                          deprecated: true
                         realized_move_out_date:
                           type:
                             - string
                             - "null"
                           description: "DEPRECATED: Reference residents_meta_data instead"
+                          deprecated: true
                         rent_amount_in_cents:
                           type:
                             - number
@@ -5869,11 +5886,13 @@ paths:
                             - string
                             - "null"
                           description: "DEPRECATED: Reference residents_meta_data instead"
+                          deprecated: true
                         scheduled_move_out_date:
                           type:
                             - string
                             - "null"
                           description: "DEPRECATED: Reference residents_meta_data instead"
+                          deprecated: true
                         signature_date:
                           type:
                             - string
@@ -5889,6 +5908,7 @@ paths:
                             - string
                             - "null"
                           description: DEPRECATED. Use status_normalized
+                          deprecated: true
                         status_normalized:
                           type:
                             - string
@@ -6323,6 +6343,7 @@ paths:
                           - string
                           - "null"
                         description: Deprecated. Use residents_meta_data instead
+                        deprecated: true
                       x_unit_id:
                         type:
                           - string
@@ -6410,11 +6431,13 @@ paths:
                           - string
                           - "null"
                         description: "DEPRECATED: Reference residents_meta_data instead"
+                        deprecated: true
                       realized_move_out_date:
                         type:
                           - string
                           - "null"
                         description: "DEPRECATED: Reference residents_meta_data instead"
+                        deprecated: true
                       rent_amount_in_cents:
                         type:
                           - number
@@ -6441,11 +6464,13 @@ paths:
                           - string
                           - "null"
                         description: "DEPRECATED: Reference residents_meta_data instead"
+                        deprecated: true
                       scheduled_move_out_date:
                         type:
                           - string
                           - "null"
                         description: "DEPRECATED: Reference residents_meta_data instead"
+                        deprecated: true
                       signature_date:
                         type:
                           - string
@@ -6461,6 +6486,7 @@ paths:
                           - string
                           - "null"
                         description: DEPRECATED. Use status_normalized
+                        deprecated: true
                       status_normalized:
                         type:
                           - string
@@ -6750,6 +6776,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -6988,11 +7015,13 @@ paths:
                             - string
                             - "null"
                           description: "Deprecated: Use address_1"
+                          deprecated: true
                         street_address_2:
                           type:
                             - string
                             - "null"
                           description: "Deprecated: Use address_2"
+                          deprecated: true
                         address_1:
                           type:
                             - string
@@ -7301,11 +7330,13 @@ paths:
                           - string
                           - "null"
                         description: "Deprecated: Use address_1"
+                        deprecated: true
                       street_address_2:
                         type:
                           - string
                           - "null"
                         description: "Deprecated: Use address_2"
+                        deprecated: true
                       address_1:
                         type:
                           - string
@@ -7518,6 +7549,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use x_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -7699,6 +7731,7 @@ paths:
                             - integer
                             - "null"
                           description: "Deprecated: Use square_feet"
+                          deprecated: true
                         square_feet:
                           type:
                             - integer
@@ -7714,11 +7747,13 @@ paths:
                             - string
                             - "null"
                           description: "Deprecated: Use address_1"
+                          deprecated: true
                         street_address_2:
                           type:
                             - string
                             - "null"
                           description: "Deprecated: Use address_2"
+                          deprecated: true
                         address_1:
                           type:
                             - string
@@ -8027,6 +8062,7 @@ paths:
                           - integer
                           - "null"
                         description: "Deprecated: Use square_feet"
+                        deprecated: true
                       square_feet:
                         type:
                           - integer
@@ -8042,11 +8078,13 @@ paths:
                           - string
                           - "null"
                         description: "Deprecated: Use address_1"
+                        deprecated: true
                       street_address_2:
                         type:
                           - string
                           - "null"
                         description: "Deprecated: Use address_2"
+                        deprecated: true
                       address_1:
                         type:
                           - string
@@ -8286,6 +8324,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -8389,6 +8428,7 @@ paths:
                             - string
                             - "null"
                           description: Deprecated. Use leases_meta_data instead
+                          deprecated: true
                         leases_meta_data:
                           type: array
                           items:
@@ -8928,6 +8968,7 @@ paths:
                           - string
                           - "null"
                         description: Deprecated. Use leases_meta_data instead
+                        deprecated: true
                       leases_meta_data:
                         type: array
                         items:
@@ -12249,6 +12290,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use the Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -12415,6 +12457,7 @@ paths:
                             - PENDING
                             - REJECTED
                           description: DEPRECATED. Use approval_status_normalized.
+                          deprecated: true
                         approval_status_normalized:
                           type:
                             - string
@@ -12482,6 +12525,7 @@ paths:
                             - MONEYORDER
                             - OTHER
                           description: DEPRECATED. Use payment_method_normalized.
+                          deprecated: true
                         payment_method_normalized:
                           type:
                             - string
@@ -12521,6 +12565,7 @@ paths:
                             - OTHER
                             - PAYMENT
                           description: DEPRECATED. Use transaction_type_normalized.
+                          deprecated: true
                         transaction_type_normalized:
                           type:
                             - string
@@ -12856,6 +12901,7 @@ paths:
                           - PENDING
                           - REJECTED
                         description: DEPRECATED. Use approval_status_normalized.
+                        deprecated: true
                       approval_status_normalized:
                         type:
                           - string
@@ -12923,6 +12969,7 @@ paths:
                           - MONEYORDER
                           - OTHER
                         description: DEPRECATED. Use payment_method_normalized.
+                        deprecated: true
                       payment_method_normalized:
                         type:
                           - string
@@ -12962,6 +13009,7 @@ paths:
                           - OTHER
                           - PAYMENT
                         description: DEPRECATED. Use transaction_type_normalized.
+                        deprecated: true
                       transaction_type_normalized:
                         type:
                           - string
@@ -13085,6 +13133,7 @@ paths:
         - schema:
             type: string
             description: "Deprecated: Use the Propexo property_id instead"
+            deprecated: true
           required: false
           name: x_property_id
           in: query
@@ -13246,6 +13295,7 @@ paths:
                             - boolean
                             - "null"
                           description: "DEPRECATED: Use listings endpoints."
+                          deprecated: true
                         is_vacant:
                           type:
                             - boolean
@@ -13287,11 +13337,13 @@ paths:
                             - string
                             - "null"
                           description: "Deprecated: Use address_1"
+                          deprecated: true
                         street_address_2:
                           type:
                             - string
                             - "null"
                           description: "Deprecated: Use address_2"
+                          deprecated: true
                         address_1:
                           type:
                             - string
@@ -13701,6 +13753,7 @@ paths:
                           - boolean
                           - "null"
                         description: "DEPRECATED: Use listings endpoints."
+                        deprecated: true
                       is_vacant:
                         type:
                           - boolean
@@ -13742,11 +13795,13 @@ paths:
                           - string
                           - "null"
                         description: "Deprecated: Use address_1"
+                        deprecated: true
                       street_address_2:
                         type:
                           - string
                           - "null"
                         description: "Deprecated: Use address_2"
+                        deprecated: true
                       address_1:
                         type:
                           - string
@@ -14975,6 +15030,7 @@ paths:
                             - "null"
                           description: "DEPRECATED: see specific PMS credentials. Base URL for the
                             integration vendor API"
+                          deprecated: true
                         is_archived:
                           type: boolean
                           description: Whether or not the integration is archived
@@ -15366,6 +15422,7 @@ paths:
                   format: uri
                   description: "DEPRECATED: see specific PMS credentials. Base URL for the
                     integration vendor API"
+                  deprecated: true
               required:
                 - integration_vendor
                 - credentials
@@ -15440,6 +15497,7 @@ paths:
                           - "null"
                         description: "DEPRECATED: see specific PMS credentials. Base URL for the
                           integration vendor API"
+                        deprecated: true
                       customer_id:
                         type: string
                         description: The unique identifier for the customer
@@ -16818,6 +16876,7 @@ paths:
                           - "null"
                         description: "DEPRECATED: see specific PMS credentials. Base URL for the
                           integration vendor API"
+                        deprecated: true
                       is_archived:
                         type: boolean
                         description: Whether or not the integration is archived
@@ -17212,6 +17271,7 @@ paths:
                   format: uri
                   description: "DEPRECATED: see specific PMS credentials. Base URL for the
                     integration vendor API"
+                  deprecated: true
       responses:
         "200":
           description: Update an integration
@@ -17281,6 +17341,7 @@ paths:
                           - "null"
                         description: "DEPRECATED: see specific PMS credentials. Base URL for the
                           integration vendor API"
+                        deprecated: true
                       is_archived:
                         type: boolean
                         description: Whether or not the integration is archived
