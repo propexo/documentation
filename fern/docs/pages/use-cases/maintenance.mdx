@@ -1,0 +1,34 @@
+## Workflow
+
+See service requests filed by residents in their portal and update the service request when a maintenance pro has been assigned.
+
+## Relevant Business Types
+
+Resident benefits, maintenance-as-a-service, resident amenities, facilities management
+
+## Description
+
+If your company fulfills service requests filed by residents or site staff within a property management system, you will need to ingest these service requests on an ongoing basis and then update them as you resolve the issues.
+
+## Steps
+
+**Read an existing service request**
+
+**Update service request**
+        <CodeBlock title="PUT /<service_request_id>">
+                                                                        ```bash
+        curl --request PUT \
+        --url 'https://api.propexo.com/v1/service-requests/<service_request_id>' \
+        --data '{
+            "service_request_category_id": "a06c0231-3977-4114-b52c-b81b234c2831",
+            "service_request_vendor_id": "6f431e3a-f5f5-4950-8a4d-517c46f1f229",
+            "service_description": "There is a leak in the kitchen.",
+            "phone_1": "123-123-1234",
+            "email_1": "test@test.com",
+            "scheduled_start_date": "2019-08-24T14:15:22Z",
+            "due_date": "2019-08-24T14:15:22Z"
+        }'
+        ```
+                </CodeBlock>
+**Any employees, vendors, and/or residents associated with the service request will be able to see these updates within the property management system if they have access to the specific fields that were updated.**
+```
