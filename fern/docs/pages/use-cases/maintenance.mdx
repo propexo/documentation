@@ -15,8 +15,9 @@ If your company fulfills service requests filed by residents or site staff withi
 **Read an existing service request**
 
 **Update service request**
+
         <CodeBlock title="PUT /<service_request_id>">
-        `bash
+                ```bash
         curl --request PUT \
         --url 'https://api.propexo.com/v1/service-requests/<service_request_id>' \
         --data '{
@@ -28,6 +29,8 @@ If your company fulfills service requests filed by residents or site staff withi
             "scheduled_start_date": "2019-08-24T14:15:22Z",
             "due_date": "2019-08-24T14:15:22Z"
         }'
-        `
+        ```
                 </CodeBlock>
+
+
 **Any employees, vendors, and/or residents associated with the service request will be able to see these updates within the property management system if they have access to the specific fields that were updated.**
