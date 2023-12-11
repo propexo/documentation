@@ -3482,34 +3482,19 @@ paths:
                 event_datetime:
                   type: string
                   format: date-time
-                  description: The date of the prospect activity that has already occurred.
+                  description: The date when the event will occur
                 notes:
                   type: string
-                  description: Notes to associate with the event.
+                  description: Notes associated with the event
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                event_type_id:
+                  type: string
+                  description: The Propexo unique identifier for the event type
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
-                x_leasing_agent_id:
-                  type: string
-                  description: The external ID of the leasing agent from the integration vendor
-                x_type_id:
-                  type: string
-                  description: The PMS id for the activity type.
-                x_task_id:
-                  type: string
-                  description: The PMS id for the task.
-                x_quote_id:
-                  type: string
-                  description: The PMS id for the quote.
-                x_prc_id:
-                  type: string
-                  description: The PMS id for the PRC.
-                x_guestcard_journal_id:
-                  type: string
-                  description: The PMS id of the guest card journal for the event.
-                x_lost_traffic_reason_id:
-                  type: string
-                  description: The PMS id for the lost traffic reason.
                 status:
                   type: string
                   enum:
@@ -3518,28 +3503,7 @@ paths:
                     - UNQUALIFIED
                     - ACTIVE
                     - FUTURE
-                  description: The status of the activity.
-                date_create:
-                  type: string
-                  format: date-time
-                  description: The date the event was created.
-                building_number:
-                  type: string
-                  description: The building number of the specific prospect requesting the
-                    activity or appointment.
-                comments:
-                  type: string
-                  description: The comments for a specific activity or appointment.
-                status_changed:
-                  type: boolean
-                  description: Specifies whether the status of the activity is changed or updated.
-                is_task_completed:
-                  type: boolean
-                  description: The identifier for whether the activity has been completed.
-                call_recording_url:
-                  type: string
-                  format: uri
-                  description: The call recording URL of the appointment.
+                  description: The status associated with the event
               required:
                 - integration_id
       responses:
