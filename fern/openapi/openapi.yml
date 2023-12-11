@@ -17397,6 +17397,123 @@ paths:
                   - success
         "400":
           description: invalid input
+  /v1/admin/integrations/{integration_id}/properties:
+    get:
+      tags:
+        - admin
+      summary: Get all my property configurations
+      description: Get all my property configurations
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: integration_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get all my property configurations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: number
+                    required:
+                      - orderBy
+                      - total
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: ID
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the location associated with the
+                            property. This is the location specified in
+                            RentManager
+                        enabled:
+                          type: boolean
+                          description: Whether the property is enabled and will have data ingested
+                      required:
+                        - id
+                        - created_at
+                        - integration_id
+                        - property_id
+                        - location_id
+                        - enabled
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
   /v1/admin/integrations/{integration_id}/job-schedules:
     get:
       tags:
