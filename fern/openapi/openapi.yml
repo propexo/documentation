@@ -14545,8 +14545,9 @@ paths:
     get:
       tags:
         - admin
-      summary: Get a link to the job log raw request and response data
-      description: Get a link to the job log raw request and response data
+      summary: Get a link to the job log raw request and response data of a write job.
+      description: Get a link to the job log raw request and response data of a write
+        job. Only POST and PUT job payloads can be viewed.
       security:
         - bearerAuth: []
       parameters:
@@ -14558,7 +14559,8 @@ paths:
           in: path
       responses:
         "200":
-          description: Get a link to the job log raw request and response data
+          description: Get a link to the job log raw request and response data of a write
+            job. Only POST and PUT job payloads can be viewed.
           content:
             application/json:
               schema:
