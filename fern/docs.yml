@@ -18,10 +18,12 @@ tabs:
 navigation:
   - tab: documentation
     layout:
-    - section: Introduction
+    - section: Getting Started
       contents: 
         - page: Overview
           path: ./docs/pages/overview.mdx
+        - page: Your First Integration
+          path: ./docs/pages/getting-started/first-integration.mdx
     - section: About the API
       contents: 
         - page: Authentication 
@@ -53,7 +55,7 @@ navigation:
       - section: Introduction
         contents:
           - page: Getting started
-            path: ./docs/pages/authentication.mdx
+            path: ./docs/pages/overview.mdx
       - api: API Reference
   - tab: use-cases 
     layout:
