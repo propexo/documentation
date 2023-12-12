@@ -1,0 +1,33 @@
+# Adding Your First Integration
+
+## Overview
+The following is a step-by-step guide to adding your first Property Management System (PMS) integration to your Propexo account. To complete this guide, you will need to have a Propexo account and your own PMS credentials for one of our supported integrations. If you do not have a Propexo account, please contact our [Sales team](https://www.propexo.com/schedule-a-call).
+
+[![Propexo Integration](../../assets/first-integration.gif)](https://app.propexo.com/integrations)
+
+## Steps (screen recording above)
+
+### 1. Navigate to the Integrations Page
+Log in to your Propexo account and navigate to the [Integrations Page](https://app.propexo.com/integrations).
+
+### 2. Select the Property Management System
+Click the Property Management System you would like to integrate with. For this example, we will use [Buildium](https://www.buildium.com/).
+
+### 3. Add a "Sandbox Customer"
+Be sure the "Sandbox Customers" tab is selected, then click the "+ New Customer" button on the right side of the page. This will open a modal where you can enter your PMS credentials.
+
+### 4. Enter your Sandbox Credentials
+Enter a name for your customer (e.g. "Acme Properties - Sandbox") and your PMS credentials. Each PMS has a different set of requirements for credentials. For Buildium, you will need to enter your Buildium client ID and secret. Click the "Submit" button when you are done.
+
+### Step 5. Data Access
+After submitting your credentials, you will be redirected to the "Integration Details" page. Under the "Data Access" section of this page, Propexo will run through a series of tests to ensure that your credentials are valid and that we can access your customer's data. This process can take up to 60 seconds. For certain integrations, the results are binary — meaning we either have access to all of the data or none of the data. For other integrations, access is more granular. For example, we may have access to Properties, Residents, and Leases, but not Applicants and Applications. In this case, access is provisioned either by the PMS, or your customer, or both. You will need to work with your customer to ensure that we have access to all of the data you need.
+
+### Step 6. Your First Data Sync
+By default, your integration will be disabled. We do this to ensure that we have access to all of the data you need before we start syncing. To enable your integration, click the "Enable" button under the three dots in the top right section of the page.
+
+Once the integration is enabled, we will begin our first attempt to sync your customer's data into Propexo. This process can take anywhere between 60 seconds up to multiple hours — depending on your customer's data volume. Larger customers can easily take multiple hours to complete a sync. It is possible you may need to refresh the page during this time to see the results of the sync.
+
+Once the sync is complete, you will see a "Last Ran" timestamp under the "Last Ran Jobs" section of the page. If the sync was successful, you will also see a "Status" of "Success". If the sync was not successful, you will see a "Status" of "Failed". If the sync failed unexpectedly, please contact Support.
+
+### Important
+It is important not to test the API until after the first sync is complete. If you test the API before the first sync is complete, you will receive an empty response. Since API responses are cached for up to 15 minutes, this will result in a delay of your ability to see data. If this happens, please wait 15 minutes and try again. The cache will expire and you will receive the correct response.
