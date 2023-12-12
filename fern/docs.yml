@@ -22,6 +22,8 @@ navigation:
       contents: 
         - page: Overview
           path: ./docs/pages/overview.mdx
+        - page: Sample Integration
+          path: ./docs/pages/getting-started/propexo-sandbox.mdx
         - page: Your First Integration
           path: ./docs/pages/getting-started/first-integration.mdx
     - section: About the API
@@ -54,7 +56,7 @@ navigation:
     layout: 
       - section: Introduction
         contents:
-          - page: Getting started
+          - page: Overview
             path: ./docs/pages/overview.mdx
       - api: API Reference
   - tab: use-cases 
