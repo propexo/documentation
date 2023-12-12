@@ -55,7 +55,7 @@ navigation:
       - section: Introduction
         contents:
           - page: Getting started
-            path: ./docs/pages/getting-started.mdx
+            path: ./docs/pages/overview.mdx
       - api: API Reference
   - tab: use-cases 
     layout:
