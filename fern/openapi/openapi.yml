@@ -17622,6 +17622,116 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/admin/integrations/{integration_id}/properties/{property_configuration_id}:
+    put:
+      tags:
+        - admin
+      summary: Update a property configuration
+      description: Update a property configuration
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          name: integration_id
+          in: path
+        - schema:
+            type: string
+            description: The ID of the property configuration record.
+          required: true
+          name: property_configuration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                order-by:
+                  type: string
+                  default: created_at:desc
+                  description: "Order the results by a field. Optionally include asc or desc
+                    preceded by a colon (default is asc). Example:
+                    ?order-by=updated_at:desc"
+                offset:
+                  type:
+                    - integer
+                    - "null"
+                  minimum: 0
+                  default: 0
+                  description: Can be used for paginating results
+                limit:
+                  type:
+                    - integer
+                    - "null"
+                  minimum: 0
+                  maximum: 250
+                  default: 100
+                  description: A number between 1 and 250 to determine the number of results to
+                    return in a single query
+                enabled:
+                  type: boolean
+                  description: Whether or not we should be syncing data for this property on this
+                    integration.
+                trigger_integration_resync:
+                  type: boolean
+                  default: false
+                  description: Triggers a resync of the integration to ingest new property data.
+                    This is only allowed in sandbox and at least five minutes
+                    after the most recent sync has completed for this
+                    integration.
+              required:
+                - offset
+                - limit
+                - enabled
+      responses:
+        "200":
+          description: Update a property configuration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: ID
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                      location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the location associated with the
+                          property. This is the location specified in
+                          RentManager
+                      enabled:
+                        type: boolean
+                        description: Whether the property is enabled and will have data ingested
+                      additional_message:
+                        type: string
+                    required:
+                      - id
+                      - created_at
+                      - integration_id
+                      - property_id
+                      - location_id
+                      - enabled
+                required:
+                  - results
+        "400":
+          description: invalid input
   /v1/admin/integrations/{integration_id}/job-schedules/{job_schedule_id}:
     get:
       tags:
