@@ -31,17 +31,17 @@ jobs:
           echo "$output"
           # Extract the URL and write to a file
           echo "$output" | grep -oP '(?<=Published docs to )https://[^\s]*' > $OUTPUT_PATH
+          
       - name: Comment PR with URL using github-actions bot
-        if: env.OUTPUT_PATH
+        if: steps.generate_docs.outputs.preview_url != ''
         uses: actions/github-script@v4
         with:
           script: |
-            const fs = require('fs');
-            const output_path = process.env.OUTPUT_PATH;
-            const preview_url = fs.readFileSync(output_path, 'utf8').trim();
+            const preview_url = '${{ steps.generate_docs.outputs.preview_url }}';
             const issue_number = context.issue.number;
             github.issues.createComment({
               ...context.repo,
               issue_number: issue_number,
               body: `Published docs preview URL: ${preview_url}`
             })
+
