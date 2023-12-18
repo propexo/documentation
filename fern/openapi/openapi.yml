@@ -15108,6 +15108,10 @@ paths:
                             - string
                             - "null"
                           description: The timestamp of the last time a sync was completed.
+                        new_properties_are_enabled:
+                          type: boolean
+                          description: Whether or not properties need to be approved before ingesting data
+                            for them.
                         integration_interfaces:
                           type: array
                           items:
@@ -15234,6 +15238,7 @@ paths:
                         - base_url
                         - is_archived
                         - last_completed_sync
+                        - new_properties_are_enabled
                         - integration_interfaces
                         - models
                         - can_authenticate
@@ -15492,6 +15497,11 @@ paths:
                   description: "DEPRECATED: see specific PMS credentials. Base URL for the
                     integration vendor API"
                   deprecated: true
+                new_properties_are_enabled:
+                  type: boolean
+                  default: true
+                  description: Whether or not properties need to be approved before ingesting data
+                    for them.
               required:
                 - integration_vendor
                 - credentials
@@ -15577,6 +15587,10 @@ paths:
                         type: object
                         additionalProperties:
                           type: string
+                      new_properties_are_enabled:
+                        type: boolean
+                        description: Whether or not properties need to be approved before ingesting data
+                          for them.
                     required:
                       - id
                       - created_at
@@ -15592,6 +15606,7 @@ paths:
                       - customer_id
                       - is_archived
                       - ping_results
+                      - new_properties_are_enabled
                 required:
                   - result
         "400":
@@ -16954,6 +16969,10 @@ paths:
                           - string
                           - "null"
                         description: The timestamp of the last time a sync was completed.
+                      new_properties_are_enabled:
+                        type: boolean
+                        description: Whether or not properties need to be approved before ingesting data
+                          for them.
                       integration_interfaces:
                         type: array
                         items:
@@ -17080,6 +17099,7 @@ paths:
                       - base_url
                       - is_archived
                       - last_completed_sync
+                      - new_properties_are_enabled
                       - integration_interfaces
                       - models
                       - can_authenticate
@@ -17341,6 +17361,10 @@ paths:
                   description: "DEPRECATED: see specific PMS credentials. Base URL for the
                     integration vendor API"
                   deprecated: true
+                new_properties_are_enabled:
+                  type: boolean
+                  description: Whether or not properties need to be approved before ingesting data
+                    for them.
       responses:
         "200":
           description: Update an integration
@@ -17414,6 +17438,10 @@ paths:
                       is_archived:
                         type: boolean
                         description: Whether or not the integration is archived
+                      new_properties_are_enabled:
+                        type: boolean
+                        description: Whether or not properties need to be approved before ingesting data
+                          for them.
                     required:
                       - id
                       - created_at
@@ -17427,6 +17455,7 @@ paths:
                       - max_request_cadence
                       - base_url
                       - is_archived
+                      - new_properties_are_enabled
                 required:
                   - result
         "400":
