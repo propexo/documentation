@@ -17835,6 +17835,114 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/admin/integrations/{integration_id}/rate-limits:
+    get:
+      tags:
+        - admin
+      summary: The the current PMS rate limits associated with your integration.
+      description: The the current PMS rate limits associated with your integration.
+        Currently only supported for RentManager and Entrata
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The unique identifier for the integration
+          required: true
+          name: integration_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: The the current PMS rate limits associated with your integration.
+            Currently only supported for RentManager and Entrata
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    anyOf:
+                      - type: object
+                        properties:
+                          integration_id:
+                            type: string
+                            description: The Propexo unique identifier for the integration
+                          updated_at:
+                            type: string
+                            description: The last time this rate limit was recorded
+                          day_limit:
+                            type:
+                              - number
+                              - "null"
+                            description: The maxmimum number of requests per day we can query
+                          hour_limit:
+                            type:
+                              - number
+                              - "null"
+                            description: The maxmimum number of requests per hour we can query
+                          minute_limit:
+                            type:
+                              - number
+                              - "null"
+                            description: The maxmimum number of requests per minute we can query
+                        required:
+                          - integration_id
+                          - updated_at
+                          - day_limit
+                          - hour_limit
+                          - minute_limit
+                      - type: object
+                        properties:
+                          integration_id:
+                            type: string
+                            description: The Propexo unique identifier for the integration
+                          updated_at:
+                            type: string
+                            description: The last time this rate limit was recorded
+                          minute_limit:
+                            type:
+                              - number
+                              - "null"
+                            description: The maxmimum number of requests per minute we can query
+                        required:
+                          - integration_id
+                          - updated_at
+                          - minute_limit
+                required:
+                  - results
+        "400":
+          description: invalid input
   /v1/admin/integrations/{integration_id}/job-schedules/{job_schedule_id}:
     get:
       tags:
