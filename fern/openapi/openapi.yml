@@ -9706,6 +9706,11 @@ paths:
                             - string
                             - "null"
                           description: Details about the service request
+                        status_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw status associated with the service request
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -9741,6 +9746,7 @@ paths:
                         - service_category
                         - service_description
                         - service_details
+                        - status_raw
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -10069,6 +10075,11 @@ paths:
                           - string
                           - "null"
                         description: Details about the service request
+                      status_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw status associated with the service request
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -10104,6 +10115,7 @@ paths:
                       - service_category
                       - service_description
                       - service_details
+                      - status_raw
                       - integration_id
                       - integration_vendor
                       - property_id
