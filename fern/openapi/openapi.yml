@@ -15448,6 +15448,10 @@ paths:
                         licensekey:
                           type: string
                           minLength: 1
+                        pmcId:
+                          type: string
+                        siteId:
+                          type: string
                       required:
                         - baseUrl
                         - licensekey
@@ -17316,6 +17320,10 @@ paths:
                         licensekey:
                           type: string
                           minLength: 1
+                        pmcId:
+                          type: string
+                        siteId:
+                          type: string
                       required:
                         - baseUrl
                         - licensekey
