@@ -3420,6 +3420,53 @@ paths:
                 name:
                   type: string
                   description: The name associated with the event type
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit. Only some PMS events
+                    use this, including "Show" and "Appointment"
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                reasons_for_event:
+                  type: string
+                  description: The reasons for the event
+                notes:
+                  type: string
+                  maxLength: 256
+                  description: Notes associated with the event
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                time_from:
+                  type: string
+                time_to:
+                  type: string
+                title:
+                  type: string
+                  description: The title associated with the event
+                event_name:
+                  type: string
+                  enum:
+                    - Other
+                    - WalkIn
+                    - Chat
+                    - Email
+                    - Text
+                    - Webservice
+                    - Appointment
+                    - Show
+                    - Application
+                    - SelfGuidedTour
+                    - Application
+                  description: The name or type of event
+                agent_name:
+                  type: string
+                  description: The name of the leasing agent associated with the event
               required:
                 - integration_id
       responses:
@@ -3465,26 +3512,25 @@ paths:
                 event_name:
                   type: string
                   enum:
-                    - E-mail
-                    - Event
-                    - Fax/Letter
-                    - Internet
-                    - Notes
-                    - Phone call
-                    - Pre-recorded - Tour
-                    - Self-guided - Tour
-                    - Signature
-                    - Text message
-                    - Videotelephony - Tour
-                    - Visit
-                    - Visit (return)
-                  description: The name of the event in the PMS. These are specific to the PMS.
+                    - Other
+                    - WalkIn
+                    - Chat
+                    - Email
+                    - Text
+                    - Webservice
+                    - Appointment
+                    - Show
+                    - Application
+                    - SelfGuidedTour
+                    - Application
+                  description: The name or type of event
                 event_datetime:
                   type: string
                   format: date-time
                   description: The date when the event will occur
                 notes:
                   type: string
+                  maxLength: 256
                   description: Notes associated with the event
                 employee_id:
                   type: string
@@ -3494,7 +3540,8 @@ paths:
                   description: The Propexo unique identifier for the event type
                 unit_id:
                   type: string
-                  description: The Propexo unique identifier for the unit
+                  description: The Propexo unique identifier for the unit. Only some PMS events
+                    use this, including "Show" and "Appointment"
                 status:
                   type: string
                   enum:
@@ -3504,6 +3551,23 @@ paths:
                     - ACTIVE
                     - FUTURE
                   description: The status associated with the event
+                reasons_for_event:
+                  type: string
+                  description: The reasons for the event
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                time_from:
+                  type: string
+                time_to:
+                  type: string
+                title:
+                  type: string
+                  description: The title associated with the event
+                agent_name:
+                  type: string
+                  description: The name of the leasing agent associated with the event
               required:
                 - integration_id
       responses:
@@ -3552,6 +3616,33 @@ paths:
                 name:
                   type: string
                   description: The name associated with the event type
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                reasons_for_event:
+                  type: string
+                  description: The reasons for the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                time_from:
+                  type: string
+                time_to:
+                  type: string
+                title:
+                  type: string
+                  description: The title associated with the event
               required:
                 - integration_id
       responses:
