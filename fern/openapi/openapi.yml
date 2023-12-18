@@ -17598,13 +17598,6 @@ paths:
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
-                        location_id:
-                          type:
-                            - string
-                            - "null"
-                          description: The Propexo unique identifier for the location associated with the
-                            property. This is the location specified in
-                            RentManager
                         enabled:
                           type: boolean
                           description: Whether the property is enabled and will have data ingested
@@ -17613,7 +17606,6 @@ paths:
                         - created_at
                         - integration_id
                         - property_id
-                        - location_id
                         - enabled
                 required:
                   - meta
@@ -17849,13 +17841,6 @@ paths:
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
-                      location_id:
-                        type:
-                          - string
-                          - "null"
-                        description: The Propexo unique identifier for the location associated with the
-                          property. This is the location specified in
-                          RentManager
                       enabled:
                         type: boolean
                         description: Whether the property is enabled and will have data ingested
@@ -17866,7 +17851,6 @@ paths:
                       - created_at
                       - integration_id
                       - property_id
-                      - location_id
                       - enabled
                 required:
                   - results
