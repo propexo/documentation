@@ -15340,6 +15340,7 @@ paths:
                         - username
                         - password
                         - companyId
+                      description: Entrata authentication credentials
                     - type: object
                       properties:
                         accessToken:
@@ -15349,6 +15350,7 @@ paths:
                       required:
                         - accessToken
                         - companyId
+                      description: Entrata authentication credentials
                     - type: object
                       properties:
                         username:
@@ -15371,6 +15373,7 @@ paths:
                         - Username
                         - Password
                         - companyId
+                      description: RentManager authentication credentials
                     - type: object
                       properties:
                         PartnerToken:
@@ -15380,6 +15383,7 @@ paths:
                       required:
                         - PartnerToken
                         - companyId
+                      description: RentManager authentication credentials
                     - type: object
                       properties:
                         apiKey:
@@ -17212,6 +17216,7 @@ paths:
                         - username
                         - password
                         - companyId
+                      description: Entrata authentication credentials
                     - type: object
                       properties:
                         accessToken:
@@ -17221,6 +17226,7 @@ paths:
                       required:
                         - accessToken
                         - companyId
+                      description: Entrata authentication credentials
                     - type: object
                       properties:
                         username:
@@ -17243,6 +17249,7 @@ paths:
                         - Username
                         - Password
                         - companyId
+                      description: RentManager authentication credentials
                     - type: object
                       properties:
                         PartnerToken:
@@ -17252,6 +17259,7 @@ paths:
                       required:
                         - PartnerToken
                         - companyId
+                      description: RentManager authentication credentials
                     - type: object
                       properties:
                         apiKey:
