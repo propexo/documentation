@@ -3817,9 +3817,7 @@ paths:
                           type: string
                           description: The external ID from the integration vendor
                         x_property_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                           description: The external ID of the property from the integration vendor
                         x_location_id:
                           type:
@@ -3967,9 +3965,7 @@ paths:
                         type: string
                         description: The external ID from the integration vendor
                       x_property_id:
-                        type:
-                          - string
-                          - "null"
+                        type: string
                         description: The external ID of the property from the integration vendor
                       x_location_id:
                         type:
@@ -4175,9 +4171,7 @@ paths:
                           type: string
                           description: The external ID from the integration vendor
                         x_property_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                           description: The external ID of the property from the integration vendor
                         x_location_id:
                           type:
@@ -4381,9 +4375,7 @@ paths:
                         type: string
                         description: The external ID from the integration vendor
                       x_property_id:
-                        type:
-                          - string
-                          - "null"
+                        type: string
                         description: The external ID of the property from the integration vendor
                       x_location_id:
                         type:
@@ -9630,9 +9622,7 @@ paths:
                           type: string
                           description: The external ID from the integration vendor
                         x_property_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                           description: The external ID of the property from the integration vendor
                         x_location_id:
                           type:
@@ -9999,9 +9989,7 @@ paths:
                         type: string
                         description: The external ID from the integration vendor
                       x_property_id:
-                        type:
-                          - string
-                          - "null"
+                        type: string
                         description: The external ID of the property from the integration vendor
                       x_location_id:
                         type:
@@ -10344,9 +10332,7 @@ paths:
                           type: string
                           description: The external ID from the integration vendor
                         x_property_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                           description: The external ID of the property from the integration vendor
                         x_location_id:
                           type:
@@ -10501,9 +10487,7 @@ paths:
                         type: string
                         description: The external ID from the integration vendor
                       x_property_id:
-                        type:
-                          - string
-                          - "null"
+                        type: string
                         description: The external ID of the property from the integration vendor
                       x_location_id:
                         type:
@@ -10701,9 +10685,7 @@ paths:
                           type: string
                           description: The external ID from the integration vendor
                         x_property_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                           description: The external ID of the property from the integration vendor
                         x_location_id:
                           type:
@@ -10858,9 +10840,7 @@ paths:
                         type: string
                         description: The external ID from the integration vendor
                       x_property_id:
-                        type:
-                          - string
-                          - "null"
+                        type: string
                         description: The external ID of the property from the integration vendor
                       x_location_id:
                         type:
@@ -11058,9 +11038,7 @@ paths:
                           type: string
                           description: The external ID from the integration vendor
                         x_property_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                           description: The external ID of the property from the integration vendor
                         x_location_id:
                           type:
@@ -11215,9 +11193,7 @@ paths:
                         type: string
                         description: The external ID from the integration vendor
                       x_property_id:
-                        type:
-                          - string
-                          - "null"
+                        type: string
                         description: The external ID of the property from the integration vendor
                       x_location_id:
                         type:
