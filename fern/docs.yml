@@ -46,6 +46,8 @@ navigation:
           path: ./docs/pages/sync-frequency.mdx
         - page: Write Requests
           path: ./docs/pages/write-requests.mdx
+        - page: Enabling Properties
+          path: ./docs/pages/enabling-properties.mdx
     - section: Webhooks 
       contents: 
         - page: How to Use Webhooks
