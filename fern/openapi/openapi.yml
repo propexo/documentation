@@ -14596,9 +14596,7 @@ paths:
                           - string
                           - "null"
                       root_job_id:
-                        type:
-                          - string
-                          - "null"
+                        type: string
                       job_schedule_id:
                         type:
                           - string
@@ -14759,9 +14757,7 @@ paths:
                             - string
                             - "null"
                         root_job_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                         job_schedule_id:
                           type:
                             - string
@@ -14893,9 +14889,7 @@ paths:
                             - string
                             - "null"
                         root_job_id:
-                          type:
-                            - string
-                            - "null"
+                          type: string
                         job_schedule_id:
                           type:
                             - string
