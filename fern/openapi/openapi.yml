@@ -15430,6 +15430,19 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
+                    - type: object
+                      properties:
+                        integrationPartnerId:
+                          type: string
+                        accountId:
+                          type: string
+                        apiKey:
+                          type: string
+                      required:
+                        - integrationPartnerId
+                        - accountId
+                        - apiKey
+                      description: ResMan authentication credentials
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
@@ -17306,6 +17319,19 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
+                    - type: object
+                      properties:
+                        integrationPartnerId:
+                          type: string
+                        accountId:
+                          type: string
+                        apiKey:
+                          type: string
+                      required:
+                        - integrationPartnerId
+                        - accountId
+                        - apiKey
+                      description: ResMan authentication credentials
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
