@@ -17732,6 +17732,81 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/admin/normalization/{model}/{field}:
+    get:
+      tags:
+        - admin
+      summary: Get the normalized values mappings for a specific field
+      description: Get the normalized values mappings for a specific field
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: model
+          in: path
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: field
+          in: path
+        - schema:
+            type: string
+            description: The ID of the integration the mappings are associated with, if any.
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+          required: true
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get the normalized values mappings for a specific field
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: object
+                    properties:
+                      is_custom_mapping:
+                        type: boolean
+                        description: Whether or not the mapping is user custom, or if it has been
+                          specified by the user.
+                      mappings:
+                        type: object
+                        additionalProperties:
+                          type: string
+                        description: Key-value pairs of mapping from PMS raw statuses to normalized
+                          statuses.
+                      default_value:
+                        type: string
+                        description: The default value that the field will be set to if none of the
+                          mappings apply.
+                    required:
+                      - is_custom_mapping
+                      - mappings
+                      - default_value
+                required:
+                  - results
+        "400":
+          description: invalid input
   /v1/admin/integrations/{integration_id}/properties/{property_configuration_id}:
     put:
       tags:
