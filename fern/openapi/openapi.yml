@@ -3436,7 +3436,6 @@ paths:
                   description: The reasons for the event
                 notes:
                   type: string
-                  maxLength: 256
                   description: Notes associated with the event
                 appointment_datetime:
                   type: string
@@ -3467,6 +3466,12 @@ paths:
                 agent_name:
                   type: string
                   description: The name of the leasing agent associated with the event
+                event_type:
+                  type: string
+                  enum:
+                    - Note
+                  default: Note
+                  description: The type of event
               required:
                 - integration_id
       responses:
@@ -3643,6 +3648,12 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
+                event_type:
+                  type: string
+                  enum:
+                    - Note
+                  default: Note
+                  description: The type of event
               required:
                 - integration_id
       responses:
