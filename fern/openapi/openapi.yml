@@ -9777,11 +9777,9 @@ paths:
                   description: The Propexo unique identifier for the property
                 service_description:
                   type: string
-                  maxLength: 127
                   description: A description of the service request
                 service_details:
                   type: string
-                  maxLength: 65535
                   description: Details about the service request
                 access_is_authorized:
                   type: boolean
@@ -9878,6 +9876,13 @@ paths:
                   type: string
                   maxLength: 65535
                   description: Notes associated with the service request
+                date_created:
+                  type: string
+                  format: date-time
+                  description: The date the service request was created
+                service_category:
+                  type: string
+                  description: The category of service request
               required:
                 - integration_id
       responses:
