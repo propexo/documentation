@@ -14984,10 +14984,7 @@ paths:
           name: integration_vendor
           in: query
         - schema:
-            type:
-              - boolean
-              - "null"
-            default: false
+            type: boolean
             description: Whether or not to include archived integrations
           required: false
           name: is_archived
