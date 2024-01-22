@@ -9292,6 +9292,9 @@ paths:
             schema:
               type: object
               properties:
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
                 last_name:
                   type: string
                   description: The last name of the resident.  This value maps to the lastName
@@ -9452,9 +9455,6 @@ paths:
                     required:
                       - x_type_id
                   description: Array of events associated with this resident.
-                resident_id:
-                  type: string
-                  description: The Propexo unique identifier for the resident
                 rent_period:
                   type: string
                   enum:
