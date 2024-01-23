@@ -15465,7 +15465,8 @@ paths:
                   enum:
                     - PRODUCTION
                     - SANDBOX
-                  description: The system the integration is associated with
+                  description: "Deprecated: The system the integration is associated with"
+                  deprecated: true
                 max_request_cadence:
                   type: string
                   enum:
@@ -15506,11 +15507,16 @@ paths:
                   default: true
                   description: Whether or not properties need to be approved before ingesting data
                     for them.
+                based_on_integration_id:
+                  type: string
+                  description: A reference integration_id to base the creation of an integration
+                    on. This includes copying job scheduling frequency and
+                    similar configuration. Credentials are not copied and must
+                    still be provided.
               required:
                 - integration_vendor
                 - credentials
                 - name
-                - system
       responses:
         "200":
           description: Create an integration
@@ -17354,7 +17360,8 @@ paths:
                   enum:
                     - PRODUCTION
                     - SANDBOX
-                  description: The system the integration is associated with
+                  description: "Deprecated: The system the integration is associated with"
+                  deprecated: true
                 max_request_cadence:
                   type: string
                   enum:
