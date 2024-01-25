@@ -1040,23 +1040,10 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propexo property_id instead"
-            deprecated: true
-          required: false
-          name: x_property_id
-          in: query
-        - schema:
-            type: string
             description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
-          in: query
-        - schema:
-            type: string
-            description: The external ID of the unit from the integration vendor
-          required: false
-          name: x_unit_id
           in: query
         - schema:
             type: string
@@ -1571,9 +1558,6 @@ paths:
                   default: false
                   description: Whether to send the new applicant an email with a link to the
                     online application form
-                x_unit_id:
-                  type: string
-                  description: The external ID of the unit from the integration vendor
                 phone_1_type:
                   type: string
                   enum:
@@ -1591,9 +1575,6 @@ paths:
                     - MOBILE
                     - WORK
                   description: Type of the secondary phone number
-                x_property_id:
-                  type: string
-                  description: The external ID of the property from the integration vendor
                 middle_name:
                   type: string
                   description: The middle name associated with the applicant
