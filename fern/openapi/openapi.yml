@@ -8832,6 +8832,12 @@ paths:
                         type: string
                         description: The Propexo unique identifier for the file type. This file_type
                           must contain a "type" value of "file"
+                      file_type:
+                        type: string
+                        enum:
+                          - Document
+                        default: Document
+                        description: The type of file being uploaded. This defaults to "Document"
                       file_data:
                         type: string
                         maxLength: 69730304
