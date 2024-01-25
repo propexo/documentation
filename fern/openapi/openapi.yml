@@ -2260,23 +2260,10 @@ paths:
           in: query
         - schema:
             type: string
-            description: "Deprecated: Use the Propexo property_id instead"
-            deprecated: true
-          required: false
-          name: x_property_id
-          in: query
-        - schema:
-            type: string
             description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
           name: location_id
-          in: query
-        - schema:
-            type: string
-            description: The external unit id
-          required: false
-          name: x_unit_id
           in: query
         - schema:
             type: string
