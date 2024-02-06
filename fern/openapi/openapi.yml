@@ -11424,6 +11424,182 @@ paths:
                   - results
         "400":
           description: invalid input
+    post:
+      tags:
+        - service-request-vendors
+      summary: Create a service request vendor
+      description: Create a service request vendor for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                vendor_category_id:
+                  type: string
+                  description: The Propexo unique identifier for the vendor category
+                is_company:
+                  type: boolean
+                  description: Indicates whether the vendor should be considered a company or
+                    person
+                first_name:
+                  type: string
+                  maxLength: 127
+                  description: First name of the vendor. Required if `is_company` is `false`
+                last_name:
+                  type: string
+                  maxLength: 127
+                  description: Last name of the vendor. Required if `is_company` is `false`
+                name:
+                  type: string
+                  maxLength: 127
+                  description: Company name of the vendor. Required if `is_company` is `true`
+                email_1:
+                  type: string
+                  format: email
+                  description: Primary email for the vendor
+                email_2:
+                  type: string
+                  format: email
+                  description: Alternate email for the vendor
+                phone_1:
+                  type: string
+                  minLength: 10
+                  maxLength: 20
+                  description: First phone number
+                phone_1_type:
+                  type: string
+                  enum:
+                    - HOME
+                    - WORK
+                    - MOBILE
+                    - FAX
+                  description: First phone number type
+                phone_2:
+                  type: string
+                  minLength: 10
+                  maxLength: 20
+                  description: Second phone number
+                phone_2_type:
+                  type: string
+                  enum:
+                    - HOME
+                    - WORK
+                    - MOBILE
+                    - FAX
+                  description: Second phone number type
+                address_1:
+                  type: string
+                  maxLength: 100
+                  description: The first address line associated with the vendor
+                address_2:
+                  type: string
+                  maxLength: 100
+                  description: The second address line associated with the vendor
+                city:
+                  type: string
+                  maxLength: 100
+                  description: The city associated with the vendor
+                state:
+                  type: string
+                  description: The state associated with the vendor
+                zip:
+                  type: string
+                  description: The zip code associated with the vendor
+                country:
+                  type: string
+                  description: The country associated with the vendor
+                account_number:
+                  type: string
+                  maxLength: 30
+                  description: The account number associated with the vendor
+                website:
+                  type: string
+                  maxLength: 100
+                  format: uri
+                  description: The website URL associated with the vendor
+                insurance_provider:
+                  type: string
+                  maxLength: 65
+                  description: Vendor insurance provider
+                insurance_policy_number:
+                  type: string
+                  maxLength: 65
+                  description: Vendor insurance policy number
+                insurance_expire_date:
+                  type: string
+                  format: date-time
+                  description: Vendor insurance policy expiration date
+                notes:
+                  type: string
+                  maxLength: 65535
+                  description: Notes associated with the vendor
+                tax_id:
+                  type: string
+                  description: The unique identifier of the tax payer. Required if
+                    `tax_payer_type` is set
+                tax_payer_type:
+                  type: string
+                  enum:
+                    - SSN
+                    - EIN
+                  description: The tax payer type. Required if `tax_id` is set
+                tax_payer_name_1:
+                  type: string
+                  maxLength: 40
+                  description: The tax payer name 1
+                tax_payer_name_2:
+                  type: string
+                  maxLength: 40
+                  description: The tax payer name 2
+                tax_address_1:
+                  type: string
+                  maxLength: 100
+                  description: The tax payer address line 1
+                tax_address_2:
+                  type: string
+                  maxLength: 100
+                  description: The tax payer address line 2
+                tax_city:
+                  type: string
+                  maxLength: 100
+                  description: The tax payer address city
+                tax_state:
+                  type: string
+                  description: The tax payer address state
+                tax_zip:
+                  type: string
+                  description: The tax payer address zip code
+                tax_country:
+                  type: string
+                  description: The tax payer address country
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a service request vendor for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/service-request-vendors/{service_request_vendor_id}:
     get:
       tags:
