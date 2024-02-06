@@ -2157,6 +2157,11 @@ paths:
                     required:
                       - x_type_id
                   description: Array of events associated with this applicant
+                create_new_events_only:
+                  anyOf:
+                    - type: boolean
+                    - type: string
+                  description: Whether or not new events should be created on the applicant
                 x_property_id:
                   type: string
                   description: The external ID of the property from the integration vendor
