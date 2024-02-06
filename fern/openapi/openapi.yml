@@ -12529,30 +12529,12 @@ paths:
                           type:
                             - string
                             - "null"
-                          enum:
-                            - CASH
-                            - CASHIERCHECK
-                            - CHECK
-                            - CREDITCARD
-                            - DIRECTDEPOSIT
-                            - ELECTRONICPAYMENT
-                            - MONEYORDER
-                            - OTHER
                           description: DEPRECATED. Use payment_method_normalized.
                           deprecated: true
                         payment_method_normalized:
                           type:
                             - string
                             - "null"
-                          enum:
-                            - CASH
-                            - CASHIERCHECK
-                            - CHECK
-                            - CREDITCARD
-                            - DIRECTDEPOSIT
-                            - ELECTRONICPAYMENT
-                            - MONEYORDER
-                            - OTHER
                           description: The payment method used in the transaction.
                         payment_method_raw:
                           type:
@@ -12973,30 +12955,12 @@ paths:
                         type:
                           - string
                           - "null"
-                        enum:
-                          - CASH
-                          - CASHIERCHECK
-                          - CHECK
-                          - CREDITCARD
-                          - DIRECTDEPOSIT
-                          - ELECTRONICPAYMENT
-                          - MONEYORDER
-                          - OTHER
                         description: DEPRECATED. Use payment_method_normalized.
                         deprecated: true
                       payment_method_normalized:
                         type:
                           - string
                           - "null"
-                        enum:
-                          - CASH
-                          - CASHIERCHECK
-                          - CHECK
-                          - CREDITCARD
-                          - DIRECTDEPOSIT
-                          - ELECTRONICPAYMENT
-                          - MONEYORDER
-                          - OTHER
                         description: The payment method used in the transaction.
                       payment_method_raw:
                         type:
