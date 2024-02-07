@@ -2023,7 +2023,8 @@ paths:
                   description: The first name associated with the applicant
                 x_unit_id:
                   type: string
-                  description: The external ID of the unit from the integration vendor
+                  description: "Deprecated: The external ID of the unit from the integration
+                    vendor"
                 email_1:
                   type: string
                   format: email
