@@ -5798,14 +5798,15 @@ paths:
                                   - "null"
                                 description: The external type of the resident from the integration vendor
                               resident_type_normalized:
-                                type:
-                                  - string
-                                  - "null"
-                                enum:
-                                  - PRIMARY
-                                  - SECONDARY
-                                  - GUARANTOR
-                                  - OTHER
+                                anyOf:
+                                  - type: string
+                                  - type: string
+                                    enum:
+                                      - PRIMARY
+                                      - SECONDARY
+                                      - GUARANTOR
+                                      - OTHER
+                                  - type: "null"
                                 description: Resident type from Propexo
                               move_in_date:
                                 type:
@@ -6376,14 +6377,15 @@ paths:
                                 - "null"
                               description: The external type of the resident from the integration vendor
                             resident_type_normalized:
-                              type:
-                                - string
-                                - "null"
-                              enum:
-                                - PRIMARY
-                                - SECONDARY
-                                - GUARANTOR
-                                - OTHER
+                              anyOf:
+                                - type: string
+                                - type: string
+                                  enum:
+                                    - PRIMARY
+                                    - SECONDARY
+                                    - GUARANTOR
+                                    - OTHER
+                                - type: "null"
                               description: Resident type from Propexo
                             move_in_date:
                               type:
@@ -8456,14 +8458,15 @@ paths:
                                   - "null"
                                 description: The external type of the resident from the integration vendor
                               resident_type_normalized:
-                                type:
-                                  - string
-                                  - "null"
-                                enum:
-                                  - PRIMARY
-                                  - SECONDARY
-                                  - GUARANTOR
-                                  - OTHER
+                                anyOf:
+                                  - type: string
+                                  - type: string
+                                    enum:
+                                      - PRIMARY
+                                      - SECONDARY
+                                      - GUARANTOR
+                                      - OTHER
+                                  - type: "null"
                                 description: Resident type from Propexo
                               move_in_date:
                                 type:
@@ -9002,14 +9005,15 @@ paths:
                                 - "null"
                               description: The external type of the resident from the integration vendor
                             resident_type_normalized:
-                              type:
-                                - string
-                                - "null"
-                              enum:
-                                - PRIMARY
-                                - SECONDARY
-                                - GUARANTOR
-                                - OTHER
+                              anyOf:
+                                - type: string
+                                - type: string
+                                  enum:
+                                    - PRIMARY
+                                    - SECONDARY
+                                    - GUARANTOR
+                                    - OTHER
+                                - type: "null"
                               description: Resident type from Propexo
                             move_in_date:
                               type:
