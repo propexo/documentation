@@ -9656,7 +9656,9 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: Notes associated with the service request
+                          description: "DEPRECATED: Please use 'history' for reading notes regarding the
+                            service request"
+                          deprecated: true
                         service_category:
                           type:
                             - string
@@ -9691,6 +9693,41 @@ paths:
                             - string
                             - "null"
                           description: The Propexo unique identifier for the unit
+                        history:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the service request history
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type: string
+                                description: The date the record was last seen from the PMS
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              notes:
+                                type: string
+                                description: Notes describing the service request history
+                              service_request_id:
+                                type: string
+                                description: The Propexo unique identifier for the service request
+                            required:
+                              - id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - x_id
+                              - notes
+                              - service_request_id
+                          description: History of notes related to the service request.
                       required:
                         - id
                         - created_at
@@ -9717,6 +9754,7 @@ paths:
                         - integration_vendor
                         - property_id
                         - unit_id
+                        - history
                 required:
                   - meta
                   - results
@@ -10028,7 +10066,9 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: Notes associated with the service request
+                        description: "DEPRECATED: Please use 'history' for reading notes regarding the
+                          service request"
+                        deprecated: true
                       service_category:
                         type:
                           - string
@@ -10063,6 +10103,41 @@ paths:
                           - string
                           - "null"
                         description: The Propexo unique identifier for the unit
+                      history:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the service request history
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type: string
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            notes:
+                              type: string
+                              description: Notes describing the service request history
+                            service_request_id:
+                              type: string
+                              description: The Propexo unique identifier for the service request
+                          required:
+                            - id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - x_id
+                            - notes
+                            - service_request_id
+                        description: History of notes related to the service request.
                     required:
                       - id
                       - created_at
@@ -10089,6 +10164,7 @@ paths:
                       - integration_vendor
                       - property_id
                       - unit_id
+                      - history
                 required:
                   - meta
                   - results
