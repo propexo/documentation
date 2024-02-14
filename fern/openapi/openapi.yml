@@ -9716,6 +9716,11 @@ paths:
                               notes:
                                 type: string
                                 description: Notes describing the service request history
+                              status_raw:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The raw status from the service request history
                               service_request_id:
                                 type: string
                                 description: The Propexo unique identifier for the service request
@@ -9726,6 +9731,7 @@ paths:
                               - last_seen
                               - x_id
                               - notes
+                              - status_raw
                               - service_request_id
                           description: History of notes related to the service request.
                       required:
@@ -10126,6 +10132,11 @@ paths:
                             notes:
                               type: string
                               description: Notes describing the service request history
+                            status_raw:
+                              type:
+                                - string
+                                - "null"
+                              description: The raw status from the service request history
                             service_request_id:
                               type: string
                               description: The Propexo unique identifier for the service request
@@ -10136,6 +10147,7 @@ paths:
                             - last_seen
                             - x_id
                             - notes
+                            - status_raw
                             - service_request_id
                         description: History of notes related to the service request.
                     required:
