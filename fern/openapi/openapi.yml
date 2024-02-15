@@ -20094,4 +20094,345 @@ paths:
                   - results
         "400":
           description: invalid input
-webhooks: {}
+webhooks:
+  /:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              anyOf:
+                - type: object
+                  properties:
+                    trigger:
+                      type: string
+                      enum:
+                        - DATA_UPDATE
+                    data:
+                      type: object
+                      properties:
+                        job_id:
+                          type: string
+                        root_job_id:
+                          type: string
+                        integration_id:
+                          type: string
+                        job_type:
+                          type: string
+                        vendor:
+                          type: string
+                          enum:
+                            - BUILDIUM
+                            - ENTRATA
+                            - PROPERTYWARE
+                            - REALPAGE
+                            - RENTMANAGER
+                            - RENTVINE
+                            - REALPAGE_RPX
+                            - MRI
+                            - RESMAN
+                            - INTERNAL
+                        event:
+                          type: string
+                          enum:
+                            - DATA_UPDATE
+                        record_id:
+                          type: string
+                        object:
+                          type: string
+                        diff:
+                          type: object
+                          properties:
+                            new:
+                              type: object
+                              additionalProperties: {}
+                            previous:
+                              type: object
+                              additionalProperties: {}
+                          required:
+                            - new
+                            - previous
+                        context:
+                          type: object
+                          additionalProperties: {}
+                      required:
+                        - job_id
+                        - root_job_id
+                        - integration_id
+                        - job_type
+                        - vendor
+                        - event
+                        - record_id
+                        - object
+                        - diff
+                        - context
+                    meta:
+                      type: object
+                      properties:
+                        object:
+                          type: string
+                        integration_id:
+                          type: string
+                      required:
+                        - object
+                        - integration_id
+                  required:
+                    - trigger
+                    - data
+                    - meta
+                  description: Payload of the webhook that fires for the DATA_UPDATE event.
+                - type: object
+                  properties:
+                    trigger:
+                      type: string
+                      enum:
+                        - DATA_NEW
+                    data:
+                      type: object
+                      properties:
+                        job_id:
+                          type: string
+                        root_job_id:
+                          type: string
+                        integration_id:
+                          type: string
+                        job_type:
+                          type: string
+                        vendor:
+                          type: string
+                          enum:
+                            - BUILDIUM
+                            - ENTRATA
+                            - PROPERTYWARE
+                            - REALPAGE
+                            - RENTMANAGER
+                            - RENTVINE
+                            - REALPAGE_RPX
+                            - MRI
+                            - RESMAN
+                            - INTERNAL
+                        event:
+                          type: string
+                          enum:
+                            - DATA_NEW
+                        record_id:
+                          type: string
+                        object:
+                          type: string
+                        payload:
+                          type: object
+                          additionalProperties: {}
+                        context:
+                          type: object
+                          additionalProperties: {}
+                      required:
+                        - job_id
+                        - root_job_id
+                        - integration_id
+                        - job_type
+                        - vendor
+                        - event
+                        - record_id
+                        - object
+                        - payload
+                        - context
+                    meta:
+                      type: object
+                      properties:
+                        object:
+                          type: string
+                        integration_id:
+                          type: string
+                      required:
+                        - object
+                        - integration_id
+                  required:
+                    - trigger
+                    - data
+                    - meta
+                  description: Payload of the webhook that fires for the DATA_NEW event.
+                - type: object
+                  properties:
+                    trigger:
+                      type: string
+                      enum:
+                        - JOB_SUCCESS
+                    data:
+                      type: object
+                      properties:
+                        job_id:
+                          type: string
+                        root_job_id:
+                          type: string
+                        integration_id:
+                          type: string
+                        job_type:
+                          type: string
+                        vendor:
+                          type: string
+                          enum:
+                            - BUILDIUM
+                            - ENTRATA
+                            - PROPERTYWARE
+                            - REALPAGE
+                            - RENTMANAGER
+                            - RENTVINE
+                            - REALPAGE_RPX
+                            - MRI
+                            - RESMAN
+                            - INTERNAL
+                        event:
+                          type: string
+                          enum:
+                            - JOB_SUCCESS
+                      required:
+                        - job_id
+                        - root_job_id
+                        - integration_id
+                        - job_type
+                        - vendor
+                        - event
+                  required:
+                    - trigger
+                    - data
+                  description: Payload of the webhook that fires for the JOB_SUCCESS event.
+                - type: object
+                  properties:
+                    trigger:
+                      type: string
+                      enum:
+                        - JOB_FAILURE
+                    data:
+                      type: object
+                      properties:
+                        job_id:
+                          type: string
+                        root_job_id:
+                          type: string
+                        integration_id:
+                          type: string
+                        job_type:
+                          type: string
+                        vendor:
+                          type: string
+                          enum:
+                            - BUILDIUM
+                            - ENTRATA
+                            - PROPERTYWARE
+                            - REALPAGE
+                            - RENTMANAGER
+                            - RENTVINE
+                            - REALPAGE_RPX
+                            - MRI
+                            - RESMAN
+                            - INTERNAL
+                        event:
+                          type: string
+                          enum:
+                            - JOB_FAILURE
+                      required:
+                        - job_id
+                        - root_job_id
+                        - integration_id
+                        - job_type
+                        - vendor
+                        - event
+                  required:
+                    - trigger
+                    - data
+                  description: Payload of the webhook that fires for the JOB_FAILURE event.
+                - type: object
+                  properties:
+                    trigger:
+                      type: string
+                      enum:
+                        - SYNC_COMPLETE
+                    data:
+                      type: object
+                      properties:
+                        event:
+                          type: string
+                          enum:
+                            - SYNC_COMPLETE
+                        integration_id:
+                          type: string
+                        vendor:
+                          type: string
+                          enum:
+                            - BUILDIUM
+                            - ENTRATA
+                            - PROPERTYWARE
+                            - REALPAGE
+                            - RENTMANAGER
+                            - RENTVINE
+                            - REALPAGE_RPX
+                            - MRI
+                            - RESMAN
+                            - INTERNAL
+                        successful_job_count:
+                          type: number
+                        failed_job_count:
+                          type: number
+                        is_sync_finished:
+                          type: boolean
+                      required:
+                        - event
+                        - integration_id
+                        - vendor
+                        - successful_job_count
+                        - failed_job_count
+                        - is_sync_finished
+                  required:
+                    - trigger
+                    - data
+                  description: Payload of the webhook that fires for the SYNC_COMPLETE event.
+                - type: object
+                  properties:
+                    trigger:
+                      type: string
+                      enum:
+                        - FIRST_SYNC_COMPLETE
+                    data:
+                      type: object
+                      properties:
+                        event:
+                          type: string
+                          enum:
+                            - FIRST_SYNC_COMPLETE
+                        integration_id:
+                          type: string
+                        vendor:
+                          type: string
+                          enum:
+                            - BUILDIUM
+                            - ENTRATA
+                            - PROPERTYWARE
+                            - REALPAGE
+                            - RENTMANAGER
+                            - RENTVINE
+                            - REALPAGE_RPX
+                            - MRI
+                            - RESMAN
+                            - INTERNAL
+                        successful_job_count:
+                          type: number
+                        failed_job_count:
+                          type: number
+                        is_sync_finished:
+                          type: boolean
+                      required:
+                        - event
+                        - integration_id
+                        - vendor
+                        - successful_job_count
+                        - failed_job_count
+                        - is_sync_finished
+                  required:
+                    - trigger
+                    - data
+                  description: Payload of the webhook that fires for the FIRST_SYNC_COMPLETE
+                    event.
+      responses:
+        "200":
+          description: Return a 200 status to indicate that the webhook was received
+            successfully
