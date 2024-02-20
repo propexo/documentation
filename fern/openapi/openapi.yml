@@ -11316,6 +11316,11 @@ paths:
                             - string
                             - "null"
                           description: The building name associated with the service request
+                        completion_notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Closing notes associated with the service request
                         date_completed:
                           type:
                             - string
@@ -11363,6 +11368,11 @@ paths:
                             - string
                             - "null"
                           description: The raw status associated with the service request
+                        vendor_notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Vendor/technician notes associated with the service request
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -11400,6 +11410,12 @@ paths:
                               notes:
                                 type: string
                                 description: Notes describing the service request history
+                              creator_name:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The name of the person or user that created the service request
+                                  history
                               status_raw:
                                 type:
                                   - string
@@ -11415,9 +11431,10 @@ paths:
                               - last_seen
                               - x_id
                               - notes
+                              - creator_name
                               - status_raw
                               - service_request_id
-                          description: History of notes related to the service request.
+                          description: History of notes and/or updates related to the service request
                       required:
                         - id
                         - created_at
@@ -11431,6 +11448,7 @@ paths:
                         - access_is_authorized
                         - access_notes
                         - building
+                        - completion_notes
                         - date_completed
                         - date_created
                         - date_due
@@ -11440,6 +11458,7 @@ paths:
                         - service_description
                         - service_details
                         - status_raw
+                        - vendor_notes
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -11732,6 +11751,11 @@ paths:
                           - string
                           - "null"
                         description: The building name associated with the service request
+                      completion_notes:
+                        type:
+                          - string
+                          - "null"
+                        description: Closing notes associated with the service request
                       date_completed:
                         type:
                           - string
@@ -11779,6 +11803,11 @@ paths:
                           - string
                           - "null"
                         description: The raw status associated with the service request
+                      vendor_notes:
+                        type:
+                          - string
+                          - "null"
+                        description: Vendor/technician notes associated with the service request
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -11816,6 +11845,12 @@ paths:
                             notes:
                               type: string
                               description: Notes describing the service request history
+                            creator_name:
+                              type:
+                                - string
+                                - "null"
+                              description: The name of the person or user that created the service request
+                                history
                             status_raw:
                               type:
                                 - string
@@ -11831,9 +11866,10 @@ paths:
                             - last_seen
                             - x_id
                             - notes
+                            - creator_name
                             - status_raw
                             - service_request_id
-                        description: History of notes related to the service request.
+                        description: History of notes and/or updates related to the service request
                     required:
                       - id
                       - created_at
@@ -11847,6 +11883,7 @@ paths:
                       - access_is_authorized
                       - access_notes
                       - building
+                      - completion_notes
                       - date_completed
                       - date_created
                       - date_due
@@ -11856,6 +11893,7 @@ paths:
                       - service_description
                       - service_details
                       - status_raw
+                      - vendor_notes
                       - integration_id
                       - integration_vendor
                       - property_id
