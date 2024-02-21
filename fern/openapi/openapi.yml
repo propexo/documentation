@@ -11501,6 +11501,7 @@ paths:
                   description: The Propexo unique identifier for the property
                 service_description:
                   type: string
+                  maxLength: 35
                   description: A description of the service request
                 service_details:
                   type: string
@@ -11574,9 +11575,11 @@ paths:
                 service_priority:
                   type: string
                   enum:
-                    - Low
-                    - Normal
                     - High
+                    - Low
+                    - Med
+                    - 24 hours
+                    - Emergency
                   description: The priority level associated with the service request
                 service_status:
                   type: string
@@ -11600,13 +11603,43 @@ paths:
                   type: string
                   maxLength: 65535
                   description: Notes associated with the service request
+                vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the vendor
                 date_created:
                   type: string
                   format: date-time
                   description: The date the service request was created
                 service_category:
                   type: string
+                  enum:
+                    - Electrical
+                    - HVAC
+                    - Other
+                    - Plumbing
+                    - Service
                   description: The category of service request
+                status_raw:
+                  type: string
+                  enum:
+                    - Assessment
+                    - Call
+                    - Canceled
+                    - Completed
+                    - Electrical
+                    - Emergency
+                    - HVAC
+                    - In Progress
+                    - Inspection
+                    - On Hold
+                    - Other
+                    - Plumbing
+                    - Request Reassignment
+                    - Scheduled
+                    - Service
+                    - Web
+                    - Work Completed
+                  description: The raw status associated with the service request
               required:
                 - integration_id
       responses:
