@@ -11373,6 +11373,14 @@ paths:
                             - string
                             - "null"
                           description: Vendor/technician notes associated with the service request
+                        unit_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The unit number associated with the service request. This isn't
+                            always provided by PMS vendors, but may be the only
+                            data provided to identify a unit associated with a
+                            service request in some cases.
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -11459,6 +11467,7 @@ paths:
                         - service_details
                         - status_raw
                         - vendor_notes
+                        - unit_number
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -11808,6 +11817,14 @@ paths:
                           - string
                           - "null"
                         description: Vendor/technician notes associated with the service request
+                      unit_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The unit number associated with the service request. This isn't
+                          always provided by PMS vendors, but may be the only
+                          data provided to identify a unit associated with a
+                          service request in some cases.
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -11894,6 +11911,7 @@ paths:
                       - service_details
                       - status_raw
                       - vendor_notes
+                      - unit_number
                       - integration_id
                       - integration_vendor
                       - property_id
@@ -15145,6 +15163,13 @@ paths:
             description: The integration vendor for the unit.
           required: false
           name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The unit number of the service request. When using this, the
+              Propexo `property_id` filter must be added as well.
+          required: false
+          name: unit_number
           in: query
       responses:
         "200":
