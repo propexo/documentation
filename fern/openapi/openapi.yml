@@ -1552,7 +1552,8 @@ paths:
                 custom_data:
                   type: object
                   properties: {}
-                  description: Custom data
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
                 send_rental_application_email:
                   type: boolean
                   default: false
@@ -8809,7 +8810,8 @@ paths:
                 custom_data:
                   type: object
                   properties: {}
-                  description: Custom data
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
@@ -9366,7 +9368,8 @@ paths:
                 custom_data:
                   type: object
                   properties: {}
-                  description: Custom data
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
                 middle_name:
                   type: string
                   description: The middle name of the resident.  This value maps to the middleName
@@ -15940,7 +15943,8 @@ paths:
                 custom_data:
                   type: object
                   properties: {}
-                  description: Custom data
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
       responses:
         "200":
           description: Update a unit for a property.
@@ -18073,7 +18077,8 @@ paths:
                 custom_data:
                   type: object
                   properties: {}
-                  description: Custom data
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
                 integration_id:
                   type: string
                 vendor:
@@ -18250,7 +18255,8 @@ paths:
                 custom_data:
                   type: object
                   properties: {}
-                  description: Custom data
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
                 integration_id:
                   type: string
                 vendor:
