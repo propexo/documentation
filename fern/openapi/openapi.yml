@@ -11992,6 +11992,7 @@ paths:
                   description: The Propexo unique identifier for the service request problem
                 service_description:
                   type: string
+                  maxLength: 35
                   description: A description of the service request
                 phone_1:
                   type: string
@@ -12010,6 +12011,83 @@ paths:
                   type: string
                   format: date-time
                   description: The due date associated with the service request
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                service_request_vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request vendor
+                lease_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease
+                access_is_authorized:
+                  type: boolean
+                  description: Whether or not the tenant has granted permission to enter the unit
+                    associated with the service request
+                service_category:
+                  type: string
+                  enum:
+                    - Electrical
+                    - HVAC
+                    - Other
+                    - Plumbing
+                    - Service
+                  description: The category of service request
+                date_completed:
+                  type: string
+                  format: date-time
+                  description: The date the service request was completed
+                date_created:
+                  type: string
+                  format: date-time
+                  description: The date the service request was created
+                service_details:
+                  type: string
+                  description: Details about the service request
+                date_due:
+                  type: string
+                  format: date-time
+                  description: The due date associated with the service request
+                date_scheduled:
+                  type: string
+                  format: date-time
+                  description: The date the service request is scheduled
+                status_raw:
+                  type: string
+                  enum:
+                    - Assessment
+                    - Call
+                    - Canceled
+                    - Completed
+                    - Electrical
+                    - Emergency
+                    - HVAC
+                    - In Progress
+                    - Inspection
+                    - On Hold
+                    - Other
+                    - Plumbing
+                    - Request Reassignment
+                    - Scheduled
+                    - Service
+                    - Web
+                    - Work Completed
+                  description: The raw status associated with the service request
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
+                vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the vendor
+                service_priority:
+                  type: string
+                  enum:
+                    - High
+                    - Low
+                    - Med
+                    - 24 hours
+                    - Emergency
+                  description: The priority level associated with the service request
                 integration_id:
                   type: string
               required:
