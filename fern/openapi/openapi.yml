@@ -5950,6 +5950,14 @@ paths:
                             - string
                             - "null"
                           description: The type of lease
+                        unit_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The unit number associated with the service request. This isn't
+                            always provided by PMS vendors, but may be the only
+                            data provided to identify a unit associated with a
+                            service request in some cases.
                         unit_id:
                           type:
                             - string
@@ -6004,6 +6012,7 @@ paths:
                         - status_raw
                         - term
                         - type
+                        - unit_number
                         - unit_id
                         - property_id
                         - integration_id
@@ -6529,6 +6538,14 @@ paths:
                           - string
                           - "null"
                         description: The type of lease
+                      unit_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The unit number associated with the service request. This isn't
+                          always provided by PMS vendors, but may be the only
+                          data provided to identify a unit associated with a
+                          service request in some cases.
                       unit_id:
                         type:
                           - string
@@ -6583,6 +6600,7 @@ paths:
                       - status_raw
                       - term
                       - type
+                      - unit_number
                       - unit_id
                       - property_id
                       - integration_id
