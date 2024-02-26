@@ -5954,9 +5954,9 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: The unit number associated with the service request. This isn't
-                            always provided by PMS vendors, but may be the only
-                            data provided to identify a unit associated with a
+                          description: The unit number associated with the lease. This isn't always
+                            provided by PMS vendors, but may be the only data
+                            provided to identify a unit associated with a
                             service request in some cases.
                         unit_id:
                           type:
@@ -6542,10 +6542,10 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: The unit number associated with the service request. This isn't
-                          always provided by PMS vendors, but may be the only
-                          data provided to identify a unit associated with a
-                          service request in some cases.
+                        description: The unit number associated with the lease. This isn't always
+                          provided by PMS vendors, but may be the only data
+                          provided to identify a unit associated with a service
+                          request in some cases.
                       unit_id:
                         type:
                           - string
@@ -10252,6 +10252,44 @@ paths:
                 required:
                   - meta
                   - results
+        "400":
+          description: invalid input
+    post:
+      tags:
+        - billing-and-payments
+      summary: Create resident payment
+      description: Create a resident payment for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a resident payment for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/resident-payments/{resident_payment_id}:
