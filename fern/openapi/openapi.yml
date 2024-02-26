@@ -121,10 +121,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -293,10 +293,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -732,10 +732,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -1101,10 +1101,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -1604,7 +1604,7 @@ paths:
                     - SIGNED
                   description: The status associated with the application
                 rent_amount_market_in_cents:
-                  type: number
+                  type: integer
                   description: The market rent amount in cents for the lease
               required:
                 - integration_id
@@ -1703,10 +1703,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -2196,7 +2196,7 @@ paths:
                     - SIGNED
                   description: The status associated with the applicant
                 rent_amount_market_in_cents:
-                  type: number
+                  type: integer
                   description: The market rent amount in cents for the lease
       responses:
         "200":
@@ -2328,10 +2328,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -2510,10 +2510,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -2718,10 +2718,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -2857,10 +2857,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -3053,10 +3053,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -3240,10 +3240,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -3757,10 +3757,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -3907,10 +3907,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -4111,10 +4111,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -4317,10 +4317,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -4529,10 +4529,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -5058,10 +5058,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -5745,10 +5745,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -6335,10 +6335,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -6883,10 +6883,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -7200,10 +7200,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -7481,7 +7481,7 @@ paths:
                   type: string
                   description: The country associated with the listing
                 deposit_amount_in_cents:
-                  type: number
+                  type: integer
                   description: The deposit amount in cents
                 floor:
                   type: string
@@ -7499,7 +7499,7 @@ paths:
                   type: string
                   description: Additional notes about the unit
                 rent_amount_in_cents:
-                  type: number
+                  type: integer
                   description: The rent amount in cents
                 state:
                   type: string
@@ -7644,10 +7644,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -7977,10 +7977,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -8261,7 +8261,7 @@ paths:
                   type: string
                   description: General notes about the property
                 year_built:
-                  type: number
+                  type: integer
                   description: The year the property was built
                 category:
                   type: string
@@ -8431,10 +8431,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -8981,10 +8981,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -9589,10 +9589,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -9757,7 +9757,7 @@ paths:
                   pattern: ^\d{4}-\d{2}-\d{2}$
                   description: The transaction date of the resident charge
                 amount_in_cents:
-                  type: number
+                  type: integer
                   description: The amount of the resident charge, in cents
                 description:
                   type: string
@@ -9866,10 +9866,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -10115,10 +10115,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -10328,10 +10328,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -10561,10 +10561,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -10725,10 +10725,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -10909,10 +10909,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -11073,10 +11073,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -11276,10 +11276,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -11755,10 +11755,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -12246,10 +12246,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -12403,10 +12403,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -12599,10 +12599,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -12756,10 +12756,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -12952,10 +12952,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -13109,10 +13109,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -13293,10 +13293,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -13639,10 +13639,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -13829,10 +13829,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -14000,10 +14000,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -14163,10 +14163,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -14334,10 +14334,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -14541,10 +14541,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -14859,7 +14859,7 @@ paths:
                   description: The id of the accounts receivable code associated with the
                     transaction.
                 amount_in_cents:
-                  type: number
+                  type: integer
                   description: The amount of the transaction in cents.
                 transaction_date:
                   type: string
@@ -14969,10 +14969,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -15331,10 +15331,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -15791,10 +15791,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -16172,10 +16172,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -16663,10 +16663,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -16822,10 +16822,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -16954,10 +16954,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -17092,10 +17092,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -17136,10 +17136,10 @@ paths:
                             - SANDBOX
                           description: The system the integration is associated with
                         max_job_concurrency:
-                          type: number
+                          type: integer
                           description: Maximum number of jobs that can be run at once for the integration
                         max_request_frequency:
-                          type: number
+                          type: integer
                           description: Maximum number of jobs that can be run in the max request cadence
                         max_request_cadence:
                           type: string
@@ -17561,7 +17561,7 @@ paths:
                   default: 10
                   description: Number of request cadence units
                 max_job_concurrency:
-                  type: number
+                  type: integer
                   maximum: 1
                   minimum: 1
                   default: 1
@@ -17642,10 +17642,10 @@ paths:
                           - SANDBOX
                         description: The system the integration is associated with
                       max_job_concurrency:
-                        type: number
+                        type: integer
                         description: Maximum number of jobs that can be run at once for the integration
                       max_request_frequency:
-                        type: number
+                        type: integer
                         description: Maximum number of jobs that can be run in the max request cadence
                       max_request_cadence:
                         type: string
@@ -17772,10 +17772,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -17984,10 +17984,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type:
                       - object
@@ -18636,10 +18636,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -18986,10 +18986,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type:
                       - object
@@ -19030,10 +19030,10 @@ paths:
                           - SANDBOX
                         description: The system the integration is associated with
                       max_job_concurrency:
-                        type: number
+                        type: integer
                         description: Maximum number of jobs that can be run at once for the integration
                       max_request_frequency:
-                        type: number
+                        type: integer
                         description: Maximum number of jobs that can be run in the max request cadence
                       max_request_cadence:
                         type: string
@@ -19456,11 +19456,11 @@ paths:
                     - SECOND
                   description: Cadence at which to limit the max request frequency
                 max_request_frequency:
-                  type: number
+                  type: integer
                   minimum: 1
                   description: Number of request cadence units
                 max_job_concurrency:
-                  type: number
+                  type: integer
                   maximum: 1
                   minimum: 1
                   description: Maximum number of jobs that can be run at once for the integration.
@@ -19528,10 +19528,10 @@ paths:
                           - SANDBOX
                         description: The system the integration is associated with
                       max_job_concurrency:
-                        type: number
+                        type: integer
                         description: Maximum number of jobs that can be run at once for the integration
                       max_request_frequency:
-                        type: number
+                        type: integer
                         description: Maximum number of jobs that can be run in the max request cadence
                       max_request_cadence:
                         type: string
@@ -19684,10 +19684,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -19793,10 +19793,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: array
                     items:
@@ -19829,7 +19829,7 @@ paths:
                             - "null"
                           description: The date the job schedule last ran
                         sync_frequency:
-                          type: number
+                          type: integer
                           description: The sync frequency of the job schedule
                         sync_cadence:
                           type: string
@@ -20106,17 +20106,17 @@ paths:
                             description: The last time this rate limit was recorded
                           day_limit:
                             type:
-                              - number
+                              - integer
                               - "null"
                             description: The maxmimum number of requests per day we can query
                           hour_limit:
                             type:
-                              - number
+                              - integer
                               - "null"
                             description: The maxmimum number of requests per hour we can query
                           minute_limit:
                             type:
-                              - number
+                              - integer
                               - "null"
                             description: The maxmimum number of requests per minute we can query
                         required:
@@ -20135,7 +20135,7 @@ paths:
                             description: The last time this rate limit was recorded
                           minute_limit:
                             type:
-                              - number
+                              - integer
                               - "null"
                             description: The maxmimum number of requests per minute we can query
                         required:
@@ -20226,10 +20226,10 @@ paths:
                           - boolean
                           - "null"
                       total:
-                        type: number
+                        type: integer
+                        minimum: 0
                     required:
                       - orderBy
-                      - total
                   results:
                     type: object
                     properties:
@@ -20260,7 +20260,7 @@ paths:
                           - "null"
                         description: The date the job schedule last ran
                       sync_frequency:
-                        type: number
+                        type: integer
                         description: The sync frequency of the job schedule
                       sync_cadence:
                         type: string
