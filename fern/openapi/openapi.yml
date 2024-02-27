@@ -10047,6 +10047,16 @@ paths:
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
+                        resident_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the resident
+                        financial_account_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the financial account
                       required:
                         - id
                         - created_at
@@ -10071,6 +10081,8 @@ paths:
                         - integration_id
                         - integration_vendor
                         - property_id
+                        - resident_id
+                        - financial_account_id
                 required:
                   - meta
                   - results
@@ -10322,6 +10334,16 @@ paths:
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
+                      resident_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the resident
+                      financial_account_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the financial account
                     required:
                       - id
                       - created_at
@@ -10346,6 +10368,8 @@ paths:
                       - integration_id
                       - integration_vendor
                       - property_id
+                      - resident_id
+                      - financial_account_id
                 required:
                   - meta
                   - results
@@ -10573,6 +10597,16 @@ paths:
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
+                        resident_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the resident
+                        financial_account_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the financial account
                       required:
                         - id
                         - created_at
@@ -10597,6 +10631,8 @@ paths:
                         - integration_id
                         - integration_vendor
                         - property_id
+                        - resident_id
+                        - financial_account_id
                 required:
                   - meta
                   - results
@@ -10822,6 +10858,16 @@ paths:
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
+                      resident_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the resident
+                      financial_account_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the financial account
                     required:
                       - id
                       - created_at
@@ -10846,6 +10892,8 @@ paths:
                       - integration_id
                       - integration_vendor
                       - property_id
+                      - resident_id
+                      - financial_account_id
                 required:
                   - meta
                   - results
