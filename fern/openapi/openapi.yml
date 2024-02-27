@@ -13228,10 +13228,10 @@ paths:
                   - results
         "400":
           description: invalid input
-  /v1/service-request-vendors:
+  /v1/vendors:
     get:
       tags:
-        - service-request-vendors
+        - vendors
       summary: Get all service request vendors
       description: Get all service request vendors
       security:
@@ -13429,7 +13429,7 @@ paths:
           description: invalid input
     post:
       tags:
-        - service-request-vendors
+        - vendors
       summary: Create a service request vendor
       description: Create a service request vendor for an integration.
       security:
@@ -13603,10 +13603,10 @@ paths:
                   - data
         "400":
           description: invalid input
-  /v1/service-request-vendors/{service_request_vendor_id}:
+  /v1/vendors/{vendor_id}:
     get:
       tags:
-        - service-request-vendors
+        - vendors
       summary: Get service request vendor by ID
       description: Get service request vendor by ID
       security:
@@ -13616,7 +13616,7 @@ paths:
             type: string
             description: The ID of the resource.
           required: true
-          name: service_request_vendor_id
+          name: vendor_id
           in: path
         - schema:
             type: string
@@ -18600,10 +18600,10 @@ paths:
                   - data
         "400":
           description: invalid input
-  /v1/service-request-vendors/properties/{property_id}:
+  /v1/vendors/properties/{property_id}:
     get:
       tags:
-        - service-request-vendors
+        - vendors
       summary: Get all service request vendors by property ID
       description: Get all service request vendors by property ID
       security:
