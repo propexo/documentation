@@ -2615,6 +2615,354 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/charge-codes:
+    get:
+      tags:
+        - billing-and-payments
+      summary: Get all charge codes
+      description: Get all charge codes
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all charge codes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the charge code
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        debit_gl_account:
+                          type:
+                            - string
+                            - "null"
+                          description: The GL account number for debits
+                        credit_gl_account:
+                          type:
+                            - string
+                            - "null"
+                          description: The GL account number for credits
+                        name:
+                          type:
+                            - string
+                            - "null"
+                          description: The name of the charge code
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          description: A description of this charge code
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - debit_gl_account
+                        - credit_gl_account
+                        - name
+                        - description
+                        - custom_data
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/charge-codes/{charge_code_id}:
+    get:
+      tags:
+        - billing-and-payments
+      summary: Get a charge code by ID
+      description: Get a charge code by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: charge_code_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get a charge code by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the charge code
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      debit_gl_account:
+                        type:
+                          - string
+                          - "null"
+                        description: The GL account number for debits
+                      credit_gl_account:
+                        type:
+                          - string
+                          - "null"
+                        description: The GL account number for credits
+                      name:
+                        type:
+                          - string
+                          - "null"
+                        description: The name of the charge code
+                      description:
+                        type:
+                          - string
+                          - "null"
+                        description: A description of this charge code
+                      custom_data:
+                        type:
+                          - object
+                          - "null"
+                        properties: {}
+                        description: Custom data
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - debit_gl_account
+                      - credit_gl_account
+                      - name
+                      - description
+                      - custom_data
+                      - property_id
+                      - integration_id
+                      - integration_vendor
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
   /v1/employees:
     get:
       tags:
@@ -9749,7 +10097,7 @@ paths:
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
-                resident_charge_code_id:
+                charge_code_id:
                   type: string
                   description: The Propexo charge code to associate with this new charge
                 transaction_date:
@@ -10498,702 +10846,6 @@ paths:
                       - integration_id
                       - integration_vendor
                       - property_id
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/resident-charge-codes:
-    get:
-      tags:
-        - billing-and-payments
-      summary: Get all resident charge codes
-      description: Get all resident charge codes
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the property
-          required: false
-          name: property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: false
-          name: integration_id
-          in: query
-        - schema:
-            type: string
-            enum:
-              - BUILDIUM
-              - ENTRATA
-              - PROPERTYWARE
-              - REALPAGE
-              - RENTMANAGER
-              - RENTVINE
-              - REALPAGE_RPX
-              - MRI
-              - RESMAN
-            description: The property management system of record
-          required: false
-          name: integration_vendor
-          in: query
-      responses:
-        "200":
-          description: Get all resident charge codes
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          description: The Propexo unique identifier for the resident charge code
-                        created_at:
-                          type: string
-                          description: The date record first entered Propexo
-                        updated_at:
-                          type: string
-                          description: The date record was last updated in Propexo
-                        last_seen:
-                          type:
-                            - string
-                            - "null"
-                          description: The date the record was last seen from the PMS
-                        x_id:
-                          type: string
-                          description: The external ID from the integration vendor
-                        x_property_id:
-                          type: string
-                          description: The external ID of the property from the integration vendor
-                        x_location_id:
-                          type:
-                            - string
-                            - "null"
-                          description: The external ID of the location from the integration vendor
-                        debit_gl_account:
-                          type:
-                            - string
-                            - "null"
-                          description: The GL account number for debits
-                        credit_gl_account:
-                          type:
-                            - string
-                            - "null"
-                          description: The GL account number for credits
-                        name:
-                          type:
-                            - string
-                            - "null"
-                          description: The name of the charge code
-                        description:
-                          type:
-                            - string
-                            - "null"
-                          description: A description of this charge code
-                        custom_data:
-                          type:
-                            - object
-                            - "null"
-                          properties: {}
-                          description: Custom data
-                        property_id:
-                          type: string
-                          description: The Propexo unique identifier for the property
-                        integration_id:
-                          type: string
-                          description: The Propexo unique identifier for the integration
-                        integration_vendor:
-                          type: string
-                          description: The property management system of record
-                      required:
-                        - id
-                        - created_at
-                        - updated_at
-                        - last_seen
-                        - x_id
-                        - x_property_id
-                        - x_location_id
-                        - debit_gl_account
-                        - credit_gl_account
-                        - name
-                        - description
-                        - custom_data
-                        - property_id
-                        - integration_id
-                        - integration_vendor
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/resident-charge-codes/{resident_charge_code_id}:
-    get:
-      tags:
-        - residents
-      summary: Get a resident charge code by ID
-      description: Get a resident charge code by ID
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: resident_charge_code_id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Get a resident charge code by ID
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The Propexo unique identifier for the resident charge code
-                      created_at:
-                        type: string
-                        description: The date record first entered Propexo
-                      updated_at:
-                        type: string
-                        description: The date record was last updated in Propexo
-                      last_seen:
-                        type:
-                          - string
-                          - "null"
-                        description: The date the record was last seen from the PMS
-                      x_id:
-                        type: string
-                        description: The external ID from the integration vendor
-                      x_property_id:
-                        type: string
-                        description: The external ID of the property from the integration vendor
-                      x_location_id:
-                        type:
-                          - string
-                          - "null"
-                        description: The external ID of the location from the integration vendor
-                      debit_gl_account:
-                        type:
-                          - string
-                          - "null"
-                        description: The GL account number for debits
-                      credit_gl_account:
-                        type:
-                          - string
-                          - "null"
-                        description: The GL account number for credits
-                      name:
-                        type:
-                          - string
-                          - "null"
-                        description: The name of the charge code
-                      description:
-                        type:
-                          - string
-                          - "null"
-                        description: A description of this charge code
-                      custom_data:
-                        type:
-                          - object
-                          - "null"
-                        properties: {}
-                        description: Custom data
-                      property_id:
-                        type: string
-                        description: The Propexo unique identifier for the property
-                      integration_id:
-                        type: string
-                        description: The Propexo unique identifier for the integration
-                      integration_vendor:
-                        type: string
-                        description: The property management system of record
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - last_seen
-                      - x_id
-                      - x_property_id
-                      - x_location_id
-                      - debit_gl_account
-                      - credit_gl_account
-                      - name
-                      - description
-                      - custom_data
-                      - property_id
-                      - integration_id
-                      - integration_vendor
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/resident-payment-codes:
-    get:
-      tags:
-        - billing-and-payments
-      summary: Get all resident payment codes
-      description: Get all resident payment codes
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the property
-          required: false
-          name: property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: false
-          name: integration_id
-          in: query
-        - schema:
-            type: string
-            enum:
-              - BUILDIUM
-              - ENTRATA
-              - PROPERTYWARE
-              - REALPAGE
-              - RENTMANAGER
-              - RENTVINE
-              - REALPAGE_RPX
-              - MRI
-              - RESMAN
-            description: The property management system of record
-          required: false
-          name: integration_vendor
-          in: query
-      responses:
-        "200":
-          description: Get all resident payment codes
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          description: The Propexo unique identifier for the resident payment code
-                        created_at:
-                          type: string
-                          description: The date record first entered Propexo
-                        updated_at:
-                          type: string
-                          description: The date record was last updated in Propexo
-                        last_seen:
-                          type:
-                            - string
-                            - "null"
-                          description: The date the record was last seen from the PMS
-                        x_id:
-                          type: string
-                          description: The external ID from the integration vendor
-                        x_property_id:
-                          type: string
-                          description: The external ID of the property from the integration vendor
-                        x_location_id:
-                          type:
-                            - string
-                            - "null"
-                          description: The external ID of the location from the integration vendor
-                        debit_gl_account:
-                          type:
-                            - string
-                            - "null"
-                          description: The GL account number for debits
-                        credit_gl_account:
-                          type:
-                            - string
-                            - "null"
-                          description: The GL account number for credits
-                        name:
-                          type:
-                            - string
-                            - "null"
-                          description: The name of the payment code
-                        description:
-                          type:
-                            - string
-                            - "null"
-                          description: A description of this payment code
-                        custom_data:
-                          type:
-                            - object
-                            - "null"
-                          properties: {}
-                          description: Custom data
-                        property_id:
-                          type: string
-                          description: The Propexo unique identifier for the property
-                        integration_id:
-                          type: string
-                          description: The Propexo unique identifier for the integration
-                        integration_vendor:
-                          type: string
-                          description: The property management system of record
-                      required:
-                        - id
-                        - created_at
-                        - updated_at
-                        - last_seen
-                        - x_id
-                        - x_property_id
-                        - x_location_id
-                        - debit_gl_account
-                        - credit_gl_account
-                        - name
-                        - description
-                        - custom_data
-                        - property_id
-                        - integration_id
-                        - integration_vendor
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/resident-payment-codes/{resident_payment_code_id}:
-    get:
-      tags:
-        - billing-and-payments
-      summary: Get a resident payment code by ID
-      description: Get a resident payment code by ID
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: resident_payment_code_id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Get a resident payment code by ID
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The Propexo unique identifier for the resident payment code
-                      created_at:
-                        type: string
-                        description: The date record first entered Propexo
-                      updated_at:
-                        type: string
-                        description: The date record was last updated in Propexo
-                      last_seen:
-                        type:
-                          - string
-                          - "null"
-                        description: The date the record was last seen from the PMS
-                      x_id:
-                        type: string
-                        description: The external ID from the integration vendor
-                      x_property_id:
-                        type: string
-                        description: The external ID of the property from the integration vendor
-                      x_location_id:
-                        type:
-                          - string
-                          - "null"
-                        description: The external ID of the location from the integration vendor
-                      debit_gl_account:
-                        type:
-                          - string
-                          - "null"
-                        description: The GL account number for debits
-                      credit_gl_account:
-                        type:
-                          - string
-                          - "null"
-                        description: The GL account number for credits
-                      name:
-                        type:
-                          - string
-                          - "null"
-                        description: The name of the payment code
-                      description:
-                        type:
-                          - string
-                          - "null"
-                        description: A description of this payment code
-                      custom_data:
-                        type:
-                          - object
-                          - "null"
-                        properties: {}
-                        description: Custom data
-                      property_id:
-                        type: string
-                        description: The Propexo unique identifier for the property
-                      integration_id:
-                        type: string
-                        description: The Propexo unique identifier for the integration
-                      integration_vendor:
-                        type: string
-                        description: The property management system of record
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - last_seen
-                      - x_id
-                      - x_property_id
-                      - x_location_id
-                      - debit_gl_account
-                      - credit_gl_account
-                      - name
-                      - description
-                      - custom_data
-                      - property_id
-                      - integration_id
-                      - integration_vendor
                 required:
                   - meta
                   - results
