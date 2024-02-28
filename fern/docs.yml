@@ -30,6 +30,8 @@ navigation:
       contents: 
         - page: Authentication 
           path: ./docs/pages/authentication.mdx
+        - page: Data Fetching Methodology
+          path: ./docs/pages/data-fetching-methodology.mdx
         - page: Custom Data Objects
           path: ./docs/pages/custom-data.mdx
         - page: Deleted Records
