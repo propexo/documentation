@@ -11318,9 +11318,9 @@ paths:
                 service_request_status_id:
                   type: string
                   description: The Propexo unique identifier for the service request status
-                service_request_vendor_id:
+                vendor_id:
                   type: string
-                  description: The Propexo unique identifier for the service request vendor
+                  description: The Propexo unique identifier for the vendor
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
@@ -11390,9 +11390,6 @@ paths:
                   type: string
                   maxLength: 65535
                   description: Notes associated with the service request
-                vendor_id:
-                  type: string
-                  description: The Propexo unique identifier for the vendor
                 date_created:
                   type: string
                   format: date-time
@@ -11801,9 +11798,9 @@ paths:
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
-                service_request_vendor_id:
+                vendor_id:
                   type: string
-                  description: The Propexo unique identifier for the service request vendor
+                  description: The Propexo unique identifier for the vendor
                 lease_id:
                   type: string
                   description: The Propexo unique identifier for the lease
@@ -11863,9 +11860,6 @@ paths:
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
-                vendor_id:
-                  type: string
-                  description: The Propexo unique identifier for the vendor
                 service_priority:
                   type: string
                   enum:
@@ -12963,8 +12957,8 @@ paths:
     get:
       tags:
         - vendors
-      summary: Get all service request vendors
-      description: Get all service request vendors
+      summary: Get all vendors
+      description: Get all vendors
       security:
         - bearerAuth: []
       parameters:
@@ -13036,7 +13030,7 @@ paths:
           in: query
       responses:
         "200":
-          description: Get all service request vendors
+          description: Get all vendors
           content:
             application/json:
               schema:
@@ -13073,7 +13067,7 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propexo unique identifier for the service request vendor
+                          description: The Propexo unique identifier for the vendor
                         created_at:
                           type: string
                           description: The date record first entered Propexo
@@ -13100,33 +13094,32 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: The account number associated with the service request vendor
+                          description: The account number associated with the vendor
                         is_active:
                           type:
                             - boolean
                             - "null"
-                          description: Whether the service request vendor is active
+                          description: Whether the vendor is active
                         name:
                           type:
                             - string
                             - "null"
-                          description: The name associated with the service request vendor
+                          description: The name associated with the vendor
                         notes:
                           type:
                             - string
                             - "null"
-                          description: Notes associated with the service request vendor
+                          description: Notes associated with the vendor
                         tax_id:
                           type:
                             - string
                             - "null"
-                          description: The tax payer identification number associated with the service
-                            request vendor
+                          description: The tax payer identification number associated with the vendor
                         type:
                           type:
                             - string
                             - "null"
-                          description: The type associated with the service request vendor
+                          description: The type associated with the vendor
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -13161,8 +13154,8 @@ paths:
     post:
       tags:
         - vendors
-      summary: Create a service request vendor
-      description: Create a service request vendor for an integration.
+      summary: Create a vendor
+      description: Create a vendor for an integration.
       security:
         - bearerAuth: []
       requestBody:
@@ -13315,7 +13308,7 @@ paths:
                 - integration_id
       responses:
         "200":
-          description: Create a service request vendor for an integration.
+          description: Create a vendor for an integration.
           content:
             application/json:
               schema:
@@ -13338,8 +13331,8 @@ paths:
     get:
       tags:
         - vendors
-      summary: Get service request vendor by ID
-      description: Get service request vendor by ID
+      summary: Get vendor by ID
+      description: Get vendor by ID
       security:
         - bearerAuth: []
       parameters:
@@ -13382,7 +13375,7 @@ paths:
           in: query
       responses:
         "200":
-          description: Get service request vendor by ID
+          description: Get vendor by ID
           content:
             application/json:
               schema:
@@ -13417,7 +13410,7 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propexo unique identifier for the service request vendor
+                        description: The Propexo unique identifier for the vendor
                       created_at:
                         type: string
                         description: The date record first entered Propexo
@@ -13444,33 +13437,32 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: The account number associated with the service request vendor
+                        description: The account number associated with the vendor
                       is_active:
                         type:
                           - boolean
                           - "null"
-                        description: Whether the service request vendor is active
+                        description: Whether the vendor is active
                       name:
                         type:
                           - string
                           - "null"
-                        description: The name associated with the service request vendor
+                        description: The name associated with the vendor
                       notes:
                         type:
                           - string
                           - "null"
-                        description: Notes associated with the service request vendor
+                        description: Notes associated with the vendor
                       tax_id:
                         type:
                           - string
                           - "null"
-                        description: The tax payer identification number associated with the service
-                          request vendor
+                        description: The tax payer identification number associated with the vendor
                       type:
                         type:
                           - string
                           - "null"
-                        description: The type associated with the service request vendor
+                        description: The type associated with the vendor
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -18339,8 +18331,8 @@ paths:
     get:
       tags:
         - vendors
-      summary: Get all service request vendors by property ID
-      description: Get all service request vendors by property ID
+      summary: Get all vendors by property ID
+      description: Get all vendors by property ID
       security:
         - bearerAuth: []
       parameters:
@@ -18383,7 +18375,7 @@ paths:
           in: query
       responses:
         "200":
-          description: Get all service request vendors by property ID
+          description: Get all vendors by property ID
           content:
             application/json:
               schema:
@@ -18420,7 +18412,7 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propexo unique identifier for the service request vendor
+                          description: The Propexo unique identifier for the vendor
                         created_at:
                           type: string
                           description: The date record first entered Propexo
@@ -18447,33 +18439,32 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: The account number associated with the service request vendor
+                          description: The account number associated with the vendor
                         is_active:
                           type:
                             - boolean
                             - "null"
-                          description: Whether the service request vendor is active
+                          description: Whether the vendor is active
                         name:
                           type:
                             - string
                             - "null"
-                          description: The name associated with the service request vendor
+                          description: The name associated with the vendor
                         notes:
                           type:
                             - string
                             - "null"
-                          description: Notes associated with the service request vendor
+                          description: Notes associated with the vendor
                         tax_id:
                           type:
                             - string
                             - "null"
-                          description: The tax payer identification number associated with the service
-                            request vendor
+                          description: The tax payer identification number associated with the vendor
                         type:
                           type:
                             - string
                             - "null"
-                          description: The type associated with the service request vendor
+                          description: The type associated with the vendor
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
