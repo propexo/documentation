@@ -6,7 +6,7 @@ Understanding these concepts is crucial for developers and system architects to 
 ## Propexo Unified API Overview
 The Propexo Unified API is an intermediate layer between customer applications and Property Management Systems (PMS). It delivers cached data hydrated by an Extract, Transform, Load (ETL) process. This ETL implements one of the following syncing strategies:
 
-## Strategy 1: Date-Limited Sync (Propexo's default sync strategy)
+## Strategy 1: Date-Limited Sync (default strategy)
 A Date-Limited Sync focuses on synchronizing data within a specific time frame. Instead of retrieving all historical data, only data within a predefined period is from the PMS. This approach is appropriate when historical data beyond a certain point isn't valuable, when there are PMS rate-limit concerns, or when a customer desires to reduce the costs incurred by syncing unneeded data.
 		
 ### Implementation
@@ -38,6 +38,6 @@ A credit reporting company needs access to the last three years of resident paym
 ## Important Notes
 - The Back-Sync configuration should be carefully considered and discussed with your account manager, as it will have direct cost implications that will be difficult to predict in advance. We advise caution when considering this option for higher volume data models such as `payments`, `charges`, and `events`.
 - A Back-Sync is a one-time data fetch. After a Back-Sync has been completed, the ETL will switch to a standard Date-Limited Sync for subsequent requests.
-- Support for date filtering functionality across Property Management Systems is not uniform. For example, a date filter might apply to an `updatedAt` field in one system and a `createdAt` field in another. We work hard to ensure the date filter is applied to the most relevant field for each data model, but this is not always possible. Please get in touch with support for more information and clarity on how the PMS operates in your use case.
+- Support for date filtering functionality across Property Management Systems is not uniform. For example, a date filter might apply to an `updatedAt` field in one system and a `createdAt` field in another. We work hard to ensure the date filter is applied to the most relevant field for each data model, but this is not always possible. Please get in touch with support for more information on how the PMS operates in your use case.
 - Due to the nature of a Back-Sync, completion time can vary based on the amount of historical data and the performance of the Property Management System's API. In some cases, it could take several days to complete. While your Back-Sync is running, you cannot perform any other (Date-Limited) syncs for that integration.
 - Due to fundamental differences in each PMS API, Back-Syncs or Date-Limited Syncs may not be available for all data models. Please get in touch with support for more information.
