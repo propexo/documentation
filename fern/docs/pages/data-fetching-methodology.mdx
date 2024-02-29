@@ -1,20 +1,19 @@
 ## Introduction
+Propexo offers a unified API that simplifies integrating customer applications with property management software. This API uses two approaches to synchronization: Back-Sync and Date-Limited Sync. 
 
-Propexo, a leading company in API integration solutions, offers a Unified API that simplifies the process of integrating various services and applications. Within the framework of this API, two key synchronization concepts are employed: Back-Sync and Date-Limited Sync. Understanding these concepts is crucial for developers and system architects to make informed decisions about data synchronization strategies.
-
+Understanding these concepts is crucial for developers and system architects to make informed decisions about data synchronization strategies appropriate for their use case.
+		
 ## Propexo Unified API Overview
+The Propexo Unified API is an intermediate layer between customer applications and Property Management Systems (PMS). It delivers cached data hydrated by an Extract, Transform, Load (ETL) process. This ETL implements one of the following syncing strategies:
 
-The Propexo Unified API acts as an intermediary layer between customers and Property Management Systems (PMS). It delivers cached data that is been hydrated by an Extract, Transform, Load (ETL) process. This ETL serves as the integration layer responsible for implementing one of the following syncing strategies.
-
-## Date-Limited Sync (Propexo's default sync strategy)
-
-A Date-Limited Sync focuses on synchronizing data within a specific time frame. Instead of retrieving historical data in its entirety, only data within a predefined period is from the PMS. This approach is particularly useful when historical data beyond a certain point is deemed irrelevant, when there are PMS rate-limit concerns, or when you desire to reduce the costs incurred by syncing unneeded data.
-
+## Strategy 1: Date-Limited Sync (Propexo's default sync strategy)
+A Date-Limited Sync focuses on synchronizing data within a specific time frame. Instead of retrieving all historical data, only data within a predefined period is from the PMS. This approach is appropriate when historical data beyond a certain point isn't valuable, when there are PMS rate-limit concerns, or when a customer desires to reduce the costs incurred by syncing unneeded data.
+		
 ### Implementation
-1. **Date Range Specification**: The Propexo ETL date filters are defined internally per data model and restricted by what the PMS API provides as functionality. For example, certain PMS systems may not offer the ability to filter by date on a particular data model.
-2. **Data Retrieval**: The ETL fetches data from Property Management Systems limited to the specified date range. These date ranges may be modified per customer requirements.
-
-Please contact support for more information and configuration of date filters for your use case.
+1. **Date Range Specification**: The Propexo ETL date filters are defined internally per data model and restricted by what the PMS API provides as functionality. For example, some PMS systems may not offer the ability to filter by date on a particular data model.
+2. **Data Retrieval**: The ETL fetches data from Property Management Systems limited to the specified date range. These date ranges can be modified per customer requirements.
+	
+Please get in touch with support for more information and configuration of date filters for your use case.
 
 ### Benefits of Date-Limited Sync
 - **Efficient Resource Utilization**: Date-Limited Syncs conserve resources by synchronizing only relevant data, thereby optimizing storage, processing resources, and cost to you.
@@ -22,27 +21,23 @@ Please contact support for more information and configuration of date filters fo
 
 ### Sample Use Case
 An income verification application that requires only the last 24 hours of applicants from a Property Management System. In this scenario, a Date-Limited Sync is ideal as it allows the application to retrieve only the necessary data, reducing processing time and resource utilization.
-
-## Back-Sync
-
-We recognize that there are use cases where deep historical data is necessary. In this case, a one-time Back-Sync is the recommended approach where historical data is fetched from Property Management Systems. In this method, Propexo requests historical data from the last 50 years from the PMS as a one-time operation. This ensures that the customer's system has a complete and accurate dataset, reflecting all past activities and changes for the data models to which you are subscribed.
-
-
+		
+## Strategy 2: Back-Sync
+We recognize that there are use cases where deep historical data is necessary. In this case, a one-time Back-Sync is the recommended approach. During a Back-Sync, Propexo requests historical data from the last 50 years from the PMS as a one-time operation, ensuring that the customer's system has a complete and accurate dataset reflecting all past activities and changes for the data models you use.
+		
 ### Implementation
-- **Date Range Specification**: Propexo queries the Property Management System for historical data based on a specified date range, defaulting to the last 50 years of data.
+- **Date Range Specification**: Propexo queries the Property Management System for historical data based on a specified date range, defaulting to the last 50 years of data.		
 
 ### Benefits of a Back-Sync
-- **Comprehensive Data**: A Back-Sync ensures that the customer's cache is hydrated with a wider range of historical data.
+- **Comprehensive Data**: A Back-Sync ensures the customer's cache is hydrated with a broader range of historical data.
 - **Historical Insights**: By synchronizing historical data, a Back-Sync enables retrospective analysis, trend identification, and historical insights.
-
+		
 ### Sample Use Case
-
-A credit reporting company who needs access to the last 3 years of resident payment history in order to accurately report on-time payments. In this scenario, a Back-Sync is ideal as it allows the application to retrieve the necessary historical data, providing a comprehensive view of the resident's payment history.
-
+A credit reporting company needs access to the last three years of resident payments to report on-time payment history accurately. In this scenario, a Back-Sync is ideal as it allows the application to retrieve the necessary historical data, providing a comprehensive view of the resident's payment history.
+		
 ## Important Notes
-
-- The Back-Sync configuration should be carefully considered and discussed with your account manager, as it will have direct cost implications that will be difficult to accurately predict in advance. We advise caution when considering this option for higher volume data models such as `payments`, `charges`, and `events`.
-- A Back-Sync is a one-time data fetch. After a Back-Sync has completed, the ETL will switch to a standard Date-Limited Sync for subsequent requests.
-- Support for date filtering functionality across Property Management Systems is not uniform. For example, a date filter might apply to an `updatedAt` field in one system and a `createdAt` field in another. We make a good effort attempt at ensuring that the date filter is applied to the most relevant field for each data model, but this is not always possible. Please contact support for more information and clarity on how the PMS operates in your use case.
-- Due to the nature of a Back-Sync, completion time can vary based on the amount of historical data and the performance of the Property Management System's API. In some cases, it could take several days to complete. While your Back-Sync is running, you will not be able to perform any other (Date-Limited) syncs for that integration.
-- Due to fundamental differences in each PMS API, Back-Syncs or Date-Limited Syncs may not be available for all data models. Please contact support for more information.
+- The Back-Sync configuration should be carefully considered and discussed with your account manager, as it will have direct cost implications that will be difficult to predict in advance. We advise caution when considering this option for higher volume data models such as `payments`, `charges`, and `events`.
+- A Back-Sync is a one-time data fetch. After a Back-Sync has been completed, the ETL will switch to a standard Date-Limited Sync for subsequent requests.
+- Support for date filtering functionality across Property Management Systems is not uniform. For example, a date filter might apply to an `updatedAt` field in one system and a `createdAt` field in another. We work hard to ensure the date filter is applied to the most relevant field for each data model, but this is not always possible. Please get in touch with support for more information and clarity on how the PMS operates in your use case.
+- Due to the nature of a Back-Sync, completion time can vary based on the amount of historical data and the performance of the Property Management System's API. In some cases, it could take several days to complete. While your Back-Sync is running, you cannot perform any other (Date-Limited) syncs for that integration.
+- Due to fundamental differences in each PMS API, Back-Syncs or Date-Limited Syncs may not be available for all data models. Please get in touch with support for more information.
