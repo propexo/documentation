@@ -9997,6 +9997,11 @@ paths:
                             - number
                             - "null"
                           description: The amount of the resident charge, in cents
+                        amount_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw value for amount from the PMS
                         due_date:
                           type:
                             - string
@@ -10070,6 +10075,7 @@ paths:
                         - x_resident_id
                         - x_unit_id
                         - amount_in_cents
+                        - amount_raw
                         - due_date
                         - name
                         - description
@@ -10290,6 +10296,11 @@ paths:
                           - number
                           - "null"
                         description: The amount of the resident charge, in cents
+                      amount_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw value for amount from the PMS
                       due_date:
                         type:
                           - string
@@ -10363,6 +10374,7 @@ paths:
                       - x_resident_id
                       - x_unit_id
                       - amount_in_cents
+                      - amount_raw
                       - due_date
                       - name
                       - description
@@ -10563,6 +10575,11 @@ paths:
                             - number
                             - "null"
                           description: The amount of the resident payment, in cents
+                        amount_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw value for amount from the PMS
                         name:
                           type:
                             - string
@@ -10628,6 +10645,7 @@ paths:
                         - payment_method_normalized
                         - payment_method_raw
                         - amount_in_cents
+                        - amount_raw
                         - name
                         - description
                         - reference_number
@@ -10849,6 +10867,11 @@ paths:
                           - number
                           - "null"
                         description: The amount of the resident payment, in cents
+                      amount_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw value for amount from the PMS
                       name:
                         type:
                           - string
@@ -10914,6 +10937,7 @@ paths:
                       - payment_method_normalized
                       - payment_method_raw
                       - amount_in_cents
+                      - amount_raw
                       - name
                       - description
                       - reference_number
