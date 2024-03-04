@@ -16153,6 +16153,8 @@ paths:
                                   - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                                   - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
                                   - ENTRATA_LEAD_EVENTS
@@ -16214,6 +16216,8 @@ paths:
                                     - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                                     - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                                     - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
+                                    - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                                    - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                     - ENTRATA_AMENITIES
                                     - ENTRATA_LEASES
                                     - ENTRATA_LEAD_EVENTS
@@ -18050,6 +18054,8 @@ paths:
                                 - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                                 - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                                 - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
+                                - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                                - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                 - ENTRATA_AMENITIES
                                 - ENTRATA_LEASES
                                 - ENTRATA_LEAD_EVENTS
@@ -18111,6 +18117,8 @@ paths:
                                   - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                                   - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
                                   - ENTRATA_LEAD_EVENTS
