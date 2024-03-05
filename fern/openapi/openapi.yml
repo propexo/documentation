@@ -9830,7 +9830,9 @@ paths:
       tags:
         - billing-and-payments
       summary: Get all resident charges
-      description: Get all resident charges
+      description: The Resident Charges model provides a limited, one-sided view of a
+        resident's financial history with a PMC and should not be treated as a
+        comprehensive report of all charges that the resident owes.
       security:
         - bearerAuth: []
       parameters:
@@ -9911,7 +9913,9 @@ paths:
           in: query
       responses:
         "200":
-          description: Get all resident charges
+          description: The Resident Charges model provides a limited, one-sided view of a
+            resident's financial history with a PMC and should not be treated as
+            a comprehensive report of all charges that the resident owes.
           content:
             application/json:
               schema:
@@ -10172,7 +10176,9 @@ paths:
       tags:
         - billing-and-payments
       summary: Get a resident charge by ID
-      description: Get a resident charge by ID
+      description: The Resident Charges model provides a limited, one-sided view of a
+        resident's financial history with a PMC and should not be treated as a
+        comprehensive report of all charges that the resident owes.
       security:
         - bearerAuth: []
       parameters:
@@ -10215,7 +10221,9 @@ paths:
           in: query
       responses:
         "200":
-          description: Get a resident charge by ID
+          description: The Resident Charges model provides a limited, one-sided view of a
+            resident's financial history with a PMC and should not be treated as
+            a comprehensive report of all charges that the resident owes.
           content:
             application/json:
               schema:
@@ -10401,7 +10409,9 @@ paths:
       tags:
         - billing-and-payments
       summary: Get all resident payments
-      description: Get all resident payments
+      description: The Resident Payments model provides a limited, one-sided view of a
+        resident's financial history with a PMC and should not be treated as a
+        comprehensive report of all payments that the resident has made.
       security:
         - bearerAuth: []
       parameters:
@@ -10482,7 +10492,9 @@ paths:
           in: query
       responses:
         "200":
-          description: Get all resident payments
+          description: The Resident Payments model provides a limited, one-sided view of a
+            resident's financial history with a PMC and should not be treated as
+            a comprehensive report of all payments that the resident has made.
           content:
             application/json:
               schema:
@@ -10750,7 +10762,9 @@ paths:
       tags:
         - billing-and-payments
       summary: Get a resident payment by ID
-      description: Get a resident payment by ID
+      description: The Resident Payments model provides a limited, one-sided view of a
+        resident's financial history with a PMC and should not be treated as a
+        comprehensive report of all payments that the resident has made.
       security:
         - bearerAuth: []
       parameters:
@@ -10793,7 +10807,9 @@ paths:
           in: query
       responses:
         "200":
-          description: Get a resident payment by ID
+          description: The Resident Payments model provides a limited, one-sided view of a
+            resident's financial history with a PMC and should not be treated as
+            a comprehensive report of all payments that the resident has made.
           content:
             application/json:
               schema:
