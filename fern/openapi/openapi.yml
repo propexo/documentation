@@ -10680,18 +10680,15 @@ paths:
               properties:
                 integration_id:
                   type: string
-                property_id:
+                lease_id:
                   type: string
-                  description: The Propexo unique identifier for the property
-                resident_id:
-                  type: string
-                  description: The Propexo unique identifier for the resident
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
+                  description: The Propexo unique identifier for the lease
                 financial_account_id:
                   type: string
                   description: The Propexo unique identifier for the financial account
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
                 transaction_date:
                   type: string
                   format: date-time
@@ -10699,12 +10696,32 @@ paths:
                 amount_in_cents:
                   type: integer
                   description: The amount of the resident payment, in cents
-                reference_number:
+                payment_method_raw:
                   type: string
-                  description: The reference number for the resident payment
+                  enum:
+                    - Check
+                    - Cash
+                    - MoneyOrder
+                    - CashierCheck
+                    - DirectDeposit
+                    - CreditCard
+                    - ElectronicPayment
+                  description: The raw method of payment for the resident payment
+                send_email_receipt:
+                  type: boolean
+                  description: Indicates whether the payee would like to have a receipt emailed
                 description:
                   type: string
                   description: Description of the resident payment
+                reference_number:
+                  type: string
+                  description: The reference number for the resident payment
+                property_id:
+                  type: string
+                  description: The Propexo unique identifier for the property
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
               required:
                 - integration_id
       responses:
