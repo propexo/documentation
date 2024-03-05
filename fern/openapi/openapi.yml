@@ -10141,6 +10141,9 @@ paths:
                 financial_account_id:
                   type: string
                   description: The Propexo unique identifier for the financial account
+                lease_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease
               required:
                 - integration_id
       responses:
