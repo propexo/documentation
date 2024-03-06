@@ -16,9 +16,7 @@ components:
   parameters: {}
 tags:
   - name: amenities
-    description: >
-      This resource represents an individual user in the system.
-      Each user is identified by a numeric `id`. <br> <a href="https://google.com">Another line here?</a>
+    description: This resource represents an individual user in the system.
 paths:
   /v1/admin/data-diffs:
     get:
