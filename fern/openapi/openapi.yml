@@ -185,6 +185,9 @@ paths:
         "400":
           description: invalid input
   /v1/amenities:
+    description: >
+        This resource represents an individual user in the system.
+        Each user is identified by a numeric `id`.
     get:
       tags:
         - amenities
