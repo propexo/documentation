@@ -14,6 +14,11 @@ components:
       scheme: bearer
   schemas: {}
   parameters: {}
+tags:
+  - name: amenities
+    description: >
+      This resource represents an individual user in the system.
+      Each user is identified by a numeric `id`. <br> <a href="https://google.com">Another line here?</a>
 paths:
   /v1/admin/data-diffs:
     get:
@@ -185,9 +190,6 @@ paths:
         "400":
           description: invalid input
   /v1/amenities:
-    description: >
-        This resource represents an individual user in the system.
-        Each user is identified by a numeric `id`.
     get:
       tags:
         - amenities
