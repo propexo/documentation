@@ -20,7 +20,7 @@ paths:
       tags:
         - admin
       summary: Get all data diffs
-      description: Get all data diffs
+      description: Get all data diffs `block test` *bold test*
       security:
         - bearerAuth: []
       parameters:
