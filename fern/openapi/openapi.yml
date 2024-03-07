@@ -16329,12 +16329,16 @@ paths:
                               - enabled
                               - from_interfaces
                         can_authenticate:
-                          type:
-                            - boolean
-                            - "null"
+                          type: boolean
                           description: True if the credentials and configuration for the integration
                             allowed us to successfully authenticate with at
                             least one PMS API endpoint, false otherwise
+                        last_data_access_check:
+                          type:
+                            - string
+                            - "null"
+                          description: The UTC timestamp of the last time an authentication check was
+                            performed for an integration.
                       required:
                         - id
                         - created_at
@@ -16353,6 +16357,7 @@ paths:
                         - integration_interfaces
                         - models
                         - can_authenticate
+                        - last_data_access_check
                 required:
                   - meta
                   - results
@@ -18230,12 +18235,24 @@ paths:
                             - enabled
                             - from_interfaces
                       can_authenticate:
-                        type:
-                          - boolean
-                          - "null"
+                        type: boolean
                         description: True if the credentials and configuration for the integration
                           allowed us to successfully authenticate with at least
                           one PMS API endpoint, false otherwise
+                      last_data_access_check:
+                        type:
+                          - string
+                          - "null"
+                        description: The UTC timestamp of the last time an authentication check was
+                          performed for an integration.
+                      is_running_sync:
+                        type: boolean
+                        description: Whether or not a data sync is currently in progress for the
+                          integration
+                      is_running_data_access_check:
+                        type: boolean
+                        description: Whether or not a data access check is currently in progress for the
+                          integration
                     required:
                       - id
                       - created_at
@@ -18254,6 +18271,9 @@ paths:
                       - integration_interfaces
                       - models
                       - can_authenticate
+                      - last_data_access_check
+                      - is_running_sync
+                      - is_running_data_access_check
                 required:
                   - meta
                   - results
