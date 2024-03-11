@@ -34,6 +34,8 @@ navigation:
           path: ./docs/pages/data-fetching-methodology.mdx
         - page: Custom Data Objects
           path: ./docs/pages/custom-data.mdx
+        - page: Integration Cloning
+          path: ./docs/pages/integration-cloning.mdx
         - page: Deleted Records
           path: ./docs/pages/deleted-records.mdx
         - page: Filtering Results 
