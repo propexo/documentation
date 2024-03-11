@@ -15667,6 +15667,7 @@ paths:
                     - applications
                     - employees
                     - events
+                    - invoices
                     - leads
                     - leases
                     - listings
@@ -18138,6 +18139,7 @@ paths:
                     - applications
                     - employees
                     - events
+                    - invoices
                     - leads
                     - leases
                     - listings
