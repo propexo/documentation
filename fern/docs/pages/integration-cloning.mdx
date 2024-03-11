@@ -1,24 +1,29 @@
 ## Overview
-
-Because Propexo is highly configurable at the integration level, it could be beneficial to simply "clone" an integration's configurations as part of creating a new integration. This can save you lots of time and effort, unlocking simplicity and flexibility in your implementation. strategy.
+		
+Because Propexo is highly configurable at the integration level, it can be helpful to  "clone" an integration's configurations to create a new integration. This can save time and effort as part of your implementation strategy.
 
 ## Configurations
-The following is a list of configurations that are included when you choose to clone an integration.
-    - __Job Schedules__ - This is the configuration that defines when and how often we request data from the PMS.
-    - __Date Filters__ - This configuration controls the date range filters that are applied to the PMS for a given data model
-    - __Job Controls__ - This is the configuration that defines what Propexo ETL jobs are run or not run at a more granular level. These are settings that we will work with you to configure the first time.
-    - __Custom Enum Maps__ - Propexo provides a default set of normalized enum values that are used across your entire Propexo ecosystem. However, sometimes customers like to define their own enum mappings. We will work with you to set these for the first integration, but they can be scaled across new integrations as part of the cloning process.
-    - __Transform Schemas__ - This is the configuration that defines how data gets mapped from the PMS to Propexo. These are generally standardized across the entire Propexo ecosystem but can be customized per customer and integration.
+The following is a list of configurations included when you clone an integration.
+- **Job Schedules** - This configuration defines when and how often we request data from the PMS.
+- **Date Filters** - This configuration controls the date range filters applied to the PMS for a given data model
+- **Job Controls** - This configuration defines which Propexo ETL jobs run at a more granular level. We will work with you to configure these settings the first time.
+- **Custom Enum Maps** - Propexo provides a default set of normalized enum values used across your entire Propexo ecosystem. However, sometimes, customers like to define custom enum mappings. We will work with you to set these for the first integration, but they can deployed across new integrations as part of the cloning process.
+- **Transform Schemas** - This configuration defines how data gets mapped from the PMS to Propexo. These are standardized across the entire Propexo ecosystem but can be customized per customer and integration.
+		
 
 ## Limitations
-You may only clone an integration from one PMS to the same PMS. If you have a Propertware integration, you may not clone that to a Buildium integration, for example. It must be Propertyware to Propertyware.
+You may only clone an integration from one PMS to the same PMS. For example, if you have a Propertware integration, you may not clone that to a Buildium integration. It must be Propertyware to Propertyware.
+		
 
 You may only clone within a given environment. For example, you may not clone from a sandbox to a production environment. Cloning is limited to sandbox to sandbox or production to production.
+		
 
 ## How To Clone
 You can clone an integration via the API or the Propexo Dashboard. 
+		
 
 For the API, you can use `POST /integrations` endpoint and leverage the `based_on_integration_id` parameter. More docs can be found [here](https://docs.propexo.com/api-reference/api-reference/admin/create-an-integration#request.body.based_on_integration_id)
+		
 
 In the Propexo Dashboard, you can use the "Clone Customer" button by selecting an existing integration and clicking the "..." menu. You can follow the visual steps below.
 
