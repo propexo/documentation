@@ -7763,6 +7763,11 @@ paths:
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
+                        unit_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the unit
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -7808,6 +7813,7 @@ paths:
                         - address_2
                         - zip
                         - property_id
+                        - unit_id
                         - integration_id
                         - integration_vendor
                 required:
@@ -8078,6 +8084,11 @@ paths:
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
+                      unit_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the unit
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -8123,6 +8134,7 @@ paths:
                       - address_2
                       - zip
                       - property_id
+                      - unit_id
                       - integration_id
                       - integration_vendor
                 required:
