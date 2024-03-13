@@ -12867,6 +12867,28 @@ paths:
                     - Canceled
                     - Complete
                   description: The raw status associated with the service request history
+                notes:
+                  type: string
+                  description: Notes associated with the service request history
+                attachment:
+                  type: object
+                  properties:
+                    file_data:
+                      type: string
+                      maxLength: 69730304
+                      description: The contents of the file, as a base64 encoded string. The PMS has a
+                        max file size of 50 MB.
+                    file_name:
+                      type: string
+                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                    mime_type:
+                      type: string
+                      description: 'The mime type of the file. Ex: "application/pdf"'
+                  required:
+                    - file_data
+                    - file_name
+                    - mime_type
+                  description: Attachment file associated with the service request history
               required:
                 - integration_id
       responses:
