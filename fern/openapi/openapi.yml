@@ -2992,6 +2992,412 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/construction-jobs:
+    get:
+      tags:
+        - construction-job-cost
+      summary: Get all construction jobs
+      description: Get all construction jobs
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all construction jobs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the construction job
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        x_gl_account_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the general ledger account from the integration
+                            vendor
+                        actual_end_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The actual date the construction job ended
+                        actual_start_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The actual date the construction job started
+                        name:
+                          type: string
+                          description: The name associated with the construction job
+                        planned_end_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the construction job was planned to end
+                        planned_start_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the construction job was planned to start
+                        status_normalized:
+                          type:
+                            - string
+                            - "null"
+                          description: The normalized status for the construction job
+                        status_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw status associated with the construction job
+                        total_budget_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total budget for the construction job
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - x_gl_account_id
+                        - actual_end_date
+                        - actual_start_date
+                        - name
+                        - planned_end_date
+                        - planned_start_date
+                        - status_normalized
+                        - status_raw
+                        - total_budget_in_cents
+                        - custom_data
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/construction-jobs/{construction_job_id}:
+    get:
+      tags:
+        - construction-job-cost
+      summary: Get construction job by ID
+      description: Get construction job by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the construction job
+          required: true
+          name: construction_job_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get construction job by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the construction job
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      x_gl_account_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the general ledger account from the integration
+                          vendor
+                      actual_end_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The actual date the construction job ended
+                      actual_start_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The actual date the construction job started
+                      name:
+                        type: string
+                        description: The name associated with the construction job
+                      planned_end_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the construction job was planned to end
+                      planned_start_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the construction job was planned to start
+                      status_normalized:
+                        type:
+                          - string
+                          - "null"
+                        description: The normalized status for the construction job
+                      status_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw status associated with the construction job
+                      total_budget_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The total budget for the construction job
+                      custom_data:
+                        type:
+                          - object
+                          - "null"
+                        properties: {}
+                        description: Custom data
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - x_gl_account_id
+                      - actual_end_date
+                      - actual_start_date
+                      - name
+                      - planned_end_date
+                      - planned_start_date
+                      - status_normalized
+                      - status_raw
+                      - total_budget_in_cents
+                      - custom_data
+                      - property_id
+                      - integration_id
+                      - integration_vendor
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
   /v1/financial-accounts:
     get:
       tags:
