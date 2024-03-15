@@ -4468,9 +4468,9 @@ paths:
                 event_type_id:
                   type: string
                   description: The Propexo unique identifier for the event type
-                name:
+                notes:
                   type: string
-                  description: The name associated with the event type
+                  description: Notes associated with the event
                 employee_id:
                   type: string
                   description: The Propexo unique identifier for the employee
@@ -4485,9 +4485,6 @@ paths:
                 reasons_for_event:
                   type: string
                   description: The reasons for the event
-                notes:
-                  type: string
-                  description: Notes associated with the event
                 appointment_datetime:
                   type: string
                   format: date-time
@@ -4669,9 +4666,9 @@ paths:
                 event_type_id:
                   type: string
                   description: The Propexo unique identifier for the event type
-                name:
+                notes:
                   type: string
-                  description: The name associated with the event type
+                  description: Notes associated with the event
                 employee_id:
                   type: string
                   description: The Propexo unique identifier for the employee
@@ -4685,9 +4682,6 @@ paths:
                 reasons_for_event:
                   type: string
                   description: The reasons for the event
-                notes:
-                  type: string
-                  description: Notes associated with the event
                 appointment_datetime:
                   type: string
                   format: date-time
