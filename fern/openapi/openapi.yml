@@ -17106,6 +17106,157 @@ paths:
         "400":
           description: invalid input
   /v1/webhooks/{webhook_id}:
+    get:
+      tags:
+        - webhooks
+      summary: Get a webhook by ID
+      description: Get a webhook by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: webhook_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get a webhook by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the webhook
+                      created_at:
+                        type: string
+                        description: The date the webhook was created
+                      updated_at:
+                        type: string
+                        description: The date the webhook was last updated
+                      url:
+                        type: string
+                        description: The url to send the webhook to
+                      headers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            header:
+                              type: string
+                            value:
+                              type: string
+                          required:
+                            - header
+                            - value
+                        description: Optional headers to send with the webhook
+                      active:
+                        type: boolean
+                        description: The status of the webhook
+                      secret:
+                        type: string
+                        description: The secret used to sign the webhook
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The environment in which the webhook runs
+                      triggers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The ID of the trigger
+                            trigger:
+                              type: string
+                              description: The name of the trigger
+                            model:
+                              type:
+                                - string
+                                - "null"
+                              description: The model that triggers the webhook
+                          required:
+                            - id
+                            - trigger
+                            - model
+                        description: The webhook event triggers
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - url
+                      - active
+                      - secret
+                      - system
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
     put:
       tags:
         - webhooks
