@@ -18228,7 +18228,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: Entrata-Legacy
+                      title: EntrataLegacy
                     - type: object
                       properties:
                         accessToken:
@@ -18311,7 +18311,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealPage Registered Vendor
+                      title: RealPageRegisteredVendor
                     - type: object
                       properties:
                         baseUrl:
@@ -18329,7 +18329,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealPage Partner Exchange
+                      title: RealPagePartnerExchange
                     - type: object
                       properties:
                         Username:
@@ -18382,7 +18382,7 @@ paths:
                         - accountId
                         - apiKey
                       description: ResMan authentication credentials
-                      title: ResMan
+                      title: Resman
                     - type: object
                       properties:
                         username:
@@ -20164,7 +20164,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: Entrata-Legacy
+                      title: EntrataLegacy
                     - type: object
                       properties:
                         accessToken:
@@ -20247,7 +20247,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealPage Registered Vendor
+                      title: RealPageRegisteredVendor
                     - type: object
                       properties:
                         baseUrl:
@@ -20265,7 +20265,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealPage Partner Exchange
+                      title: RealPagePartnerExchange
                     - type: object
                       properties:
                         Username:
@@ -20318,7 +20318,7 @@ paths:
                         - accountId
                         - apiKey
                       description: ResMan authentication credentials
-                      title: ResMan
+                      title: Resman
                     - type: object
                       properties:
                         username:
