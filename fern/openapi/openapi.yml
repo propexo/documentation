@@ -14,6 +14,9 @@ components:
       scheme: bearer
   schemas: {}
   parameters: {}
+tags:
+  - name: amenities
+    description: This resource represents an individual user in the system.
 paths:
   /v1/admin/data-diffs:
     get:
