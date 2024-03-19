@@ -18038,12 +18038,18 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
-                                  - YARDI_GUESTCARD
-                                  - YARDI_RESIDENT_TRANSACTIONS
-                                  - YARDI_RESIDENT_DATA
-                                  - YARDI_SERVICES
-                                  - YARDI_JOB_COST
-                                  - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                   - REALPAGE_RPX_READ_PROPERTIES
                                   - REALPAGE_RPX_UNITS
                                   - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -18101,12 +18107,18 @@ paths:
                                     - REALPAGE_RESIDENTS
                                     - REALPAGE_PROSPECT_MANAGEMENT
                                     - REALPAGE_SDE_CONVERGENT_BILLING
-                                    - YARDI_GUESTCARD
-                                    - YARDI_RESIDENT_TRANSACTIONS
-                                    - YARDI_RESIDENT_DATA
-                                    - YARDI_SERVICES
-                                    - YARDI_JOB_COST
-                                    - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                     - REALPAGE_RPX_READ_PROPERTIES
                                     - REALPAGE_RPX_UNITS
                                     - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -19957,12 +19969,18 @@ paths:
                                 - REALPAGE_RESIDENTS
                                 - REALPAGE_PROSPECT_MANAGEMENT
                                 - REALPAGE_SDE_CONVERGENT_BILLING
-                                - YARDI_GUESTCARD
-                                - YARDI_RESIDENT_TRANSACTIONS
-                                - YARDI_RESIDENT_DATA
-                                - YARDI_SERVICES
-                                - YARDI_JOB_COST
-                                - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                 - REALPAGE_RPX_READ_PROPERTIES
                                 - REALPAGE_RPX_UNITS
                                 - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -20020,12 +20038,18 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
-                                  - YARDI_GUESTCARD
-                                  - YARDI_RESIDENT_TRANSACTIONS
-                                  - YARDI_RESIDENT_DATA
-                                  - YARDI_SERVICES
-                                  - YARDI_JOB_COST
-                                  - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                   - REALPAGE_RPX_READ_PROPERTIES
                                   - REALPAGE_RPX_UNITS
                                   - REALPAGE_RPX_RESIDENT_MANAGEMENT
