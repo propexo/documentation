@@ -18311,7 +18311,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealPageRegisteredVendor
+                      title: RealpageRegisteredVendor
                     - type: object
                       properties:
                         baseUrl:
@@ -18329,7 +18329,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealPagePartnerExchange
+                      title: RealpagePartnerExchange
                     - type: object
                       properties:
                         Username:
@@ -18343,7 +18343,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager-Sandbox
+                      title: RentManagerSandbox
                     - type: object
                       properties:
                         PartnerToken:
@@ -18354,7 +18354,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager-Production
+                      title: RentManagerProduction
                     - type: object
                       properties:
                         apiKey:
@@ -18413,7 +18413,7 @@ paths:
                         - license
                         - companyId
                       description: PMS authentication credentials
-                      title: Yardi
+                      title: Undisclosed
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
@@ -20247,7 +20247,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealPageRegisteredVendor
+                      title: RealpageRegisteredVendor
                     - type: object
                       properties:
                         baseUrl:
@@ -20265,7 +20265,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealPagePartnerExchange
+                      title: RealpagePartnerExchange
                     - type: object
                       properties:
                         Username:
@@ -20279,7 +20279,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager-Sandbox
+                      title: RentManagerSandbox
                     - type: object
                       properties:
                         PartnerToken:
@@ -20290,7 +20290,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager-Production
+                      title: RentManagerProduction
                     - type: object
                       properties:
                         apiKey:
@@ -20349,7 +20349,7 @@ paths:
                         - license
                         - companyId
                       description: PMS authentication credentials
-                      title: Yardi
+                      title: Undisclosed
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
