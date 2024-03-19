@@ -13771,11 +13771,23 @@ paths:
                 status_raw:
                   type: string
                   enum:
-                    - New
-                    - InProgress
+                    - Assessment
+                    - Call
+                    - Canceled
                     - Completed
-                    - Deferred
-                    - Closed
+                    - Electrical
+                    - Emergency
+                    - HVAC
+                    - In Progress
+                    - Inspection
+                    - On Hold
+                    - Other
+                    - Plumbing
+                    - Request Reassignment
+                    - Scheduled
+                    - Service
+                    - Web
+                    - Work Completed
                   description: The raw status associated with the service request history
                 notes:
                   type: string
