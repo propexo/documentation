@@ -13779,7 +13779,6 @@ paths:
                   description: The raw status associated with the service request history
                 notes:
                   type: string
-                  maxLength: 65500
                   description: Notes associated with the service request history
                 attachment:
                   type: object
@@ -13806,6 +13805,9 @@ paths:
                 contact_first_name:
                   type: string
                   description: Notes associated with the service request history
+                title:
+                  type: string
+                  description: The title associated with the service request history
               required:
                 - integration_id
       responses:
