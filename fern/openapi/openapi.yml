@@ -18228,7 +18228,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: Entrata (Legacy)
+                      title: Entrata-Legacy
                     - type: object
                       properties:
                         accessToken:
@@ -18343,7 +18343,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager (Sandbox)
+                      title: RentManager-Sandbox
                     - type: object
                       properties:
                         PartnerToken:
@@ -18354,7 +18354,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager Partner (Production)
+                      title: RentManager-Production
                     - type: object
                       properties:
                         apiKey:
@@ -20164,7 +20164,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: Entrata (Legacy)
+                      title: Entrata-Legacy
                     - type: object
                       properties:
                         accessToken:
@@ -20279,7 +20279,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager (Sandbox)
+                      title: RentManager-Sandbox
                     - type: object
                       properties:
                         PartnerToken:
@@ -20290,7 +20290,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager Partner (Production)
+                      title: RentManager-Production
                     - type: object
                       properties:
                         apiKey:
