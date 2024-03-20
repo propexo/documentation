@@ -7097,9 +7097,13 @@ paths:
                   type: string
                   description: The amount of months for the lease term
                 target_move_in_date:
-                  type: string
-                  pattern: \d{4}-\d{2}-\d{2}
-                  description: The move-in date associated with the lead
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The move-in date associated with the lead. The timestamp will be
+                    stripped off and only the date will be used
                 desired_num_bedrooms:
                   type: number
                   description: The desired number of bedrooms
@@ -7757,9 +7761,13 @@ paths:
                   type: integer
                   description: The rent amount in cents for the lease
                 rent_due_date:
-                  type: string
-                  pattern: "[0-9]{4}[-/][0-9]{1,2}[-/][0-9]{1,2}"
-                  description: The rent due date associated with the lease
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The rent due date associated with the lease. The timestamp will be
+                    stripped off and only the date will be used
                 gl_account_id:
                   type: string
                   pattern: ^[0-9]+$
@@ -18038,18 +18046,12 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
-
-
-
-
-
-
-
-
-
-
-
-
+                                  - YARDI_GUESTCARD
+                                  - YARDI_RESIDENT_TRANSACTIONS
+                                  - YARDI_RESIDENT_DATA
+                                  - YARDI_SERVICES
+                                  - YARDI_JOB_COST
+                                  - YARDI_VENDOR_INVOICING
                                   - REALPAGE_RPX_READ_PROPERTIES
                                   - REALPAGE_RPX_UNITS
                                   - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -18107,18 +18109,12 @@ paths:
                                     - REALPAGE_RESIDENTS
                                     - REALPAGE_PROSPECT_MANAGEMENT
                                     - REALPAGE_SDE_CONVERGENT_BILLING
-
-
-
-
-
-
-
-
-
-
-
-
+                                    - YARDI_GUESTCARD
+                                    - YARDI_RESIDENT_TRANSACTIONS
+                                    - YARDI_RESIDENT_DATA
+                                    - YARDI_SERVICES
+                                    - YARDI_JOB_COST
+                                    - YARDI_VENDOR_INVOICING
                                     - REALPAGE_RPX_READ_PROPERTIES
                                     - REALPAGE_RPX_UNITS
                                     - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -18240,7 +18236,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: EntrataLegacy
+                      title: Entrata (Legacy)
                     - type: object
                       properties:
                         accessToken:
@@ -18323,7 +18319,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealpageRegisteredVendor
+                      title: RealPage Registered Vendor
                     - type: object
                       properties:
                         baseUrl:
@@ -18341,7 +18337,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealpagePartnerExchange
+                      title: RealPage Partner Exchange
                     - type: object
                       properties:
                         Username:
@@ -18355,7 +18351,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManagerSandbox
+                      title: RentManager (Sandbox)
                     - type: object
                       properties:
                         PartnerToken:
@@ -18366,7 +18362,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManagerProduction
+                      title: RentManager Partner (Production)
                     - type: object
                       properties:
                         apiKey:
@@ -18394,7 +18390,7 @@ paths:
                         - accountId
                         - apiKey
                       description: ResMan authentication credentials
-                      title: Resman
+                      title: ResMan
                     - type: object
                       properties:
                         username:
@@ -18425,7 +18421,7 @@ paths:
                         - license
                         - companyId
                       description: PMS authentication credentials
-                      title: Undisclosed
+                      title: Yardi
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
@@ -19969,18 +19965,12 @@ paths:
                                 - REALPAGE_RESIDENTS
                                 - REALPAGE_PROSPECT_MANAGEMENT
                                 - REALPAGE_SDE_CONVERGENT_BILLING
-
-
-
-
-
-
-
-
-
-
-
-
+                                - YARDI_GUESTCARD
+                                - YARDI_RESIDENT_TRANSACTIONS
+                                - YARDI_RESIDENT_DATA
+                                - YARDI_SERVICES
+                                - YARDI_JOB_COST
+                                - YARDI_VENDOR_INVOICING
                                 - REALPAGE_RPX_READ_PROPERTIES
                                 - REALPAGE_RPX_UNITS
                                 - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -20038,18 +20028,12 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
-
-
-
-
-
-
-
-
-
-
-
-
+                                  - YARDI_GUESTCARD
+                                  - YARDI_RESIDENT_TRANSACTIONS
+                                  - YARDI_RESIDENT_DATA
+                                  - YARDI_SERVICES
+                                  - YARDI_JOB_COST
+                                  - YARDI_VENDOR_INVOICING
                                   - REALPAGE_RPX_READ_PROPERTIES
                                   - REALPAGE_RPX_UNITS
                                   - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -20188,7 +20172,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: EntrataLegacy
+                      title: Entrata (Legacy)
                     - type: object
                       properties:
                         accessToken:
@@ -20271,7 +20255,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealpageRegisteredVendor
+                      title: RealPage Registered Vendor
                     - type: object
                       properties:
                         baseUrl:
@@ -20289,7 +20273,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealpagePartnerExchange
+                      title: RealPage Partner Exchange
                     - type: object
                       properties:
                         Username:
@@ -20303,7 +20287,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManagerSandbox
+                      title: RentManager (Sandbox)
                     - type: object
                       properties:
                         PartnerToken:
@@ -20314,7 +20298,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManagerProduction
+                      title: RentManager Partner (Production)
                     - type: object
                       properties:
                         apiKey:
@@ -20342,7 +20326,7 @@ paths:
                         - accountId
                         - apiKey
                       description: ResMan authentication credentials
-                      title: Resman
+                      title: ResMan
                     - type: object
                       properties:
                         username:
@@ -20373,7 +20357,7 @@ paths:
                         - license
                         - companyId
                       description: PMS authentication credentials
-                      title: Undisclosed
+                      title: Yardi
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
