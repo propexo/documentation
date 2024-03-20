@@ -18046,12 +18046,18 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
-                                  - YARDI_GUESTCARD
-                                  - YARDI_RESIDENT_TRANSACTIONS
-                                  - YARDI_RESIDENT_DATA
-                                  - YARDI_SERVICES
-                                  - YARDI_JOB_COST
-                                  - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                   - REALPAGE_RPX_READ_PROPERTIES
                                   - REALPAGE_RPX_UNITS
                                   - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -18109,12 +18115,18 @@ paths:
                                     - REALPAGE_RESIDENTS
                                     - REALPAGE_PROSPECT_MANAGEMENT
                                     - REALPAGE_SDE_CONVERGENT_BILLING
-                                    - YARDI_GUESTCARD
-                                    - YARDI_RESIDENT_TRANSACTIONS
-                                    - YARDI_RESIDENT_DATA
-                                    - YARDI_SERVICES
-                                    - YARDI_JOB_COST
-                                    - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                     - REALPAGE_RPX_READ_PROPERTIES
                                     - REALPAGE_RPX_UNITS
                                     - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -18236,7 +18248,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: Entrata (Legacy)
+                      title: EntrataLegacy
                     - type: object
                       properties:
                         accessToken:
@@ -18319,7 +18331,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealPage Registered Vendor
+                      title: RealpageRegisteredVendor
                     - type: object
                       properties:
                         baseUrl:
@@ -18337,7 +18349,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealPage Partner Exchange
+                      title: RealpagePartnerExchange
                     - type: object
                       properties:
                         Username:
@@ -18351,7 +18363,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager (Sandbox)
+                      title: RentManagerSandbox
                     - type: object
                       properties:
                         PartnerToken:
@@ -18362,7 +18374,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager Partner (Production)
+                      title: RentManagerProduction
                     - type: object
                       properties:
                         apiKey:
@@ -18390,7 +18402,7 @@ paths:
                         - accountId
                         - apiKey
                       description: ResMan authentication credentials
-                      title: ResMan
+                      title: Resman
                     - type: object
                       properties:
                         username:
@@ -18421,7 +18433,7 @@ paths:
                         - license
                         - companyId
                       description: PMS authentication credentials
-                      title: Yardi
+                      title: Undisclosed
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
@@ -19965,12 +19977,18 @@ paths:
                                 - REALPAGE_RESIDENTS
                                 - REALPAGE_PROSPECT_MANAGEMENT
                                 - REALPAGE_SDE_CONVERGENT_BILLING
-                                - YARDI_GUESTCARD
-                                - YARDI_RESIDENT_TRANSACTIONS
-                                - YARDI_RESIDENT_DATA
-                                - YARDI_SERVICES
-                                - YARDI_JOB_COST
-                                - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                 - REALPAGE_RPX_READ_PROPERTIES
                                 - REALPAGE_RPX_UNITS
                                 - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -20028,12 +20046,18 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
-                                  - YARDI_GUESTCARD
-                                  - YARDI_RESIDENT_TRANSACTIONS
-                                  - YARDI_RESIDENT_DATA
-                                  - YARDI_SERVICES
-                                  - YARDI_JOB_COST
-                                  - YARDI_VENDOR_INVOICING
+
+
+
+
+
+
+
+
+
+
+
+
                                   - REALPAGE_RPX_READ_PROPERTIES
                                   - REALPAGE_RPX_UNITS
                                   - REALPAGE_RPX_RESIDENT_MANAGEMENT
@@ -20172,7 +20196,7 @@ paths:
                         - password
                         - companyId
                       description: Entrata authentication credentials
-                      title: Entrata (Legacy)
+                      title: EntrataLegacy
                     - type: object
                       properties:
                         accessToken:
@@ -20255,7 +20279,7 @@ paths:
                         - LICENSE_KEY
                         - ONESITE_USERNAME
                       description: RealPage Registered Vendor authentication credentials
-                      title: RealPage Registered Vendor
+                      title: RealpageRegisteredVendor
                     - type: object
                       properties:
                         baseUrl:
@@ -20273,7 +20297,7 @@ paths:
                         - baseUrl
                         - licensekey
                       description: RealPage Partner Exchange authentication credentials
-                      title: RealPage Partner Exchange
+                      title: RealpagePartnerExchange
                     - type: object
                       properties:
                         Username:
@@ -20287,7 +20311,7 @@ paths:
                         - Password
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager (Sandbox)
+                      title: RentManagerSandbox
                     - type: object
                       properties:
                         PartnerToken:
@@ -20298,7 +20322,7 @@ paths:
                         - PartnerToken
                         - companyId
                       description: RentManager authentication credentials
-                      title: RentManager Partner (Production)
+                      title: RentManagerProduction
                     - type: object
                       properties:
                         apiKey:
@@ -20326,7 +20350,7 @@ paths:
                         - accountId
                         - apiKey
                       description: ResMan authentication credentials
-                      title: ResMan
+                      title: Resman
                     - type: object
                       properties:
                         username:
@@ -20357,7 +20381,7 @@ paths:
                         - license
                         - companyId
                       description: PMS authentication credentials
-                      title: Yardi
+                      title: Undisclosed
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
