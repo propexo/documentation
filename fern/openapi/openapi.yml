@@ -12011,7 +12011,7 @@ paths:
                         - amount_in_cents
                         - payment_method_raw
                         - send_email_receipt
-                      title: Buildium
+                      description: Buildium
                     - type: object
                       properties:
                         integration_id:
@@ -12051,7 +12051,7 @@ paths:
                         - transaction_date
                         - amount_in_cents
                         - reference_number
-                      title: Undisclosed
+                      description: Undisclosed
                     - type: object
                       properties:
                         integration_id:
@@ -12077,8 +12077,8 @@ paths:
                         - integration_id
                         - lease_id
                         - amount_in_cents
-                      title: Propertyware
-                  description: This is just a reference section to identifiy required fields by
+                      description: Propertyware
+                  description: This is just a reference section to identify required fields by
                     integration vendor
                 integration_id:
                   type: string
