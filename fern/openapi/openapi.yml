@@ -12078,6 +12078,8 @@ paths:
                         - lease_id
                         - amount_in_cents
                       title: Propertyware
+                  description: This is just a reference section to identifiy required fields by
+                    integration vendor
                 integration_id:
                   type: string
                   description: The Propexo unique identifier for the integration
