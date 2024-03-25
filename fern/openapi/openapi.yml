@@ -12535,6 +12535,11 @@ paths:
                               x_id:
                                 type: string
                                 description: The external ID from the integration vendor
+                              x_created_at:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the record first entered the integration vendor
                               notes:
                                 type: string
                                 description: Notes describing the service request history
@@ -12558,6 +12563,7 @@ paths:
                               - updated_at
                               - last_seen
                               - x_id
+                              - x_created_at
                               - notes
                               - creator_name
                               - status_raw
@@ -13014,6 +13020,11 @@ paths:
                             x_id:
                               type: string
                               description: The external ID from the integration vendor
+                            x_created_at:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record first entered the integration vendor
                             notes:
                               type: string
                               description: Notes describing the service request history
@@ -13037,6 +13048,7 @@ paths:
                             - updated_at
                             - last_seen
                             - x_id
+                            - x_created_at
                             - notes
                             - creator_name
                             - status_raw
@@ -13704,6 +13716,11 @@ paths:
                             - string
                             - "null"
                           description: The date the record was last seen from the PMS
+                        x_created_at:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record first entered the integration vendor
                         x_id:
                           type: string
                           description: The external ID from the integration vendor
@@ -13748,6 +13765,7 @@ paths:
                         - created_at
                         - updated_at
                         - last_seen
+                        - x_created_at
                         - x_id
                         - x_property_id
                         - x_location_id
@@ -13951,6 +13969,11 @@ paths:
                           - string
                           - "null"
                         description: The date the record was last seen from the PMS
+                      x_created_at:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record first entered the integration vendor
                       x_id:
                         type: string
                         description: The external ID from the integration vendor
@@ -13995,6 +14018,7 @@ paths:
                       - created_at
                       - updated_at
                       - last_seen
+                      - x_created_at
                       - x_id
                       - x_property_id
                       - x_location_id
