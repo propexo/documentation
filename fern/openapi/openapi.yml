@@ -12632,8 +12632,11 @@ paths:
                   format: date-time
                   description: The date the service request was completed
                 date_due:
-                  type: string
-                  format: date-time
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
                   description: The due date associated with the service request
                 date_scheduled:
                   type: string
@@ -12709,7 +12712,6 @@ paths:
                   description: The status associated with the service request
                 access_notes:
                   type: string
-                  maxLength: 65535
                   description: Notes regarding access to the unit associated with the service
                     request
                 invoice_number:
@@ -12721,8 +12723,11 @@ paths:
                   maxLength: 65535
                   description: Notes associated with the service request
                 date_created:
-                  type: string
-                  format: date-time
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
                   description: The date the service request was created
                 service_category:
                   type: string
@@ -17022,6 +17027,7 @@ paths:
                     - amenities
                     - applicants
                     - applications
+                    - construction_jobs
                     - employees
                     - events
                     - invoices
@@ -19463,6 +19469,205 @@ paths:
                   - data
         "400":
           description: invalid input
+  /v1/construction-jobs/{construction_job_id}/details:
+    get:
+      tags:
+        - construction-job-cost
+      summary: Get all construction job details for a specific construction job
+      description: Get all construction job details for a specific construction job
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the construction job
+          required: true
+          name: construction_job_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all construction job details for a specific construction job
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the construction job
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        category_description:
+                          type:
+                            - string
+                            - "null"
+                          description: The description of the category for the construction job detail
+                        cost_code:
+                          type:
+                            - string
+                            - "null"
+                          description: The cost code of the construction job detail
+                        original_budget_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The original budget of the construction job detail
+                        revised_budget_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The revised budget of the construction job detail
+                        invoiced_total_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total amount invoiced, in cents, for the construction job
+                            detail
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - category_description
+                        - cost_code
+                        - original_budget_in_cents
+                        - revised_budget_in_cents
+                        - invoiced_total_in_cents
+                        - custom_data
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
   /v1/vendors/properties/{property_id}:
     get:
       tags:
@@ -19669,6 +19874,7 @@ paths:
                     - amenities
                     - applicants
                     - applications
+                    - construction_jobs
                     - employees
                     - events
                     - invoices
@@ -21291,6 +21497,7 @@ webhooks:
                             - applicants
                             - applicants-to-applications
                             - applications
+                            - construction-jobs
                             - employees
                             - events
                             - invoices
@@ -23883,6 +24090,7 @@ webhooks:
                             - applicants
                             - applicants-to-applications
                             - applications
+                            - construction-jobs
                             - employees
                             - events
                             - invoices
@@ -23952,6 +24160,7 @@ webhooks:
                             - applicants
                             - applicants-to-applications
                             - applications
+                            - construction-jobs
                             - employees
                             - events
                             - invoices
@@ -29101,6 +29310,7 @@ webhooks:
                             - applicants
                             - applicants-to-applications
                             - applications
+                            - construction-jobs
                             - employees
                             - events
                             - invoices
