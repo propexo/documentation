@@ -13123,7 +13123,6 @@ paths:
                   description: The Propexo unique identifier for the service request problem
                 service_description:
                   type: string
-                  maxLength: 35
                   description: A description of the service request
                 phone_1:
                   type: string
@@ -13186,11 +13185,15 @@ paths:
                 status_raw:
                   type: string
                   enum:
+                    - Submitted
+                    - Not Started
                     - In Progress
+                    - Completed
+                    - Scheduled
+                    - Cancelled
+                    - Closed
                     - On Hold
-                    - Canceled
-                    - Complete
-                  description: The raw status associated with the service request
+                  description: The status associated with the service request
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
@@ -13206,6 +13209,9 @@ paths:
                 completion_notes:
                   type: string
                   description: Closing notes associated with the service request
+                reported_by:
+                  type: string
+                  description: The name of the person who reported this service request
                 integration_id:
                   type: string
               required:
