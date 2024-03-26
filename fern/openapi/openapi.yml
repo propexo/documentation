@@ -18419,6 +18419,8 @@ paths:
                           type: string
                         companyId:
                           type: string
+                        portfolioId:
+                          type: string
                       required:
                         - apiKey
                         - apiSecret
@@ -20535,6 +20537,8 @@ paths:
                         apiSecret:
                           type: string
                         companyId:
+                          type: string
+                        portfolioId:
                           type: string
                       required:
                         - apiKey
