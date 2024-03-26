@@ -18439,37 +18439,6 @@ paths:
                         - apiKey
                       description: ResMan authentication credentials
                       title: Resman
-                    - type: object
-                      properties:
-                        username:
-                          type: string
-                        password:
-                          type: string
-                        database:
-                          type: string
-                        serverName:
-                          type: string
-                        platform:
-                          type: string
-                        entity:
-                          type: string
-                        license:
-                          type: string
-                        companyId:
-                          type: string
-                        baseUrl:
-                          type: string
-                      required:
-                        - username
-                        - password
-                        - database
-                        - serverName
-                        - platform
-                        - entity
-                        - license
-                        - companyId
-                      description: PMS authentication credentials
-                      title: Undisclosed
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
@@ -20587,37 +20556,6 @@ paths:
                         - apiKey
                       description: ResMan authentication credentials
                       title: Resman
-                    - type: object
-                      properties:
-                        username:
-                          type: string
-                        password:
-                          type: string
-                        database:
-                          type: string
-                        serverName:
-                          type: string
-                        platform:
-                          type: string
-                        entity:
-                          type: string
-                        license:
-                          type: string
-                        companyId:
-                          type: string
-                        baseUrl:
-                          type: string
-                      required:
-                        - username
-                        - password
-                        - database
-                        - serverName
-                        - platform
-                        - entity
-                        - license
-                        - companyId
-                      description: PMS authentication credentials
-                      title: Undisclosed
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
