@@ -11310,7 +11310,7 @@ paths:
                           type:
                             - boolean
                             - "null"
-                          description: Whether or not the resident charge is open
+                          description: Whether the resident charge is open and not yet settled
                         custom_data:
                           type:
                             - object
@@ -11336,6 +11336,85 @@ paths:
                             - string
                             - "null"
                           description: The Propexo unique identifier for the financial account
+                        allocations:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the resident allocation
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              x_source_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The external ID of the source transaction from the integration
+                                  vendor
+                              x_destination_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The external ID of the destination transaction from the integration
+                                  vendor
+                              financial_account_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo unique identifier for the financial account
+                              amount_in_cents:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The amount of the resident allocation, in cents
+                              amount_raw:
+                                type: string
+                                description: The raw value for amount from the PMS
+                              resident_charge_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo unique identifier for the resident charge
+                              resident_payment_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo unique identifier for the resident payment
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the record was last seen from the PMS
+                              custom_data:
+                                type:
+                                  - object
+                                  - "null"
+                                properties: {}
+                                description: Custom data
+                            required:
+                              - id
+                              - x_id
+                              - x_source_id
+                              - x_destination_id
+                              - financial_account_id
+                              - amount_in_cents
+                              - amount_raw
+                              - resident_charge_id
+                              - resident_payment_id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - custom_data
+                          description: Array of payment allocations, splits, and related transactions
+                            associated with the resident charge
                       required:
                         - id
                         - created_at
@@ -11363,6 +11442,7 @@ paths:
                         - property_id
                         - resident_id
                         - financial_account_id
+                        - allocations
                 required:
                   - meta
                   - results
@@ -11616,7 +11696,7 @@ paths:
                         type:
                           - boolean
                           - "null"
-                        description: Whether or not the resident charge is open
+                        description: Whether the resident charge is open and not yet settled
                       custom_data:
                         type:
                           - object
@@ -11642,6 +11722,85 @@ paths:
                           - string
                           - "null"
                         description: The Propexo unique identifier for the financial account
+                      allocations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the resident allocation
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            x_source_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The external ID of the source transaction from the integration
+                                vendor
+                            x_destination_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The external ID of the destination transaction from the integration
+                                vendor
+                            financial_account_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo unique identifier for the financial account
+                            amount_in_cents:
+                              type:
+                                - number
+                                - "null"
+                              description: The amount of the resident allocation, in cents
+                            amount_raw:
+                              type: string
+                              description: The raw value for amount from the PMS
+                            resident_charge_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo unique identifier for the resident charge
+                            resident_payment_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo unique identifier for the resident payment
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record was last seen from the PMS
+                            custom_data:
+                              type:
+                                - object
+                                - "null"
+                              properties: {}
+                              description: Custom data
+                          required:
+                            - id
+                            - x_id
+                            - x_source_id
+                            - x_destination_id
+                            - financial_account_id
+                            - amount_in_cents
+                            - amount_raw
+                            - resident_charge_id
+                            - resident_payment_id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - custom_data
+                        description: Array of payment allocations, splits, and related transactions
+                          associated with the resident charge
                     required:
                       - id
                       - created_at
@@ -11669,6 +11828,7 @@ paths:
                       - property_id
                       - resident_id
                       - financial_account_id
+                      - allocations
                 required:
                   - meta
                   - results
@@ -11889,7 +12049,7 @@ paths:
                           type:
                             - boolean
                             - "null"
-                          description: Whether or not the resident payment is open
+                          description: Whether the resident payment is open and not yet settled
                         custom_data:
                           type:
                             - object
@@ -11915,6 +12075,85 @@ paths:
                             - string
                             - "null"
                           description: The Propexo unique identifier for the financial account
+                        allocations:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the resident allocation
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              x_source_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The external ID of the source transaction from the integration
+                                  vendor
+                              x_destination_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The external ID of the destination transaction from the integration
+                                  vendor
+                              financial_account_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo unique identifier for the financial account
+                              amount_in_cents:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The amount of the resident allocation, in cents
+                              amount_raw:
+                                type: string
+                                description: The raw value for amount from the PMS
+                              resident_charge_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo unique identifier for the resident charge
+                              resident_payment_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo unique identifier for the resident payment
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the record was last seen from the PMS
+                              custom_data:
+                                type:
+                                  - object
+                                  - "null"
+                                properties: {}
+                                description: Custom data
+                            required:
+                              - id
+                              - x_id
+                              - x_source_id
+                              - x_destination_id
+                              - financial_account_id
+                              - amount_in_cents
+                              - amount_raw
+                              - resident_charge_id
+                              - resident_payment_id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - custom_data
+                          description: Array of payment allocations, splits, and related transactions
+                            associated with the resident payment
                       required:
                         - id
                         - created_at
@@ -11942,6 +12181,7 @@ paths:
                         - property_id
                         - resident_id
                         - financial_account_id
+                        - allocations
                 required:
                   - meta
                   - results
@@ -12202,7 +12442,7 @@ paths:
                         type:
                           - boolean
                           - "null"
-                        description: Whether or not the resident payment is open
+                        description: Whether the resident payment is open and not yet settled
                       custom_data:
                         type:
                           - object
@@ -12228,6 +12468,85 @@ paths:
                           - string
                           - "null"
                         description: The Propexo unique identifier for the financial account
+                      allocations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the resident allocation
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            x_source_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The external ID of the source transaction from the integration
+                                vendor
+                            x_destination_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The external ID of the destination transaction from the integration
+                                vendor
+                            financial_account_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo unique identifier for the financial account
+                            amount_in_cents:
+                              type:
+                                - number
+                                - "null"
+                              description: The amount of the resident allocation, in cents
+                            amount_raw:
+                              type: string
+                              description: The raw value for amount from the PMS
+                            resident_charge_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo unique identifier for the resident charge
+                            resident_payment_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo unique identifier for the resident payment
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record was last seen from the PMS
+                            custom_data:
+                              type:
+                                - object
+                                - "null"
+                              properties: {}
+                              description: Custom data
+                          required:
+                            - id
+                            - x_id
+                            - x_source_id
+                            - x_destination_id
+                            - financial_account_id
+                            - amount_in_cents
+                            - amount_raw
+                            - resident_charge_id
+                            - resident_payment_id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - custom_data
+                        description: Array of payment allocations, splits, and related transactions
+                          associated with the resident payment
                     required:
                       - id
                       - created_at
@@ -12255,6 +12574,7 @@ paths:
                       - property_id
                       - resident_id
                       - financial_account_id
+                      - allocations
                 required:
                   - meta
                   - results
@@ -23524,7 +23844,7 @@ webhooks:
                                   type:
                                     - boolean
                                     - "null"
-                                  description: Whether or not the resident charge is open
+                                  description: Whether the resident charge is open and not yet settled
                                 custom_data:
                                   type:
                                     - object
@@ -23550,6 +23870,85 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The Propexo unique identifier for the financial account
+                                allocations:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The Propexo unique identifier for the resident allocation
+                                      x_id:
+                                        type: string
+                                        description: The external ID from the integration vendor
+                                      x_source_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The external ID of the source transaction from the integration
+                                          vendor
+                                      x_destination_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The external ID of the destination transaction from the integration
+                                          vendor
+                                      financial_account_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The Propexo unique identifier for the financial account
+                                      amount_in_cents:
+                                        type:
+                                          - number
+                                          - "null"
+                                        description: The amount of the resident allocation, in cents
+                                      amount_raw:
+                                        type: string
+                                        description: The raw value for amount from the PMS
+                                      resident_charge_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The Propexo unique identifier for the resident charge
+                                      resident_payment_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The Propexo unique identifier for the resident payment
+                                      created_at:
+                                        type: string
+                                        description: The date record first entered Propexo
+                                      updated_at:
+                                        type: string
+                                        description: The date record was last updated in Propexo
+                                      last_seen:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The date the record was last seen from the PMS
+                                      custom_data:
+                                        type:
+                                          - object
+                                          - "null"
+                                        properties: {}
+                                        description: Custom data
+                                    required:
+                                      - id
+                                      - x_id
+                                      - x_source_id
+                                      - x_destination_id
+                                      - financial_account_id
+                                      - amount_in_cents
+                                      - amount_raw
+                                      - resident_charge_id
+                                      - resident_payment_id
+                                      - created_at
+                                      - updated_at
+                                      - last_seen
+                                      - custom_data
+                                  description: Array of payment allocations, splits, and related transactions
+                                    associated with the resident charge
                               title: resident-charges
                             - type: object
                               properties:
@@ -23643,7 +24042,7 @@ webhooks:
                                   type:
                                     - boolean
                                     - "null"
-                                  description: Whether or not the resident payment is open
+                                  description: Whether the resident payment is open and not yet settled
                                 custom_data:
                                   type:
                                     - object
@@ -23669,6 +24068,85 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The Propexo unique identifier for the financial account
+                                allocations:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The Propexo unique identifier for the resident allocation
+                                      x_id:
+                                        type: string
+                                        description: The external ID from the integration vendor
+                                      x_source_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The external ID of the source transaction from the integration
+                                          vendor
+                                      x_destination_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The external ID of the destination transaction from the integration
+                                          vendor
+                                      financial_account_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The Propexo unique identifier for the financial account
+                                      amount_in_cents:
+                                        type:
+                                          - number
+                                          - "null"
+                                        description: The amount of the resident allocation, in cents
+                                      amount_raw:
+                                        type: string
+                                        description: The raw value for amount from the PMS
+                                      resident_charge_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The Propexo unique identifier for the resident charge
+                                      resident_payment_id:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The Propexo unique identifier for the resident payment
+                                      created_at:
+                                        type: string
+                                        description: The date record first entered Propexo
+                                      updated_at:
+                                        type: string
+                                        description: The date record was last updated in Propexo
+                                      last_seen:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The date the record was last seen from the PMS
+                                      custom_data:
+                                        type:
+                                          - object
+                                          - "null"
+                                        properties: {}
+                                        description: Custom data
+                                    required:
+                                      - id
+                                      - x_id
+                                      - x_source_id
+                                      - x_destination_id
+                                      - financial_account_id
+                                      - amount_in_cents
+                                      - amount_raw
+                                      - resident_charge_id
+                                      - resident_payment_id
+                                      - created_at
+                                      - updated_at
+                                      - last_seen
+                                      - custom_data
+                                  description: Array of payment allocations, splits, and related transactions
+                                    associated with the resident payment
                               title: resident-payments
                             - type: object
                               properties:
@@ -26191,7 +26669,7 @@ webhooks:
                                       type:
                                         - boolean
                                         - "null"
-                                      description: Whether or not the resident charge is open
+                                      description: Whether the resident charge is open and not yet settled
                                     custom_data:
                                       type:
                                         - object
@@ -26217,6 +26695,85 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the financial account
+                                    allocations:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident allocation
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          x_source_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the source transaction from the integration
+                                              vendor
+                                          x_destination_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the destination transaction from the integration
+                                              vendor
+                                          financial_account_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the financial account
+                                          amount_in_cents:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The amount of the resident allocation, in cents
+                                          amount_raw:
+                                            type: string
+                                            description: The raw value for amount from the PMS
+                                          resident_charge_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident charge
+                                          resident_payment_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident payment
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - x_id
+                                          - x_source_id
+                                          - x_destination_id
+                                          - financial_account_id
+                                          - amount_in_cents
+                                          - amount_raw
+                                          - resident_charge_id
+                                          - resident_payment_id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - custom_data
+                                      description: Array of payment allocations, splits, and related transactions
+                                        associated with the resident charge
                                   title: resident-charges
                                 - type: object
                                   properties:
@@ -26310,7 +26867,7 @@ webhooks:
                                       type:
                                         - boolean
                                         - "null"
-                                      description: Whether or not the resident payment is open
+                                      description: Whether the resident payment is open and not yet settled
                                     custom_data:
                                       type:
                                         - object
@@ -26336,6 +26893,85 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the financial account
+                                    allocations:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident allocation
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          x_source_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the source transaction from the integration
+                                              vendor
+                                          x_destination_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the destination transaction from the integration
+                                              vendor
+                                          financial_account_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the financial account
+                                          amount_in_cents:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The amount of the resident allocation, in cents
+                                          amount_raw:
+                                            type: string
+                                            description: The raw value for amount from the PMS
+                                          resident_charge_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident charge
+                                          resident_payment_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident payment
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - x_id
+                                          - x_source_id
+                                          - x_destination_id
+                                          - financial_account_id
+                                          - amount_in_cents
+                                          - amount_raw
+                                          - resident_charge_id
+                                          - resident_payment_id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - custom_data
+                                      description: Array of payment allocations, splits, and related transactions
+                                        associated with the resident payment
                                   title: resident-payments
                                 - type: object
                                   properties:
@@ -28741,7 +29377,7 @@ webhooks:
                                       type:
                                         - boolean
                                         - "null"
-                                      description: Whether or not the resident charge is open
+                                      description: Whether the resident charge is open and not yet settled
                                     custom_data:
                                       type:
                                         - object
@@ -28767,6 +29403,85 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the financial account
+                                    allocations:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident allocation
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          x_source_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the source transaction from the integration
+                                              vendor
+                                          x_destination_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the destination transaction from the integration
+                                              vendor
+                                          financial_account_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the financial account
+                                          amount_in_cents:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The amount of the resident allocation, in cents
+                                          amount_raw:
+                                            type: string
+                                            description: The raw value for amount from the PMS
+                                          resident_charge_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident charge
+                                          resident_payment_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident payment
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - x_id
+                                          - x_source_id
+                                          - x_destination_id
+                                          - financial_account_id
+                                          - amount_in_cents
+                                          - amount_raw
+                                          - resident_charge_id
+                                          - resident_payment_id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - custom_data
+                                      description: Array of payment allocations, splits, and related transactions
+                                        associated with the resident charge
                                   title: resident-charges
                                 - type: object
                                   properties:
@@ -28860,7 +29575,7 @@ webhooks:
                                       type:
                                         - boolean
                                         - "null"
-                                      description: Whether or not the resident payment is open
+                                      description: Whether the resident payment is open and not yet settled
                                     custom_data:
                                       type:
                                         - object
@@ -28886,6 +29601,85 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the financial account
+                                    allocations:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident allocation
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          x_source_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the source transaction from the integration
+                                              vendor
+                                          x_destination_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The external ID of the destination transaction from the integration
+                                              vendor
+                                          financial_account_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the financial account
+                                          amount_in_cents:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The amount of the resident allocation, in cents
+                                          amount_raw:
+                                            type: string
+                                            description: The raw value for amount from the PMS
+                                          resident_charge_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident charge
+                                          resident_payment_id:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo unique identifier for the resident payment
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - x_id
+                                          - x_source_id
+                                          - x_destination_id
+                                          - financial_account_id
+                                          - amount_in_cents
+                                          - amount_raw
+                                          - resident_charge_id
+                                          - resident_payment_id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - custom_data
+                                      description: Array of payment allocations, splits, and related transactions
+                                        associated with the resident payment
                                   title: resident-payments
                                 - type: object
                                   properties:
