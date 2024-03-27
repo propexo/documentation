@@ -1412,12 +1412,54 @@ paths:
               properties:
                 integration_id:
                   type: string
-                property_id:
-                  type: string
-                  description: The Propexo unique identifier for the property
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
+                first_name:
+                  type: string
+                  description: The first name associated with the applicant
+                last_name:
+                  type: string
+                  description: The last name associated with the applicant
+                send_rental_application_email:
+                  type: boolean
+                  default: false
+                  description: Whether to send the new applicant an email with a link to the
+                    online application form
+                email_1:
+                  type: string
+                  description: The primary email address associated with the applicant
+                phone_1:
+                  type: string
+                  description: "'Primary phone number associated with the applicant"
+                phone_1_type:
+                  type: string
+                  enum:
+                    - FAX
+                    - HOME
+                    - MOBILE
+                    - WORK
+                  description: Type of the primary phone number
+                phone_2:
+                  type: string
+                  description: "'Secondary phone number associated with the applicant"
+                phone_2_type:
+                  type: string
+                  enum:
+                    - FAX
+                    - HOME
+                    - MOBILE
+                    - OTHER
+                    - WORK
+                  description: Type of the secondary phone number
+                custom_data:
+                  type: object
+                  properties: {}
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
+                property_id:
+                  type: string
+                  description: The Propexo unique identifier for the property
                 originating_lead_source_id:
                   type: string
                   description: The external ID of the lead source from the integration vendor
@@ -1427,12 +1469,6 @@ paths:
                     - COMPLETED
                     - APPROVED
                   description: The status associated with the application
-                first_name:
-                  type: string
-                  description: The first name associated with the applicant
-                last_name:
-                  type: string
-                  description: The last name associated with the applicant
                 lease_term_in_months:
                   type: integer
                   enum:
@@ -1453,10 +1489,6 @@ paths:
                 leasing_agent_id:
                   type: string
                   description: The external ID of the leasing agent from the integration vendor
-                email_1:
-                  type: string
-                  format: email
-                  description: The primary email address associated with the applicant
                 date_of_birth:
                   type: string
                   format: date-time
@@ -1466,9 +1498,7 @@ paths:
                   description: The first address line associated with the applicant
                 address_2:
                   type: string
-                  description: Second line of the street address for the applicant.  This maps to
-                    the addressLine2 property of the Applicant's primary
-                    address.
+                  description: The second address line associated with the applicant
                 city:
                   type: string
                   description: The city associated with the applicant
@@ -1478,9 +1508,6 @@ paths:
                 zip:
                   type: string
                   description: The zip code associated with the applicant
-                phone_1:
-                  type: string
-                  description: "'Primary phone number associated with the applicant"
                 attachments:
                   type: array
                   items:
@@ -1488,94 +1515,77 @@ paths:
                     properties:
                       file_data:
                         type: string
-                        maxLength: 16735272
+                        maxLength: 69730304
                         description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 12 MB.
+                          max file size of 50 MB.
                       file_name:
                         type: string
-                        description: The name of the file
-                      notes:
+                        description: 'The name of the file including the extension. Ex: "image.jpg"'
+                      mime_type:
                         type: string
-                        description: General notes about the file
+                        description: 'The mime type of the file. Ex: "image/jpeg"'
+                      lease_file_type:
+                        type: string
+                        description: The PMS specific lease file type of the document
                       is_private:
                         type: boolean
-                        description: If the file should be marked as private
+                        description: If the file should be marked as private. If true the file will not
+                          be shown in the resident portal.
                     required:
                       - file_data
                       - file_name
-                  description: Files to upload to the applicant.
+                      - mime_type
+                      - lease_file_type
+                  description: Files to upload for the applicant
                 events:
                   type: array
                   items:
                     type: object
                     properties:
-                      unit_id:
+                      event_name:
                         type: string
-                        description: The Propexo unique identifier for the unit
-                      x_type_id:
-                        type: string
-                        description: The PMS id for the event type.
-                      x_leasing_agent_id:
-                        type: string
-                        description: The PMS id for the leasing agent.
-                      x_sub_type_id:
-                        type: string
-                        description: The PMS id for the event sub type.
-                      x_result_id:
-                        type: string
-                        description: The PMS id for the event result.
+                        enum:
+                          - Other
+                          - WalkIn
+                          - Chat
+                          - Email
+                          - Text
+                          - Webservice
+                          - Appointment
+                          - Show
+                          - Application
+                          - SelfGuidedTour
+                          - Application
+                        description: The name/type of the event. This has to be from a predefined set of
+                          PMS events.
                       event_datetime:
                         type: string
                         format: date-time
-                        description: The date and time that the event occured.
-                      appointment_datetime:
-                        type: string
-                        format: date-time
-                        description: The date and time that the appointment will occur. Required if
-                          using appointment type.
-                      time_from:
-                        type: string
-                      time_to:
-                        type: string
+                        description: The date and time that the event occurred.
                       notes:
                         type: string
+                        maxLength: 256
                         description: General notes about the event.
-                      title:
+                      agent_name:
                         type: string
-                        description: Title for the event.
+                        description: The name of the agent associated with the address.
+                      lead_source:
+                        type: string
+                        description: The source of the lead associated with the lead event. This has to
+                          be from a preset list of lead sources that have to be
+                          registered inside of the PMS.
                       reasons_for_event:
                         type: string
-                        description: The reason the event occured.
+                        description: The reason the event occurred.
+                      unit_id:
+                        type: string
+                        description: The Propexo unit ID associated with the lead event. Only some PMS
+                          events use this, including "Show" and "Appointment".
                     required:
-                      - x_type_id
-                  description: Array of events associated with this applicant
-                custom_data:
-                  type: object
-                  properties: {}
-                  description: "Deprecated: Field is no longer applicable"
-                  deprecated: true
-                send_rental_application_email:
-                  type: boolean
-                  default: false
-                  description: Whether to send the new applicant an email with a link to the
-                    online application form
-                phone_1_type:
-                  type: string
-                  enum:
-                    - HOME
-                    - MOBILE
-                    - WORK
-                  description: Type of the primary phone number
-                phone_2:
-                  type: string
-                  description: "'Secondary phone number associated with the applicant"
-                phone_2_type:
-                  type: string
-                  enum:
-                    - HOME
-                    - MOBILE
-                    - WORK
-                  description: Type of the secondary phone number
+                      - event_name
+                      - event_datetime
+                      - agent_name
+                  description: Array of events associated with the applicant
                 middle_name:
                   type: string
                   description: The middle name associated with the applicant
@@ -1606,6 +1616,37 @@ paths:
                 rent_amount_market_in_cents:
                   type: integer
                   description: The market rent amount in cents for the lease
+                organization_name:
+                  type: string
+                  description: The name of your organization. Other uses this for associating an
+                    applicant
+                unique_applicant_id:
+                  type: string
+                  description: A unique ID you associate with a applicant. This is not the Other
+                    applicant ID.
+                target_move_in_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The target move in date for the applicant. The timestamp will be
+                    stripped off and only the date will be used
+                desired_num_bedrooms:
+                  type: number
+                  description: The desired number of bedrooms of the applicant
+                desired_lease_term_in_months:
+                  type: string
+                  description: The desired lease term in months of the applicant
+                notes:
+                  type: string
+                  description: Notes associated with the applicant
+                leasing_agent:
+                  type: string
+                  description: The full name of the leasing agent associated with the applicant
+                lead_source:
+                  type: string
+                  description: The name of the lead source associated with the applicant
               required:
                 - integration_id
       responses:
@@ -2028,7 +2069,6 @@ paths:
                     vendor"
                 email_1:
                   type: string
-                  format: email
                   description: The primary email address associated with the applicant
                 phone_1:
                   type: string
@@ -2036,6 +2076,7 @@ paths:
                 phone_1_type:
                   type: string
                   enum:
+                    - FAX
                     - HOME
                     - MOBILE
                     - WORK
@@ -2046,8 +2087,10 @@ paths:
                 phone_2_type:
                   type: string
                   enum:
+                    - FAX
                     - HOME
                     - MOBILE
+                    - OTHER
                     - WORK
                   description: Type of the secondary phone number
                 applicant_id:
@@ -2115,49 +2158,54 @@ paths:
                   items:
                     type: object
                     properties:
-                      unit_id:
+                      event_name:
                         type: string
-                        description: The Propexo unique identifier for the unit
-                      x_type_id:
-                        type: string
-                        description: The PMS id for the event type.
-                      x_leasing_agent_id:
-                        type: string
-                        description: The PMS id for the leasing agent.
-                      x_sub_type_id:
-                        type: string
-                        description: The PMS id for the event sub type.
-                      x_result_id:
-                        type: string
-                        description: The PMS id for the event result.
+                        enum:
+                          - Other
+                          - WalkIn
+                          - Chat
+                          - Email
+                          - Text
+                          - Webservice
+                          - Appointment
+                          - Show
+                          - Application
+                          - SelfGuidedTour
+                          - Application
+                        description: The name/type of the event. This has to be from a predefined set of
+                          PMS events.
                       event_datetime:
                         type: string
                         format: date-time
-                        description: The date and time that the event occured.
-                      appointment_datetime:
-                        type: string
-                        format: date-time
-                        description: The date and time that the appointment will occur. Required if
-                          using appointment type.
-                      time_from:
-                        type: string
-                      time_to:
-                        type: string
+                        description: The date and time that the event occurred.
                       notes:
                         type: string
+                        maxLength: 256
                         description: General notes about the event.
-                      title:
+                      agent_name:
                         type: string
-                        description: Title for the event.
+                        description: The name of the agent associated with the address.
+                      lead_source:
+                        type: string
+                        description: The source of the lead associated with the lead event. This has to
+                          be from a preset list of lead sources that have to be
+                          registered inside of the PMS.
                       reasons_for_event:
                         type: string
-                        description: The reason the event occured.
+                        description: The reason the event occurred.
+                      unit_id:
+                        type: string
+                        description: The Propexo unit ID associated with the lead event. Only some PMS
+                          events use this, including "Show" and "Appointment".
                       id:
                         type: string
-                        description: The Propexo unique identifier for the event. Only required if
-                          attempting to update an existing event.
+                        description: The Propexo unique identifier for the event. Required if attempting
+                          to update an existing event associated with an
+                          applicant.
                     required:
-                      - x_type_id
+                      - event_name
+                      - event_datetime
+                      - agent_name
                   description: Array of events associated with this applicant
                 attachments:
                   type: array
@@ -2193,16 +2241,15 @@ paths:
                     - type: boolean
                     - type: string
                   description: Whether or not new events should be created on the applicant
-                x_property_id:
-                  type: string
-                  description: The external ID of the property from the integration vendor
                 middle_name:
                   type: string
-                  maxLength: 30
                   description: The middle name associated with the applicant
                 country:
                   type: string
                   description: The country associated with the applicant
+                x_property_id:
+                  type: string
+                  description: The external ID of the property from the integration vendor
                 application_date:
                   type: string
                   format: date-time
@@ -2227,6 +2274,9 @@ paths:
                 rent_amount_market_in_cents:
                   type: integer
                   description: The market rent amount in cents for the lease
+                notes:
+                  type: string
+                  description: Notes associated with the applicant
       responses:
         "200":
           description: Update an applicant for an integration.
@@ -4465,12 +4515,19 @@ paths:
                 applicant_id:
                   type: string
                   description: The Propexo unique identifier for the applicant
+                event_type:
+                  type: string
+                  enum:
+                    - Note
+                  default: Note
+                  description: The type of event
+                notes:
+                  type: string
+                  maxLength: 256
+                  description: Notes associated with the event
                 event_type_id:
                   type: string
                   description: The Propexo unique identifier for the event type
-                notes:
-                  type: string
-                  description: Notes associated with the event
                 employee_id:
                   type: string
                   description: The Propexo unique identifier for the employee
@@ -4514,12 +4571,6 @@ paths:
                 agent_name:
                   type: string
                   description: The name of the leasing agent associated with the event
-                event_type:
-                  type: string
-                  enum:
-                    - Note
-                  default: Note
-                  description: The type of event
               required:
                 - integration_id
       responses:
@@ -4562,6 +4613,38 @@ paths:
                 lead_id:
                   type: string
                   description: The Propexo unique identifier for the lead
+                event_type_id:
+                  type: string
+                  description: The Propexo unique identifier for the event type
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit. Only some PMS events
+                    use this, including "Show" and "Appointment"
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                reasons_for_event:
+                  type: string
+                  description: The reasons for the event
+                notes:
+                  type: string
+                  maxLength: 256
+                  description: Notes associated with the event
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                time_from:
+                  type: string
+                time_to:
+                  type: string
+                title:
+                  type: string
+                  description: The title associated with the event
                 event_name:
                   type: string
                   enum:
@@ -4577,24 +4660,6 @@ paths:
                     - SelfGuidedTour
                     - Application
                   description: The name or type of event
-                event_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the event will occur
-                notes:
-                  type: string
-                  maxLength: 256
-                  description: Notes associated with the event
-                employee_id:
-                  type: string
-                  description: The Propexo unique identifier for the employee
-                event_type_id:
-                  type: string
-                  description: The Propexo unique identifier for the event type
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit. Only some PMS events
-                    use this, including "Show" and "Appointment"
                 status:
                   type: string
                   enum:
@@ -4604,20 +4669,6 @@ paths:
                     - ACTIVE
                     - FUTURE
                   description: The status associated with the event
-                reasons_for_event:
-                  type: string
-                  description: The reasons for the event
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                time_from:
-                  type: string
-                time_to:
-                  type: string
-                title:
-                  type: string
-                  description: The title associated with the event
                 agent_name:
                   type: string
                   description: The name of the leasing agent associated with the event
@@ -4663,12 +4714,18 @@ paths:
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
-                event_type_id:
+                event_type:
                   type: string
-                  description: The Propexo unique identifier for the event type
+                  enum:
+                    - Note
+                  default: Note
+                  description: The type of event
                 notes:
                   type: string
                   description: Notes associated with the event
+                event_type_id:
+                  type: string
+                  description: The Propexo unique identifier for the event type
                 employee_id:
                   type: string
                   description: The Propexo unique identifier for the employee
@@ -4693,12 +4750,6 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
-                event_type:
-                  type: string
-                  enum:
-                    - Note
-                  default: Note
-                  description: The type of event
               required:
                 - integration_id
       responses:
@@ -6489,39 +6540,53 @@ paths:
               properties:
                 integration_id:
                   type: string
-                last_name:
+                property_id:
                   type: string
-                  description: The last name associated with the lead
+                  description: The Propexo unique identifier for the property
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
                 first_name:
                   type: string
                   description: The first name associated with the lead
-                email_1:
+                last_name:
                   type: string
-                  description: The primary email address associated with the lead
+                  description: The last name associated with the lead
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the lead. Defaults to the
-                    HOME phone type"
+                  description: "'Primary phone number associated with the lead"
                 phone_1_type:
                   type: string
                   enum:
-                    - HOME
-                    - WORK
-                    - MOBILE
                     - FAX
+                    - HOME
+                    - MOBILE
+                    - WORK
                   description: Type of the primary phone number
+                lead_source:
+                  type: string
+                  description: The name of the source of the lead
+                desired_lease_term_in_months:
+                  type: string
+                  description: The amount of months for the lease term
+                middle_name:
+                  type: string
+                  description: The middle name associated with the lead
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the lead. Defaults to the
-                    MOBILE phone type"
+                  description: "'Secondary phone number associated with the lead"
                 phone_2_type:
                   type: string
                   enum:
-                    - HOME
-                    - WORK
-                    - MOBILE
                     - FAX
+                    - HOME
+                    - MOBILE
+                    - OTHER
+                    - WORK
                   description: Type of the secondary phone number
+                email_1:
+                  type: string
+                  description: The primary email address associated with the lead
                 address_1:
                   type: string
                   description: The first address line associated with the lead
@@ -6537,28 +6602,139 @@ paths:
                 zip:
                   type: string
                   description: The zip code associated with the lead
+                target_move_in_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The move-in date associated with the lead. The timestamp will be
+                    stripped off and only the date will be used
+                desired_floor_plan_id:
+                  type: string
+                  description: The external ID of the floor plan from the integration vendor
+                desired_max_rent_in_cents:
+                  type: integer
+                  description: The maximum rent cost the lead is looking to pay, in cents
+                desired_min_rent_in_cents:
+                  type:
+                    - number
+                    - "null"
+                  description: The minimum rent cost the lead is looking to pay, in cents
+                desired_num_bathrooms:
+                  type: number
+                  description: The desired number of bathrooms
+                desired_num_bedrooms:
+                  type: number
+                  description: The desired number of bedrooms
+                number_of_occupants:
+                  type: integer
+                  description: The number of occupants living in the unit
+                notes:
+                  type: string
+                  description: Notes associated with the lead
+                leasing_agent_id:
+                  type: string
+                  description: The external ID of the leasing agent from the integration vendor
+                events:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      event_name:
+                        type: string
+                        enum:
+                          - Other
+                          - WalkIn
+                          - Chat
+                          - Email
+                          - Text
+                          - Webservice
+                          - Appointment
+                          - Show
+                          - Application
+                          - SelfGuidedTour
+                          - Application
+                        description: The name/type of the event. This has to be from a predefined set of
+                          PMS events.
+                      event_datetime:
+                        type: string
+                        format: date-time
+                        description: The date and time that the event occurred.
+                      notes:
+                        type: string
+                        maxLength: 256
+                        description: General notes about the event.
+                      agent_name:
+                        type: string
+                        description: The name of the agent associated with the address.
+                      lead_source:
+                        type: string
+                        description: The source of the lead associated with the lead event. This has to
+                          be from a preset list of lead sources that have to be
+                          registered inside of the PMS.
+                      reasons_for_event:
+                        type: string
+                        description: The reason the event occurred.
+                      unit_id:
+                        type: string
+                        description: The Propexo unit ID associated with the lead event. Only some PMS
+                          events use this, including "Show" and "Appointment".
+                    required:
+                      - event_name
+                      - event_datetime
+                      - agent_name
+                  description: Array of events associated with this lead
                 country:
                   type: string
                   description: The country associated with the lead
-                lead_source:
+                status:
                   type: string
-                  description: The name of the source of the lead
-                property_id:
+                  description: The status associated with the lead
+                desired_unit_number:
                   type: string
-                  description: The Propexo unique identifier for the property
-                x_lead_source_id:
+                  description: The desired unit number
+                desired_unit_type:
                   type: string
-                  description: The external ID of the lead source from the integration vendor
-                middle_name:
+                  description: The desired type of unit
+                relationship:
                   type: string
-                  description: The middle name associated with the lead
+                  enum:
+                    - HEAD_OF_HOUSEHOLD
+                    - ROOMMATE
+                    - SPOUSE
+                    - DEPENDENT
+                    - GUARANTOR/COSIGNER
+                    - NONE_OF_THE_ABOVE
+                  description: The type of household relationship for this lead
                 date_of_birth:
                   type: string
                   format: date-time
                   description: The date of birth associated with the lead
-                notes:
+                x_leasing_agent_id:
                   type: string
-                  description: Notes associated with the lead
+                  description: The external ID of the leasing agent from the integration vendor
+                x_guestcard_id:
+                  type: string
+                  description: The external ID of the guestcard from the integration vendor
+                x_lead_source_id:
+                  type: string
+                  description: The external ID of the lead source from the integration vendor
+                organization_name:
+                  type: string
+                  description: The name of your organization. Other uses this for associating a
+                    prospect
+                third_party_id:
+                  type: string
+                  description: A unique ID you associate with a lead. Required if "unique_lead_id"
+                    is not set.
+                leasing_agent:
+                  type: string
+                  description: The name of the leasing agent
+                unique_lead_id:
+                  type: string
+                  description: DEPRECATED. Please use the "third_party_id" field instead.
+                  deprecated: true
               required:
                 - integration_id
       responses:
@@ -7021,60 +7197,6 @@ paths:
             schema:
               type: object
               properties:
-                last_name:
-                  type: string
-                  description: The last name associated with the lead
-                first_name:
-                  type: string
-                  description: The first name associated with the lead
-                email_1:
-                  type: string
-                  description: The primary email address associated with the lead
-                phone_1:
-                  type: string
-                  description: "'Primary phone number associated with the lead"
-                phone_1_type:
-                  type: string
-                  enum:
-                    - FAX
-                    - HOME
-                    - MOBILE
-                    - OTHER
-                    - WORK
-                  description: Type of the primary phone number
-                phone_2:
-                  type: string
-                  description: "'Secondary phone number associated with the lead"
-                phone_2_type:
-                  type: string
-                  enum:
-                    - FAX
-                    - HOME
-                    - MOBILE
-                    - OTHER
-                    - WORK
-                  description: Type of the secondary phone number
-                address_1:
-                  type: string
-                  description: The first address line associated with the lead
-                address_2:
-                  type: string
-                  description: The second address line associated with the lead
-                city:
-                  type: string
-                  description: The city associated with the lead
-                state:
-                  type: string
-                  description: The state associated with the lead
-                zip:
-                  type: string
-                  description: The zip code associated with the lead
-                country:
-                  type: string
-                  description: The country associated with the lead
-                lead_source:
-                  type: string
-                  description: The name of the source of the lead
                 lead_id:
                   type: string
                   description: The Propexo unique identifier for the lead
@@ -7090,12 +7212,60 @@ paths:
                 x_lead_source_id:
                   type: string
                   description: The external ID of the lead source from the integration vendor
+                first_name:
+                  type: string
+                  description: The first name associated with the lead
+                last_name:
+                  type: string
+                  description: The last name associated with the lead
                 middle_name:
                   type: string
+                  maxLength: 30
                   description: The middle name associated with the lead
+                phone_1:
+                  type: string
+                  description: "'Primary phone number associated with the lead"
+                phone_1_type:
+                  type: string
+                  enum:
+                    - FAX
+                    - HOME
+                    - MOBILE
+                    - WORK
+                  description: Type of the primary phone number
                 desired_lease_term_in_months:
                   type: string
                   description: The amount of months for the lease term
+                phone_2:
+                  type: string
+                  description: "'Secondary phone number associated with the lead"
+                phone_2_type:
+                  type: string
+                  enum:
+                    - FAX
+                    - HOME
+                    - MOBILE
+                    - OTHER
+                    - WORK
+                  description: Type of the secondary phone number
+                email_1:
+                  type: string
+                  description: The primary email address associated with the lead
+                address_1:
+                  type: string
+                  description: The first address line associated with the lead
+                address_2:
+                  type: string
+                  description: The second address line associated with the lead
+                city:
+                  type: string
+                  description: The city associated with the lead
+                state:
+                  type: string
+                  description: The state associated with the lead
+                zip:
+                  type: string
+                  description: The zip code associated with the lead
                 target_move_in_date:
                   anyOf:
                     - type: string
@@ -7114,9 +7284,7 @@ paths:
                   type: string
                   description: The external ID of the floor plan from the integration vendor
                 desired_max_rent_in_cents:
-                  type:
-                    - number
-                    - "null"
+                  type: integer
                   description: The maximum rent cost the lead is looking to pay, in cents
                 desired_min_rent_in_cents:
                   type:
@@ -7182,15 +7350,25 @@ paths:
                       - event_datetime
                       - agent_name
                   description: Array of events associated with this lead
-                desired_unit_number:
+                country:
                   type: string
-                  description: The desired unit number
+                  description: The country associated with the lead
+                lead_source:
+                  type: string
+                  description: The name of the source of the lead
                 status:
                   type: string
                   description: The status associated with the lead
+                desired_unit_number:
+                  type: string
+                  description: The desired unit number
                 desired_unit_type:
                   type: string
                   description: The desired type of unit
+                date_of_birth:
+                  type: string
+                  format: date-time
+                  description: The date of birth associated with the lead
       responses:
         "200":
           description: Update a lead.
@@ -7639,6 +7817,39 @@ paths:
               properties:
                 integration_id:
                   type: string
+                lease_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease
+                attachments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_data:
+                        type: string
+                        maxLength: 69730304
+                        description: The contents of the file, as a base64 encoded string. The PMS has a
+                          max file size of 50 MB.
+                      file_name:
+                        type: string
+                        description: 'The name of the file including the extension. Ex: "image.jpg"'
+                      mime_type:
+                        type: string
+                        description: 'The mime type of the file. Ex: "image/jpeg"'
+                      file_type_id:
+                        type: string
+                        description: The Propexo file type ID of the lease file type to upload. Prefer
+                          this over the raw input of the lease_file_type.
+                      is_private:
+                        type: boolean
+                        description: If the file should be marked as private. If true the file will not
+                          be shown in the resident portal.
+                    required:
+                      - file_data
+                      - file_name
+                      - mime_type
+                      - file_type_id
+                  description: Files to upload for the lease
                 type:
                   type: string
                   enum:
@@ -7796,29 +8007,31 @@ paths:
                     - 15
                     - 18
                   description: The amount of months for the lease term
-                resident_id:
+                attachment:
+                  type: object
+                  properties:
+                    file_data:
+                      type: string
+                      maxLength: 69730304
+                      description: The contents of the file, as a base64 encoded string. We limit the
+                        file upload size to 50 MB.
+                    file_name:
+                      type: string
+                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                    mime_type:
+                      type: string
+                      description: 'The mime type of the file. Ex: "application/pdf"'
+                  required:
+                    - file_data
+                    - file_name
+                    - mime_type
+                  description: The file data for the document upload
+                notes:
                   type: string
-                  description: The Propexo unique identifier for the resident
-                scheduled_move_out_date:
-                  type: string
-                  format: date-time
-                  description: The move-out date associated with the lease
-                realized_move_in_date:
-                  type: string
-                  format: date-time
-                  description: The move-in date associated with the lease
-                realized_move_out_date:
-                  type: string
-                  format: date-time
-                  description: The move-out date associated with the lease
-                x_property_id:
-                  type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the property from the integration vendor
-                x_resident_id:
-                  type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the resident from the integration vendor
+                  description: General notes about the file
+                is_private:
+                  type: boolean
+                  description: If the file should be marked as private
                 primary_contact_id:
                   type: string
                   description: The Propexo unique identifier of the primary contact. This must
@@ -7835,6 +8048,10 @@ paths:
                       - id
                   description: An array of Propexo lead, applicant, or resident IDs. This must
                     also include the primary contact ID
+                scheduled_move_out_date:
+                  type: string
+                  format: date-time
+                  description: The scheduled move-out date associated with the lease
                 status:
                   type: string
                   enum:
@@ -7844,6 +8061,25 @@ paths:
                     - Terminated
                     - Eviction
                   description: The status associated with the lease
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
+                realized_move_in_date:
+                  type: string
+                  format: date-time
+                  description: The move-in date associated with the lease
+                realized_move_out_date:
+                  type: string
+                  format: date-time
+                  description: The move-out date associated with the lease
+                x_property_id:
+                  type: string
+                  pattern: ^[0-9]+$
+                  description: The external ID of the property from the integration vendor
+                x_resident_id:
+                  type: string
+                  pattern: ^[0-9]+$
+                  description: The external ID of the resident from the integration vendor
               required:
                 - integration_id
       responses:
@@ -8309,18 +8545,6 @@ paths:
                   type: string
                   format: date-time
                   description: The date of birth associated with the resident
-                scheduled_move_out_date:
-                  type: string
-                  format: date-time
-                  description: The move-out date associated with the lease
-                realized_move_in_date:
-                  type: string
-                  format: date-time
-                  description: The move-in date associated with the lease
-                realized_move_out_date:
-                  type: string
-                  format: date-time
-                  description: The move-out date associated with the lease
                 primary_contact_id:
                   type: string
                   description: The Propexo unique identifier of the primary contact. This must
@@ -8337,15 +8561,45 @@ paths:
                       - id
                   description: An array of Propexo lead, applicant, or resident IDs. This must
                     also include the primary contact ID
+                scheduled_move_out_date:
+                  type: string
+                  format: date-time
+                  description: The scheduled move-out date associated with the lease
                 status:
                   type: string
                   enum:
-                    - Draft
-                    - Active
-                    - Active - Notice Given
-                    - Terminated
-                    - Eviction
-                  description: The status associated with the lease
+                    - "1"
+                    - "2"
+                    - "3"
+                    - "4"
+                    - "5"
+                    - "6"
+                    - "7"
+                    - "8"
+                    - "9"
+                  description: The status associated with the lease. Must be one of "1" (Pending),
+                    "2" (Active), "3" (Notice Given), "4" (Vacated), "5"
+                    (Evicting), "6" (Closed), "7" (Moved Out), "8" (Evicted), or
+                    "9" (Lease Broken).
+                realized_move_in_date:
+                  type: string
+                  format: date-time
+                  description: The move-in date associated with the lease
+                realized_move_out_date:
+                  type: string
+                  format: date-time
+                  description: The move-out date associated with the lease
+                id:
+                  type: string
+                  description: The Propexo unique identifier for the lease
+                move_in_date:
+                  type: string
+                  format: date-time
+                  description: The move-in date associated with the lease
+                move_out_date:
+                  type: string
+                  format: date-time
+                  description: The move-out date associated with the lease
       responses:
         "200":
           description: Update a lease for an integration.
@@ -10342,134 +10596,9 @@ paths:
               properties:
                 integration_id:
                   type: string
-                last_name:
+                resident_id:
                   type: string
-                  description: The last name of the resident.  This value maps to both the
-                    LastName and PrimaryContact.LastName properties of the
-                    Tenant object
-                first_name:
-                  type: string
-                  description: The first name of the resident.  This value maps to both the
-                    FirstName and PrimaryContact.FirstName properties of the
-                    Tenant object
-                email_1:
-                  type: string
-                  format: email
-                  description: The primary email address for the resident.  This value maps to the
-                    PrimaryContact.Email property of the Tenant object
-                email_2:
-                  type: string
-                  format: email
-                  description: An alternate email address for the resident. This value maps to the
-                    AlternateEmail property of the Tenant object.
-                date_of_birth:
-                  type: string
-                  format: date-time
-                  description: The date of birth of the resident.  This value maps to the
-                    PrimaryContact.DateOfBirth property of the Tenant object.
-                address_1:
-                  type: string
-                  description: Street address for the resident. This maps to the Street property
-                    of the primary address of the Tenant object
-                address_2:
-                  type: string
-                  description: Second line of the street address for the resident.  This maps to
-                    the Address.AddressLine2 property of the Tenant object.
-                city:
-                  type: string
-                  description: City of the resident's primary address
-                state:
-                  type: string
-                  description: State of the resident's primary address
-                zip:
-                  type: string
-                  description: Zip/Postal Code of the resident's primary address
-                country:
-                  type: string
-                  enum:
-                    - US
-                  description: Country of the resident's primary address.
-                address_1_alternate:
-                  type: string
-                  description: Secondary/alternate street address for the resident. This maps to
-                    the Street property of the second address of the Tenant
-                    object
-                address_2_alternate:
-                  type: string
-                  description: Second line of the secondary/alternate street address for the
-                    resident.  This maps to the AlternateAddress.AddressLine2
-                    property of the Tenant object
-                city_alternate:
-                  type: string
-                  description: City of the resident's secondary/alternate address
-                state_alternate:
-                  type: string
-                  description: State of the resident's secondary/alternate address
-                zip_alternate:
-                  type: string
-                  description: Zip/Postal Code of the resident's secondary/alternate address
-                country_alternate:
-                  type: string
-                  enum:
-                    - US
-                  description: Country of the resident's secondary/alternate address.
-                notes:
-                  type: string
-                  description: Notes about the resident
-                phone_1:
-                  type: string
-                  description: Resident's primary phone number.  This will be assumed to be a HOME
-                    phone number unless phone_1_type is also set.
-                phone_1_type:
-                  type: string
-                  enum:
-                    - HOME
-                    - WORK
-                    - MOBILE
-                    - FAX
-                  description: The type of the resident's primary phone number.  The value passed
-                    in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
-                phone_2:
-                  type: string
-                  description: Resident's secondary phone number.  This will be assumed to be a
-                    MOBILE phone number unless phone_2_type is also set.
-                phone_2_type:
-                  type: string
-                  enum:
-                    - HOME
-                    - WORK
-                    - MOBILE
-                    - FAX
-                  description: The type of the resident's secondary phone number.  The value
-                    passed in here must be one of 'HOME', 'WORK', 'MOBILE',
-                    FAX'.
-                custom_data:
-                  type: object
-                  properties: {}
-                  description: "Deprecated: Field is no longer applicable"
-                  deprecated: true
-                property_id:
-                  type: string
-                  description: The Propexo unique identifier for the property
-                rent_period:
-                  type: string
-                  enum:
-                    - monthly
-                    - weekly
-                    - daily
-                  description: How often the resident is expected to pay rent.  Allowed values are
-                    "monthly", "weekly", and "daily".  Maps to the RentPeriod
-                    property of the Tenant object.
-                rent_due_day:
-                  type: integer
-                  minimum: 1
-                  maximum: 31
-                  description: Day of the month on which the tenant's rent is due.  Maps to the
-                    RentDueDay property of the Tenant object
-                middle_name:
-                  type: string
-                  description: The middle name of the resident.  This value maps to the
-                    PrimaryContact.MiddleName property of the Tenant object
+                  description: The Propexo unique identifier for the resident
                 attachments:
                   type: array
                   items:
@@ -10502,6 +10631,156 @@ paths:
                       - file_name
                       - mime_type
                   description: Attachment files for user defined fields on the resident
+                last_name:
+                  type: string
+                  description: The last name of the resident.  This value maps to both the
+                    LastName and PrimaryContact.LastName properties of the
+                    Tenant object
+                first_name:
+                  type: string
+                  description: The first name of the resident.  This value maps to both the
+                    FirstName and PrimaryContact.FirstName properties of the
+                    Tenant object
+                email_1:
+                  type: string
+                  format: email
+                  description: The primary email address for the resident.  This value maps to the
+                    PrimaryContact.Email property of the Tenant object
+                email_2:
+                  type: string
+                  format: email
+                  description: The secondary email address for the resident.  This value maps to
+                    the altEmail property of the Contact object
+                date_of_birth:
+                  type: string
+                  format: date-time
+                  description: The date of birth of the resident.  This value maps to the
+                    PrimaryContact.DateOfBirth property of the Tenant object.
+                address_1:
+                  type: string
+                  description: Street address for the resident. This maps to the Street property
+                    of the primary address of the Tenant object
+                address_2:
+                  type: string
+                  description: Second line of the street address for the resident.  This maps to
+                    the address2 property of the Contact object
+                city:
+                  type: string
+                  description: City of the resident's primary address
+                state:
+                  type: string
+                  description: State of the resident's primary address
+                zip:
+                  type: string
+                  description: Zip/Postal Code of the resident's primary address
+                country:
+                  type: string
+                  description: Country of the resident's address.  This maps to the country
+                    property of the Contact object
+                address_1_alternate:
+                  type: string
+                  description: Secondary/alternate street address for the resident. This maps to
+                    the Street property of the second address of the Tenant
+                    object
+                address_2_alternate:
+                  type: string
+                  description: Second line of the secondary/alternate street address for the
+                    resident.  This maps to the AlternateAddress.AddressLine2
+                    property of the Tenant object
+                city_alternate:
+                  type: string
+                  description: City of the resident's secondary/alternate address
+                state_alternate:
+                  type: string
+                  description: State of the resident's secondary/alternate address
+                zip_alternate:
+                  type: string
+                  description: Zip/Postal Code of the resident's secondary/alternate address
+                country_alternate:
+                  type: string
+                  enum:
+                    - US
+                  description: Country of the resident's secondary/alternate address.
+                notes:
+                  type: string
+                  description: Notes about the resident
+                phone_1:
+                  type: string
+                  description: Primary phone number for the resident.  Depending on the value of
+                    phone_1_type, this may map to the properties fax, homePhone,
+                    mobilePhone, or workPhone.
+                phone_1_type:
+                  type: string
+                  enum:
+                    - HOME
+                    - MOBILE
+                    - WORK
+                    - FAX
+                  description: The type of the primary phone. Must be one of 'HOME', 'MOBILE',
+                    'WORK', or 'FAX'
+                phone_2:
+                  type: string
+                  description: Secondary phone number for the resident.  Depending on the value of
+                    phone_1_type, this may map to the properties fax, homePhone,
+                    mobilePhone, or workPhone.
+                phone_2_type:
+                  type: string
+                  enum:
+                    - HOME
+                    - MOBILE
+                    - WORK
+                    - FAX
+                  description: The type of the secondary phone. Must be one of 'HOME', 'MOBILE',
+                    'WORK', or 'FAX'
+                custom_data:
+                  type: object
+                  properties: {}
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
+                attachment:
+                  type: object
+                  properties:
+                    file_data:
+                      type: string
+                      maxLength: 69730304
+                      description: The contents of the file, as a base64 encoded string. We limit the
+                        file upload size to 50 MB.
+                    file_name:
+                      type: string
+                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                    mime_type:
+                      type: string
+                      description: 'The mime type of the file. Ex: "application/pdf"'
+                  required:
+                    - file_data
+                    - file_name
+                    - mime_type
+                  description: The file data for the document upload.
+                is_private:
+                  type: boolean
+                  description: If the file should be marked as private
+                middle_name:
+                  type: string
+                  description: The middle name of the resident.  This value maps to the
+                    PrimaryContact.MiddleName property of the Tenant object
+                property_id:
+                  type: string
+                  description: The Propexo unique identifier for the property
+                rent_period:
+                  type: string
+                  enum:
+                    - monthly
+                    - weekly
+                    - daily
+                  description: How often the resident is expected to pay rent.  Allowed values are
+                    "monthly", "weekly", and "daily".  Maps to the RentPeriod
+                    property of the Tenant object.
+                rent_due_day:
+                  type: integer
+                  minimum: 1
+                  maximum: 31
+                  description: Day of the month on which the tenant's rent is due.  Maps to the
+                    RentDueDay property of the Tenant object
               required:
                 - integration_id
       responses:
@@ -10900,17 +11179,14 @@ paths:
                   description: The Propexo unique identifier for the resident
                 last_name:
                   type: string
-                  description: The last name of the resident.  This value maps to the lastName
-                    property of the Contact object
+                  description: The last name of the resident.
                 first_name:
                   type: string
-                  description: The first name of the resident.  This value maps to the firstName
-                    property of the Contact object
+                  description: The first name of the resident.
                 email_1:
                   type: string
                   format: email
-                  description: The primary email address for the resident.  This value maps to the
-                    email property of the Contact object
+                  description: The primary email address for the resident.
                 email_2:
                   type: string
                   format: email
@@ -10920,31 +11196,26 @@ paths:
                   type: string
                   format: date-time
                   description: The date of birth of the resident.  This value maps to the
-                    birthDate property of the Contact object.
+                    PrimaryContact.DateOfBirth property of the Tenant object.
                 address_1:
                   type: string
-                  description: First line of the street address for the resident. This maps to the
-                    address property of Contact object
+                  description: Street address for the resident. This maps to the Street property
+                    of the primary address of the Tenant object
                 address_2:
                   type: string
-                  description: Second line of the street address for the resident.  This maps to
-                    the address2 property of the Contact object
+                  description: Street address for the resident.
                 city:
                   type: string
-                  description: City of the resident's address. This maps to the city property of
-                    the Contact object.
+                  description: City of the resident's primary address
                 state:
                   type: string
-                  description: State of the resident's address. This maps to the state property of
-                    the Contact object.
+                  description: State of the resident's primary address
                 zip:
                   type: string
-                  description: Zip/Postal Code of the resident's address. This maps to the zip
-                    property of the Contact object.
+                  description: Zip/Postal Code of the resident's primary address
                 country:
                   type: string
-                  description: Country of the resident's address.  This maps to the country
-                    property of the Contact object
+                  description: Country of the resident's primary address
                 address_1_alternate:
                   type: string
                   description: Secondary/alternate street address for the resident. This maps to
@@ -10975,18 +11246,16 @@ paths:
                     the Contact object
                 phone_1:
                   type: string
-                  description: Primary phone number for the resident.  Depending on the value of
-                    phone_1_type, this may map to the properties fax, homePhone,
-                    mobilePhone, or workPhone.
+                  description: The primary phone number for the resident.
                 phone_1_type:
                   type: string
                   enum:
                     - HOME
-                    - MOBILE
                     - WORK
+                    - MOBILE
                     - FAX
-                  description: The type of the primary phone. Must be one of 'HOME', 'MOBILE',
-                    'WORK', or 'FAX'
+                  description: The primary phone type for the resident. Required when updating
+                    phone number.
                 phone_2:
                   type: string
                   description: Secondary phone number for the resident.  Depending on the value of
@@ -11008,8 +11277,8 @@ paths:
                   deprecated: true
                 middle_name:
                   type: string
-                  description: The middle name of the resident.  This value maps to the middleName
-                    property of the Contact object
+                  description: The middle name of the resident.  This value maps to the
+                    PrimaryContact.MiddleName property of the Tenant object
                 events:
                   type: array
                   items:
@@ -11463,6 +11732,25 @@ paths:
               properties:
                 integration_id:
                   type: string
+                lease_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease
+                financial_account_id:
+                  type: string
+                  description: The Propexo unique identifier for the financial account
+                amount_in_cents:
+                  type: integer
+                  description: The amount of the resident charge, in cents
+                reference_number:
+                  type: string
+                  description: The reference number for the resident charge
+                transaction_date:
+                  type: string
+                  format: date-time
+                  description: The transaction date of the resident charge
+                description:
+                  type: string
+                  description: Description of the resident charge
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
@@ -11472,32 +11760,20 @@ paths:
                 charge_code_id:
                   type: string
                   description: The Propexo ID for the charge code associated with this new charge
-                transaction_date:
-                  type: string
-                  format: date-time
-                  description: The transaction date of the resident charge
-                amount_in_cents:
-                  type: integer
-                  description: The amount of the resident charge, in cents
-                description:
-                  type: string
-                  description: Description of the resident charge
-                reference_number:
-                  type: string
-                  description: The reference number for the resident charge
                 transaction_batch_id:
                   type: string
                   description: A unique value provided by Realpage to associate a charge with a
                     batch. This can be an alphanumeric string.
+                notes:
+                  type: string
+                  description: Notes associated with the resident charge
+                batch_id:
+                  type: string
+                  description: An identifier for the transaction batch. This should be unique to
+                    your system.
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
-                financial_account_id:
-                  type: string
-                  description: The Propexo unique identifier for the financial account
-                lease_id:
-                  type: string
-                  description: The Propexo unique identifier for the lease
               required:
                 - integration_id
       responses:
@@ -12238,6 +12514,28 @@ paths:
                 reference_number:
                   type: string
                   description: The reference number for the resident payment
+                charge_code_id:
+                  type: string
+                  description: The Propexo unique identifier for the charge code
+                notes:
+                  type: string
+                  description: Notes associated with the resident payment
+                payment_type:
+                  type: string
+                  enum:
+                    - ACH
+                    - Cash
+                    - Cashiers Check
+                    - Check
+                    - Credit Card
+                    - Debit Card
+                    - eCheck
+                    - Money Order
+                  description: The method of payment
+                batch_id:
+                  type: string
+                  description: An identifier for the transaction batch. This should be unique to
+                    your system.
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
@@ -12939,59 +13237,102 @@ paths:
               properties:
                 integration_id:
                   type: string
+                service_request_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request
+                attachments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_data:
+                        type: string
+                        maxLength: 34865152
+                        description: The contents of the file, as a base64 encoded string. The PMS has a
+                          max file size of 25 MB.
+                      file_name:
+                        type: string
+                        description: The name of the file including the extension
+                      mime_type:
+                        type: string
+                        description: 'The mime type of the file. Ex: "application/pdf"'
+                    required:
+                      - file_data
+                      - file_name
+                      - mime_type
+                  minItems: 1
+                  description: The files to be uploaded to the service request
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the vendor
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
                 service_description:
                   type: string
                   maxLength: 35
                   description: A description of the service request
-                service_details:
+                service_priority:
                   type: string
-                  description: Details about the service request
+                  enum:
+                    - High
+                    - Low
+                    - Med
+                    - 24 hours
+                    - Emergency
+                  description: The priority level associated with the service request
+                service_status:
+                  type: string
+                  enum:
+                    - New
+                    - InProgress
+                    - Completed
+                    - Deferred
+                    - Closed
+                  description: The status associated with the service request
                 access_is_authorized:
                   type: boolean
                   description: Whether or not the tenant has granted permission to enter the unit
                     associated with the service request
-                date_completed:
+                service_details:
                   type: string
-                  format: date-time
-                  description: The date the service request was completed
+                  description: Details about the service request
+                access_notes:
+                  type: string
+                  description: Notes regarding access to the unit associated with the service
+                    request
                 date_due:
-                  anyOf:
-                    - type: string
-                      format: date-time
-                    - type: string
-                      pattern: ^\d{4}-\d{2}-\d{2}$
-                  description: The due date associated with the service request
-                date_scheduled:
                   type: string
                   format: date-time
-                  description: The date the service request is scheduled
+                  description: The due date associated with the service request
+                invoice_number:
+                  type: string
+                  description: The invoice or reference number that the vendor assigned to the
+                    service request
+                notes:
+                  type: string
+                  description: Notes associated with the service request
                 service_request_category_id:
                   type: string
                   description: The Propexo unique identifier for the service request category
                 service_request_priority_id:
                   type: string
                   description: The Propexo unique identifier for the service request priority
-                service_request_status_id:
-                  type: string
-                  description: The Propexo unique identifier for the service request status
-                vendor_id:
-                  type: string
-                  description: The Propexo unique identifier for the vendor
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
                 service_request_location_id:
                   type: string
                   description: The Propexo unique identifier for the service request location
                 service_request_problem_id:
                   type: string
                   description: The Propexo unique identifier for the service request problem
-                employee_id:
-                  type: string
-                  description: The Propexo unique identifier for the employee
                 due_date:
                   type: string
                   format: date-time
@@ -13012,49 +13353,31 @@ paths:
                     be the same day (Entrata restriction).
                 phone_1:
                   type: string
-                resident_id:
-                  type: string
-                  description: The Propexo unique identifier for the resident
                 lease_id:
                   type: string
                   description: The Propexo unique identifier for the lease
-                service_priority:
-                  type: string
-                  enum:
-                    - High
-                    - Low
-                    - Med
-                    - 24 hours
-                    - Emergency
-                  description: The priority level associated with the service request
-                service_status:
-                  type: string
-                  enum:
-                    - New
-                    - InProgress
-                    - Completed
-                    - Deferred
-                    - Closed
-                  description: The status associated with the service request
-                access_notes:
-                  type: string
-                  description: Notes regarding access to the unit associated with the service
-                    request
-                invoice_number:
-                  type: string
-                  description: The invoice or reference number that the vendor assigned to the
-                    service request
-                notes:
-                  type: string
-                  maxLength: 65535
-                  description: Notes associated with the service request
-                date_created:
-                  anyOf:
-                    - type: string
-                      format: date-time
-                    - type: string
-                      pattern: ^\d{4}-\d{2}-\d{2}$
-                  description: The date the service request was created
+                attachment:
+                  type: object
+                  properties:
+                    file_data:
+                      type: string
+                      maxLength: 69730304
+                      description: The contents of the file, as a base64 encoded string. We limit the
+                        file upload size to 50 MB.
+                    file_name:
+                      type: string
+                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                    mime_type:
+                      type: string
+                      description: 'The mime type of the file. Ex: "application/pdf"'
+                  required:
+                    - file_data
+                    - file_name
+                    - mime_type
+                  description: The file data for the document upload
+                is_private:
+                  type: boolean
+                  description: If the file should be marked as private
                 service_category:
                   type: string
                   enum:
@@ -13064,6 +13387,18 @@ paths:
                     - Plumbing
                     - Service
                   description: The category of service request
+                date_completed:
+                  type: string
+                  format: date-time
+                  description: The date the service request was completed
+                date_created:
+                  type: string
+                  format: date-time
+                  description: The date the service request was created
+                date_scheduled:
+                  type: string
+                  format: date-time
+                  description: The date the service request is scheduled
                 status_raw:
                   type: string
                   enum:
@@ -13085,6 +13420,12 @@ paths:
                     - Web
                     - Work Completed
                   description: The raw status associated with the service request
+                service_request_status_id:
+                  type: string
+                  description: The Propexo unique identifier for the service request status
+                reported_by:
+                  type: string
+                  description: The name of the person who reported this service request
               required:
                 - integration_id
       responses:
@@ -13443,6 +13784,7 @@ paths:
                   description: The Propexo unique identifier for the service request problem
                 service_description:
                   type: string
+                  maxLength: 35
                   description: A description of the service request
                 phone_1:
                   type: string
@@ -13505,15 +13847,30 @@ paths:
                 status_raw:
                   type: string
                   enum:
-                    - Submitted
-                    - Not Started
-                    - In Progress
+                    - Assessment
+                    - Call
+                    - Canceled
                     - Completed
-                    - Scheduled
-                    - Cancelled
-                    - Closed
+                    - Electrical
+                    - Emergency
+                    - HVAC
+                    - In Progress
+                    - Inspection
                     - On Hold
-                  description: The status associated with the service request
+                    - Other
+                    - Plumbing
+                    - Request Reassignment
+                    - Scheduled
+                    - Service
+                    - Web
+                    - Work Completed
+                  description: The raw status associated with the service request
+                completion_notes:
+                  type: string
+                  description: Closing notes associated with the service request
+                reported_by:
+                  type: string
+                  description: The name of the person who reported this service request
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
@@ -13526,12 +13883,6 @@ paths:
                     - 24 hours
                     - Emergency
                   description: The priority level associated with the service request
-                completion_notes:
-                  type: string
-                  description: Closing notes associated with the service request
-                reported_by:
-                  type: string
-                  description: The name of the person who reported this service request
                 integration_id:
                   type: string
               required:
@@ -14125,6 +14476,9 @@ paths:
                 service_request_id:
                   type: string
                   description: The Propexo unique identifier for the service request
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
                 status_raw:
                   type: string
                   enum:
@@ -14149,6 +14503,12 @@ paths:
                 notes:
                   type: string
                   description: Notes associated with the service request history
+                contact_first_name:
+                  type: string
+                  description: Notes associated with the service request history
+                title:
+                  type: string
+                  description: The title associated with the service request history
                 attachment:
                   type: object
                   properties:
@@ -14168,15 +14528,6 @@ paths:
                     - file_name
                     - mime_type
                   description: Attachment file associated with the service request history
-                employee_id:
-                  type: string
-                  description: The Propexo unique identifier for the employee
-                contact_first_name:
-                  type: string
-                  description: Notes associated with the service request history
-                title:
-                  type: string
-                  description: The title associated with the service request history
               required:
                 - integration_id
       responses:
@@ -15413,6 +15764,41 @@ paths:
                 integration_id:
                   type: string
                   description: The Propexo unique identifier for the integration
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                attachments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_data:
+                        type: string
+                        maxLength: 69730304
+                        description: The contents of the file, as a base64 encoded string. The PMS has a
+                          max file size of 50 MB.
+                      file_type:
+                        type: string
+                        enum:
+                          - Document
+                        default: Document
+                        description: The type of file being uploaded. This defaults to "Document"
+                      file_name:
+                        type: string
+                        description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                      mime_type:
+                        type: string
+                        description: 'The mime type of the file. Ex: "application/pdf"'
+                      file_type_id:
+                        type: string
+                        description: The Propexo unique identifier for the file type. This file_type
+                          must contain a "type" value of "file"
+                    required:
+                      - file_data
+                      - file_name
+                      - mime_type
+                      - file_type_id
+                  description: Attachment files for user defined fields on the unit
                 property_id:
                   type: string
                 number:
@@ -15525,6 +15911,31 @@ paths:
                 zip:
                   type: string
                   description: The zip code of the unit.
+                attachment:
+                  type: object
+                  properties:
+                    file_data:
+                      type: string
+                      maxLength: 69730304
+                      description: The contents of the file, as a base64 encoded string. We limit the
+                        file upload size to 50 MB.
+                    file_name:
+                      type: string
+                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                    mime_type:
+                      type: string
+                      description: 'The mime type of the file. Ex: "application/pdf"'
+                  required:
+                    - file_data
+                    - file_name
+                    - mime_type
+                  description: The file data for the document upload
+                notes:
+                  type: string
+                  description: Notes associated with the unit
+                is_private:
+                  type: boolean
+                  description: If the file should be marked as private
                 category:
                   type: string
                   enum:
@@ -15543,12 +15954,54 @@ paths:
                 abbreviation:
                   type: string
                   description: 'The abbreviation of the unit. Example: "UNIT3"'
-                notes:
-                  type: string
-                  description: Notes about the unit.
                 rent_amount_market_in_cents:
                   type: number
                   description: The market rent cost of the unit, in cents.
+                images:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_data:
+                        type: string
+                        maxLength: 1394606
+                        description: The contents of the file, as a base64 encoded string. The PMS has a
+                          max file size of 50 MB.
+                      file_type:
+                        type: string
+                        enum:
+                          - Image
+                        default: Image
+                        description: The type of file being uploaded. This defaults to "Image"
+                      file_name:
+                        type: string
+                        description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                      mime_type:
+                        type: string
+                        description: 'The mime type of the file. Ex: "application/pdf"'
+                      file_type_id:
+                        type: string
+                        description: The Propexo unique identifier for the file type. This file_type
+                          must contain a "type" value of "image"
+                      name:
+                        type: string
+                        description: 'The name of the image. Ex: "Balcony View"'
+                      description:
+                        type: string
+                        description: 'A description of the image. Ex: "Stunning ocean view from the
+                          master bedroom balcony"'
+                      caption:
+                        type: string
+                        description: A caption for the image. Defaults to the image name if left
+                          undefined
+                    required:
+                      - file_data
+                      - file_name
+                      - mime_type
+                      - file_type_id
+                      - name
+                      - description
+                  description: Image files to upload for the unit.
                 intgration_id:
                   type: string
               required:
@@ -15875,63 +16328,67 @@ paths:
             schema:
               type: object
               properties:
-                number:
+                integration_id:
                   type: string
-                  description: The unit number
-                bedrooms:
+                  description: The Propexo unique identifier for the integration
+                unit_id:
                   type: string
-                  description: The number of bedrooms
-                bathrooms:
+                  description: The Propexo unique identifier for the unit
+                category:
                   type: string
-                  description: The number of bathrooms
-                square_feet:
-                  type: integer
-                  minimum: 0
-                  description: The square footage of the unit
-                building_number:
+                  enum:
+                    - Residential
+                    - Commercial
+                  description: The category of the unit.
+                type:
                   type: string
-                  description: The building number
-                building_name:
+                  enum:
+                    - Apartment
+                    - House
+                  description: The type of the unit.
+                name:
                   type: string
-                  description: The building name
-                floor_plan_code:
+                  description: 'The name of the unit. Example: "Unit 3".'
+                abbreviation:
                   type: string
-                  description: The floor plan code
-                floor_plan_name:
+                  description: 'The abbreviation of the unit. Example: "UNIT3"'
+                address_1:
                   type: string
-                  description: The floor plan name
-                floor:
+                  description: The first address line of the unit.
+                address_2:
                   type: string
-                  description: Floor number/name
-                street_address_1:
-                  type: string
-                  description: The street address line 1
-                street_address_2:
-                  type: string
-                  description: The street address line 2
+                  description: The second address line of the unit.
                 city:
                   type: string
-                  description: The city
+                  description: The city of the unit.
                 state:
                   type: string
-                  description: The state
+                  description: The state of the unit.
                 zip:
                   type: string
-                  description: The zip code
-                is_available:
-                  type: boolean
-                  description: Whether the unit is available
-                is_furnished:
-                  type: boolean
-                  description: Whether the unit is furnished
-                is_vacant:
-                  type: boolean
-                  description: Whether the unit is vacant
-                custom_data:
-                  type: object
-                  properties: {}
-                  description: "Deprecated: Field is no longer applicable"
-                  deprecated: true
+                  description: The zip code of the unit.
+                country:
+                  type: string
+                  description: The country of the unit.
+                notes:
+                  type: string
+                  description: Notes about the unit.
+                bathrooms:
+                  type:
+                    - string
+                    - "null"
+                  description: The number of bathrooms in the unit.
+                bedrooms:
+                  type:
+                    - string
+                    - "null"
+                  description: The number of bedrooms in the unit.
+                rent_amount_market_in_cents:
+                  type: number
+                  description: The market rent cost of the unit, in cents.
+                square_feet:
+                  type: number
+                  description: The size of the unit in square feet.
       responses:
         "200":
           description: Update a unit for a property.
