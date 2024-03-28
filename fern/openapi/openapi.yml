@@ -7817,39 +7817,6 @@ paths:
               properties:
                 integration_id:
                   type: string
-                lease_id:
-                  type: string
-                  description: The Propexo unique identifier for the lease
-                attachments:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      file_data:
-                        type: string
-                        maxLength: 69730304
-                        description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 50 MB.
-                      file_name:
-                        type: string
-                        description: 'The name of the file including the extension. Ex: "image.jpg"'
-                      mime_type:
-                        type: string
-                        description: 'The mime type of the file. Ex: "image/jpeg"'
-                      file_type_id:
-                        type: string
-                        description: The Propexo file type ID of the lease file type to upload. Prefer
-                          this over the raw input of the lease_file_type.
-                      is_private:
-                        type: boolean
-                        description: If the file should be marked as private. If true the file will not
-                          be shown in the resident portal.
-                    required:
-                      - file_data
-                      - file_name
-                      - mime_type
-                      - file_type_id
-                  description: Files to upload for the lease
                 type:
                   type: string
                   enum:
@@ -8007,31 +7974,6 @@ paths:
                     - 15
                     - 18
                   description: The amount of months for the lease term
-                attachment:
-                  type: object
-                  properties:
-                    file_data:
-                      type: string
-                      maxLength: 69730304
-                      description: The contents of the file, as a base64 encoded string. We limit the
-                        file upload size to 50 MB.
-                    file_name:
-                      type: string
-                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
-                    mime_type:
-                      type: string
-                      description: 'The mime type of the file. Ex: "application/pdf"'
-                  required:
-                    - file_data
-                    - file_name
-                    - mime_type
-                  description: The file data for the document upload
-                notes:
-                  type: string
-                  description: General notes about the file
-                is_private:
-                  type: boolean
-                  description: If the file should be marked as private
                 primary_contact_id:
                   type: string
                   description: The Propexo unique identifier of the primary contact. This must
@@ -9752,6 +9694,74 @@ paths:
               properties:
                 integration_id:
                   type: string
+                x_portfolio_id:
+                  type: string
+                  description: The ID of the portfolio to create the property under in the PMS.
+                abbreviation:
+                  type: string
+                  description: "The abbreviation of the property. Example: PROP1"
+                name:
+                  type: string
+                  description: "The name of the property. Example: Property 1"
+                square_footage:
+                  type: string
+                  description: The size of the property in square feet
+                address_1:
+                  type: string
+                  description: The first address line associated with the property
+                address_2:
+                  type: string
+                  description: The second address line associated with the property
+                zip:
+                  type: string
+                  description: The zip code associated with the property
+                city:
+                  type: string
+                  description: The city associated with the property
+                county:
+                  type: string
+                  description: The county associated with the property
+                state:
+                  type: string
+                  description: The state associated with the property
+                country:
+                  type: string
+                  description: The country associated with the property
+                website:
+                  type: string
+                  description: The website URL associated with the property
+                is_active:
+                  type: string
+                  description: Whether or not the property is currently active
+                notes:
+                  type: string
+                  description: General notes about the property
+                year_built:
+                  type: integer
+                  description: The year the property was built
+                category:
+                  type: string
+                  enum:
+                    - Residential
+                    - Commercial
+                  description: The category of the property. This is from a limited set of data
+                    that the PMS requires.
+                type:
+                  type: string
+                  enum:
+                    - Apartment
+                    - Condo
+                    - Commercial
+                    - Du/Fourplex
+                    - House
+                    - Section 8/Affordable
+                    - Senior
+                    - Short-term/vacation
+                    - Student
+                    - Townhouse
+                    - Other
+                  description: The type of the property. This is from a limited set of data that
+                    the PMS requires.
               required:
                 - integration_id
       responses:
@@ -10596,41 +10606,6 @@ paths:
               properties:
                 integration_id:
                   type: string
-                resident_id:
-                  type: string
-                  description: The Propexo unique identifier for the resident
-                attachments:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      file_type_id:
-                        type: string
-                        description: The Propexo unique identifier for the file type. This file_type
-                          must contain a "type" value of "file"
-                      file_type:
-                        type: string
-                        enum:
-                          - Document
-                        default: Document
-                        description: The type of file being uploaded. This defaults to "Document"
-                      file_data:
-                        type: string
-                        maxLength: 69730304
-                        description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 50 MB.
-                      file_name:
-                        type: string
-                        description: 'The name of the file including the extension. Ex: "resume.pdf"'
-                      mime_type:
-                        type: string
-                        description: 'The mime type of the file. Ex: "application/pdf"'
-                    required:
-                      - file_type_id
-                      - file_data
-                      - file_name
-                      - mime_type
-                  description: Attachment files for user defined fields on the resident
                 last_name:
                   type: string
                   description: The last name of the resident.  This value maps to both the
@@ -10737,28 +10712,6 @@ paths:
                   properties: {}
                   description: "Deprecated: Field is no longer applicable"
                   deprecated: true
-                attachment:
-                  type: object
-                  properties:
-                    file_data:
-                      type: string
-                      maxLength: 69730304
-                      description: The contents of the file, as a base64 encoded string. We limit the
-                        file upload size to 50 MB.
-                    file_name:
-                      type: string
-                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
-                    mime_type:
-                      type: string
-                      description: 'The mime type of the file. Ex: "application/pdf"'
-                  required:
-                    - file_data
-                    - file_name
-                    - mime_type
-                  description: The file data for the document upload.
-                is_private:
-                  type: boolean
-                  description: If the file should be marked as private
                 middle_name:
                   type: string
                   description: The middle name of the resident.  This value maps to the
@@ -10781,6 +10734,38 @@ paths:
                   maximum: 31
                   description: Day of the month on which the tenant's rent is due.  Maps to the
                     RentDueDay property of the Tenant object
+                attachments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_type_id:
+                        type: string
+                        description: The Propexo unique identifier for the file type. This file_type
+                          must contain a "type" value of "file"
+                      file_type:
+                        type: string
+                        enum:
+                          - Document
+                        default: Document
+                        description: The type of file being uploaded. This defaults to "Document"
+                      file_data:
+                        type: string
+                        maxLength: 69730304
+                        description: The contents of the file, as a base64 encoded string. The PMS has a
+                          max file size of 50 MB.
+                      file_name:
+                        type: string
+                        description: 'The name of the file including the extension. Ex: "resume.pdf"'
+                      mime_type:
+                        type: string
+                        description: 'The mime type of the file. Ex: "application/pdf"'
+                    required:
+                      - file_type_id
+                      - file_data
+                      - file_name
+                      - mime_type
+                  description: Attachment files for user defined fields on the resident
               required:
                 - integration_id
       responses:
@@ -13235,36 +13220,11 @@ paths:
             schema:
               type: object
               properties:
-                integration_id:
-                  type: string
-                service_request_id:
-                  type: string
-                  description: The Propexo unique identifier for the service request
-                attachments:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      file_data:
-                        type: string
-                        maxLength: 34865152
-                        description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 25 MB.
-                      file_name:
-                        type: string
-                        description: The name of the file including the extension
-                      mime_type:
-                        type: string
-                        description: 'The mime type of the file. Ex: "application/pdf"'
-                    required:
-                      - file_data
-                      - file_name
-                      - mime_type
-                  minItems: 1
-                  description: The files to be uploaded to the service request
                 employee_id:
                   type: string
                   description: The Propexo unique identifier for the employee
+                integration_id:
+                  type: string
                 vendor_id:
                   type: string
                   description: The Propexo unique identifier for the vendor
@@ -13320,6 +13280,7 @@ paths:
                     service request
                 notes:
                   type: string
+                  maxLength: 65535
                   description: Notes associated with the service request
                 service_request_category_id:
                   type: string
@@ -13356,28 +13317,6 @@ paths:
                 lease_id:
                   type: string
                   description: The Propexo unique identifier for the lease
-                attachment:
-                  type: object
-                  properties:
-                    file_data:
-                      type: string
-                      maxLength: 69730304
-                      description: The contents of the file, as a base64 encoded string. We limit the
-                        file upload size to 50 MB.
-                    file_name:
-                      type: string
-                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
-                    mime_type:
-                      type: string
-                      description: 'The mime type of the file. Ex: "application/pdf"'
-                  required:
-                    - file_data
-                    - file_name
-                    - mime_type
-                  description: The file data for the document upload
-                is_private:
-                  type: boolean
-                  description: If the file should be marked as private
                 service_category:
                   type: string
                   enum:
@@ -15764,41 +15703,6 @@ paths:
                 integration_id:
                   type: string
                   description: The Propexo unique identifier for the integration
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
-                attachments:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      file_data:
-                        type: string
-                        maxLength: 69730304
-                        description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 50 MB.
-                      file_type:
-                        type: string
-                        enum:
-                          - Document
-                        default: Document
-                        description: The type of file being uploaded. This defaults to "Document"
-                      file_name:
-                        type: string
-                        description: 'The name of the file including the extension. Ex: "resume.pdf"'
-                      mime_type:
-                        type: string
-                        description: 'The mime type of the file. Ex: "application/pdf"'
-                      file_type_id:
-                        type: string
-                        description: The Propexo unique identifier for the file type. This file_type
-                          must contain a "type" value of "file"
-                    required:
-                      - file_data
-                      - file_name
-                      - mime_type
-                      - file_type_id
-                  description: Attachment files for user defined fields on the unit
                 property_id:
                   type: string
                 number:
@@ -15911,31 +15815,6 @@ paths:
                 zip:
                   type: string
                   description: The zip code of the unit.
-                attachment:
-                  type: object
-                  properties:
-                    file_data:
-                      type: string
-                      maxLength: 69730304
-                      description: The contents of the file, as a base64 encoded string. We limit the
-                        file upload size to 50 MB.
-                    file_name:
-                      type: string
-                      description: 'The name of the file including the extension. Ex: "resume.pdf"'
-                    mime_type:
-                      type: string
-                      description: 'The mime type of the file. Ex: "application/pdf"'
-                  required:
-                    - file_data
-                    - file_name
-                    - mime_type
-                  description: The file data for the document upload
-                notes:
-                  type: string
-                  description: Notes associated with the unit
-                is_private:
-                  type: boolean
-                  description: If the file should be marked as private
                 category:
                   type: string
                   enum:
@@ -15954,54 +15833,12 @@ paths:
                 abbreviation:
                   type: string
                   description: 'The abbreviation of the unit. Example: "UNIT3"'
+                notes:
+                  type: string
+                  description: Notes about the unit.
                 rent_amount_market_in_cents:
                   type: number
                   description: The market rent cost of the unit, in cents.
-                images:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      file_data:
-                        type: string
-                        maxLength: 1394606
-                        description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 50 MB.
-                      file_type:
-                        type: string
-                        enum:
-                          - Image
-                        default: Image
-                        description: The type of file being uploaded. This defaults to "Image"
-                      file_name:
-                        type: string
-                        description: 'The name of the file including the extension. Ex: "resume.pdf"'
-                      mime_type:
-                        type: string
-                        description: 'The mime type of the file. Ex: "application/pdf"'
-                      file_type_id:
-                        type: string
-                        description: The Propexo unique identifier for the file type. This file_type
-                          must contain a "type" value of "image"
-                      name:
-                        type: string
-                        description: 'The name of the image. Ex: "Balcony View"'
-                      description:
-                        type: string
-                        description: 'A description of the image. Ex: "Stunning ocean view from the
-                          master bedroom balcony"'
-                      caption:
-                        type: string
-                        description: A caption for the image. Defaults to the image name if left
-                          undefined
-                    required:
-                      - file_data
-                      - file_name
-                      - mime_type
-                      - file_type_id
-                      - name
-                      - description
-                  description: Image files to upload for the unit.
                 intgration_id:
                   type: string
               required:
