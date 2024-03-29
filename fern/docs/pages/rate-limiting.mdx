@@ -1,18 +1,13 @@
 ## Overview
 
-There are two types of rate limits to consider when using the Propexo API:
+To ensure optimal use of the Propexo API, it's important to understand and adhere to its rate limits. This guide elaborates on the best practices and mechanisms in place for managing data requests and interactions with the API.
 
-1. Property Management System (PMS) Rate Limits 
-2. Propexo Rate Limits
+## Propexo API Rate Limits: A Detailed Look
 
-## Property Management System (PMS) Rate Limits
+Propexo's standard contracted rate limit is typically set at 150 requests per minute, but this can be adjusted depending on your specific contract with us. The Propexo API imposes this rate limit to maintain system integrity and provide equal access to services for all users. Users are strongly advised against polling the API excessively. Instead, leveraging webhooks is recommended for receiving time-sensitive updates, which is far more efficient and reduces unnecessary load on the API.
 
-Respecting rate limit agreements with each of your integration partners is an important part of how Propexo works. Since each customer can have unique rate limit agreements with each PMS, Propexo can customize frequency and concurrency for each of your integrations as a unique configuration. All requests, whether read or write, will conform to the rate limit configuration.
+The data cache of the Propexo API is refreshed with each synchronization request to your PMS integration or after successful write operations. Typically, these sync requests are scheduled every 12 hours, although this can be adjusted based on individual integration needs. Polling the API more frequently than the sync schedule will not yield new information, making such requests redundant.
 
-## Propexo Rate Limits
+To facilitate transparent usage monitoring, the API includes the `X-RateLimit-Limit` header, showing the current rate limit status for your account. When your usage nears the limit, reaching 80%, the API introduces a slight delay of 2 seconds to throttle the requests, aiming to prevent rate limit breaches. Should you hit the 100% threshold, the API will respond with a 429 error code, indicating that the rate limit has been exceeded, and requests will be blocked until the limit resets.
 
-One of Propexo's core values is to simplify the integration process for our customers. To that end, Propexo treats all requests to our API the same, regardless of the PMS. Currently, we offer very high rate limits by default at 150 requests per minute. Here are a few guidelines that we ask our customers to follow:
-
-1. **Please do not poll the API.** If you need to check for time-sensitive updates, webhooks are the absolute best option.
-
-2. Our data cache gets updated each time we run a _sync_ request to your PMS integration, or (in many cases) after a successful write request. Most of the time (this can be customized per customer per integration), that sync request occurs every 12 hours. Polling the Propexo API more frequently than that will not return any new data outside of the syncing schedule.
+Adhering to these guidelines ensures a smooth and efficient interaction with the Propexo API, allowing users to optimize their data handling while preventing overutilization of resources.
