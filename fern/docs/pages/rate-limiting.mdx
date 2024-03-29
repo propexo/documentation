@@ -4,7 +4,7 @@ To ensure optimal use of the Propexo API, it's important to understand and adher
 
 ## Propexo API Rate Limits: A Detailed Look
 
-The Propexo API imposes a rate limit of 150 requests per minute to maintain system integrity and provide equal access to services. Users are strongly advised against polling the API excessively. Instead, leveraging webhooks is recommended for receiving time-sensitive updates, which is far more efficient and reduces unnecessary load on the API.
+Propexo's standard contracted rate limit is typically set at 150 requests per minute, but this can be adjusted depending on your specific contract with us. The Propexo API imposes this rate limit to maintain system integrity and provide equal access to services for all users. Users are strongly advised against polling the API excessively. Instead, leveraging webhooks is recommended for receiving time-sensitive updates, which is far more efficient and reduces unnecessary load on the API.
 
 The data cache of the Propexo API is refreshed with each synchronization request to your PMS integration or after successful write operations. Typically, these sync requests are scheduled every 12 hours, although this can be adjusted based on individual integration needs. Polling the API more frequently than the sync schedule will not yield new information, making such requests redundant.
 
