@@ -19690,13 +19690,25 @@ paths:
                     type: array
                     items:
                       type: string
-                    description: ' For "PARTIAL_SUCCESS" and "FAILURE" statuses, an array of error
+                    description: For "PARTIAL_SUCCESS" and "FAILURE" statuses, an array of error
                       messages provided by the PMS may be present. This array
                       could be incomplete if the PMS does not provide error
-                      messages.'
+                      messages.
+                  created_record_id:
+                    type:
+                      - string
+                      - "null"
+                    description: The ID may be null if the job didn't run correctly or if the given
+                      PMS does not generate a new record ID for create
+                      operations. Due to varying PMS workflow requirements, some
+                      Propexo jobs will spawn other jobs. This will return the
+                      first ID created in the process and could be related to a
+                      different model than expected. This is not intended to be
+                      a complete solution and could have gaps.
                 required:
                   - write_status
                   - errors
+                  - created_record_id
         "400":
           description: invalid input
   /v1/amenities/units/{id}:
