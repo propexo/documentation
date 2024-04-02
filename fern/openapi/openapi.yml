@@ -17684,6 +17684,7 @@ paths:
                     - resident_payments
                     - residents
                     - screenings
+                    - service_request_vendors
                     - service_requests
                     - transactions
                     - units
@@ -20514,6 +20515,7 @@ paths:
                     - resident_payments
                     - residents
                     - screenings
+                    - service_request_vendors
                     - service_requests
                     - transactions
                     - units
@@ -22109,6 +22111,7 @@ webhooks:
                             - residents
                             - residents-to-leases
                             - screenings
+                            - service-request-vendors
                             - service-requests
                             - units
                         payload:
@@ -24860,6 +24863,7 @@ webhooks:
                             - residents
                             - residents-to-leases
                             - screenings
+                            - service-request-vendors
                             - service-requests
                             - units
                         integration_id:
@@ -24930,6 +24934,7 @@ webhooks:
                             - residents
                             - residents-to-leases
                             - screenings
+                            - service-request-vendors
                             - service-requests
                             - units
                         diff:
@@ -30396,6 +30401,7 @@ webhooks:
                             - residents
                             - residents-to-leases
                             - screenings
+                            - service-request-vendors
                             - service-requests
                             - units
                         integration_id:
