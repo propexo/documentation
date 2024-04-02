@@ -21351,6 +21351,46 @@ paths:
                   - success
         "400":
           description: invalid input
+  /v1/admin/integrations/{integration_id}/back-sync:
+    post:
+      tags:
+        - admin
+      summary: Trigger a backsync on an integration.
+      description: Create an integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          name: integration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Create an integration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      success:
+                        type: boolean
+                    required:
+                      - success
+                required:
+                  - result
+        "400":
+          description: invalid input
   /v1/admin/integrations/{integration_id}/properties:
     get:
       tags:
