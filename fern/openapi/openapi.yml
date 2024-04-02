@@ -1460,45 +1460,21 @@ paths:
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
+                lease_period_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease period
                 originating_lead_source_id:
                   type: string
                   description: The external ID of the lead source from the integration vendor
+                address_1:
+                  type: string
+                  description: The first address line associated with the applicant
                 application_status:
                   type: string
                   enum:
                     - COMPLETED
                     - APPROVED
                   description: The status associated with the application
-                lease_term_in_months:
-                  type: integer
-                  enum:
-                    - 3
-                    - 6
-                    - 9
-                    - 12
-                    - 15
-                    - 18
-                  description: The amount of months for the lease term
-                floorplan_id:
-                  type: string
-                  description: The external ID of the floor plan from the integration vendor
-                move_in_date:
-                  type: string
-                  format: date-time
-                  description: The move-in date associated with the lease
-                leasing_agent_id:
-                  type: string
-                  description: The external ID of the leasing agent from the integration vendor
-                date_of_birth:
-                  type: string
-                  format: date-time
-                  description: The date of birth associated with the applicant
-                address_1:
-                  type: string
-                  description: The first address line associated with the applicant
-                address_2:
-                  type: string
-                  description: The second address line associated with the applicant
                 city:
                   type: string
                   description: The city associated with the applicant
@@ -1508,6 +1484,9 @@ paths:
                 zip:
                   type: string
                   description: The zip code associated with the applicant
+                address_2:
+                  type: string
+                  description: The second address line associated with the applicant
                 attachments:
                   type: array
                   items:
@@ -1537,6 +1516,10 @@ paths:
                       - mime_type
                       - lease_file_type
                   description: Files to upload for the applicant
+                date_of_birth:
+                  type: string
+                  format: date-time
+                  description: The date of birth associated with the applicant
                 events:
                   type: array
                   items:
@@ -1586,6 +1569,10 @@ paths:
                       - event_datetime
                       - agent_name
                   description: Array of events associated with the applicant
+                move_in_date:
+                  type: string
+                  format: date-time
+                  description: The move-in date associated with the lease
                 middle_name:
                   type: string
                   description: The middle name associated with the applicant
