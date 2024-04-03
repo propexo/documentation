@@ -10178,6 +10178,165 @@ paths:
                   - data
         "400":
           description: invalid input
+  /v1/purchase-orders:
+    post:
+      tags:
+        - purchase-orders
+      summary: Create a purchase order
+      description: Create a purchase order for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the vendor
+                description:
+                  type: string
+                  description: Description of the purchase order
+                number:
+                  type: string
+                  maxLength: 8
+                  description: The number of the purchase order
+                total_amount_in_cents:
+                  type: number
+                  description: The amount of the purchase order, in cents
+                order_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The order date for the purchase order
+                expense_type:
+                  type: string
+                  description: The expense type of the purchase order
+                display_type:
+                  type: string
+                  description: The display type of the purchase order
+                is_closed:
+                  type: boolean
+                  description: Whether the purchase order is closed or not
+                shipping_address_1:
+                  type: string
+                  description: The first address line associated with the shipping address for the
+                    purchase order
+                shipping_address_2:
+                  type: string
+                  description: The second address line associated with the shipping address for
+                    the purchase order
+                shipping_city:
+                  type: string
+                  description: The city associated with the shipping address for the purchase
+                    order
+                shipping_state:
+                  type: string
+                  description: The state associated with the shipping address for the purchase
+                    order
+                shipping_zip:
+                  type: string
+                  description: The zip code associated with the shipping address for the purchase
+                    order
+                shipping_country:
+                  type: string
+                  description: The country associated with the shipping address for the purchase
+                    order
+                billing_address_1:
+                  type: string
+                  description: The first address line associated with the billing address for the
+                    purchase order
+                billing_address_2:
+                  type: string
+                  description: The second address line associated with the billing address for the
+                    purchase order
+                billing_city:
+                  type: string
+                  description: The city associated with the billing address for the purchase order
+                billing_state:
+                  type: string
+                  description: The state associated with the billing address for the purchase
+                    order
+                billing_zip:
+                  type: string
+                  description: The zip code associated with the billing address for the purchase
+                    order
+                billing_country:
+                  type: string
+                  description: The country associated with the billing address for the purchase
+                    order
+                purchase_order_items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                      description:
+                        type: string
+                        description: Description of the purchase order item
+                      construction_job_id:
+                        type: string
+                        description: The Propexo unique identifier for the construction job
+                      stock_code:
+                        type: string
+                        description: The stock code for the purchase order item
+                      quantity_ordered:
+                        type: string
+                        description: The quantity ordered for the purchase order item
+                      unit_price_in_cents:
+                        type: integer
+                        description: The unit price, in cents, of the purchase order item
+                      total_cost_in_cents:
+                        type: integer
+                        description: The total cost, in cents, of the lead
+                      cost_code:
+                        type: string
+                        description: The cost code of the purchase order item
+                      category_code:
+                        type: string
+                        description: The category code for the purchase order item
+                    required:
+                      - property_id
+                      - description
+                      - construction_job_id
+                      - stock_code
+                      - quantity_ordered
+                      - unit_price_in_cents
+                      - total_cost_in_cents
+                      - cost_code
+                      - category_code
+                  default: []
+                  description: A list of the items associated with the purchase orders
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a purchase order for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/residents:
     get:
       tags:
