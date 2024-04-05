@@ -10172,6 +10172,304 @@ paths:
         "400":
           description: invalid input
   /v1/purchase-orders:
+    get:
+      tags:
+        - purchase-orders
+      summary: Get all purchase orders
+      description: Get all purchase orders
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all purchase orders
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the purchase order
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        x_invoice_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the invoice from the integration vendor
+                        number:
+                          type:
+                            - string
+                            - "null"
+                          description: The number of the purchase order
+                        is_closed:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the purchase order is closed or not
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          description: Description of the purchase order
+                        total_amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The amount of the purchase order, in cents
+                        order_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The order date for the purchase order
+                        expense_type:
+                          type:
+                            - string
+                            - "null"
+                          description: The expense type of the purchase order
+                        display_type:
+                          type:
+                            - string
+                            - "null"
+                          description: The display type of the purchase order
+                        shipping_address_1:
+                          type:
+                            - string
+                            - "null"
+                          description: The first address line associated with the shipping address for the
+                            purchase order
+                        shipping_address_2:
+                          type:
+                            - string
+                            - "null"
+                          description: The second address line associated with the shipping address for
+                            the purchase order
+                        shipping_city:
+                          type:
+                            - string
+                            - "null"
+                          description: The city associated with the shipping address for the purchase
+                            order
+                        shipping_state:
+                          type:
+                            - string
+                            - "null"
+                          description: The state associated with the shipping address for the purchase
+                            order
+                        shipping_zip:
+                          type:
+                            - string
+                            - "null"
+                          description: The zip code associated with the shipping address for the purchase
+                            order
+                        shipping_country:
+                          type:
+                            - string
+                            - "null"
+                          description: The country associated with the shipping address for the purchase
+                            order
+                        billing_address_1:
+                          type:
+                            - string
+                            - "null"
+                          description: The first address line associated with the billing address for the
+                            purchase order
+                        billing_address_2:
+                          type:
+                            - string
+                            - "null"
+                          description: The second address line associated with the billing address for the
+                            purchase order
+                        billing_city:
+                          type:
+                            - string
+                            - "null"
+                          description: The city associated with the billing address for the purchase order
+                        billing_state:
+                          type:
+                            - string
+                            - "null"
+                          description: The state associated with the billing address for the purchase
+                            order
+                        billing_zip:
+                          type:
+                            - string
+                            - "null"
+                          description: The zip code associated with the billing address for the purchase
+                            order
+                        billing_country:
+                          type:
+                            - string
+                            - "null"
+                          description: The country associated with the billing address for the purchase
+                            order
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        invoice_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the invoice
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - x_invoice_id
+                        - number
+                        - is_closed
+                        - description
+                        - total_amount_in_cents
+                        - order_date
+                        - expense_type
+                        - display_type
+                        - shipping_address_1
+                        - shipping_address_2
+                        - shipping_city
+                        - shipping_state
+                        - shipping_zip
+                        - shipping_country
+                        - billing_address_1
+                        - billing_address_2
+                        - billing_city
+                        - billing_state
+                        - billing_zip
+                        - billing_country
+                        - custom_data
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                        - invoice_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
     post:
       tags:
         - purchase-orders
@@ -10328,6 +10626,281 @@ paths:
                 required:
                   - job_id
                   - data
+        "400":
+          description: invalid input
+  /v1/purchase-orders/{purchase_order_id}:
+    get:
+      tags:
+        - purchase-orders
+      summary: Get purchase order by ID
+      description: Get purchase order by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the purchase order
+          required: true
+          name: purchase_order_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get purchase order by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the purchase order
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      x_invoice_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the invoice from the integration vendor
+                      number:
+                        type:
+                          - string
+                          - "null"
+                        description: The number of the purchase order
+                      is_closed:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the purchase order is closed or not
+                      description:
+                        type:
+                          - string
+                          - "null"
+                        description: Description of the purchase order
+                      total_amount_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The amount of the purchase order, in cents
+                      order_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The order date for the purchase order
+                      expense_type:
+                        type:
+                          - string
+                          - "null"
+                        description: The expense type of the purchase order
+                      display_type:
+                        type:
+                          - string
+                          - "null"
+                        description: The display type of the purchase order
+                      shipping_address_1:
+                        type:
+                          - string
+                          - "null"
+                        description: The first address line associated with the shipping address for the
+                          purchase order
+                      shipping_address_2:
+                        type:
+                          - string
+                          - "null"
+                        description: The second address line associated with the shipping address for
+                          the purchase order
+                      shipping_city:
+                        type:
+                          - string
+                          - "null"
+                        description: The city associated with the shipping address for the purchase
+                          order
+                      shipping_state:
+                        type:
+                          - string
+                          - "null"
+                        description: The state associated with the shipping address for the purchase
+                          order
+                      shipping_zip:
+                        type:
+                          - string
+                          - "null"
+                        description: The zip code associated with the shipping address for the purchase
+                          order
+                      shipping_country:
+                        type:
+                          - string
+                          - "null"
+                        description: The country associated with the shipping address for the purchase
+                          order
+                      billing_address_1:
+                        type:
+                          - string
+                          - "null"
+                        description: The first address line associated with the billing address for the
+                          purchase order
+                      billing_address_2:
+                        type:
+                          - string
+                          - "null"
+                        description: The second address line associated with the billing address for the
+                          purchase order
+                      billing_city:
+                        type:
+                          - string
+                          - "null"
+                        description: The city associated with the billing address for the purchase order
+                      billing_state:
+                        type:
+                          - string
+                          - "null"
+                        description: The state associated with the billing address for the purchase
+                          order
+                      billing_zip:
+                        type:
+                          - string
+                          - "null"
+                        description: The zip code associated with the billing address for the purchase
+                          order
+                      billing_country:
+                        type:
+                          - string
+                          - "null"
+                        description: The country associated with the billing address for the purchase
+                          order
+                      custom_data:
+                        type:
+                          - object
+                          - "null"
+                        properties: {}
+                        description: Custom data
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      invoice_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the invoice
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - x_invoice_id
+                      - number
+                      - is_closed
+                      - description
+                      - total_amount_in_cents
+                      - order_date
+                      - expense_type
+                      - display_type
+                      - shipping_address_1
+                      - shipping_address_2
+                      - shipping_city
+                      - shipping_state
+                      - shipping_zip
+                      - shipping_country
+                      - billing_address_1
+                      - billing_address_2
+                      - billing_city
+                      - billing_state
+                      - billing_zip
+                      - billing_country
+                      - custom_data
+                      - property_id
+                      - integration_id
+                      - integration_vendor
+                      - invoice_id
+                required:
+                  - meta
+                  - results
         "400":
           description: invalid input
   /v1/residents:
@@ -20426,6 +20999,226 @@ paths:
                         - original_budget_in_cents
                         - revised_budget_in_cents
                         - invoiced_total_in_cents
+                        - custom_data
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/purchase-orders/{purchase_order_id}/items:
+    get:
+      tags:
+        - purchase-orders
+      summary: Get all purchase order items for a specific purchase order
+      description: Get all purchase order items for a specific purchase order
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the purchase order
+          required: true
+          name: purchase_order_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all purchase order items for a specific purchase order
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the purchase order item
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          description: Description of the purchase order item
+                        stock_code:
+                          type:
+                            - string
+                            - "null"
+                          description: The stock code for the purchase order item
+                        quantity_ordered:
+                          type:
+                            - string
+                            - "null"
+                          description: The quantity ordered for the purchase order item
+                        unit_price_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The unit price, in cents, of the purchase order item
+                        total_cost_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total cost, in cents, of the purchase order item
+                        cost_code:
+                          type:
+                            - string
+                            - "null"
+                          description: The cost code of the purchase order item
+                        category_code:
+                          type:
+                            - string
+                            - "null"
+                          description: The category code for the purchase order item
+                        purchase_order_id:
+                          type: string
+                          description: The Propexo unique identifier for the purchase order
+                        construction_job_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the construction job
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - description
+                        - stock_code
+                        - quantity_ordered
+                        - unit_price_in_cents
+                        - total_cost_in_cents
+                        - cost_code
+                        - category_code
+                        - purchase_order_id
+                        - construction_job_id
                         - custom_data
                         - property_id
                         - integration_id
