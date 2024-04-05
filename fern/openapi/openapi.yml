@@ -16417,116 +16417,56 @@ paths:
                   description: The Propexo unique identifier for the integration
                 property_id:
                   type: string
-                number:
+                lease_period_id:
                   type: string
-                  description: The number of the unit. For example Unit 20.
-                unit_prefix:
-                  type: string
-                  description: The prefix of the unit. For example Unit 20c.
-                unit_suffix:
-                  type: string
-                  description: "The suffix of of the unit. For example c20. "
-                space_number:
-                  type: string
-                  description: The space number for the unit.
-                max_occupants:
-                  type: string
-                  description: The maximum number of occupants per specific unit.
-                max_pets:
-                  type: string
-                  description: The maximum number of pets per specific unit.
-                bedrooms:
-                  type:
-                    - string
-                    - "null"
-                  description: The number of bedrooms in the unit.
+                  description: The Propexo unique identifier for the lease period
                 bathrooms:
                   type:
                     - string
                     - "null"
                   description: The number of bathrooms in the unit.
-                square_feet:
-                  type: number
-                  description: The size of the unit in square feet.
-                note:
-                  type: string
-                  description: Notes about the unit.
-                unit_gender_id:
-                  type: string
-                  description: The gender id for the unit.
-                marking_number:
-                  type: string
-                  description: The marking number for the unit.
-                certificate_of_occupancy_date:
-                  type: string
-                  format: date-time
-                  description: The certificate of occupancy for the unit.
-                is_shown_on_website:
-                  type: boolean
-                  description: The unit is listed online.
-                property_building_id:
-                  type: string
-                  description: The id of the property building.
-                floor_plan_code:
-                  type: string
-                  description: The code for the floor plan.
-                unit_type_id:
-                  type: string
-                  description: The id for the unit type.
-                property_floor_id:
-                  type: string
-                  description: The id for the property floor.
-                unit_exclusion_reason_type_id:
-                  type: string
-                  description: The unit exclusion reason id.
-                unit_space_status_type_id:
-                  type: string
-                  description: The unit space status type id.
-                lease_term_in_months:
-                  type: integer
-                  enum:
-                    - 3
-                    - 6
-                    - 9
-                    - 12
-                    - 15
-                    - 18
-                  description: The lease term in months for the unit.
-                available_on:
-                  type: string
-                  format: date-time
-                  description: The date when the unit is available.
-                make_ready_date:
-                  type: string
-                  format: date-time
-                  description: The make ready date.
-                is_furnished:
-                  type: boolean
-                  description: The unit is furnished.
-                tax_credit_unit_number:
-                  type: string
-                  description: The tax credit number for the unit.
-                amenity_ids:
-                  type: string
-                  description: A comma separated list of unit-level amenity ids for the unit.
-                country:
-                  type: string
-                  description: The country of the unit.
-                address_1:
-                  type: string
-                  description: The first address line of the unit.
-                address_2:
-                  type: string
-                  description: The second address line of the unit.
+                bedrooms:
+                  type:
+                    - string
+                    - "null"
+                  description: The number of bedrooms in the unit.
                 city:
                   type: string
                   description: The city of the unit.
+                country:
+                  type: string
+                  description: The country of the unit.
+                date_available:
+                  type: string
+                  format: date-time
+                  description: The date that the unit becomes available
+                is_furnished:
+                  type: boolean
+                  description: Whether the unit is furnished
+                number:
+                  type: string
+                  description: The unit number
+                square_feet:
+                  type: number
+                  description: The size of the unit in square feet.
                 state:
                   type: string
                   description: The state of the unit.
+                street_address_1:
+                  type: string
+                  description: The first address line associated with the unit
+                street_address_2:
+                  type: string
+                  description: The second address line associated with the unit
                 zip:
                   type: string
                   description: The zip code of the unit.
+                floor_plan_code:
+                  type: string
+                  description: The external ID of the floor plan
+                unit_type_id:
+                  type: string
+                  description: The external ID of the unit type
                 category:
                   type: string
                   enum:
@@ -16545,6 +16485,12 @@ paths:
                 abbreviation:
                   type: string
                   description: 'The abbreviation of the unit. Example: "UNIT3"'
+                address_1:
+                  type: string
+                  description: The first address line of the unit.
+                address_2:
+                  type: string
+                  description: The second address line of the unit.
                 notes:
                   type: string
                   description: Notes about the unit.
