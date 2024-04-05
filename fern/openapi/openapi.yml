@@ -2086,60 +2086,65 @@ paths:
                 application_id:
                   type: string
                   description: The Propexo unique identifier for the application
+                lease_period_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease period
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
-                property_id:
-                  type: string
-                  description: The Propexo unique identifier for the property
-                originating_lead_source_id:
-                  type: string
-                  description: The external ID of the lead source from the integration vendor
-                application_status:
-                  type: string
-                  enum:
-                    - COMPLETED
-                    - APPROVED
-                  description: The status associated with the application
-                date_of_birth:
-                  type: string
-                  format: date-time
-                  description: The date of birth associated with the applicant
                 address_1:
                   type: string
                   description: The first address line associated with the applicant
                 address_2:
                   type: string
                   description: The second address line associated with the applicant
+                application_status:
+                  type: string
+                  enum:
+                    - COMPLETED
+                    - APPROVED
+                  description: The status associated with the application
+                attachments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_data:
+                        type: string
+                        maxLength: 69730304
+                        description: The contents of the file, as a base64 encoded string. The PMS has a
+                          max file size of 50 MB.
+                      file_name:
+                        type: string
+                        description: 'The name of the file including the extension. Ex: "image.jpg"'
+                      mime_type:
+                        type: string
+                        description: 'The mime type of the file. Ex: "image/jpeg"'
+                      lease_file_type:
+                        type: string
+                        description: The PMS specific lease file type of the document
+                      is_private:
+                        type: boolean
+                        description: If the file should be marked as private. If true the file will not
+                          be shown in the resident portal.
+                    required:
+                      - file_data
+                      - file_name
+                      - mime_type
+                      - lease_file_type
+                  description: Files to upload for the applicant
                 city:
                   type: string
                   description: The city associated with the applicant
-                move_in_date:
+                create_new_events_only:
+                  anyOf:
+                    - type: boolean
+                    - type: string
+                  description: Whether or not new events should be created on the applicant
+                date_of_birth:
                   type: string
                   format: date-time
-                  description: The move-in date associated with the lease
-                state:
-                  type: string
-                  description: The state associated with the applicant
-                zip:
-                  type: string
-                  description: The zip code associated with the applicant
-                lease_term_in_months:
-                  type: integer
-                  enum:
-                    - 3
-                    - 6
-                    - 9
-                    - 12
-                    - 15
-                    - 18
-                  description: The amount of months for the lease term
-                leasing_agent_id:
-                  type: string
-                  description: The external ID of the leasing agent from the integration vendor
-                floorplan_id:
-                  type: string
-                  description: The external ID of the floor plan from the integration vendor
+                  description: The date of birth associated with the applicant
                 events:
                   type: array
                   items:
@@ -2194,40 +2199,16 @@ paths:
                       - event_datetime
                       - agent_name
                   description: Array of events associated with this applicant
-                attachments:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      file_data:
-                        type: string
-                        maxLength: 69730304
-                        description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 50 MB.
-                      file_name:
-                        type: string
-                        description: 'The name of the file including the extension. Ex: "image.jpg"'
-                      mime_type:
-                        type: string
-                        description: 'The mime type of the file. Ex: "image/jpeg"'
-                      lease_file_type:
-                        type: string
-                        description: The PMS specific lease file type of the document
-                      is_private:
-                        type: boolean
-                        description: If the file should be marked as private. If true the file will not
-                          be shown in the resident portal.
-                    required:
-                      - file_data
-                      - file_name
-                      - mime_type
-                      - lease_file_type
-                  description: Files to upload for the applicant
-                create_new_events_only:
-                  anyOf:
-                    - type: boolean
-                    - type: string
-                  description: Whether or not new events should be created on the applicant
+                move_in_date:
+                  type: string
+                  format: date-time
+                  description: The move-in date associated with the lease
+                state:
+                  type: string
+                  description: The state associated with the applicant
+                zip:
+                  type: string
+                  description: The zip code associated with the applicant
                 middle_name:
                   type: string
                   description: The middle name associated with the applicant
