@@ -5527,7 +5527,7 @@ paths:
       tags:
         - invoices
       summary: Get all invoices
-      description: ""
+      description: Get all invoices
       security:
         - bearerAuth: []
       parameters:
@@ -5599,7 +5599,7 @@ paths:
           in: query
       responses:
         "200":
-          description: ""
+          description: Get all invoices
           content:
             application/json:
               schema:
@@ -6036,7 +6036,7 @@ paths:
       tags:
         - leads
       summary: Get all leads
-      description: ""
+      description: Get all leads. Buildium does not support leads via their API.
       security:
         - bearerAuth: []
       parameters:
@@ -6139,7 +6139,7 @@ paths:
           in: query
       responses:
         "200":
-          description: ""
+          description: Get all leads. Buildium does not support leads via their API.
           content:
             application/json:
               schema:
@@ -6750,7 +6750,7 @@ paths:
       tags:
         - leads
       summary: Get a lead by ID
-      description: Get a lead by ID
+      description: Get a lead by ID. Buildium does not support leads via their API.
       security:
         - bearerAuth: []
       parameters:
@@ -6793,7 +6793,7 @@ paths:
           in: query
       responses:
         "200":
-          description: Get a lead by ID
+          description: Get a lead by ID. Buildium does not support leads via their API.
           content:
             application/json:
               schema:
@@ -8552,7 +8552,7 @@ paths:
       tags:
         - listings
       summary: Get all listings
-      description: ""
+      description: Get all listings
       security:
         - bearerAuth: []
       parameters:
@@ -8636,7 +8636,7 @@ paths:
           in: query
       responses:
         "200":
-          description: ""
+          description: Get all listings
           content:
             application/json:
               schema:
