@@ -7187,18 +7187,12 @@ paths:
                 lead_id:
                   type: string
                   description: The Propexo unique identifier for the lead
-                property_id:
-                  type: string
-                  description: The Propexo unique identifier for the property
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
-                x_leasing_agent_id:
+                lease_period_id:
                   type: string
-                  description: The external ID of the leasing agent from the integration vendor
-                x_lead_source_id:
-                  type: string
-                  description: The external ID of the lead source from the integration vendor
+                  description: The Propexo unique identifier for the lease period
                 first_name:
                   type: string
                   description: The first name associated with the lead
@@ -7220,9 +7214,6 @@ paths:
                     - MOBILE
                     - WORK
                   description: Type of the primary phone number
-                desired_lease_term_in_months:
-                  type: string
-                  description: The amount of months for the lease term
                 phone_2:
                   type: string
                   description: "'Secondary phone number associated with the lead"
@@ -7267,9 +7258,6 @@ paths:
                 desired_num_bathrooms:
                   type: number
                   description: The desired number of bathrooms
-                desired_floor_plan_id:
-                  type: string
-                  description: The external ID of the floor plan from the integration vendor
                 desired_max_rent_in_cents:
                   type: integer
                   description: The maximum rent cost the lead is looking to pay, in cents
@@ -7356,6 +7344,15 @@ paths:
                   type: string
                   format: date-time
                   description: The date of birth associated with the lead
+                desired_floor_plan_id:
+                  type: string
+                  description: The external ID of the floor plan from the integration vendor
+                desired_lease_term_in_months:
+                  type: string
+                  description: The amount of months for the lease term
+                x_leasing_agent_id:
+                  type: string
+                  description: The external ID of the leasing agent from the integration vendor
       responses:
         "200":
           description: Update a lead.
