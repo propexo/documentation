@@ -7922,6 +7922,9 @@ paths:
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
+                lease_period_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease period
                 floor_plan_id:
                   type: string
                   description: The external ID of the floor plan from the integration vendor
@@ -7929,16 +7932,6 @@ paths:
                   type: string
                   format: date-time
                   description: The move-in date associated with the lease
-                lease_term_in_months:
-                  type: integer
-                  enum:
-                    - 3
-                    - 6
-                    - 9
-                    - 12
-                    - 15
-                    - 18
-                  description: The amount of months for the lease term
                 primary_contact_id:
                   type: string
                   description: The Propexo unique identifier of the primary contact. This must
