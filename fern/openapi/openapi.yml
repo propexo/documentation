@@ -1505,7 +1505,12 @@ paths:
                         description: 'The mime type of the file. Ex: "image/jpeg"'
                       lease_file_type:
                         type: string
-                        description: The PMS specific lease file type of the document
+                        description: "Deprecated: Use the `file_type_id` field instead. The PMS specific
+                          lease file type of the document"
+                      file_type_id:
+                        type: string
+                        description: The Propexo file type ID of the lease file type to upload. Prefer
+                          this over the raw input of the lease_file_type.
                       is_private:
                         type: boolean
                         description: If the file should be marked as private. If true the file will not
@@ -1514,7 +1519,6 @@ paths:
                       - file_data
                       - file_name
                       - mime_type
-                      - lease_file_type
                   description: Files to upload for the applicant
                 date_of_birth:
                   type: string
@@ -2122,7 +2126,12 @@ paths:
                         description: 'The mime type of the file. Ex: "image/jpeg"'
                       lease_file_type:
                         type: string
-                        description: The PMS specific lease file type of the document
+                        description: "Deprecated: Use the `file_type_id` field instead. The PMS specific
+                          lease file type of the document"
+                      file_type_id:
+                        type: string
+                        description: The Propexo file type ID of the lease file type to upload. Prefer
+                          this over the raw input of the lease_file_type.
                       is_private:
                         type: boolean
                         description: If the file should be marked as private. If true the file will not
@@ -2131,7 +2140,6 @@ paths:
                       - file_data
                       - file_name
                       - mime_type
-                      - lease_file_type
                   description: Files to upload for the applicant
                 city:
                   type: string
