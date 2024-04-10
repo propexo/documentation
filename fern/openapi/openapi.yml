@@ -2096,6 +2096,9 @@ paths:
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
+                lead_source_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead source
                 address_1:
                   type: string
                   description: The first address line associated with the applicant
@@ -4501,6 +4504,9 @@ paths:
                   type: string
                   maxLength: 256
                   description: Notes associated with the event
+                application_id:
+                  type: string
+                  description: The Propexo unique identifier for the application
                 event_type_id:
                   type: string
                   description: The Propexo unique identifier for the event type
