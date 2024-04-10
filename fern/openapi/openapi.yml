@@ -6519,6 +6519,9 @@ paths:
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
+                lead_source_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead source
                 unit_id:
                   type: string
                   description: The Propexo unique identifier for the unit
@@ -6542,9 +6545,6 @@ paths:
                     - MOBILE
                     - WORK
                   description: Type of the primary phone number
-                lead_source:
-                  type: string
-                  description: The name of the source of the lead
                 middle_name:
                   type: string
                   description: The middle name associated with the lead
@@ -6658,6 +6658,9 @@ paths:
                 country:
                   type: string
                   description: The country associated with the lead
+                lead_source:
+                  type: string
+                  description: The name of the source of the lead
                 status:
                   type: string
                   description: The status associated with the lead
