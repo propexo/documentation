@@ -1463,9 +1463,9 @@ paths:
                 lease_period_id:
                   type: string
                   description: The Propexo unique identifier for the lease period
-                originating_lead_source_id:
+                lead_source_id:
                   type: string
-                  description: The external ID of the lead source from the integration vendor
+                  description: The Propexo unique identifier for the lead source
                 address_1:
                   type: string
                   description: The first address line associated with the applicant
