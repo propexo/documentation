@@ -5787,6 +5787,113 @@ paths:
                   - results
         "400":
           description: invalid input
+    post:
+      tags:
+        - invoices
+      summary: Create invoice
+      description: Create an invoice for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the vendor
+                cash_financial_account_id:
+                  type: string
+                  description: The Propexo unique identifier for the financial account. You'll
+                    likely want to work with your customer to know what value is
+                    appropriate here.
+                ap_financial_account_id:
+                  type: string
+                  description: The Propexo unique identifier for the financial account. You'll
+                    likely want to work with your customer to know what value is
+                    appropriate here.
+                invoice_number:
+                  type: string
+                  description: The invoice or reference number that the vendor assigned to the
+                    service request
+                post_month:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The post month for the invoice. We will strip all data out of the
+                    datetime except the year and month.
+                invoice_date:
+                  type: string
+                  format: date-time
+                  description: The date of issuance for the invoice
+                due_date:
+                  type: string
+                  format: date-time
+                  description: The due date associated with the invoice
+                notes:
+                  type: string
+                  description: Notes associated with the invoice
+                total_amount_in_cents:
+                  type: number
+                  description: The amount of the invoice, in cents
+                expense_type:
+                  type: string
+                  description: The expense type of the invoice. You'll have to request this data
+                    from your customer
+                display_type:
+                  type: string
+                  description: The display type of the invoice. You'll have to request this data
+                    from your customer
+                invoice_items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                      financial_account_id:
+                        type: string
+                        description: The Propexo unique identifier for the financial account
+                      total_amount_in_cents:
+                        type: number
+                        description: The amount of the invoice item, in cents
+                      notes:
+                        type: string
+                        description: Notes associated with the invoice item
+                    required:
+                      - property_id
+                      - financial_account_id
+                      - total_amount_in_cents
+                      - notes
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an invoice for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/invoices/{invoice_id}:
     get:
       tags:
@@ -10835,10 +10942,12 @@ paths:
                   description: The order date for the purchase order
                 expense_type:
                   type: string
-                  description: The expense type of the purchase order
+                  description: The expense type of the purchase order. You'll have to request this
+                    data from your customer
                 display_type:
                   type: string
-                  description: The display type of the purchase order
+                  description: The display type of the purchase order. You'll have to request this
+                    data from your customer
                 is_closed:
                   type: boolean
                   description: Whether the purchase order is closed or not
@@ -10905,7 +11014,8 @@ paths:
                         description: The Propexo unique identifier for the construction job
                       stock_code:
                         type: string
-                        description: The stock code for the purchase order item
+                        description: The stock code for the purchase order item. You'll have to request
+                          this data from your customer
                       quantity_ordered:
                         type: string
                         description: The quantity ordered for the purchase order item
@@ -10917,10 +11027,12 @@ paths:
                         description: The total cost, in cents, of the lead
                       cost_code:
                         type: string
-                        description: The cost code of the purchase order item
+                        description: The cost code of the purchase order item. You'll have to request
+                          this data from your customer
                       category_code:
                         type: string
-                        description: The category code for the purchase order item
+                        description: The category code for the purchase order item. You'll have to
+                          request this data from your customer
                     required:
                       - property_id
                       - description
