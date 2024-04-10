@@ -7191,6 +7191,9 @@ paths:
                 lease_period_id:
                   type: string
                   description: The Propexo unique identifier for the lease period
+                lead_source_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead source
                 first_name:
                   type: string
                   description: The first name associated with the lead
