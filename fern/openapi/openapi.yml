@@ -9898,7 +9898,18 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: The type of the property
+                          description: "Deprecated: Use type_raw."
+                          deprecated: true
+                        type_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw PMS type of the property
+                        type_normalized:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo normalized property type
                         website:
                           type:
                             - string
@@ -9951,6 +9962,8 @@ paths:
                         - address_1
                         - address_2
                         - type
+                        - type_raw
+                        - type_normalized
                         - website
                         - year_built
                         - zip
@@ -10297,7 +10310,18 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: The type of the property
+                        description: "Deprecated: Use type_raw."
+                        deprecated: true
+                      type_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw PMS type of the property
+                      type_normalized:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo normalized property type
                       website:
                         type:
                           - string
@@ -10350,6 +10374,8 @@ paths:
                       - address_1
                       - address_2
                       - type
+                      - type_raw
+                      - type_normalized
                       - website
                       - year_built
                       - zip
@@ -25034,7 +25060,18 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: The type of the property
+                                  description: "Deprecated: Use type_raw."
+                                  deprecated: true
+                                type_raw:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The raw PMS type of the property
+                                type_normalized:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The Propexo normalized property type
                                 website:
                                   type:
                                     - string
@@ -27861,7 +27898,18 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: The type of the property
+                                      description: "Deprecated: Use type_raw."
+                                      deprecated: true
+                                    type_raw:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The raw PMS type of the property
+                                    type_normalized:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The Propexo normalized property type
                                     website:
                                       type:
                                         - string
@@ -30569,7 +30617,18 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: The type of the property
+                                      description: "Deprecated: Use type_raw."
+                                      deprecated: true
+                                    type_raw:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The raw PMS type of the property
+                                    type_normalized:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The Propexo normalized property type
                                     website:
                                       type:
                                         - string
