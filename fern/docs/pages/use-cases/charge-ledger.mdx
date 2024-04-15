@@ -16,22 +16,15 @@ Your business may find it valuable to add charges directly to a resident's payme
 <CodeBlock title="Example transaction for $50.00">
 ```bash 
 curl --request POST \
-  --url https://api.propexo.com/v1/transactions \
+  --url https://api.propexo.com/v1/resident-charges \
   --data '{
     "integration_id": "<integration_id>",
-    "invoice_date": "2023-07-15",
-    "due_date": "2023-08-01",
-    "memo": "This is a charge for pet insurance",
-    "lines": [
-        {
-            "x_accounting_entity_type": "abc",
-            "x_accounting_entity_id": 123,
-            "x_gl_account_id": 456,
-            "amount_in_cents": 5000
-        }
-    ]
+    "transaction_date": "2023-07-15",
+    "reference_number": "abc-789",
+    "notes": "This is a charge for pet insurance",
+    "amount_in_cents": 650000
 }'
 ```
 </CodeBlock>
 
-**That charge is pushed into the resident payment ledger, and will be collected by the property manager via the payment portal**
+**That charge is pushed into the resident payment ledger, and will be collected by the property manager via their payment portal**
