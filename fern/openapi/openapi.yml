@@ -4732,6 +4732,9 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
+                event_name:
+                  type: string
+                  description: The name or type of event
               required:
                 - integration_id
       responses:
