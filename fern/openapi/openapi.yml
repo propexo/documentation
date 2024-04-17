@@ -1572,7 +1572,9 @@ paths:
                       - event_name
                       - event_datetime
                       - agent_name
-                  description: Array of events associated with the applicant
+                  description: "DEPRECATED: Please use /events endpoints to write events. Array of
+                    events associated with this applicant"
+                  deprecated: true
                 move_in_date:
                   type: string
                   format: date-time
@@ -2209,7 +2211,9 @@ paths:
                       - event_name
                       - event_datetime
                       - agent_name
-                  description: Array of events associated with this applicant
+                  description: "DEPRECATED: Please use /events endpoints to write events. Array of
+                    events associated with this applicant"
+                  deprecated: true
                 move_in_date:
                   type: string
                   format: date-time
@@ -6770,7 +6774,9 @@ paths:
                       - event_name
                       - event_datetime
                       - agent_name
-                  description: Array of events associated with this lead
+                  description: "DEPRECATED: Please use /events endpoints to write events. Array of
+                    events associated with this lead"
+                  deprecated: true
                 country:
                   type: string
                   description: The country associated with the lead
@@ -7435,7 +7441,9 @@ paths:
                       - event_name
                       - event_datetime
                       - agent_name
-                  description: Array of events associated with this lead
+                  description: "DEPRECATED: Please use /events endpoints to write events. Array of
+                    events associated with this lead"
+                  deprecated: true
                 country:
                   type: string
                   description: The country associated with the lead
@@ -12467,7 +12475,9 @@ paths:
                           attempting to update an existing event.
                     required:
                       - x_type_id
-                  description: Array of events associated with this resident.
+                  description: "DEPRECATED: Please use /events endpoints to write events. Array of
+                    events associated with this resident"
+                  deprecated: true
                 rent_period:
                   type: string
                   enum:
