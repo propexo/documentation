@@ -6786,9 +6786,6 @@ paths:
                 desired_unit_type:
                   type: string
                   description: The desired type of unit
-                lead_source:
-                  type: string
-                  description: The name of the source of the lead
                 relationship:
                   type: string
                   enum:
@@ -6803,21 +6800,15 @@ paths:
                   type: string
                   format: date-time
                   description: The date of birth associated with the lead
-                x_leasing_agent_id:
+                employee_id:
                   type: string
-                  description: The external ID of the leasing agent from the integration vendor
-                x_guestcard_id:
-                  type: string
-                  description: The external ID of the guestcard from the integration vendor
-                x_lead_source_id:
-                  type: string
-                  description: The external ID of the lead source from the integration vendor
-                desired_floor_plan_id:
-                  type: string
-                  description: The external ID of the floor plan from the integration vendor
+                  description: The Propexo unique identifier for the employee
                 desired_lease_term_in_months:
                   type: string
                   description: The amount of months for the lease term
+                x_lead_source_id:
+                  type: string
+                  description: The external ID of the lead source from the integration vendor
                 organization_name:
                   type: string
                   description: The name of your organization. Other uses this for associating a
@@ -6832,6 +6823,9 @@ paths:
                 leasing_agent:
                   type: string
                   description: The name of the leasing agent
+                lead_source:
+                  type: string
+                  description: The name of the source of the lead
                 unique_lead_id:
                   type: string
                   description: DEPRECATED. Please use the "third_party_id" field instead.
