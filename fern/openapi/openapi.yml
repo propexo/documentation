@@ -6806,9 +6806,6 @@ paths:
                 desired_lease_term_in_months:
                   type: string
                   description: The amount of months for the lease term
-                x_lead_source_id:
-                  type: string
-                  description: The external ID of the lead source from the integration vendor
                 organization_name:
                   type: string
                   description: The name of your organization. Other uses this for associating a
