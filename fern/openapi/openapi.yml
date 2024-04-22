@@ -8226,14 +8226,39 @@ paths:
                     - FixedWithRollover
                     - AtWill
                   description: The type associated with the lease
-                x_unit_id:
+                unit_id:
                   type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the unit from the integration vendor
+                  description: The Propexo unique identifier for the unit
                 start_date:
                   type: string
                   format: date-time
                   description: The start date associated with the lease
+                first_name:
+                  type: string
+                  description: The first name associated with the resident
+                last_name:
+                  type: string
+                  description: The last name associated with the resident
+                address_1:
+                  type: string
+                  description: The first address line associated with the resident
+                city:
+                  type: string
+                  description: The city associated with the resident
+                state:
+                  type: string
+                  description: The state associated with the resident
+                zip:
+                  type: string
+                  description: The zip code associated with the resident
+                country:
+                  type: string
+                  enum:
+                    - US
+                  description: The country associated with the resident
+                financial_account_id:
+                  type: string
+                  description: The Propexo unique identifier for the financial account
                 end_date:
                   type: string
                   format: date-time
@@ -8242,12 +8267,6 @@ paths:
                   type: boolean
                   default: false
                   description: Whether to send a welcome email to the tenant
-                first_name:
-                  type: string
-                  description: The first name associated with the resident
-                last_name:
-                  type: string
-                  description: The last name associated with the resident
                 email_1:
                   type: string
                   format: email
@@ -8282,26 +8301,9 @@ paths:
                   type: string
                   format: date-time
                   description: The date of birth associated with the resident
-                address_1:
-                  type: string
-                  description: The first address line associated with the resident
                 address_2:
                   type: string
                   description: The second address line associated with the resident
-                city:
-                  type: string
-                  description: The city associated with the resident
-                state:
-                  type: string
-                  description: The state associated with the resident
-                zip:
-                  type: string
-                  description: The zip code associated with the resident
-                country:
-                  type: string
-                  enum:
-                    - US
-                  description: The country associated with the resident
                 address_1_alternate:
                   type: string
                   maxLength: 100
@@ -8322,6 +8324,8 @@ paths:
                   description: The alternate zip code associated with the resident
                 country_alternate:
                   type: string
+                  enum:
+                    - US
                   description: The alternate country associated with the resident
                 rent_cycle:
                   type: string
@@ -8348,17 +8352,9 @@ paths:
                       pattern: ^\d{4}-\d{2}-\d{2}$
                   description: The rent due date associated with the lease. The timestamp will be
                     stripped off and only the date will be used
-                gl_account_id:
-                  type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the general ledger account from the integration
-                    vendor
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
                 lease_period_id:
                   type: string
                   description: The Propexo unique identifier for the lease period
@@ -8417,6 +8413,10 @@ paths:
                   type: string
                   pattern: ^[0-9]+$
                   description: The external ID of the resident from the integration vendor
+                x_unit_id:
+                  type: string
+                  pattern: ^[0-9]+$
+                  description: The external ID of the unit from the integration vendor
               required:
                 - integration_id
       responses:
