@@ -17712,6 +17712,78 @@ paths:
                             - string
                             - "null"
                           description: The type associated with the vendor
+                        contacts:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              address_1:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The first address line associated with the vendor
+                              address_2:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The second address line associated with the vendor
+                              city:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The city associated with the vendor
+                              country:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The country associated with the vendor
+                              state:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The state associated with the vendor
+                              zip:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The zip code associated with the vendor
+                              phone:
+                                type:
+                                  - string
+                                  - "null"
+                                description: "'Primary phone number associated with the vendor"
+                              phone_type:
+                                type:
+                                  - string
+                                  - "null"
+                                description: Type of the primary phone number
+                              email:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The primary email address associated with the vendor
+                              is_primary:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the vendor is the primary record
+                              name:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The name associated with the vendor
+                            required:
+                              - address_1
+                              - address_2
+                              - city
+                              - country
+                              - state
+                              - zip
+                              - phone
+                              - phone_type
+                              - email
+                              - is_primary
+                              - name
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -17735,6 +17807,7 @@ paths:
                         - notes
                         - tax_id
                         - type
+                        - contacts
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -18055,6 +18128,78 @@ paths:
                           - string
                           - "null"
                         description: The type associated with the vendor
+                      contacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            address_1:
+                              type:
+                                - string
+                                - "null"
+                              description: The first address line associated with the vendor
+                            address_2:
+                              type:
+                                - string
+                                - "null"
+                              description: The second address line associated with the vendor
+                            city:
+                              type:
+                                - string
+                                - "null"
+                              description: The city associated with the vendor
+                            country:
+                              type:
+                                - string
+                                - "null"
+                              description: The country associated with the vendor
+                            state:
+                              type:
+                                - string
+                                - "null"
+                              description: The state associated with the vendor
+                            zip:
+                              type:
+                                - string
+                                - "null"
+                              description: The zip code associated with the vendor
+                            phone:
+                              type:
+                                - string
+                                - "null"
+                              description: "'Primary phone number associated with the vendor"
+                            phone_type:
+                              type:
+                                - string
+                                - "null"
+                              description: Type of the primary phone number
+                            email:
+                              type:
+                                - string
+                                - "null"
+                              description: The primary email address associated with the vendor
+                            is_primary:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the vendor is the primary record
+                            name:
+                              type:
+                                - string
+                                - "null"
+                              description: The name associated with the vendor
+                          required:
+                            - address_1
+                            - address_2
+                            - city
+                            - country
+                            - state
+                            - zip
+                            - phone
+                            - phone_type
+                            - email
+                            - is_primary
+                            - name
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -18078,6 +18223,7 @@ paths:
                       - notes
                       - tax_id
                       - type
+                      - contacts
                       - integration_id
                       - integration_vendor
                       - property_id
@@ -21952,6 +22098,78 @@ paths:
                             - string
                             - "null"
                           description: The type associated with the vendor
+                        contacts:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              address_1:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The first address line associated with the vendor
+                              address_2:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The second address line associated with the vendor
+                              city:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The city associated with the vendor
+                              country:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The country associated with the vendor
+                              state:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The state associated with the vendor
+                              zip:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The zip code associated with the vendor
+                              phone:
+                                type:
+                                  - string
+                                  - "null"
+                                description: "'Primary phone number associated with the vendor"
+                              phone_type:
+                                type:
+                                  - string
+                                  - "null"
+                                description: Type of the primary phone number
+                              email:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The primary email address associated with the vendor
+                              is_primary:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the vendor is the primary record
+                              name:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The name associated with the vendor
+                            required:
+                              - address_1
+                              - address_2
+                              - city
+                              - country
+                              - state
+                              - zip
+                              - phone
+                              - phone_type
+                              - email
+                              - is_primary
+                              - name
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -21975,6 +22193,7 @@ paths:
                         - notes
                         - tax_id
                         - type
+                        - contacts
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -26380,6 +26599,78 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The type associated with the vendor
+                                contacts:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      address_1:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The first address line associated with the vendor
+                                      address_2:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The second address line associated with the vendor
+                                      city:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The city associated with the vendor
+                                      country:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The country associated with the vendor
+                                      state:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The state associated with the vendor
+                                      zip:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The zip code associated with the vendor
+                                      phone:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: "'Primary phone number associated with the vendor"
+                                      phone_type:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: Type of the primary phone number
+                                      email:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The primary email address associated with the vendor
+                                      is_primary:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the vendor is the primary record
+                                      name:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The name associated with the vendor
+                                    required:
+                                      - address_1
+                                      - address_2
+                                      - city
+                                      - country
+                                      - state
+                                      - zip
+                                      - phone
+                                      - phone_type
+                                      - email
+                                      - is_primary
+                                      - name
                                 integration_id:
                                   type: string
                                   description: The Propexo unique identifier for the integration
@@ -29218,6 +29509,78 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The type associated with the vendor
+                                    contacts:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          address_1:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The first address line associated with the vendor
+                                          address_2:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The second address line associated with the vendor
+                                          city:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The city associated with the vendor
+                                          country:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The country associated with the vendor
+                                          state:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The state associated with the vendor
+                                          zip:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The zip code associated with the vendor
+                                          phone:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: "'Primary phone number associated with the vendor"
+                                          phone_type:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Type of the primary phone number
+                                          email:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The primary email address associated with the vendor
+                                          is_primary:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the vendor is the primary record
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the vendor
+                                        required:
+                                          - address_1
+                                          - address_2
+                                          - city
+                                          - country
+                                          - state
+                                          - zip
+                                          - phone
+                                          - phone_type
+                                          - email
+                                          - is_primary
+                                          - name
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
@@ -31937,6 +32300,78 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The type associated with the vendor
+                                    contacts:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          address_1:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The first address line associated with the vendor
+                                          address_2:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The second address line associated with the vendor
+                                          city:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The city associated with the vendor
+                                          country:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The country associated with the vendor
+                                          state:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The state associated with the vendor
+                                          zip:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The zip code associated with the vendor
+                                          phone:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: "'Primary phone number associated with the vendor"
+                                          phone_type:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Type of the primary phone number
+                                          email:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The primary email address associated with the vendor
+                                          is_primary:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the vendor is the primary record
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the vendor
+                                        required:
+                                          - address_1
+                                          - address_2
+                                          - city
+                                          - country
+                                          - state
+                                          - zip
+                                          - phone
+                                          - phone_type
+                                          - email
+                                          - is_primary
+                                          - name
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
