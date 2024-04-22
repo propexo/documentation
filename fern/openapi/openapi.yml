@@ -7450,19 +7450,16 @@ paths:
                 desired_unit_type:
                   type: string
                   description: The desired type of unit
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
                 date_of_birth:
                   type: string
                   format: date-time
                   description: The date of birth associated with the lead
-                desired_floor_plan_id:
-                  type: string
-                  description: The external ID of the floor plan from the integration vendor
                 desired_lease_term_in_months:
                   type: string
                   description: The amount of months for the lease term
-                x_leasing_agent_id:
-                  type: string
-                  description: The external ID of the leasing agent from the integration vendor
       responses:
         "200":
           description: Update a lead.
