@@ -8360,7 +8360,7 @@ paths:
                   description: The Propexo unique identifier for the lease period
                 floor_plan_id:
                   type: string
-                  description: The external ID of the floor plan from the integration vendor
+                  description: The Propexo unique identifier for the floor plan
                 scheduled_move_in_date:
                   type: string
                   format: date-time
