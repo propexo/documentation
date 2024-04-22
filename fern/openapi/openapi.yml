@@ -9150,9 +9150,10 @@ paths:
                           description: The floor number/name associated with the listing
                         image_urls:
                           type:
-                            - object
+                            - array
                             - "null"
-                          properties: {}
+                          items:
+                            type: string
                           description: A list of image urls associated with the listing
                         is_available:
                           type:
@@ -9471,9 +9472,10 @@ paths:
                         description: The floor number/name associated with the listing
                       image_urls:
                         type:
-                          - object
+                          - array
                           - "null"
-                        properties: {}
+                        items:
+                          type: string
                         description: A list of image urls associated with the listing
                       is_available:
                         type:
@@ -25236,9 +25238,10 @@ webhooks:
                                   description: The floor number/name associated with the listing
                                 image_urls:
                                   type:
-                                    - object
+                                    - array
                                     - "null"
-                                  properties: {}
+                                  items:
+                                    type: string
                                   description: A list of image urls associated with the listing
                                 is_available:
                                   type:
@@ -28146,9 +28149,10 @@ webhooks:
                                       description: The floor number/name associated with the listing
                                     image_urls:
                                       type:
-                                        - object
+                                        - array
                                         - "null"
-                                      properties: {}
+                                      items:
+                                        type: string
                                       description: A list of image urls associated with the listing
                                     is_available:
                                       type:
@@ -30937,9 +30941,10 @@ webhooks:
                                       description: The floor number/name associated with the listing
                                     image_urls:
                                       type:
-                                        - object
+                                        - array
                                         - "null"
-                                      properties: {}
+                                      items:
+                                        type: string
                                       description: A list of image urls associated with the listing
                                     is_available:
                                       type:
