@@ -7312,7 +7312,6 @@ paths:
                     - FAX
                     - HOME
                     - MOBILE
-                    - OTHER
                     - WORK
                   description: Type of the secondary phone number
                 email_1:
@@ -7366,53 +7365,49 @@ paths:
                   items:
                     type: object
                     properties:
-                      event_name:
+                      unit_id:
                         type: string
-                        enum:
-                          - Other
-                          - WalkIn
-                          - Chat
-                          - Email
-                          - Text
-                          - Webservice
-                          - Appointment
-                          - Show
-                          - Application
-                          - SelfGuidedTour
-                          - Application
-                        description: The name/type of the event. This has to be from a predefined set of
-                          PMS events.
+                        description: The Propexo unique identifier for the unit
+                      x_type_id:
+                        type: string
+                        description: The PMS id for the event type.
+                      x_leasing_agent_id:
+                        type: string
+                        description: The PMS id for the leasing agent.
+                      x_sub_type_id:
+                        type: string
+                        description: The PMS id for the event sub type.
+                      x_result_id:
+                        type: string
+                        description: The PMS id for the event result.
                       event_datetime:
                         type: string
                         format: date-time
-                        description: The date and time that the event occurred.
+                        description: The date and time that the event occured.
+                      appointment_datetime:
+                        type: string
+                        format: date-time
+                        description: The date and time that the appointment will occur. Required if
+                          using appointment type.
+                      time_from:
+                        type: string
+                      time_to:
+                        type: string
                       notes:
                         type: string
-                        maxLength: 256
                         description: General notes about the event.
-                      agent_name:
+                      title:
                         type: string
-                        description: The name of the agent associated with the address.
-                      lead_source:
-                        type: string
-                        description: The source of the lead associated with the lead event. This has to
-                          be from a preset list of lead sources that have to be
-                          registered inside of the PMS.
+                        description: Title for the event.
                       reasons_for_event:
                         type: string
-                        description: The reason the event occurred.
-                      unit_id:
-                        type: string
-                        description: The Propexo unit ID associated with the lead event. Only some PMS
-                          events use this, including "Show" and "Appointment".
+                        description: The reason the event occured.
                       id:
                         type: string
-                        description: The Propexo unique identifier for the event. Required if attempting
-                          to update an existing event
+                        description: The Propexo unique identifier for the event. Only required if
+                          attempting to update an existing event.
                     required:
-                      - event_name
-                      - event_datetime
-                      - agent_name
+                      - x_type_id
                   description: "DEPRECATED: Please use /events endpoints to write events. Array of
                     events associated with this lead"
                   deprecated: true
