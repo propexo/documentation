@@ -8782,6 +8782,9 @@ paths:
             schema:
               type: object
               properties:
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
                 type:
                   type: string
                   enum:
@@ -8789,10 +8792,6 @@ paths:
                     - FixedWithRollover
                     - AtWill
                   description: The type associated with the lease
-                x_unit_id:
-                  type: string
-                  pattern: ^[0-9]+$
-                  description: The external ID of the unit from the integration vendor
                 start_date:
                   type: string
                   format: date-time
@@ -8813,9 +8812,6 @@ paths:
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
