@@ -7419,15 +7419,9 @@ paths:
                 country:
                   type: string
                   description: The country associated with the lead
-                lead_source:
+                status_raw:
                   type: string
-                  description: The name of the source of the lead
-                status:
-                  type: string
-                  description: The status associated with the lead
-                desired_unit_number:
-                  type: string
-                  description: The desired unit number
+                  description: The raw status associated with the lead
                 desired_unit_type:
                   type: string
                   description: The desired type of unit
@@ -7441,6 +7435,9 @@ paths:
                 desired_lease_term_in_months:
                   type: string
                   description: The amount of months for the lease term
+                desired_unit_number:
+                  type: string
+                  description: The desired unit number
       responses:
         "200":
           description: Update a lead.
