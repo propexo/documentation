@@ -7430,9 +7430,6 @@ paths:
                 desired_lease_term_in_months:
                   type: string
                   description: The amount of months for the lease term
-                desired_unit_number:
-                  type: string
-                  description: The desired unit number
       responses:
         "200":
           description: Update a lead.
