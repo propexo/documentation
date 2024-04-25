@@ -9073,6 +9073,10 @@ paths:
                             - string
                             - "null"
                           description: The external ID of the unit from the integration vendor
+                        is_unit:
+                          type: boolean
+                          description: True if the listing is for a unit, false if it is not associated
+                            with a specific unit
                         available_date:
                           type:
                             - string
@@ -9170,11 +9174,21 @@ paths:
                             - string
                             - "null"
                           description: The term of the lease
+                        listing_title:
+                          type:
+                            - string
+                            - "null"
+                          description: The title used for the marketing listing
                         listing_date:
                           type:
                             - string
                             - "null"
                           description: The date the listing was created
+                        marketing_name:
+                          type:
+                            - string
+                            - "null"
+                          description: The marketing name of the unit being listed
                         notes:
                           type:
                             - string
@@ -9190,6 +9204,11 @@ paths:
                             - number
                             - "null"
                           description: The rent amount in cents for the listing
+                        specials:
+                          type:
+                            - string
+                            - "null"
+                          description: Marketing specials or promotions for the listing
                         square_feet:
                           type:
                             - integer
@@ -9250,6 +9269,7 @@ paths:
                         - x_id
                         - x_property_id
                         - x_unit_id
+                        - is_unit
                         - available_date
                         - application_url
                         - bathrooms
@@ -9269,10 +9289,13 @@ paths:
                         - is_managed_external
                         - is_vacant
                         - lease_term
+                        - listing_title
                         - listing_date
+                        - marketing_name
                         - notes
                         - number
                         - rent_amount_in_cents
+                        - specials
                         - square_feet
                         - state
                         - street_address_1
@@ -9395,6 +9418,10 @@ paths:
                           - string
                           - "null"
                         description: The external ID of the unit from the integration vendor
+                      is_unit:
+                        type: boolean
+                        description: True if the listing is for a unit, false if it is not associated
+                          with a specific unit
                       available_date:
                         type:
                           - string
@@ -9492,11 +9519,21 @@ paths:
                           - string
                           - "null"
                         description: The term of the lease
+                      listing_title:
+                        type:
+                          - string
+                          - "null"
+                        description: The title used for the marketing listing
                       listing_date:
                         type:
                           - string
                           - "null"
                         description: The date the listing was created
+                      marketing_name:
+                        type:
+                          - string
+                          - "null"
+                        description: The marketing name of the unit being listed
                       notes:
                         type:
                           - string
@@ -9512,6 +9549,11 @@ paths:
                           - number
                           - "null"
                         description: The rent amount in cents for the listing
+                      specials:
+                        type:
+                          - string
+                          - "null"
+                        description: Marketing specials or promotions for the listing
                       square_feet:
                         type:
                           - integer
@@ -9572,6 +9614,7 @@ paths:
                       - x_id
                       - x_property_id
                       - x_unit_id
+                      - is_unit
                       - available_date
                       - application_url
                       - bathrooms
@@ -9591,10 +9634,13 @@ paths:
                       - is_managed_external
                       - is_vacant
                       - lease_term
+                      - listing_title
                       - listing_date
+                      - marketing_name
                       - notes
                       - number
                       - rent_amount_in_cents
+                      - specials
                       - square_feet
                       - state
                       - street_address_1
@@ -25161,6 +25207,10 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The external ID of the unit from the integration vendor
+                                is_unit:
+                                  type: boolean
+                                  description: True if the listing is for a unit, false if it is not associated
+                                    with a specific unit
                                 available_date:
                                   type:
                                     - string
@@ -25258,11 +25308,21 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The term of the lease
+                                listing_title:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The title used for the marketing listing
                                 listing_date:
                                   type:
                                     - string
                                     - "null"
                                   description: The date the listing was created
+                                marketing_name:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The marketing name of the unit being listed
                                 notes:
                                   type:
                                     - string
@@ -25278,6 +25338,11 @@ webhooks:
                                     - number
                                     - "null"
                                   description: The rent amount in cents for the listing
+                                specials:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: Marketing specials or promotions for the listing
                                 square_feet:
                                   type:
                                     - integer
@@ -28072,6 +28137,10 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The external ID of the unit from the integration vendor
+                                    is_unit:
+                                      type: boolean
+                                      description: True if the listing is for a unit, false if it is not associated
+                                        with a specific unit
                                     available_date:
                                       type:
                                         - string
@@ -28169,11 +28238,21 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The term of the lease
+                                    listing_title:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The title used for the marketing listing
                                     listing_date:
                                       type:
                                         - string
                                         - "null"
                                       description: The date the listing was created
+                                    marketing_name:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The marketing name of the unit being listed
                                     notes:
                                       type:
                                         - string
@@ -28189,6 +28268,11 @@ webhooks:
                                         - number
                                         - "null"
                                       description: The rent amount in cents for the listing
+                                    specials:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: Marketing specials or promotions for the listing
                                     square_feet:
                                       type:
                                         - integer
@@ -30864,6 +30948,10 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The external ID of the unit from the integration vendor
+                                    is_unit:
+                                      type: boolean
+                                      description: True if the listing is for a unit, false if it is not associated
+                                        with a specific unit
                                     available_date:
                                       type:
                                         - string
@@ -30961,11 +31049,21 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The term of the lease
+                                    listing_title:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The title used for the marketing listing
                                     listing_date:
                                       type:
                                         - string
                                         - "null"
                                       description: The date the listing was created
+                                    marketing_name:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The marketing name of the unit being listed
                                     notes:
                                       type:
                                         - string
@@ -30981,6 +31079,11 @@ webhooks:
                                         - number
                                         - "null"
                                       description: The rent amount in cents for the listing
+                                    specials:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: Marketing specials or promotions for the listing
                                     square_feet:
                                       type:
                                         - integer
