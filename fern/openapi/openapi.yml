@@ -10872,6 +10872,13 @@ paths:
                             - "null"
                           properties: {}
                           description: Custom data
+                        associated_invoice_ids:
+                          type: array
+                          items:
+                            type: string
+                          description: An array of all other invoices associated with a purchase order.
+                            This includes invoices that associated with specific
+                            purchase order items.
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
@@ -10922,6 +10929,7 @@ paths:
                         - billing_zip
                         - billing_country
                         - custom_data
+                        - associated_invoice_ids
                         - property_id
                         - integration_id
                         - integration_vendor
@@ -11324,6 +11332,13 @@ paths:
                           - "null"
                         properties: {}
                         description: Custom data
+                      associated_invoice_ids:
+                        type: array
+                        items:
+                          type: string
+                        description: An array of all other invoices associated with a purchase order.
+                          This includes invoices that associated with specific
+                          purchase order items.
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
@@ -11374,6 +11389,7 @@ paths:
                       - billing_zip
                       - billing_country
                       - custom_data
+                      - associated_invoice_ids
                       - property_id
                       - integration_id
                       - integration_vendor
@@ -21936,6 +21952,12 @@ paths:
                             - "null"
                           properties: {}
                           description: Custom data
+                        associated_invoice_ids:
+                          type: array
+                          items:
+                            type: string
+                          description: The IDs for invoices that are associated with the purchase order
+                            item
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
@@ -21963,6 +21985,7 @@ paths:
                         - purchase_order_id
                         - construction_job_id
                         - custom_data
+                        - associated_invoice_ids
                         - property_id
                         - integration_id
                         - integration_vendor
