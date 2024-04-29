@@ -12,7 +12,12 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
-  schemas: {}
+  schemas:
+    required:
+      type:
+        - string
+        - "null"
+      description: ""
   parameters: {}
 paths:
   /v1/admin/data-diffs:
@@ -12783,18 +12788,12 @@ paths:
           name: integration_vendor
           in: query
         - schema:
-            type:
-              - string
-              - "null"
-            description: ""
+            $ref: "#/components/schemas/required"
           required: false
           name: transaction_date_start
           in: query
         - schema:
-            type:
-              - string
-              - "null"
-            description: ""
+            $ref: "#/components/schemas/required"
           required: false
           name: transaction_date_end
           in: query
