@@ -3566,6 +3566,11 @@ paths:
                             - string
                             - "null"
                           description: The name of the financial account
+                        status_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw status associated with the financial account
                         custom_data:
                           type:
                             - object
@@ -3590,6 +3595,7 @@ paths:
                         - x_property_id
                         - x_location_id
                         - name
+                        - status_raw
                         - custom_data
                         - property_id
                         - integration_id
@@ -3710,6 +3716,11 @@ paths:
                           - string
                           - "null"
                         description: The name of the financial account
+                      status_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw status associated with the financial account
                       custom_data:
                         type:
                           - object
@@ -3734,6 +3745,7 @@ paths:
                       - x_property_id
                       - x_location_id
                       - name
+                      - status_raw
                       - custom_data
                       - property_id
                       - integration_id
