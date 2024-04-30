@@ -5884,6 +5884,27 @@ paths:
                 notes:
                   type: string
                   description: Notes associated with the invoice
+                attachments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_data:
+                        type: string
+                        maxLength: 69730304
+                        description: The contents of the file, as a base64 encoded string. The PMS has a
+                          max file size of 50 MB.
+                      file_name:
+                        type: string
+                        description: 'The name of the file including the extension. Ex: "image.jpg"'
+                      mime_type:
+                        type: string
+                        description: 'The mime type of the file. Ex: "image/jpeg"'
+                    required:
+                      - file_data
+                      - file_name
+                      - mime_type
+                  description: Files to upload for the invoice
                 cash_financial_account_id:
                   type: string
                   description: The Propexo unique identifier for the financial account. You'll
