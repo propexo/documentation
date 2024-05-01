@@ -13269,15 +13269,29 @@ paths:
                 description:
                   type: string
                   description: Description of the resident charge
+                charge_code_id:
+                  type: string
+                  description: The Propexo ID for the charge code associated with this new charge
+                post_month:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The post month for the resident charge. The timestamp and day will
+                    be stripped off and only the month and year will be used
+                third_party_charge_id:
+                  type: string
+                  description: A unique value provided to Entrata to uniquely identify the
+                    transaction from your system. This can be an alphanumeric
+                    string. This does not become the ID of the transaction in
+                    Entrata. If not provided, Propexo will generate one
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
                 resident_id:
                   type: string
                   description: The Propexo unique identifier for the resident
-                charge_code_id:
-                  type: string
-                  description: The Propexo ID for the charge code associated with this new charge
                 transaction_batch_id:
                   type: string
                   description: A unique value provided by Realpage to associate a charge with a
