@@ -10483,9 +10483,17 @@ paths:
                             - "null"
                           description: The raw PMS type of the property
                         type_normalized:
-                          type:
-                            - string
-                            - "null"
+                          anyOf:
+                            - type: string
+                              enum:
+                                - SINGLE_FAMILY
+                                - MULTI_FAMILY
+                                - STUDENT_HOUSING
+                                - VACATION
+                                - COMMERCIAL
+                                - OTHER
+                            - type: string
+                            - type: "null"
                           description: The Propexo normalized property type
                         website:
                           type:
@@ -10895,9 +10903,17 @@ paths:
                           - "null"
                         description: The raw PMS type of the property
                       type_normalized:
-                        type:
-                          - string
-                          - "null"
+                        anyOf:
+                          - type: string
+                            enum:
+                              - SINGLE_FAMILY
+                              - MULTI_FAMILY
+                              - STUDENT_HOUSING
+                              - VACATION
+                              - COMMERCIAL
+                              - OTHER
+                          - type: string
+                          - type: "null"
                         description: The Propexo normalized property type
                       website:
                         type:
@@ -26435,9 +26451,17 @@ webhooks:
                                     - "null"
                                   description: The raw PMS type of the property
                                 type_normalized:
-                                  type:
-                                    - string
-                                    - "null"
+                                  anyOf:
+                                    - type: string
+                                      enum:
+                                        - SINGLE_FAMILY
+                                        - MULTI_FAMILY
+                                        - STUDENT_HOUSING
+                                        - VACATION
+                                        - COMMERCIAL
+                                        - OTHER
+                                    - type: string
+                                    - type: "null"
                                   description: The Propexo normalized property type
                                 website:
                                   type:
@@ -29365,9 +29389,17 @@ webhooks:
                                         - "null"
                                       description: The raw PMS type of the property
                                     type_normalized:
-                                      type:
-                                        - string
-                                        - "null"
+                                      anyOf:
+                                        - type: string
+                                          enum:
+                                            - SINGLE_FAMILY
+                                            - MULTI_FAMILY
+                                            - STUDENT_HOUSING
+                                            - VACATION
+                                            - COMMERCIAL
+                                            - OTHER
+                                        - type: string
+                                        - type: "null"
                                       description: The Propexo normalized property type
                                     website:
                                       type:
@@ -32176,9 +32208,17 @@ webhooks:
                                         - "null"
                                       description: The raw PMS type of the property
                                     type_normalized:
-                                      type:
-                                        - string
-                                        - "null"
+                                      anyOf:
+                                        - type: string
+                                          enum:
+                                            - SINGLE_FAMILY
+                                            - MULTI_FAMILY
+                                            - STUDENT_HOUSING
+                                            - VACATION
+                                            - COMMERCIAL
+                                            - OTHER
+                                        - type: string
+                                        - type: "null"
                                       description: The Propexo normalized property type
                                     website:
                                       type:
