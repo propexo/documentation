@@ -19081,6 +19081,183 @@ paths:
                   - results
         "400":
           description: invalid input
+    put:
+      tags:
+        - vendors
+      summary: Update vendor
+      description: Update a vendor for an integration.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: vendor_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name associated with the vendor
+                is_active:
+                  type: boolean
+                  description: Whether the vendor is active
+                notes:
+                  type: string
+                  description: Notes associated with the vendor
+                tax_id:
+                  type: string
+                tax_payer_first_name:
+                  type: string
+                  description: The first name of the tax payer associated with the vendor
+                tax_payer_last_name:
+                  type: string
+                  description: The last name of the tax payer associated with the vendor
+                workers_comp_expiration_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The expiration date of the workers compensation policy on file for
+                    this vendor
+                liability_expiration_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The expiration date of the liability insurance policy on file for
+                    this vendor
+                address_1:
+                  type: string
+                  description: The first address line associated with the vendor
+                address_2:
+                  type: string
+                  description: The second address line associated with the vendor
+                city:
+                  type: string
+                  description: The city associated with the vendor
+                state:
+                  type: string
+                  enum:
+                    - AA
+                    - AE
+                    - AK
+                    - AL
+                    - AP
+                    - AR
+                    - AS
+                    - AZ
+                    - CA
+                    - CO
+                    - CT
+                    - DC
+                    - DE
+                    - FL
+                    - FM
+                    - GA
+                    - GU
+                    - HI
+                    - IA
+                    - ID
+                    - IN
+                    - KS
+                    - KY
+                    - LA
+                    - MA
+                    - MD
+                    - ME
+                    - MH
+                    - MI
+                    - MN
+                    - MO
+                    - MP
+                    - MS
+                    - MT
+                    - NC
+                    - NE
+                    - NL
+                    - NJ
+                    - NM
+                    - NV
+                    - NY
+                    - OH
+                    - OK
+                    - OR
+                    - PA
+                    - PR
+                    - SD
+                    - TN
+                    - TX
+                    - UT
+                    - VA
+                    - VI
+                    - VT
+                    - WA
+                    - WI
+                    - WV
+                    - WY
+                    - AB
+                    - BC
+                    - MB
+                    - NB
+                    - NL
+                    - NT
+                    - NS
+                    - NU
+                    - ON
+                    - PE
+                    - QC
+                    - SK
+                    - YT
+                  description: The state associated with the vendor
+                zip:
+                  type: string
+                  description: The zip code associated with the vendor
+                country:
+                  anyOf:
+                    - type: string
+                      enum:
+                        - United States
+                        - Canada
+                    - type: string
+                  description: The country associated with the vendor
+                email_1:
+                  type: string
+                  description: The primary email address associated with the vendor
+                phone_1:
+                  type: string
+                  description: "'Primary phone number associated with the vendor"
+                phone_2:
+                  type: string
+                  description: "'Secondary phone number associated with the vendor"
+      responses:
+        "200":
+          description: Update a vendor for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/service-request-locations:
     get:
       tags:
