@@ -9635,6 +9635,16 @@ paths:
                             - string
                             - "null"
                           description: The zip code associated with the listing
+                        make_ready_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The make ready date of the listing
+                        vacate_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The vacate date of the listing
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
@@ -9691,6 +9701,8 @@ paths:
                         - address_1
                         - address_2
                         - zip
+                        - make_ready_date
+                        - vacate_date
                         - property_id
                         - unit_id
                         - integration_id
@@ -10049,6 +10061,16 @@ paths:
                           - string
                           - "null"
                         description: The zip code associated with the listing
+                      make_ready_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The make ready date of the listing
+                      vacate_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The vacate date of the listing
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
@@ -10105,6 +10127,8 @@ paths:
                       - address_1
                       - address_2
                       - zip
+                      - make_ready_date
+                      - vacate_date
                       - property_id
                       - unit_id
                       - integration_id
@@ -26403,6 +26427,16 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The zip code associated with the listing
+                                make_ready_date:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The make ready date of the listing
+                                vacate_date:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The vacate date of the listing
                                 property_id:
                                   type: string
                                   description: The Propexo unique identifier for the property
@@ -29341,6 +29375,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the listing
+                                    make_ready_date:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The make ready date of the listing
+                                    vacate_date:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The vacate date of the listing
                                     property_id:
                                       type: string
                                       description: The Propexo unique identifier for the property
@@ -32160,6 +32204,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the listing
+                                    make_ready_date:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The make ready date of the listing
+                                    vacate_date:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The vacate date of the listing
                                     property_id:
                                       type: string
                                       description: The Propexo unique identifier for the property
