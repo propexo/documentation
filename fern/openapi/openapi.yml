@@ -2145,7 +2145,8 @@ paths:
                       - file_data
                       - file_name
                       - mime_type
-                  description: Files to upload for the applicant
+                  description: Files to upload for the applicant. All the files can have a maximum
+                    combined file size of 50 MB
                 city:
                   type: string
                   description: The city associated with the applicant
@@ -6211,7 +6212,8 @@ paths:
                       - file_data
                       - file_name
                       - mime_type
-                  description: Files to upload for the invoice
+                  description: Files to upload for the invoice. All the files can have a maximum
+                    combined file size of 50 MB
                 cash_financial_account_id:
                   type: string
                   description: The Propexo unique identifier for the financial account. You'll
@@ -12663,7 +12665,8 @@ paths:
                       - file_data
                       - file_name
                       - mime_type
-                  description: Attachment files for user defined fields on the resident
+                  description: Attachment files for user defined fields on the resident. All the
+                    files can have a maximum combined file size of 50 MB
               required:
                 - integration_id
       responses:
