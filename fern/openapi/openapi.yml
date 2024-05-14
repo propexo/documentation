@@ -21317,6 +21317,10 @@ paths:
                             - "null"
                           description: The UTC timestamp of the last time an authentication check was
                             performed for an integration.
+                        allow_manual_syncs:
+                          type: boolean
+                          description: Whether or not manual syncs are allowed to be triggered on this
+                            integration
                       required:
                         - id
                         - created_at
@@ -21336,6 +21340,7 @@ paths:
                         - models
                         - can_authenticate
                         - last_data_access_check
+                        - allow_manual_syncs
                 required:
                   - meta
                   - results
@@ -21607,6 +21612,11 @@ paths:
                     on. This includes copying job scheduling frequency and
                     similar configuration. Credentials are not copied and must
                     still be provided.
+                allow_manual_syncs:
+                  type: boolean
+                  default: false
+                  description: Whether or not manual syncs are allowed to be triggered on this
+                    integration
               required:
                 - integration_vendor
                 - credentials
@@ -21695,6 +21705,10 @@ paths:
                         type: boolean
                         description: Whether or not properties need to be approved before ingesting data
                           for them.
+                      allow_manual_syncs:
+                        type: boolean
+                        description: Whether or not manual syncs are allowed to be triggered on this
+                          integration
                     required:
                       - id
                       - created_at
@@ -21711,6 +21725,7 @@ paths:
                       - is_archived
                       - ping_results
                       - new_properties_are_enabled
+                      - allow_manual_syncs
                 required:
                   - result
         "400":
@@ -23732,6 +23747,10 @@ paths:
                           - "null"
                         description: The UTC timestamp of the last time an authentication check was
                           performed for an integration.
+                      allow_manual_syncs:
+                        type: boolean
+                        description: Whether or not manual syncs are allowed to be triggered on this
+                          integration
                       is_running_sync:
                         type: boolean
                         description: Whether or not a data sync is currently in progress for the
@@ -23759,6 +23778,7 @@ paths:
                       - models
                       - can_authenticate
                       - last_data_access_check
+                      - allow_manual_syncs
                       - is_running_sync
                       - is_running_data_access_check
                 required:
@@ -24028,6 +24048,11 @@ paths:
                   type: boolean
                   description: Whether or not properties need to be approved before ingesting data
                     for them.
+                allow_manual_syncs:
+                  type: boolean
+                  default: false
+                  description: Whether or not manual syncs are allowed to be triggered on this
+                    integration
       responses:
         "200":
           description: Update an integration
@@ -24105,6 +24130,10 @@ paths:
                         type: boolean
                         description: Whether or not properties need to be approved before ingesting data
                           for them.
+                      allow_manual_syncs:
+                        type: boolean
+                        description: Whether or not manual syncs are allowed to be triggered on this
+                          integration
                     required:
                       - id
                       - created_at
@@ -24119,6 +24148,7 @@ paths:
                       - base_url
                       - is_archived
                       - new_properties_are_enabled
+                      - allow_manual_syncs
                 required:
                   - result
         "400":
@@ -24163,7 +24193,7 @@ paths:
       tags:
         - admin
       summary: Trigger a backsync on an integration.
-      description: Create an integration
+      description: Trigger a backsync on an integration.
       security:
         - bearerAuth: []
       parameters:
@@ -24181,7 +24211,53 @@ paths:
               properties: {}
       responses:
         "200":
-          description: Create an integration
+          description: Trigger a backsync on an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      success:
+                        type: boolean
+                    required:
+                      - success
+                required:
+                  - result
+        "400":
+          description: invalid input
+  /v1/admin/integrations/{integration_id}/manual-sync:
+    post:
+      tags:
+        - admin
+      summary: Trigger a manual sync on an integration.
+      description: Trigger a manual sync on an integration. This is only allowed on
+        integrations that have `allow_manual_syncs` set to `true`. this request
+        has no impact if a sync is already in progress, but the endpoint will
+        return a 400 with a corresponding error code.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          name: integration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Trigger a manual sync on an integration. This is only allowed on
+            integrations that have `allow_manual_syncs` set to `true`. this
+            request has no impact if a sync is already in progress, but the
+            endpoint will return a 400 with a corresponding error code.
           content:
             application/json:
               schema:
