@@ -26,6 +26,3 @@ By default, your integration will be disabled. We do this to ensure that we have
 Once the integration is enabled, we will begin our first attempt to sync your customer's data into Propexo. This process can take anywhere between 60 seconds up to multiple hours — depending on your customer's data volume. Larger customers can easily take multiple hours to complete a sync. It is possible you may need to refresh the page during this time to see the results of the sync.
 
 Once the sync is complete, you will see a "Last Ran" timestamp under the "Last Ran Jobs" section of the page. If the sync was successful, you will also see a "Status" of "Success". If the sync was not successful, you will see a "Status" of "Failed". If the sync failed unexpectedly, please contact Support.
-
-### Important
-It is important not to test the API until after the first sync is complete. If you test the API before the first sync is complete, you will receive an empty response. Since API responses are cached for up to 15 minutes, this will result in a delay of your ability to see data. If this happens, please wait 15 minutes and try again. The cache will expire and you will receive the correct response.
