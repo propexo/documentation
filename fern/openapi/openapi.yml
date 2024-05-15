@@ -24603,6 +24603,90 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/events/appointments/applicants/cancel:
+    post:
+      tags:
+        - events
+      summary: Cancel an appointment for an applicant
+      description: Cancel an appointment for an applicant
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                event_id:
+                  type: string
+                  description: The Propexo unique identifier for the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Cancel an appointment for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+  /v1/events/appointments/leads/cancel:
+    post:
+      tags:
+        - events
+      summary: Cancel an appointment for a lead
+      description: Cancel an appointment for a lead
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                event_id:
+                  type: string
+                  description: The Propexo unique identifier for the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Cancel an appointment for a lead
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/admin/integrations/{integration_id}/properties/{property_configuration_id}:
     put:
       tags:
