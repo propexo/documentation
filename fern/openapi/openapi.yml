@@ -1273,7 +1273,7 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: "'Primary phone number associated with the applicant"
+                          description: Primary phone number associated with the applicant
                         phone_2_type:
                           type:
                             - string
@@ -1289,7 +1289,7 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: "'Secondary phone number associated with the applicant"
+                          description: Secondary phone number associated with the applicant
                         state_alternate:
                           type:
                             - string
@@ -1431,7 +1431,7 @@ paths:
                   description: The primary email address associated with the applicant
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the applicant"
+                  description: Primary phone number associated with the applicant
                 phone_1_type:
                   type: string
                   enum:
@@ -1442,7 +1442,7 @@ paths:
                   description: Type of the primary phone number
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the applicant"
+                  description: Secondary phone number associated with the applicant
                 phone_2_type:
                   type: string
                   enum:
@@ -1906,7 +1906,7 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: "'Primary phone number associated with the applicant"
+                        description: Primary phone number associated with the applicant
                       phone_2_type:
                         type:
                           - string
@@ -1922,7 +1922,7 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: "'Secondary phone number associated with the applicant"
+                        description: Secondary phone number associated with the applicant
                       state_alternate:
                         type:
                           - string
@@ -2065,7 +2065,7 @@ paths:
                   description: The primary email address associated with the applicant
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the applicant"
+                  description: Primary phone number associated with the applicant
                 phone_1_type:
                   type: string
                   enum:
@@ -2076,7 +2076,7 @@ paths:
                   description: Type of the primary phone number
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the applicant"
+                  description: Secondary phone number associated with the applicant
                 phone_2_type:
                   type: string
                   enum:
@@ -6878,7 +6878,7 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: "'Primary phone number associated with the lead"
+                          description: Primary phone number associated with the lead
                         phone_2_type:
                           type:
                             - string
@@ -6888,7 +6888,7 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: "'Secondary phone number associated with the lead"
+                          description: Secondary phone number associated with the lead
                         state:
                           type:
                             - string
@@ -7046,7 +7046,7 @@ paths:
                   description: The last name associated with the lead
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the lead"
+                  description: Primary phone number associated with the lead
                 phone_1_type:
                   type: string
                   enum:
@@ -7060,7 +7060,7 @@ paths:
                   description: The middle name associated with the lead
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the lead"
+                  description: Secondary phone number associated with the lead
                 phone_2_type:
                   type: string
                   enum:
@@ -7507,7 +7507,7 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: "'Primary phone number associated with the lead"
+                        description: Primary phone number associated with the lead
                       phone_2_type:
                         type:
                           - string
@@ -7517,7 +7517,7 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: "'Secondary phone number associated with the lead"
+                        description: Secondary phone number associated with the lead
                       state:
                         type:
                           - string
@@ -7684,7 +7684,7 @@ paths:
                   description: The middle name associated with the lead
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the lead"
+                  description: Primary phone number associated with the lead
                 phone_1_type:
                   type: string
                   enum:
@@ -7695,7 +7695,7 @@ paths:
                   description: Type of the primary phone number
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the lead"
+                  description: Secondary phone number associated with the lead
                 phone_2_type:
                   type: string
                   enum:
@@ -8637,7 +8637,7 @@ paths:
                   description: The secondary email address associated with the resident
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the resident"
+                  description: Primary phone number associated with the resident
                 phone_1_type:
                   type: string
                   enum:
@@ -8648,7 +8648,7 @@ paths:
                   description: Type of the primary phone number
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the resident"
+                  description: Secondary phone number associated with the resident
                 phone_2_type:
                   type: string
                   enum:
@@ -9233,7 +9233,7 @@ paths:
                   description: The primary email address associated with the resident
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the resident"
+                  description: Primary phone number associated with the resident
                 date_of_birth:
                   type: string
                   format: date-time
@@ -12403,7 +12403,7 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: "'Primary phone number associated with the resident"
+                          description: Primary phone number associated with the resident
                         phone_2_type:
                           type:
                             - string
@@ -12419,7 +12419,7 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: "'Secondary phone number associated with the resident"
+                          description: Secondary phone number associated with the resident
                         state_alternate:
                           type:
                             - string
@@ -12952,7 +12952,7 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: "'Primary phone number associated with the resident"
+                        description: Primary phone number associated with the resident
                       phone_2_type:
                         type:
                           - string
@@ -12968,7 +12968,7 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: "'Secondary phone number associated with the resident"
+                        description: Secondary phone number associated with the resident
                       state_alternate:
                         type:
                           - string
@@ -15648,10 +15648,10 @@ paths:
                   description: A description of the service request
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the service request"
+                  description: Primary phone number associated with the service request
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the service request"
+                  description: Secondary phone number associated with the service request
                 email_1:
                   type: string
                   description: The primary email address associated with the service request
@@ -18583,6 +18583,12 @@ paths:
                             - string
                             - "null"
                           description: The tax payer identification number associated with the vendor
+                        third_party_id:
+                          type:
+                            - string
+                            - "null"
+                          description: A unique value provided to the PMS to uniquely identify the vendor
+                            from your system.
                         type:
                           type:
                             - string
@@ -18627,7 +18633,7 @@ paths:
                                 type:
                                   - string
                                   - "null"
-                                description: "'Primary phone number associated with the vendor"
+                                description: Primary phone number associated with the vendor
                               phone_type:
                                 type:
                                   - string
@@ -18682,6 +18688,7 @@ paths:
                         - name
                         - notes
                         - tax_id
+                        - third_party_id
                         - type
                         - contacts
                         - integration_id
@@ -18999,6 +19006,12 @@ paths:
                           - string
                           - "null"
                         description: The tax payer identification number associated with the vendor
+                      third_party_id:
+                        type:
+                          - string
+                          - "null"
+                        description: A unique value provided to the PMS to uniquely identify the vendor
+                          from your system.
                       type:
                         type:
                           - string
@@ -19043,7 +19056,7 @@ paths:
                               type:
                                 - string
                                 - "null"
-                              description: "'Primary phone number associated with the vendor"
+                              description: Primary phone number associated with the vendor
                             phone_type:
                               type:
                                 - string
@@ -19098,6 +19111,7 @@ paths:
                       - name
                       - notes
                       - tax_id
+                      - third_party_id
                       - type
                       - contacts
                       - integration_id
@@ -19260,10 +19274,10 @@ paths:
                   description: The primary email address associated with the vendor
                 phone_1:
                   type: string
-                  description: "'Primary phone number associated with the vendor"
+                  description: Primary phone number associated with the vendor
                 phone_2:
                   type: string
-                  description: "'Secondary phone number associated with the vendor"
+                  description: Secondary phone number associated with the vendor
       responses:
         "200":
           description: Update a vendor for an integration.
@@ -23168,6 +23182,12 @@ paths:
                             - string
                             - "null"
                           description: The tax payer identification number associated with the vendor
+                        third_party_id:
+                          type:
+                            - string
+                            - "null"
+                          description: A unique value provided to the PMS to uniquely identify the vendor
+                            from your system.
                         type:
                           type:
                             - string
@@ -23212,7 +23232,7 @@ paths:
                                 type:
                                   - string
                                   - "null"
-                                description: "'Primary phone number associated with the vendor"
+                                description: Primary phone number associated with the vendor
                               phone_type:
                                 type:
                                   - string
@@ -23267,6 +23287,7 @@ paths:
                         - name
                         - notes
                         - tax_id
+                        - third_party_id
                         - type
                         - contacts
                         - integration_id
@@ -25509,7 +25530,7 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: "'Primary phone number associated with the applicant"
+                                  description: Primary phone number associated with the applicant
                                 phone_2_type:
                                   type:
                                     - string
@@ -25525,7 +25546,7 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: "'Secondary phone number associated with the applicant"
+                                  description: Secondary phone number associated with the applicant
                                 state_alternate:
                                   type:
                                     - string
@@ -26130,7 +26151,7 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: "'Primary phone number associated with the lead"
+                                  description: Primary phone number associated with the lead
                                 phone_2_type:
                                   type:
                                     - string
@@ -26140,7 +26161,7 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: "'Secondary phone number associated with the lead"
+                                  description: Secondary phone number associated with the lead
                                 state:
                                   type:
                                     - string
@@ -27020,7 +27041,7 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: "'Primary phone number associated with the resident"
+                                  description: Primary phone number associated with the resident
                                 phone_2_type:
                                   type:
                                     - string
@@ -27036,7 +27057,7 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: "'Secondary phone number associated with the resident"
+                                  description: Secondary phone number associated with the resident
                                 state_alternate:
                                   type:
                                     - string
@@ -27852,6 +27873,12 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The tax payer identification number associated with the vendor
+                                third_party_id:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: A unique value provided to the PMS to uniquely identify the vendor
+                                    from your system.
                                 type:
                                   type:
                                     - string
@@ -27896,7 +27923,7 @@ webhooks:
                                         type:
                                           - string
                                           - "null"
-                                        description: "'Primary phone number associated with the vendor"
+                                        description: Primary phone number associated with the vendor
                                       phone_type:
                                         type:
                                           - string
@@ -28456,7 +28483,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Primary phone number associated with the applicant"
+                                      description: Primary phone number associated with the applicant
                                     phone_2_type:
                                       type:
                                         - string
@@ -28472,7 +28499,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Secondary phone number associated with the applicant"
+                                      description: Secondary phone number associated with the applicant
                                     state_alternate:
                                       type:
                                         - string
@@ -29077,7 +29104,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Primary phone number associated with the lead"
+                                      description: Primary phone number associated with the lead
                                     phone_2_type:
                                       type:
                                         - string
@@ -29087,7 +29114,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Secondary phone number associated with the lead"
+                                      description: Secondary phone number associated with the lead
                                     state:
                                       type:
                                         - string
@@ -29968,7 +29995,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Primary phone number associated with the resident"
+                                      description: Primary phone number associated with the resident
                                     phone_2_type:
                                       type:
                                         - string
@@ -29984,7 +30011,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Secondary phone number associated with the resident"
+                                      description: Secondary phone number associated with the resident
                                     state_alternate:
                                       type:
                                         - string
@@ -30800,6 +30827,12 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The tax payer identification number associated with the vendor
+                                    third_party_id:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: A unique value provided to the PMS to uniquely identify the vendor
+                                        from your system.
                                     type:
                                       type:
                                         - string
@@ -30844,7 +30877,7 @@ webhooks:
                                             type:
                                               - string
                                               - "null"
-                                            description: "'Primary phone number associated with the vendor"
+                                            description: Primary phone number associated with the vendor
                                           phone_type:
                                             type:
                                               - string
@@ -31285,7 +31318,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Primary phone number associated with the applicant"
+                                      description: Primary phone number associated with the applicant
                                     phone_2_type:
                                       type:
                                         - string
@@ -31301,7 +31334,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Secondary phone number associated with the applicant"
+                                      description: Secondary phone number associated with the applicant
                                     state_alternate:
                                       type:
                                         - string
@@ -31906,7 +31939,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Primary phone number associated with the lead"
+                                      description: Primary phone number associated with the lead
                                     phone_2_type:
                                       type:
                                         - string
@@ -31916,7 +31949,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Secondary phone number associated with the lead"
+                                      description: Secondary phone number associated with the lead
                                     state:
                                       type:
                                         - string
@@ -32797,7 +32830,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Primary phone number associated with the resident"
+                                      description: Primary phone number associated with the resident
                                     phone_2_type:
                                       type:
                                         - string
@@ -32813,7 +32846,7 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: "'Secondary phone number associated with the resident"
+                                      description: Secondary phone number associated with the resident
                                     state_alternate:
                                       type:
                                         - string
@@ -33629,6 +33662,12 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The tax payer identification number associated with the vendor
+                                    third_party_id:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: A unique value provided to the PMS to uniquely identify the vendor
+                                        from your system.
                                     type:
                                       type:
                                         - string
@@ -33673,7 +33712,7 @@ webhooks:
                                             type:
                                               - string
                                               - "null"
-                                            description: "'Primary phone number associated with the vendor"
+                                            description: Primary phone number associated with the vendor
                                           phone_type:
                                             type:
                                               - string
