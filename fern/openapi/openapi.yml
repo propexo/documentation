@@ -15,6 +15,1098 @@ components:
   schemas: {}
   parameters: {}
 paths:
+  /v1/admin/integrations/{integration_id}:
+    delete:
+      tags:
+        - admin
+      summary: Delete an integration
+      description: Delete an integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          name: integration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Delete an integration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Status of integration deletion
+                required:
+                  - success
+        "400":
+          description: invalid input
+    get:
+      tags:
+        - admin
+      summary: Get integration by id
+      description: Get integration by id
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The integration id
+          required: true
+          name: integration_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get integration by id
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type:
+                      - object
+                      - "null"
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the integration
+                      created_at:
+                        type: string
+                        description: The date the integration was created
+                      updated_at:
+                        type: string
+                        description: The date the integration was last updated
+                      name:
+                        type: string
+                        description: The name of the integration
+                      vendor:
+                        type: string
+                        enum:
+                          - BUILDIUM
+                          - ENTRATA
+                          - PROPERTYWARE
+                          - REALPAGE
+                          - RENTMANAGER
+                          - RENTVINE
+                          - REALPAGE_RPX
+                          - MRI
+                          - RESMAN
+                        description: The property management system of record
+                      active:
+                        type: boolean
+                        description: The active state of the integration
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The system the integration is associated with
+                      max_job_concurrency:
+                        type: integer
+                        description: Maximum number of jobs that can be run at once for the integration
+                      max_request_frequency:
+                        type: integer
+                        description: Maximum number of jobs that can be run in the max request cadence
+                      max_request_cadence:
+                        type: string
+                        enum:
+                          - MINUTE
+                          - HOUR
+                          - DAY
+                          - WEEK
+                          - MONTH
+                          - SECOND
+                        description: Cadence at which to limit the max request frequency
+                      base_url:
+                        type:
+                          - string
+                          - "null"
+                        description: "DEPRECATED: see specific PMS credentials. Base URL for the
+                          integration vendor API"
+                        deprecated: true
+                      is_archived:
+                        type: boolean
+                        description: Whether or not the integration is archived
+                      last_completed_sync:
+                        type:
+                          - string
+                          - "null"
+                        description: The timestamp of the last time a sync was completed.
+                      new_properties_are_enabled:
+                        type: boolean
+                        description: Whether or not properties need to be approved before ingesting data
+                          for them.
+                      integration_interfaces:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            interface_name:
+                              type: string
+                              enum:
+                                - REALPAGE_FACILITIES
+                                - REALPAGE_RESIDENTS
+                                - REALPAGE_PROSPECT_MANAGEMENT
+                                - REALPAGE_SDE_CONVERGENT_BILLING
+
+
+
+
+
+
+
+
+
+
+
+
+                                - REALPAGE_RPX_READ_PROPERTIES
+                                - REALPAGE_RPX_UNITS
+                                - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                                - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
+                                - REALPAGE_RPX_PROSPECT_MANAGEMENT
+                                - REALPAGE_RPX_PRICING_AND_AVAILABILITY
+                                - REALPAGE_RPX_FACILITIES
+                                - REALPAGE_RPX_CONVERGENT_BILLING
+                                - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
+                                - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
+                                - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
+                                - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                                - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                                - ENTRATA_AMENITIES
+                                - ENTRATA_LEASES
+                                - ENTRATA_LEAD_EVENTS
+                                - ENTRATA_LEASE_TRANSACTIONS
+                                - ENTRATA_LISTINGS
+                                - ENTRATA_PROPERTIES
+                                - ENTRATA_PROSPECTS
+                                - ENTRATA_RESIDENTS
+                                - ENTRATA_UNITS
+                                - ENTRATA_VENDORS
+                                - ENTRATA_WORK_ORDERS
+                                - BUILDIUM_BASE
+                                - ENTRATA_BASE
+                                - PROPERTYWARE_BASE
+                                - RENTMANAGER_BASE
+                                - RENTVINE_BASE
+                                - MRI_BASE
+                                - RESMAN_BASE
+                            enabled:
+                              type: boolean
+                            version:
+                              type:
+                                - string
+                                - "null"
+                          required:
+                            - interface_name
+                            - enabled
+                            - version
+                      models:
+                        type: object
+                        additionalProperties:
+                          type: object
+                          properties:
+                            enabled:
+                              type: boolean
+                            from_interfaces:
+                              type: array
+                              items:
+                                type: string
+                                enum:
+                                  - REALPAGE_FACILITIES
+                                  - REALPAGE_RESIDENTS
+                                  - REALPAGE_PROSPECT_MANAGEMENT
+                                  - REALPAGE_SDE_CONVERGENT_BILLING
+
+
+
+
+
+
+
+
+
+
+
+
+                                  - REALPAGE_RPX_READ_PROPERTIES
+                                  - REALPAGE_RPX_UNITS
+                                  - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                                  - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
+                                  - REALPAGE_RPX_PROSPECT_MANAGEMENT
+                                  - REALPAGE_RPX_PRICING_AND_AVAILABILITY
+                                  - REALPAGE_RPX_FACILITIES
+                                  - REALPAGE_RPX_CONVERGENT_BILLING
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                                  - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                                  - ENTRATA_AMENITIES
+                                  - ENTRATA_LEASES
+                                  - ENTRATA_LEAD_EVENTS
+                                  - ENTRATA_LEASE_TRANSACTIONS
+                                  - ENTRATA_LISTINGS
+                                  - ENTRATA_PROPERTIES
+                                  - ENTRATA_PROSPECTS
+                                  - ENTRATA_RESIDENTS
+                                  - ENTRATA_UNITS
+                                  - ENTRATA_VENDORS
+                                  - ENTRATA_WORK_ORDERS
+                                  - BUILDIUM_BASE
+                                  - ENTRATA_BASE
+                                  - PROPERTYWARE_BASE
+                                  - RENTMANAGER_BASE
+                                  - RENTVINE_BASE
+                                  - MRI_BASE
+                                  - RESMAN_BASE
+                          required:
+                            - enabled
+                            - from_interfaces
+                      can_authenticate:
+                        type: boolean
+                        description: True if the credentials and configuration for the integration
+                          allowed us to successfully authenticate with at least
+                          one PMS API endpoint, false otherwise
+                      last_data_access_check:
+                        type:
+                          - string
+                          - "null"
+                        description: The UTC timestamp of the last time an authentication check was
+                          performed for an integration.
+                      allow_manual_syncs:
+                        type: boolean
+                        description: Whether or not manual syncs are allowed to be triggered on this
+                          integration
+                      is_running_sync:
+                        type: boolean
+                        description: Whether or not a data sync is currently in progress for the
+                          integration
+                      is_running_data_access_check:
+                        type: boolean
+                        description: Whether or not a data access check is currently in progress for the
+                          integration
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - name
+                      - vendor
+                      - active
+                      - system
+                      - max_job_concurrency
+                      - max_request_frequency
+                      - max_request_cadence
+                      - base_url
+                      - is_archived
+                      - last_completed_sync
+                      - new_properties_are_enabled
+                      - integration_interfaces
+                      - models
+                      - can_authenticate
+                      - last_data_access_check
+                      - allow_manual_syncs
+                      - is_running_sync
+                      - is_running_data_access_check
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+    put:
+      tags:
+        - admin
+      summary: Update an integration
+      description: Update an integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The unique identifier for the integration
+          required: true
+          name: integration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_vendor:
+                  type: string
+                  enum:
+                    - BUILDIUM
+                    - ENTRATA
+                    - PROPERTYWARE
+                    - REALPAGE
+                    - RENTMANAGER
+                    - RENTVINE
+                    - REALPAGE_RPX
+                    - MRI
+                    - RESMAN
+                  description: The integration vendor
+                credentials:
+                  anyOf:
+                    - type: object
+                      properties:
+                        clientId:
+                          type: string
+                        secret:
+                          type: string
+                      required:
+                        - clientId
+                        - secret
+                      description: Buildium authentication credentials
+                      title: Buildium
+                    - type: object
+                      properties:
+                        username:
+                          type: string
+                        password:
+                          type: string
+                        companyId:
+                          type: string
+                      required:
+                        - username
+                        - password
+                        - companyId
+                      description: Entrata authentication credentials
+                      title: EntrataLegacy
+                    - type: object
+                      properties:
+                        accessToken:
+                          type: string
+                        companyId:
+                          type: string
+                      required:
+                        - accessToken
+                        - companyId
+                      description: Entrata authentication credentials
+                      title: Entrata
+                    - type: object
+                      properties:
+                        clientId:
+                          type: string
+                        databaseName:
+                          type: string
+                        partnerKey:
+                          type: string
+                        username:
+                          type: string
+                        password:
+                          type: string
+                        baseUrl:
+                          type: string
+                      required:
+                        - clientId
+                        - databaseName
+                        - partnerKey
+                        - username
+                        - password
+                        - baseUrl
+                      description: MRI authentication credentials
+                      title: MRI
+                    - type: object
+                      properties:
+                        username:
+                          type: string
+                        password:
+                          type: string
+                      required:
+                        - username
+                        - password
+                      description: Propertyware authentication credentials
+                      title: Propertyware
+                    - type: object
+                      properties:
+                        PMC_ID:
+                          type: string
+                        SITE_ID:
+                          type: string
+                        LICENSE_KEY:
+                          type: string
+                        ONESITE_USERNAME:
+                          type: string
+                        BASE_URL:
+                          type: string
+                        ftp_credentials:
+                          type: object
+                          properties:
+                            SFTP_HOST:
+                              type: string
+                            SFTP_PORT:
+                              type: number
+                            SFTP_USERNAME:
+                              type: string
+                            SFTP_PASSWORD:
+                              type: string
+                            SFTP_DIR:
+                              type: string
+                          required:
+                            - SFTP_HOST
+                            - SFTP_PORT
+                            - SFTP_USERNAME
+                            - SFTP_PASSWORD
+                            - SFTP_DIR
+                      required:
+                        - PMC_ID
+                        - SITE_ID
+                        - LICENSE_KEY
+                        - ONESITE_USERNAME
+                      description: RealPage Registered Vendor authentication credentials
+                      title: RealpageRegisteredVendor
+                    - type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                          minLength: 1
+                          format: uri
+                        licensekey:
+                          type: string
+                          minLength: 1
+                        pmcId:
+                          type: string
+                        siteId:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: RealPage Partner Exchange authentication credentials
+                      title: RealpagePartnerExchange
+                    - type: object
+                      properties:
+                        Username:
+                          type: string
+                        Password:
+                          type: string
+                        companyId:
+                          type: string
+                      required:
+                        - Username
+                        - Password
+                        - companyId
+                      description: RentManager authentication credentials
+                      title: RentManagerSandbox
+                    - type: object
+                      properties:
+                        PartnerToken:
+                          type: string
+                        companyId:
+                          type: string
+                      required:
+                        - PartnerToken
+                        - companyId
+                      description: RentManager authentication credentials
+                      title: RentManagerProduction
+                    - type: object
+                      properties:
+                        apiKey:
+                          type: string
+                        apiSecret:
+                          type: string
+                        companyId:
+                          type: string
+                        portfolioId:
+                          type: string
+                      required:
+                        - apiKey
+                        - apiSecret
+                        - companyId
+                      description: Rentvine authentication credentials
+                      title: Rentvine
+                    - type: object
+                      properties:
+                        integrationPartnerId:
+                          type: string
+                        accountId:
+                          type: string
+                        apiKey:
+                          type: string
+                      required:
+                        - integrationPartnerId
+                        - accountId
+                        - apiKey
+                      description: ResMan authentication credentials
+                      title: Resman
+                  description: JSON encoded credentials for accessing the integration vendor API
+                name:
+                  type: string
+                  description: The name of the integration
+                system:
+                  type: string
+                  enum:
+                    - PRODUCTION
+                    - SANDBOX
+                  description: "Deprecated: The system the integration is associated with"
+                  deprecated: true
+                max_request_cadence:
+                  type: string
+                  enum:
+                    - MINUTE
+                    - HOUR
+                    - DAY
+                    - WEEK
+                    - MONTH
+                    - SECOND
+                  description: Cadence at which to limit the max request frequency
+                max_request_frequency:
+                  type: integer
+                  minimum: 1
+                  description: Number of request cadence units
+                max_job_concurrency:
+                  type: integer
+                  maximum: 1
+                  minimum: 1
+                  description: Maximum number of jobs that can be run at once for the integration.
+                    Please contact support to increase this limit.
+                active:
+                  type: boolean
+                  description: The active state of the integration
+                base_url:
+                  type:
+                    - string
+                    - "null"
+                  format: uri
+                  description: "DEPRECATED: see specific PMS credentials. Base URL for the
+                    integration vendor API"
+                  deprecated: true
+                new_properties_are_enabled:
+                  type: boolean
+                  description: Whether or not properties need to be approved before ingesting data
+                    for them.
+                allow_manual_syncs:
+                  type: boolean
+                  default: false
+                  description: Whether or not manual syncs are allowed to be triggered on this
+                    integration
+      responses:
+        "200":
+          description: Update an integration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the integration
+                      created_at:
+                        type: string
+                        description: The date the integration was created
+                      updated_at:
+                        type: string
+                        description: The date the integration was last updated
+                      name:
+                        type:
+                          - string
+                          - "null"
+                        description: The name of the integration
+                      integration_vendor:
+                        type: string
+                        enum:
+                          - BUILDIUM
+                          - ENTRATA
+                          - PROPERTYWARE
+                          - REALPAGE
+                          - RENTMANAGER
+                          - RENTVINE
+                          - REALPAGE_RPX
+                          - MRI
+                          - RESMAN
+                        description: The property management system of record
+                      active:
+                        type: boolean
+                        description: The active state of the integration
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The system the integration is associated with
+                      max_job_concurrency:
+                        type: integer
+                        description: Maximum number of jobs that can be run at once for the integration
+                      max_request_frequency:
+                        type: integer
+                        description: Maximum number of jobs that can be run in the max request cadence
+                      max_request_cadence:
+                        type: string
+                        enum:
+                          - MINUTE
+                          - HOUR
+                          - DAY
+                          - WEEK
+                          - MONTH
+                          - SECOND
+                        description: Cadence at which to limit the max request frequency
+                      base_url:
+                        type:
+                          - string
+                          - "null"
+                        description: "DEPRECATED: see specific PMS credentials. Base URL for the
+                          integration vendor API"
+                        deprecated: true
+                      is_archived:
+                        type: boolean
+                        description: Whether or not the integration is archived
+                      new_properties_are_enabled:
+                        type: boolean
+                        description: Whether or not properties need to be approved before ingesting data
+                          for them.
+                      allow_manual_syncs:
+                        type: boolean
+                        description: Whether or not manual syncs are allowed to be triggered on this
+                          integration
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - name
+                      - integration_vendor
+                      - active
+                      - system
+                      - max_job_concurrency
+                      - max_request_frequency
+                      - max_request_cadence
+                      - base_url
+                      - is_archived
+                      - new_properties_are_enabled
+                      - allow_manual_syncs
+                required:
+                  - result
+        "400":
+          description: invalid input
+  /v1/webhooks/{webhook_id}:
+    delete:
+      tags:
+        - webhooks
+      summary: Delete a webhook
+      description: Delete a webhook
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the webhook to delete
+          required: true
+          name: webhook_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Delete a webhook
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The ID of the webhook that was deleted
+                    required:
+                      - id
+                required:
+                  - result
+        "400":
+          description: invalid input
+    get:
+      tags:
+        - webhooks
+      summary: Get a webhook by ID
+      description: Get a webhook by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: webhook_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get a webhook by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the webhook
+                      created_at:
+                        type: string
+                        description: The date the webhook was created
+                      updated_at:
+                        type: string
+                        description: The date the webhook was last updated
+                      url:
+                        type: string
+                        description: The url to send the webhook to
+                      headers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            header:
+                              type: string
+                            value:
+                              type: string
+                          required:
+                            - header
+                            - value
+                        description: Optional headers to send with the webhook
+                      active:
+                        type: boolean
+                        description: The status of the webhook
+                      secret:
+                        type: string
+                        description: The secret used to sign the webhook
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The environment in which the webhook runs
+                      triggers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The ID of the trigger
+                            trigger:
+                              type: string
+                              description: The name of the trigger
+                            model:
+                              type:
+                                - string
+                                - "null"
+                              description: The model that triggers the webhook
+                          required:
+                            - id
+                            - trigger
+                            - model
+                        description: The webhook event triggers
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - url
+                      - active
+                      - secret
+                      - system
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+    put:
+      tags:
+        - webhooks
+      summary: Update a webhook
+      description: Update a webhook
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the webhook to update
+          required: true
+          name: webhook_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: The url to send the webhook to
+                headers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      header:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                      - header
+                      - value
+                  description: Optional headers to send with the webhook
+                active:
+                  type: boolean
+                  description: Whether the webhook is active
+                secret:
+                  type: string
+                  minLength: 10
+                  description: The secret to use to sign the webhook payload.
+      responses:
+        "200":
+          description: Update a webhook
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The unique identifier for the webhook
+                      created_at:
+                        type: string
+                        description: The date the webhook was created
+                      updated_at:
+                        type: string
+                        description: The date the webhook was last updated
+                      url:
+                        type: string
+                        description: The url to send the webhook to
+                      headers:
+                        type:
+                          - array
+                          - "null"
+                        items:
+                          type: object
+                          properties:
+                            header:
+                              type: string
+                            value:
+                              type: string
+                          required:
+                            - header
+                            - value
+                        description: Optional headers to send with the webhook
+                      active:
+                        type: boolean
+                        description: The status of the webhook
+                      secret:
+                        type: string
+                        description: The secret used to sign the webhook
+                      system:
+                        type: string
+                        enum:
+                          - PRODUCTION
+                          - SANDBOX
+                        description: The environment in which the webhook runs
+                      triggers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The ID of the trigger
+                            trigger:
+                              type: string
+                              description: The name of the trigger
+                            model:
+                              type:
+                                - string
+                                - "null"
+                              description: The model that triggers the webhook
+                          required:
+                            - id
+                            - trigger
+                            - model
+                        description: The webhook event triggers
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - url
+                      - headers
+                      - active
+                      - secret
+                      - system
+                required:
+                  - result
+        "400":
+          description: invalid input
+  /v1/webhooks/triggers/{webhook_trigger_id}:
+    delete:
+      tags:
+        - webhooks
+      summary: Delete a webhook trigger
+      description: Delete a webhook trigger
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the webhook to delete
+          required: true
+          name: webhook_trigger_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Delete a webhook trigger
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The ID of the webhook trigger that was deleted
+                    required:
+                      - id
+                required:
+                  - result
+        "400":
+          description: invalid input
   /v1/admin/data-diffs:
     get:
       tags:
@@ -1813,823 +2905,6 @@ paths:
                   - created_record_id
         "400":
           description: invalid input
-  /v1/admin/integrations/{integration_id}:
-    get:
-      tags:
-        - admin
-      summary: Get integration by id
-      description: Get integration by id
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The integration id
-          required: true
-          name: integration_id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Get integration by id
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type:
-                      - object
-                      - "null"
-                    properties:
-                      id:
-                        type: string
-                        description: The unique identifier for the integration
-                      created_at:
-                        type: string
-                        description: The date the integration was created
-                      updated_at:
-                        type: string
-                        description: The date the integration was last updated
-                      name:
-                        type: string
-                        description: The name of the integration
-                      vendor:
-                        type: string
-                        enum:
-                          - BUILDIUM
-                          - ENTRATA
-                          - PROPERTYWARE
-                          - REALPAGE
-                          - RENTMANAGER
-                          - RENTVINE
-                          - REALPAGE_RPX
-                          - MRI
-                          - RESMAN
-                        description: The property management system of record
-                      active:
-                        type: boolean
-                        description: The active state of the integration
-                      system:
-                        type: string
-                        enum:
-                          - PRODUCTION
-                          - SANDBOX
-                        description: The system the integration is associated with
-                      max_job_concurrency:
-                        type: integer
-                        description: Maximum number of jobs that can be run at once for the integration
-                      max_request_frequency:
-                        type: integer
-                        description: Maximum number of jobs that can be run in the max request cadence
-                      max_request_cadence:
-                        type: string
-                        enum:
-                          - MINUTE
-                          - HOUR
-                          - DAY
-                          - WEEK
-                          - MONTH
-                          - SECOND
-                        description: Cadence at which to limit the max request frequency
-                      base_url:
-                        type:
-                          - string
-                          - "null"
-                        description: "DEPRECATED: see specific PMS credentials. Base URL for the
-                          integration vendor API"
-                        deprecated: true
-                      is_archived:
-                        type: boolean
-                        description: Whether or not the integration is archived
-                      last_completed_sync:
-                        type:
-                          - string
-                          - "null"
-                        description: The timestamp of the last time a sync was completed.
-                      new_properties_are_enabled:
-                        type: boolean
-                        description: Whether or not properties need to be approved before ingesting data
-                          for them.
-                      integration_interfaces:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            interface_name:
-                              type: string
-                              enum:
-                                - REALPAGE_FACILITIES
-                                - REALPAGE_RESIDENTS
-                                - REALPAGE_PROSPECT_MANAGEMENT
-                                - REALPAGE_SDE_CONVERGENT_BILLING
-
-
-
-
-
-
-
-
-
-
-
-
-                                - REALPAGE_RPX_READ_PROPERTIES
-                                - REALPAGE_RPX_UNITS
-                                - REALPAGE_RPX_RESIDENT_MANAGEMENT
-                                - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
-                                - REALPAGE_RPX_PROSPECT_MANAGEMENT
-                                - REALPAGE_RPX_PRICING_AND_AVAILABILITY
-                                - REALPAGE_RPX_FACILITIES
-                                - REALPAGE_RPX_CONVERGENT_BILLING
-                                - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
-                                - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
-                                - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
-                                - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
-                                - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
-                                - ENTRATA_AMENITIES
-                                - ENTRATA_LEASES
-                                - ENTRATA_LEAD_EVENTS
-                                - ENTRATA_LEASE_TRANSACTIONS
-                                - ENTRATA_LISTINGS
-                                - ENTRATA_PROPERTIES
-                                - ENTRATA_PROSPECTS
-                                - ENTRATA_RESIDENTS
-                                - ENTRATA_UNITS
-                                - ENTRATA_VENDORS
-                                - ENTRATA_WORK_ORDERS
-                                - BUILDIUM_BASE
-                                - ENTRATA_BASE
-                                - PROPERTYWARE_BASE
-                                - RENTMANAGER_BASE
-                                - RENTVINE_BASE
-                                - MRI_BASE
-                                - RESMAN_BASE
-                            enabled:
-                              type: boolean
-                            version:
-                              type:
-                                - string
-                                - "null"
-                          required:
-                            - interface_name
-                            - enabled
-                            - version
-                      models:
-                        type: object
-                        additionalProperties:
-                          type: object
-                          properties:
-                            enabled:
-                              type: boolean
-                            from_interfaces:
-                              type: array
-                              items:
-                                type: string
-                                enum:
-                                  - REALPAGE_FACILITIES
-                                  - REALPAGE_RESIDENTS
-                                  - REALPAGE_PROSPECT_MANAGEMENT
-                                  - REALPAGE_SDE_CONVERGENT_BILLING
-
-
-
-
-
-
-
-
-
-
-
-
-                                  - REALPAGE_RPX_READ_PROPERTIES
-                                  - REALPAGE_RPX_UNITS
-                                  - REALPAGE_RPX_RESIDENT_MANAGEMENT
-                                  - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
-                                  - REALPAGE_RPX_PROSPECT_MANAGEMENT
-                                  - REALPAGE_RPX_PRICING_AND_AVAILABILITY
-                                  - REALPAGE_RPX_FACILITIES
-                                  - REALPAGE_RPX_CONVERGENT_BILLING
-                                  - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
-                                  - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
-                                  - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
-                                  - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
-                                  - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
-                                  - ENTRATA_AMENITIES
-                                  - ENTRATA_LEASES
-                                  - ENTRATA_LEAD_EVENTS
-                                  - ENTRATA_LEASE_TRANSACTIONS
-                                  - ENTRATA_LISTINGS
-                                  - ENTRATA_PROPERTIES
-                                  - ENTRATA_PROSPECTS
-                                  - ENTRATA_RESIDENTS
-                                  - ENTRATA_UNITS
-                                  - ENTRATA_VENDORS
-                                  - ENTRATA_WORK_ORDERS
-                                  - BUILDIUM_BASE
-                                  - ENTRATA_BASE
-                                  - PROPERTYWARE_BASE
-                                  - RENTMANAGER_BASE
-                                  - RENTVINE_BASE
-                                  - MRI_BASE
-                                  - RESMAN_BASE
-                          required:
-                            - enabled
-                            - from_interfaces
-                      can_authenticate:
-                        type: boolean
-                        description: True if the credentials and configuration for the integration
-                          allowed us to successfully authenticate with at least
-                          one PMS API endpoint, false otherwise
-                      last_data_access_check:
-                        type:
-                          - string
-                          - "null"
-                        description: The UTC timestamp of the last time an authentication check was
-                          performed for an integration.
-                      allow_manual_syncs:
-                        type: boolean
-                        description: Whether or not manual syncs are allowed to be triggered on this
-                          integration
-                      is_running_sync:
-                        type: boolean
-                        description: Whether or not a data sync is currently in progress for the
-                          integration
-                      is_running_data_access_check:
-                        type: boolean
-                        description: Whether or not a data access check is currently in progress for the
-                          integration
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - name
-                      - vendor
-                      - active
-                      - system
-                      - max_job_concurrency
-                      - max_request_frequency
-                      - max_request_cadence
-                      - base_url
-                      - is_archived
-                      - last_completed_sync
-                      - new_properties_are_enabled
-                      - integration_interfaces
-                      - models
-                      - can_authenticate
-                      - last_data_access_check
-                      - allow_manual_syncs
-                      - is_running_sync
-                      - is_running_data_access_check
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-    put:
-      tags:
-        - admin
-      summary: Update an integration
-      description: Update an integration
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The unique identifier for the integration
-          required: true
-          name: integration_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_vendor:
-                  type: string
-                  enum:
-                    - BUILDIUM
-                    - ENTRATA
-                    - PROPERTYWARE
-                    - REALPAGE
-                    - RENTMANAGER
-                    - RENTVINE
-                    - REALPAGE_RPX
-                    - MRI
-                    - RESMAN
-                  description: The integration vendor
-                credentials:
-                  anyOf:
-                    - type: object
-                      properties:
-                        clientId:
-                          type: string
-                        secret:
-                          type: string
-                      required:
-                        - clientId
-                        - secret
-                      description: Buildium authentication credentials
-                      title: Buildium
-                    - type: object
-                      properties:
-                        username:
-                          type: string
-                        password:
-                          type: string
-                        companyId:
-                          type: string
-                      required:
-                        - username
-                        - password
-                        - companyId
-                      description: Entrata authentication credentials
-                      title: EntrataLegacy
-                    - type: object
-                      properties:
-                        accessToken:
-                          type: string
-                        companyId:
-                          type: string
-                      required:
-                        - accessToken
-                        - companyId
-                      description: Entrata authentication credentials
-                      title: Entrata
-                    - type: object
-                      properties:
-                        clientId:
-                          type: string
-                        databaseName:
-                          type: string
-                        partnerKey:
-                          type: string
-                        username:
-                          type: string
-                        password:
-                          type: string
-                        baseUrl:
-                          type: string
-                      required:
-                        - clientId
-                        - databaseName
-                        - partnerKey
-                        - username
-                        - password
-                        - baseUrl
-                      description: MRI authentication credentials
-                      title: MRI
-                    - type: object
-                      properties:
-                        username:
-                          type: string
-                        password:
-                          type: string
-                      required:
-                        - username
-                        - password
-                      description: Propertyware authentication credentials
-                      title: Propertyware
-                    - type: object
-                      properties:
-                        PMC_ID:
-                          type: string
-                        SITE_ID:
-                          type: string
-                        LICENSE_KEY:
-                          type: string
-                        ONESITE_USERNAME:
-                          type: string
-                        BASE_URL:
-                          type: string
-                        ftp_credentials:
-                          type: object
-                          properties:
-                            SFTP_HOST:
-                              type: string
-                            SFTP_PORT:
-                              type: number
-                            SFTP_USERNAME:
-                              type: string
-                            SFTP_PASSWORD:
-                              type: string
-                            SFTP_DIR:
-                              type: string
-                          required:
-                            - SFTP_HOST
-                            - SFTP_PORT
-                            - SFTP_USERNAME
-                            - SFTP_PASSWORD
-                            - SFTP_DIR
-                      required:
-                        - PMC_ID
-                        - SITE_ID
-                        - LICENSE_KEY
-                        - ONESITE_USERNAME
-                      description: RealPage Registered Vendor authentication credentials
-                      title: RealpageRegisteredVendor
-                    - type: object
-                      properties:
-                        baseUrl:
-                          type: string
-                          minLength: 1
-                          format: uri
-                        licensekey:
-                          type: string
-                          minLength: 1
-                        pmcId:
-                          type: string
-                        siteId:
-                          type: string
-                      required:
-                        - baseUrl
-                        - licensekey
-                      description: RealPage Partner Exchange authentication credentials
-                      title: RealpagePartnerExchange
-                    - type: object
-                      properties:
-                        Username:
-                          type: string
-                        Password:
-                          type: string
-                        companyId:
-                          type: string
-                      required:
-                        - Username
-                        - Password
-                        - companyId
-                      description: RentManager authentication credentials
-                      title: RentManagerSandbox
-                    - type: object
-                      properties:
-                        PartnerToken:
-                          type: string
-                        companyId:
-                          type: string
-                      required:
-                        - PartnerToken
-                        - companyId
-                      description: RentManager authentication credentials
-                      title: RentManagerProduction
-                    - type: object
-                      properties:
-                        apiKey:
-                          type: string
-                        apiSecret:
-                          type: string
-                        companyId:
-                          type: string
-                        portfolioId:
-                          type: string
-                      required:
-                        - apiKey
-                        - apiSecret
-                        - companyId
-                      description: Rentvine authentication credentials
-                      title: Rentvine
-                    - type: object
-                      properties:
-                        integrationPartnerId:
-                          type: string
-                        accountId:
-                          type: string
-                        apiKey:
-                          type: string
-                      required:
-                        - integrationPartnerId
-                        - accountId
-                        - apiKey
-                      description: ResMan authentication credentials
-                      title: Resman
-                  description: JSON encoded credentials for accessing the integration vendor API
-                name:
-                  type: string
-                  description: The name of the integration
-                system:
-                  type: string
-                  enum:
-                    - PRODUCTION
-                    - SANDBOX
-                  description: "Deprecated: The system the integration is associated with"
-                  deprecated: true
-                max_request_cadence:
-                  type: string
-                  enum:
-                    - MINUTE
-                    - HOUR
-                    - DAY
-                    - WEEK
-                    - MONTH
-                    - SECOND
-                  description: Cadence at which to limit the max request frequency
-                max_request_frequency:
-                  type: integer
-                  minimum: 1
-                  description: Number of request cadence units
-                max_job_concurrency:
-                  type: integer
-                  maximum: 1
-                  minimum: 1
-                  description: Maximum number of jobs that can be run at once for the integration.
-                    Please contact support to increase this limit.
-                active:
-                  type: boolean
-                  description: The active state of the integration
-                base_url:
-                  type:
-                    - string
-                    - "null"
-                  format: uri
-                  description: "DEPRECATED: see specific PMS credentials. Base URL for the
-                    integration vendor API"
-                  deprecated: true
-                new_properties_are_enabled:
-                  type: boolean
-                  description: Whether or not properties need to be approved before ingesting data
-                    for them.
-                allow_manual_syncs:
-                  type: boolean
-                  default: false
-                  description: Whether or not manual syncs are allowed to be triggered on this
-                    integration
-      responses:
-        "200":
-          description: Update an integration
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  result:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The unique identifier for the integration
-                      created_at:
-                        type: string
-                        description: The date the integration was created
-                      updated_at:
-                        type: string
-                        description: The date the integration was last updated
-                      name:
-                        type:
-                          - string
-                          - "null"
-                        description: The name of the integration
-                      integration_vendor:
-                        type: string
-                        enum:
-                          - BUILDIUM
-                          - ENTRATA
-                          - PROPERTYWARE
-                          - REALPAGE
-                          - RENTMANAGER
-                          - RENTVINE
-                          - REALPAGE_RPX
-                          - MRI
-                          - RESMAN
-                        description: The property management system of record
-                      active:
-                        type: boolean
-                        description: The active state of the integration
-                      system:
-                        type: string
-                        enum:
-                          - PRODUCTION
-                          - SANDBOX
-                        description: The system the integration is associated with
-                      max_job_concurrency:
-                        type: integer
-                        description: Maximum number of jobs that can be run at once for the integration
-                      max_request_frequency:
-                        type: integer
-                        description: Maximum number of jobs that can be run in the max request cadence
-                      max_request_cadence:
-                        type: string
-                        enum:
-                          - MINUTE
-                          - HOUR
-                          - DAY
-                          - WEEK
-                          - MONTH
-                          - SECOND
-                        description: Cadence at which to limit the max request frequency
-                      base_url:
-                        type:
-                          - string
-                          - "null"
-                        description: "DEPRECATED: see specific PMS credentials. Base URL for the
-                          integration vendor API"
-                        deprecated: true
-                      is_archived:
-                        type: boolean
-                        description: Whether or not the integration is archived
-                      new_properties_are_enabled:
-                        type: boolean
-                        description: Whether or not properties need to be approved before ingesting data
-                          for them.
-                      allow_manual_syncs:
-                        type: boolean
-                        description: Whether or not manual syncs are allowed to be triggered on this
-                          integration
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - name
-                      - integration_vendor
-                      - active
-                      - system
-                      - max_job_concurrency
-                      - max_request_frequency
-                      - max_request_cadence
-                      - base_url
-                      - is_archived
-                      - new_properties_are_enabled
-                      - allow_manual_syncs
-                required:
-                  - result
-        "400":
-          description: invalid input
-    delete:
-      tags:
-        - admin
-      summary: Delete an integration
-      description: Delete an integration
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: true
-          name: integration_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties: {}
-      responses:
-        "200":
-          description: Delete an integration
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                    description: Status of integration deletion
-                required:
-                  - success
-        "400":
-          description: invalid input
-  /v1/admin/integrations/{integration_id}/back-sync:
-    post:
-      tags:
-        - admin
-      summary: Trigger a backsync on an integration.
-      description: Trigger a backsync on an integration.
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: true
-          name: integration_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties: {}
-      responses:
-        "200":
-          description: Trigger a backsync on an integration.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  result:
-                    type: object
-                    properties:
-                      success:
-                        type: boolean
-                    required:
-                      - success
-                required:
-                  - result
-        "400":
-          description: invalid input
-  /v1/admin/integrations/{integration_id}/manual-sync:
-    post:
-      tags:
-        - admin
-      summary: Trigger a manual sync on an integration.
-      description: Trigger a manual sync on an integration. This is only allowed on
-        integrations that have `allow_manual_syncs` set to `true`. this request
-        has no impact if a sync is already in progress, but the endpoint will
-        return a 400 with a corresponding error code.
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: true
-          name: integration_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties: {}
-      responses:
-        "200":
-          description: Trigger a manual sync on an integration. This is only allowed on
-            integrations that have `allow_manual_syncs` set to `true`. this
-            request has no impact if a sync is already in progress, but the
-            endpoint will return a 400 with a corresponding error code.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  result:
-                    type: object
-                    properties:
-                      success:
-                        type: boolean
-                    required:
-                      - success
-                required:
-                  - result
-        "400":
-          description: invalid input
   /v1/admin/integrations/{integration_id}/properties:
     get:
       tags:
@@ -2952,108 +3227,6 @@ paths:
                       - is_custom_mapping
                       - mappings
                       - default_value
-                required:
-                  - results
-        "400":
-          description: invalid input
-  /v1/admin/integrations/{integration_id}/properties/{property_configuration_id}:
-    put:
-      tags:
-        - admin
-      summary: Update a property configuration
-      description: Update a property configuration
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: true
-          name: integration_id
-          in: path
-        - schema:
-            type: string
-            description: The ID of the property configuration record.
-          required: true
-          name: property_configuration_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                order-by:
-                  type: string
-                  default: created_at:desc
-                  description: "Order the results by a field. Optionally include asc or desc
-                    preceded by a colon (default is asc). Example:
-                    ?order-by=updated_at:desc"
-                offset:
-                  type:
-                    - integer
-                    - "null"
-                  minimum: 0
-                  default: 0
-                  description: Can be used for paginating results
-                limit:
-                  type:
-                    - integer
-                    - "null"
-                  minimum: 0
-                  maximum: 250
-                  default: 100
-                  description: A number between 1 and 250 to determine the number of results to
-                    return in a single query
-                enabled:
-                  type: boolean
-                  description: Whether or not we should be syncing data for this property on this
-                    integration.
-                trigger_integration_resync:
-                  type: boolean
-                  default: false
-                  description: Triggers a resync of the integration to ingest new property data.
-                    This is only allowed in sandbox and at least five minutes
-                    after the most recent sync has completed for this
-                    integration.
-              required:
-                - offset
-                - limit
-                - enabled
-      responses:
-        "200":
-          description: Update a property configuration
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  results:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: ID
-                      created_at:
-                        type: string
-                        description: The date record first entered Propexo
-                      integration_id:
-                        type: string
-                        description: The Propexo unique identifier for the integration
-                      property_id:
-                        type: string
-                        description: The Propexo unique identifier for the property
-                      enabled:
-                        type: boolean
-                        description: Whether the property is enabled and will have data ingested
-                      additional_message:
-                        type: string
-                    required:
-                      - id
-                      - created_at
-                      - integration_id
-                      - property_id
-                      - enabled
                 required:
                   - results
         "400":
@@ -3737,56 +3910,6 @@ paths:
         "400":
           description: invalid input
   /v1/amenities/{amenity_id}:
-    put:
-      tags:
-        - amenities
-      summary: Update amenity
-      description: Update an amenity for an integration.
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: amenity_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: The name associated with the amenity
-                description:
-                  type: string
-                  description: Description of the amenity
-                is_published:
-                  type: boolean
-                  description: Whether the amenity should be published
-      responses:
-        "200":
-          description: Update an amenity for an integration.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
     get:
       tags:
         - amenities
@@ -4120,85 +4243,11 @@ paths:
                   - results
         "400":
           description: invalid input
-  /v1/amenities/units/{id}:
-    post:
-      tags:
-        - amenities
-      summary: Create Amenities | Units
-      description: Create a unit amenity for any integration. This is a convenience
-        endpoint that acts as a generic proxy for all amenity creation
-        endpoints.
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                amenity:
-                  type: string
-                  description: The amenity name
-                custom_data:
-                  type: object
-                  properties: {}
-                  description: "Deprecated: Field is no longer applicable"
-                  deprecated: true
-                integration_id:
-                  type: string
-                vendor:
-                  type: string
-                  enum:
-                    - BUILDIUM
-                    - ENTRATA
-                    - PROPERTYWARE
-                    - REALPAGE
-                    - RENTMANAGER
-                    - RENTVINE
-                    - REALPAGE_RPX
-                    - MRI
-                    - RESMAN
-              required:
-                - amenity
-                - integration_id
-                - vendor
-      responses:
-        "200":
-          description: Create a unit amenity for any integration. This is a convenience
-            endpoint that acts as a generic proxy for all amenity creation
-            endpoints.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
     put:
       tags:
         - amenities
-      summary: Update amenities for unit
-      description: Update unit amenities for any integration. This is a convenience
-        endpoint that acts as a generic proxy for all amenity creation
-        endpoints.
+      summary: Update amenity
+      description: Update an amenity for an integration.
       security:
         - bearerAuth: []
       parameters:
@@ -4206,7 +4255,7 @@ paths:
             type: string
             description: The ID of the resource.
           required: true
-          name: id
+          name: amenity_id
           in: path
       requestBody:
         content:
@@ -4214,279 +4263,18 @@ paths:
             schema:
               type: object
               properties:
-                features:
-                  type: array
-                  items:
-                    type: string
-                    enum:
-                      - CableReady
-                      - Microwave
-                      - HardwoodFloors
-                      - HighSpeedInternet
-                      - AirConditioning
-                      - Refrigerator
-                      - Dishwasher
-                      - WalkinClosets
-                      - BalconyOrDeckOrPatio
-                      - GarageParking
-                      - Carport
-                      - FencedYard
-                      - LaundryRoomOrHookups
-                      - Fireplace
-                      - CableReadyCommercial
-                      - HighSpeedInternetCommercial
-                      - AirConditioningCommercial
-                      - Heating
-                      - OvenOrRange
-                      - HeatElectric
-                      - HeatGas
-                      - HeatOil
-                      - PetsAllowed
-                      - Balcony
-                      - PrivateBalcony
-                      - PrivatePatio
-                      - Dryer
-                      - Heat
-                      - WD_Hookup
-                      - Washer
-                      - AdditionalStorage
-                      - Alarm
-                      - Carpet
-                      - CeilingFan
-                      - ControlledAccess
-                      - Courtyard
-                      - Disposal
-                      - DoubleSinkVanity
-                      - FramedMirrors
-                      - Furnished
-                      - Handrails
-                      - IndividualClimateControl
-                      - IslandKitchen
-                      - LinenCloset
-                      - Pantry
-                      - Satellite
-                      - Skylight
-                      - TileFlooring
-                      - VaultedCeiling
-                      - View
-                      - VinylFlooring
-                      - WheelChair
-                      - WindowCoverings
-                  description: A list of unit amenities. Any existing amenities associated with
-                    the unit that are not submitted in the request will be
-                    removed from the unit
+                name:
+                  type: string
+                  description: The name associated with the amenity
+                description:
+                  type: string
+                  description: Description of the amenity
+                is_published:
+                  type: boolean
+                  description: Whether the amenity should be published
       responses:
         "200":
-          description: Update unit amenities for any integration. This is a convenience
-            endpoint that acts as a generic proxy for all amenity creation
-            endpoints.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
-  /v1/amenities/properties/{id}:
-    post:
-      tags:
-        - amenities
-      summary: Create amenity for property
-      description: Create a property amenity for any integration. This is a
-        convenience endpoint that acts as a generic proxy for all amenity
-        creation endpoints.
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                amenity:
-                  type: string
-                  description: The amenity name
-                custom_data:
-                  type: object
-                  properties: {}
-                  description: "Deprecated: Field is no longer applicable"
-                  deprecated: true
-                integration_id:
-                  type: string
-                vendor:
-                  type: string
-                  enum:
-                    - BUILDIUM
-                    - ENTRATA
-                    - PROPERTYWARE
-                    - REALPAGE
-                    - RENTMANAGER
-                    - RENTVINE
-                    - REALPAGE_RPX
-                    - MRI
-                    - RESMAN
-              required:
-                - amenity
-                - integration_id
-                - vendor
-      responses:
-        "200":
-          description: Create a property amenity for any integration. This is a
-            convenience endpoint that acts as a generic proxy for all amenity
-            creation endpoints.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
-    put:
-      tags:
-        - amenities
-      summary: Update amenities for property
-      description: Update property amenities for any integration. This is a
-        convenience endpoint that acts as a generic proxy for all amenity
-        creation endpoints.
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                features:
-                  type: array
-                  items:
-                    type: string
-                    enum:
-                      - LaundryRoom
-                      - WheelchairAccess
-                      - DoorAttendant
-                      - Elevator
-                      - Parking
-                      - StorageUnits
-                      - Pool
-                      - FitnessCenter
-                      - TennisCourt
-                      - ClubHouse
-                      - Power
-                      - ParkingCommercial
-                      - SprinklerSystem
-                      - DockHighDoorsOrLoadingAvailable
-                      - Availability24Hours
-                      - AccentWalls
-                      - BasketballCourt
-                      - Bilingual
-                      - BoatDocks
-                      - BusinessCenter
-                      - CarWashArea
-                      - ChildCare
-                      - ClubDiscount
-                      - ConferenceRoom
-                      - Concierge
-                      - FreeWeights
-                      - FurnishedAvailable
-                      - GamingStations
-                      - Garage
-                      - Gate
-                      - GroceryService
-                      - GroupExercise
-                      - GuestRoom
-                      - Housekeeping
-                      - HouseSitting
-                      - JoggingWalkingTrails
-                      - LakeFront
-                      - LakeAccess
-                      - Library
-                      - MealService
-                      - MediaRoom
-                      - MultiUseRoom
-                      - NightPatrol
-                      - OnSiteMaintenance
-                      - OnSiteManagement
-                      - PackageReceiving
-                      - PerDiemAccepted
-                      - PlayGround
-                      - Racquetball
-                      - RecRoom
-                      - Recycling
-                      - Sauna
-                      - ShortTermLease
-                      - SmokeFree
-                      - Spa
-                      - Sundeck
-                      - Transportation
-                      - TVLounge
-                      - ValetTrash
-                      - Vintage
-                      - VolleyballCourt
-                      - WirelessInternet
-                      - HighSpeedInternet
-                  description: A list of overall property amenities. Any previously saved values
-                    that are not submitted in the update request will be deleted
-                included_in_rent:
-                  type: array
-                  items:
-                    type: string
-                    enum:
-                      - Gas
-                      - Electric
-                      - Trash
-                      - Water
-                      - HotWater
-                      - Telephone
-                      - Heat
-                      - Cable
-                      - AirCon
-                      - Satellite
-                      - Sewer
-                      - BroadbandInternet
-                  description: A list of amenities that are included in rent. Any previously saved
-                    values that are not submitted in the update request will be
-                    deleted
-      responses:
-        "200":
-          description: Update property amenities for any integration. This is a
-            convenience endpoint that acts as a generic proxy for all amenity
-            creation endpoints.
+          description: Update an amenity for an integration.
           content:
             application/json:
               schema:
@@ -9734,289 +9522,6 @@ paths:
                 required:
                   - meta
                   - results
-        "400":
-          description: invalid input
-  /v1/events/applicants:
-    post:
-      tags:
-        - events
-      summary: Create event for an applicant
-      description: Create an applicant event for an integration.
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                applicant_id:
-                  type: string
-                  description: The Propexo unique identifier for the applicant
-                event_type:
-                  type: string
-                  enum:
-                    - Note
-                  default: Note
-                  description: The type of event
-                notes:
-                  type: string
-                  maxLength: 256
-                  description: Notes associated with the event
-                application_id:
-                  type: string
-                  description: The Propexo unique identifier for the application
-                event_type_id:
-                  type: string
-                  description: The Propexo unique identifier for the event type
-                employee_id:
-                  type: string
-                  description: The Propexo unique identifier for the employee
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit. Only some PMS events
-                    use this, including "Show" and "Appointment"
-                event_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the event will occur
-                reasons_for_event:
-                  type: string
-                  description: The reasons for the event
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                time_from:
-                  type: string
-                time_to:
-                  type: string
-                title:
-                  type: string
-                  description: The title associated with the event
-                event_name:
-                  type: string
-                  enum:
-                    - Other
-                    - WalkIn
-                    - Chat
-                    - Email
-                    - Text
-                    - Webservice
-                    - Appointment
-                    - Show
-                    - Application
-                    - SelfGuidedTour
-                    - Application
-                  description: The name or type of event
-                agent_name:
-                  type: string
-                  description: The name of the leasing agent associated with the event
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Create an applicant event for an integration.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
-  /v1/events/leads:
-    post:
-      tags:
-        - events
-      summary: Create event for a lead
-      description: Create a lead event for an integration.
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                lead_id:
-                  type: string
-                  description: The Propexo unique identifier for the lead
-                event_type_id:
-                  type: string
-                  description: The Propexo unique identifier for the event type
-                employee_id:
-                  type: string
-                  description: The Propexo unique identifier for the employee
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit. Only some PMS events
-                    use this, including "Show" and "Appointment"
-                event_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the event will occur
-                reasons_for_event:
-                  type: string
-                  description: The reasons for the event
-                notes:
-                  type: string
-                  maxLength: 256
-                  description: Notes associated with the event
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                time_from:
-                  type: string
-                time_to:
-                  type: string
-                title:
-                  type: string
-                  description: The title associated with the event
-                event_name:
-                  type: string
-                  enum:
-                    - Other
-                    - WalkIn
-                    - Chat
-                    - Email
-                    - Text
-                    - Webservice
-                    - Appointment
-                    - Show
-                    - Application
-                    - SelfGuidedTour
-                    - Application
-                  description: The name or type of event
-                status:
-                  type: string
-                  enum:
-                    - LEASED
-                    - LOST
-                    - UNQUALIFIED
-                    - ACTIVE
-                    - FUTURE
-                  description: The status associated with the event
-                agent_name:
-                  type: string
-                  description: The name of the leasing agent associated with the event
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Create a lead event for an integration.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
-  /v1/events/residents:
-    post:
-      tags:
-        - events
-      summary: Create event for a resident
-      description: Create a resident event for an integration.
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                resident_id:
-                  type: string
-                  description: The Propexo unique identifier for the resident
-                event_type:
-                  type: string
-                  enum:
-                    - Note
-                  default: Note
-                  description: The type of event
-                notes:
-                  type: string
-                  description: Notes associated with the event
-                event_type_id:
-                  type: string
-                  description: The Propexo unique identifier for the event type
-                employee_id:
-                  type: string
-                  description: The Propexo unique identifier for the employee
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
-                event_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the event will occur
-                reasons_for_event:
-                  type: string
-                  description: The reasons for the event
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                time_from:
-                  type: string
-                time_to:
-                  type: string
-                title:
-                  type: string
-                  description: The title associated with the event
-                event_name:
-                  type: string
-                  description: The name or type of event
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Create a resident event for an integration.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
         "400":
           description: invalid input
   /v1/event-types:
@@ -24456,299 +23961,20 @@ paths:
                   - result
         "400":
           description: invalid input
-  /v1/webhooks/{webhook_id}:
-    get:
+  /v1/admin/integrations/{integration_id}/back-sync:
+    post:
       tags:
-        - webhooks
-      summary: Get a webhook by ID
-      description: Get a webhook by ID
+        - admin
+      summary: Trigger a backsync on an integration.
+      description: Trigger a backsync on an integration.
       security:
         - bearerAuth: []
       parameters:
         - schema:
             type: string
-            description: The ID of the resource.
+            description: The Propexo unique identifier for the integration
           required: true
-          name: webhook_id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Get a webhook by ID
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The unique identifier for the webhook
-                      created_at:
-                        type: string
-                        description: The date the webhook was created
-                      updated_at:
-                        type: string
-                        description: The date the webhook was last updated
-                      url:
-                        type: string
-                        description: The url to send the webhook to
-                      headers:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            header:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                            - header
-                            - value
-                        description: Optional headers to send with the webhook
-                      active:
-                        type: boolean
-                        description: The status of the webhook
-                      secret:
-                        type: string
-                        description: The secret used to sign the webhook
-                      system:
-                        type: string
-                        enum:
-                          - PRODUCTION
-                          - SANDBOX
-                        description: The environment in which the webhook runs
-                      triggers:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: The ID of the trigger
-                            trigger:
-                              type: string
-                              description: The name of the trigger
-                            model:
-                              type:
-                                - string
-                                - "null"
-                              description: The model that triggers the webhook
-                          required:
-                            - id
-                            - trigger
-                            - model
-                        description: The webhook event triggers
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - url
-                      - active
-                      - secret
-                      - system
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-    put:
-      tags:
-        - webhooks
-      summary: Update a webhook
-      description: Update a webhook
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the webhook to update
-          required: true
-          name: webhook_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                url:
-                  type: string
-                  format: uri
-                  description: The url to send the webhook to
-                headers:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      header:
-                        type: string
-                      value:
-                        type: string
-                    required:
-                      - header
-                      - value
-                  description: Optional headers to send with the webhook
-                active:
-                  type: boolean
-                  description: Whether the webhook is active
-                secret:
-                  type: string
-                  minLength: 10
-                  description: The secret to use to sign the webhook payload.
-      responses:
-        "200":
-          description: Update a webhook
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  result:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The unique identifier for the webhook
-                      created_at:
-                        type: string
-                        description: The date the webhook was created
-                      updated_at:
-                        type: string
-                        description: The date the webhook was last updated
-                      url:
-                        type: string
-                        description: The url to send the webhook to
-                      headers:
-                        type:
-                          - array
-                          - "null"
-                        items:
-                          type: object
-                          properties:
-                            header:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                            - header
-                            - value
-                        description: Optional headers to send with the webhook
-                      active:
-                        type: boolean
-                        description: The status of the webhook
-                      secret:
-                        type: string
-                        description: The secret used to sign the webhook
-                      system:
-                        type: string
-                        enum:
-                          - PRODUCTION
-                          - SANDBOX
-                        description: The environment in which the webhook runs
-                      triggers:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: The ID of the trigger
-                            trigger:
-                              type: string
-                              description: The name of the trigger
-                            model:
-                              type:
-                                - string
-                                - "null"
-                              description: The model that triggers the webhook
-                          required:
-                            - id
-                            - trigger
-                            - model
-                        description: The webhook event triggers
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - url
-                      - headers
-                      - active
-                      - secret
-                      - system
-                required:
-                  - result
-        "400":
-          description: invalid input
-    delete:
-      tags:
-        - webhooks
-      summary: Delete a webhook
-      description: Delete a webhook
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the webhook to delete
-          required: true
-          name: webhook_id
+          name: integration_id
           in: path
       requestBody:
         content:
@@ -24758,7 +23984,7 @@ paths:
               properties: {}
       responses:
         "200":
-          description: Delete a webhook
+          description: Trigger a backsync on an integration.
           content:
             application/json:
               schema:
@@ -24767,13 +23993,726 @@ paths:
                   result:
                     type: object
                     properties:
-                      id:
-                        type: string
-                        description: The ID of the webhook that was deleted
+                      success:
+                        type: boolean
                     required:
-                      - id
+                      - success
                 required:
                   - result
+        "400":
+          description: invalid input
+  /v1/admin/integrations/{integration_id}/manual-sync:
+    post:
+      tags:
+        - admin
+      summary: Trigger a manual sync on an integration.
+      description: Trigger a manual sync on an integration. This is only allowed on
+        integrations that have `allow_manual_syncs` set to `true`. this request
+        has no impact if a sync is already in progress, but the endpoint will
+        return a 400 with a corresponding error code.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          name: integration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: Trigger a manual sync on an integration. This is only allowed on
+            integrations that have `allow_manual_syncs` set to `true`. this
+            request has no impact if a sync is already in progress, but the
+            endpoint will return a 400 with a corresponding error code.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      success:
+                        type: boolean
+                    required:
+                      - success
+                required:
+                  - result
+        "400":
+          description: invalid input
+  /v1/amenities/units/{id}:
+    post:
+      tags:
+        - amenities
+      summary: Create Amenities | Units
+      description: Create a unit amenity for any integration. This is a convenience
+        endpoint that acts as a generic proxy for all amenity creation
+        endpoints.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amenity:
+                  type: string
+                  description: The amenity name
+                custom_data:
+                  type: object
+                  properties: {}
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
+                integration_id:
+                  type: string
+                vendor:
+                  type: string
+                  enum:
+                    - BUILDIUM
+                    - ENTRATA
+                    - PROPERTYWARE
+                    - REALPAGE
+                    - RENTMANAGER
+                    - RENTVINE
+                    - REALPAGE_RPX
+                    - MRI
+                    - RESMAN
+              required:
+                - amenity
+                - integration_id
+                - vendor
+      responses:
+        "200":
+          description: Create a unit amenity for any integration. This is a convenience
+            endpoint that acts as a generic proxy for all amenity creation
+            endpoints.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+    put:
+      tags:
+        - amenities
+      summary: Update amenities for unit
+      description: Update unit amenities for any integration. This is a convenience
+        endpoint that acts as a generic proxy for all amenity creation
+        endpoints.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                features:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - CableReady
+                      - Microwave
+                      - HardwoodFloors
+                      - HighSpeedInternet
+                      - AirConditioning
+                      - Refrigerator
+                      - Dishwasher
+                      - WalkinClosets
+                      - BalconyOrDeckOrPatio
+                      - GarageParking
+                      - Carport
+                      - FencedYard
+                      - LaundryRoomOrHookups
+                      - Fireplace
+                      - CableReadyCommercial
+                      - HighSpeedInternetCommercial
+                      - AirConditioningCommercial
+                      - Heating
+                      - OvenOrRange
+                      - HeatElectric
+                      - HeatGas
+                      - HeatOil
+                      - PetsAllowed
+                      - Balcony
+                      - PrivateBalcony
+                      - PrivatePatio
+                      - Dryer
+                      - Heat
+                      - WD_Hookup
+                      - Washer
+                      - AdditionalStorage
+                      - Alarm
+                      - Carpet
+                      - CeilingFan
+                      - ControlledAccess
+                      - Courtyard
+                      - Disposal
+                      - DoubleSinkVanity
+                      - FramedMirrors
+                      - Furnished
+                      - Handrails
+                      - IndividualClimateControl
+                      - IslandKitchen
+                      - LinenCloset
+                      - Pantry
+                      - Satellite
+                      - Skylight
+                      - TileFlooring
+                      - VaultedCeiling
+                      - View
+                      - VinylFlooring
+                      - WheelChair
+                      - WindowCoverings
+                  description: A list of unit amenities. Any existing amenities associated with
+                    the unit that are not submitted in the request will be
+                    removed from the unit
+      responses:
+        "200":
+          description: Update unit amenities for any integration. This is a convenience
+            endpoint that acts as a generic proxy for all amenity creation
+            endpoints.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+  /v1/amenities/properties/{id}:
+    post:
+      tags:
+        - amenities
+      summary: Create amenity for property
+      description: Create a property amenity for any integration. This is a
+        convenience endpoint that acts as a generic proxy for all amenity
+        creation endpoints.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amenity:
+                  type: string
+                  description: The amenity name
+                custom_data:
+                  type: object
+                  properties: {}
+                  description: "Deprecated: Field is no longer applicable"
+                  deprecated: true
+                integration_id:
+                  type: string
+                vendor:
+                  type: string
+                  enum:
+                    - BUILDIUM
+                    - ENTRATA
+                    - PROPERTYWARE
+                    - REALPAGE
+                    - RENTMANAGER
+                    - RENTVINE
+                    - REALPAGE_RPX
+                    - MRI
+                    - RESMAN
+              required:
+                - amenity
+                - integration_id
+                - vendor
+      responses:
+        "200":
+          description: Create a property amenity for any integration. This is a
+            convenience endpoint that acts as a generic proxy for all amenity
+            creation endpoints.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+    put:
+      tags:
+        - amenities
+      summary: Update amenities for property
+      description: Update property amenities for any integration. This is a
+        convenience endpoint that acts as a generic proxy for all amenity
+        creation endpoints.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                features:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - LaundryRoom
+                      - WheelchairAccess
+                      - DoorAttendant
+                      - Elevator
+                      - Parking
+                      - StorageUnits
+                      - Pool
+                      - FitnessCenter
+                      - TennisCourt
+                      - ClubHouse
+                      - Power
+                      - ParkingCommercial
+                      - SprinklerSystem
+                      - DockHighDoorsOrLoadingAvailable
+                      - Availability24Hours
+                      - AccentWalls
+                      - BasketballCourt
+                      - Bilingual
+                      - BoatDocks
+                      - BusinessCenter
+                      - CarWashArea
+                      - ChildCare
+                      - ClubDiscount
+                      - ConferenceRoom
+                      - Concierge
+                      - FreeWeights
+                      - FurnishedAvailable
+                      - GamingStations
+                      - Garage
+                      - Gate
+                      - GroceryService
+                      - GroupExercise
+                      - GuestRoom
+                      - Housekeeping
+                      - HouseSitting
+                      - JoggingWalkingTrails
+                      - LakeFront
+                      - LakeAccess
+                      - Library
+                      - MealService
+                      - MediaRoom
+                      - MultiUseRoom
+                      - NightPatrol
+                      - OnSiteMaintenance
+                      - OnSiteManagement
+                      - PackageReceiving
+                      - PerDiemAccepted
+                      - PlayGround
+                      - Racquetball
+                      - RecRoom
+                      - Recycling
+                      - Sauna
+                      - ShortTermLease
+                      - SmokeFree
+                      - Spa
+                      - Sundeck
+                      - Transportation
+                      - TVLounge
+                      - ValetTrash
+                      - Vintage
+                      - VolleyballCourt
+                      - WirelessInternet
+                      - HighSpeedInternet
+                  description: A list of overall property amenities. Any previously saved values
+                    that are not submitted in the update request will be deleted
+                included_in_rent:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - Gas
+                      - Electric
+                      - Trash
+                      - Water
+                      - HotWater
+                      - Telephone
+                      - Heat
+                      - Cable
+                      - AirCon
+                      - Satellite
+                      - Sewer
+                      - BroadbandInternet
+                  description: A list of amenities that are included in rent. Any previously saved
+                    values that are not submitted in the update request will be
+                    deleted
+      responses:
+        "200":
+          description: Update property amenities for any integration. This is a
+            convenience endpoint that acts as a generic proxy for all amenity
+            creation endpoints.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+  /v1/events/applicants:
+    post:
+      tags:
+        - events
+      summary: Create event for an applicant
+      description: Create an applicant event for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                applicant_id:
+                  type: string
+                  description: The Propexo unique identifier for the applicant
+                event_type:
+                  type: string
+                  enum:
+                    - Note
+                  default: Note
+                  description: The type of event
+                notes:
+                  type: string
+                  maxLength: 256
+                  description: Notes associated with the event
+                application_id:
+                  type: string
+                  description: The Propexo unique identifier for the application
+                event_type_id:
+                  type: string
+                  description: The Propexo unique identifier for the event type
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit. Only some PMS events
+                    use this, including "Show" and "Appointment"
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                reasons_for_event:
+                  type: string
+                  description: The reasons for the event
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                time_from:
+                  type: string
+                time_to:
+                  type: string
+                title:
+                  type: string
+                  description: The title associated with the event
+                event_name:
+                  type: string
+                  enum:
+                    - Other
+                    - WalkIn
+                    - Chat
+                    - Email
+                    - Text
+                    - Webservice
+                    - Appointment
+                    - Show
+                    - Application
+                    - SelfGuidedTour
+                    - Application
+                  description: The name or type of event
+                agent_name:
+                  type: string
+                  description: The name of the leasing agent associated with the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an applicant event for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+  /v1/events/leads:
+    post:
+      tags:
+        - events
+      summary: Create event for a lead
+      description: Create a lead event for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                lead_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead
+                event_type_id:
+                  type: string
+                  description: The Propexo unique identifier for the event type
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit. Only some PMS events
+                    use this, including "Show" and "Appointment"
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                reasons_for_event:
+                  type: string
+                  description: The reasons for the event
+                notes:
+                  type: string
+                  maxLength: 256
+                  description: Notes associated with the event
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                time_from:
+                  type: string
+                time_to:
+                  type: string
+                title:
+                  type: string
+                  description: The title associated with the event
+                event_name:
+                  type: string
+                  enum:
+                    - Other
+                    - WalkIn
+                    - Chat
+                    - Email
+                    - Text
+                    - Webservice
+                    - Appointment
+                    - Show
+                    - Application
+                    - SelfGuidedTour
+                    - Application
+                  description: The name or type of event
+                status:
+                  type: string
+                  enum:
+                    - LEASED
+                    - LOST
+                    - UNQUALIFIED
+                    - ACTIVE
+                    - FUTURE
+                  description: The status associated with the event
+                agent_name:
+                  type: string
+                  description: The name of the leasing agent associated with the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a lead event for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+  /v1/events/residents:
+    post:
+      tags:
+        - events
+      summary: Create event for a resident
+      description: Create a resident event for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
+                event_type:
+                  type: string
+                  enum:
+                    - Note
+                  default: Note
+                  description: The type of event
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                event_type_id:
+                  type: string
+                  description: The Propexo unique identifier for the event type
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                reasons_for_event:
+                  type: string
+                  description: The reasons for the event
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                time_from:
+                  type: string
+                time_to:
+                  type: string
+                title:
+                  type: string
+                  description: The title associated with the event
+                event_name:
+                  type: string
+                  description: The name or type of event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a resident event for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/webhooks/{webhook_id}/triggers:
@@ -24918,45 +24857,106 @@ paths:
                   - result
         "400":
           description: invalid input
-  /v1/webhooks/triggers/{webhook_trigger_id}:
-    delete:
+  /v1/admin/integrations/{integration_id}/properties/{property_configuration_id}:
+    put:
       tags:
-        - webhooks
-      summary: Delete a webhook trigger
-      description: Delete a webhook trigger
+        - admin
+      summary: Update a property configuration
+      description: Update a property configuration
       security:
         - bearerAuth: []
       parameters:
         - schema:
             type: string
-            description: The ID of the webhook to delete
+            description: The Propexo unique identifier for the integration
           required: true
-          name: webhook_trigger_id
+          name: integration_id
+          in: path
+        - schema:
+            type: string
+            description: The ID of the property configuration record.
+          required: true
+          name: property_configuration_id
           in: path
       requestBody:
         content:
           application/json:
             schema:
               type: object
-              properties: {}
+              properties:
+                order-by:
+                  type: string
+                  default: created_at:desc
+                  description: "Order the results by a field. Optionally include asc or desc
+                    preceded by a colon (default is asc). Example:
+                    ?order-by=updated_at:desc"
+                offset:
+                  type:
+                    - integer
+                    - "null"
+                  minimum: 0
+                  default: 0
+                  description: Can be used for paginating results
+                limit:
+                  type:
+                    - integer
+                    - "null"
+                  minimum: 0
+                  maximum: 250
+                  default: 100
+                  description: A number between 1 and 250 to determine the number of results to
+                    return in a single query
+                enabled:
+                  type: boolean
+                  description: Whether or not we should be syncing data for this property on this
+                    integration.
+                trigger_integration_resync:
+                  type: boolean
+                  default: false
+                  description: Triggers a resync of the integration to ingest new property data.
+                    This is only allowed in sandbox and at least five minutes
+                    after the most recent sync has completed for this
+                    integration.
+              required:
+                - offset
+                - limit
+                - enabled
       responses:
         "200":
-          description: Delete a webhook trigger
+          description: Update a property configuration
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  result:
+                  results:
                     type: object
                     properties:
                       id:
                         type: string
-                        description: The ID of the webhook trigger that was deleted
+                        description: ID
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                      enabled:
+                        type: boolean
+                        description: Whether the property is enabled and will have data ingested
+                      additional_message:
+                        type: string
                     required:
                       - id
+                      - created_at
+                      - integration_id
+                      - property_id
+                      - enabled
                 required:
-                  - result
+                  - results
         "400":
           description: invalid input
 webhooks:
