@@ -9000,1457 +9000,6 @@ paths:
                   - results
         "400":
           description: invalid input
-  /v1/units/{id}:
-    put:
-      tags:
-        - units
-      summary: Update unit
-      description: Update a unit for a property.
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                  description: The Propexo unique identifier for the integration
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
-                category:
-                  type: string
-                  enum:
-                    - Residential
-                    - Commercial
-                  description: The category of the unit.
-                type:
-                  type: string
-                  enum:
-                    - Apartment
-                    - House
-                  description: The type of the unit.
-                name:
-                  type: string
-                  description: 'The name of the unit. Example: "Unit 3".'
-                abbreviation:
-                  type: string
-                  description: 'The abbreviation of the unit. Example: "UNIT3"'
-                address_1:
-                  type: string
-                  description: The first address line of the unit.
-                address_2:
-                  type: string
-                  description: The second address line of the unit.
-                city:
-                  type: string
-                  description: The city of the unit.
-                state:
-                  type: string
-                  description: The state of the unit.
-                zip:
-                  type: string
-                  description: The zip code of the unit.
-                country:
-                  type: string
-                  description: The country of the unit.
-                notes:
-                  type: string
-                  description: Notes about the unit.
-                bathrooms:
-                  type:
-                    - string
-                    - "null"
-                  description: The number of bathrooms in the unit.
-                bedrooms:
-                  type:
-                    - string
-                    - "null"
-                  description: The number of bedrooms in the unit.
-                rent_amount_market_in_cents:
-                  type: number
-                  description: The market rent cost of the unit, in cents.
-                square_feet:
-                  type: number
-                  description: The size of the unit in square feet.
-      responses:
-        "200":
-          description: Update a unit for a property.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
-    get:
-      tags:
-        - units
-      summary: Get a unit by ID
-      description: Get a unit by ID
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Get a unit by ID
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The Propexo unique identifier for the unit
-                      created_at:
-                        type: string
-                        description: The date record first entered Propexo
-                      updated_at:
-                        type: string
-                        description: The date record was last updated in Propexo
-                      last_seen:
-                        type:
-                          - string
-                          - "null"
-                        description: The date the record was last seen from the PMS
-                      x_id:
-                        type: string
-                        description: The external ID from the integration vendor
-                      x_property_id:
-                        type: string
-                        description: The external ID of the property from the integration vendor
-                      bathrooms:
-                        type:
-                          - string
-                          - "null"
-                        description: The number of bathrooms associated with the unit
-                      bedrooms:
-                        type:
-                          - string
-                          - "null"
-                        description: The number of bedrooms associated with the unit
-                      building_name:
-                        type:
-                          - string
-                          - "null"
-                        description: The building name associated with the unit
-                      building_number:
-                        type:
-                          - string
-                          - "null"
-                        description: The building number associated with the unit
-                      city:
-                        type:
-                          - string
-                          - "null"
-                        description: The city associated with the unit
-                      country:
-                        type:
-                          - string
-                          - "null"
-                        description: The country associated with the unit
-                      custom_data:
-                        type:
-                          - object
-                          - "null"
-                        properties: {}
-                        description: Custom data
-                      floor_plan_code:
-                        type:
-                          - string
-                          - "null"
-                        description: The external ID of the floor plan associated with the unit
-                      floor_plan_name:
-                        type:
-                          - string
-                          - "null"
-                        description: The floor plan name associated with the unit
-                      floor:
-                        type:
-                          - string
-                          - "null"
-                        description: The floor number/name associated with the unit
-                      is_available:
-                        type:
-                          - boolean
-                          - "null"
-                        description: Whether the unit is available
-                      is_furnished:
-                        type:
-                          - boolean
-                          - "null"
-                        description: Whether the unit is furnished
-                      is_listed:
-                        type:
-                          - boolean
-                          - "null"
-                        description: "DEPRECATED: Use listings endpoints."
-                        deprecated: true
-                      is_vacant:
-                        type:
-                          - boolean
-                          - "null"
-                        description: Whether the unit is vacant
-                      number:
-                        type:
-                          - string
-                          - "null"
-                        description: The unit number
-                      rent_amount_market_in_cents:
-                        type:
-                          - number
-                          - "null"
-                        description: The market rent amount in cents for the unit
-                      rent_amount_max_in_cents:
-                        type:
-                          - number
-                          - "null"
-                        description: The maximum rent amount in cents
-                      rent_amount_min_in_cents:
-                        type:
-                          - number
-                          - "null"
-                        description: The minimum rent amount in cents
-                      square_feet:
-                        type:
-                          - integer
-                          - "null"
-                        minimum: 0
-                        description: The square footage of the unit
-                      state:
-                        type:
-                          - string
-                          - "null"
-                        description: The state associated with the unit
-                      street_address_1:
-                        type:
-                          - string
-                          - "null"
-                        description: "Deprecated: Use address_1"
-                        deprecated: true
-                      street_address_2:
-                        type:
-                          - string
-                          - "null"
-                        description: "Deprecated: Use address_2"
-                        deprecated: true
-                      address_1:
-                        type:
-                          - string
-                          - "null"
-                        description: The first address line associated with the unit
-                      address_2:
-                        type:
-                          - string
-                          - "null"
-                        description: The second address line associated with the unit
-                      zip:
-                        type:
-                          - string
-                          - "null"
-                        description: The zip code associated with the unit
-                      integration_id:
-                        type: string
-                        description: The Propexo unique identifier for the integration
-                      integration_vendor:
-                        type: string
-                        description: The property management system of record
-                      property_id:
-                        type: string
-                        description: The Propexo unique identifier for the property
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - last_seen
-                      - x_id
-                      - x_property_id
-                      - bathrooms
-                      - bedrooms
-                      - building_name
-                      - building_number
-                      - city
-                      - country
-                      - custom_data
-                      - floor_plan_code
-                      - floor_plan_name
-                      - floor
-                      - is_available
-                      - is_furnished
-                      - is_listed
-                      - is_vacant
-                      - number
-                      - rent_amount_market_in_cents
-                      - rent_amount_max_in_cents
-                      - rent_amount_min_in_cents
-                      - square_feet
-                      - state
-                      - street_address_1
-                      - street_address_2
-                      - address_1
-                      - address_2
-                      - zip
-                      - integration_id
-                      - integration_vendor
-                      - property_id
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/units:
-    post:
-      tags:
-        - units
-      summary: Create unit
-      description: Create a unit for a property.
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                  description: The Propexo unique identifier for the integration
-                property_id:
-                  type: string
-                lease_period_id:
-                  type: string
-                  description: The Propexo unique identifier for the lease period
-                bathrooms:
-                  type:
-                    - string
-                    - "null"
-                  description: The number of bathrooms in the unit.
-                bedrooms:
-                  type:
-                    - string
-                    - "null"
-                  description: The number of bedrooms in the unit.
-                city:
-                  type: string
-                  description: The city of the unit.
-                country:
-                  type: string
-                  description: The country of the unit.
-                date_available:
-                  type: string
-                  format: date-time
-                  description: The date that the unit becomes available
-                is_furnished:
-                  type: boolean
-                  description: Whether the unit is furnished
-                number:
-                  type: string
-                  description: The unit number
-                square_feet:
-                  type: number
-                  description: The size of the unit in square feet.
-                state:
-                  type: string
-                  description: The state of the unit.
-                street_address_1:
-                  type: string
-                  description: The first address line associated with the unit
-                street_address_2:
-                  type: string
-                  description: The second address line associated with the unit
-                zip:
-                  type: string
-                  description: The zip code of the unit.
-                floor_plan_code:
-                  type: string
-                  description: The external ID of the floor plan
-                unit_type_id:
-                  type: string
-                  description: The external ID of the unit type
-                category:
-                  type: string
-                  enum:
-                    - Residential
-                    - Commercial
-                  description: The category of the unit.
-                type:
-                  type: string
-                  enum:
-                    - Apartment
-                    - House
-                  description: The type of the unit.
-                name:
-                  type: string
-                  description: 'The name of the unit. Example: "Unit 3".'
-                abbreviation:
-                  type: string
-                  description: 'The abbreviation of the unit. Example: "UNIT3"'
-                address_1:
-                  type: string
-                  description: The first address line of the unit.
-                address_2:
-                  type: string
-                  description: The second address line of the unit.
-                notes:
-                  type: string
-                  description: Notes about the unit.
-                rent_amount_market_in_cents:
-                  type: number
-                  description: The market rent cost of the unit, in cents.
-                intgration_id:
-                  type: string
-              required:
-                - property_id
-                - intgration_id
-      responses:
-        "200":
-          description: Create a unit for a property.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-        "400":
-          description: invalid input
-    get:
-      tags:
-        - units
-      summary: Get all units
-      description: Get all units
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-        - schema:
-            type: string
-            description: The external unit id
-          required: false
-          name: x_id
-          in: query
-        - schema:
-            type: string
-            description: "Deprecated: Use the Propexo property_id instead"
-            deprecated: true
-          required: false
-          name: x_property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
-          required: false
-          name: location_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo property id
-          required: false
-          name: property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo integration id
-          required: false
-          name: integration_id
-          in: query
-        - schema:
-            type: string
-            enum:
-              - BUILDIUM
-              - ENTRATA
-              - PROPERTYWARE
-              - REALPAGE
-              - RENTMANAGER
-              - RENTVINE
-              - REALPAGE_RPX
-              - MRI
-              - RESMAN
-            description: The integration vendor for the unit.
-          required: false
-          name: integration_vendor
-          in: query
-        - schema:
-            type: string
-            description: The unit number of the service request. When using this, the
-              Propexo `property_id` filter must be added as well.
-          required: false
-          name: unit_number
-          in: query
-      responses:
-        "200":
-          description: Get all units
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          description: The Propexo unique identifier for the unit
-                        created_at:
-                          type: string
-                          description: The date record first entered Propexo
-                        updated_at:
-                          type: string
-                          description: The date record was last updated in Propexo
-                        last_seen:
-                          type:
-                            - string
-                            - "null"
-                          description: The date the record was last seen from the PMS
-                        x_id:
-                          type: string
-                          description: The external ID from the integration vendor
-                        x_property_id:
-                          type: string
-                          description: The external ID of the property from the integration vendor
-                        bathrooms:
-                          type:
-                            - string
-                            - "null"
-                          description: The number of bathrooms associated with the unit
-                        bedrooms:
-                          type:
-                            - string
-                            - "null"
-                          description: The number of bedrooms associated with the unit
-                        building_name:
-                          type:
-                            - string
-                            - "null"
-                          description: The building name associated with the unit
-                        building_number:
-                          type:
-                            - string
-                            - "null"
-                          description: The building number associated with the unit
-                        city:
-                          type:
-                            - string
-                            - "null"
-                          description: The city associated with the unit
-                        country:
-                          type:
-                            - string
-                            - "null"
-                          description: The country associated with the unit
-                        custom_data:
-                          type:
-                            - object
-                            - "null"
-                          properties: {}
-                          description: Custom data
-                        floor_plan_code:
-                          type:
-                            - string
-                            - "null"
-                          description: The external ID of the floor plan associated with the unit
-                        floor_plan_name:
-                          type:
-                            - string
-                            - "null"
-                          description: The floor plan name associated with the unit
-                        floor:
-                          type:
-                            - string
-                            - "null"
-                          description: The floor number/name associated with the unit
-                        is_available:
-                          type:
-                            - boolean
-                            - "null"
-                          description: Whether the unit is available
-                        is_furnished:
-                          type:
-                            - boolean
-                            - "null"
-                          description: Whether the unit is furnished
-                        is_listed:
-                          type:
-                            - boolean
-                            - "null"
-                          description: "DEPRECATED: Use listings endpoints."
-                          deprecated: true
-                        is_vacant:
-                          type:
-                            - boolean
-                            - "null"
-                          description: Whether the unit is vacant
-                        number:
-                          type:
-                            - string
-                            - "null"
-                          description: The unit number
-                        rent_amount_market_in_cents:
-                          type:
-                            - number
-                            - "null"
-                          description: The market rent amount in cents for the unit
-                        rent_amount_max_in_cents:
-                          type:
-                            - number
-                            - "null"
-                          description: The maximum rent amount in cents
-                        rent_amount_min_in_cents:
-                          type:
-                            - number
-                            - "null"
-                          description: The minimum rent amount in cents
-                        square_feet:
-                          type:
-                            - integer
-                            - "null"
-                          minimum: 0
-                          description: The square footage of the unit
-                        state:
-                          type:
-                            - string
-                            - "null"
-                          description: The state associated with the unit
-                        street_address_1:
-                          type:
-                            - string
-                            - "null"
-                          description: "Deprecated: Use address_1"
-                          deprecated: true
-                        street_address_2:
-                          type:
-                            - string
-                            - "null"
-                          description: "Deprecated: Use address_2"
-                          deprecated: true
-                        address_1:
-                          type:
-                            - string
-                            - "null"
-                          description: The first address line associated with the unit
-                        address_2:
-                          type:
-                            - string
-                            - "null"
-                          description: The second address line associated with the unit
-                        zip:
-                          type:
-                            - string
-                            - "null"
-                          description: The zip code associated with the unit
-                        integration_id:
-                          type: string
-                          description: The Propexo unique identifier for the integration
-                        integration_vendor:
-                          type: string
-                          description: The property management system of record
-                        property_id:
-                          type: string
-                          description: The Propexo unique identifier for the property
-                      required:
-                        - id
-                        - created_at
-                        - updated_at
-                        - last_seen
-                        - x_id
-                        - x_property_id
-                        - bathrooms
-                        - bedrooms
-                        - building_name
-                        - building_number
-                        - city
-                        - country
-                        - custom_data
-                        - floor_plan_code
-                        - floor_plan_name
-                        - floor
-                        - is_available
-                        - is_furnished
-                        - is_listed
-                        - is_vacant
-                        - number
-                        - rent_amount_market_in_cents
-                        - rent_amount_max_in_cents
-                        - rent_amount_min_in_cents
-                        - square_feet
-                        - state
-                        - street_address_1
-                        - street_address_2
-                        - address_1
-                        - address_2
-                        - zip
-                        - integration_id
-                        - integration_vendor
-                        - property_id
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/floor-plans:
-    get:
-      tags:
-        - units
-      summary: Get all floor plans
-      description: Get all floor plans
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-        - schema:
-            type: string
-            description: The external ID from the integration vendor
-          required: false
-          name: x_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
-          required: false
-          name: location_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the property
-          required: false
-          name: property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: false
-          name: integration_id
-          in: query
-        - schema:
-            type: string
-            enum:
-              - BUILDIUM
-              - ENTRATA
-              - PROPERTYWARE
-              - REALPAGE
-              - RENTMANAGER
-              - RENTVINE
-              - REALPAGE_RPX
-              - MRI
-              - RESMAN
-            description: The property management system of record
-          required: false
-          name: integration_vendor
-          in: query
-      responses:
-        "200":
-          description: Get all floor plans
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          description: The Propexo unique identifier for the floor plan
-                        created_at:
-                          type: string
-                          description: The date record first entered Propexo
-                        updated_at:
-                          type: string
-                          description: The date record was last updated in Propexo
-                        last_seen:
-                          type:
-                            - string
-                            - "null"
-                          description: The date the record was last seen from the PMS
-                        x_id:
-                          type: string
-                          description: The external ID from the integration vendor
-                        x_property_id:
-                          type: string
-                          description: The external ID of the property from the integration vendor
-                        x_location_id:
-                          type:
-                            - string
-                            - "null"
-                          description: The external ID of the location from the integration vendor
-                        name:
-                          type: string
-                          description: The name associated with the floor plan
-                        integration_id:
-                          type: string
-                          description: The Propexo unique identifier for the integration
-                        integration_vendor:
-                          type: string
-                          description: The property management system of record
-                        property_id:
-                          type: string
-                          description: The Propexo unique identifier for the property
-                      required:
-                        - id
-                        - created_at
-                        - updated_at
-                        - last_seen
-                        - x_id
-                        - x_property_id
-                        - x_location_id
-                        - name
-                        - integration_id
-                        - integration_vendor
-                        - property_id
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/floor-plans/{floor_plan_id}:
-    get:
-      tags:
-        - units
-      summary: Get floor plan by ID
-      description: Get floor plan by ID
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: floor_plan_id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Get floor plan by ID
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The Propexo unique identifier for the floor plan
-                      created_at:
-                        type: string
-                        description: The date record first entered Propexo
-                      updated_at:
-                        type: string
-                        description: The date record was last updated in Propexo
-                      last_seen:
-                        type:
-                          - string
-                          - "null"
-                        description: The date the record was last seen from the PMS
-                      x_id:
-                        type: string
-                        description: The external ID from the integration vendor
-                      x_property_id:
-                        type: string
-                        description: The external ID of the property from the integration vendor
-                      x_location_id:
-                        type:
-                          - string
-                          - "null"
-                        description: The external ID of the location from the integration vendor
-                      name:
-                        type: string
-                        description: The name associated with the floor plan
-                      integration_id:
-                        type: string
-                        description: The Propexo unique identifier for the integration
-                      integration_vendor:
-                        type: string
-                        description: The property management system of record
-                      property_id:
-                        type: string
-                        description: The Propexo unique identifier for the property
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - last_seen
-                      - x_id
-                      - x_property_id
-                      - x_location_id
-                      - name
-                      - integration_id
-                      - integration_vendor
-                      - property_id
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/unit-types:
-    get:
-      tags:
-        - units
-      summary: Get all unit types
-      description: Get all unit types
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-        - schema:
-            type: string
-            description: The external ID from the integration vendor
-          required: false
-          name: x_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
-          required: false
-          name: location_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the property
-          required: false
-          name: property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: false
-          name: integration_id
-          in: query
-        - schema:
-            type: string
-            enum:
-              - BUILDIUM
-              - ENTRATA
-              - PROPERTYWARE
-              - REALPAGE
-              - RENTMANAGER
-              - RENTVINE
-              - REALPAGE_RPX
-              - MRI
-              - RESMAN
-            description: The property management system of record
-          required: false
-          name: integration_vendor
-          in: query
-      responses:
-        "200":
-          description: Get all unit types
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          description: The Propexo unique identifier for the unit type
-                        created_at:
-                          type: string
-                          description: The date record first entered Propexo
-                        updated_at:
-                          type: string
-                          description: The date record was last updated in Propexo
-                        last_seen:
-                          type:
-                            - string
-                            - "null"
-                          description: The date the record was last seen from the PMS
-                        x_id:
-                          type: string
-                          description: The external ID from the integration vendor
-                        x_property_id:
-                          type: string
-                          description: The external ID of the property from the integration vendor
-                        x_location_id:
-                          type:
-                            - string
-                            - "null"
-                          description: The external ID of the location from the integration vendor
-                        name:
-                          type: string
-                          description: The name associated with the unit type
-                        integration_id:
-                          type: string
-                          description: The Propexo unique identifier for the integration
-                        integration_vendor:
-                          type: string
-                          description: The property management system of record
-                        property_id:
-                          type: string
-                          description: The Propexo unique identifier for the property
-                      required:
-                        - id
-                        - created_at
-                        - updated_at
-                        - last_seen
-                        - x_id
-                        - x_property_id
-                        - x_location_id
-                        - name
-                        - integration_id
-                        - integration_vendor
-                        - property_id
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
-  /v1/unit-types/{unit_type_id}:
-    get:
-      tags:
-        - units
-      summary: Get unit type by ID
-      description: Get unit type by ID
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          name: unit_type_id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Get unit type by ID
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  meta:
-                    type: object
-                    properties:
-                      offset:
-                        type: integer
-                        minimum: 0
-                      limit:
-                        type: integer
-                        minimum: 0
-                        maximum: 250
-                      orderBy:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                      hasMore:
-                        type:
-                          - boolean
-                          - "null"
-                      total:
-                        type: integer
-                        minimum: 0
-                    required:
-                      - orderBy
-                  results:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: The Propexo unique identifier for the unit type
-                      created_at:
-                        type: string
-                        description: The date record first entered Propexo
-                      updated_at:
-                        type: string
-                        description: The date record was last updated in Propexo
-                      last_seen:
-                        type:
-                          - string
-                          - "null"
-                        description: The date the record was last seen from the PMS
-                      x_id:
-                        type: string
-                        description: The external ID from the integration vendor
-                      x_property_id:
-                        type: string
-                        description: The external ID of the property from the integration vendor
-                      x_location_id:
-                        type:
-                          - string
-                          - "null"
-                        description: The external ID of the location from the integration vendor
-                      name:
-                        type: string
-                        description: The name associated with the unit type
-                      integration_id:
-                        type: string
-                        description: The Propexo unique identifier for the integration
-                      integration_vendor:
-                        type: string
-                        description: The property management system of record
-                      property_id:
-                        type: string
-                        description: The Propexo unique identifier for the property
-                    required:
-                      - id
-                      - created_at
-                      - updated_at
-                      - last_seen
-                      - x_id
-                      - x_property_id
-                      - x_location_id
-                      - name
-                      - integration_id
-                      - integration_vendor
-                      - property_id
-                required:
-                  - meta
-                  - results
-        "400":
-          description: invalid input
   /v1/employees:
     get:
       tags:
@@ -23020,6 +21569,1457 @@ paths:
                       - x_location_id
                       - name
                       - service_request_category_id
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/units/{id}:
+    put:
+      tags:
+        - units
+      summary: Update unit
+      description: Update a unit for a property.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                  description: The Propexo unique identifier for the integration
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                category:
+                  type: string
+                  enum:
+                    - Residential
+                    - Commercial
+                  description: The category of the unit.
+                type:
+                  type: string
+                  enum:
+                    - Apartment
+                    - House
+                  description: The type of the unit.
+                name:
+                  type: string
+                  description: 'The name of the unit. Example: "Unit 3".'
+                abbreviation:
+                  type: string
+                  description: 'The abbreviation of the unit. Example: "UNIT3"'
+                address_1:
+                  type: string
+                  description: The first address line of the unit.
+                address_2:
+                  type: string
+                  description: The second address line of the unit.
+                city:
+                  type: string
+                  description: The city of the unit.
+                state:
+                  type: string
+                  description: The state of the unit.
+                zip:
+                  type: string
+                  description: The zip code of the unit.
+                country:
+                  type: string
+                  description: The country of the unit.
+                notes:
+                  type: string
+                  description: Notes about the unit.
+                bathrooms:
+                  type:
+                    - string
+                    - "null"
+                  description: The number of bathrooms in the unit.
+                bedrooms:
+                  type:
+                    - string
+                    - "null"
+                  description: The number of bedrooms in the unit.
+                rent_amount_market_in_cents:
+                  type: number
+                  description: The market rent cost of the unit, in cents.
+                square_feet:
+                  type: number
+                  description: The size of the unit in square feet.
+      responses:
+        "200":
+          description: Update a unit for a property.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+    get:
+      tags:
+        - units
+      summary: Get a unit by ID
+      description: Get a unit by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get a unit by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the unit
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      bathrooms:
+                        type:
+                          - string
+                          - "null"
+                        description: The number of bathrooms associated with the unit
+                      bedrooms:
+                        type:
+                          - string
+                          - "null"
+                        description: The number of bedrooms associated with the unit
+                      building_name:
+                        type:
+                          - string
+                          - "null"
+                        description: The building name associated with the unit
+                      building_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The building number associated with the unit
+                      city:
+                        type:
+                          - string
+                          - "null"
+                        description: The city associated with the unit
+                      country:
+                        type:
+                          - string
+                          - "null"
+                        description: The country associated with the unit
+                      custom_data:
+                        type:
+                          - object
+                          - "null"
+                        properties: {}
+                        description: Custom data
+                      floor_plan_code:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the floor plan associated with the unit
+                      floor_plan_name:
+                        type:
+                          - string
+                          - "null"
+                        description: The floor plan name associated with the unit
+                      floor:
+                        type:
+                          - string
+                          - "null"
+                        description: The floor number/name associated with the unit
+                      is_available:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the unit is available
+                      is_furnished:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the unit is furnished
+                      is_listed:
+                        type:
+                          - boolean
+                          - "null"
+                        description: "DEPRECATED: Use listings endpoints."
+                        deprecated: true
+                      is_vacant:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the unit is vacant
+                      number:
+                        type:
+                          - string
+                          - "null"
+                        description: The unit number
+                      rent_amount_market_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The market rent amount in cents for the unit
+                      rent_amount_max_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The maximum rent amount in cents
+                      rent_amount_min_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The minimum rent amount in cents
+                      square_feet:
+                        type:
+                          - integer
+                          - "null"
+                        minimum: 0
+                        description: The square footage of the unit
+                      state:
+                        type:
+                          - string
+                          - "null"
+                        description: The state associated with the unit
+                      street_address_1:
+                        type:
+                          - string
+                          - "null"
+                        description: "Deprecated: Use address_1"
+                        deprecated: true
+                      street_address_2:
+                        type:
+                          - string
+                          - "null"
+                        description: "Deprecated: Use address_2"
+                        deprecated: true
+                      address_1:
+                        type:
+                          - string
+                          - "null"
+                        description: The first address line associated with the unit
+                      address_2:
+                        type:
+                          - string
+                          - "null"
+                        description: The second address line associated with the unit
+                      zip:
+                        type:
+                          - string
+                          - "null"
+                        description: The zip code associated with the unit
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - bathrooms
+                      - bedrooms
+                      - building_name
+                      - building_number
+                      - city
+                      - country
+                      - custom_data
+                      - floor_plan_code
+                      - floor_plan_name
+                      - floor
+                      - is_available
+                      - is_furnished
+                      - is_listed
+                      - is_vacant
+                      - number
+                      - rent_amount_market_in_cents
+                      - rent_amount_max_in_cents
+                      - rent_amount_min_in_cents
+                      - square_feet
+                      - state
+                      - street_address_1
+                      - street_address_2
+                      - address_1
+                      - address_2
+                      - zip
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/units:
+    post:
+      tags:
+        - units
+      summary: Create unit
+      description: Create a unit for a property.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                  description: The Propexo unique identifier for the integration
+                property_id:
+                  type: string
+                lease_period_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease period
+                bathrooms:
+                  type:
+                    - string
+                    - "null"
+                  description: The number of bathrooms in the unit.
+                bedrooms:
+                  type:
+                    - string
+                    - "null"
+                  description: The number of bedrooms in the unit.
+                city:
+                  type: string
+                  description: The city of the unit.
+                country:
+                  type: string
+                  description: The country of the unit.
+                date_available:
+                  type: string
+                  format: date-time
+                  description: The date that the unit becomes available
+                is_furnished:
+                  type: boolean
+                  description: Whether the unit is furnished
+                number:
+                  type: string
+                  description: The unit number
+                square_feet:
+                  type: number
+                  description: The size of the unit in square feet.
+                state:
+                  type: string
+                  description: The state of the unit.
+                street_address_1:
+                  type: string
+                  description: The first address line associated with the unit
+                street_address_2:
+                  type: string
+                  description: The second address line associated with the unit
+                zip:
+                  type: string
+                  description: The zip code of the unit.
+                floor_plan_code:
+                  type: string
+                  description: The external ID of the floor plan
+                unit_type_id:
+                  type: string
+                  description: The external ID of the unit type
+                category:
+                  type: string
+                  enum:
+                    - Residential
+                    - Commercial
+                  description: The category of the unit.
+                type:
+                  type: string
+                  enum:
+                    - Apartment
+                    - House
+                  description: The type of the unit.
+                name:
+                  type: string
+                  description: 'The name of the unit. Example: "Unit 3".'
+                abbreviation:
+                  type: string
+                  description: 'The abbreviation of the unit. Example: "UNIT3"'
+                address_1:
+                  type: string
+                  description: The first address line of the unit.
+                address_2:
+                  type: string
+                  description: The second address line of the unit.
+                notes:
+                  type: string
+                  description: Notes about the unit.
+                rent_amount_market_in_cents:
+                  type: number
+                  description: The market rent cost of the unit, in cents.
+                intgration_id:
+                  type: string
+              required:
+                - property_id
+                - intgration_id
+      responses:
+        "200":
+          description: Create a unit for a property.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+    get:
+      tags:
+        - units
+      summary: Get all units
+      description: Get all units
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external unit id
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: "Deprecated: Use the Propexo property_id instead"
+            deprecated: true
+          required: false
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo property id
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo integration id
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The integration vendor for the unit.
+          required: false
+          name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The unit number of the service request. When using this, the
+              Propexo `property_id` filter must be added as well.
+          required: false
+          name: unit_number
+          in: query
+      responses:
+        "200":
+          description: Get all units
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the unit
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        bathrooms:
+                          type:
+                            - string
+                            - "null"
+                          description: The number of bathrooms associated with the unit
+                        bedrooms:
+                          type:
+                            - string
+                            - "null"
+                          description: The number of bedrooms associated with the unit
+                        building_name:
+                          type:
+                            - string
+                            - "null"
+                          description: The building name associated with the unit
+                        building_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The building number associated with the unit
+                        city:
+                          type:
+                            - string
+                            - "null"
+                          description: The city associated with the unit
+                        country:
+                          type:
+                            - string
+                            - "null"
+                          description: The country associated with the unit
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        floor_plan_code:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the floor plan associated with the unit
+                        floor_plan_name:
+                          type:
+                            - string
+                            - "null"
+                          description: The floor plan name associated with the unit
+                        floor:
+                          type:
+                            - string
+                            - "null"
+                          description: The floor number/name associated with the unit
+                        is_available:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the unit is available
+                        is_furnished:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the unit is furnished
+                        is_listed:
+                          type:
+                            - boolean
+                            - "null"
+                          description: "DEPRECATED: Use listings endpoints."
+                          deprecated: true
+                        is_vacant:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the unit is vacant
+                        number:
+                          type:
+                            - string
+                            - "null"
+                          description: The unit number
+                        rent_amount_market_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The market rent amount in cents for the unit
+                        rent_amount_max_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The maximum rent amount in cents
+                        rent_amount_min_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The minimum rent amount in cents
+                        square_feet:
+                          type:
+                            - integer
+                            - "null"
+                          minimum: 0
+                          description: The square footage of the unit
+                        state:
+                          type:
+                            - string
+                            - "null"
+                          description: The state associated with the unit
+                        street_address_1:
+                          type:
+                            - string
+                            - "null"
+                          description: "Deprecated: Use address_1"
+                          deprecated: true
+                        street_address_2:
+                          type:
+                            - string
+                            - "null"
+                          description: "Deprecated: Use address_2"
+                          deprecated: true
+                        address_1:
+                          type:
+                            - string
+                            - "null"
+                          description: The first address line associated with the unit
+                        address_2:
+                          type:
+                            - string
+                            - "null"
+                          description: The second address line associated with the unit
+                        zip:
+                          type:
+                            - string
+                            - "null"
+                          description: The zip code associated with the unit
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - bathrooms
+                        - bedrooms
+                        - building_name
+                        - building_number
+                        - city
+                        - country
+                        - custom_data
+                        - floor_plan_code
+                        - floor_plan_name
+                        - floor
+                        - is_available
+                        - is_furnished
+                        - is_listed
+                        - is_vacant
+                        - number
+                        - rent_amount_market_in_cents
+                        - rent_amount_max_in_cents
+                        - rent_amount_min_in_cents
+                        - square_feet
+                        - state
+                        - street_address_1
+                        - street_address_2
+                        - address_1
+                        - address_2
+                        - zip
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/floor-plans:
+    get:
+      tags:
+        - units
+      summary: Get all floor plans
+      description: Get all floor plans
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all floor plans
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the floor plan
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        name:
+                          type: string
+                          description: The name associated with the floor plan
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - name
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/floor-plans/{floor_plan_id}:
+    get:
+      tags:
+        - units
+      summary: Get floor plan by ID
+      description: Get floor plan by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: floor_plan_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get floor plan by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the floor plan
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      name:
+                        type: string
+                        description: The name associated with the floor plan
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - name
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/unit-types:
+    get:
+      tags:
+        - units
+      summary: Get all unit types
+      description: Get all unit types
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all unit types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the unit type
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        name:
+                          type: string
+                          description: The name associated with the unit type
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - name
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: invalid input
+  /v1/unit-types/{unit_type_id}:
+    get:
+      tags:
+        - units
+      summary: Get unit type by ID
+      description: Get unit type by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: unit_type_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get unit type by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the unit type
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      name:
+                        type: string
+                        description: The name associated with the unit type
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - name
                       - integration_id
                       - integration_vendor
                       - property_id
