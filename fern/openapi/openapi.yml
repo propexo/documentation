@@ -4700,9 +4700,16 @@ paths:
                                   - "null"
                                 description: The raw status associated with the applicant
                               status_normalized:
-                                type:
-                                  - string
-                                  - "null"
+                                anyOf:
+                                  - type: string
+                                    enum:
+                                      - APPROVED
+                                      - DENIED
+                                      - CANCELED
+                                      - OTHER
+                                      - PENDING
+                                  - type: string
+                                  - type: "null"
                                 description: The normalized status associated with the applicant. Confirm these
                                   derived values before using them in
                                   production.
@@ -5334,9 +5341,16 @@ paths:
                                 - "null"
                               description: The raw status associated with the applicant
                             status_normalized:
-                              type:
-                                - string
-                                - "null"
+                              anyOf:
+                                - type: string
+                                  enum:
+                                    - APPROVED
+                                    - DENIED
+                                    - CANCELED
+                                    - OTHER
+                                    - PENDING
+                                - type: string
+                                - type: "null"
                               description: The normalized status associated with the applicant. Confirm these
                                 derived values before using them in production.
                           required:
@@ -25769,9 +25783,16 @@ webhooks:
                                           - "null"
                                         description: The raw status associated with the applicant
                                       status_normalized:
-                                        type:
-                                          - string
-                                          - "null"
+                                        anyOf:
+                                          - type: string
+                                            enum:
+                                              - APPROVED
+                                              - DENIED
+                                              - CANCELED
+                                              - OTHER
+                                              - PENDING
+                                          - type: string
+                                          - type: "null"
                                         description: The normalized status associated with the applicant. Confirm these
                                           derived values before using them in
                                           production.
@@ -26005,9 +26026,16 @@ webhooks:
                                     - "null"
                                   description: The raw status associated with the applicant
                                 status_normalized:
-                                  type:
-                                    - string
-                                    - "null"
+                                  anyOf:
+                                    - type: string
+                                      enum:
+                                        - APPROVED
+                                        - DENIED
+                                        - CANCELED
+                                        - OTHER
+                                        - PENDING
+                                    - type: string
+                                    - type: "null"
                                   description: The normalized status associated with the applicant. Confirm these
                                     derived values before using them in
                                     production.
@@ -28737,9 +28765,16 @@ webhooks:
                                               - "null"
                                             description: The raw status associated with the applicant
                                           status_normalized:
-                                            type:
-                                              - string
-                                              - "null"
+                                            anyOf:
+                                              - type: string
+                                                enum:
+                                                  - APPROVED
+                                                  - DENIED
+                                                  - CANCELED
+                                                  - OTHER
+                                                  - PENDING
+                                              - type: string
+                                              - type: "null"
                                             description: The normalized status associated with the applicant. Confirm these
                                               derived values before using them
                                               in production.
@@ -28973,9 +29008,16 @@ webhooks:
                                         - "null"
                                       description: The raw status associated with the applicant
                                     status_normalized:
-                                      type:
-                                        - string
-                                        - "null"
+                                      anyOf:
+                                        - type: string
+                                          enum:
+                                            - APPROVED
+                                            - DENIED
+                                            - CANCELED
+                                            - OTHER
+                                            - PENDING
+                                        - type: string
+                                        - type: "null"
                                       description: The normalized status associated with the applicant. Confirm these
                                         derived values before using them in
                                         production.
@@ -31587,9 +31629,16 @@ webhooks:
                                               - "null"
                                             description: The raw status associated with the applicant
                                           status_normalized:
-                                            type:
-                                              - string
-                                              - "null"
+                                            anyOf:
+                                              - type: string
+                                                enum:
+                                                  - APPROVED
+                                                  - DENIED
+                                                  - CANCELED
+                                                  - OTHER
+                                                  - PENDING
+                                              - type: string
+                                              - type: "null"
                                             description: The normalized status associated with the applicant. Confirm these
                                               derived values before using them
                                               in production.
@@ -31823,9 +31872,16 @@ webhooks:
                                         - "null"
                                       description: The raw status associated with the applicant
                                     status_normalized:
-                                      type:
-                                        - string
-                                        - "null"
+                                      anyOf:
+                                        - type: string
+                                          enum:
+                                            - APPROVED
+                                            - DENIED
+                                            - CANCELED
+                                            - OTHER
+                                            - PENDING
+                                        - type: string
+                                        - type: "null"
                                       description: The normalized status associated with the applicant. Confirm these
                                         derived values before using them in
                                         production.
