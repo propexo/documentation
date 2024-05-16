@@ -22250,6 +22250,21 @@ paths:
                             - string
                             - "null"
                           description: The zip code associated with the unit
+                        pets_allowed:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether or not pets are allowed
+                        dogs_allowed:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether or not dogs are allowed
+                        cats_allowed:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether or not cats are allowed
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -22291,6 +22306,9 @@ paths:
                         - address_1
                         - address_2
                         - zip
+                        - pets_allowed
+                        - dogs_allowed
+                        - cats_allowed
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -22654,6 +22672,21 @@ paths:
                           - string
                           - "null"
                         description: The zip code associated with the unit
+                      pets_allowed:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether or not pets are allowed
+                      dogs_allowed:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether or not dogs are allowed
+                      cats_allowed:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether or not cats are allowed
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -22695,6 +22728,9 @@ paths:
                       - address_1
                       - address_2
                       - zip
+                      - pets_allowed
+                      - dogs_allowed
+                      - cats_allowed
                       - integration_id
                       - integration_vendor
                       - property_id
@@ -27811,6 +27847,21 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The zip code associated with the unit
+                                pets_allowed:
+                                  type:
+                                    - boolean
+                                    - "null"
+                                  description: Whether or not pets are allowed
+                                dogs_allowed:
+                                  type:
+                                    - boolean
+                                    - "null"
+                                  description: Whether or not dogs are allowed
+                                cats_allowed:
+                                  type:
+                                    - boolean
+                                    - "null"
+                                  description: Whether or not cats are allowed
                                 integration_id:
                                   type: string
                                   description: The Propexo unique identifier for the integration
@@ -30765,6 +30816,21 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the unit
+                                    pets_allowed:
+                                      type:
+                                        - boolean
+                                        - "null"
+                                      description: Whether or not pets are allowed
+                                    dogs_allowed:
+                                      type:
+                                        - boolean
+                                        - "null"
+                                      description: Whether or not dogs are allowed
+                                    cats_allowed:
+                                      type:
+                                        - boolean
+                                        - "null"
+                                      description: Whether or not cats are allowed
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
@@ -33600,6 +33666,21 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the unit
+                                    pets_allowed:
+                                      type:
+                                        - boolean
+                                        - "null"
+                                      description: Whether or not pets are allowed
+                                    dogs_allowed:
+                                      type:
+                                        - boolean
+                                        - "null"
+                                      description: Whether or not dogs are allowed
+                                    cats_allowed:
+                                      type:
+                                        - boolean
+                                        - "null"
+                                      description: Whether or not cats are allowed
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
