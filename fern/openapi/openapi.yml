@@ -16550,7 +16550,7 @@ paths:
                       - total_cost_in_cents
                       - cost_code
                       - category_code
-                  default: []
+                  minItems: 1
                   description: A list of the items associated with the purchase orders
                 number:
                   type: string
@@ -16574,9 +16574,6 @@ paths:
                   type: string
                   description: The display type of the purchase order. You'll have to request this
                     data from your customer
-                is_closed:
-                  type: boolean
-                  description: Whether the purchase order is closed or not
                 shipping_address_1:
                   type: string
                   description: The first address line associated with the shipping address for the
@@ -16590,9 +16587,82 @@ paths:
                   description: The city associated with the shipping address for the purchase
                     order
                 shipping_state:
-                  type: string
+                  anyOf:
+                    - type: string
+                      enum:
+                        - AA
+                        - AE
+                        - AK
+                        - AL
+                        - AP
+                        - AR
+                        - AS
+                        - AZ
+                        - CA
+                        - CO
+                        - CT
+                        - DC
+                        - DE
+                        - FL
+                        - FM
+                        - GA
+                        - GU
+                        - HI
+                        - IA
+                        - ID
+                        - IN
+                        - KS
+                        - KY
+                        - LA
+                        - MA
+                        - MD
+                        - ME
+                        - MH
+                        - MI
+                        - MN
+                        - MO
+                        - MP
+                        - MS
+                        - MT
+                        - NC
+                        - NE
+                        - NL
+                        - NJ
+                        - NM
+                        - NV
+                        - NY
+                        - OH
+                        - OK
+                        - OR
+                        - PA
+                        - PR
+                        - SD
+                        - TN
+                        - TX
+                        - UT
+                        - VA
+                        - VI
+                        - VT
+                        - WA
+                        - WI
+                        - WV
+                        - WY
+                        - AB
+                        - BC
+                        - MB
+                        - NB
+                        - NL
+                        - NT
+                        - NS
+                        - NU
+                        - ON
+                        - PE
+                        - QC
+                        - SK
+                        - YT
+                    - type: string
                   description: The state associated with the shipping address for the purchase
-                    order
+                    order. This must be a state abbreviation
                 shipping_zip:
                   type: string
                   description: The zip code associated with the shipping address for the purchase
@@ -16613,9 +16683,82 @@ paths:
                   type: string
                   description: The city associated with the billing address for the purchase order
                 billing_state:
-                  type: string
+                  anyOf:
+                    - type: string
+                      enum:
+                        - AA
+                        - AE
+                        - AK
+                        - AL
+                        - AP
+                        - AR
+                        - AS
+                        - AZ
+                        - CA
+                        - CO
+                        - CT
+                        - DC
+                        - DE
+                        - FL
+                        - FM
+                        - GA
+                        - GU
+                        - HI
+                        - IA
+                        - ID
+                        - IN
+                        - KS
+                        - KY
+                        - LA
+                        - MA
+                        - MD
+                        - ME
+                        - MH
+                        - MI
+                        - MN
+                        - MO
+                        - MP
+                        - MS
+                        - MT
+                        - NC
+                        - NE
+                        - NL
+                        - NJ
+                        - NM
+                        - NV
+                        - NY
+                        - OH
+                        - OK
+                        - OR
+                        - PA
+                        - PR
+                        - SD
+                        - TN
+                        - TX
+                        - UT
+                        - VA
+                        - VI
+                        - VT
+                        - WA
+                        - WI
+                        - WV
+                        - WY
+                        - AB
+                        - BC
+                        - MB
+                        - NB
+                        - NL
+                        - NT
+                        - NS
+                        - NU
+                        - ON
+                        - PE
+                        - QC
+                        - SK
+                        - YT
+                    - type: string
                   description: The state associated with the billing address for the purchase
-                    order
+                    order. This must be a state abbreviation
                 billing_zip:
                   type: string
                   description: The zip code associated with the billing address for the purchase
@@ -17006,7 +17149,80 @@ paths:
                   description: The city associated with the shipping address for the purchase
                     order
                 shipping_state:
-                  type: string
+                  anyOf:
+                    - type: string
+                      enum:
+                        - AA
+                        - AE
+                        - AK
+                        - AL
+                        - AP
+                        - AR
+                        - AS
+                        - AZ
+                        - CA
+                        - CO
+                        - CT
+                        - DC
+                        - DE
+                        - FL
+                        - FM
+                        - GA
+                        - GU
+                        - HI
+                        - IA
+                        - ID
+                        - IN
+                        - KS
+                        - KY
+                        - LA
+                        - MA
+                        - MD
+                        - ME
+                        - MH
+                        - MI
+                        - MN
+                        - MO
+                        - MP
+                        - MS
+                        - MT
+                        - NC
+                        - NE
+                        - NL
+                        - NJ
+                        - NM
+                        - NV
+                        - NY
+                        - OH
+                        - OK
+                        - OR
+                        - PA
+                        - PR
+                        - SD
+                        - TN
+                        - TX
+                        - UT
+                        - VA
+                        - VI
+                        - VT
+                        - WA
+                        - WI
+                        - WV
+                        - WY
+                        - AB
+                        - BC
+                        - MB
+                        - NB
+                        - NL
+                        - NT
+                        - NS
+                        - NU
+                        - ON
+                        - PE
+                        - QC
+                        - SK
+                        - YT
+                    - type: string
                   description: The state associated with the shipping address for the purchase
                     order
                 shipping_zip:
@@ -17029,7 +17245,80 @@ paths:
                   type: string
                   description: The city associated with the billing address for the purchase order
                 billing_state:
-                  type: string
+                  anyOf:
+                    - type: string
+                      enum:
+                        - AA
+                        - AE
+                        - AK
+                        - AL
+                        - AP
+                        - AR
+                        - AS
+                        - AZ
+                        - CA
+                        - CO
+                        - CT
+                        - DC
+                        - DE
+                        - FL
+                        - FM
+                        - GA
+                        - GU
+                        - HI
+                        - IA
+                        - ID
+                        - IN
+                        - KS
+                        - KY
+                        - LA
+                        - MA
+                        - MD
+                        - ME
+                        - MH
+                        - MI
+                        - MN
+                        - MO
+                        - MP
+                        - MS
+                        - MT
+                        - NC
+                        - NE
+                        - NL
+                        - NJ
+                        - NM
+                        - NV
+                        - NY
+                        - OH
+                        - OK
+                        - OR
+                        - PA
+                        - PR
+                        - SD
+                        - TN
+                        - TX
+                        - UT
+                        - VA
+                        - VI
+                        - VT
+                        - WA
+                        - WI
+                        - WV
+                        - WY
+                        - AB
+                        - BC
+                        - MB
+                        - NB
+                        - NL
+                        - NT
+                        - NS
+                        - NU
+                        - ON
+                        - PE
+                        - QC
+                        - SK
+                        - YT
+                    - type: string
                   description: The state associated with the billing address for the purchase
                     order
                 billing_zip:
@@ -17085,7 +17374,7 @@ paths:
                       - total_cost_in_cents
                       - cost_code
                       - category_code
-                  default: []
+                  minItems: 1
                   description: A list of the items associated with the purchase orders
                 integration_id:
                   type: string
