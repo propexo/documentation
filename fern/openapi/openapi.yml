@@ -14682,6 +14682,13 @@ paths:
                             - string
                             - "null"
                           description: The vacate date of the listing
+                        video_urls:
+                          type:
+                            - array
+                            - "null"
+                          items:
+                            type: string
+                          description: A list of video urls associated with the listing
                         property_id:
                           type: string
                           description: The Propexo unique identifier for the property
@@ -14740,6 +14747,7 @@ paths:
                         - zip
                         - make_ready_date
                         - vacate_date
+                        - video_urls
                         - property_id
                         - unit_id
                         - integration_id
@@ -15108,6 +15116,13 @@ paths:
                           - string
                           - "null"
                         description: The vacate date of the listing
+                      video_urls:
+                        type:
+                          - array
+                          - "null"
+                        items:
+                          type: string
+                        description: A list of video urls associated with the listing
                       property_id:
                         type: string
                         description: The Propexo unique identifier for the property
@@ -15166,6 +15181,7 @@ paths:
                       - zip
                       - make_ready_date
                       - vacate_date
+                      - video_urls
                       - property_id
                       - unit_id
                       - integration_id
@@ -26974,6 +26990,13 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The vacate date of the listing
+                                video_urls:
+                                  type:
+                                    - array
+                                    - "null"
+                                  items:
+                                    type: string
+                                  description: A list of video urls associated with the listing
                                 property_id:
                                   type: string
                                   description: The Propexo unique identifier for the property
@@ -29957,6 +29980,13 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The vacate date of the listing
+                                    video_urls:
+                                      type:
+                                        - array
+                                        - "null"
+                                      items:
+                                        type: string
+                                      description: A list of video urls associated with the listing
                                     property_id:
                                       type: string
                                       description: The Propexo unique identifier for the property
@@ -32821,6 +32851,13 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The vacate date of the listing
+                                    video_urls:
+                                      type:
+                                        - array
+                                        - "null"
+                                      items:
+                                        type: string
+                                      description: A list of video urls associated with the listing
                                     property_id:
                                       type: string
                                       description: The Propexo unique identifier for the property
