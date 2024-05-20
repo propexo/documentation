@@ -14767,6 +14767,11 @@ paths:
                             - string
                             - "null"
                           description: The second address line associated with the listing
+                        unit_description:
+                          type:
+                            - string
+                            - "null"
+                          description: Description of the unit
                         zip:
                           type:
                             - string
@@ -14844,6 +14849,7 @@ paths:
                         - street_address_2
                         - address_1
                         - address_2
+                        - unit_description
                         - zip
                         - make_ready_date
                         - vacate_date
@@ -15201,6 +15207,11 @@ paths:
                           - string
                           - "null"
                         description: The second address line associated with the listing
+                      unit_description:
+                        type:
+                          - string
+                          - "null"
+                        description: Description of the unit
                       zip:
                         type:
                           - string
@@ -15278,6 +15289,7 @@ paths:
                       - street_address_2
                       - address_1
                       - address_2
+                      - unit_description
                       - zip
                       - make_ready_date
                       - vacate_date
@@ -27075,6 +27087,11 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The second address line associated with the listing
+                                unit_description:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: Description of the unit
                                 zip:
                                   type:
                                     - string
@@ -30065,6 +30082,11 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The second address line associated with the listing
+                                    unit_description:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: Description of the unit
                                     zip:
                                       type:
                                         - string
@@ -32936,6 +32958,11 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The second address line associated with the listing
+                                    unit_description:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: Description of the unit
                                     zip:
                                       type:
                                         - string
