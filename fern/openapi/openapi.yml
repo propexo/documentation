@@ -10381,6 +10381,56 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/events/appointments/applicants/{event_id}:
+    put:
+      tags:
+        - events
+      summary: Update an appointment for an applicant
+      description: Update an appointment for an applicant
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: false
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update an appointment for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/events/appointments/applicants/cancel:
     post:
       tags:
@@ -10405,6 +10455,56 @@ paths:
       responses:
         "200":
           description: Cancel an appointment for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+  /v1/events/appointments/leads/{event_id}:
+    put:
+      tags:
+        - events
+      summary: Update an appointment for a lead
+      description: Update an appointment for a lead
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: false
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update an appointment for a lead
           content:
             application/json:
               schema:
