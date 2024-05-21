@@ -7234,11 +7234,27 @@ paths:
                   - results
               examples:
                 Entrata:
-                  value:
-                    results: abc123
+                  value: {
+                    "meta": {
+                      "offset": 100,
+                      "limit": 200,
+                      "orderBy": [],
+                      "hasMore": true,
+                      "total": 0
+                    },
+                    "results": []
+                  }
                 Realpage:
-                  value:
-                    results: xyz789
+                  value: {
+                    "meta": {
+                      "offset": 5,
+                      "limit": 10,
+                      "orderBy": [],
+                      "hasMore": false,
+                      "total": 10
+                    },
+                    "results": []
+                  }
         "400":
           description: invalid input
     post:
