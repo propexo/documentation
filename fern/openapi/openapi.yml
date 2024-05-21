@@ -7234,9 +7234,11 @@ paths:
                   - results
               examples:
                 Entrata:
-                  x_property_id: abc123
+                  value:
+                    x_property_id: abc123
                 Realpage:
-                  x_property_id: xyz789
+                  value:
+                    x_property_id: xyz789
         "400":
           description: invalid input
     post:
