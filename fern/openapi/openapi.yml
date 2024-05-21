@@ -185,12 +185,12 @@ paths:
               examples:
                 Entrata:
                   value:
-                    some_field_name: "some_field_value"
-                    another_field_name: "another_field_value"
+                    some_field_name: some_field_value
+                    another_field_name: another_field_value
                 Realpage:
                   value:
-                    rp_some_field_name: "some_field_value"
-                    rp_another_field_name: "another_field_value"
+                    rp_some_field_name: some_field_value
+                    rp_another_field_name: another_field_value
         "400":
           description: invalid input
   /v1/admin/job-logs/{job_log_id}:
