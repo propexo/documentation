@@ -7256,7 +7256,7 @@ paths:
                       "total": 10
                     },
                     "results": [{
-                      "name": null
+                      "name": "null"
                     }]
                   }
         "400":
