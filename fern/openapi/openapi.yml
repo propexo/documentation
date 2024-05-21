@@ -7235,10 +7235,10 @@ paths:
               examples:
                 Entrata:
                   value:
-                    x_property_id: abc123
+                    results: abc123
                 Realpage:
                   value:
-                    x_property_id: xyz789
+                    results: xyz789
         "400":
           description: invalid input
     post:
