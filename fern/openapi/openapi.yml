@@ -182,11 +182,13 @@ paths:
                 required:
                   - meta
                   - results
-              examples:
-                Entrata:
+            examples:
+              Entrata:
+                value:
                   some_field_name: "some_field_value"
                   another_field_name: "another_field_value"
-                Realpage:
+              Realpage:
+                value:
                   rp_some_field_name: "some_field_value"
                   rp_another_field_name: "another_field_value"
         "400":
