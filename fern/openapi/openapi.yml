@@ -13738,6 +13738,37 @@ paths:
                             - MRI
                             - RESMAN
                           description: The property management system of record
+                        services:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the lease service
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type: string
+                                description: The date the record was last seen from the PMS
+                              name:
+                                type: string
+                                description: The name of the lease service
+                              lease_id:
+                                type: string
+                                description: The Propexo unique identifier for the lease
+                            required:
+                              - id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - name
+                              - lease_id
+                          description: List of services related to the lease
                       required:
                         - id
                         - created_at
@@ -13773,6 +13804,7 @@ paths:
                         - property_id
                         - integration_id
                         - integration_vendor
+                        - services
                 required:
                   - meta
                   - results
@@ -14323,6 +14355,37 @@ paths:
                           - MRI
                           - RESMAN
                         description: The property management system of record
+                      services:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the lease service
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type: string
+                              description: The date the record was last seen from the PMS
+                            name:
+                              type: string
+                              description: The name of the lease service
+                            lease_id:
+                              type: string
+                              description: The Propexo unique identifier for the lease
+                          required:
+                            - id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - name
+                            - lease_id
+                        description: List of services related to the lease
                     required:
                       - id
                       - created_at
@@ -14358,6 +14421,7 @@ paths:
                       - property_id
                       - integration_id
                       - integration_vendor
+                      - services
                 required:
                   - meta
                   - results
@@ -26969,6 +27033,37 @@ webhooks:
                                     - MRI
                                     - RESMAN
                                   description: The property management system of record
+                                services:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The Propexo unique identifier for the lease service
+                                      created_at:
+                                        type: string
+                                        description: The date record first entered Propexo
+                                      updated_at:
+                                        type: string
+                                        description: The date record was last updated in Propexo
+                                      last_seen:
+                                        type: string
+                                        description: The date the record was last seen from the PMS
+                                      name:
+                                        type: string
+                                        description: The name of the lease service
+                                      lease_id:
+                                        type: string
+                                        description: The Propexo unique identifier for the lease
+                                    required:
+                                      - id
+                                      - created_at
+                                      - updated_at
+                                      - last_seen
+                                      - name
+                                      - lease_id
+                                  description: List of services related to the lease
                               title: leases
                             - type: object
                               properties:
@@ -29964,6 +30059,37 @@ webhooks:
                                         - MRI
                                         - RESMAN
                                       description: The property management system of record
+                                    services:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the lease service
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type: string
+                                            description: The date the record was last seen from the PMS
+                                          name:
+                                            type: string
+                                            description: The name of the lease service
+                                          lease_id:
+                                            type: string
+                                            description: The Propexo unique identifier for the lease
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - name
+                                          - lease_id
+                                      description: List of services related to the lease
                                   title: leases
                                 - type: object
                                   properties:
@@ -32840,6 +32966,37 @@ webhooks:
                                         - MRI
                                         - RESMAN
                                       description: The property management system of record
+                                    services:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the lease service
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type: string
+                                            description: The date the record was last seen from the PMS
+                                          name:
+                                            type: string
+                                            description: The name of the lease service
+                                          lease_id:
+                                            type: string
+                                            description: The Propexo unique identifier for the lease
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - name
+                                          - lease_id
+                                      description: List of services related to the lease
                                   title: leases
                                 - type: object
                                   properties:
