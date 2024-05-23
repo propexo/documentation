@@ -913,6 +913,28 @@ paths:
                           type: boolean
                           description: Whether or not manual syncs are allowed to be triggered on this
                             integration
+                        configuration_meta_data:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              last_seen:
+                                type: string
+                              interface_name:
+                                type: string
+                              configuration_data:
+                                type: object
+                                properties: {}
+                              custom_data:
+                                type:
+                                  - object
+                                  - "null"
+                                properties: {}
+                            required:
+                              - last_seen
+                              - interface_name
+                              - configuration_data
+                              - custom_data
                       required:
                         - id
                         - created_at
@@ -933,6 +955,9 @@ paths:
                         - can_authenticate
                         - last_data_access_check
                         - allow_manual_syncs
+                        - configuration_meta_data
+                      description: Configuration data directly from the PMS. This only applies to
+                        limited systems and may not be useful for all use cases.
                 required:
                   - meta
                   - results
@@ -2107,6 +2132,28 @@ paths:
                         type: boolean
                         description: Whether or not manual syncs are allowed to be triggered on this
                           integration
+                      configuration_meta_data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            last_seen:
+                              type: string
+                            interface_name:
+                              type: string
+                            configuration_data:
+                              type: object
+                              properties: {}
+                            custom_data:
+                              type:
+                                - object
+                                - "null"
+                              properties: {}
+                          required:
+                            - last_seen
+                            - interface_name
+                            - configuration_data
+                            - custom_data
                       is_running_sync:
                         type: boolean
                         description: Whether or not a data sync is currently in progress for the
@@ -2135,6 +2182,7 @@ paths:
                       - can_authenticate
                       - last_data_access_check
                       - allow_manual_syncs
+                      - configuration_meta_data
                       - is_running_sync
                       - is_running_data_access_check
                 required:
