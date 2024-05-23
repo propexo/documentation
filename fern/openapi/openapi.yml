@@ -3549,6 +3549,7 @@ paths:
                             - "null"
                           enum:
                             - ACCENT_WALLS
+                            - ACCEPTS_SMOKING
                             - ADDITIONAL_STORAGE
                             - AIR_CON
                             - AIR_CONDITIONING_COMMERCIAL
@@ -3591,6 +3592,7 @@ paths:
                             - FITNESS_CENTER
                             - FRAMED_MIRRORS
                             - FREE_WEIGHTS
+                            - FREEZER
                             - FURNISHED_AVAILABLE
                             - FURNISHED
                             - GAMING_STATIONS
@@ -3602,6 +3604,7 @@ paths:
                             - GRILL
                             - GROUP_EXERCISE
                             - GUEST_ROOM
+                            - HANDICAP_ACCESS
                             - HANDRAILS
                             - HARDWOOD_FLOORS
                             - HEAT_ELECTRIC
@@ -3615,12 +3618,15 @@ paths:
                             - HOUSE_SITTING
                             - HOUSEKEEPING
                             - INDIVIDUAL_CLIMATE_CONTROL
+                            - INTERNET
                             - ISLAND_KITCHEN
                             - JOGGING_WALKING_TRAILS
                             - LAKE_ACCESS
                             - LAKE_FRONT
+                            - LAUNDRY
                             - LAUNDRY_ROOM_OR_HOOKUPS
                             - LAUNDRY_ROOM
+                            - LANDSCAPING
                             - LIBRARY
                             - LINEN_CLOSET
                             - MEAL_SERVICE
@@ -3638,7 +3644,9 @@ paths:
                             - PARKING
                             - PER_DIEM_ACCEPTED
                             - PETS_ALLOWED
+                            - PING_PONG
                             - PLAY_GROUND
+                            - POND
                             - POOL
                             - POWER
                             - PRIVATE_BALCONY
@@ -3654,6 +3662,7 @@ paths:
                             - SHORT_TERM_LEASE
                             - SKYLIGHT
                             - SMOKE_FREE
+                            - SNOW_REMOVAL
                             - SPA
                             - SPRINKLER_SYSTEM
                             - STORAGE_UNITS
@@ -3986,6 +3995,7 @@ paths:
                           - "null"
                         enum:
                           - ACCENT_WALLS
+                          - ACCEPTS_SMOKING
                           - ADDITIONAL_STORAGE
                           - AIR_CON
                           - AIR_CONDITIONING_COMMERCIAL
@@ -4028,6 +4038,7 @@ paths:
                           - FITNESS_CENTER
                           - FRAMED_MIRRORS
                           - FREE_WEIGHTS
+                          - FREEZER
                           - FURNISHED_AVAILABLE
                           - FURNISHED
                           - GAMING_STATIONS
@@ -4039,6 +4050,7 @@ paths:
                           - GRILL
                           - GROUP_EXERCISE
                           - GUEST_ROOM
+                          - HANDICAP_ACCESS
                           - HANDRAILS
                           - HARDWOOD_FLOORS
                           - HEAT_ELECTRIC
@@ -4052,12 +4064,15 @@ paths:
                           - HOUSE_SITTING
                           - HOUSEKEEPING
                           - INDIVIDUAL_CLIMATE_CONTROL
+                          - INTERNET
                           - ISLAND_KITCHEN
                           - JOGGING_WALKING_TRAILS
                           - LAKE_ACCESS
                           - LAKE_FRONT
+                          - LAUNDRY
                           - LAUNDRY_ROOM_OR_HOOKUPS
                           - LAUNDRY_ROOM
+                          - LANDSCAPING
                           - LIBRARY
                           - LINEN_CLOSET
                           - MEAL_SERVICE
@@ -4075,7 +4090,9 @@ paths:
                           - PARKING
                           - PER_DIEM_ACCEPTED
                           - PETS_ALLOWED
+                          - PING_PONG
                           - PLAY_GROUND
+                          - POND
                           - POOL
                           - POWER
                           - PRIVATE_BALCONY
@@ -4091,6 +4108,7 @@ paths:
                           - SHORT_TERM_LEASE
                           - SKYLIGHT
                           - SMOKE_FREE
+                          - SNOW_REMOVAL
                           - SPA
                           - SPRINKLER_SYSTEM
                           - STORAGE_UNITS
@@ -25866,6 +25884,7 @@ webhooks:
                                     - "null"
                                   enum:
                                     - ACCENT_WALLS
+                                    - ACCEPTS_SMOKING
                                     - ADDITIONAL_STORAGE
                                     - AIR_CON
                                     - AIR_CONDITIONING_COMMERCIAL
@@ -25908,6 +25927,7 @@ webhooks:
                                     - FITNESS_CENTER
                                     - FRAMED_MIRRORS
                                     - FREE_WEIGHTS
+                                    - FREEZER
                                     - FURNISHED_AVAILABLE
                                     - FURNISHED
                                     - GAMING_STATIONS
@@ -25919,6 +25939,7 @@ webhooks:
                                     - GRILL
                                     - GROUP_EXERCISE
                                     - GUEST_ROOM
+                                    - HANDICAP_ACCESS
                                     - HANDRAILS
                                     - HARDWOOD_FLOORS
                                     - HEAT_ELECTRIC
@@ -25932,12 +25953,15 @@ webhooks:
                                     - HOUSE_SITTING
                                     - HOUSEKEEPING
                                     - INDIVIDUAL_CLIMATE_CONTROL
+                                    - INTERNET
                                     - ISLAND_KITCHEN
                                     - JOGGING_WALKING_TRAILS
                                     - LAKE_ACCESS
                                     - LAKE_FRONT
+                                    - LAUNDRY
                                     - LAUNDRY_ROOM_OR_HOOKUPS
                                     - LAUNDRY_ROOM
+                                    - LANDSCAPING
                                     - LIBRARY
                                     - LINEN_CLOSET
                                     - MEAL_SERVICE
@@ -25955,7 +25979,9 @@ webhooks:
                                     - PARKING
                                     - PER_DIEM_ACCEPTED
                                     - PETS_ALLOWED
+                                    - PING_PONG
                                     - PLAY_GROUND
+                                    - POND
                                     - POOL
                                     - POWER
                                     - PRIVATE_BALCONY
@@ -25971,6 +25997,7 @@ webhooks:
                                     - SHORT_TERM_LEASE
                                     - SKYLIGHT
                                     - SMOKE_FREE
+                                    - SNOW_REMOVAL
                                     - SPA
                                     - SPRINKLER_SYSTEM
                                     - STORAGE_UNITS
@@ -28891,6 +28918,7 @@ webhooks:
                                         - "null"
                                       enum:
                                         - ACCENT_WALLS
+                                        - ACCEPTS_SMOKING
                                         - ADDITIONAL_STORAGE
                                         - AIR_CON
                                         - AIR_CONDITIONING_COMMERCIAL
@@ -28933,6 +28961,7 @@ webhooks:
                                         - FITNESS_CENTER
                                         - FRAMED_MIRRORS
                                         - FREE_WEIGHTS
+                                        - FREEZER
                                         - FURNISHED_AVAILABLE
                                         - FURNISHED
                                         - GAMING_STATIONS
@@ -28944,6 +28973,7 @@ webhooks:
                                         - GRILL
                                         - GROUP_EXERCISE
                                         - GUEST_ROOM
+                                        - HANDICAP_ACCESS
                                         - HANDRAILS
                                         - HARDWOOD_FLOORS
                                         - HEAT_ELECTRIC
@@ -28957,12 +28987,15 @@ webhooks:
                                         - HOUSE_SITTING
                                         - HOUSEKEEPING
                                         - INDIVIDUAL_CLIMATE_CONTROL
+                                        - INTERNET
                                         - ISLAND_KITCHEN
                                         - JOGGING_WALKING_TRAILS
                                         - LAKE_ACCESS
                                         - LAKE_FRONT
+                                        - LAUNDRY
                                         - LAUNDRY_ROOM_OR_HOOKUPS
                                         - LAUNDRY_ROOM
+                                        - LANDSCAPING
                                         - LIBRARY
                                         - LINEN_CLOSET
                                         - MEAL_SERVICE
@@ -28980,7 +29013,9 @@ webhooks:
                                         - PARKING
                                         - PER_DIEM_ACCEPTED
                                         - PETS_ALLOWED
+                                        - PING_PONG
                                         - PLAY_GROUND
+                                        - POND
                                         - POOL
                                         - POWER
                                         - PRIVATE_BALCONY
@@ -28996,6 +29031,7 @@ webhooks:
                                         - SHORT_TERM_LEASE
                                         - SKYLIGHT
                                         - SMOKE_FREE
+                                        - SNOW_REMOVAL
                                         - SPA
                                         - SPRINKLER_SYSTEM
                                         - STORAGE_UNITS
@@ -31798,6 +31834,7 @@ webhooks:
                                         - "null"
                                       enum:
                                         - ACCENT_WALLS
+                                        - ACCEPTS_SMOKING
                                         - ADDITIONAL_STORAGE
                                         - AIR_CON
                                         - AIR_CONDITIONING_COMMERCIAL
@@ -31840,6 +31877,7 @@ webhooks:
                                         - FITNESS_CENTER
                                         - FRAMED_MIRRORS
                                         - FREE_WEIGHTS
+                                        - FREEZER
                                         - FURNISHED_AVAILABLE
                                         - FURNISHED
                                         - GAMING_STATIONS
@@ -31851,6 +31889,7 @@ webhooks:
                                         - GRILL
                                         - GROUP_EXERCISE
                                         - GUEST_ROOM
+                                        - HANDICAP_ACCESS
                                         - HANDRAILS
                                         - HARDWOOD_FLOORS
                                         - HEAT_ELECTRIC
@@ -31864,12 +31903,15 @@ webhooks:
                                         - HOUSE_SITTING
                                         - HOUSEKEEPING
                                         - INDIVIDUAL_CLIMATE_CONTROL
+                                        - INTERNET
                                         - ISLAND_KITCHEN
                                         - JOGGING_WALKING_TRAILS
                                         - LAKE_ACCESS
                                         - LAKE_FRONT
+                                        - LAUNDRY
                                         - LAUNDRY_ROOM_OR_HOOKUPS
                                         - LAUNDRY_ROOM
+                                        - LANDSCAPING
                                         - LIBRARY
                                         - LINEN_CLOSET
                                         - MEAL_SERVICE
@@ -31887,7 +31929,9 @@ webhooks:
                                         - PARKING
                                         - PER_DIEM_ACCEPTED
                                         - PETS_ALLOWED
+                                        - PING_PONG
                                         - PLAY_GROUND
+                                        - POND
                                         - POOL
                                         - POWER
                                         - PRIVATE_BALCONY
@@ -31903,6 +31947,7 @@ webhooks:
                                         - SHORT_TERM_LEASE
                                         - SKYLIGHT
                                         - SMOKE_FREE
+                                        - SNOW_REMOVAL
                                         - SPA
                                         - SPRINKLER_SYSTEM
                                         - STORAGE_UNITS
