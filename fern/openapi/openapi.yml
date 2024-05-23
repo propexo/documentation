@@ -22905,6 +22905,11 @@ paths:
                             - boolean
                             - "null"
                           description: Whether or not cats are allowed
+                        pet_policy:
+                          type:
+                            - string
+                            - "null"
+                          description: The pet policy for the unit
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -22949,6 +22954,7 @@ paths:
                         - pets_allowed
                         - dogs_allowed
                         - cats_allowed
+                        - pet_policy
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -23327,6 +23333,11 @@ paths:
                           - boolean
                           - "null"
                         description: Whether or not cats are allowed
+                      pet_policy:
+                        type:
+                          - string
+                          - "null"
+                        description: The pet policy for the unit
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -23371,6 +23382,7 @@ paths:
                       - pets_allowed
                       - dogs_allowed
                       - cats_allowed
+                      - pet_policy
                       - integration_id
                       - integration_vendor
                       - property_id
@@ -28568,6 +28580,11 @@ webhooks:
                                     - boolean
                                     - "null"
                                   description: Whether or not cats are allowed
+                                pet_policy:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The pet policy for the unit
                                 integration_id:
                                   type: string
                                   description: The Propexo unique identifier for the integration
@@ -31603,6 +31620,11 @@ webhooks:
                                         - boolean
                                         - "null"
                                       description: Whether or not cats are allowed
+                                    pet_policy:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The pet policy for the unit
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
@@ -34519,6 +34541,11 @@ webhooks:
                                         - boolean
                                         - "null"
                                       description: Whether or not cats are allowed
+                                    pet_policy:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The pet policy for the unit
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
