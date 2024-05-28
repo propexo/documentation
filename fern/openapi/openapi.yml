@@ -10526,6 +10526,145 @@ paths:
                   - results
         "400":
           description: invalid input
+  /v1/events/appointments/applicants:
+    post:
+      tags:
+        - events
+      summary: Create an appointment for an applicant
+      description: Create an appointment for an applicant
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                applicant_id:
+                  type: string
+                  description: The Propexo unique identifier for the applicant
+                application_id:
+                  type: string
+                  description: The Propexo unique identifier for the application
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                title:
+                  type: string
+                  description: The title associated with the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an appointment for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
+  /v1/events/appointments/leads:
+    post:
+      tags:
+        - events
+      summary: Create an appointment for a lead
+      description: Create an appointment for a lead
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                lead_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                title:
+                  type: string
+                  description: The title associated with the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an appointment for a lead
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/events/appointments/applicants/{event_id}:
     put:
       tags:
