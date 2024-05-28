@@ -9273,7 +9273,7 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: The Propexo unique identifier for the service request category
+                          description: The Propexo unique identifier for the employee
                         created_at:
                           type: string
                           description: The date record first entered Propexo
@@ -9410,7 +9410,7 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: The Propexo unique identifier for the service request category
+                        description: The Propexo unique identifier for the employee
                       created_at:
                         type: string
                         description: The date record first entered Propexo
@@ -19201,6 +19201,12 @@ paths:
           in: query
         - schema:
             type: string
+            description: The Propexo unique identifier for the employee
+          required: false
+          name: employee_id
+          in: query
+        - schema:
+            type: string
             description: The Propexo unique identifier for the property
           required: false
           name: property_id
@@ -19395,6 +19401,11 @@ paths:
                             - string
                             - "null"
                           description: The Propexo unique identifier for the unit
+                        employee_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the employee
                         history:
                           type: array
                           items:
@@ -19449,6 +19460,40 @@ paths:
                               - status_raw
                               - service_request_id
                           description: History of notes and/or updates related to the service request
+                        employee:
+                          type:
+                            - object
+                            - "null"
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the employee
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            name:
+                              type:
+                                - string
+                                - "null"
+                              description: The name associated with the employee
+                          required:
+                            - id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - x_id
+                            - name
                       required:
                         - id
                         - created_at
@@ -19478,7 +19523,9 @@ paths:
                         - integration_vendor
                         - property_id
                         - unit_id
+                        - employee_id
                         - history
+                        - employee
                 required:
                   - meta
                   - results
@@ -19877,6 +19924,11 @@ paths:
                           - string
                           - "null"
                         description: The Propexo unique identifier for the unit
+                      employee_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the employee
                       history:
                         type: array
                         items:
@@ -19931,6 +19983,40 @@ paths:
                             - status_raw
                             - service_request_id
                         description: History of notes and/or updates related to the service request
+                      employee:
+                        type:
+                          - object
+                          - "null"
+                        properties:
+                          id:
+                            type: string
+                            description: The Propexo unique identifier for the employee
+                          created_at:
+                            type: string
+                            description: The date record first entered Propexo
+                          updated_at:
+                            type: string
+                            description: The date record was last updated in Propexo
+                          last_seen:
+                            type:
+                              - string
+                              - "null"
+                            description: The date the record was last seen from the PMS
+                          x_id:
+                            type: string
+                            description: The external ID from the integration vendor
+                          name:
+                            type:
+                              - string
+                              - "null"
+                            description: The name associated with the employee
+                        required:
+                          - id
+                          - created_at
+                          - updated_at
+                          - last_seen
+                          - x_id
+                          - name
                     required:
                       - id
                       - created_at
@@ -19960,7 +20046,9 @@ paths:
                       - integration_vendor
                       - property_id
                       - unit_id
+                      - employee_id
                       - history
+                      - employee
                 required:
                   - meta
                   - results
@@ -26402,7 +26490,7 @@ webhooks:
                               properties:
                                 id:
                                   type: string
-                                  description: The Propexo unique identifier for the service request category
+                                  description: The Propexo unique identifier for the employee
                                 created_at:
                                   type: string
                                   description: The date record first entered Propexo
@@ -28412,6 +28500,45 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The Propexo unique identifier for the unit
+                                employee_id:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The Propexo unique identifier for the employee
+                                employee:
+                                  type:
+                                    - object
+                                    - "null"
+                                  properties:
+                                    id:
+                                      type: string
+                                      description: The Propexo unique identifier for the employee
+                                    created_at:
+                                      type: string
+                                      description: The date record first entered Propexo
+                                    updated_at:
+                                      type: string
+                                      description: The date record was last updated in Propexo
+                                    last_seen:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The date the record was last seen from the PMS
+                                    x_id:
+                                      type: string
+                                      description: The external ID from the integration vendor
+                                    name:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The name associated with the employee
+                                  required:
+                                    - id
+                                    - created_at
+                                    - updated_at
+                                    - last_seen
+                                    - x_id
+                                    - name
                               title: service-requests
                             - type: object
                               properties:
@@ -29441,7 +29568,7 @@ webhooks:
                                   properties:
                                     id:
                                       type: string
-                                      description: The Propexo unique identifier for the service request category
+                                      description: The Propexo unique identifier for the employee
                                     created_at:
                                       type: string
                                       description: The date record first entered Propexo
@@ -31452,6 +31579,45 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the unit
+                                    employee_id:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The Propexo unique identifier for the employee
+                                    employee:
+                                      type:
+                                        - object
+                                        - "null"
+                                      properties:
+                                        id:
+                                          type: string
+                                          description: The Propexo unique identifier for the employee
+                                        created_at:
+                                          type: string
+                                          description: The date record first entered Propexo
+                                        updated_at:
+                                          type: string
+                                          description: The date record was last updated in Propexo
+                                        last_seen:
+                                          type:
+                                            - string
+                                            - "null"
+                                          description: The date the record was last seen from the PMS
+                                        x_id:
+                                          type: string
+                                          description: The external ID from the integration vendor
+                                        name:
+                                          type:
+                                            - string
+                                            - "null"
+                                          description: The name associated with the employee
+                                      required:
+                                        - id
+                                        - created_at
+                                        - updated_at
+                                        - last_seen
+                                        - x_id
+                                        - name
                                   title: service-requests
                                 - type: object
                                   properties:
@@ -32362,7 +32528,7 @@ webhooks:
                                   properties:
                                     id:
                                       type: string
-                                      description: The Propexo unique identifier for the service request category
+                                      description: The Propexo unique identifier for the employee
                                     created_at:
                                       type: string
                                       description: The date record first entered Propexo
@@ -34373,6 +34539,45 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the unit
+                                    employee_id:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The Propexo unique identifier for the employee
+                                    employee:
+                                      type:
+                                        - object
+                                        - "null"
+                                      properties:
+                                        id:
+                                          type: string
+                                          description: The Propexo unique identifier for the employee
+                                        created_at:
+                                          type: string
+                                          description: The date record first entered Propexo
+                                        updated_at:
+                                          type: string
+                                          description: The date record was last updated in Propexo
+                                        last_seen:
+                                          type:
+                                            - string
+                                            - "null"
+                                          description: The date the record was last seen from the PMS
+                                        x_id:
+                                          type: string
+                                          description: The external ID from the integration vendor
+                                        name:
+                                          type:
+                                            - string
+                                            - "null"
+                                          description: The name associated with the employee
+                                      required:
+                                        - id
+                                        - created_at
+                                        - updated_at
+                                        - last_seen
+                                        - x_id
+                                        - name
                                   title: service-requests
                                 - type: object
                                   properties:
