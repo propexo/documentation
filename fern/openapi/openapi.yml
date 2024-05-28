@@ -7298,6 +7298,33 @@ paths:
                 required:
                   - meta
                   - results
+              examples:
+                Entrata:
+                  value: {
+                    "meta": {
+                      "offset": 100,
+                      "limit": 200,
+                      "orderBy": [],
+                      "hasMore": true,
+                      "total": 0
+                    },
+                    "results": [{
+                      "name": "My special charge"
+                    }]
+                  }
+                Realpage:
+                  value: {
+                    "meta": {
+                      "offset": 5,
+                      "limit": 10,
+                      "orderBy": [],
+                      "hasMore": false,
+                      "total": 10
+                    },
+                    "results": [{
+                      "name": "null"
+                    }]
+                  }
         "400":
           description: invalid input
     post:
