@@ -8973,23 +8973,23 @@ paths:
                     meta: {}
                     results:
                       - amount_in_cents: 325000
-                        amount_raw: sample_value
-                        description: sample_value
-                        financial_account_id: sample_value
-                        name: sample_value
-                        reference_number: sample_value
-                        resident_id: sample_value
-                        transaction_date: sample_value
-                        x_gl_account_id: sample_value
-                        x_id: sample_value
+                        amount_raw: "55.00"
+                        description: Application fee [Open Charge]
+                        financial_account_id: clwqs19bb000008l1bbcv2bs4:hjhbbwe:3267723
+                        name: Application Fee
+                        reference_number: "20240023944"
+                        resident_id: clwqs19bb000008l1bbcv2bs4:efweee:t9938827
+                        transaction_date: 2021-04-06T00:00:00.000Z
+                        x_gl_account_id: "234634644"
+                        x_id: "72293948"
                         x_lease_id: "null"
-                        x_property_id: sample_value
-                        x_resident_id: sample_value
-                        x_unit_id: sample_value
+                        x_property_id: kjhjhjwe
+                        x_resident_id: t0093884
+                        x_unit_id: "2093"
                         integration_data.residenthouseholdid: "null"
                         is_open: "null"
                         x_location_id: "null"
-                        transaction_source: sample_value
+                        transaction_source: RESIDENT
         "400":
           description: invalid input
     post:
@@ -9589,23 +9589,23 @@ paths:
                     meta: {}
                     results:
                       amount_in_cents: 325000
-                      amount_raw: sample_value
-                      description: sample_value
-                      financial_account_id: sample_value
-                      name: sample_value
-                      reference_number: sample_value
-                      resident_id: sample_value
-                      transaction_date: sample_value
-                      x_gl_account_id: sample_value
-                      x_id: sample_value
+                      amount_raw: "55.00"
+                      description: Application fee [Open Charge]
+                      financial_account_id: clwqs19bb000008l1bbcv2bs4:hjhbbwe:3267723
+                      name: Application Fee
+                      reference_number: "20240023944"
+                      resident_id: clwqs19bb000008l1bbcv2bs4:efweee:t9938827
+                      transaction_date: 2021-04-06T00:00:00.000Z
+                      x_gl_account_id: "234634644"
+                      x_id: "72293948"
                       x_lease_id: "null"
-                      x_property_id: sample_value
-                      x_resident_id: sample_value
-                      x_unit_id: sample_value
+                      x_property_id: kjhjhjwe
+                      x_resident_id: t0093884
+                      x_unit_id: "2093"
                       integration_data.residenthouseholdid: "null"
                       is_open: "null"
                       x_location_id: "null"
-                      transaction_source: sample_value
+                      transaction_source: RESIDENT
         "400":
           description: invalid input
   /v1/resident-payments:
@@ -10164,26 +10164,26 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - amount_in_cents: 325000
-                        amount_raw: sample_value
-                        description: sample_value
-                        financial_account_id: sample_value
+                      - amount_in_cents: -70000
+                        amount_raw: "700.00"
+                        description: Debit card payment
+                        financial_account_id: clwqscdbx000108js2rc35l3f:nbjkbje:2352352
                         name: "null"
                         payment_method_normalized: "null"
                         payment_method_raw: "null"
-                        reference_number: sample_value
-                        resident_id: sample_value
-                        transaction_date: sample_value
-                        x_gl_account_id: sample_value
-                        x_id: sample_value
+                        reference_number: "Batch payment ID #993882"
+                        resident_id: clwqscdbx000108js2rc35l3f:jkwjke:t03884877
+                        transaction_date: 2021-03-25T00:00:00.000Z
+                        x_gl_account_id: "8879388635"
+                        x_id: "78676782"
                         x_lease_id: "null"
-                        x_property_id: sample_value
-                        x_resident_id: sample_value
-                        x_unit_id: sample_value
+                        x_property_id: eidsnge
+                        x_resident_id: t900345
+                        x_unit_id: "109"
                         integration_data.residenthouseholdid: "null"
                         is_open: "null"
                         x_location_id: "null"
-                        transaction_source: sample_value
+                        transaction_source: RESIDENT
         "400":
           description: invalid input
     post:
@@ -10806,26 +10806,26 @@ paths:
                   value:
                     meta: {}
                     results:
-                      amount_in_cents: 325000
-                      amount_raw: sample_value
-                      description: sample_value
-                      financial_account_id: sample_value
+                      amount_in_cents: -70000
+                      amount_raw: "700.00"
+                      description: Debit card payment
+                      financial_account_id: clwqscdbx000108js2rc35l3f:nbjkbje:2352352
                       name: "null"
                       payment_method_normalized: "null"
                       payment_method_raw: "null"
-                      reference_number: sample_value
-                      resident_id: sample_value
-                      transaction_date: sample_value
-                      x_gl_account_id: sample_value
-                      x_id: sample_value
+                      reference_number: "Batch payment ID #993882"
+                      resident_id: clwqscdbx000108js2rc35l3f:jkwjke:t03884877
+                      transaction_date: 2021-03-25T00:00:00.000Z
+                      x_gl_account_id: "8879388635"
+                      x_id: "78676782"
                       x_lease_id: "null"
-                      x_property_id: sample_value
-                      x_resident_id: sample_value
-                      x_unit_id: sample_value
+                      x_property_id: eidsnge
+                      x_resident_id: t900345
+                      x_unit_id: "109"
                       integration_data.residenthouseholdid: "null"
                       is_open: "null"
                       x_location_id: "null"
-                      transaction_source: sample_value
+                      transaction_source: RESIDENT
         "400":
           description: invalid input
   /v1/construction-jobs:
@@ -19883,31 +19883,31 @@ paths:
                     meta: {}
                     results:
                       - deposit_amount_in_cents: "null"
-                        end_date: sample_value
-                        rent_amount_in_cents: sample_value
-                        rent_due_day: sample_value
-                        start_date: sample_value
-                        status: sample_value
-                        status_normalized: sample_value
-                        status_raw: sample_value
-                        type: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_resident_id: sample_value
-                        x_unit_id: sample_value
+                        end_date: 2022-08-17T00:00:00.000Z
+                        rent_amount_in_cents: 75000
+                        rent_due_day: 1
+                        start_date: 2021-07-31T00:00:00.000Z
+                        status: Future
+                        status_normalized: PENDING
+                        status_raw: Future
+                        type: Residential
+                        x_id: t3884773
+                        x_property_id: gelkkdg
+                        x_resident_id: t00938447
+                        x_unit_id: D1
                         application_date: "null"
                         deposit_amount: "null"
                         deposit_date: "null"
-                        realized_move_in_date: sample_value
-                        realized_move_out_date: sample_value
+                        realized_move_in_date: 2021-07-31T00:00:00.000Z
+                        realized_move_out_date: 2022-07-31T00:00:00.000Z
                         signature_date: "null"
-                        scheduled_move_in_date: sample_value
-                        scheduled_move_out_date: sample_value
+                        scheduled_move_in_date: 2021-07-31T00:00:00.000Z
+                        scheduled_move_out_date: 2022-07-31T00:00:00.000Z
                         integration_data.pmc_id: "null"
                         rent_due_date: "null"
                         term: "null"
                         x_location_id: "null"
-                        rent_amount_market_in_cents: 350000
+                        rent_amount_market_in_cents: 75000
                         integration_data.billing_account_id: "null"
                         unit_number: "null"
         "400":
@@ -20799,31 +20799,31 @@ paths:
                     meta: {}
                     results:
                       deposit_amount_in_cents: "null"
-                      end_date: sample_value
-                      rent_amount_in_cents: sample_value
-                      rent_due_day: sample_value
-                      start_date: sample_value
-                      status: sample_value
-                      status_normalized: sample_value
-                      status_raw: sample_value
-                      type: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_resident_id: sample_value
-                      x_unit_id: sample_value
+                      end_date: 2022-08-17T00:00:00.000Z
+                      rent_amount_in_cents: 75000
+                      rent_due_day: 1
+                      start_date: 2021-07-31T00:00:00.000Z
+                      status: Future
+                      status_normalized: PENDING
+                      status_raw: Future
+                      type: Residential
+                      x_id: t3884773
+                      x_property_id: gelkkdg
+                      x_resident_id: t00938447
+                      x_unit_id: D1
                       application_date: "null"
                       deposit_amount: "null"
                       deposit_date: "null"
-                      realized_move_in_date: sample_value
-                      realized_move_out_date: sample_value
+                      realized_move_in_date: 2021-07-31T00:00:00.000Z
+                      realized_move_out_date: 2022-07-31T00:00:00.000Z
                       signature_date: "null"
-                      scheduled_move_in_date: sample_value
-                      scheduled_move_out_date: sample_value
+                      scheduled_move_in_date: 2021-07-31T00:00:00.000Z
+                      scheduled_move_out_date: 2022-07-31T00:00:00.000Z
                       integration_data.pmc_id: "null"
                       rent_due_date: "null"
                       term: "null"
                       x_location_id: "null"
-                      rent_amount_market_in_cents: 350000
+                      rent_amount_market_in_cents: 75000
                       integration_data.billing_account_id: "null"
                       unit_number: "null"
         "400":
@@ -27432,8 +27432,8 @@ paths:
                         phone_2: sample_value
                         phone_2_type: sample_value
                         state: MA
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: t0029378
+                        x_property_id: uelltks
                         zip: "02116"
                         date_of_birth: sample_value
                         integration_data.originating_lead_source_id: "null"
@@ -27450,7 +27450,7 @@ paths:
                         integration_data.residentHouseholdId: "null"
                         integration_data.residentMemberId: "null"
                         integration_data.pmc_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: D9
                         address_2_alternate: "null"
                         integration_data.tenant_id: "null"
                         notes: "null"
@@ -28416,8 +28416,8 @@ paths:
                       phone_2: sample_value
                       phone_2_type: sample_value
                       state: MA
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: t0029378
+                      x_property_id: uelltks
                       zip: "02116"
                       date_of_birth: sample_value
                       integration_data.originating_lead_source_id: "null"
@@ -28434,7 +28434,7 @@ paths:
                       integration_data.residentHouseholdId: "null"
                       integration_data.residentMemberId: "null"
                       integration_data.pmc_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: D9
                       address_2_alternate: "null"
                       integration_data.tenant_id: "null"
                       notes: "null"
@@ -29325,32 +29325,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
+                      - access_is_authorized: true
                         access_notes: "null"
                         date_due: "null"
                         integration_data.task_type: "null"
                         integration_data.x_task_id: "null"
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
-                        service_priority: sample_value
-                        status_raw: sample_value
-                        unit_id: sample_value
-                        vendor_notes: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        service_description: Resident says AC is not cold
+                        service_details: Filter is due to be changed
+                        service_priority: High
+                        status_raw: In progress
+                        unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                        vendor_notes: Resident dog is growling, will follow up later
+                        x_id: "83885"
+                        x_property_id: hejkhkjhs
                         x_sub_task_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: "235"
                         building: "null"
                         completion_notes: "null"
-                        date_completed: sample_value
-                        date_created: sample_value
+                        date_completed: 2019-07-03T00:00:00.000Z
+                        date_created: 2019-07-03T00:00:00.000Z
                         date_scheduled: "null"
                         employee_id: "null"
                         integration_data.x_category_id: "null"
                         integration_data.x_priority_id: "null"
                         integration_data.x_problem_id: "null"
-                        service_category: sample_value
+                        service_category: HVAC
                         unit_number: "null"
                         integration_data.pmc_id: "null"
                         x_location_id: "null"
@@ -30155,32 +30155,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
+                      access_is_authorized: true
                       access_notes: "null"
                       date_due: "null"
                       integration_data.task_type: "null"
                       integration_data.x_task_id: "null"
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
-                      service_priority: sample_value
-                      status_raw: sample_value
-                      unit_id: sample_value
-                      vendor_notes: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      service_description: Resident says AC is not cold
+                      service_details: Filter is due to be changed
+                      service_priority: High
+                      status_raw: In progress
+                      unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                      vendor_notes: Resident dog is growling, will follow up later
+                      x_id: "83885"
+                      x_property_id: hejkhkjhs
                       x_sub_task_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: "235"
                       building: "null"
                       completion_notes: "null"
-                      date_completed: sample_value
-                      date_created: sample_value
+                      date_completed: 2019-07-03T00:00:00.000Z
+                      date_created: 2019-07-03T00:00:00.000Z
                       date_scheduled: "null"
                       employee_id: "null"
                       integration_data.x_category_id: "null"
                       integration_data.x_priority_id: "null"
                       integration_data.x_problem_id: "null"
-                      service_category: sample_value
+                      service_category: HVAC
                       unit_number: "null"
                       integration_data.pmc_id: "null"
                       x_location_id: "null"
@@ -30818,32 +30818,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
+                      - access_is_authorized: true
                         access_notes: "null"
                         date_due: "null"
                         integration_data.task_type: "null"
                         integration_data.x_task_id: "null"
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
-                        service_priority: sample_value
-                        status_raw: sample_value
-                        unit_id: sample_value
-                        vendor_notes: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        service_description: Resident says AC is not cold
+                        service_details: Filter is due to be changed
+                        service_priority: High
+                        status_raw: In progress
+                        unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                        vendor_notes: Resident dog is growling, will follow up later
+                        x_id: "83885"
+                        x_property_id: hejkhkjhs
                         x_sub_task_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: "235"
                         building: "null"
                         completion_notes: "null"
-                        date_completed: sample_value
-                        date_created: sample_value
+                        date_completed: 2019-07-03T00:00:00.000Z
+                        date_created: 2019-07-03T00:00:00.000Z
                         date_scheduled: "null"
                         employee_id: "null"
                         integration_data.x_category_id: "null"
                         integration_data.x_priority_id: "null"
                         integration_data.x_problem_id: "null"
-                        service_category: sample_value
+                        service_category: HVAC
                         unit_number: "null"
                         integration_data.pmc_id: "null"
                         x_location_id: "null"
@@ -31278,32 +31278,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
+                      access_is_authorized: true
                       access_notes: "null"
                       date_due: "null"
                       integration_data.task_type: "null"
                       integration_data.x_task_id: "null"
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
-                      service_priority: sample_value
-                      status_raw: sample_value
-                      unit_id: sample_value
-                      vendor_notes: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      service_description: Resident says AC is not cold
+                      service_details: Filter is due to be changed
+                      service_priority: High
+                      status_raw: In progress
+                      unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                      vendor_notes: Resident dog is growling, will follow up later
+                      x_id: "83885"
+                      x_property_id: hejkhkjhs
                       x_sub_task_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: "235"
                       building: "null"
                       completion_notes: "null"
-                      date_completed: sample_value
-                      date_created: sample_value
+                      date_completed: 2019-07-03T00:00:00.000Z
+                      date_created: 2019-07-03T00:00:00.000Z
                       date_scheduled: "null"
                       employee_id: "null"
                       integration_data.x_category_id: "null"
                       integration_data.x_priority_id: "null"
                       integration_data.x_problem_id: "null"
-                      service_category: sample_value
+                      service_category: HVAC
                       unit_number: "null"
                       integration_data.pmc_id: "null"
                       x_location_id: "null"
@@ -31780,32 +31780,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
+                      - access_is_authorized: true
                         access_notes: "null"
                         date_due: "null"
                         integration_data.task_type: "null"
                         integration_data.x_task_id: "null"
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
-                        service_priority: sample_value
-                        status_raw: sample_value
-                        unit_id: sample_value
-                        vendor_notes: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        service_description: Resident says AC is not cold
+                        service_details: Filter is due to be changed
+                        service_priority: High
+                        status_raw: In progress
+                        unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                        vendor_notes: Resident dog is growling, will follow up later
+                        x_id: "83885"
+                        x_property_id: hejkhkjhs
                         x_sub_task_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: "235"
                         building: "null"
                         completion_notes: "null"
-                        date_completed: sample_value
-                        date_created: sample_value
+                        date_completed: 2019-07-03T00:00:00.000Z
+                        date_created: 2019-07-03T00:00:00.000Z
                         date_scheduled: "null"
                         employee_id: "null"
                         integration_data.x_category_id: "null"
                         integration_data.x_priority_id: "null"
                         integration_data.x_problem_id: "null"
-                        service_category: sample_value
+                        service_category: HVAC
                         unit_number: "null"
                         integration_data.pmc_id: "null"
                         x_location_id: "null"
@@ -32340,32 +32340,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
+                      access_is_authorized: true
                       access_notes: "null"
                       date_due: "null"
                       integration_data.task_type: "null"
                       integration_data.x_task_id: "null"
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
-                      service_priority: sample_value
-                      status_raw: sample_value
-                      unit_id: sample_value
-                      vendor_notes: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      service_description: Resident says AC is not cold
+                      service_details: Filter is due to be changed
+                      service_priority: High
+                      status_raw: In progress
+                      unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                      vendor_notes: Resident dog is growling, will follow up later
+                      x_id: "83885"
+                      x_property_id: hejkhkjhs
                       x_sub_task_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: "235"
                       building: "null"
                       completion_notes: "null"
-                      date_completed: sample_value
-                      date_created: sample_value
+                      date_completed: 2019-07-03T00:00:00.000Z
+                      date_created: 2019-07-03T00:00:00.000Z
                       date_scheduled: "null"
                       employee_id: "null"
                       integration_data.x_category_id: "null"
                       integration_data.x_priority_id: "null"
                       integration_data.x_problem_id: "null"
-                      service_category: sample_value
+                      service_category: HVAC
                       unit_number: "null"
                       integration_data.pmc_id: "null"
                       x_location_id: "null"
@@ -32843,32 +32843,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
+                      - access_is_authorized: true
                         access_notes: "null"
                         date_due: "null"
                         integration_data.task_type: "null"
                         integration_data.x_task_id: "null"
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
-                        service_priority: sample_value
-                        status_raw: sample_value
-                        unit_id: sample_value
-                        vendor_notes: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        service_description: Resident says AC is not cold
+                        service_details: Filter is due to be changed
+                        service_priority: High
+                        status_raw: In progress
+                        unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                        vendor_notes: Resident dog is growling, will follow up later
+                        x_id: "83885"
+                        x_property_id: hejkhkjhs
                         x_sub_task_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: "235"
                         building: "null"
                         completion_notes: "null"
-                        date_completed: sample_value
-                        date_created: sample_value
+                        date_completed: 2019-07-03T00:00:00.000Z
+                        date_created: 2019-07-03T00:00:00.000Z
                         date_scheduled: "null"
                         employee_id: "null"
                         integration_data.x_category_id: "null"
                         integration_data.x_priority_id: "null"
                         integration_data.x_problem_id: "null"
-                        service_category: sample_value
+                        service_category: HVAC
                         unit_number: "null"
                         integration_data.pmc_id: "null"
                         x_location_id: "null"
@@ -33303,32 +33303,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
+                      access_is_authorized: true
                       access_notes: "null"
                       date_due: "null"
                       integration_data.task_type: "null"
                       integration_data.x_task_id: "null"
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
-                      service_priority: sample_value
-                      status_raw: sample_value
-                      unit_id: sample_value
-                      vendor_notes: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      service_description: Resident says AC is not cold
+                      service_details: Filter is due to be changed
+                      service_priority: High
+                      status_raw: In progress
+                      unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                      vendor_notes: Resident dog is growling, will follow up later
+                      x_id: "83885"
+                      x_property_id: hejkhkjhs
                       x_sub_task_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: "235"
                       building: "null"
                       completion_notes: "null"
-                      date_completed: sample_value
-                      date_created: sample_value
+                      date_completed: 2019-07-03T00:00:00.000Z
+                      date_created: 2019-07-03T00:00:00.000Z
                       date_scheduled: "null"
                       employee_id: "null"
                       integration_data.x_category_id: "null"
                       integration_data.x_priority_id: "null"
                       integration_data.x_problem_id: "null"
-                      service_category: sample_value
+                      service_category: HVAC
                       unit_number: "null"
                       integration_data.pmc_id: "null"
                       x_location_id: "null"
@@ -33806,32 +33806,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
+                      - access_is_authorized: true
                         access_notes: "null"
                         date_due: "null"
                         integration_data.task_type: "null"
                         integration_data.x_task_id: "null"
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
-                        service_priority: sample_value
-                        status_raw: sample_value
-                        unit_id: sample_value
-                        vendor_notes: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        service_description: Resident says AC is not cold
+                        service_details: Filter is due to be changed
+                        service_priority: High
+                        status_raw: In progress
+                        unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                        vendor_notes: Resident dog is growling, will follow up later
+                        x_id: "83885"
+                        x_property_id: hejkhkjhs
                         x_sub_task_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: "235"
                         building: "null"
                         completion_notes: "null"
-                        date_completed: sample_value
-                        date_created: sample_value
+                        date_completed: 2019-07-03T00:00:00.000Z
+                        date_created: 2019-07-03T00:00:00.000Z
                         date_scheduled: "null"
                         employee_id: "null"
                         integration_data.x_category_id: "null"
                         integration_data.x_priority_id: "null"
                         integration_data.x_problem_id: "null"
-                        service_category: sample_value
+                        service_category: HVAC
                         unit_number: "null"
                         integration_data.pmc_id: "null"
                         x_location_id: "null"
@@ -34266,32 +34266,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
+                      access_is_authorized: true
                       access_notes: "null"
                       date_due: "null"
                       integration_data.task_type: "null"
                       integration_data.x_task_id: "null"
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
-                      service_priority: sample_value
-                      status_raw: sample_value
-                      unit_id: sample_value
-                      vendor_notes: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      service_description: Resident says AC is not cold
+                      service_details: Filter is due to be changed
+                      service_priority: High
+                      status_raw: In progress
+                      unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                      vendor_notes: Resident dog is growling, will follow up later
+                      x_id: "83885"
+                      x_property_id: hejkhkjhs
                       x_sub_task_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: "235"
                       building: "null"
                       completion_notes: "null"
-                      date_completed: sample_value
-                      date_created: sample_value
+                      date_completed: 2019-07-03T00:00:00.000Z
+                      date_created: 2019-07-03T00:00:00.000Z
                       date_scheduled: "null"
                       employee_id: "null"
                       integration_data.x_category_id: "null"
                       integration_data.x_priority_id: "null"
                       integration_data.x_problem_id: "null"
-                      service_category: sample_value
+                      service_category: HVAC
                       unit_number: "null"
                       integration_data.pmc_id: "null"
                       x_location_id: "null"
@@ -34736,32 +34736,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
+                      - access_is_authorized: true
                         access_notes: "null"
                         date_due: "null"
                         integration_data.task_type: "null"
                         integration_data.x_task_id: "null"
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
-                        service_priority: sample_value
-                        status_raw: sample_value
-                        unit_id: sample_value
-                        vendor_notes: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        service_description: Resident says AC is not cold
+                        service_details: Filter is due to be changed
+                        service_priority: High
+                        status_raw: In progress
+                        unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                        vendor_notes: Resident dog is growling, will follow up later
+                        x_id: "83885"
+                        x_property_id: hejkhkjhs
                         x_sub_task_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: "235"
                         building: "null"
                         completion_notes: "null"
-                        date_completed: sample_value
-                        date_created: sample_value
+                        date_completed: 2019-07-03T00:00:00.000Z
+                        date_created: 2019-07-03T00:00:00.000Z
                         date_scheduled: "null"
                         employee_id: "null"
                         integration_data.x_category_id: "null"
                         integration_data.x_priority_id: "null"
                         integration_data.x_problem_id: "null"
-                        service_category: sample_value
+                        service_category: HVAC
                         unit_number: "null"
                         integration_data.pmc_id: "null"
                         x_location_id: "null"
@@ -35210,32 +35210,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
+                      access_is_authorized: true
                       access_notes: "null"
                       date_due: "null"
                       integration_data.task_type: "null"
                       integration_data.x_task_id: "null"
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
-                      service_priority: sample_value
-                      status_raw: sample_value
-                      unit_id: sample_value
-                      vendor_notes: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      service_description: Resident says AC is not cold
+                      service_details: Filter is due to be changed
+                      service_priority: High
+                      status_raw: In progress
+                      unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                      vendor_notes: Resident dog is growling, will follow up later
+                      x_id: "83885"
+                      x_property_id: hejkhkjhs
                       x_sub_task_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: "235"
                       building: "null"
                       completion_notes: "null"
-                      date_completed: sample_value
-                      date_created: sample_value
+                      date_completed: 2019-07-03T00:00:00.000Z
+                      date_created: 2019-07-03T00:00:00.000Z
                       date_scheduled: "null"
                       employee_id: "null"
                       integration_data.x_category_id: "null"
                       integration_data.x_priority_id: "null"
                       integration_data.x_problem_id: "null"
-                      service_category: sample_value
+                      service_category: HVAC
                       unit_number: "null"
                       integration_data.pmc_id: "null"
                       x_location_id: "null"
@@ -35680,32 +35680,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
+                      - access_is_authorized: true
                         access_notes: "null"
                         date_due: "null"
                         integration_data.task_type: "null"
                         integration_data.x_task_id: "null"
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
-                        service_priority: sample_value
-                        status_raw: sample_value
-                        unit_id: sample_value
-                        vendor_notes: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        service_description: Resident says AC is not cold
+                        service_details: Filter is due to be changed
+                        service_priority: High
+                        status_raw: In progress
+                        unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                        vendor_notes: Resident dog is growling, will follow up later
+                        x_id: "83885"
+                        x_property_id: hejkhkjhs
                         x_sub_task_id: "null"
-                        x_unit_id: sample_value
+                        x_unit_id: "235"
                         building: "null"
                         completion_notes: "null"
-                        date_completed: sample_value
-                        date_created: sample_value
+                        date_completed: 2019-07-03T00:00:00.000Z
+                        date_created: 2019-07-03T00:00:00.000Z
                         date_scheduled: "null"
                         employee_id: "null"
                         integration_data.x_category_id: "null"
                         integration_data.x_priority_id: "null"
                         integration_data.x_problem_id: "null"
-                        service_category: sample_value
+                        service_category: HVAC
                         unit_number: "null"
                         integration_data.pmc_id: "null"
                         x_location_id: "null"
@@ -36154,32 +36154,32 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
+                      access_is_authorized: true
                       access_notes: "null"
                       date_due: "null"
                       integration_data.task_type: "null"
                       integration_data.x_task_id: "null"
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
-                      service_priority: sample_value
-                      status_raw: sample_value
-                      unit_id: sample_value
-                      vendor_notes: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      service_description: Resident says AC is not cold
+                      service_details: Filter is due to be changed
+                      service_priority: High
+                      status_raw: In progress
+                      unit_id: clwqtfra5000008mj44fw9byy:jkjkhjkhe:432
+                      vendor_notes: Resident dog is growling, will follow up later
+                      x_id: "83885"
+                      x_property_id: hejkhkjhs
                       x_sub_task_id: "null"
-                      x_unit_id: sample_value
+                      x_unit_id: "235"
                       building: "null"
                       completion_notes: "null"
-                      date_completed: sample_value
-                      date_created: sample_value
+                      date_completed: 2019-07-03T00:00:00.000Z
+                      date_created: 2019-07-03T00:00:00.000Z
                       date_scheduled: "null"
                       employee_id: "null"
                       integration_data.x_category_id: "null"
                       integration_data.x_priority_id: "null"
                       integration_data.x_problem_id: "null"
-                      service_category: sample_value
+                      service_category: HVAC
                       unit_number: "null"
                       integration_data.pmc_id: "null"
                       x_location_id: "null"
