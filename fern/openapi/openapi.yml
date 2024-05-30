@@ -8156,6 +8156,12 @@ paths:
           required: false
           name: integration_vendor
           in: query
+        - schema:
+            type: string
+            description: The account number associated with the financial account
+          required: false
+          name: account_number
+          in: query
       responses:
         "200":
           description: Get all financial accounts
@@ -8232,6 +8238,11 @@ paths:
                             - string
                             - "null"
                           description: The raw status associated with the financial account
+                        account_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The account number associated with the financial account
                         custom_data:
                           type:
                             - object
@@ -8260,6 +8271,7 @@ paths:
                         - x_location_id
                         - name
                         - status_raw
+                        - account_number
                         - custom_data
                         - property_id
                         - integration_id
@@ -8390,6 +8402,11 @@ paths:
                           - string
                           - "null"
                         description: The raw status associated with the financial account
+                      account_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The account number associated with the financial account
                       custom_data:
                         type:
                           - object
@@ -8418,6 +8435,7 @@ paths:
                       - x_location_id
                       - name
                       - status_raw
+                      - account_number
                       - custom_data
                       - property_id
                       - integration_id
