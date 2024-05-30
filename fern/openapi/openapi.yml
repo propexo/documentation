@@ -12244,6 +12244,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: "null"
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -12264,6 +12265,7 @@ paths:
                         appointment_datetime: sample_value
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: sample_value
                         reasons_for_event: sample_value
                         x_type_id: sample_value
                         integration_data.event_hash: "null"
@@ -12284,6 +12286,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -12304,6 +12307,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: sample_value
                         x_type_id: "null"
                         integration_data.event_hash: sample_value
@@ -12324,6 +12328,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: sample_value
                         x_type_id: "null"
                         integration_data.event_hash: sample_value
@@ -12344,6 +12349,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -12364,6 +12370,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -12384,6 +12391,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: "null"
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -12404,6 +12412,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: sample_value
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -12617,6 +12626,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: "null"
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -12637,6 +12647,7 @@ paths:
                       appointment_datetime: sample_value
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: sample_value
                       reasons_for_event: sample_value
                       x_type_id: sample_value
                       integration_data.event_hash: "null"
@@ -12657,6 +12668,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -12677,6 +12689,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: sample_value
                       x_type_id: "null"
                       integration_data.event_hash: sample_value
@@ -12697,6 +12710,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: sample_value
                       x_type_id: "null"
                       integration_data.event_hash: sample_value
@@ -12717,6 +12731,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -12737,6 +12752,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -12757,6 +12773,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: "null"
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -12777,6 +12794,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: sample_value
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -13294,6 +13312,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: "null"
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -13314,6 +13333,7 @@ paths:
                         appointment_datetime: sample_value
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: sample_value
                         reasons_for_event: sample_value
                         x_type_id: sample_value
                         integration_data.event_hash: "null"
@@ -13334,6 +13354,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -13354,6 +13375,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: sample_value
                         x_type_id: "null"
                         integration_data.event_hash: sample_value
@@ -13374,6 +13396,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: sample_value
                         x_type_id: "null"
                         integration_data.event_hash: sample_value
@@ -13394,6 +13417,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -13414,6 +13438,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -13434,6 +13459,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: "null"
                         event_name: "null"
+                        integration_data.x_application_id: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -13454,6 +13480,7 @@ paths:
                         appointment_datetime: "null"
                         event_datetime: sample_value
                         event_name: sample_value
+                        integration_data.x_application_id: "null"
                         reasons_for_event: sample_value
                         x_type_id: "null"
                         integration_data.event_hash: "null"
@@ -13630,6 +13657,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: "null"
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -13650,6 +13678,7 @@ paths:
                       appointment_datetime: sample_value
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: sample_value
                       reasons_for_event: sample_value
                       x_type_id: sample_value
                       integration_data.event_hash: "null"
@@ -13670,6 +13699,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -13690,6 +13720,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: sample_value
                       x_type_id: "null"
                       integration_data.event_hash: sample_value
@@ -13710,6 +13741,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: sample_value
                       x_type_id: "null"
                       integration_data.event_hash: sample_value
@@ -13730,6 +13762,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -13750,6 +13783,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -13770,6 +13804,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: "null"
                       event_name: "null"
+                      integration_data.x_application_id: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -13790,6 +13825,7 @@ paths:
                       appointment_datetime: "null"
                       event_datetime: sample_value
                       event_name: sample_value
+                      integration_data.x_application_id: "null"
                       reasons_for_event: sample_value
                       x_type_id: "null"
                       integration_data.event_hash: "null"
@@ -13964,6 +14000,32 @@ paths:
             schema:
               type: object
               properties:
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                title:
+                  type: string
+                  description: The title associated with the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
                 event_datetime:
                   type: string
                   format: date-time
@@ -14060,6 +14122,32 @@ paths:
             schema:
               type: object
               properties:
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                title:
+                  type: string
+                  description: The title associated with the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
                 event_datetime:
                   type: string
                   format: date-time
