@@ -11533,6 +11533,487 @@ paths:
               examples: {}
         "400":
           description: invalid input
+  /v1/construction-jobs/{construction_job_id}/contracts:
+    get:
+      tags:
+        - construction-job-cost
+      summary: Get all contracts for a specific construction job
+      description: Get all contracts for a specific construction job
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the construction job
+          required: true
+          name: construction_job_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all contracts for a specific construction job
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the contract
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        x_construction_job_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the construction job from the integration vendor
+                        x_vendor_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the vendor from the integration vendor
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        end_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The end date associated with the contract
+                        expense_type:
+                          type:
+                            - string
+                            - "null"
+                          description: The expense type of the contract
+                        invoiced_total_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total amount invoiced, in cents, for the contract
+                        notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Notes associated with the contract
+                        original_amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The original amount of the contract
+                        retention_percent:
+                          type:
+                            - string
+                            - "null"
+                          description: The retention percent of the contract
+                        start_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The start date associated with the contract
+                        status_normalized:
+                          type:
+                            - string
+                            - "null"
+                          description: The normalized status for the contract
+                        status_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw status associated with the contract
+                        total_amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total amount of the contract
+                        construction_job_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the construction job
+                        vendor_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the vendor
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - x_construction_job_id
+                        - x_vendor_id
+                        - custom_data
+                        - end_date
+                        - expense_type
+                        - invoiced_total_in_cents
+                        - notes
+                        - original_amount_in_cents
+                        - retention_percent
+                        - start_date
+                        - status_normalized
+                        - status_raw
+                        - total_amount_in_cents
+                        - construction_job_id
+                        - vendor_id
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                required:
+                  - meta
+                  - results
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/construction-jobs/contracts/{contract_id}/details:
+    get:
+      tags:
+        - construction-job-cost
+      summary: Get all contract details for a specific contract
+      description: Get all contract details for a specific contract
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the contract
+          required: true
+          name: contract_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all contract details for a specific contract
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the contract detail
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        x_category_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the category from the integration vendor
+                        x_financial_account_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the financial account from the integration
+                            vendor
+                        category_description:
+                          type:
+                            - string
+                            - "null"
+                          description: The description of the category for the contract detail
+                        cost_code:
+                          type:
+                            - string
+                            - "null"
+                          description: The cost code of the contract detail
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        invoiced_total_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total amount invoiced, in cents, for the contract detail
+                        notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Notes associated with the contract detail
+                        retention_percent:
+                          type:
+                            - string
+                            - "null"
+                          description: The retention percent of the contract detail
+                        total_amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total amount of the contract detail
+                        contract_id:
+                          type: string
+                          description: The Propexo unique identifier for the contract
+                        financial_account_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the financial account
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - x_category_id
+                        - x_financial_account_id
+                        - category_description
+                        - cost_code
+                        - custom_data
+                        - invoiced_total_in_cents
+                        - notes
+                        - retention_percent
+                        - total_amount_in_cents
+                        - contract_id
+                        - financial_account_id
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                required:
+                  - meta
+                  - results
+              examples: {}
+        "400":
+          description: invalid input
   /v1/employees:
     get:
       tags:
