@@ -753,6 +753,25 @@ paths:
                             - PRODUCTION
                             - SANDBOX
                           description: The system the integration is associated with
+                        sync_frequency:
+                          type:
+                            - integer
+                            - "null"
+                          description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+                            following: Sync every 12 HOURs)'
+                        sync_cadence:
+                          type:
+                            - string
+                            - "null"
+                          enum:
+                            - MINUTE
+                            - HOUR
+                            - DAY
+                            - WEEK
+                            - MONTH
+                            - SECOND
+                          description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+                            following: Sync every 12 HOURs)'
                         max_job_concurrency:
                           type: integer
                           description: Maximum number of jobs that can be run at once for the integration
@@ -1200,8 +1219,26 @@ paths:
                   enum:
                     - PRODUCTION
                     - SANDBOX
-                  description: "Deprecated: The system the integration is associated with"
+                  description: "Deprecated: Do not use"
                   deprecated: true
+                sync_frequency:
+                  type: integer
+                  minimum: 1
+                  default: 12
+                  description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+                    following: Sync every 12 HOURs)'
+                sync_cadence:
+                  type: string
+                  enum:
+                    - MINUTE
+                    - HOUR
+                    - DAY
+                    - WEEK
+                    - MONTH
+                    - SECOND
+                  default: HOUR
+                  description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+                    following: Sync every 12 HOURs)'
                 max_request_cadence:
                   type: string
                   enum:
@@ -1212,19 +1249,25 @@ paths:
                     - MONTH
                     - SECOND
                   default: SECOND
-                  description: Cadence at which to limit the max request frequency
+                  description: 'The cadence at which to limit the max request frequency. (e.g.
+                    "SECOND" in the following: 1 request per 2 SECONDs)'
+                  example: SECOND
                 max_request_frequency:
                   type: number
                   minimum: 1
                   default: 10
-                  description: Number of request cadence units
+                  description: 'The maximum number of requests sent to the PMS API per cadence
+                    unit. (e.g. "2" in the following: 1 request per 2 SECONDs)'
+                  example: 10
                 max_job_concurrency:
                   type: integer
                   maximum: 1
                   minimum: 1
                   default: 1
-                  description: Maximum number of jobs that can be run at once for the integration.
-                    Please contact support to increase this limit.
+                  description: 'Maximum number of jobs that can be run at once for the
+                    integration. (e.g. "1" in the following: 1 request per 2
+                    SECONDs) — Please contact support to increase this limit.'
+                  example: 1
                 active:
                   type: boolean
                   default: false
@@ -1234,29 +1277,31 @@ paths:
                     - string
                     - "null"
                   format: uri
-                  description: "DEPRECATED: see specific PMS credentials. Base URL for the
-                    integration vendor API"
+                  description: DEPRECATED. See specific PMS credentials for usage.
                   deprecated: true
                 new_properties_are_enabled:
                   type: boolean
                   default: true
-                  description: Whether or not properties need to be approved before ingesting data
-                    for them.
+                  description: Whether or not properties need to be approved before by you
+                    ingesting data for them.
                 based_on_integration_id:
                   type: string
                   description: A reference integration_id to base the creation of an integration
                     on. This includes copying job scheduling frequency and
                     similar configuration. Credentials are not copied and must
                     still be provided.
+                  example: clwsc909e000008l73rix7mae
                 allow_manual_syncs:
                   type: boolean
                   default: false
-                  description: Whether or not manual syncs are allowed to be triggered on this
-                    integration
+                  description: Opt-in to allow manual syncs for this integration to be triggered
+                    via the API
               required:
                 - integration_vendor
                 - credentials
                 - name
+                - sync_frequency
+                - sync_cadence
       responses:
         "200":
           description: Create an integration
@@ -1307,12 +1352,21 @@ paths:
                           - PRODUCTION
                           - SANDBOX
                         description: The system the integration is associated with
-                      max_job_concurrency:
+                      sync_frequency:
                         type: integer
-                        description: Maximum number of jobs that can be run at once for the integration
-                      max_request_frequency:
-                        type: integer
-                        description: Maximum number of jobs that can be run in the max request cadence
+                        description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+                          following: Sync every 12 HOURs)'
+                      sync_cadence:
+                        type: string
+                        enum:
+                          - MINUTE
+                          - HOUR
+                          - DAY
+                          - WEEK
+                          - MONTH
+                          - SECOND
+                        description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+                          following: Sync every 12 HOURs)'
                       max_request_cadence:
                         type: string
                         enum:
@@ -1322,7 +1376,28 @@ paths:
                           - WEEK
                           - MONTH
                           - SECOND
-                        description: Cadence at which to limit the max request frequency
+                        default: SECOND
+                        description: 'The cadence at which to limit the max request frequency. (e.g.
+                          "SECOND" in the following: 1 request per 2 SECONDs)'
+                        example: SECOND
+                      max_request_frequency:
+                        type: number
+                        minimum: 1
+                        default: 10
+                        description: 'The maximum number of requests sent to the PMS API per cadence
+                          unit. (e.g. "2" in the following: 1 request per 2
+                          SECONDs)'
+                        example: 10
+                      max_job_concurrency:
+                        type: integer
+                        maximum: 1
+                        minimum: 1
+                        default: 1
+                        description: 'Maximum number of jobs that can be run at once for the
+                          integration. (e.g. "1" in the following: 1 request per
+                          2 SECONDs) — Please contact support to increase this
+                          limit.'
+                        example: 1
                       base_url:
                         type:
                           - string
@@ -1356,9 +1431,8 @@ paths:
                       - vendor
                       - active
                       - system
-                      - max_job_concurrency
-                      - max_request_frequency
-                      - max_request_cadence
+                      - sync_frequency
+                      - sync_cadence
                       - base_url
                       - customer_id
                       - is_archived
@@ -1998,6 +2072,25 @@ paths:
                           - PRODUCTION
                           - SANDBOX
                         description: The system the integration is associated with
+                      sync_frequency:
+                        type:
+                          - integer
+                          - "null"
+                        description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+                          following: Sync every 12 HOURs)'
+                      sync_cadence:
+                        type:
+                          - string
+                          - "null"
+                        enum:
+                          - MINUTE
+                          - HOUR
+                          - DAY
+                          - WEEK
+                          - MONTH
+                          - SECOND
+                        description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+                          following: Sync every 12 HOURs)'
                       max_job_concurrency:
                         type: integer
                         description: Maximum number of jobs that can be run at once for the integration
@@ -2461,8 +2554,23 @@ paths:
                   enum:
                     - PRODUCTION
                     - SANDBOX
-                  description: "Deprecated: The system the integration is associated with"
+                  description: "Deprecated: Do not use."
                   deprecated: true
+                sync_frequency:
+                  type: integer
+                  description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+                    following: Sync every 12 HOURs)'
+                sync_cadence:
+                  type: string
+                  enum:
+                    - MINUTE
+                    - HOUR
+                    - DAY
+                    - WEEK
+                    - MONTH
+                    - SECOND
+                  description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+                    following: Sync every 12 HOURs)'
                 max_request_cadence:
                   type: string
                   enum:
@@ -2472,17 +2580,26 @@ paths:
                     - WEEK
                     - MONTH
                     - SECOND
-                  description: Cadence at which to limit the max request frequency
+                  default: SECOND
+                  description: 'The cadence at which to limit the max request frequency. (e.g.
+                    "SECOND" in the following: 1 request per 2 SECONDs)'
+                  example: SECOND
                 max_request_frequency:
-                  type: integer
+                  type: number
                   minimum: 1
-                  description: Number of request cadence units
+                  default: 10
+                  description: 'The maximum number of requests sent to the PMS API per cadence
+                    unit. (e.g. "2" in the following: 1 request per 2 SECONDs)'
+                  example: 10
                 max_job_concurrency:
                   type: integer
                   maximum: 1
                   minimum: 1
-                  description: Maximum number of jobs that can be run at once for the integration.
-                    Please contact support to increase this limit.
+                  default: 1
+                  description: 'Maximum number of jobs that can be run at once for the
+                    integration. (e.g. "1" in the following: 1 request per 2
+                    SECONDs) — Please contact support to increase this limit.'
+                  example: 1
                 active:
                   type: boolean
                   description: The active state of the integration
@@ -2491,8 +2608,7 @@ paths:
                     - string
                     - "null"
                   format: uri
-                  description: "DEPRECATED: see specific PMS credentials. Base URL for the
-                    integration vendor API"
+                  description: DEPRECATED. See specific PMS credentials for usage.
                   deprecated: true
                 new_properties_are_enabled:
                   type: boolean
@@ -2554,12 +2670,25 @@ paths:
                           - PRODUCTION
                           - SANDBOX
                         description: The system the integration is associated with
-                      max_job_concurrency:
-                        type: integer
-                        description: Maximum number of jobs that can be run at once for the integration
-                      max_request_frequency:
-                        type: integer
-                        description: Maximum number of jobs that can be run in the max request cadence
+                      sync_frequency:
+                        type:
+                          - integer
+                          - "null"
+                        description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+                          following: Sync every 12 HOURs)'
+                      sync_cadence:
+                        type:
+                          - string
+                          - "null"
+                        enum:
+                          - MINUTE
+                          - HOUR
+                          - DAY
+                          - WEEK
+                          - MONTH
+                          - SECOND
+                        description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+                          following: Sync every 12 HOURs)'
                       max_request_cadence:
                         type: string
                         enum:
@@ -2569,7 +2698,28 @@ paths:
                           - WEEK
                           - MONTH
                           - SECOND
-                        description: Cadence at which to limit the max request frequency
+                        default: SECOND
+                        description: 'The cadence at which to limit the max request frequency. (e.g.
+                          "SECOND" in the following: 1 request per 2 SECONDs)'
+                        example: SECOND
+                      max_request_frequency:
+                        type: number
+                        minimum: 1
+                        default: 10
+                        description: 'The maximum number of requests sent to the PMS API per cadence
+                          unit. (e.g. "2" in the following: 1 request per 2
+                          SECONDs)'
+                        example: 10
+                      max_job_concurrency:
+                        type: integer
+                        maximum: 1
+                        minimum: 1
+                        default: 1
+                        description: 'Maximum number of jobs that can be run at once for the
+                          integration. (e.g. "1" in the following: 1 request per
+                          2 SECONDs) — Please contact support to increase this
+                          limit.'
+                        example: 1
                       base_url:
                         type:
                           - string
@@ -2596,9 +2746,8 @@ paths:
                       - integration_vendor
                       - active
                       - system
-                      - max_job_concurrency
-                      - max_request_frequency
-                      - max_request_cadence
+                      - sync_frequency
+                      - sync_cadence
                       - base_url
                       - is_archived
                       - new_properties_are_enabled
