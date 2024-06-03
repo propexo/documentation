@@ -23727,6 +23727,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: true
                         name: sample_value
                         notes: sample_value
                         number_of_units: sample_value
@@ -23740,7 +23741,6 @@ paths:
                         year_built: sample_value
                         zip: "02116"
                         country: "null"
-                        is_active: "null"
                         manager_email: "null"
                         type: "null"
                         website: "null"
@@ -23765,6 +23765,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: sample_value
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -23778,7 +23779,6 @@ paths:
                         year_built: sample_value
                         zip: "02116"
                         country: US
-                        is_active: sample_value
                         manager_email: sample_value
                         type: sample_value
                         website: sample_value
@@ -23803,6 +23803,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: "null"
                         name: sample_value
                         notes: sample_value
                         number_of_units: "null"
@@ -23816,7 +23817,6 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: US
-                        is_active: "null"
                         manager_email: sample_value
                         type: "null"
                         website: sample_value
@@ -23841,6 +23841,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -23854,7 +23855,6 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: US
-                        is_active: "null"
                         manager_email: sample_value
                         type: "null"
                         website: sample_value
@@ -23879,6 +23879,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -23892,7 +23893,6 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: US
-                        is_active: "null"
                         manager_email: sample_value
                         type: "null"
                         website: "null"
@@ -23917,6 +23917,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: sample_value
                         name: sample_value
                         notes: sample_value
                         number_of_units: sample_value
@@ -23930,7 +23931,6 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: "null"
-                        is_active: sample_value
                         manager_email: sample_value
                         type: "null"
                         website: "null"
@@ -23955,6 +23955,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: sample_value
                         name: sample_value
                         notes: sample_value
                         number_of_units: "null"
@@ -23968,7 +23969,6 @@ paths:
                         year_built: sample_value
                         zip: "02116"
                         country: US
-                        is_active: sample_value
                         manager_email: sample_value
                         type: sample_value
                         website: sample_value
@@ -23993,6 +23993,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -24006,7 +24007,6 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: "null"
-                        is_active: "null"
                         manager_email: sample_value
                         type: "null"
                         website: "null"
@@ -24031,6 +24031,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
+                        is_active: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -24044,7 +24045,6 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: "null"
-                        is_active: "null"
                         manager_email: "null"
                         type: "null"
                         website: "null"
@@ -24504,6 +24504,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: true
                       name: sample_value
                       notes: sample_value
                       number_of_units: sample_value
@@ -24517,7 +24518,6 @@ paths:
                       year_built: sample_value
                       zip: "02116"
                       country: "null"
-                      is_active: "null"
                       manager_email: "null"
                       type: "null"
                       website: "null"
@@ -24542,6 +24542,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: sample_value
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24555,7 +24556,6 @@ paths:
                       year_built: sample_value
                       zip: "02116"
                       country: US
-                      is_active: sample_value
                       manager_email: sample_value
                       type: sample_value
                       website: sample_value
@@ -24580,6 +24580,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: "null"
                       name: sample_value
                       notes: sample_value
                       number_of_units: "null"
@@ -24593,7 +24594,6 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: US
-                      is_active: "null"
                       manager_email: sample_value
                       type: "null"
                       website: sample_value
@@ -24618,6 +24618,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24631,7 +24632,6 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: US
-                      is_active: "null"
                       manager_email: sample_value
                       type: "null"
                       website: sample_value
@@ -24656,6 +24656,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24669,7 +24670,6 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: US
-                      is_active: "null"
                       manager_email: sample_value
                       type: "null"
                       website: "null"
@@ -24694,6 +24694,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: sample_value
                       name: sample_value
                       notes: sample_value
                       number_of_units: sample_value
@@ -24707,7 +24708,6 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: "null"
-                      is_active: sample_value
                       manager_email: sample_value
                       type: "null"
                       website: "null"
@@ -24732,6 +24732,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: sample_value
                       name: sample_value
                       notes: sample_value
                       number_of_units: "null"
@@ -24745,7 +24746,6 @@ paths:
                       year_built: sample_value
                       zip: "02116"
                       country: US
-                      is_active: sample_value
                       manager_email: sample_value
                       type: sample_value
                       website: sample_value
@@ -24770,6 +24770,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24783,7 +24784,6 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: "null"
-                      is_active: "null"
                       manager_email: sample_value
                       type: "null"
                       website: "null"
@@ -24808,6 +24808,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
+                      is_active: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24821,7 +24822,6 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: "null"
-                      is_active: "null"
                       manager_email: "null"
                       type: "null"
                       website: "null"
