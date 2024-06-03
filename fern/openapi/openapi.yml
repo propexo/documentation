@@ -21916,6 +21916,11 @@ paths:
                             - string
                             - "null"
                           description: The second address line associated with the listing
+                        short_description:
+                          type:
+                            - string
+                            - "null"
+                          description: A short description of the listing
                         unit_description:
                           type:
                             - string
@@ -22002,6 +22007,7 @@ paths:
                         - street_address_2
                         - address_1
                         - address_2
+                        - short_description
                         - unit_description
                         - zip
                         - make_ready_date
@@ -22054,6 +22060,7 @@ paths:
                         listing_title: "null"
                         marketing_name: "null"
                         notes: "null"
+                        short_description: "null"
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
@@ -22098,6 +22105,7 @@ paths:
                         listing_title: "null"
                         marketing_name: "null"
                         notes: "null"
+                        short_description: "null"
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
@@ -22142,6 +22150,7 @@ paths:
                         listing_title: sample_value
                         marketing_name: sample_value
                         notes: sample_value
+                        short_description: sample_value
                         specials: sample_value
                         building_number: "null"
                         vacate_date: "null"
@@ -22186,6 +22195,7 @@ paths:
                         listing_title: "null"
                         marketing_name: "null"
                         notes: "null"
+                        short_description: "null"
                         specials: "null"
                         building_number: sample_value
                         vacate_date: sample_value
@@ -22230,6 +22240,7 @@ paths:
                         listing_title: "null"
                         marketing_name: "null"
                         notes: "null"
+                        short_description: "null"
                         specials: "null"
                         building_number: sample_value
                         vacate_date: sample_value
@@ -22274,6 +22285,7 @@ paths:
                         listing_title: "null"
                         marketing_name: "null"
                         notes: "null"
+                        short_description: "null"
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
@@ -22318,6 +22330,7 @@ paths:
                         listing_title: sample_value
                         marketing_name: "null"
                         notes: sample_value
+                        short_description: "null"
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
@@ -22362,6 +22375,7 @@ paths:
                         listing_title: "null"
                         marketing_name: "null"
                         notes: "null"
+                        short_description: "null"
                         specials: "null"
                         building_number: "null"
                         vacate_date: sample_value
@@ -22406,6 +22420,7 @@ paths:
                         listing_title: "null"
                         marketing_name: "null"
                         notes: Available in June
+                        short_description: "null"
                         specials: "null"
                         building_number: "null"
                         vacate_date: 2024-05-07T00:00:00.000Z
@@ -22767,6 +22782,11 @@ paths:
                           - string
                           - "null"
                         description: The second address line associated with the listing
+                      short_description:
+                        type:
+                          - string
+                          - "null"
+                        description: A short description of the listing
                       unit_description:
                         type:
                           - string
@@ -22853,6 +22873,7 @@ paths:
                       - street_address_2
                       - address_1
                       - address_2
+                      - short_description
                       - unit_description
                       - zip
                       - make_ready_date
@@ -22905,6 +22926,7 @@ paths:
                       listing_title: "null"
                       marketing_name: "null"
                       notes: "null"
+                      short_description: "null"
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
@@ -22949,6 +22971,7 @@ paths:
                       listing_title: "null"
                       marketing_name: "null"
                       notes: "null"
+                      short_description: "null"
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
@@ -22993,6 +23016,7 @@ paths:
                       listing_title: sample_value
                       marketing_name: sample_value
                       notes: sample_value
+                      short_description: sample_value
                       specials: sample_value
                       building_number: "null"
                       vacate_date: "null"
@@ -23037,6 +23061,7 @@ paths:
                       listing_title: "null"
                       marketing_name: "null"
                       notes: "null"
+                      short_description: "null"
                       specials: "null"
                       building_number: sample_value
                       vacate_date: sample_value
@@ -23081,6 +23106,7 @@ paths:
                       listing_title: "null"
                       marketing_name: "null"
                       notes: "null"
+                      short_description: "null"
                       specials: "null"
                       building_number: sample_value
                       vacate_date: sample_value
@@ -23125,6 +23151,7 @@ paths:
                       listing_title: "null"
                       marketing_name: "null"
                       notes: "null"
+                      short_description: "null"
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
@@ -23169,6 +23196,7 @@ paths:
                       listing_title: sample_value
                       marketing_name: "null"
                       notes: sample_value
+                      short_description: "null"
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
@@ -23213,6 +23241,7 @@ paths:
                       listing_title: "null"
                       marketing_name: "null"
                       notes: "null"
+                      short_description: "null"
                       specials: "null"
                       building_number: "null"
                       vacate_date: sample_value
@@ -23257,6 +23286,7 @@ paths:
                       listing_title: "null"
                       marketing_name: "null"
                       notes: Available in June
+                      short_description: "null"
                       specials: "null"
                       building_number: "null"
                       vacate_date: 2024-05-07T00:00:00.000Z
@@ -43833,6 +43863,11 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The second address line associated with the listing
+                                short_description:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: A short description of the listing
                                 unit_description:
                                   type:
                                     - string
@@ -46916,6 +46951,11 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The second address line associated with the listing
+                                    short_description:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: A short description of the listing
                                     unit_description:
                                       type:
                                         - string
@@ -49880,6 +49920,11 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The second address line associated with the listing
+                                    short_description:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: A short description of the listing
                                     unit_description:
                                       type:
                                         - string
