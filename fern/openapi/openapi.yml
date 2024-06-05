@@ -17491,16 +17491,9 @@ paths:
                 desired_unit_type:
                   type: string
                   description: The desired type of unit
-                relationship:
+                lead_relationship_id:
                   type: string
-                  enum:
-                    - HEAD_OF_HOUSEHOLD
-                    - ROOMMATE
-                    - SPOUSE
-                    - DEPENDENT
-                    - GUARANTOR/COSIGNER
-                    - NONE_OF_THE_ABOVE
-                  description: The type of household relationship for this lead
+                  description: The Propexo unique identifier for the lead relationship
                 date_of_birth:
                   type: string
                   format: date-time
@@ -18650,6 +18643,653 @@ paths:
                   - job_id
                   - data
               examples: {}
+        "400":
+          description: invalid input
+  /v1/lead-relationships:
+    get:
+      tags:
+        - leads
+      summary: Get all lead relationships
+      description: Get all lead relationships
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the property from the integration vendor
+          required: false
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all lead relationships
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the lead relationship
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        name:
+                          type: string
+                          description: The name associated with the lead relationship
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - name
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: "null"
+                        city: "null"
+                        country: "null"
+                        date_of_birth: "null"
+                        desired_amenities: "null"
+                        desired_floor_plan_id: "null"
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: "null"
+                        desired_max_rent_in_cents: "null"
+                        desired_min_rent_in_cents: "null"
+                        desired_num_bathrooms: "null"
+                        desired_num_bedrooms: "null"
+                        desired_unit_number: "null"
+                        desired_unit_type: "null"
+                        email_1: "null"
+                        first_name: "null"
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: "null"
+                        lead_source: "null"
+                        middle_name: "null"
+                        number_of_occupants: "null"
+                        phone_1: "null"
+                        phone_1_type: "null"
+                        phone_2: "null"
+                        phone_2_type: "null"
+                        state: "null"
+                        status: "null"
+                        target_move_in_date: "null"
+                        x_id: "null"
+                        x_lead_source_id: "null"
+                        x_property_id: "null"
+                        x_unit_id: "null"
+                        zip: "null"
+                        address_2: "null"
+                        integration_data.prospect_id: "null"
+                        notes: "null"
+                        pet_details: "null"
+                        x_created_at: "null"
+                        x_updated_at: "null"
+                        x_guestcard_id: "null"
+                        x_leasing_agent_id: "null"
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: "null"
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: 123 Main St
+                        city: Boston
+                        country: US
+                        date_of_birth: sample_value
+                        desired_amenities: sample_value
+                        desired_floor_plan_id: sample_value
+                        desired_floor_plan_name: sample_value
+                        desired_lease_term_in_months: sample_value
+                        desired_max_rent_in_cents: sample_value
+                        desired_min_rent_in_cents: sample_value
+                        desired_num_bathrooms: sample_value
+                        desired_num_bedrooms: sample_value
+                        desired_unit_number: sample_value
+                        desired_unit_type: sample_value
+                        email_1: example_email_1@email.com
+                        first_name: Sally
+                        integration_data.x_applicant_id: sample_value
+                        integration_data.x_application_id: sample_value
+                        last_name: Jones
+                        lead_source: sample_value
+                        middle_name: Gail
+                        number_of_occupants: sample_value
+                        phone_1: (123) 555-1234
+                        phone_1_type: MOBILE
+                        phone_2: sample_value
+                        phone_2_type: sample_value
+                        state: MA
+                        status: sample_value
+                        target_move_in_date: sample_value
+                        x_id: sample_value
+                        x_lead_source_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: sample_value
+                        zip: "02116"
+                        address_2: "null"
+                        integration_data.prospect_id: "null"
+                        notes: "null"
+                        pet_details: "null"
+                        x_created_at: "null"
+                        x_updated_at: "null"
+                        x_guestcard_id: "null"
+                        x_leasing_agent_id: "null"
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: "null"
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: 123 Main St
+                        city: Boston
+                        country: US
+                        date_of_birth: "null"
+                        desired_amenities: "null"
+                        desired_floor_plan_id: "null"
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: "null"
+                        desired_max_rent_in_cents: sample_value
+                        desired_min_rent_in_cents: sample_value
+                        desired_num_bathrooms: sample_value
+                        desired_num_bedrooms: sample_value
+                        desired_unit_number: "null"
+                        desired_unit_type: "null"
+                        email_1: example_email_1@email.com
+                        first_name: Sally
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: Jones
+                        lead_source: sample_value
+                        middle_name: Gail
+                        number_of_occupants: sample_value
+                        phone_1: (123) 555-1234
+                        phone_1_type: MOBILE
+                        phone_2: sample_value
+                        phone_2_type: sample_value
+                        state: MA
+                        status: sample_value
+                        target_move_in_date: sample_value
+                        x_id: sample_value
+                        x_lead_source_id: "null"
+                        x_property_id: sample_value
+                        x_unit_id: sample_value
+                        zip: "02116"
+                        address_2: sample_value
+                        integration_data.prospect_id: sample_value
+                        notes: sample_value
+                        pet_details: sample_value
+                        x_created_at: sample_value
+                        x_updated_at: sample_value
+                        x_guestcard_id: "null"
+                        x_leasing_agent_id: "null"
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: "null"
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: "null"
+                        city: "null"
+                        country: "null"
+                        date_of_birth: "null"
+                        desired_amenities: "null"
+                        desired_floor_plan_id: sample_value
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: sample_value
+                        desired_max_rent_in_cents: sample_value
+                        desired_min_rent_in_cents: sample_value
+                        desired_num_bathrooms: "null"
+                        desired_num_bedrooms: "null"
+                        desired_unit_number: "null"
+                        desired_unit_type: "null"
+                        email_1: example_email_1@email.com
+                        first_name: Sally
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: Jones
+                        lead_source: sample_value
+                        middle_name: Gail
+                        number_of_occupants: sample_value
+                        phone_1: (123) 555-1234
+                        phone_1_type: MOBILE
+                        phone_2: sample_value
+                        phone_2_type: sample_value
+                        state: "null"
+                        status: "null"
+                        target_move_in_date: sample_value
+                        x_id: sample_value
+                        x_lead_source_id: "null"
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        zip: "null"
+                        address_2: "null"
+                        integration_data.prospect_id: "null"
+                        notes: "null"
+                        pet_details: "null"
+                        x_created_at: sample_value
+                        x_updated_at: "null"
+                        x_guestcard_id: sample_value
+                        x_leasing_agent_id: sample_value
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: "null"
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: 123 Main St
+                        city: Boston
+                        country: US
+                        date_of_birth: "null"
+                        desired_amenities: "null"
+                        desired_floor_plan_id: sample_value
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: sample_value
+                        desired_max_rent_in_cents: sample_value
+                        desired_min_rent_in_cents: sample_value
+                        desired_num_bathrooms: "null"
+                        desired_num_bedrooms: "null"
+                        desired_unit_number: "null"
+                        desired_unit_type: "null"
+                        email_1: example_email_1@email.com
+                        first_name: Sally
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: Jones
+                        lead_source: "null"
+                        middle_name: Gail
+                        number_of_occupants: sample_value
+                        phone_1: (123) 555-1234
+                        phone_1_type: MOBILE
+                        phone_2: sample_value
+                        phone_2_type: sample_value
+                        state: MA
+                        status: "null"
+                        target_move_in_date: sample_value
+                        x_id: sample_value
+                        x_lead_source_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        zip: "02116"
+                        address_2: sample_value
+                        integration_data.prospect_id: "null"
+                        notes: "null"
+                        pet_details: "null"
+                        x_created_at: sample_value
+                        x_updated_at: "null"
+                        x_guestcard_id: sample_value
+                        x_leasing_agent_id: sample_value
+                        integration_data.pmc_id: sample_value
+                        integration_data.x_relationship_id: sample_value
+                        x_location_id: "null"
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: 123 Main St
+                        city: Boston
+                        country: "null"
+                        date_of_birth: sample_value
+                        desired_amenities: "null"
+                        desired_floor_plan_id: "null"
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: "null"
+                        desired_max_rent_in_cents: "null"
+                        desired_min_rent_in_cents: "null"
+                        desired_num_bathrooms: "null"
+                        desired_num_bedrooms: "null"
+                        desired_unit_number: "null"
+                        desired_unit_type: "null"
+                        email_1: example_email_1@email.com
+                        first_name: Sally
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: Jones
+                        lead_source: "null"
+                        middle_name: Gail
+                        number_of_occupants: "null"
+                        phone_1: "null"
+                        phone_1_type: "null"
+                        phone_2: "null"
+                        phone_2_type: "null"
+                        state: MA
+                        status: sample_value
+                        target_move_in_date: "null"
+                        x_id: sample_value
+                        x_lead_source_id: "null"
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        zip: "02116"
+                        address_2: "null"
+                        integration_data.prospect_id: sample_value
+                        notes: sample_value
+                        pet_details: "null"
+                        x_created_at: "null"
+                        x_updated_at: "null"
+                        x_guestcard_id: "null"
+                        x_leasing_agent_id: "null"
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: sample_value
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: "null"
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: "null"
+                        city: "null"
+                        country: "null"
+                        date_of_birth: "null"
+                        desired_amenities: "null"
+                        desired_floor_plan_id: "null"
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: "null"
+                        desired_max_rent_in_cents: "null"
+                        desired_min_rent_in_cents: "null"
+                        desired_num_bathrooms: "null"
+                        desired_num_bedrooms: "null"
+                        desired_unit_number: "null"
+                        desired_unit_type: "null"
+                        email_1: "null"
+                        first_name: "null"
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: "null"
+                        lead_source: "null"
+                        middle_name: "null"
+                        number_of_occupants: "null"
+                        phone_1: "null"
+                        phone_1_type: "null"
+                        phone_2: "null"
+                        phone_2_type: "null"
+                        state: "null"
+                        status: "null"
+                        target_move_in_date: "null"
+                        x_id: "null"
+                        x_lead_source_id: "null"
+                        x_property_id: "null"
+                        x_unit_id: "null"
+                        zip: "null"
+                        address_2: "null"
+                        integration_data.prospect_id: "null"
+                        notes: "null"
+                        pet_details: "null"
+                        x_created_at: "null"
+                        x_updated_at: "null"
+                        x_guestcard_id: "null"
+                        x_leasing_agent_id: "null"
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: "null"
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: "null"
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: 123 Main St
+                        city: Boston
+                        country: US
+                        date_of_birth: "null"
+                        desired_amenities: "null"
+                        desired_floor_plan_id: "null"
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: "null"
+                        desired_max_rent_in_cents: sample_value
+                        desired_min_rent_in_cents: sample_value
+                        desired_num_bathrooms: sample_value
+                        desired_num_bedrooms: sample_value
+                        desired_unit_number: sample_value
+                        desired_unit_type: "null"
+                        email_1: example_email_1@email.com
+                        first_name: Sally
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: Jones
+                        lead_source: sample_value
+                        middle_name: Gail
+                        number_of_occupants: sample_value
+                        phone_1: (123) 555-1234
+                        phone_1_type: "null"
+                        phone_2: sample_value
+                        phone_2_type: "null"
+                        state: MA
+                        status: "null"
+                        target_move_in_date: sample_value
+                        x_id: sample_value
+                        x_lead_source_id: "null"
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        zip: "02116"
+                        address_2: sample_value
+                        integration_data.prospect_id: "null"
+                        notes: sample_value
+                        pet_details: "null"
+                        x_created_at: "null"
+                        x_updated_at: "null"
+                        x_guestcard_id: "null"
+                        x_leasing_agent_id: sample_value
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: "null"
+                        email_2: sample_value
+                        integration_data.x_prospect_id: sample_value
+                        leasing_agent: sample_value
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      - address_1: 123 Main St
+                        city: Boston
+                        country: US
+                        date_of_birth: sample_value
+                        desired_amenities: "null"
+                        desired_floor_plan_id: sample_value
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: "null"
+                        desired_max_rent_in_cents: sample_value
+                        desired_min_rent_in_cents: sample_value
+                        desired_num_bathrooms: "null"
+                        desired_num_bedrooms: sample_value
+                        desired_unit_number: sample_value
+                        desired_unit_type: "null"
+                        email_1: example_email_1@email.com
+                        first_name: Sally
+                        integration_data.x_applicant_id: "null"
+                        integration_data.x_application_id: "null"
+                        last_name: Jones
+                        lead_source: sample_value
+                        middle_name: Gail
+                        number_of_occupants: "null"
+                        phone_1: (123) 555-1234
+                        phone_1_type: MOBILE
+                        phone_2: "null"
+                        phone_2_type: "null"
+                        state: MA
+                        status: "null"
+                        target_move_in_date: sample_value
+                        x_id: sample_value
+                        x_lead_source_id: "null"
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        zip: "02116"
+                        address_2: sample_value
+                        integration_data.prospect_id: "null"
+                        notes: "null"
+                        pet_details: "null"
+                        x_created_at: "null"
+                        x_updated_at: "null"
+                        x_guestcard_id: "null"
+                        x_leasing_agent_id: "null"
+                        integration_data.pmc_id: "null"
+                        integration_data.x_relationship_id: "null"
+                        x_location_id: "null"
+                        email_2: "null"
+                        integration_data.x_prospect_id: "null"
+                        leasing_agent: sample_value
         "400":
           description: invalid input
   /v1/lead-sources:
