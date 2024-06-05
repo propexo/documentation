@@ -67,6 +67,8 @@ navigation:
           - page: Overview
             path: ./docs/pages/overview.mdx
       - api: API Reference
+        snippets: 
+          typescript: propexo
   - tab: use-cases
     layout:
       - section: Use Cases
