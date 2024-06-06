@@ -844,6 +844,8 @@ paths:
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                   - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                                  - REALPAGE_RPX_PROSPECTS_SURVEY
+                                  - REALPAGE_RPX_FLOOR_PLANS
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
                                   - ENTRATA_LEAD_EVENTS
@@ -913,6 +915,8 @@ paths:
                                     - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                                     - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                     - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                                    - REALPAGE_RPX_PROSPECTS_SURVEY
+                                    - REALPAGE_RPX_FLOOR_PLANS
                                     - ENTRATA_AMENITIES
                                     - ENTRATA_LEASES
                                     - ENTRATA_LEAD_EVENTS
@@ -2163,6 +2167,8 @@ paths:
                                 - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                                 - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                 - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                                - REALPAGE_RPX_PROSPECTS_SURVEY
+                                - REALPAGE_RPX_FLOOR_PLANS
                                 - ENTRATA_AMENITIES
                                 - ENTRATA_LEASES
                                 - ENTRATA_LEAD_EVENTS
@@ -2232,6 +2238,8 @@ paths:
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                   - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                                  - REALPAGE_RPX_PROSPECTS_SURVEY
+                                  - REALPAGE_RPX_FLOOR_PLANS
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
                                   - ENTRATA_LEAD_EVENTS
@@ -18248,8 +18256,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: "null"
                         first_name: "null"
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: "null"
                         lead_source: "null"
                         middle_name: "null"
@@ -18267,18 +18273,14 @@ paths:
                         x_unit_id: "null"
                         zip: "null"
                         address_2: "null"
-                        integration_data.prospect_id: "null"
                         notes: "null"
                         pet_details: "null"
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
                         x_leasing_agent_id: "null"
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: "null"
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: "null"
                 ENTRATA:
                   value:
@@ -18300,8 +18302,6 @@ paths:
                         desired_unit_type: sample_value
                         email_1: example_email_1@email.com
                         first_name: Sally
-                        integration_data.x_applicant_id: sample_value
-                        integration_data.x_application_id: sample_value
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
@@ -18319,18 +18319,14 @@ paths:
                         x_unit_id: sample_value
                         zip: "02116"
                         address_2: "null"
-                        integration_data.prospect_id: "null"
                         notes: "null"
                         pet_details: "null"
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
                         x_leasing_agent_id: "null"
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: "null"
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: "null"
                 PROPERTYWARE:
                   value:
@@ -18352,8 +18348,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
                         first_name: Sally
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
@@ -18371,18 +18365,14 @@ paths:
                         x_unit_id: sample_value
                         zip: "02116"
                         address_2: sample_value
-                        integration_data.prospect_id: sample_value
                         notes: sample_value
                         pet_details: sample_value
                         x_created_at: sample_value
                         x_updated_at: sample_value
                         x_guestcard_id: "null"
                         x_leasing_agent_id: "null"
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: "null"
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: "null"
                 REALPAGE:
                   value:
@@ -18404,8 +18394,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
                         first_name: Sally
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
@@ -18423,18 +18411,14 @@ paths:
                         x_unit_id: "null"
                         zip: "null"
                         address_2: "null"
-                        integration_data.prospect_id: "null"
                         notes: "null"
                         pet_details: "null"
                         x_created_at: sample_value
                         x_updated_at: "null"
                         x_guestcard_id: sample_value
                         x_leasing_agent_id: sample_value
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: "null"
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: "null"
                 REALPAGE_RPX:
                   value:
@@ -18456,8 +18440,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
                         first_name: Sally
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: Jones
                         lead_source: "null"
                         middle_name: Gail
@@ -18475,18 +18457,14 @@ paths:
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
-                        integration_data.prospect_id: "null"
                         notes: "null"
                         pet_details: "null"
                         x_created_at: sample_value
                         x_updated_at: "null"
                         x_guestcard_id: sample_value
                         x_leasing_agent_id: sample_value
-                        integration_data.pmc_id: sample_value
-                        integration_data.x_relationship_id: sample_value
                         x_location_id: "null"
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: "null"
                 RENTMANAGER:
                   value:
@@ -18508,8 +18486,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
                         first_name: Sally
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: Jones
                         lead_source: "null"
                         middle_name: Gail
@@ -18527,18 +18503,14 @@ paths:
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: "null"
-                        integration_data.prospect_id: sample_value
                         notes: sample_value
                         pet_details: "null"
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
                         x_leasing_agent_id: "null"
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: sample_value
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: "null"
                 RENTVINE:
                   value:
@@ -18560,8 +18532,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: "null"
                         first_name: "null"
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: "null"
                         lead_source: "null"
                         middle_name: "null"
@@ -18579,18 +18549,14 @@ paths:
                         x_unit_id: "null"
                         zip: "null"
                         address_2: "null"
-                        integration_data.prospect_id: "null"
                         notes: "null"
                         pet_details: "null"
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
                         x_leasing_agent_id: "null"
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: "null"
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: "null"
                 RESMAN:
                   value:
@@ -18612,8 +18578,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
                         first_name: Sally
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
@@ -18631,18 +18595,14 @@ paths:
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
-                        integration_data.prospect_id: "null"
                         notes: sample_value
                         pet_details: "null"
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
                         x_leasing_agent_id: sample_value
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: "null"
                         email_2: sample_value
-                        integration_data.x_prospect_id: sample_value
                         leasing_agent: sample_value
                 Other:
                   value:
@@ -18664,8 +18624,6 @@ paths:
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
                         first_name: Sally
-                        integration_data.x_applicant_id: "null"
-                        integration_data.x_application_id: "null"
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
@@ -18683,18 +18641,14 @@ paths:
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
-                        integration_data.prospect_id: "null"
                         notes: "null"
                         pet_details: "null"
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
                         x_leasing_agent_id: "null"
-                        integration_data.pmc_id: "null"
-                        integration_data.x_relationship_id: "null"
                         x_location_id: "null"
                         email_2: "null"
-                        integration_data.x_prospect_id: "null"
                         leasing_agent: sample_value
         "400":
           description: invalid input
