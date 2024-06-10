@@ -845,6 +845,7 @@ paths:
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                   - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                   - REALPAGE_RPX_PROSPECTS_SURVEY
+                                  - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                   - REALPAGE_RPX_FLOOR_PLANS
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
@@ -916,6 +917,7 @@ paths:
                                     - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                     - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                     - REALPAGE_RPX_PROSPECTS_SURVEY
+                                    - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                     - REALPAGE_RPX_FLOOR_PLANS
                                     - ENTRATA_AMENITIES
                                     - ENTRATA_LEASES
@@ -2168,6 +2170,7 @@ paths:
                                 - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                 - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                 - REALPAGE_RPX_PROSPECTS_SURVEY
+                                - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                 - REALPAGE_RPX_FLOOR_PLANS
                                 - ENTRATA_AMENITIES
                                 - ENTRATA_LEASES
@@ -2239,6 +2242,7 @@ paths:
                                   - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
                                   - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
                                   - REALPAGE_RPX_PROSPECTS_SURVEY
+                                  - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                   - REALPAGE_RPX_FLOOR_PLANS
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
@@ -12097,7 +12101,7 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - name: sample_value
+                      - name: Adam Smith
                         x_id: sample_value
                         x_property_id: sample_value
                 RENTMANAGER:
@@ -12305,7 +12309,7 @@ paths:
                   value:
                     meta: {}
                     results:
-                      name: sample_value
+                      name: Adam Smith
                       x_id: sample_value
                       x_property_id: sample_value
                 RENTMANAGER:
@@ -29458,21 +29462,21 @@ paths:
                         service_description: "null"
                         service_details: sample_value
                         service_priority: "null"
-                        status_raw: sample_value
+                        status_raw: Complete
                         unit_id: sample_value
                         vendor_notes: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_sub_task_id: "null"
                         x_unit_id: sample_value
-                        building: sample_value
+                        building: "1"
                         completion_notes: sample_value
                         date_completed: sample_value
                         date_created: sample_value
-                        date_scheduled: "null"
-                        employee_id: "null"
+                        date_scheduled: sample_value
+                        employee_id: sample_value
                         service_category: sample_value
-                        unit_number: "null"
+                        unit_number: "100"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -30234,21 +30238,21 @@ paths:
                       service_description: "null"
                       service_details: sample_value
                       service_priority: "null"
-                      status_raw: sample_value
+                      status_raw: Complete
                       unit_id: sample_value
                       vendor_notes: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_sub_task_id: "null"
                       x_unit_id: sample_value
-                      building: sample_value
+                      building: "1"
                       completion_notes: sample_value
                       date_completed: sample_value
                       date_created: sample_value
-                      date_scheduled: "null"
-                      employee_id: "null"
+                      date_scheduled: sample_value
+                      employee_id: sample_value
                       service_category: sample_value
-                      unit_number: "null"
+                      unit_number: "100"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -30843,21 +30847,21 @@ paths:
                         service_description: "null"
                         service_details: sample_value
                         service_priority: "null"
-                        status_raw: sample_value
+                        status_raw: Complete
                         unit_id: sample_value
                         vendor_notes: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_sub_task_id: "null"
                         x_unit_id: sample_value
-                        building: sample_value
+                        building: "1"
                         completion_notes: sample_value
                         date_completed: sample_value
                         date_created: sample_value
-                        date_scheduled: "null"
-                        employee_id: "null"
+                        date_scheduled: sample_value
+                        employee_id: sample_value
                         service_category: sample_value
-                        unit_number: "null"
+                        unit_number: "100"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -31249,21 +31253,21 @@ paths:
                       service_description: "null"
                       service_details: sample_value
                       service_priority: "null"
-                      status_raw: sample_value
+                      status_raw: Complete
                       unit_id: sample_value
                       vendor_notes: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_sub_task_id: "null"
                       x_unit_id: sample_value
-                      building: sample_value
+                      building: "1"
                       completion_notes: sample_value
                       date_completed: sample_value
                       date_created: sample_value
-                      date_scheduled: "null"
-                      employee_id: "null"
+                      date_scheduled: sample_value
+                      employee_id: sample_value
                       service_category: sample_value
-                      unit_number: "null"
+                      unit_number: "100"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -31697,21 +31701,21 @@ paths:
                         service_description: "null"
                         service_details: sample_value
                         service_priority: "null"
-                        status_raw: sample_value
+                        status_raw: Complete
                         unit_id: sample_value
                         vendor_notes: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_sub_task_id: "null"
                         x_unit_id: sample_value
-                        building: sample_value
+                        building: "1"
                         completion_notes: sample_value
                         date_completed: sample_value
                         date_created: sample_value
-                        date_scheduled: "null"
-                        employee_id: "null"
+                        date_scheduled: sample_value
+                        employee_id: sample_value
                         service_category: sample_value
-                        unit_number: "null"
+                        unit_number: "100"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -32203,21 +32207,21 @@ paths:
                       service_description: "null"
                       service_details: sample_value
                       service_priority: "null"
-                      status_raw: sample_value
+                      status_raw: Complete
                       unit_id: sample_value
                       vendor_notes: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_sub_task_id: "null"
                       x_unit_id: sample_value
-                      building: sample_value
+                      building: "1"
                       completion_notes: sample_value
                       date_completed: sample_value
                       date_created: sample_value
-                      date_scheduled: "null"
-                      employee_id: "null"
+                      date_scheduled: sample_value
+                      employee_id: sample_value
                       service_category: sample_value
-                      unit_number: "null"
+                      unit_number: "100"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -32652,21 +32656,21 @@ paths:
                         service_description: "null"
                         service_details: sample_value
                         service_priority: "null"
-                        status_raw: sample_value
+                        status_raw: Complete
                         unit_id: sample_value
                         vendor_notes: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_sub_task_id: "null"
                         x_unit_id: sample_value
-                        building: sample_value
+                        building: "1"
                         completion_notes: sample_value
                         date_completed: sample_value
                         date_created: sample_value
-                        date_scheduled: "null"
-                        employee_id: "null"
+                        date_scheduled: sample_value
+                        employee_id: sample_value
                         service_category: sample_value
-                        unit_number: "null"
+                        unit_number: "100"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -33058,21 +33062,21 @@ paths:
                       service_description: "null"
                       service_details: sample_value
                       service_priority: "null"
-                      status_raw: sample_value
+                      status_raw: Complete
                       unit_id: sample_value
                       vendor_notes: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_sub_task_id: "null"
                       x_unit_id: sample_value
-                      building: sample_value
+                      building: "1"
                       completion_notes: sample_value
                       date_completed: sample_value
                       date_created: sample_value
-                      date_scheduled: "null"
-                      employee_id: "null"
+                      date_scheduled: sample_value
+                      employee_id: sample_value
                       service_category: sample_value
-                      unit_number: "null"
+                      unit_number: "100"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -33507,21 +33511,21 @@ paths:
                         service_description: "null"
                         service_details: sample_value
                         service_priority: "null"
-                        status_raw: sample_value
+                        status_raw: Complete
                         unit_id: sample_value
                         vendor_notes: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_sub_task_id: "null"
                         x_unit_id: sample_value
-                        building: sample_value
+                        building: "1"
                         completion_notes: sample_value
                         date_completed: sample_value
                         date_created: sample_value
-                        date_scheduled: "null"
-                        employee_id: "null"
+                        date_scheduled: sample_value
+                        employee_id: sample_value
                         service_category: sample_value
-                        unit_number: "null"
+                        unit_number: "100"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -33913,21 +33917,21 @@ paths:
                       service_description: "null"
                       service_details: sample_value
                       service_priority: "null"
-                      status_raw: sample_value
+                      status_raw: Complete
                       unit_id: sample_value
                       vendor_notes: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_sub_task_id: "null"
                       x_unit_id: sample_value
-                      building: sample_value
+                      building: "1"
                       completion_notes: sample_value
                       date_completed: sample_value
                       date_created: sample_value
-                      date_scheduled: "null"
-                      employee_id: "null"
+                      date_scheduled: sample_value
+                      employee_id: sample_value
                       service_category: sample_value
-                      unit_number: "null"
+                      unit_number: "100"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -34329,21 +34333,21 @@ paths:
                         service_description: "null"
                         service_details: sample_value
                         service_priority: "null"
-                        status_raw: sample_value
+                        status_raw: Complete
                         unit_id: sample_value
                         vendor_notes: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_sub_task_id: "null"
                         x_unit_id: sample_value
-                        building: sample_value
+                        building: "1"
                         completion_notes: sample_value
                         date_completed: sample_value
                         date_created: sample_value
-                        date_scheduled: "null"
-                        employee_id: "null"
+                        date_scheduled: sample_value
+                        employee_id: sample_value
                         service_category: sample_value
-                        unit_number: "null"
+                        unit_number: "100"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -34749,21 +34753,21 @@ paths:
                       service_description: "null"
                       service_details: sample_value
                       service_priority: "null"
-                      status_raw: sample_value
+                      status_raw: Complete
                       unit_id: sample_value
                       vendor_notes: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_sub_task_id: "null"
                       x_unit_id: sample_value
-                      building: sample_value
+                      building: "1"
                       completion_notes: sample_value
                       date_completed: sample_value
                       date_created: sample_value
-                      date_scheduled: "null"
-                      employee_id: "null"
+                      date_scheduled: sample_value
+                      employee_id: sample_value
                       service_category: sample_value
-                      unit_number: "null"
+                      unit_number: "100"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -35165,21 +35169,21 @@ paths:
                         service_description: "null"
                         service_details: sample_value
                         service_priority: "null"
-                        status_raw: sample_value
+                        status_raw: Complete
                         unit_id: sample_value
                         vendor_notes: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_sub_task_id: "null"
                         x_unit_id: sample_value
-                        building: sample_value
+                        building: "1"
                         completion_notes: sample_value
                         date_completed: sample_value
                         date_created: sample_value
-                        date_scheduled: "null"
-                        employee_id: "null"
+                        date_scheduled: sample_value
+                        employee_id: sample_value
                         service_category: sample_value
-                        unit_number: "null"
+                        unit_number: "100"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
@@ -35585,21 +35589,21 @@ paths:
                       service_description: "null"
                       service_details: sample_value
                       service_priority: "null"
-                      status_raw: sample_value
+                      status_raw: Complete
                       unit_id: sample_value
                       vendor_notes: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_sub_task_id: "null"
                       x_unit_id: sample_value
-                      building: sample_value
+                      building: "1"
                       completion_notes: sample_value
                       date_completed: sample_value
                       date_created: sample_value
-                      date_scheduled: "null"
-                      employee_id: "null"
+                      date_scheduled: sample_value
+                      employee_id: sample_value
                       service_category: sample_value
-                      unit_number: "null"
+                      unit_number: "100"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
