@@ -11320,6 +11320,84 @@ paths:
               examples: {}
         "400":
           description: invalid input
+  /v1/contracts/{contract_id}:
+    put:
+      tags:
+        - construction-job-cost
+      summary: Update contract
+      description: Update a contract for an integration.
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the contract
+          required: false
+          name: contract_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vendor_id:
+                  type: string
+                  description: The Propexo unique identifier for the vendor
+                start_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The start date associated with the contract
+                end_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The end date associated with the contract
+                notes:
+                  type: string
+                  description: Notes associated with the contract
+                expense_type:
+                  type: string
+                  description: The expense type of the contract. You'll have to request this data
+                    from your customer, but you can see a set of allowed values
+                    by reviewing the response of
+                    integration.configuration_meta_data
+                retention_percent:
+                  type: string
+                  description: The retention percent of the contract. Must be a decimal number
+                    with only 2 places
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update a contract for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
   /v1/construction-jobs/{construction_job_id}/details:
     get:
       tags:
@@ -12714,6 +12792,7 @@ paths:
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 ENTRATA:
@@ -12730,6 +12809,7 @@ paths:
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: sample_value
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 PROPERTYWARE:
@@ -12746,6 +12826,7 @@ paths:
                         event_name: sample_value
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE:
@@ -12762,40 +12843,43 @@ paths:
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
                     results:
-                      - notes: sample_value
-                        type_raw: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        agent_name: sample_value
-                        appointment_datetime: "null"
-                        event_datetime: sample_value
-                        event_name: sample_value
-                        reasons_for_event: sample_value
+                      - notes: Short tour of the property.
+                        type_raw: Appointment
+                        x_id: "71522"
+                        x_property_id: "4221692"
+                        agent_name: John Smith
+                        appointment_datetime: 2024-04-21T15:38:08.339Z
+                        event_datetime: 2024-01-19T10:01:08.810Z
+                        event_name: Phone call
+                        reasons_for_event: "null"
                         x_type_id: "null"
-                        x_leasing_agent_id: sample_value
+                        appointment_duration_minutes: 30
+                        x_leasing_agent_id: "65125332"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
-                      - notes: sample_value
+                      - notes: Unit is ready to tour
                         type_raw: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "123"
+                        x_property_id: "123"
                         agent_name: "null"
-                        appointment_datetime: "null"
+                        appointment_datetime: 2024-06-03T00:00:00.000Z
                         event_datetime: sample_value
-                        event_name: "null"
+                        event_name: Resident Appointment
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: 30
                         x_leasing_agent_id: "null"
-                        x_location_id: sample_value
+                        x_location_id: "123"
                 RENTVINE:
                   value:
                     meta: {}
@@ -12810,23 +12894,25 @@ paths:
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: sample_value
                         x_location_id: "null"
                 RESMAN:
                   value:
                     meta: {}
                     results:
-                      - notes: "null"
-                        type_raw: "null"
-                        x_id: "null"
-                        x_property_id: "null"
-                        agent_name: "null"
+                      - notes: Nice person, firm handshake.
+                        type_raw: Appointment
+                        x_id: dc6cd684-9392-4d8b-9d4d-fb4ec8a2fcd7
+                        x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
+                        agent_name: John Doe
                         appointment_datetime: "null"
-                        event_datetime: "null"
+                        event_datetime: sample_value
                         event_name: "null"
-                        reasons_for_event: "null"
+                        reasons_for_event: Initial contact
                         x_type_id: "null"
-                        x_leasing_agent_id: "null"
+                        appointment_duration_minutes: "null"
+                        x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                         x_location_id: "null"
                 Other:
                   value:
@@ -12842,6 +12928,7 @@ paths:
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
         "400":
@@ -13051,6 +13138,7 @@ paths:
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 ENTRATA:
@@ -13067,6 +13155,7 @@ paths:
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: sample_value
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 PROPERTYWARE:
@@ -13083,6 +13172,7 @@ paths:
                       event_name: sample_value
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE:
@@ -13099,40 +13189,43 @@ paths:
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
                     results:
-                      notes: sample_value
-                      type_raw: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      agent_name: sample_value
-                      appointment_datetime: "null"
-                      event_datetime: sample_value
-                      event_name: sample_value
-                      reasons_for_event: sample_value
+                      notes: Short tour of the property.
+                      type_raw: Appointment
+                      x_id: "71522"
+                      x_property_id: "4221692"
+                      agent_name: John Smith
+                      appointment_datetime: 2024-04-21T15:38:08.339Z
+                      event_datetime: 2024-01-19T10:01:08.810Z
+                      event_name: Phone call
+                      reasons_for_event: "null"
                       x_type_id: "null"
-                      x_leasing_agent_id: sample_value
+                      appointment_duration_minutes: 30
+                      x_leasing_agent_id: "65125332"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
-                      notes: sample_value
+                      notes: Unit is ready to tour
                       type_raw: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "123"
+                      x_property_id: "123"
                       agent_name: "null"
-                      appointment_datetime: "null"
+                      appointment_datetime: 2024-06-03T00:00:00.000Z
                       event_datetime: sample_value
-                      event_name: "null"
+                      event_name: Resident Appointment
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: 30
                       x_leasing_agent_id: "null"
-                      x_location_id: sample_value
+                      x_location_id: "123"
                 RENTVINE:
                   value:
                     meta: {}
@@ -13147,23 +13240,25 @@ paths:
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: sample_value
                       x_location_id: "null"
                 RESMAN:
                   value:
                     meta: {}
                     results:
-                      notes: "null"
-                      type_raw: "null"
-                      x_id: "null"
-                      x_property_id: "null"
-                      agent_name: "null"
+                      notes: Nice person, firm handshake.
+                      type_raw: Appointment
+                      x_id: dc6cd684-9392-4d8b-9d4d-fb4ec8a2fcd7
+                      x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
+                      agent_name: John Doe
                       appointment_datetime: "null"
-                      event_datetime: "null"
+                      event_datetime: sample_value
                       event_name: "null"
-                      reasons_for_event: "null"
+                      reasons_for_event: Initial contact
                       x_type_id: "null"
-                      x_leasing_agent_id: "null"
+                      appointment_duration_minutes: "null"
+                      x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                       x_location_id: "null"
                 Other:
                   value:
@@ -13179,6 +13274,7 @@ paths:
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
         "400":
@@ -13692,6 +13788,7 @@ paths:
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 ENTRATA:
@@ -13708,6 +13805,7 @@ paths:
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: sample_value
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 PROPERTYWARE:
@@ -13724,6 +13822,7 @@ paths:
                         event_name: sample_value
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE:
@@ -13740,40 +13839,43 @@ paths:
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
                     results:
-                      - notes: sample_value
-                        type_raw: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        agent_name: sample_value
-                        appointment_datetime: "null"
-                        event_datetime: sample_value
-                        event_name: sample_value
-                        reasons_for_event: sample_value
+                      - notes: Short tour of the property.
+                        type_raw: Appointment
+                        x_id: "71522"
+                        x_property_id: "4221692"
+                        agent_name: John Smith
+                        appointment_datetime: 2024-04-21T15:38:08.339Z
+                        event_datetime: 2024-01-19T10:01:08.810Z
+                        event_name: Phone call
+                        reasons_for_event: "null"
                         x_type_id: "null"
-                        x_leasing_agent_id: sample_value
+                        appointment_duration_minutes: 30
+                        x_leasing_agent_id: "65125332"
                         x_location_id: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
-                      - notes: sample_value
+                      - notes: Unit is ready to tour
                         type_raw: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "123"
+                        x_property_id: "123"
                         agent_name: "null"
-                        appointment_datetime: "null"
+                        appointment_datetime: 2024-06-03T00:00:00.000Z
                         event_datetime: sample_value
-                        event_name: "null"
+                        event_name: Resident Appointment
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: 30
                         x_leasing_agent_id: "null"
-                        x_location_id: sample_value
+                        x_location_id: "123"
                 RENTVINE:
                   value:
                     meta: {}
@@ -13788,23 +13890,25 @@ paths:
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: sample_value
                         x_location_id: "null"
                 RESMAN:
                   value:
                     meta: {}
                     results:
-                      - notes: "null"
-                        type_raw: "null"
-                        x_id: "null"
-                        x_property_id: "null"
-                        agent_name: "null"
+                      - notes: Nice person, firm handshake.
+                        type_raw: Appointment
+                        x_id: dc6cd684-9392-4d8b-9d4d-fb4ec8a2fcd7
+                        x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
+                        agent_name: John Doe
                         appointment_datetime: "null"
-                        event_datetime: "null"
+                        event_datetime: sample_value
                         event_name: "null"
-                        reasons_for_event: "null"
+                        reasons_for_event: Initial contact
                         x_type_id: "null"
-                        x_leasing_agent_id: "null"
+                        appointment_duration_minutes: "null"
+                        x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                         x_location_id: "null"
                 Other:
                   value:
@@ -13820,6 +13924,7 @@ paths:
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
+                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
         "400":
@@ -13992,6 +14097,7 @@ paths:
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 ENTRATA:
@@ -14008,6 +14114,7 @@ paths:
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: sample_value
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 PROPERTYWARE:
@@ -14024,6 +14131,7 @@ paths:
                       event_name: sample_value
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE:
@@ -14040,40 +14148,43 @@ paths:
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
                     results:
-                      notes: sample_value
-                      type_raw: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      agent_name: sample_value
-                      appointment_datetime: "null"
-                      event_datetime: sample_value
-                      event_name: sample_value
-                      reasons_for_event: sample_value
+                      notes: Short tour of the property.
+                      type_raw: Appointment
+                      x_id: "71522"
+                      x_property_id: "4221692"
+                      agent_name: John Smith
+                      appointment_datetime: 2024-04-21T15:38:08.339Z
+                      event_datetime: 2024-01-19T10:01:08.810Z
+                      event_name: Phone call
+                      reasons_for_event: "null"
                       x_type_id: "null"
-                      x_leasing_agent_id: sample_value
+                      appointment_duration_minutes: 30
+                      x_leasing_agent_id: "65125332"
                       x_location_id: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
-                      notes: sample_value
+                      notes: Unit is ready to tour
                       type_raw: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "123"
+                      x_property_id: "123"
                       agent_name: "null"
-                      appointment_datetime: "null"
+                      appointment_datetime: 2024-06-03T00:00:00.000Z
                       event_datetime: sample_value
-                      event_name: "null"
+                      event_name: Resident Appointment
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: 30
                       x_leasing_agent_id: "null"
-                      x_location_id: sample_value
+                      x_location_id: "123"
                 RENTVINE:
                   value:
                     meta: {}
@@ -14088,23 +14199,25 @@ paths:
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: sample_value
                       x_location_id: "null"
                 RESMAN:
                   value:
                     meta: {}
                     results:
-                      notes: "null"
-                      type_raw: "null"
-                      x_id: "null"
-                      x_property_id: "null"
-                      agent_name: "null"
+                      notes: Nice person, firm handshake.
+                      type_raw: Appointment
+                      x_id: dc6cd684-9392-4d8b-9d4d-fb4ec8a2fcd7
+                      x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
+                      agent_name: John Doe
                       appointment_datetime: "null"
-                      event_datetime: "null"
+                      event_datetime: sample_value
                       event_name: "null"
-                      reasons_for_event: "null"
+                      reasons_for_event: Initial contact
                       x_type_id: "null"
-                      x_leasing_agent_id: "null"
+                      appointment_duration_minutes: "null"
+                      x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                       x_location_id: "null"
                 Other:
                   value:
@@ -14120,6 +14233,7 @@ paths:
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
+                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
         "400":
@@ -14242,6 +14356,9 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
+                lead_source_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead source
               required:
                 - integration_id
       responses:
@@ -16251,6 +16368,7 @@ paths:
                             - number
                             - "null"
                           description: The desired maximum rent
+                          example: 150000
                         desired_max_square_ft:
                           type:
                             - number
@@ -16261,6 +16379,7 @@ paths:
                             - number
                             - "null"
                           description: The desired minimum rent
+                          example: 120000
                         desired_min_square_ft:
                           type:
                             - number
@@ -16271,11 +16390,13 @@ paths:
                             - number
                             - "null"
                           description: The desired number of bathrooms
+                          example: 1
                         desired_num_bedrooms:
                           type:
                             - integer
                             - "null"
                           description: The desired number of bedrooms
+                          example: 3
                         desired_unit_number:
                           type:
                             - string
@@ -16340,6 +16461,7 @@ paths:
                             - integer
                             - "null"
                           description: The number of occupants
+                          example: 2
                         pet_details:
                           type:
                             - string
@@ -16551,10 +16673,10 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: sample_value
                         desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: sample_value
                         email_1: example_email_1@email.com
@@ -16562,7 +16684,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -16597,10 +16719,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: "null"
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -16608,7 +16730,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -16643,8 +16765,8 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
                         desired_num_bathrooms: "null"
                         desired_num_bedrooms: "null"
                         desired_unit_number: "null"
@@ -16654,7 +16776,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -16686,11 +16808,11 @@ paths:
                         country: US
                         date_of_birth: "null"
                         desired_amenities: "null"
-                        desired_floor_plan_id: sample_value
+                        desired_floor_plan_id: Z000000050
                         desired_floor_plan_name: "null"
-                        desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_lease_term_in_months: 12
+                        desired_max_rent_in_cents: 325000
+                        desired_min_rent_in_cents: 325000
                         desired_num_bathrooms: "null"
                         desired_num_bedrooms: "null"
                         desired_unit_number: "null"
@@ -16700,26 +16822,26 @@ paths:
                         last_name: Jones
                         lead_source: "null"
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 1
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
                         phone_2_type: sample_value
                         state: MA
                         status: "null"
-                        target_move_in_date: sample_value
-                        x_id: sample_value
+                        target_move_in_date: 2024-03-21T00:00:00.000Z
+                        x_id: "5118"
                         x_lead_source_id: sample_value
-                        x_property_id: sample_value
+                        x_property_id: "1633544"
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
                         notes: "null"
                         pet_details: "null"
-                        x_created_at: sample_value
+                        x_created_at: 2024-03-15T00:00:00.000Z
                         x_updated_at: "null"
-                        x_guestcard_id: sample_value
-                        x_leasing_agent_id: sample_value
+                        x_guestcard_id: "9288"
+                        x_leasing_agent_id: "29"
                         x_location_id: "null"
                         email_2: "null"
                         leasing_agent: "null"
@@ -16827,10 +16949,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -16838,7 +16960,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: "null"
                         phone_2: sample_value
@@ -16846,9 +16968,9 @@ paths:
                         state: MA
                         status: "null"
                         target_move_in_date: sample_value
-                        x_id: sample_value
-                        x_lead_source_id: "null"
-                        x_property_id: sample_value
+                        x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
+                        x_lead_source_id: sample_value
+                        x_property_id: ae9994dd-846f-4466-9752-306df25f7882
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
@@ -16857,7 +16979,7 @@ paths:
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
-                        x_leasing_agent_id: sample_value
+                        x_leasing_agent_id: acef1ca1-d1c9-4c0c-8b03-f82b891402e9
                         x_location_id: "null"
                         email_2: sample_value
                         leasing_agent: sample_value
@@ -16873,10 +16995,10 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
                         desired_num_bathrooms: "null"
-                        desired_num_bedrooms: sample_value
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -17308,6 +17430,7 @@ paths:
                           - number
                           - "null"
                         description: The desired maximum rent
+                        example: 150000
                       desired_max_square_ft:
                         type:
                           - number
@@ -17318,6 +17441,7 @@ paths:
                           - number
                           - "null"
                         description: The desired minimum rent
+                        example: 120000
                       desired_min_square_ft:
                         type:
                           - number
@@ -17328,11 +17452,13 @@ paths:
                           - number
                           - "null"
                         description: The desired number of bathrooms
+                        example: 1
                       desired_num_bedrooms:
                         type:
                           - integer
                           - "null"
                         description: The desired number of bedrooms
+                        example: 3
                       desired_unit_number:
                         type:
                           - string
@@ -17397,6 +17523,7 @@ paths:
                           - integer
                           - "null"
                         description: The number of occupants
+                        example: 2
                       pet_details:
                         type:
                           - string
@@ -17608,10 +17735,10 @@ paths:
                       desired_floor_plan_id: sample_value
                       desired_floor_plan_name: sample_value
                       desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
-                      desired_num_bathrooms: sample_value
-                      desired_num_bedrooms: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
+                      desired_num_bathrooms: 1
+                      desired_num_bedrooms: 3
                       desired_unit_number: sample_value
                       desired_unit_type: sample_value
                       email_1: example_email_1@email.com
@@ -17619,7 +17746,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
@@ -17654,10 +17781,10 @@ paths:
                       desired_floor_plan_id: "null"
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
-                      desired_num_bathrooms: sample_value
-                      desired_num_bedrooms: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
+                      desired_num_bathrooms: 1
+                      desired_num_bedrooms: 3
                       desired_unit_number: "null"
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -17665,7 +17792,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
@@ -17700,8 +17827,8 @@ paths:
                       desired_floor_plan_id: sample_value
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
                       desired_num_bathrooms: "null"
                       desired_num_bedrooms: "null"
                       desired_unit_number: "null"
@@ -17711,7 +17838,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
@@ -17743,11 +17870,11 @@ paths:
                       country: US
                       date_of_birth: "null"
                       desired_amenities: "null"
-                      desired_floor_plan_id: sample_value
+                      desired_floor_plan_id: Z000000050
                       desired_floor_plan_name: "null"
-                      desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
+                      desired_lease_term_in_months: 12
+                      desired_max_rent_in_cents: 325000
+                      desired_min_rent_in_cents: 325000
                       desired_num_bathrooms: "null"
                       desired_num_bedrooms: "null"
                       desired_unit_number: "null"
@@ -17757,26 +17884,26 @@ paths:
                       last_name: Jones
                       lead_source: "null"
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 1
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
                       phone_2_type: sample_value
                       state: MA
                       status: "null"
-                      target_move_in_date: sample_value
-                      x_id: sample_value
+                      target_move_in_date: 2024-03-21T00:00:00.000Z
+                      x_id: "5118"
                       x_lead_source_id: sample_value
-                      x_property_id: sample_value
+                      x_property_id: "1633544"
                       x_unit_id: "null"
                       zip: "02116"
                       address_2: sample_value
                       notes: "null"
                       pet_details: "null"
-                      x_created_at: sample_value
+                      x_created_at: 2024-03-15T00:00:00.000Z
                       x_updated_at: "null"
-                      x_guestcard_id: sample_value
-                      x_leasing_agent_id: sample_value
+                      x_guestcard_id: "9288"
+                      x_leasing_agent_id: "29"
                       x_location_id: "null"
                       email_2: "null"
                       leasing_agent: "null"
@@ -17884,10 +18011,10 @@ paths:
                       desired_floor_plan_id: "null"
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
-                      desired_num_bathrooms: sample_value
-                      desired_num_bedrooms: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
+                      desired_num_bathrooms: 1
+                      desired_num_bedrooms: 3
                       desired_unit_number: sample_value
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -17895,7 +18022,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: "null"
                       phone_2: sample_value
@@ -17903,9 +18030,9 @@ paths:
                       state: MA
                       status: "null"
                       target_move_in_date: sample_value
-                      x_id: sample_value
-                      x_lead_source_id: "null"
-                      x_property_id: sample_value
+                      x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
+                      x_lead_source_id: sample_value
+                      x_property_id: ae9994dd-846f-4466-9752-306df25f7882
                       x_unit_id: "null"
                       zip: "02116"
                       address_2: sample_value
@@ -17914,7 +18041,7 @@ paths:
                       x_created_at: "null"
                       x_updated_at: "null"
                       x_guestcard_id: "null"
-                      x_leasing_agent_id: sample_value
+                      x_leasing_agent_id: acef1ca1-d1c9-4c0c-8b03-f82b891402e9
                       x_location_id: "null"
                       email_2: sample_value
                       leasing_agent: sample_value
@@ -17930,10 +18057,10 @@ paths:
                       desired_floor_plan_id: sample_value
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
                       desired_num_bathrooms: "null"
-                      desired_num_bedrooms: sample_value
+                      desired_num_bedrooms: 3
                       desired_unit_number: sample_value
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -18404,10 +18531,10 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: sample_value
                         desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: sample_value
                         email_1: example_email_1@email.com
@@ -18415,7 +18542,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -18450,10 +18577,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: "null"
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -18461,7 +18588,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -18496,8 +18623,8 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
                         desired_num_bathrooms: "null"
                         desired_num_bedrooms: "null"
                         desired_unit_number: "null"
@@ -18507,7 +18634,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -18539,11 +18666,11 @@ paths:
                         country: US
                         date_of_birth: "null"
                         desired_amenities: "null"
-                        desired_floor_plan_id: sample_value
+                        desired_floor_plan_id: Z000000050
                         desired_floor_plan_name: "null"
-                        desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_lease_term_in_months: 12
+                        desired_max_rent_in_cents: 325000
+                        desired_min_rent_in_cents: 325000
                         desired_num_bathrooms: "null"
                         desired_num_bedrooms: "null"
                         desired_unit_number: "null"
@@ -18553,26 +18680,26 @@ paths:
                         last_name: Jones
                         lead_source: "null"
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 1
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
                         phone_2_type: sample_value
                         state: MA
                         status: "null"
-                        target_move_in_date: sample_value
-                        x_id: sample_value
+                        target_move_in_date: 2024-03-21T00:00:00.000Z
+                        x_id: "5118"
                         x_lead_source_id: sample_value
-                        x_property_id: sample_value
+                        x_property_id: "1633544"
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
                         notes: "null"
                         pet_details: "null"
-                        x_created_at: sample_value
+                        x_created_at: 2024-03-15T00:00:00.000Z
                         x_updated_at: "null"
-                        x_guestcard_id: sample_value
-                        x_leasing_agent_id: sample_value
+                        x_guestcard_id: "9288"
+                        x_leasing_agent_id: "29"
                         x_location_id: "null"
                         email_2: "null"
                         leasing_agent: "null"
@@ -18680,10 +18807,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -18691,7 +18818,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: "null"
                         phone_2: sample_value
@@ -18699,9 +18826,9 @@ paths:
                         state: MA
                         status: "null"
                         target_move_in_date: sample_value
-                        x_id: sample_value
-                        x_lead_source_id: "null"
-                        x_property_id: sample_value
+                        x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
+                        x_lead_source_id: sample_value
+                        x_property_id: ae9994dd-846f-4466-9752-306df25f7882
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
@@ -18710,7 +18837,7 @@ paths:
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
-                        x_leasing_agent_id: sample_value
+                        x_leasing_agent_id: acef1ca1-d1c9-4c0c-8b03-f82b891402e9
                         x_location_id: "null"
                         email_2: sample_value
                         leasing_agent: sample_value
@@ -18726,10 +18853,10 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
                         desired_num_bathrooms: "null"
-                        desired_num_bedrooms: sample_value
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -19000,10 +19127,10 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: sample_value
                         desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: sample_value
                         email_1: example_email_1@email.com
@@ -19011,7 +19138,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -19046,10 +19173,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: "null"
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -19057,7 +19184,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -19092,8 +19219,8 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
                         desired_num_bathrooms: "null"
                         desired_num_bedrooms: "null"
                         desired_unit_number: "null"
@@ -19103,7 +19230,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
@@ -19135,11 +19262,11 @@ paths:
                         country: US
                         date_of_birth: "null"
                         desired_amenities: "null"
-                        desired_floor_plan_id: sample_value
+                        desired_floor_plan_id: Z000000050
                         desired_floor_plan_name: "null"
-                        desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_lease_term_in_months: 12
+                        desired_max_rent_in_cents: 325000
+                        desired_min_rent_in_cents: 325000
                         desired_num_bathrooms: "null"
                         desired_num_bedrooms: "null"
                         desired_unit_number: "null"
@@ -19149,26 +19276,26 @@ paths:
                         last_name: Jones
                         lead_source: "null"
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 1
                         phone_1: (123) 555-1234
                         phone_1_type: MOBILE
                         phone_2: sample_value
                         phone_2_type: sample_value
                         state: MA
                         status: "null"
-                        target_move_in_date: sample_value
-                        x_id: sample_value
+                        target_move_in_date: 2024-03-21T00:00:00.000Z
+                        x_id: "5118"
                         x_lead_source_id: sample_value
-                        x_property_id: sample_value
+                        x_property_id: "1633544"
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
                         notes: "null"
                         pet_details: "null"
-                        x_created_at: sample_value
+                        x_created_at: 2024-03-15T00:00:00.000Z
                         x_updated_at: "null"
-                        x_guestcard_id: sample_value
-                        x_leasing_agent_id: sample_value
+                        x_guestcard_id: "9288"
+                        x_leasing_agent_id: "29"
                         x_location_id: "null"
                         email_2: "null"
                         leasing_agent: "null"
@@ -19276,10 +19403,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
-                        desired_num_bathrooms: sample_value
-                        desired_num_bedrooms: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
+                        desired_num_bathrooms: 1
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -19287,7 +19414,7 @@ paths:
                         last_name: Jones
                         lead_source: sample_value
                         middle_name: Gail
-                        number_of_occupants: sample_value
+                        number_of_occupants: 2
                         phone_1: (123) 555-1234
                         phone_1_type: "null"
                         phone_2: sample_value
@@ -19295,9 +19422,9 @@ paths:
                         state: MA
                         status: "null"
                         target_move_in_date: sample_value
-                        x_id: sample_value
-                        x_lead_source_id: "null"
-                        x_property_id: sample_value
+                        x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
+                        x_lead_source_id: sample_value
+                        x_property_id: ae9994dd-846f-4466-9752-306df25f7882
                         x_unit_id: "null"
                         zip: "02116"
                         address_2: sample_value
@@ -19306,7 +19433,7 @@ paths:
                         x_created_at: "null"
                         x_updated_at: "null"
                         x_guestcard_id: "null"
-                        x_leasing_agent_id: sample_value
+                        x_leasing_agent_id: acef1ca1-d1c9-4c0c-8b03-f82b891402e9
                         x_location_id: "null"
                         email_2: sample_value
                         leasing_agent: sample_value
@@ -19322,10 +19449,10 @@ paths:
                         desired_floor_plan_id: sample_value
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: sample_value
-                        desired_min_rent_in_cents: sample_value
+                        desired_max_rent_in_cents: 150000
+                        desired_min_rent_in_cents: 120000
                         desired_num_bathrooms: "null"
-                        desired_num_bedrooms: sample_value
+                        desired_num_bedrooms: 3
                         desired_unit_number: sample_value
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -19559,10 +19686,10 @@ paths:
                       desired_floor_plan_id: sample_value
                       desired_floor_plan_name: sample_value
                       desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
-                      desired_num_bathrooms: sample_value
-                      desired_num_bedrooms: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
+                      desired_num_bathrooms: 1
+                      desired_num_bedrooms: 3
                       desired_unit_number: sample_value
                       desired_unit_type: sample_value
                       email_1: example_email_1@email.com
@@ -19570,7 +19697,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
@@ -19605,10 +19732,10 @@ paths:
                       desired_floor_plan_id: "null"
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
-                      desired_num_bathrooms: sample_value
-                      desired_num_bedrooms: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
+                      desired_num_bathrooms: 1
+                      desired_num_bedrooms: 3
                       desired_unit_number: "null"
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -19616,7 +19743,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
@@ -19651,8 +19778,8 @@ paths:
                       desired_floor_plan_id: sample_value
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
                       desired_num_bathrooms: "null"
                       desired_num_bedrooms: "null"
                       desired_unit_number: "null"
@@ -19662,7 +19789,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
@@ -19694,11 +19821,11 @@ paths:
                       country: US
                       date_of_birth: "null"
                       desired_amenities: "null"
-                      desired_floor_plan_id: sample_value
+                      desired_floor_plan_id: Z000000050
                       desired_floor_plan_name: "null"
-                      desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
+                      desired_lease_term_in_months: 12
+                      desired_max_rent_in_cents: 325000
+                      desired_min_rent_in_cents: 325000
                       desired_num_bathrooms: "null"
                       desired_num_bedrooms: "null"
                       desired_unit_number: "null"
@@ -19708,26 +19835,26 @@ paths:
                       last_name: Jones
                       lead_source: "null"
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 1
                       phone_1: (123) 555-1234
                       phone_1_type: MOBILE
                       phone_2: sample_value
                       phone_2_type: sample_value
                       state: MA
                       status: "null"
-                      target_move_in_date: sample_value
-                      x_id: sample_value
+                      target_move_in_date: 2024-03-21T00:00:00.000Z
+                      x_id: "5118"
                       x_lead_source_id: sample_value
-                      x_property_id: sample_value
+                      x_property_id: "1633544"
                       x_unit_id: "null"
                       zip: "02116"
                       address_2: sample_value
                       notes: "null"
                       pet_details: "null"
-                      x_created_at: sample_value
+                      x_created_at: 2024-03-15T00:00:00.000Z
                       x_updated_at: "null"
-                      x_guestcard_id: sample_value
-                      x_leasing_agent_id: sample_value
+                      x_guestcard_id: "9288"
+                      x_leasing_agent_id: "29"
                       x_location_id: "null"
                       email_2: "null"
                       leasing_agent: "null"
@@ -19835,10 +19962,10 @@ paths:
                       desired_floor_plan_id: "null"
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
-                      desired_num_bathrooms: sample_value
-                      desired_num_bedrooms: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
+                      desired_num_bathrooms: 1
+                      desired_num_bedrooms: 3
                       desired_unit_number: sample_value
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -19846,7 +19973,7 @@ paths:
                       last_name: Jones
                       lead_source: sample_value
                       middle_name: Gail
-                      number_of_occupants: sample_value
+                      number_of_occupants: 2
                       phone_1: (123) 555-1234
                       phone_1_type: "null"
                       phone_2: sample_value
@@ -19854,9 +19981,9 @@ paths:
                       state: MA
                       status: "null"
                       target_move_in_date: sample_value
-                      x_id: sample_value
-                      x_lead_source_id: "null"
-                      x_property_id: sample_value
+                      x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
+                      x_lead_source_id: sample_value
+                      x_property_id: ae9994dd-846f-4466-9752-306df25f7882
                       x_unit_id: "null"
                       zip: "02116"
                       address_2: sample_value
@@ -19865,7 +19992,7 @@ paths:
                       x_created_at: "null"
                       x_updated_at: "null"
                       x_guestcard_id: "null"
-                      x_leasing_agent_id: sample_value
+                      x_leasing_agent_id: acef1ca1-d1c9-4c0c-8b03-f82b891402e9
                       x_location_id: "null"
                       email_2: sample_value
                       leasing_agent: sample_value
@@ -19881,10 +20008,10 @@ paths:
                       desired_floor_plan_id: sample_value
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: sample_value
-                      desired_min_rent_in_cents: sample_value
+                      desired_max_rent_in_cents: 150000
+                      desired_min_rent_in_cents: 120000
                       desired_num_bathrooms: "null"
-                      desired_num_bedrooms: sample_value
+                      desired_num_bedrooms: 3
                       desired_unit_number: sample_value
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -23885,28 +24012,28 @@ paths:
                     results:
                       - city: Boston
                         is_active: true
-                        name: sample_value
-                        notes: sample_value
-                        number_of_units: sample_value
+                        manager_email: name@example.com
+                        manager_name: Rachel Smith
+                        manager_phone_1: "6175551234"
+                        manager_phone_1_type: MAIN
+                        manager_phone_2: "6175551234"
+                        manager_phone_2_type: MOBILE
+                        name: Estates at East Lake
+                        notes: A quaint colonial in a nice suburban neighborhood.
+                        number_of_units: 100
                         state: MA
                         street_address_1: sample_value
                         street_address_2: sample_value
-                        type_normalized: sample_value
-                        type_raw: sample_value
+                        type_normalized: MULTI_FAMILY
+                        type_raw: multifam
                         x_id: sample_value
                         x_property_id: sample_value
-                        year_built: sample_value
+                        year_built: 2004
                         zip: "02116"
                         country: "null"
-                        manager_email: "null"
                         type: "null"
                         website: "null"
                         county: "null"
-                        manager_name: "null"
-                        manager_phone_1: "null"
-                        manager_phone_1_type: "null"
-                        manager_phone_2: "null"
-                        manager_phone_2_type: "null"
                         x_location_id: "null"
                         x_created_at: "null"
                 ENTRATA:
@@ -23915,6 +24042,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: sample_value
+                        manager_email: sample_value
+                        manager_name: "null"
+                        manager_phone_1: "null"
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -23928,15 +24061,9 @@ paths:
                         year_built: sample_value
                         zip: "02116"
                         country: US
-                        manager_email: sample_value
                         type: sample_value
                         website: sample_value
                         county: "null"
-                        manager_name: "null"
-                        manager_phone_1: "null"
-                        manager_phone_1_type: "null"
-                        manager_phone_2: "null"
-                        manager_phone_2_type: "null"
                         x_location_id: "null"
                         x_created_at: "null"
                 PROPERTYWARE:
@@ -23945,6 +24072,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: "null"
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: sample_value
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: sample_value
                         name: sample_value
                         notes: sample_value
                         number_of_units: "null"
@@ -23958,15 +24091,9 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: US
-                        manager_email: sample_value
                         type: "null"
                         website: sample_value
                         county: sample_value
-                        manager_name: sample_value
-                        manager_phone_1: sample_value
-                        manager_phone_1_type: sample_value
-                        manager_phone_2: sample_value
-                        manager_phone_2_type: sample_value
                         x_location_id: "null"
                         x_created_at: "null"
                 REALPAGE:
@@ -23975,6 +24102,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: "null"
+                        manager_email: sample_value
+                        manager_name: "null"
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -23988,15 +24121,9 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: US
-                        manager_email: sample_value
                         type: "null"
                         website: sample_value
                         county: sample_value
-                        manager_name: "null"
-                        manager_phone_1: sample_value
-                        manager_phone_1_type: "null"
-                        manager_phone_2: sample_value
-                        manager_phone_2_type: "null"
                         x_location_id: "null"
                         x_created_at: "null"
                 REALPAGE_RPX:
@@ -24005,6 +24132,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: "null"
+                        manager_email: sample_value
+                        manager_name: "null"
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: sample_value
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: sample_value
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -24018,15 +24151,9 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: US
-                        manager_email: sample_value
                         type: "null"
                         website: "null"
                         county: sample_value
-                        manager_name: "null"
-                        manager_phone_1: sample_value
-                        manager_phone_1_type: sample_value
-                        manager_phone_2: sample_value
-                        manager_phone_2_type: sample_value
                         x_location_id: "null"
                         x_created_at: "null"
                 RENTMANAGER:
@@ -24035,6 +24162,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: sample_value
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: "null"
                         name: sample_value
                         notes: sample_value
                         number_of_units: sample_value
@@ -24048,15 +24181,9 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: "null"
-                        manager_email: sample_value
                         type: "null"
                         website: "null"
                         county: "null"
-                        manager_name: sample_value
-                        manager_phone_1: sample_value
-                        manager_phone_1_type: "null"
-                        manager_phone_2: sample_value
-                        manager_phone_2_type: "null"
                         x_location_id: sample_value
                         x_created_at: "null"
                 RENTVINE:
@@ -24065,6 +24192,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: sample_value
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
                         name: sample_value
                         notes: sample_value
                         number_of_units: "null"
@@ -24078,15 +24211,9 @@ paths:
                         year_built: sample_value
                         zip: "02116"
                         country: US
-                        manager_email: sample_value
                         type: sample_value
                         website: sample_value
                         county: sample_value
-                        manager_name: sample_value
-                        manager_phone_1: sample_value
-                        manager_phone_1_type: "null"
-                        manager_phone_2: "null"
-                        manager_phone_2_type: "null"
                         x_location_id: "null"
                         x_created_at: sample_value
                 RESMAN:
@@ -24095,6 +24222,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: "null"
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -24108,15 +24241,9 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: "null"
-                        manager_email: sample_value
                         type: "null"
                         website: "null"
                         county: "null"
-                        manager_name: sample_value
-                        manager_phone_1: sample_value
-                        manager_phone_1_type: "null"
-                        manager_phone_2: "null"
-                        manager_phone_2_type: "null"
                         x_location_id: "null"
                         x_created_at: "null"
                 Other:
@@ -24125,6 +24252,12 @@ paths:
                     results:
                       - city: Boston
                         is_active: "null"
+                        manager_email: "null"
+                        manager_name: "null"
+                        manager_phone_1: "null"
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
                         name: sample_value
                         notes: "null"
                         number_of_units: "null"
@@ -24138,15 +24271,9 @@ paths:
                         year_built: "null"
                         zip: "02116"
                         country: "null"
-                        manager_email: "null"
                         type: "null"
                         website: "null"
                         county: "null"
-                        manager_name: "null"
-                        manager_phone_1: "null"
-                        manager_phone_1_type: "null"
-                        manager_phone_2: "null"
-                        manager_phone_2_type: "null"
                         x_location_id: "null"
                         x_created_at: "null"
         "400":
@@ -24590,28 +24717,28 @@ paths:
                     results:
                       city: Boston
                       is_active: true
-                      name: sample_value
-                      notes: sample_value
-                      number_of_units: sample_value
+                      manager_email: name@example.com
+                      manager_name: Rachel Smith
+                      manager_phone_1: "6175551234"
+                      manager_phone_1_type: MAIN
+                      manager_phone_2: "6175551234"
+                      manager_phone_2_type: MOBILE
+                      name: Estates at East Lake
+                      notes: A quaint colonial in a nice suburban neighborhood.
+                      number_of_units: 100
                       state: MA
                       street_address_1: sample_value
                       street_address_2: sample_value
-                      type_normalized: sample_value
-                      type_raw: sample_value
+                      type_normalized: MULTI_FAMILY
+                      type_raw: multifam
                       x_id: sample_value
                       x_property_id: sample_value
-                      year_built: sample_value
+                      year_built: 2004
                       zip: "02116"
                       country: "null"
-                      manager_email: "null"
                       type: "null"
                       website: "null"
                       county: "null"
-                      manager_name: "null"
-                      manager_phone_1: "null"
-                      manager_phone_1_type: "null"
-                      manager_phone_2: "null"
-                      manager_phone_2_type: "null"
                       x_location_id: "null"
                       x_created_at: "null"
                 ENTRATA:
@@ -24620,6 +24747,12 @@ paths:
                     results:
                       city: Boston
                       is_active: sample_value
+                      manager_email: sample_value
+                      manager_name: "null"
+                      manager_phone_1: "null"
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24633,15 +24766,9 @@ paths:
                       year_built: sample_value
                       zip: "02116"
                       country: US
-                      manager_email: sample_value
                       type: sample_value
                       website: sample_value
                       county: "null"
-                      manager_name: "null"
-                      manager_phone_1: "null"
-                      manager_phone_1_type: "null"
-                      manager_phone_2: "null"
-                      manager_phone_2_type: "null"
                       x_location_id: "null"
                       x_created_at: "null"
                 PROPERTYWARE:
@@ -24650,6 +24777,12 @@ paths:
                     results:
                       city: Boston
                       is_active: "null"
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: sample_value
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: sample_value
                       name: sample_value
                       notes: sample_value
                       number_of_units: "null"
@@ -24663,15 +24796,9 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: US
-                      manager_email: sample_value
                       type: "null"
                       website: sample_value
                       county: sample_value
-                      manager_name: sample_value
-                      manager_phone_1: sample_value
-                      manager_phone_1_type: sample_value
-                      manager_phone_2: sample_value
-                      manager_phone_2_type: sample_value
                       x_location_id: "null"
                       x_created_at: "null"
                 REALPAGE:
@@ -24680,6 +24807,12 @@ paths:
                     results:
                       city: Boston
                       is_active: "null"
+                      manager_email: sample_value
+                      manager_name: "null"
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24693,15 +24826,9 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: US
-                      manager_email: sample_value
                       type: "null"
                       website: sample_value
                       county: sample_value
-                      manager_name: "null"
-                      manager_phone_1: sample_value
-                      manager_phone_1_type: "null"
-                      manager_phone_2: sample_value
-                      manager_phone_2_type: "null"
                       x_location_id: "null"
                       x_created_at: "null"
                 REALPAGE_RPX:
@@ -24710,6 +24837,12 @@ paths:
                     results:
                       city: Boston
                       is_active: "null"
+                      manager_email: sample_value
+                      manager_name: "null"
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: sample_value
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: sample_value
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24723,15 +24856,9 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: US
-                      manager_email: sample_value
                       type: "null"
                       website: "null"
                       county: sample_value
-                      manager_name: "null"
-                      manager_phone_1: sample_value
-                      manager_phone_1_type: sample_value
-                      manager_phone_2: sample_value
-                      manager_phone_2_type: sample_value
                       x_location_id: "null"
                       x_created_at: "null"
                 RENTMANAGER:
@@ -24740,6 +24867,12 @@ paths:
                     results:
                       city: Boston
                       is_active: sample_value
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: "null"
                       name: sample_value
                       notes: sample_value
                       number_of_units: sample_value
@@ -24753,15 +24886,9 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: "null"
-                      manager_email: sample_value
                       type: "null"
                       website: "null"
                       county: "null"
-                      manager_name: sample_value
-                      manager_phone_1: sample_value
-                      manager_phone_1_type: "null"
-                      manager_phone_2: sample_value
-                      manager_phone_2_type: "null"
                       x_location_id: sample_value
                       x_created_at: "null"
                 RENTVINE:
@@ -24770,6 +24897,12 @@ paths:
                     results:
                       city: Boston
                       is_active: sample_value
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
                       name: sample_value
                       notes: sample_value
                       number_of_units: "null"
@@ -24783,15 +24916,9 @@ paths:
                       year_built: sample_value
                       zip: "02116"
                       country: US
-                      manager_email: sample_value
                       type: sample_value
                       website: sample_value
                       county: sample_value
-                      manager_name: sample_value
-                      manager_phone_1: sample_value
-                      manager_phone_1_type: "null"
-                      manager_phone_2: "null"
-                      manager_phone_2_type: "null"
                       x_location_id: "null"
                       x_created_at: sample_value
                 RESMAN:
@@ -24800,6 +24927,12 @@ paths:
                     results:
                       city: Boston
                       is_active: "null"
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24813,15 +24946,9 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: "null"
-                      manager_email: sample_value
                       type: "null"
                       website: "null"
                       county: "null"
-                      manager_name: sample_value
-                      manager_phone_1: sample_value
-                      manager_phone_1_type: "null"
-                      manager_phone_2: "null"
-                      manager_phone_2_type: "null"
                       x_location_id: "null"
                       x_created_at: "null"
                 Other:
@@ -24830,6 +24957,12 @@ paths:
                     results:
                       city: Boston
                       is_active: "null"
+                      manager_email: "null"
+                      manager_name: "null"
+                      manager_phone_1: "null"
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
                       name: sample_value
                       notes: "null"
                       number_of_units: "null"
@@ -24843,15 +24976,9 @@ paths:
                       year_built: "null"
                       zip: "02116"
                       country: "null"
-                      manager_email: "null"
                       type: "null"
                       website: "null"
                       county: "null"
-                      manager_name: "null"
-                      manager_phone_1: "null"
-                      manager_phone_1_type: "null"
-                      manager_phone_2: "null"
-                      manager_phone_2_type: "null"
                       x_location_id: "null"
                       x_created_at: "null"
         "400":
@@ -39211,6 +39338,18 @@ paths:
             description: The external ID from the integration vendor
           required: false
           name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the property from the integration vendor
+          required: false
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
           in: query
         - schema:
             type: string
