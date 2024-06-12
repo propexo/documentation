@@ -8,6 +8,12 @@ Propexo's standard contracted rate limit is typically set at 150 requests per mi
 
 The data cache of the Propexo API is refreshed with each synchronization request to your PMS integration or after successful write operations. Typically, these sync requests are scheduled every 12 hours, although this can be adjusted based on individual integration needs. Polling the API more frequently than the sync schedule will not yield new information, making such requests redundant.
 
-To facilitate transparent usage monitoring, the API includes the `X-RateLimit-Limit` header, showing the current rate limit status for your account. When your usage nears the limit, reaching 80%, the API introduces a slight delay of 2 seconds to throttle the requests, aiming to prevent rate limit breaches. Should you hit the 100% threshold, the API will respond with a 429 error code, indicating that the rate limit has been exceeded, and requests will be blocked until the limit resets.
+To facilitate transparent usage monitoring, the API includes the `x-ratelimit-limit` header, showing the current rate limit status for your account. When your usage nears the limit, reaching 80%, the API introduces a slight delay of 2 seconds to throttle the requests, aiming to prevent rate limit breaches. Should you hit the 100% threshold, the API will respond with a 429 error code, indicating that the rate limit has been exceeded, and requests will be blocked until the limit resets. **The reset period is one minute, after which you can resume making requests.**
+
+Each API response includes the following rate-limit headers:
+```
+x-ratelimit-limit: <total allotted rate limit>
+x-ratelimit-remaining: <remaining rate limit> // scoped to the current minute
+```
 
 Adhering to these guidelines ensures a smooth and efficient interaction with the Propexo API, allowing users to optimize their data handling while preventing over-utilization of resources.
