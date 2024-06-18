@@ -28249,9 +28249,9 @@ paths:
                         description: The type of file being uploaded. This defaults to "Document"
                       file_data:
                         type: string
-                        maxLength: 69730304
+                        maxLength: 40443576
                         description: The contents of the file, as a base64 encoded string. The PMS has a
-                          max file size of 50 MB.
+                          max file size of 29 MB.
                       file_name:
                         type: string
                         description: 'The name of the file including the extension. Ex: "resume.pdf"'
@@ -32116,9 +32116,9 @@ paths:
                   properties:
                     file_data:
                       type: string
-                      maxLength: 69730304
+                      maxLength: 40443576
                       description: The contents of the file, as a base64 encoded string. The PMS has a
-                        max file size of 50 MB.
+                        max file size of 29 MB.
                     file_name:
                       type: string
                       description: 'The name of the file including the extension. Ex: "resume.pdf"'
