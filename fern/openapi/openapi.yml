@@ -12260,6 +12260,10 @@ paths:
                       - name: sample_value
                         x_id: sample_value
                         x_property_id: sample_value
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
                 ENTRATA:
                   value:
                     meta: {}
@@ -12267,6 +12271,10 @@ paths:
                       - name: sample_value
                         x_id: sample_value
                         x_property_id: sample_value
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
                 PROPERTYWARE:
                   value:
                     meta: {}
@@ -12274,6 +12282,10 @@ paths:
                       - name: "null"
                         x_id: "null"
                         x_property_id: "null"
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
                 REALPAGE:
                   value:
                     meta: {}
@@ -12281,6 +12293,10 @@ paths:
                       - name: "null"
                         x_id: "null"
                         x_property_id: "null"
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
@@ -12288,13 +12304,22 @@ paths:
                       - name: Adam Smith
                         x_id: sample_value
                         x_property_id: sample_value
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
-                      - name: "null"
-                        x_id: "null"
-                        x_property_id: "null"
+                      - name: John Doe
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        email: test@example.com
+                        is_active: true
+                        roles:
+                          - LEASING_AGENT
+                        x_location_id: sample_value
                 RENTVINE:
                   value:
                     meta: {}
@@ -12302,6 +12327,10 @@ paths:
                       - name: "null"
                         x_id: "null"
                         x_property_id: "null"
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
                 RESMAN:
                   value:
                     meta: {}
@@ -12309,6 +12338,10 @@ paths:
                       - name: "null"
                         x_id: "null"
                         x_property_id: "null"
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
                 Other:
                   value:
                     meta: {}
@@ -12316,6 +12349,10 @@ paths:
                       - name: sample_value
                         x_id: sample_value
                         x_property_id: sample_value
+                        email: "null"
+                        is_active: "null"
+                        roles: "null"
+                        x_location_id: "null"
         "400":
           description: invalid input
   /v1/employees/{employee_id}:
@@ -12468,6 +12505,10 @@ paths:
                       name: sample_value
                       x_id: sample_value
                       x_property_id: sample_value
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
                 ENTRATA:
                   value:
                     meta: {}
@@ -12475,6 +12516,10 @@ paths:
                       name: sample_value
                       x_id: sample_value
                       x_property_id: sample_value
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
                 PROPERTYWARE:
                   value:
                     meta: {}
@@ -12482,6 +12527,10 @@ paths:
                       name: "null"
                       x_id: "null"
                       x_property_id: "null"
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
                 REALPAGE:
                   value:
                     meta: {}
@@ -12489,6 +12538,10 @@ paths:
                       name: "null"
                       x_id: "null"
                       x_property_id: "null"
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
@@ -12496,13 +12549,22 @@ paths:
                       name: Adam Smith
                       x_id: sample_value
                       x_property_id: sample_value
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
-                      name: "null"
-                      x_id: "null"
-                      x_property_id: "null"
+                      name: John Doe
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      email: test@example.com
+                      is_active: true
+                      roles:
+                        - LEASING_AGENT
+                      x_location_id: sample_value
                 RENTVINE:
                   value:
                     meta: {}
@@ -12510,6 +12572,10 @@ paths:
                       name: "null"
                       x_id: "null"
                       x_property_id: "null"
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
                 RESMAN:
                   value:
                     meta: {}
@@ -12517,6 +12583,10 @@ paths:
                       name: "null"
                       x_id: "null"
                       x_property_id: "null"
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
                 Other:
                   value:
                     meta: {}
@@ -12524,6 +12594,10 @@ paths:
                       name: sample_value
                       x_id: sample_value
                       x_property_id: sample_value
+                      email: "null"
+                      is_active: "null"
+                      roles: "null"
+                      x_location_id: "null"
         "400":
           description: invalid input
   /v1/events:
@@ -29898,7 +29972,7 @@ paths:
                         date_completed: sample_value
                         date_created: sample_value
                         date_scheduled: sample_value
-                        employee_id: "null"
+                        employee_id: clxj808na00010cjwhfdl5x9i
                         service_category: sample_value
                         unit_number: "null"
                         x_location_id: sample_value
@@ -30674,7 +30748,7 @@ paths:
                       date_completed: sample_value
                       date_created: sample_value
                       date_scheduled: sample_value
-                      employee_id: "null"
+                      employee_id: clxj808na00010cjwhfdl5x9i
                       service_category: sample_value
                       unit_number: "null"
                       x_location_id: sample_value
@@ -31283,7 +31357,7 @@ paths:
                         date_completed: sample_value
                         date_created: sample_value
                         date_scheduled: sample_value
-                        employee_id: "null"
+                        employee_id: clxj808na00010cjwhfdl5x9i
                         service_category: sample_value
                         unit_number: "null"
                         x_location_id: sample_value
@@ -31689,7 +31763,7 @@ paths:
                       date_completed: sample_value
                       date_created: sample_value
                       date_scheduled: sample_value
-                      employee_id: "null"
+                      employee_id: clxj808na00010cjwhfdl5x9i
                       service_category: sample_value
                       unit_number: "null"
                       x_location_id: sample_value
@@ -32137,7 +32211,7 @@ paths:
                         date_completed: sample_value
                         date_created: sample_value
                         date_scheduled: sample_value
-                        employee_id: "null"
+                        employee_id: clxj808na00010cjwhfdl5x9i
                         service_category: sample_value
                         unit_number: "null"
                         x_location_id: sample_value
@@ -32643,7 +32717,7 @@ paths:
                       date_completed: sample_value
                       date_created: sample_value
                       date_scheduled: sample_value
-                      employee_id: "null"
+                      employee_id: clxj808na00010cjwhfdl5x9i
                       service_category: sample_value
                       unit_number: "null"
                       x_location_id: sample_value
@@ -33092,7 +33166,7 @@ paths:
                         date_completed: sample_value
                         date_created: sample_value
                         date_scheduled: sample_value
-                        employee_id: "null"
+                        employee_id: clxj808na00010cjwhfdl5x9i
                         service_category: sample_value
                         unit_number: "null"
                         x_location_id: sample_value
@@ -33498,7 +33572,7 @@ paths:
                       date_completed: sample_value
                       date_created: sample_value
                       date_scheduled: sample_value
-                      employee_id: "null"
+                      employee_id: clxj808na00010cjwhfdl5x9i
                       service_category: sample_value
                       unit_number: "null"
                       x_location_id: sample_value
@@ -33947,7 +34021,7 @@ paths:
                         date_completed: sample_value
                         date_created: sample_value
                         date_scheduled: sample_value
-                        employee_id: "null"
+                        employee_id: clxj808na00010cjwhfdl5x9i
                         service_category: sample_value
                         unit_number: "null"
                         x_location_id: sample_value
@@ -34353,7 +34427,7 @@ paths:
                       date_completed: sample_value
                       date_created: sample_value
                       date_scheduled: sample_value
-                      employee_id: "null"
+                      employee_id: clxj808na00010cjwhfdl5x9i
                       service_category: sample_value
                       unit_number: "null"
                       x_location_id: sample_value
@@ -34769,7 +34843,7 @@ paths:
                         date_completed: sample_value
                         date_created: sample_value
                         date_scheduled: sample_value
-                        employee_id: "null"
+                        employee_id: clxj808na00010cjwhfdl5x9i
                         service_category: sample_value
                         unit_number: "null"
                         x_location_id: sample_value
@@ -35189,7 +35263,7 @@ paths:
                       date_completed: sample_value
                       date_created: sample_value
                       date_scheduled: sample_value
-                      employee_id: "null"
+                      employee_id: clxj808na00010cjwhfdl5x9i
                       service_category: sample_value
                       unit_number: "null"
                       x_location_id: sample_value
@@ -35605,7 +35679,7 @@ paths:
                         date_completed: sample_value
                         date_created: sample_value
                         date_scheduled: sample_value
-                        employee_id: "null"
+                        employee_id: clxj808na00010cjwhfdl5x9i
                         service_category: sample_value
                         unit_number: "null"
                         x_location_id: sample_value
@@ -36025,7 +36099,7 @@ paths:
                       date_completed: sample_value
                       date_created: sample_value
                       date_scheduled: sample_value
-                      employee_id: "null"
+                      employee_id: clxj808na00010cjwhfdl5x9i
                       service_category: sample_value
                       unit_number: "null"
                       x_location_id: sample_value
