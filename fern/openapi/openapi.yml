@@ -22182,6 +22182,16 @@ paths:
                             - string
                             - "null"
                           description: The number of bathrooms associated with the listing
+                        bathrooms_full:
+                          type:
+                            - number
+                            - "null"
+                          description: The number of full bathrooms associated with the listing
+                        bathrooms_half:
+                          type:
+                            - number
+                            - "null"
+                          description: The number of half bathrooms associated with the listing
                         bedrooms:
                           type:
                             - string
@@ -22403,6 +22413,8 @@ paths:
                         - available_date
                         - application_url
                         - bathrooms
+                        - bathrooms_full
+                        - bathrooms_half
                         - bedrooms
                         - building_name
                         - building_number
@@ -22453,7 +22465,9 @@ paths:
                     results:
                       - application_url: sample_value
                         available_date: sample_value
-                        bathrooms: sample_value
+                        bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -22499,6 +22513,8 @@ paths:
                       - application_url: "null"
                         available_date: 2023-07-01T00:00:00Z
                         bathrooms: "2"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "3"
                         building_name: Sunset Apartments
                         city: San Francisco
@@ -22543,7 +22559,9 @@ paths:
                     results:
                       - application_url: sample_value
                         available_date: sample_value
-                        bathrooms: sample_value
+                        bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -22589,6 +22607,8 @@ paths:
                       - application_url: "null"
                         available_date: "null"
                         bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: "null"
                         city: Boston
@@ -22634,6 +22654,8 @@ paths:
                       - application_url: "null"
                         available_date: sample_value
                         bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -22679,6 +22701,8 @@ paths:
                       - application_url: "null"
                         available_date: "null"
                         bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: "null"
                         city: "null"
@@ -22723,7 +22747,9 @@ paths:
                     results:
                       - application_url: sample_value
                         available_date: sample_value
-                        bathrooms: sample_value
+                        bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -22769,6 +22795,8 @@ paths:
                       - application_url: sample_value
                         available_date: sample_value
                         bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -22814,6 +22842,8 @@ paths:
                       - application_url: "null"
                         available_date: "null"
                         bathrooms: "1.5"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "2"
                         building_name: "null"
                         city: Boston
@@ -23054,6 +23084,16 @@ paths:
                           - string
                           - "null"
                         description: The number of bathrooms associated with the listing
+                      bathrooms_full:
+                        type:
+                          - number
+                          - "null"
+                        description: The number of full bathrooms associated with the listing
+                      bathrooms_half:
+                        type:
+                          - number
+                          - "null"
+                        description: The number of half bathrooms associated with the listing
                       bedrooms:
                         type:
                           - string
@@ -23275,6 +23315,8 @@ paths:
                       - available_date
                       - application_url
                       - bathrooms
+                      - bathrooms_full
+                      - bathrooms_half
                       - bedrooms
                       - building_name
                       - building_number
@@ -23325,7 +23367,9 @@ paths:
                     results:
                       application_url: sample_value
                       available_date: sample_value
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -23371,6 +23415,8 @@ paths:
                       application_url: "null"
                       available_date: 2023-07-01T00:00:00Z
                       bathrooms: "2"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "3"
                       building_name: Sunset Apartments
                       city: San Francisco
@@ -23415,7 +23461,9 @@ paths:
                     results:
                       application_url: sample_value
                       available_date: sample_value
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -23461,6 +23509,8 @@ paths:
                       application_url: "null"
                       available_date: "null"
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: "null"
                       city: Boston
@@ -23506,6 +23556,8 @@ paths:
                       application_url: "null"
                       available_date: sample_value
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -23551,6 +23603,8 @@ paths:
                       application_url: "null"
                       available_date: "null"
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: "null"
                       city: "null"
@@ -23595,7 +23649,9 @@ paths:
                     results:
                       application_url: sample_value
                       available_date: sample_value
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -23641,6 +23697,8 @@ paths:
                       application_url: sample_value
                       available_date: sample_value
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -23686,6 +23744,8 @@ paths:
                       application_url: "null"
                       available_date: "null"
                       bathrooms: "1.5"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "2"
                       building_name: "null"
                       city: Boston
@@ -36370,8 +36430,10 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bedrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
+                        bedrooms: "2"
                         building_name: sample_value
                         city: Boston
                         is_vacant: sample_value
@@ -36404,6 +36466,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "2"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "3"
                         building_name: Sunrise Apartments
                         city: Springfield
@@ -36436,7 +36500,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -36470,6 +36536,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Tampa
@@ -36503,6 +36571,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: sample_value
                         city: Boston
@@ -36536,6 +36606,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -36568,7 +36640,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -36602,6 +36676,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: "null"
                         city: Boston
@@ -36635,6 +36711,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -36810,8 +36888,10 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bedrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
+                      bedrooms: "2"
                       building_name: sample_value
                       city: Boston
                       is_vacant: sample_value
@@ -36844,6 +36924,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "2"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "3"
                       building_name: Sunrise Apartments
                       city: Springfield
@@ -36876,7 +36958,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -36910,6 +36994,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Tampa
@@ -36943,6 +37029,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: sample_value
                       city: Boston
@@ -36976,6 +37064,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -37008,7 +37098,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -37042,6 +37134,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: "null"
                       city: Boston
@@ -37075,6 +37169,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -37266,6 +37362,16 @@ paths:
                             - string
                             - "null"
                           description: The number of bathrooms associated with the unit
+                        bathrooms_full:
+                          type:
+                            - number
+                            - "null"
+                          description: The number of full bathrooms associated with the unit
+                        bathrooms_half:
+                          type:
+                            - number
+                            - "null"
+                          description: The number of half bathrooms associated with the unit
                         bedrooms:
                           type:
                             - string
@@ -37437,6 +37543,8 @@ paths:
                         - x_id
                         - x_property_id
                         - bathrooms
+                        - bathrooms_full
+                        - bathrooms_half
                         - bedrooms
                         - building_name
                         - building_number
@@ -37476,8 +37584,10 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bedrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
+                        bedrooms: "2"
                         building_name: sample_value
                         city: Boston
                         is_vacant: sample_value
@@ -37510,6 +37620,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "2"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "3"
                         building_name: Sunrise Apartments
                         city: Springfield
@@ -37542,7 +37654,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -37576,6 +37690,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Tampa
@@ -37609,6 +37725,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: sample_value
                         city: Boston
@@ -37642,6 +37760,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -37674,7 +37794,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -37708,6 +37830,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: "null"
                         city: Boston
@@ -37741,6 +37865,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -38007,6 +38133,16 @@ paths:
                           - string
                           - "null"
                         description: The number of bathrooms associated with the unit
+                      bathrooms_full:
+                        type:
+                          - number
+                          - "null"
+                        description: The number of full bathrooms associated with the unit
+                      bathrooms_half:
+                        type:
+                          - number
+                          - "null"
+                        description: The number of half bathrooms associated with the unit
                       bedrooms:
                         type:
                           - string
@@ -38178,6 +38314,8 @@ paths:
                       - x_id
                       - x_property_id
                       - bathrooms
+                      - bathrooms_full
+                      - bathrooms_half
                       - bedrooms
                       - building_name
                       - building_number
@@ -38217,8 +38355,10 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bedrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
+                      bedrooms: "2"
                       building_name: sample_value
                       city: Boston
                       is_vacant: sample_value
@@ -38251,6 +38391,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "2"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "3"
                       building_name: Sunrise Apartments
                       city: Springfield
@@ -38283,7 +38425,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -38317,6 +38461,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Tampa
@@ -38350,6 +38496,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: sample_value
                       city: Boston
@@ -38383,6 +38531,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -38415,7 +38565,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -38449,6 +38601,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: "null"
                       city: Boston
@@ -38482,6 +38636,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -38798,8 +38954,10 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bedrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
+                        bedrooms: "2"
                         building_name: sample_value
                         city: Boston
                         is_vacant: sample_value
@@ -38832,6 +38990,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "2"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "3"
                         building_name: Sunrise Apartments
                         city: Springfield
@@ -38864,7 +39024,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -38898,6 +39060,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Tampa
@@ -38931,6 +39095,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: sample_value
                         city: Boston
@@ -38964,6 +39130,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -38996,7 +39164,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
+                      - bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -39030,6 +39200,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: "null"
                         building_name: "null"
                         city: Boston
@@ -39063,6 +39235,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -39238,8 +39412,10 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bedrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
+                      bedrooms: "2"
                       building_name: sample_value
                       city: Boston
                       is_vacant: sample_value
@@ -39272,6 +39448,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "2"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "3"
                       building_name: Sunrise Apartments
                       city: Springfield
@@ -39304,7 +39482,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -39338,6 +39518,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Tampa
@@ -39371,6 +39553,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: sample_value
                       city: Boston
@@ -39404,6 +39588,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -39436,7 +39622,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -39470,6 +39658,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: "null"
                       building_name: "null"
                       city: Boston
@@ -39503,6 +39693,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -42995,6 +43187,16 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The number of bathrooms associated with the listing
+                                bathrooms_full:
+                                  type:
+                                    - number
+                                    - "null"
+                                  description: The number of full bathrooms associated with the listing
+                                bathrooms_half:
+                                  type:
+                                    - number
+                                    - "null"
+                                  description: The number of half bathrooms associated with the listing
                                 bedrooms:
                                   type:
                                     - string
@@ -44301,6 +44503,16 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The number of bathrooms associated with the unit
+                                bathrooms_full:
+                                  type:
+                                    - number
+                                    - "null"
+                                  description: The number of full bathrooms associated with the unit
+                                bathrooms_half:
+                                  type:
+                                    - number
+                                    - "null"
+                                  description: The number of half bathrooms associated with the unit
                                 bedrooms:
                                   type:
                                     - string
@@ -46099,6 +46311,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The number of bathrooms associated with the listing
+                                    bathrooms_full:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of full bathrooms associated with the listing
+                                    bathrooms_half:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of half bathrooms associated with the listing
                                     bedrooms:
                                       type:
                                         - string
@@ -47405,6 +47627,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The number of bathrooms associated with the unit
+                                    bathrooms_full:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of full bathrooms associated with the unit
+                                    bathrooms_half:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of half bathrooms associated with the unit
                                     bedrooms:
                                       type:
                                         - string
@@ -49084,6 +49316,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The number of bathrooms associated with the listing
+                                    bathrooms_full:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of full bathrooms associated with the listing
+                                    bathrooms_half:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of half bathrooms associated with the listing
                                     bedrooms:
                                       type:
                                         - string
@@ -50390,6 +50632,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The number of bathrooms associated with the unit
+                                    bathrooms_full:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of full bathrooms associated with the unit
+                                    bathrooms_half:
+                                      type:
+                                        - number
+                                        - "null"
+                                      description: The number of half bathrooms associated with the unit
                                     bedrooms:
                                       type:
                                         - string
