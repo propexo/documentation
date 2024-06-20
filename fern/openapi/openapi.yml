@@ -24264,7 +24264,7 @@ paths:
                     meta: {}
                     results:
                       - city: Boston
-                        is_active: "null"
+                        is_active: true
                         manager_email: sample_value
                         manager_name: sample_value
                         manager_phone_1: sample_value
@@ -25000,7 +25000,7 @@ paths:
                     meta: {}
                     results:
                       city: Boston
-                      is_active: "null"
+                      is_active: true
                       manager_email: sample_value
                       manager_name: sample_value
                       manager_phone_1: sample_value
