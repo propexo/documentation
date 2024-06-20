@@ -3997,14 +3997,15 @@ paths:
                     meta: {}
                     results:
                       - is_unit_amenity: sample_value
-                        name: sample_value
+                        name: Pool
                         name_normalized: "null"
                         x_id: sample_value
                         x_property_id: sample_value
                         x_unit_id: "null"
-                        cost_in_cents: 125000
-                        description: sample_value
-                        image_urls: sample_value
+                        cost_in_cents: 2500
+                        description: This is a description of the amenity
+                        image_urls:
+                          - http://www.example.com/image.jpg
                         x_location_id: "null"
                         x_parent_amenity_id: "null"
                 PROPERTYWARE:
@@ -4591,14 +4592,15 @@ paths:
                     meta: {}
                     results:
                       is_unit_amenity: sample_value
-                      name: sample_value
+                      name: Pool
                       name_normalized: "null"
                       x_id: sample_value
                       x_property_id: sample_value
                       x_unit_id: "null"
-                      cost_in_cents: 125000
-                      description: sample_value
-                      image_urls: sample_value
+                      cost_in_cents: 2500
+                      description: This is a description of the amenity
+                      image_urls:
+                        - http://www.example.com/image.jpg
                       x_location_id: "null"
                       x_parent_amenity_id: "null"
                 PROPERTYWARE:
@@ -5567,30 +5569,30 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - email_1: example_email_1@email.com
-                        first_name: Sally
-                        last_name: Jones
-                        phone_1: (123) 555-1234
-                        phone_1_type: MOBILE
-                        phone_2: sample_value
-                        phone_2_type: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_unit_id: sample_value
+                      - email_1: example@example.com
+                        first_name: John
+                        last_name: Doe
+                        phone_1: (123) 456-7890
+                        phone_1_type: HOME
+                        phone_2: (098) 765-4321
+                        phone_2_type: MOBILE
+                        x_id: customer321
+                        x_property_id: property987
+                        x_unit_id: unit123
                         address_1: 123 Main St
-                        address_1_alternate: sample_value
-                        city: Boston
-                        city_alternate: sample_value
+                        address_1_alternate: 456 Oak St
+                        city: Springfield
+                        city_alternate: Shelbyville
                         country: US
-                        country_alternate: sample_value
-                        date_of_birth: sample_value
-                        middle_name: Gail
-                        originating_lead_source_id: sample_value
-                        state: MA
-                        state_alternate: sample_value
-                        x_lease_id: sample_value
-                        zip: "02116"
-                        zip_alternate: sample_value
+                        country_alternate: US
+                        date_of_birth: 1980-01-01
+                        middle_name: Michael
+                        originating_lead_source_id: lead789
+                        state: IL
+                        state_alternate: MO
+                        x_lease_id: lease654
+                        zip: "62704"
+                        zip_alternate: "62705"
                         address_2: "null"
                         notes: "null"
                         x_location_id: "null"
@@ -6525,30 +6527,30 @@ paths:
                   value:
                     meta: {}
                     results:
-                      email_1: example_email_1@email.com
-                      first_name: Sally
-                      last_name: Jones
-                      phone_1: (123) 555-1234
-                      phone_1_type: MOBILE
-                      phone_2: sample_value
-                      phone_2_type: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_unit_id: sample_value
+                      email_1: example@example.com
+                      first_name: John
+                      last_name: Doe
+                      phone_1: (123) 456-7890
+                      phone_1_type: HOME
+                      phone_2: (098) 765-4321
+                      phone_2_type: MOBILE
+                      x_id: customer321
+                      x_property_id: property987
+                      x_unit_id: unit123
                       address_1: 123 Main St
-                      address_1_alternate: sample_value
-                      city: Boston
-                      city_alternate: sample_value
+                      address_1_alternate: 456 Oak St
+                      city: Springfield
+                      city_alternate: Shelbyville
                       country: US
-                      country_alternate: sample_value
-                      date_of_birth: sample_value
-                      middle_name: Gail
-                      originating_lead_source_id: sample_value
-                      state: MA
-                      state_alternate: sample_value
-                      x_lease_id: sample_value
-                      zip: "02116"
-                      zip_alternate: sample_value
+                      country_alternate: US
+                      date_of_birth: 1980-01-01
+                      middle_name: Michael
+                      originating_lead_source_id: lead789
+                      state: IL
+                      state_alternate: MO
+                      x_lease_id: lease654
+                      zip: "62704"
+                      zip_alternate: "62705"
                       address_2: "null"
                       notes: "null"
                       x_location_id: "null"
@@ -7277,9 +7279,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - status: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                      - status: approved
+                        x_id: application789
+                        x_property_id: property456
                         x_unit_id: "null"
                         x_location_id: "null"
                 PROPERTYWARE:
@@ -7545,9 +7547,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      status: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      status: approved
+                      x_id: application789
+                      x_property_id: property456
                       x_unit_id: "null"
                       x_location_id: "null"
                 PROPERTYWARE:
@@ -8728,19 +8730,19 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - amount_in_cents: 325000
-                        amount_raw: sample_value
-                        description: sample_value
+                      - amount_in_cents: 150000
+                        amount_raw: "1500.00"
+                        description: Rent for July 2024
                         financial_account_id: "null"
                         name: "null"
                         reference_number: "null"
-                        resident_id: sample_value
-                        transaction_date: sample_value
+                        resident_id: cl7t4tlme0000usxq5zk0e5gl
+                        transaction_date: 2024-06-01T00:00:00Z
                         x_gl_account_id: "null"
-                        x_id: sample_value
-                        x_lease_id: sample_value
-                        x_property_id: sample_value
-                        x_resident_id: sample_value
+                        x_id: transX123
+                        x_lease_id: lease123
+                        x_property_id: property456
+                        x_resident_id: resX123
                         x_unit_id: "null"
                         is_open: "null"
                         x_location_id: "null"
@@ -9337,19 +9339,19 @@ paths:
                   value:
                     meta: {}
                     results:
-                      amount_in_cents: 325000
-                      amount_raw: sample_value
-                      description: sample_value
+                      amount_in_cents: 150000
+                      amount_raw: "1500.00"
+                      description: Rent for July 2024
                       financial_account_id: "null"
                       name: "null"
                       reference_number: "null"
-                      resident_id: sample_value
-                      transaction_date: sample_value
+                      resident_id: cl7t4tlme0000usxq5zk0e5gl
+                      transaction_date: 2024-06-01T00:00:00Z
                       x_gl_account_id: "null"
-                      x_id: sample_value
-                      x_lease_id: sample_value
-                      x_property_id: sample_value
-                      x_resident_id: sample_value
+                      x_id: transX123
+                      x_lease_id: lease123
+                      x_property_id: property456
+                      x_resident_id: resX123
                       x_unit_id: "null"
                       is_open: "null"
                       x_location_id: "null"
@@ -9892,21 +9894,21 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - amount_in_cents: 325000
-                        amount_raw: sample_value
-                        description: sample_value
+                      - amount_in_cents: 150000
+                        amount_raw: "1500.00"
+                        description: Payment for July 2024 rent
                         financial_account_id: "null"
-                        name: sample_value
+                        name: Rent Payment
                         payment_method_normalized: "null"
                         payment_method_raw: "null"
                         reference_number: "null"
-                        resident_id: sample_value
-                        transaction_date: sample_value
+                        resident_id: cl7t4tlme0000usxq5zk0e5gl
+                        transaction_date: 2024-06-01T00:00:00Z
                         x_gl_account_id: "null"
-                        x_id: sample_value
-                        x_lease_id: sample_value
-                        x_property_id: sample_value
-                        x_resident_id: sample_value
+                        x_id: transX456
+                        x_lease_id: lease123
+                        x_property_id: property456
+                        x_resident_id: resX456
                         x_unit_id: "null"
                         is_open: "null"
                         x_location_id: "null"
@@ -10527,21 +10529,21 @@ paths:
                   value:
                     meta: {}
                     results:
-                      amount_in_cents: 325000
-                      amount_raw: sample_value
-                      description: sample_value
+                      amount_in_cents: 150000
+                      amount_raw: "1500.00"
+                      description: Payment for July 2024 rent
                       financial_account_id: "null"
-                      name: sample_value
+                      name: Rent Payment
                       payment_method_normalized: "null"
                       payment_method_raw: "null"
                       reference_number: "null"
-                      resident_id: sample_value
-                      transaction_date: sample_value
+                      resident_id: cl7t4tlme0000usxq5zk0e5gl
+                      transaction_date: 2024-06-01T00:00:00Z
                       x_gl_account_id: "null"
-                      x_id: sample_value
-                      x_lease_id: sample_value
-                      x_property_id: sample_value
-                      x_resident_id: sample_value
+                      x_id: transX456
+                      x_lease_id: lease123
+                      x_property_id: property456
+                      x_resident_id: resX456
                       x_unit_id: "null"
                       is_open: "null"
                       x_location_id: "null"
@@ -12268,9 +12270,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - name: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                      - name: John Doe
+                        x_id: abc123
+                        x_property_id: xyz789
                         email: "null"
                         is_active: "null"
                         roles: "null"
@@ -12513,9 +12515,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      name: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      name: John Doe
+                      x_id: abc123
+                      x_property_id: xyz789
                       email: "null"
                       is_active: "null"
                       roles: "null"
@@ -12873,16 +12875,16 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - notes: sample_value
-                        type_raw: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        agent_name: sample_value
-                        appointment_datetime: sample_value
-                        event_datetime: sample_value
-                        event_name: sample_value
-                        reasons_for_event: sample_value
-                        x_type_id: sample_value
+                      - notes: This is a note.
+                        type_raw: Appointment
+                        x_id: "67890"
+                        x_property_id: "123456"
+                        agent_name: John Doe
+                        appointment_datetime: 2020-02-03T10:15:00Z
+                        event_datetime: 2020-02-03T11:30:00Z
+                        event_name: Appointment
+                        reasons_for_event: Initial contact
+                        x_type_id: "78901"
                         appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
@@ -13219,16 +13221,16 @@ paths:
                   value:
                     meta: {}
                     results:
-                      notes: sample_value
-                      type_raw: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      agent_name: sample_value
-                      appointment_datetime: sample_value
-                      event_datetime: sample_value
-                      event_name: sample_value
-                      reasons_for_event: sample_value
-                      x_type_id: sample_value
+                      notes: This is a note.
+                      type_raw: Appointment
+                      x_id: "67890"
+                      x_property_id: "123456"
+                      agent_name: John Doe
+                      appointment_datetime: 2020-02-03T10:15:00Z
+                      event_datetime: 2020-02-03T11:30:00Z
+                      event_name: Appointment
+                      reasons_for_event: Initial contact
+                      x_type_id: "78901"
                       appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
@@ -13869,16 +13871,16 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - notes: sample_value
-                        type_raw: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        agent_name: sample_value
-                        appointment_datetime: sample_value
-                        event_datetime: sample_value
-                        event_name: sample_value
-                        reasons_for_event: sample_value
-                        x_type_id: sample_value
+                      - notes: This is a note.
+                        type_raw: Appointment
+                        x_id: "67890"
+                        x_property_id: "123456"
+                        agent_name: John Doe
+                        appointment_datetime: 2020-02-03T10:15:00Z
+                        event_datetime: 2020-02-03T11:30:00Z
+                        event_name: Appointment
+                        reasons_for_event: Initial contact
+                        x_type_id: "78901"
                         appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
@@ -14178,16 +14180,16 @@ paths:
                   value:
                     meta: {}
                     results:
-                      notes: sample_value
-                      type_raw: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      agent_name: sample_value
-                      appointment_datetime: sample_value
-                      event_datetime: sample_value
-                      event_name: sample_value
-                      reasons_for_event: sample_value
-                      x_type_id: sample_value
+                      notes: This is a note.
+                      type_raw: Appointment
+                      x_id: "67890"
+                      x_property_id: "123456"
+                      agent_name: John Doe
+                      appointment_datetime: 2020-02-03T10:15:00Z
+                      event_datetime: 2020-02-03T11:30:00Z
+                      event_name: Appointment
+                      reasons_for_event: Initial contact
+                      x_type_id: "78901"
                       appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
@@ -15537,21 +15539,21 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - amount_due_in_cents: 10000
-                        amount_paid_in_cents: 10000
-                        discount_amount_in_cents: sample_value
-                        due_date: sample_value
-                        invoice_date: sample_value
-                        invoice_number: sample_value
-                        notes: sample_value
-                        post_date: sample_value
-                        post_month: sample_value
-                        post_status_raw: sample_value
-                        sub_total_amount_in_cents: sample_value
-                        total_amount_in_cents: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_vendor_id: sample_value
+                      - amount_due_in_cents: 3500
+                        amount_paid_in_cents: 3500
+                        discount_amount_in_cents: 500
+                        due_date: 2024-03-03T00:00:00.000Z
+                        invoice_date: 2024-03-03T00:00:00.000Z
+                        invoice_number: INV-1234
+                        notes: This is a note
+                        post_date: 2024-03-03T00:00:00.000Z
+                        post_month: 2024-03-03
+                        post_status_raw: Posted
+                        sub_total_amount_in_cents: 3000
+                        total_amount_in_cents: 3500
+                        x_id: "1234567890"
+                        x_property_id: "123456"
+                        x_vendor_id: "1234567"
                 PROPERTYWARE:
                   value:
                     meta: {}
@@ -16095,21 +16097,21 @@ paths:
                   value:
                     meta: {}
                     results:
-                      amount_due_in_cents: 10000
-                      amount_paid_in_cents: 10000
-                      discount_amount_in_cents: sample_value
-                      due_date: sample_value
-                      invoice_date: sample_value
-                      invoice_number: sample_value
-                      notes: sample_value
-                      post_date: sample_value
-                      post_month: sample_value
-                      post_status_raw: sample_value
-                      sub_total_amount_in_cents: sample_value
-                      total_amount_in_cents: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_vendor_id: sample_value
+                      amount_due_in_cents: 3500
+                      amount_paid_in_cents: 3500
+                      discount_amount_in_cents: 500
+                      due_date: 2024-03-03T00:00:00.000Z
+                      invoice_date: 2024-03-03T00:00:00.000Z
+                      invoice_number: INV-1234
+                      notes: This is a note
+                      post_date: 2024-03-03T00:00:00.000Z
+                      post_month: 2024-03-03
+                      post_status_raw: Posted
+                      sub_total_amount_in_cents: 3000
+                      total_amount_in_cents: 3500
+                      x_id: "1234567890"
+                      x_property_id: "123456"
+                      x_vendor_id: "1234567"
                 PROPERTYWARE:
                   value:
                     meta: {}
@@ -16842,37 +16844,37 @@ paths:
                     meta: {}
                     results:
                       - address_1: 123 Main St
-                        city: Boston
+                        city: Springfield
                         country: US
-                        date_of_birth: sample_value
-                        desired_amenities: sample_value
-                        desired_floor_plan_id: sample_value
-                        desired_floor_plan_name: sample_value
-                        desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: 150000
-                        desired_min_rent_in_cents: 120000
-                        desired_num_bathrooms: 1
-                        desired_num_bedrooms: 3
-                        desired_unit_number: sample_value
-                        desired_unit_type: sample_value
-                        email_1: example_email_1@email.com
-                        first_name: Sally
-                        last_name: Jones
-                        lead_source: sample_value
-                        middle_name: Gail
-                        number_of_occupants: 2
-                        phone_1: (123) 555-1234
+                        date_of_birth: 1980-01-01T00:00:00Z
+                        desired_amenities: pool, gym, parking
+                        desired_floor_plan_id: floorplan123
+                        desired_floor_plan_name: 2BHK Deluxe
+                        desired_lease_term_in_months: "12"
+                        desired_max_rent_in_cents: 200000
+                        desired_min_rent_in_cents: 150000
+                        desired_num_bathrooms: 2
+                        desired_num_bedrooms: 2
+                        desired_unit_number: A202
+                        desired_unit_type: Apartment
+                        email_1: example@example.com
+                        first_name: John
+                        last_name: Doe
+                        lead_source: website
+                        middle_name: Michael
+                        number_of_occupants: 3
+                        phone_1: (123) 456-7890
                         phone_1_type: MOBILE
-                        phone_2: sample_value
-                        phone_2_type: sample_value
-                        state: MA
-                        status: sample_value
-                        target_move_in_date: sample_value
-                        x_id: sample_value
-                        x_lead_source_id: sample_value
-                        x_property_id: sample_value
-                        x_unit_id: sample_value
-                        zip: "02116"
+                        phone_2: (098) 765-4321
+                        phone_2_type: OTHER
+                        state: IL
+                        status: active
+                        target_move_in_date: 2024-07-01T00:00:00Z
+                        x_id: customer321
+                        x_lead_source_id: leadSource789
+                        x_property_id: property987
+                        x_unit_id: unit123
+                        zip: "62704"
                         address_2: "null"
                         notes: "null"
                         pet_details: "null"
@@ -17904,37 +17906,37 @@ paths:
                     meta: {}
                     results:
                       address_1: 123 Main St
-                      city: Boston
+                      city: Springfield
                       country: US
-                      date_of_birth: sample_value
-                      desired_amenities: sample_value
-                      desired_floor_plan_id: sample_value
-                      desired_floor_plan_name: sample_value
-                      desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: 150000
-                      desired_min_rent_in_cents: 120000
-                      desired_num_bathrooms: 1
-                      desired_num_bedrooms: 3
-                      desired_unit_number: sample_value
-                      desired_unit_type: sample_value
-                      email_1: example_email_1@email.com
-                      first_name: Sally
-                      last_name: Jones
-                      lead_source: sample_value
-                      middle_name: Gail
-                      number_of_occupants: 2
-                      phone_1: (123) 555-1234
+                      date_of_birth: 1980-01-01T00:00:00Z
+                      desired_amenities: pool, gym, parking
+                      desired_floor_plan_id: floorplan123
+                      desired_floor_plan_name: 2BHK Deluxe
+                      desired_lease_term_in_months: "12"
+                      desired_max_rent_in_cents: 200000
+                      desired_min_rent_in_cents: 150000
+                      desired_num_bathrooms: 2
+                      desired_num_bedrooms: 2
+                      desired_unit_number: A202
+                      desired_unit_type: Apartment
+                      email_1: example@example.com
+                      first_name: John
+                      last_name: Doe
+                      lead_source: website
+                      middle_name: Michael
+                      number_of_occupants: 3
+                      phone_1: (123) 456-7890
                       phone_1_type: MOBILE
-                      phone_2: sample_value
-                      phone_2_type: sample_value
-                      state: MA
-                      status: sample_value
-                      target_move_in_date: sample_value
-                      x_id: sample_value
-                      x_lead_source_id: sample_value
-                      x_property_id: sample_value
-                      x_unit_id: sample_value
-                      zip: "02116"
+                      phone_2: (098) 765-4321
+                      phone_2_type: OTHER
+                      state: IL
+                      status: active
+                      target_move_in_date: 2024-07-01T00:00:00Z
+                      x_id: customer321
+                      x_lead_source_id: leadSource789
+                      x_property_id: property987
+                      x_unit_id: unit123
+                      zip: "62704"
                       address_2: "null"
                       notes: "null"
                       pet_details: "null"
@@ -18700,37 +18702,37 @@ paths:
                     meta: {}
                     results:
                       - address_1: 123 Main St
-                        city: Boston
+                        city: Springfield
                         country: US
-                        date_of_birth: sample_value
-                        desired_amenities: sample_value
-                        desired_floor_plan_id: sample_value
-                        desired_floor_plan_name: sample_value
-                        desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: 150000
-                        desired_min_rent_in_cents: 120000
-                        desired_num_bathrooms: 1
-                        desired_num_bedrooms: 3
-                        desired_unit_number: sample_value
-                        desired_unit_type: sample_value
-                        email_1: example_email_1@email.com
-                        first_name: Sally
-                        last_name: Jones
-                        lead_source: sample_value
-                        middle_name: Gail
-                        number_of_occupants: 2
-                        phone_1: (123) 555-1234
+                        date_of_birth: 1980-01-01T00:00:00Z
+                        desired_amenities: pool, gym, parking
+                        desired_floor_plan_id: floorplan123
+                        desired_floor_plan_name: 2BHK Deluxe
+                        desired_lease_term_in_months: "12"
+                        desired_max_rent_in_cents: 200000
+                        desired_min_rent_in_cents: 150000
+                        desired_num_bathrooms: 2
+                        desired_num_bedrooms: 2
+                        desired_unit_number: A202
+                        desired_unit_type: Apartment
+                        email_1: example@example.com
+                        first_name: John
+                        last_name: Doe
+                        lead_source: website
+                        middle_name: Michael
+                        number_of_occupants: 3
+                        phone_1: (123) 456-7890
                         phone_1_type: MOBILE
-                        phone_2: sample_value
-                        phone_2_type: sample_value
-                        state: MA
-                        status: sample_value
-                        target_move_in_date: sample_value
-                        x_id: sample_value
-                        x_lead_source_id: sample_value
-                        x_property_id: sample_value
-                        x_unit_id: sample_value
-                        zip: "02116"
+                        phone_2: (098) 765-4321
+                        phone_2_type: OTHER
+                        state: IL
+                        status: active
+                        target_move_in_date: 2024-07-01T00:00:00Z
+                        x_id: customer321
+                        x_lead_source_id: leadSource789
+                        x_property_id: property987
+                        x_unit_id: unit123
+                        zip: "62704"
                         address_2: "null"
                         notes: "null"
                         pet_details: "null"
@@ -19296,37 +19298,37 @@ paths:
                     meta: {}
                     results:
                       - address_1: 123 Main St
-                        city: Boston
+                        city: Springfield
                         country: US
-                        date_of_birth: sample_value
-                        desired_amenities: sample_value
-                        desired_floor_plan_id: sample_value
-                        desired_floor_plan_name: sample_value
-                        desired_lease_term_in_months: sample_value
-                        desired_max_rent_in_cents: 150000
-                        desired_min_rent_in_cents: 120000
-                        desired_num_bathrooms: 1
-                        desired_num_bedrooms: 3
-                        desired_unit_number: sample_value
-                        desired_unit_type: sample_value
-                        email_1: example_email_1@email.com
-                        first_name: Sally
-                        last_name: Jones
-                        lead_source: sample_value
-                        middle_name: Gail
-                        number_of_occupants: 2
-                        phone_1: (123) 555-1234
+                        date_of_birth: 1980-01-01T00:00:00Z
+                        desired_amenities: pool, gym, parking
+                        desired_floor_plan_id: floorplan123
+                        desired_floor_plan_name: 2BHK Deluxe
+                        desired_lease_term_in_months: "12"
+                        desired_max_rent_in_cents: 200000
+                        desired_min_rent_in_cents: 150000
+                        desired_num_bathrooms: 2
+                        desired_num_bedrooms: 2
+                        desired_unit_number: A202
+                        desired_unit_type: Apartment
+                        email_1: example@example.com
+                        first_name: John
+                        last_name: Doe
+                        lead_source: website
+                        middle_name: Michael
+                        number_of_occupants: 3
+                        phone_1: (123) 456-7890
                         phone_1_type: MOBILE
-                        phone_2: sample_value
-                        phone_2_type: sample_value
-                        state: MA
-                        status: sample_value
-                        target_move_in_date: sample_value
-                        x_id: sample_value
-                        x_lead_source_id: sample_value
-                        x_property_id: sample_value
-                        x_unit_id: sample_value
-                        zip: "02116"
+                        phone_2: (098) 765-4321
+                        phone_2_type: OTHER
+                        state: IL
+                        status: active
+                        target_move_in_date: 2024-07-01T00:00:00Z
+                        x_id: customer321
+                        x_lead_source_id: leadSource789
+                        x_property_id: property987
+                        x_unit_id: unit123
+                        zip: "62704"
                         address_2: "null"
                         notes: "null"
                         pet_details: "null"
@@ -19855,37 +19857,37 @@ paths:
                     meta: {}
                     results:
                       address_1: 123 Main St
-                      city: Boston
+                      city: Springfield
                       country: US
-                      date_of_birth: sample_value
-                      desired_amenities: sample_value
-                      desired_floor_plan_id: sample_value
-                      desired_floor_plan_name: sample_value
-                      desired_lease_term_in_months: sample_value
-                      desired_max_rent_in_cents: 150000
-                      desired_min_rent_in_cents: 120000
-                      desired_num_bathrooms: 1
-                      desired_num_bedrooms: 3
-                      desired_unit_number: sample_value
-                      desired_unit_type: sample_value
-                      email_1: example_email_1@email.com
-                      first_name: Sally
-                      last_name: Jones
-                      lead_source: sample_value
-                      middle_name: Gail
-                      number_of_occupants: 2
-                      phone_1: (123) 555-1234
+                      date_of_birth: 1980-01-01T00:00:00Z
+                      desired_amenities: pool, gym, parking
+                      desired_floor_plan_id: floorplan123
+                      desired_floor_plan_name: 2BHK Deluxe
+                      desired_lease_term_in_months: "12"
+                      desired_max_rent_in_cents: 200000
+                      desired_min_rent_in_cents: 150000
+                      desired_num_bathrooms: 2
+                      desired_num_bedrooms: 2
+                      desired_unit_number: A202
+                      desired_unit_type: Apartment
+                      email_1: example@example.com
+                      first_name: John
+                      last_name: Doe
+                      lead_source: website
+                      middle_name: Michael
+                      number_of_occupants: 3
+                      phone_1: (123) 456-7890
                       phone_1_type: MOBILE
-                      phone_2: sample_value
-                      phone_2_type: sample_value
-                      state: MA
-                      status: sample_value
-                      target_move_in_date: sample_value
-                      x_id: sample_value
-                      x_lead_source_id: sample_value
-                      x_property_id: sample_value
-                      x_unit_id: sample_value
-                      zip: "02116"
+                      phone_2: (098) 765-4321
+                      phone_2_type: OTHER
+                      state: IL
+                      status: active
+                      target_move_in_date: 2024-07-01T00:00:00Z
+                      x_id: customer321
+                      x_lead_source_id: leadSource789
+                      x_property_id: property987
+                      x_unit_id: unit123
+                      zip: "62704"
                       address_2: "null"
                       notes: "null"
                       pet_details: "null"
@@ -20705,25 +20707,25 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - deposit_amount_in_cents: sample_value
-                        end_date: sample_value
+                      - deposit_amount_in_cents: 50000
+                        end_date: 2024-06-15T00:00:00Z
                         rent_amount_in_cents: sample_value
                         rent_due_day: "null"
-                        start_date: sample_value
-                        status: sample_value
-                        status_normalized: sample_value
-                        status_raw: sample_value
-                        type: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_resident_id: sample_value
-                        x_unit_id: sample_value
-                        application_date: sample_value
-                        deposit_amount: sample_value
-                        deposit_date: sample_value
-                        realized_move_in_date: sample_value
-                        realized_move_out_date: sample_value
-                        signature_date: sample_value
+                        start_date: 2023-06-15T00:00:00Z
+                        status: active
+                        status_normalized: ACTIVE
+                        status_raw: active
+                        type: Residential
+                        x_id: "123456"
+                        x_property_id: property123
+                        x_resident_id: resident123
+                        x_unit_id: unit123
+                        application_date: 2023-06-15T00:00:00Z
+                        deposit_amount: "500.00"
+                        deposit_date: 2023-06-20T00:00:00Z
+                        realized_move_in_date: 2023-06-25T00:00:00Z
+                        realized_move_out_date: 2024-06-20T00:00:00Z
+                        signature_date: 2023-06-10T00:00:00Z
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
@@ -21603,25 +21605,25 @@ paths:
                   value:
                     meta: {}
                     results:
-                      deposit_amount_in_cents: sample_value
-                      end_date: sample_value
+                      deposit_amount_in_cents: 50000
+                      end_date: 2024-06-15T00:00:00Z
                       rent_amount_in_cents: sample_value
                       rent_due_day: "null"
-                      start_date: sample_value
-                      status: sample_value
-                      status_normalized: sample_value
-                      status_raw: sample_value
-                      type: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_resident_id: sample_value
-                      x_unit_id: sample_value
-                      application_date: sample_value
-                      deposit_amount: sample_value
-                      deposit_date: sample_value
-                      realized_move_in_date: sample_value
-                      realized_move_out_date: sample_value
-                      signature_date: sample_value
+                      start_date: 2023-06-15T00:00:00Z
+                      status: active
+                      status_normalized: ACTIVE
+                      status_raw: active
+                      type: Residential
+                      x_id: "123456"
+                      x_property_id: property123
+                      x_resident_id: resident123
+                      x_unit_id: unit123
+                      application_date: 2023-06-15T00:00:00Z
+                      deposit_amount: "500.00"
+                      deposit_date: 2023-06-20T00:00:00Z
+                      realized_move_in_date: 2023-06-25T00:00:00Z
+                      realized_move_out_date: 2024-06-20T00:00:00Z
+                      signature_date: 2023-06-10T00:00:00Z
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
@@ -22495,35 +22497,35 @@ paths:
                     meta: {}
                     results:
                       - application_url: "null"
-                        available_date: sample_value
-                        bathrooms: sample_value
-                        bedrooms: sample_value
-                        building_name: sample_value
-                        city: Boston
+                        available_date: 2023-07-01T00:00:00Z
+                        bathrooms: "2"
+                        bedrooms: "3"
+                        building_name: Sunset Apartments
+                        city: San Francisco
                         country: "null"
-                        deposit_amount_in_cents: sample_value
+                        deposit_amount_in_cents: 150000
                         image_urls_array: "null"
-                        is_listed: sample_value
+                        is_listed: true
                         listing_date: "null"
-                        number: sample_value
-                        rent_amount_in_cents: sample_value
-                        square_feet: sample_value
-                        state: MA
-                        street_address_1: sample_value
-                        street_address_2: sample_value
+                        number: "101"
+                        rent_amount_in_cents: 250000
+                        square_feet: 1200
+                        state: CA
+                        street_address_1: 123 Main St
+                        street_address_2: Apt 4B
                         unit_description: "null"
-                        unit_id: sample_value
+                        unit_id: unit123
                         video_urls: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_unit_id: sample_value
-                        zip: "02116"
-                        floor_plan_code: sample_value
-                        floor_plan_name: sample_value
-                        is_available: sample_value
+                        x_id: unitX123
+                        x_property_id: propertyX123
+                        x_unit_id: unitX123
+                        zip: "94103"
+                        floor_plan_code: FP123
+                        floor_plan_name: Luxury 3 Bedroom
+                        is_available: true
                         is_vacant: sample_value
-                        lease_term: sample_value
-                        make_ready_date: sample_value
+                        lease_term: 12 months
+                        make_ready_date: 2023-06-25T00:00:00Z
                         floor: "null"
                         is_unit: "null"
                         listing_title: "null"
@@ -23367,35 +23369,35 @@ paths:
                     meta: {}
                     results:
                       application_url: "null"
-                      available_date: sample_value
-                      bathrooms: sample_value
-                      bedrooms: sample_value
-                      building_name: sample_value
-                      city: Boston
+                      available_date: 2023-07-01T00:00:00Z
+                      bathrooms: "2"
+                      bedrooms: "3"
+                      building_name: Sunset Apartments
+                      city: San Francisco
                       country: "null"
-                      deposit_amount_in_cents: sample_value
+                      deposit_amount_in_cents: 150000
                       image_urls_array: "null"
-                      is_listed: sample_value
+                      is_listed: true
                       listing_date: "null"
-                      number: sample_value
-                      rent_amount_in_cents: sample_value
-                      square_feet: sample_value
-                      state: MA
-                      street_address_1: sample_value
-                      street_address_2: sample_value
+                      number: "101"
+                      rent_amount_in_cents: 250000
+                      square_feet: 1200
+                      state: CA
+                      street_address_1: 123 Main St
+                      street_address_2: Apt 4B
                       unit_description: "null"
-                      unit_id: sample_value
+                      unit_id: unit123
                       video_urls: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_unit_id: sample_value
-                      zip: "02116"
-                      floor_plan_code: sample_value
-                      floor_plan_name: sample_value
-                      is_available: sample_value
+                      x_id: unitX123
+                      x_property_id: propertyX123
+                      x_unit_id: unitX123
+                      zip: "94103"
+                      floor_plan_code: FP123
+                      floor_plan_name: Luxury 3 Bedroom
+                      is_available: true
                       is_vacant: sample_value
-                      lease_term: sample_value
-                      make_ready_date: sample_value
+                      lease_term: 12 months
+                      make_ready_date: 2023-06-25T00:00:00Z
                       floor: "null"
                       is_unit: "null"
                       listing_title: "null"
@@ -24231,29 +24233,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - city: Boston
-                        is_active: sample_value
-                        manager_email: sample_value
+                      - city: New York
+                        is_active: true
+                        manager_email: manager@example.com
                         manager_name: "null"
                         manager_phone_1: "null"
                         manager_phone_1_type: "null"
                         manager_phone_2: "null"
                         manager_phone_2_type: "null"
-                        name: sample_value
+                        name: Central Park Apartments
                         notes: "null"
                         number_of_units: "null"
-                        state: MA
-                        street_address_1: sample_value
+                        state: NY
+                        street_address_1: 123 Central Park West
                         street_address_2: "null"
                         type_normalized: "null"
                         type_raw: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        year_built: sample_value
-                        zip: "02116"
-                        country: US
-                        type: sample_value
-                        website: sample_value
+                        x_id: property123
+                        x_property_id: property123
+                        year_built: 1990
+                        zip: "10023"
+                        country: USA
+                        type: Residential
+                        website: https://www.example.com
                         county: "null"
                         building_number: "null"
                         x_building_id: "null"
@@ -24967,29 +24969,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      city: Boston
-                      is_active: sample_value
-                      manager_email: sample_value
+                      city: New York
+                      is_active: true
+                      manager_email: manager@example.com
                       manager_name: "null"
                       manager_phone_1: "null"
                       manager_phone_1_type: "null"
                       manager_phone_2: "null"
                       manager_phone_2_type: "null"
-                      name: sample_value
+                      name: Central Park Apartments
                       notes: "null"
                       number_of_units: "null"
-                      state: MA
-                      street_address_1: sample_value
+                      state: NY
+                      street_address_1: 123 Central Park West
                       street_address_2: "null"
                       type_normalized: "null"
                       type_raw: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      year_built: sample_value
-                      zip: "02116"
-                      country: US
-                      type: sample_value
-                      website: sample_value
+                      x_id: property123
+                      x_property_id: property123
+                      year_built: 1990
+                      zip: "10023"
+                      country: USA
+                      type: Residential
+                      website: https://www.example.com
                       county: "null"
                       building_number: "null"
                       x_building_id: "null"
@@ -25695,13 +25697,13 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - description: sample_value
-                        number: sample_value
-                        order_date: sample_value
-                        total_amount_in_cents: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_vendor_id: sample_value
+                      - description: Purchase order for construction materials
+                        number: po12345
+                        order_date: 2024-06-18T00:00:00Z
+                        total_amount_in_cents: 1500000
+                        x_id: po12345
+                        x_property_id: property789
+                        x_vendor_id: vendor456
                         billing_address_1: "null"
                         billing_address_2: "null"
                         billing_city: "null"
@@ -26584,13 +26586,13 @@ paths:
                   value:
                     meta: {}
                     results:
-                      description: sample_value
-                      number: sample_value
-                      order_date: sample_value
-                      total_amount_in_cents: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_vendor_id: sample_value
+                      description: Purchase order for construction materials
+                      number: po12345
+                      order_date: 2024-06-18T00:00:00Z
+                      total_amount_in_cents: 1500000
+                      x_id: po12345
+                      x_property_id: property789
+                      x_vendor_id: vendor456
                       billing_address_1: "null"
                       billing_address_2: "null"
                       billing_city: "null"
@@ -27380,13 +27382,13 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - description: sample_value
-                        number: sample_value
-                        order_date: sample_value
-                        total_amount_in_cents: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_vendor_id: sample_value
+                      - description: Purchase order for construction materials
+                        number: po12345
+                        order_date: 2024-06-18T00:00:00Z
+                        total_amount_in_cents: 1500000
+                        x_id: po12345
+                        x_property_id: property789
+                        x_vendor_id: vendor456
                         billing_address_1: "null"
                         billing_address_2: "null"
                         billing_city: "null"
@@ -28060,29 +28062,29 @@ paths:
                       - address_1: 123 Main St
                         address_2: "null"
                         balance_in_cents: "null"
-                        city: Boston
-                        email_1: example_email_1@email.com
-                        email_2: sample_value
-                        first_name: Sally
-                        last_name: Jones
+                        city: Springfield
+                        email_1: john.doe@example.com
+                        email_2: j.doe@work.com
+                        first_name: John
+                        last_name: Doe
                         late_balance_in_cents: "null"
-                        phone_1: (123) 555-1234
-                        phone_1_type: MOBILE
-                        phone_2: sample_value
-                        phone_2_type: sample_value
-                        state: MA
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        zip: "02116"
-                        date_of_birth: sample_value
-                        address_1_alternate: sample_value
-                        city_alternate: sample_value
+                        phone_1: (123) 456-7890
+                        phone_1_type: HOME
+                        phone_2: (098) 765-4321
+                        phone_2_type: MOBILE
+                        state: IL
+                        x_id: customer321
+                        x_property_id: property654
+                        zip: "62704"
+                        date_of_birth: 1980-01-01T00:00:00Z
+                        address_1_alternate: 456 Oak St
+                        city_alternate: Shelbyville
                         country: US
-                        country_alternate: sample_value
-                        middle_name: Gail
-                        state_alternate: sample_value
-                        x_lease_id: sample_value
-                        zip_alternate: sample_value
+                        country_alternate: US
+                        middle_name: Michael
+                        state_alternate: MO
+                        x_lease_id: lease789
+                        zip_alternate: "62705"
                         x_unit_id: "null"
                         address_2_alternate: "null"
                         notes: "null"
@@ -28936,29 +28938,29 @@ paths:
                       address_1: 123 Main St
                       address_2: "null"
                       balance_in_cents: "null"
-                      city: Boston
-                      email_1: example_email_1@email.com
-                      email_2: sample_value
-                      first_name: Sally
-                      last_name: Jones
+                      city: Springfield
+                      email_1: john.doe@example.com
+                      email_2: j.doe@work.com
+                      first_name: John
+                      last_name: Doe
                       late_balance_in_cents: "null"
-                      phone_1: (123) 555-1234
-                      phone_1_type: MOBILE
-                      phone_2: sample_value
-                      phone_2_type: sample_value
-                      state: MA
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      zip: "02116"
-                      date_of_birth: sample_value
-                      address_1_alternate: sample_value
-                      city_alternate: sample_value
+                      phone_1: (123) 456-7890
+                      phone_1_type: HOME
+                      phone_2: (098) 765-4321
+                      phone_2_type: MOBILE
+                      state: IL
+                      x_id: customer321
+                      x_property_id: property654
+                      zip: "62704"
+                      date_of_birth: 1980-01-01T00:00:00Z
+                      address_1_alternate: 456 Oak St
+                      city_alternate: Shelbyville
                       country: US
-                      country_alternate: sample_value
-                      middle_name: Gail
-                      state_alternate: sample_value
-                      x_lease_id: sample_value
-                      zip_alternate: sample_value
+                      country_alternate: US
+                      middle_name: Michael
+                      state_alternate: MO
+                      x_lease_id: lease789
+                      zip_alternate: "62705"
                       x_unit_id: "null"
                       address_2_alternate: "null"
                       notes: "null"
@@ -29845,28 +29847,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
-                        access_notes: sample_value
-                        date_due: sample_value
+                      - access_is_authorized: true
+                        access_notes: Access allowed from 9 AM to 5 PM
+                        date_due: 2024-06-10T00:00:00Z
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
+                        service_description: Fix the leaky faucet
+                        service_details: Fixed the leaky faucet in the kitchen
                         service_priority: "null"
                         status_raw: "null"
                         unit_id: "null"
                         vendor_notes: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: srX123
+                        x_property_id: property456
                         x_sub_task_id: "null"
                         x_unit_id: "null"
-                        building: sample_value
-                        completion_notes: sample_value
-                        date_completed: sample_value
-                        date_created: sample_value
-                        date_scheduled: sample_value
-                        employee_id: sample_value
-                        service_category: sample_value
-                        unit_number: sample_value
+                        building: Building A
+                        completion_notes: Issue resolved
+                        date_completed: 2024-07-01T00:00:00Z
+                        date_created: 2024-06-01T00:00:00Z
+                        date_scheduled: 2024-06-05T00:00:00Z
+                        employee_id: cl7t4tlme0000usxq5zk0e5gl
+                        service_category: Plumbing
+                        unit_number: A202
                         x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -30621,28 +30623,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
-                      access_notes: sample_value
-                      date_due: sample_value
+                      access_is_authorized: true
+                      access_notes: Access allowed from 9 AM to 5 PM
+                      date_due: 2024-06-10T00:00:00Z
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
+                      service_description: Fix the leaky faucet
+                      service_details: Fixed the leaky faucet in the kitchen
                       service_priority: "null"
                       status_raw: "null"
                       unit_id: "null"
                       vendor_notes: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: srX123
+                      x_property_id: property456
                       x_sub_task_id: "null"
                       x_unit_id: "null"
-                      building: sample_value
-                      completion_notes: sample_value
-                      date_completed: sample_value
-                      date_created: sample_value
-                      date_scheduled: sample_value
-                      employee_id: sample_value
-                      service_category: sample_value
-                      unit_number: sample_value
+                      building: Building A
+                      completion_notes: Issue resolved
+                      date_completed: 2024-07-01T00:00:00Z
+                      date_created: 2024-06-01T00:00:00Z
+                      date_scheduled: 2024-06-05T00:00:00Z
+                      employee_id: cl7t4tlme0000usxq5zk0e5gl
+                      service_category: Plumbing
+                      unit_number: A202
                       x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -31230,28 +31232,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
-                        access_notes: sample_value
-                        date_due: sample_value
+                      - access_is_authorized: true
+                        access_notes: Access allowed from 9 AM to 5 PM
+                        date_due: 2024-06-10T00:00:00Z
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
+                        service_description: Fix the leaky faucet
+                        service_details: Fixed the leaky faucet in the kitchen
                         service_priority: "null"
                         status_raw: "null"
                         unit_id: "null"
                         vendor_notes: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: srX123
+                        x_property_id: property456
                         x_sub_task_id: "null"
                         x_unit_id: "null"
-                        building: sample_value
-                        completion_notes: sample_value
-                        date_completed: sample_value
-                        date_created: sample_value
-                        date_scheduled: sample_value
-                        employee_id: sample_value
-                        service_category: sample_value
-                        unit_number: sample_value
+                        building: Building A
+                        completion_notes: Issue resolved
+                        date_completed: 2024-07-01T00:00:00Z
+                        date_created: 2024-06-01T00:00:00Z
+                        date_scheduled: 2024-06-05T00:00:00Z
+                        employee_id: cl7t4tlme0000usxq5zk0e5gl
+                        service_category: Plumbing
+                        unit_number: A202
                         x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -31636,28 +31638,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
-                      access_notes: sample_value
-                      date_due: sample_value
+                      access_is_authorized: true
+                      access_notes: Access allowed from 9 AM to 5 PM
+                      date_due: 2024-06-10T00:00:00Z
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
+                      service_description: Fix the leaky faucet
+                      service_details: Fixed the leaky faucet in the kitchen
                       service_priority: "null"
                       status_raw: "null"
                       unit_id: "null"
                       vendor_notes: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: srX123
+                      x_property_id: property456
                       x_sub_task_id: "null"
                       x_unit_id: "null"
-                      building: sample_value
-                      completion_notes: sample_value
-                      date_completed: sample_value
-                      date_created: sample_value
-                      date_scheduled: sample_value
-                      employee_id: sample_value
-                      service_category: sample_value
-                      unit_number: sample_value
+                      building: Building A
+                      completion_notes: Issue resolved
+                      date_completed: 2024-07-01T00:00:00Z
+                      date_created: 2024-06-01T00:00:00Z
+                      date_scheduled: 2024-06-05T00:00:00Z
+                      employee_id: cl7t4tlme0000usxq5zk0e5gl
+                      service_category: Plumbing
+                      unit_number: A202
                       x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -32084,28 +32086,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
-                        access_notes: sample_value
-                        date_due: sample_value
+                      - access_is_authorized: true
+                        access_notes: Access allowed from 9 AM to 5 PM
+                        date_due: 2024-06-10T00:00:00Z
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
+                        service_description: Fix the leaky faucet
+                        service_details: Fixed the leaky faucet in the kitchen
                         service_priority: "null"
                         status_raw: "null"
                         unit_id: "null"
                         vendor_notes: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: srX123
+                        x_property_id: property456
                         x_sub_task_id: "null"
                         x_unit_id: "null"
-                        building: sample_value
-                        completion_notes: sample_value
-                        date_completed: sample_value
-                        date_created: sample_value
-                        date_scheduled: sample_value
-                        employee_id: sample_value
-                        service_category: sample_value
-                        unit_number: sample_value
+                        building: Building A
+                        completion_notes: Issue resolved
+                        date_completed: 2024-07-01T00:00:00Z
+                        date_created: 2024-06-01T00:00:00Z
+                        date_scheduled: 2024-06-05T00:00:00Z
+                        employee_id: cl7t4tlme0000usxq5zk0e5gl
+                        service_category: Plumbing
+                        unit_number: A202
                         x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -32590,28 +32592,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
-                      access_notes: sample_value
-                      date_due: sample_value
+                      access_is_authorized: true
+                      access_notes: Access allowed from 9 AM to 5 PM
+                      date_due: 2024-06-10T00:00:00Z
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
+                      service_description: Fix the leaky faucet
+                      service_details: Fixed the leaky faucet in the kitchen
                       service_priority: "null"
                       status_raw: "null"
                       unit_id: "null"
                       vendor_notes: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: srX123
+                      x_property_id: property456
                       x_sub_task_id: "null"
                       x_unit_id: "null"
-                      building: sample_value
-                      completion_notes: sample_value
-                      date_completed: sample_value
-                      date_created: sample_value
-                      date_scheduled: sample_value
-                      employee_id: sample_value
-                      service_category: sample_value
-                      unit_number: sample_value
+                      building: Building A
+                      completion_notes: Issue resolved
+                      date_completed: 2024-07-01T00:00:00Z
+                      date_created: 2024-06-01T00:00:00Z
+                      date_scheduled: 2024-06-05T00:00:00Z
+                      employee_id: cl7t4tlme0000usxq5zk0e5gl
+                      service_category: Plumbing
+                      unit_number: A202
                       x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -33039,28 +33041,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
-                        access_notes: sample_value
-                        date_due: sample_value
+                      - access_is_authorized: true
+                        access_notes: Access allowed from 9 AM to 5 PM
+                        date_due: 2024-06-10T00:00:00Z
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
+                        service_description: Fix the leaky faucet
+                        service_details: Fixed the leaky faucet in the kitchen
                         service_priority: "null"
                         status_raw: "null"
                         unit_id: "null"
                         vendor_notes: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: srX123
+                        x_property_id: property456
                         x_sub_task_id: "null"
                         x_unit_id: "null"
-                        building: sample_value
-                        completion_notes: sample_value
-                        date_completed: sample_value
-                        date_created: sample_value
-                        date_scheduled: sample_value
-                        employee_id: sample_value
-                        service_category: sample_value
-                        unit_number: sample_value
+                        building: Building A
+                        completion_notes: Issue resolved
+                        date_completed: 2024-07-01T00:00:00Z
+                        date_created: 2024-06-01T00:00:00Z
+                        date_scheduled: 2024-06-05T00:00:00Z
+                        employee_id: cl7t4tlme0000usxq5zk0e5gl
+                        service_category: Plumbing
+                        unit_number: A202
                         x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -33445,28 +33447,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
-                      access_notes: sample_value
-                      date_due: sample_value
+                      access_is_authorized: true
+                      access_notes: Access allowed from 9 AM to 5 PM
+                      date_due: 2024-06-10T00:00:00Z
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
+                      service_description: Fix the leaky faucet
+                      service_details: Fixed the leaky faucet in the kitchen
                       service_priority: "null"
                       status_raw: "null"
                       unit_id: "null"
                       vendor_notes: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: srX123
+                      x_property_id: property456
                       x_sub_task_id: "null"
                       x_unit_id: "null"
-                      building: sample_value
-                      completion_notes: sample_value
-                      date_completed: sample_value
-                      date_created: sample_value
-                      date_scheduled: sample_value
-                      employee_id: sample_value
-                      service_category: sample_value
-                      unit_number: sample_value
+                      building: Building A
+                      completion_notes: Issue resolved
+                      date_completed: 2024-07-01T00:00:00Z
+                      date_created: 2024-06-01T00:00:00Z
+                      date_scheduled: 2024-06-05T00:00:00Z
+                      employee_id: cl7t4tlme0000usxq5zk0e5gl
+                      service_category: Plumbing
+                      unit_number: A202
                       x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -33894,28 +33896,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
-                        access_notes: sample_value
-                        date_due: sample_value
+                      - access_is_authorized: true
+                        access_notes: Access allowed from 9 AM to 5 PM
+                        date_due: 2024-06-10T00:00:00Z
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
+                        service_description: Fix the leaky faucet
+                        service_details: Fixed the leaky faucet in the kitchen
                         service_priority: "null"
                         status_raw: "null"
                         unit_id: "null"
                         vendor_notes: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: srX123
+                        x_property_id: property456
                         x_sub_task_id: "null"
                         x_unit_id: "null"
-                        building: sample_value
-                        completion_notes: sample_value
-                        date_completed: sample_value
-                        date_created: sample_value
-                        date_scheduled: sample_value
-                        employee_id: sample_value
-                        service_category: sample_value
-                        unit_number: sample_value
+                        building: Building A
+                        completion_notes: Issue resolved
+                        date_completed: 2024-07-01T00:00:00Z
+                        date_created: 2024-06-01T00:00:00Z
+                        date_scheduled: 2024-06-05T00:00:00Z
+                        employee_id: cl7t4tlme0000usxq5zk0e5gl
+                        service_category: Plumbing
+                        unit_number: A202
                         x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -34300,28 +34302,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
-                      access_notes: sample_value
-                      date_due: sample_value
+                      access_is_authorized: true
+                      access_notes: Access allowed from 9 AM to 5 PM
+                      date_due: 2024-06-10T00:00:00Z
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
+                      service_description: Fix the leaky faucet
+                      service_details: Fixed the leaky faucet in the kitchen
                       service_priority: "null"
                       status_raw: "null"
                       unit_id: "null"
                       vendor_notes: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: srX123
+                      x_property_id: property456
                       x_sub_task_id: "null"
                       x_unit_id: "null"
-                      building: sample_value
-                      completion_notes: sample_value
-                      date_completed: sample_value
-                      date_created: sample_value
-                      date_scheduled: sample_value
-                      employee_id: sample_value
-                      service_category: sample_value
-                      unit_number: sample_value
+                      building: Building A
+                      completion_notes: Issue resolved
+                      date_completed: 2024-07-01T00:00:00Z
+                      date_created: 2024-06-01T00:00:00Z
+                      date_scheduled: 2024-06-05T00:00:00Z
+                      employee_id: cl7t4tlme0000usxq5zk0e5gl
+                      service_category: Plumbing
+                      unit_number: A202
                       x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -34716,28 +34718,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
-                        access_notes: sample_value
-                        date_due: sample_value
+                      - access_is_authorized: true
+                        access_notes: Access allowed from 9 AM to 5 PM
+                        date_due: 2024-06-10T00:00:00Z
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
+                        service_description: Fix the leaky faucet
+                        service_details: Fixed the leaky faucet in the kitchen
                         service_priority: "null"
                         status_raw: "null"
                         unit_id: "null"
                         vendor_notes: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: srX123
+                        x_property_id: property456
                         x_sub_task_id: "null"
                         x_unit_id: "null"
-                        building: sample_value
-                        completion_notes: sample_value
-                        date_completed: sample_value
-                        date_created: sample_value
-                        date_scheduled: sample_value
-                        employee_id: sample_value
-                        service_category: sample_value
-                        unit_number: sample_value
+                        building: Building A
+                        completion_notes: Issue resolved
+                        date_completed: 2024-07-01T00:00:00Z
+                        date_created: 2024-06-01T00:00:00Z
+                        date_scheduled: 2024-06-05T00:00:00Z
+                        employee_id: cl7t4tlme0000usxq5zk0e5gl
+                        service_category: Plumbing
+                        unit_number: A202
                         x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -35136,28 +35138,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
-                      access_notes: sample_value
-                      date_due: sample_value
+                      access_is_authorized: true
+                      access_notes: Access allowed from 9 AM to 5 PM
+                      date_due: 2024-06-10T00:00:00Z
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
+                      service_description: Fix the leaky faucet
+                      service_details: Fixed the leaky faucet in the kitchen
                       service_priority: "null"
                       status_raw: "null"
                       unit_id: "null"
                       vendor_notes: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: srX123
+                      x_property_id: property456
                       x_sub_task_id: "null"
                       x_unit_id: "null"
-                      building: sample_value
-                      completion_notes: sample_value
-                      date_completed: sample_value
-                      date_created: sample_value
-                      date_scheduled: sample_value
-                      employee_id: sample_value
-                      service_category: sample_value
-                      unit_number: sample_value
+                      building: Building A
+                      completion_notes: Issue resolved
+                      date_completed: 2024-07-01T00:00:00Z
+                      date_created: 2024-06-01T00:00:00Z
+                      date_scheduled: 2024-06-05T00:00:00Z
+                      employee_id: cl7t4tlme0000usxq5zk0e5gl
+                      service_category: Plumbing
+                      unit_number: A202
                       x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -35552,28 +35554,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - access_is_authorized: sample_value
-                        access_notes: sample_value
-                        date_due: sample_value
+                      - access_is_authorized: true
+                        access_notes: Access allowed from 9 AM to 5 PM
+                        date_due: 2024-06-10T00:00:00Z
                         notes: "null"
-                        service_description: sample_value
-                        service_details: sample_value
+                        service_description: Fix the leaky faucet
+                        service_details: Fixed the leaky faucet in the kitchen
                         service_priority: "null"
                         status_raw: "null"
                         unit_id: "null"
                         vendor_notes: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: srX123
+                        x_property_id: property456
                         x_sub_task_id: "null"
                         x_unit_id: "null"
-                        building: sample_value
-                        completion_notes: sample_value
-                        date_completed: sample_value
-                        date_created: sample_value
-                        date_scheduled: sample_value
-                        employee_id: sample_value
-                        service_category: sample_value
-                        unit_number: sample_value
+                        building: Building A
+                        completion_notes: Issue resolved
+                        date_completed: 2024-07-01T00:00:00Z
+                        date_created: 2024-06-01T00:00:00Z
+                        date_scheduled: 2024-06-05T00:00:00Z
+                        employee_id: cl7t4tlme0000usxq5zk0e5gl
+                        service_category: Plumbing
+                        unit_number: A202
                         x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -35972,28 +35974,28 @@ paths:
                   value:
                     meta: {}
                     results:
-                      access_is_authorized: sample_value
-                      access_notes: sample_value
-                      date_due: sample_value
+                      access_is_authorized: true
+                      access_notes: Access allowed from 9 AM to 5 PM
+                      date_due: 2024-06-10T00:00:00Z
                       notes: "null"
-                      service_description: sample_value
-                      service_details: sample_value
+                      service_description: Fix the leaky faucet
+                      service_details: Fixed the leaky faucet in the kitchen
                       service_priority: "null"
                       status_raw: "null"
                       unit_id: "null"
                       vendor_notes: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: srX123
+                      x_property_id: property456
                       x_sub_task_id: "null"
                       x_unit_id: "null"
-                      building: sample_value
-                      completion_notes: sample_value
-                      date_completed: sample_value
-                      date_created: sample_value
-                      date_scheduled: sample_value
-                      employee_id: sample_value
-                      service_category: sample_value
-                      unit_number: sample_value
+                      building: Building A
+                      completion_notes: Issue resolved
+                      date_completed: 2024-07-01T00:00:00Z
+                      date_created: 2024-06-01T00:00:00Z
+                      date_scheduled: 2024-06-05T00:00:00Z
+                      employee_id: cl7t4tlme0000usxq5zk0e5gl
+                      service_category: Plumbing
+                      unit_number: A202
                       x_location_id: "null"
                 PROPERTYWARE:
                   value:
@@ -36401,29 +36403,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bedrooms: sample_value
-                        building_name: sample_value
-                        city: Boston
+                      - bathrooms: "2"
+                        bedrooms: "3"
+                        building_name: Sunrise Apartments
+                        city: Springfield
                         is_vacant: "null"
                         notes: "null"
-                        number: sample_value
+                        number: A202
                         rent_amount_market_in_cents: "null"
-                        square_feet: sample_value
-                        state: MA
-                        street_address_1: sample_value
+                        square_feet: 1200
+                        state: IL
+                        street_address_1: 123 Main St
                         street_address_2: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        zip: "02116"
+                        x_id: unitX123
+                        x_property_id: property456
+                        zip: "62704"
                         pets_allowed: "null"
-                        building_number: sample_value
-                        floor_plan_code: sample_value
-                        floor_plan_name: sample_value
-                        is_available: sample_value
-                        is_furnished: sample_value
-                        rent_amount_max_in_cents: sample_value
-                        rent_amount_min_in_cents: sample_value
+                        building_number: Bldg5
+                        floor_plan_code: FP123
+                        floor_plan_name: 3BHK Deluxe
+                        is_available: true
+                        is_furnished: true
+                        rent_amount_max_in_cents: 200000
+                        rent_amount_min_in_cents: 180000
                         floor: "null"
                         country: "null"
                         x_location_id: "null"
@@ -36841,29 +36843,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bedrooms: sample_value
-                      building_name: sample_value
-                      city: Boston
+                      bathrooms: "2"
+                      bedrooms: "3"
+                      building_name: Sunrise Apartments
+                      city: Springfield
                       is_vacant: "null"
                       notes: "null"
-                      number: sample_value
+                      number: A202
                       rent_amount_market_in_cents: "null"
-                      square_feet: sample_value
-                      state: MA
-                      street_address_1: sample_value
+                      square_feet: 1200
+                      state: IL
+                      street_address_1: 123 Main St
                       street_address_2: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      zip: "02116"
+                      x_id: unitX123
+                      x_property_id: property456
+                      zip: "62704"
                       pets_allowed: "null"
-                      building_number: sample_value
-                      floor_plan_code: sample_value
-                      floor_plan_name: sample_value
-                      is_available: sample_value
-                      is_furnished: sample_value
-                      rent_amount_max_in_cents: sample_value
-                      rent_amount_min_in_cents: sample_value
+                      building_number: Bldg5
+                      floor_plan_code: FP123
+                      floor_plan_name: 3BHK Deluxe
+                      is_available: true
+                      is_furnished: true
+                      rent_amount_max_in_cents: 200000
+                      rent_amount_min_in_cents: 180000
                       floor: "null"
                       country: "null"
                       x_location_id: "null"
@@ -37507,29 +37509,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bedrooms: sample_value
-                        building_name: sample_value
-                        city: Boston
+                      - bathrooms: "2"
+                        bedrooms: "3"
+                        building_name: Sunrise Apartments
+                        city: Springfield
                         is_vacant: "null"
                         notes: "null"
-                        number: sample_value
+                        number: A202
                         rent_amount_market_in_cents: "null"
-                        square_feet: sample_value
-                        state: MA
-                        street_address_1: sample_value
+                        square_feet: 1200
+                        state: IL
+                        street_address_1: 123 Main St
                         street_address_2: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        zip: "02116"
+                        x_id: unitX123
+                        x_property_id: property456
+                        zip: "62704"
                         pets_allowed: "null"
-                        building_number: sample_value
-                        floor_plan_code: sample_value
-                        floor_plan_name: sample_value
-                        is_available: sample_value
-                        is_furnished: sample_value
-                        rent_amount_max_in_cents: sample_value
-                        rent_amount_min_in_cents: sample_value
+                        building_number: Bldg5
+                        floor_plan_code: FP123
+                        floor_plan_name: 3BHK Deluxe
+                        is_available: true
+                        is_furnished: true
+                        rent_amount_max_in_cents: 200000
+                        rent_amount_min_in_cents: 180000
                         floor: "null"
                         country: "null"
                         x_location_id: "null"
@@ -38248,29 +38250,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bedrooms: sample_value
-                      building_name: sample_value
-                      city: Boston
+                      bathrooms: "2"
+                      bedrooms: "3"
+                      building_name: Sunrise Apartments
+                      city: Springfield
                       is_vacant: "null"
                       notes: "null"
-                      number: sample_value
+                      number: A202
                       rent_amount_market_in_cents: "null"
-                      square_feet: sample_value
-                      state: MA
-                      street_address_1: sample_value
+                      square_feet: 1200
+                      state: IL
+                      street_address_1: 123 Main St
                       street_address_2: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      zip: "02116"
+                      x_id: unitX123
+                      x_property_id: property456
+                      zip: "62704"
                       pets_allowed: "null"
-                      building_number: sample_value
-                      floor_plan_code: sample_value
-                      floor_plan_name: sample_value
-                      is_available: sample_value
-                      is_furnished: sample_value
-                      rent_amount_max_in_cents: sample_value
-                      rent_amount_min_in_cents: sample_value
+                      building_number: Bldg5
+                      floor_plan_code: FP123
+                      floor_plan_name: 3BHK Deluxe
+                      is_available: true
+                      is_furnished: true
+                      rent_amount_max_in_cents: 200000
+                      rent_amount_min_in_cents: 180000
                       floor: "null"
                       country: "null"
                       x_location_id: "null"
@@ -38829,29 +38831,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bedrooms: sample_value
-                        building_name: sample_value
-                        city: Boston
+                      - bathrooms: "2"
+                        bedrooms: "3"
+                        building_name: Sunrise Apartments
+                        city: Springfield
                         is_vacant: "null"
                         notes: "null"
-                        number: sample_value
+                        number: A202
                         rent_amount_market_in_cents: "null"
-                        square_feet: sample_value
-                        state: MA
-                        street_address_1: sample_value
+                        square_feet: 1200
+                        state: IL
+                        street_address_1: 123 Main St
                         street_address_2: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        zip: "02116"
+                        x_id: unitX123
+                        x_property_id: property456
+                        zip: "62704"
                         pets_allowed: "null"
-                        building_number: sample_value
-                        floor_plan_code: sample_value
-                        floor_plan_name: sample_value
-                        is_available: sample_value
-                        is_furnished: sample_value
-                        rent_amount_max_in_cents: sample_value
-                        rent_amount_min_in_cents: sample_value
+                        building_number: Bldg5
+                        floor_plan_code: FP123
+                        floor_plan_name: 3BHK Deluxe
+                        is_available: true
+                        is_furnished: true
+                        rent_amount_max_in_cents: 200000
+                        rent_amount_min_in_cents: 180000
                         floor: "null"
                         country: "null"
                         x_location_id: "null"
@@ -39269,29 +39271,29 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bedrooms: sample_value
-                      building_name: sample_value
-                      city: Boston
+                      bathrooms: "2"
+                      bedrooms: "3"
+                      building_name: Sunrise Apartments
+                      city: Springfield
                       is_vacant: "null"
                       notes: "null"
-                      number: sample_value
+                      number: A202
                       rent_amount_market_in_cents: "null"
-                      square_feet: sample_value
-                      state: MA
-                      street_address_1: sample_value
+                      square_feet: 1200
+                      state: IL
+                      street_address_1: 123 Main St
                       street_address_2: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      zip: "02116"
+                      x_id: unitX123
+                      x_property_id: property456
+                      zip: "62704"
                       pets_allowed: "null"
-                      building_number: sample_value
-                      floor_plan_code: sample_value
-                      floor_plan_name: sample_value
-                      is_available: sample_value
-                      is_furnished: sample_value
-                      rent_amount_max_in_cents: sample_value
-                      rent_amount_min_in_cents: sample_value
+                      building_number: Bldg5
+                      floor_plan_code: FP123
+                      floor_plan_name: 3BHK Deluxe
+                      is_available: true
+                      is_furnished: true
+                      rent_amount_max_in_cents: 200000
+                      rent_amount_min_in_cents: 180000
                       floor: "null"
                       country: "null"
                       x_location_id: "null"
