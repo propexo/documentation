@@ -14286,6 +14286,22 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
+                appointment_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The date when the appointment will occur
+                appointment_time:
+                  type: string
+                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                  description: The time when the appointment will occur. The time is in the local
+                    time of the property/location.  In RentManager, the default
+                    timezone is an optional setting that the PMC can set and
+                    will be stored on the Propexo Timezone model.  You may need
+                    to read in this setting and convert to the local timezone
+                    for the appointment time to be correct.
               required:
                 - integration_id
       responses:
@@ -14356,6 +14372,22 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
+                appointment_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The date when the appointment will occur
+                appointment_time:
+                  type: string
+                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                  description: The time when the appointment will occur. The time is in the local
+                    time of the property/location.  In RentManager, the default
+                    timezone is an optional setting that the PMC can set and
+                    will be stored on the Propexo Timezone model.  You may need
+                    to read in this setting and convert to the local timezone
+                    for the appointment time to be correct.
                 lead_source_id:
                   type: string
                   description: The Propexo unique identifier for the lead source
@@ -14364,6 +14396,76 @@ paths:
       responses:
         "200":
           description: Create an appointment for a lead
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/residents:
+    post:
+      tags:
+        - events
+      summary: Create an appointment for a resident
+      description: Create an appointment for a resident
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
+                appointment_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The date when the appointment will occur
+                appointment_time:
+                  type: string
+                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                  description: The time when the appointment will occur. The time is in the local
+                    time of the property/location.  In RentManager, the default
+                    timezone is an optional setting that the PMC can set and
+                    will be stored on the Propexo Timezone model.  You may need
+                    to read in this setting and convert to the local timezone
+                    for the appointment time to be correct.
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                title:
+                  type: string
+                  description: The title associated with the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an appointment for a resident
           content:
             application/json:
               schema:
