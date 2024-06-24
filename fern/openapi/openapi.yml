@@ -7617,6 +7617,498 @@ paths:
                       x_location_id: "null"
         "400":
           description: invalid input
+  /v1/events/appointments/applicants:
+    post:
+      tags:
+        - appointments
+      summary: Create an appointment for an applicant
+      description: Create an appointment for an applicant
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                applicant_id:
+                  type: string
+                  description: The Propexo unique identifier for the applicant
+                application_id:
+                  type: string
+                  description: The Propexo unique identifier for the application
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                title:
+                  type: string
+                  description: The title associated with the event
+                appointment_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The date when the appointment will occur
+                appointment_time:
+                  type: string
+                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                  description: The time when the appointment will occur. The time is in the local
+                    time of the property/location.  In RentManager, the default
+                    timezone is an optional setting that the PMC can set and
+                    will be stored on the Propexo Timezone model.  You may need
+                    to read in this setting and convert to the local timezone
+                    for the appointment time to be correct.
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an appointment for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/leads:
+    post:
+      tags:
+        - appointments
+      summary: Create an appointment for a lead
+      description: Create an appointment for a lead
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                lead_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                title:
+                  type: string
+                  description: The title associated with the event
+                appointment_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The date when the appointment will occur
+                appointment_time:
+                  type: string
+                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                  description: The time when the appointment will occur. The time is in the local
+                    time of the property/location.  In RentManager, the default
+                    timezone is an optional setting that the PMC can set and
+                    will be stored on the Propexo Timezone model.  You may need
+                    to read in this setting and convert to the local timezone
+                    for the appointment time to be correct.
+                lead_source_id:
+                  type: string
+                  description: The Propexo unique identifier for the lead source
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an appointment for a lead
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/residents:
+    post:
+      tags:
+        - appointments
+      summary: Create an appointment for a resident
+      description: Create an appointment for a resident
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                resident_id:
+                  type: string
+                  description: The Propexo unique identifier for the resident
+                appointment_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The date when the appointment will occur
+                appointment_time:
+                  type: string
+                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                  description: The time when the appointment will occur. The time is in the local
+                    time of the property/location.  In RentManager, the default
+                    timezone is an optional setting that the PMC can set and
+                    will be stored on the Propexo Timezone model.  You may need
+                    to read in this setting and convert to the local timezone
+                    for the appointment time to be correct.
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                title:
+                  type: string
+                  description: The title associated with the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create an appointment for a resident
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/applicants/{event_id}:
+    put:
+      tags:
+        - appointments
+      summary: Update an appointment for an applicant
+      description: Update an appointment for an applicant
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: false
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                title:
+                  type: string
+                  description: The title associated with the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update an appointment for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/applicants/cancel:
+    post:
+      tags:
+        - appointments
+      summary: Cancel an appointment for an applicant
+      description: Cancel an appointment for an applicant
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                event_id:
+                  type: string
+                  description: The Propexo unique identifier for the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Cancel an appointment for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/leads/{event_id}:
+    put:
+      tags:
+        - appointments
+      summary: Update an appointment for a lead
+      description: Update an appointment for a lead
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: false
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                unit_id:
+                  type: string
+                  description: The Propexo unique identifier for the unit
+                appointment_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the appointment will occur
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                appointment_type:
+                  type: string
+                  enum:
+                    - LEASING_APPOINTMENT
+                    - SELF_GUIDED_TOUR
+                    - TOUR
+                    - VIRTUAL_TOUR
+                  description: The type of appointment. This is specific to Entrata and correlates
+                    to the types of calendar appointments available
+                title:
+                  type: string
+                  description: The title associated with the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                event_datetime:
+                  type: string
+                  format: date-time
+                  description: The date when the event will occur
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update an appointment for a lead
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/leads/cancel:
+    post:
+      tags:
+        - appointments
+      summary: Cancel an appointment for a lead
+      description: Cancel an appointment for a lead
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                event_id:
+                  type: string
+                  description: The Propexo unique identifier for the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Cancel an appointment for a lead
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
   /v1/charge-codes:
     get:
       tags:
@@ -14312,498 +14804,6 @@ paths:
                       appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
-        "400":
-          description: invalid input
-  /v1/events/appointments/applicants:
-    post:
-      tags:
-        - events
-      summary: Create an appointment for an applicant
-      description: Create an appointment for an applicant
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                applicant_id:
-                  type: string
-                  description: The Propexo unique identifier for the applicant
-                application_id:
-                  type: string
-                  description: The Propexo unique identifier for the application
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                appointment_duration_minutes:
-                  type: integer
-                  exclusiveMinimum: 0
-                  description: The duration of the appointment, in minutes
-                appointment_type:
-                  type: string
-                  enum:
-                    - LEASING_APPOINTMENT
-                    - SELF_GUIDED_TOUR
-                    - TOUR
-                    - VIRTUAL_TOUR
-                  description: The type of appointment. This is specific to Entrata and correlates
-                    to the types of calendar appointments available
-                notes:
-                  type: string
-                  description: Notes associated with the event
-                title:
-                  type: string
-                  description: The title associated with the event
-                appointment_date:
-                  anyOf:
-                    - type: string
-                      format: date-time
-                    - type: string
-                      pattern: ^\d{4}-\d{2}-\d{2}$
-                  description: The date when the appointment will occur
-                appointment_time:
-                  type: string
-                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
-                  description: The time when the appointment will occur. The time is in the local
-                    time of the property/location.  In RentManager, the default
-                    timezone is an optional setting that the PMC can set and
-                    will be stored on the Propexo Timezone model.  You may need
-                    to read in this setting and convert to the local timezone
-                    for the appointment time to be correct.
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Create an appointment for an applicant
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                    example: clwh5uics000608me9v74du0a
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-              examples: {}
-        "400":
-          description: invalid input
-  /v1/events/appointments/leads:
-    post:
-      tags:
-        - events
-      summary: Create an appointment for a lead
-      description: Create an appointment for a lead
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                lead_id:
-                  type: string
-                  description: The Propexo unique identifier for the lead
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                appointment_duration_minutes:
-                  type: integer
-                  exclusiveMinimum: 0
-                  description: The duration of the appointment, in minutes
-                appointment_type:
-                  type: string
-                  enum:
-                    - LEASING_APPOINTMENT
-                    - SELF_GUIDED_TOUR
-                    - TOUR
-                    - VIRTUAL_TOUR
-                  description: The type of appointment. This is specific to Entrata and correlates
-                    to the types of calendar appointments available
-                notes:
-                  type: string
-                  description: Notes associated with the event
-                title:
-                  type: string
-                  description: The title associated with the event
-                appointment_date:
-                  anyOf:
-                    - type: string
-                      format: date-time
-                    - type: string
-                      pattern: ^\d{4}-\d{2}-\d{2}$
-                  description: The date when the appointment will occur
-                appointment_time:
-                  type: string
-                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
-                  description: The time when the appointment will occur. The time is in the local
-                    time of the property/location.  In RentManager, the default
-                    timezone is an optional setting that the PMC can set and
-                    will be stored on the Propexo Timezone model.  You may need
-                    to read in this setting and convert to the local timezone
-                    for the appointment time to be correct.
-                lead_source_id:
-                  type: string
-                  description: The Propexo unique identifier for the lead source
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Create an appointment for a lead
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                    example: clwh5uics000608me9v74du0a
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-              examples: {}
-        "400":
-          description: invalid input
-  /v1/events/appointments/residents:
-    post:
-      tags:
-        - events
-      summary: Create an appointment for a resident
-      description: Create an appointment for a resident
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                resident_id:
-                  type: string
-                  description: The Propexo unique identifier for the resident
-                appointment_date:
-                  anyOf:
-                    - type: string
-                      format: date-time
-                    - type: string
-                      pattern: ^\d{4}-\d{2}-\d{2}$
-                  description: The date when the appointment will occur
-                appointment_time:
-                  type: string
-                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
-                  description: The time when the appointment will occur. The time is in the local
-                    time of the property/location.  In RentManager, the default
-                    timezone is an optional setting that the PMC can set and
-                    will be stored on the Propexo Timezone model.  You may need
-                    to read in this setting and convert to the local timezone
-                    for the appointment time to be correct.
-                appointment_duration_minutes:
-                  type: integer
-                  exclusiveMinimum: 0
-                  description: The duration of the appointment, in minutes
-                title:
-                  type: string
-                  description: The title associated with the event
-                notes:
-                  type: string
-                  description: Notes associated with the event
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Create an appointment for a resident
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                    example: clwh5uics000608me9v74du0a
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-              examples: {}
-        "400":
-          description: invalid input
-  /v1/events/appointments/applicants/{event_id}:
-    put:
-      tags:
-        - events
-      summary: Update an appointment for an applicant
-      description: Update an appointment for an applicant
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the event
-          required: false
-          name: event_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                appointment_duration_minutes:
-                  type: integer
-                  exclusiveMinimum: 0
-                  description: The duration of the appointment, in minutes
-                appointment_type:
-                  type: string
-                  enum:
-                    - LEASING_APPOINTMENT
-                    - SELF_GUIDED_TOUR
-                    - TOUR
-                    - VIRTUAL_TOUR
-                  description: The type of appointment. This is specific to Entrata and correlates
-                    to the types of calendar appointments available
-                title:
-                  type: string
-                  description: The title associated with the event
-                notes:
-                  type: string
-                  description: Notes associated with the event
-                event_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the event will occur
-                integration_id:
-                  type: string
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Update an appointment for an applicant
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                    example: clwh5uics000608me9v74du0a
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-              examples: {}
-        "400":
-          description: invalid input
-  /v1/events/appointments/applicants/cancel:
-    post:
-      tags:
-        - events
-      summary: Cancel an appointment for an applicant
-      description: Cancel an appointment for an applicant
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                event_id:
-                  type: string
-                  description: The Propexo unique identifier for the event
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Cancel an appointment for an applicant
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                    example: clwh5uics000608me9v74du0a
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-              examples: {}
-        "400":
-          description: invalid input
-  /v1/events/appointments/leads/{event_id}:
-    put:
-      tags:
-        - events
-      summary: Update an appointment for a lead
-      description: Update an appointment for a lead
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the event
-          required: false
-          name: event_id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                unit_id:
-                  type: string
-                  description: The Propexo unique identifier for the unit
-                appointment_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the appointment will occur
-                appointment_duration_minutes:
-                  type: integer
-                  exclusiveMinimum: 0
-                  description: The duration of the appointment, in minutes
-                appointment_type:
-                  type: string
-                  enum:
-                    - LEASING_APPOINTMENT
-                    - SELF_GUIDED_TOUR
-                    - TOUR
-                    - VIRTUAL_TOUR
-                  description: The type of appointment. This is specific to Entrata and correlates
-                    to the types of calendar appointments available
-                title:
-                  type: string
-                  description: The title associated with the event
-                notes:
-                  type: string
-                  description: Notes associated with the event
-                event_datetime:
-                  type: string
-                  format: date-time
-                  description: The date when the event will occur
-                integration_id:
-                  type: string
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Update an appointment for a lead
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                    example: clwh5uics000608me9v74du0a
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-              examples: {}
-        "400":
-          description: invalid input
-  /v1/events/appointments/leads/cancel:
-    post:
-      tags:
-        - events
-      summary: Cancel an appointment for a lead
-      description: Cancel an appointment for a lead
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                integration_id:
-                  type: string
-                event_id:
-                  type: string
-                  description: The Propexo unique identifier for the event
-              required:
-                - integration_id
-      responses:
-        "200":
-          description: Cancel an appointment for a lead
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  job_id:
-                    type: string
-                    description: The ID of the job created to handle this operation
-                    example: clwh5uics000608me9v74du0a
-                  data:
-                    type: object
-                    properties: {}
-                    description: Returned data from the operation. This is dependent on the vendor
-                      specific endpoint's returned data.
-                required:
-                  - job_id
-                  - data
-              examples: {}
         "400":
           description: invalid input
   /v1/file-types:
