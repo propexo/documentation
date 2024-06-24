@@ -9997,6 +9997,601 @@ paths:
                       transaction_source: RESIDENT
         "400":
           description: invalid input
+  /v1/recurring-resident-charges:
+    get:
+      tags:
+        - billing-and-payments
+      summary: Get all recurring resident charges
+      description: Get all recurring resident charges
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the lease
+          required: false
+          name: lease_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all recurring resident charges
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the recurring resident charge
+                          example: clwktsp9v000008l31iv218hn
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                          example: 2024-03-21T15:38:08.337Z
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                          example: 2024-03-22T10:59:45.119Z
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                          example: 2024-03-22T10:59:45.119Z
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        x_financial_account_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the financial account from the integration
+                            vendor
+                        x_lease_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the lease from the integration vendor
+                        amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The total amount of the recurring resident charge
+                          example: 325000
+                        amount_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw value for amount from the PMS
+                        is_active:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the recurring resident charge is active
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          description: Description of the recurring resident charge
+                        reference_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The reference number for the recurring resident charge
+                        start_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The start date associated with the recurring resident charge
+                        end_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The end date associated with the recurring resident charge
+                        frequency_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw value of the frequency of the recurring resident charge
+                        frequency_normalized:
+                          type:
+                            - string
+                            - "null"
+                          enum:
+                            - OTHER
+                            - WEEKLY
+                            - MONTHLY
+                          description: The frequency of the recurring resident charge
+                        charge_due_day:
+                          type:
+                            - integer
+                            - "null"
+                          exclusiveMinimum: 0
+                          description: The due date associated with the recurring resident charge
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        financial_account_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the financial account
+                        lease_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the lease
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                          example: clwh5u07w000508me66sfh3um
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                          example: (PMS ENUM VALUE)
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                          example: clwi5xiix000008l6ctdgafyh
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - x_financial_account_id
+                        - x_lease_id
+                        - amount_in_cents
+                        - amount_raw
+                        - is_active
+                        - description
+                        - reference_number
+                        - start_date
+                        - end_date
+                        - frequency_raw
+                        - frequency_normalized
+                        - charge_due_day
+                        - custom_data
+                        - financial_account_id
+                        - lease_id
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+              examples: {}
+        "400":
+          description: invalid input
+    post:
+      tags:
+        - billing-and-payments
+      summary: Create a recurring resident charge
+      description: Create a recurring resident charge for an integration.
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                lease_id:
+                  type: string
+                  description: The Propexo unique identifier for the lease
+                financial_account_id:
+                  type: string
+                  description: The Propexo unique identifier for the financial account
+                is_active:
+                  type: boolean
+                  description: Whether the recurring resident charge is active
+                amount_in_cents:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The amount of the recurring resident charge, in cents
+                description:
+                  type: string
+                  description: Description of the recurring resident charge
+                charge_due_day:
+                  type: integer
+                  minimum: 1
+                  maximum: 31
+                  description: The due date associated with the recurring resident charge
+                start_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The start date associated with the recurring resident charge
+                end_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The end date associated with the recurring resident charge
+                frequency_normalized:
+                  type: string
+                  enum:
+                    - MONTHLY
+                    - WEEKLY
+                  description: The frequency of the recurring resident charge
+                reference_number:
+                  type: string
+                  description: The reference number for the recurring resident charge
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a recurring resident charge for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/recurring-resident-charges/{recurring_resident_charge_id}:
+    get:
+      tags:
+        - billing-and-payments
+      summary: Get recurring resident charge by ID
+      description: Get recurring resident charge by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: recurring_resident_charge_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get recurring resident charge by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the recurring resident charge
+                        example: clwktsp9v000008l31iv218hn
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                        example: 2024-03-21T15:38:08.337Z
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                        example: 2024-03-22T10:59:45.119Z
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                        example: 2024-03-22T10:59:45.119Z
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      x_financial_account_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the financial account from the integration
+                          vendor
+                      x_lease_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the lease from the integration vendor
+                      amount_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The total amount of the recurring resident charge
+                        example: 325000
+                      amount_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw value for amount from the PMS
+                      is_active:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the recurring resident charge is active
+                      description:
+                        type:
+                          - string
+                          - "null"
+                        description: Description of the recurring resident charge
+                      reference_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The reference number for the recurring resident charge
+                      start_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The start date associated with the recurring resident charge
+                      end_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The end date associated with the recurring resident charge
+                      frequency_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw value of the frequency of the recurring resident charge
+                      frequency_normalized:
+                        type:
+                          - string
+                          - "null"
+                        enum:
+                          - OTHER
+                          - WEEKLY
+                          - MONTHLY
+                        description: The frequency of the recurring resident charge
+                      charge_due_day:
+                        type:
+                          - integer
+                          - "null"
+                        exclusiveMinimum: 0
+                        description: The due date associated with the recurring resident charge
+                      custom_data:
+                        type:
+                          - object
+                          - "null"
+                        properties: {}
+                        description: Custom data
+                      financial_account_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the financial account
+                      lease_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the lease
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                        example: clwh5u07w000508me66sfh3um
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                        example: (PMS ENUM VALUE)
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                        example: clwi5xiix000008l6ctdgafyh
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - x_financial_account_id
+                      - x_lease_id
+                      - amount_in_cents
+                      - amount_raw
+                      - is_active
+                      - description
+                      - reference_number
+                      - start_date
+                      - end_date
+                      - frequency_raw
+                      - frequency_normalized
+                      - charge_due_day
+                      - custom_data
+                      - financial_account_id
+                      - lease_id
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+              examples: {}
+        "400":
+          description: invalid input
   /v1/resident-payments:
     get:
       tags:
