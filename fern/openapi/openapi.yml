@@ -7915,6 +7915,13 @@ paths:
                 notes:
                   type: string
                   description: Notes associated with the event
+                priority:
+                  type: string
+                  enum:
+                    - HIGH
+                    - MEDIUM
+                    - LOW
+                  description: The priority of the appointment
                 integration_id:
                   type: string
               required:
@@ -8042,6 +8049,13 @@ paths:
                 notes:
                   type: string
                   description: Notes associated with the event
+                priority:
+                  type: string
+                  enum:
+                    - HIGH
+                    - MEDIUM
+                    - LOW
+                  description: The priority of the appointment
                 integration_id:
                   type: string
               required:
