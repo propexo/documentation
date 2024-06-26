@@ -7933,6 +7933,16 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                priority:
+                  type: string
+                  enum:
+                    - HIGH
+                    - MEDIUM
+                    - LOW
+                  description: The priority of the appointment
               required:
                 - integration_id
       responses:
@@ -8013,6 +8023,16 @@ paths:
                 title:
                   type: string
                   description: The title associated with the event
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                priority:
+                  type: string
+                  enum:
+                    - HIGH
+                    - MEDIUM
+                    - LOW
+                  description: The priority of the appointment
                 lead_source_id:
                   type: string
                   description: The Propexo unique identifier for the lead source
@@ -23468,8 +23488,8 @@ paths:
                       - application_url: "null"
                         available_date: 2023-07-01T00:00:00Z
                         bathrooms: "2"
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                        bathrooms_full: 2
+                        bathrooms_half: sample_value
                         bedrooms: "3"
                         building_name: Sunset Apartments
                         city: San Francisco
@@ -23608,9 +23628,9 @@ paths:
                     results:
                       - application_url: "null"
                         available_date: sample_value
-                        bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                        bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -23749,9 +23769,9 @@ paths:
                     results:
                       - application_url: sample_value
                         available_date: sample_value
-                        bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                        bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -23797,8 +23817,8 @@ paths:
                       - application_url: "null"
                         available_date: "null"
                         bathrooms: "1.5"
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: "2"
                         building_name: "null"
                         city: Boston
@@ -24370,8 +24390,8 @@ paths:
                       application_url: "null"
                       available_date: 2023-07-01T00:00:00Z
                       bathrooms: "2"
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms_full: 2
+                      bathrooms_half: sample_value
                       bedrooms: "3"
                       building_name: Sunset Apartments
                       city: San Francisco
@@ -24510,9 +24530,9 @@ paths:
                     results:
                       application_url: "null"
                       available_date: sample_value
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -24651,9 +24671,9 @@ paths:
                     results:
                       application_url: sample_value
                       available_date: sample_value
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -24699,8 +24719,8 @@ paths:
                       application_url: "null"
                       available_date: "null"
                       bathrooms: "1.5"
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: "2"
                       building_name: "null"
                       city: Boston
@@ -37421,8 +37441,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "2"
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                        bathrooms_full: 2
+                        bathrooms_half: sample_value
                         bedrooms: "3"
                         building_name: Sunrise Apartments
                         city: Springfield
@@ -37560,9 +37580,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                      - bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -37665,9 +37685,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                      - bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -37879,8 +37899,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "2"
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms_full: 2
+                      bathrooms_half: sample_value
                       bedrooms: "3"
                       building_name: Sunrise Apartments
                       city: Springfield
@@ -38018,9 +38038,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -38123,9 +38143,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -38575,8 +38595,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "2"
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                        bathrooms_full: 2
+                        bathrooms_half: sample_value
                         bedrooms: "3"
                         building_name: Sunrise Apartments
                         city: Springfield
@@ -38714,9 +38734,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                      - bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -38819,9 +38839,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                      - bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -39346,8 +39366,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "2"
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms_full: 2
+                      bathrooms_half: sample_value
                       bedrooms: "3"
                       building_name: Sunrise Apartments
                       city: Springfield
@@ -39485,9 +39505,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -39590,9 +39610,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
@@ -39945,8 +39965,8 @@ paths:
                     meta: {}
                     results:
                       - bathrooms: "2"
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                        bathrooms_full: 2
+                        bathrooms_half: sample_value
                         bedrooms: "3"
                         building_name: Sunrise Apartments
                         city: Springfield
@@ -40084,9 +40104,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                      - bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: "null"
                         city: Boston
@@ -40189,9 +40209,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - bathrooms: sample_value
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
+                      - bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         bedrooms: sample_value
                         building_name: sample_value
                         city: Boston
@@ -40403,8 +40423,8 @@ paths:
                     meta: {}
                     results:
                       bathrooms: "2"
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms_full: 2
+                      bathrooms_half: sample_value
                       bedrooms: "3"
                       building_name: Sunrise Apartments
                       city: Springfield
@@ -40542,9 +40562,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: "null"
                       city: Boston
@@ -40647,9 +40667,9 @@ paths:
                   value:
                     meta: {}
                     results:
-                      bathrooms: sample_value
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       bedrooms: sample_value
                       building_name: sample_value
                       city: Boston
