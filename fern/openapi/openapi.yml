@@ -37223,6 +37223,281 @@ paths:
                       x_location_id: "null"
         "400":
           description: invalid input
+  /v1/timezones:
+    get:
+      tags:
+        - timezones
+      summary: Get all timezones
+      description: Get all timezones
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all timezones
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the timezone
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        is_active:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the timezone is active
+                        observes_daylight_savings:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether or not this timezone should be adjusted for daylight
+                            savings time
+                        offset:
+                          type:
+                            - string
+                            - "null"
+                          pattern: ^[-+]\d{2}:\d{2}$
+                          description: The UTC offset numeric value of the timezone. In the event that
+                            daylight savings time is observed, the offset will
+                            always represent standard time
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - is_active
+                        - observes_daylight_savings
+                        - offset
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: true
+                        observes_daylight_savings: sample_value
+                        offset: -08:00
+                        x_id: sample_value
+                        x_location_id: sample_value
+                        x_property_id: sample_value
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      - is_active: "null"
+                        observes_daylight_savings: "null"
+                        offset: "null"
+                        x_id: "null"
+                        x_location_id: "null"
+                        x_property_id: "null"
+        "400":
+          description: invalid input
   /v1/floor-plans:
     get:
       tags:
@@ -42101,6 +42376,7 @@ paths:
                     - screenings
                     - service_request_vendors
                     - service_requests
+                    - timezones
                     - transactions
                     - units
                   description: The model for the webhook trigger to monitor. Only applies to
@@ -42579,6 +42855,7 @@ paths:
                     - screenings
                     - service_request_vendors
                     - service_requests
+                    - timezones
                     - transactions
                     - units
                   description: The model for the webhook trigger to monitor. Only applies to
@@ -42783,6 +43060,7 @@ webhooks:
                             - screenings
                             - service-request-vendors
                             - service-requests
+                            - timezones
                             - units
                         payload:
                           anyOf:
@@ -45832,6 +46110,7 @@ webhooks:
                             - screenings
                             - service-request-vendors
                             - service-requests
+                            - timezones
                             - units
                         integration_id:
                           type: string
@@ -45903,6 +46182,7 @@ webhooks:
                             - screenings
                             - service-request-vendors
                             - service-requests
+                            - timezones
                             - units
                         diff:
                           type: object
@@ -51964,6 +52244,7 @@ webhooks:
                             - screenings
                             - service-request-vendors
                             - service-requests
+                            - timezones
                             - units
                         integration_id:
                           type: string
