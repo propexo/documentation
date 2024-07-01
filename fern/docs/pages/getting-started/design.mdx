@@ -38,6 +38,9 @@ Each new integration you set up will go through an initial synchronization proce
 
 The initial synchronization process is crucial for initializing the data exchange between your application and Propexo. This ensures that all necessary data is correctly fetched and stored in the Propexo Data Cache.
 
+#### First-Time Sync Diagram
+![Propexo Initial Sync Diagram](https://propify-public-assets.s3.amazonaws.com/docs/first-time-sync.png)
+
 #### Steps to Set Up Initial Synchronization
 
 1. **Create/Enable Integration**:
@@ -69,11 +72,12 @@ The initial synchronization process is crucial for initializing the data exchang
    }
    ```
 
-![Propexo Initial Sync Diagram](https://propify-public-assets.s3.amazonaws.com/docs/first-time-sync.png)
-
 ### Ongoing Synchronizations
 
 After the initial synchronization, ongoing syncs ensure that your data remains up-to-date. These syncs detect and update new or modified data, allowing your application to stay current with minimal effort.
+
+#### Ongoing Syncs Diagram
+![Propexo Ongoing Syncs Diagram](https://propify-public-assets.s3.amazonaws.com/docs/ongoing-syncs.png)
 
 #### Steps to Manage Ongoing Synchronizations
 
@@ -90,8 +94,6 @@ After the initial synchronization, ongoing syncs ensure that your data remains u
 
 4. **Completion Notification**:
    - After the sync process, a `SYNC_COMPLETE` webhook notification is sent to your application, indicating that the data is current and the synchronization cycle is complete.
-
-![Propexo Ongoing Syncs Diagram](https://propify-public-assets.s3.amazonaws.com/docs/ongoing-syncs.png)
 
 ## Recommended Integration Flow
 
