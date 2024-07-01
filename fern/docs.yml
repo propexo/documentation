@@ -22,6 +22,8 @@ navigation:
         contents:
           - page: Overview
             path: ./docs/pages/overview.mdx
+          - page: Integration Setup Guide & System Design
+            path: ./docs/pages/getting-started/design.mdx
           - page: Sample Integration
             path: ./docs/pages/getting-started/propexo-sandbox.mdx
           - page: Your First Integration
