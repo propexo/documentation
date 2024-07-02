@@ -7932,6 +7932,7 @@ paths:
                   description: Notes associated with the event
                 title:
                   type: string
+                  maxLength: 50
                   description: The title associated with the event
                 employee_id:
                   type: string
@@ -8022,6 +8023,7 @@ paths:
                   description: Notes associated with the event
                 title:
                   type: string
+                  maxLength: 50
                   description: The title associated with the event
                 employee_id:
                   type: string
@@ -8104,6 +8106,7 @@ paths:
                   description: The duration of the appointment, in minutes
                 title:
                   type: string
+                  maxLength: 50
                   description: The title associated with the event
                 notes:
                   type: string
@@ -8185,6 +8188,7 @@ paths:
                     to the types of calendar appointments available
                 title:
                   type: string
+                  maxLength: 50
                   description: The title associated with the event
                 notes:
                   type: string
@@ -8319,6 +8323,7 @@ paths:
                     to the types of calendar appointments available
                 title:
                   type: string
+                  maxLength: 50
                   description: The title associated with the event
                 notes:
                   type: string
@@ -8381,6 +8386,83 @@ paths:
       responses:
         "200":
           description: Cancel an appointment for a lead
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
+  /v1/events/appointments/residents/{event_id}:
+    put:
+      tags:
+        - appointments
+      summary: Update an appointment for a resident
+      description: Update an appointment for a resident
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: false
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appointment_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The date when the appointment will occur
+                appointment_time:
+                  type: string
+                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                  description: The time when the appointment will occur. Please refer to our
+                    appointment times section in the docs to see how each
+                    individual PMS handles timezones. The time is in the local
+                    time of the property/location.  In RentManager, the default
+                    timezone is an optional setting that the PMC can set and
+                    will be stored on the Propexo Timezone model.  You may need
+                    to read in this setting and convert to the local timezone
+                    for the appointment time to be correct.
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  description: The duration of the appointment, in minutes
+                title:
+                  type: string
+                  maxLength: 50
+                  description: The title associated with the event
+                notes:
+                  type: string
+                  description: Notes associated with the event
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update an appointment for a resident
           content:
             application/json:
               schema:
