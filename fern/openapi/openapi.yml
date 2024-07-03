@@ -30603,6 +30603,12 @@ paths:
           in: query
         - schema:
             type: string
+            description: The Propexo unique identifier for the vendor
+          required: false
+          name: vendor_id
+          in: query
+        - schema:
+            type: string
             description: The Propexo unique identifier for the property
           required: false
           name: property_id
@@ -30809,6 +30815,16 @@ paths:
                             - string
                             - "null"
                           description: The Propexo unique identifier for the employee
+                        vendors:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              vendor_id:
+                                type: string
+                            required:
+                              - vendor_id
+                          description: List of vendor IDs associated with the service request
                         history:
                           type: array
                           items:
@@ -30927,6 +30943,7 @@ paths:
                         - property_id
                         - unit_id
                         - employee_id
+                        - vendors
                         - history
                         - employee
                 required:
@@ -31585,6 +31602,16 @@ paths:
                           - string
                           - "null"
                         description: The Propexo unique identifier for the employee
+                      vendors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            vendor_id:
+                              type: string
+                          required:
+                            - vendor_id
+                        description: List of vendor IDs associated with the service request
                       history:
                         type: array
                         items:
@@ -31703,6 +31730,7 @@ paths:
                       - property_id
                       - unit_id
                       - employee_id
+                      - vendors
                       - history
                       - employee
                 required:
@@ -45776,6 +45804,16 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The Propexo unique identifier for the employee
+                                vendors:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      vendor_id:
+                                        type: string
+                                    required:
+                                      - vendor_id
+                                  description: List of vendor IDs associated with the service request
                                 employee:
                                   type:
                                     - object
@@ -48902,6 +48940,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the employee
+                                    vendors:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          vendor_id:
+                                            type: string
+                                        required:
+                                          - vendor_id
+                                      description: List of vendor IDs associated with the service request
                                     employee:
                                       type:
                                         - object
@@ -51907,6 +51955,16 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The Propexo unique identifier for the employee
+                                    vendors:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          vendor_id:
+                                            type: string
+                                        required:
+                                          - vendor_id
+                                      description: List of vendor IDs associated with the service request
                                     employee:
                                       type:
                                         - object
