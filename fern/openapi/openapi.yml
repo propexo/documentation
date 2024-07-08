@@ -21724,7 +21724,9 @@ paths:
                           type:
                             - number
                             - "null"
-                          description: The rent amount in cents for the lease
+                          description: The rent amount in cents for the lease For Entrata, your customers
+                            must give you access to getArCodes in order to
+                            populate rent amounts.
                         rent_amount_market_in_cents:
                           type:
                             - number
@@ -21939,7 +21941,7 @@ paths:
                       - integration_vendor: ENTRATA
                         deposit_amount_in_cents: 50000
                         end_date: 2024-06-15T00:00:00Z
-                        rent_amount_in_cents: sample_value
+                        rent_amount_in_cents: 125000
                         rent_due_day: "null"
                         start_date: 2023-06-15T00:00:00Z
                         status: active
@@ -22630,7 +22632,9 @@ paths:
                         type:
                           - number
                           - "null"
-                        description: The rent amount in cents for the lease
+                        description: The rent amount in cents for the lease For Entrata, your customers
+                          must give you access to getArCodes in order to
+                          populate rent amounts.
                       rent_amount_market_in_cents:
                         type:
                           - number
@@ -22845,7 +22849,7 @@ paths:
                       integration_vendor: ENTRATA
                       deposit_amount_in_cents: 50000
                       end_date: 2024-06-15T00:00:00Z
-                      rent_amount_in_cents: sample_value
+                      rent_amount_in_cents: 125000
                       rent_due_day: "null"
                       start_date: 2023-06-15T00:00:00Z
                       status: active
@@ -44796,7 +44800,9 @@ webhooks:
                                   type:
                                     - number
                                     - "null"
-                                  description: The rent amount in cents for the lease
+                                  description: The rent amount in cents for the lease For Entrata, your customers
+                                    must give you access to getArCodes in order
+                                    to populate rent amounts.
                                 rent_amount_market_in_cents:
                                   type:
                                     - number
@@ -47931,7 +47937,9 @@ webhooks:
                                       type:
                                         - number
                                         - "null"
-                                      description: The rent amount in cents for the lease
+                                      description: The rent amount in cents for the lease For Entrata, your customers
+                                        must give you access to getArCodes in
+                                        order to populate rent amounts.
                                     rent_amount_market_in_cents:
                                       type:
                                         - number
@@ -50946,7 +50954,9 @@ webhooks:
                                       type:
                                         - number
                                         - "null"
-                                      description: The rent amount in cents for the lease
+                                      description: The rent amount in cents for the lease For Entrata, your customers
+                                        must give you access to getArCodes in
+                                        order to populate rent amounts.
                                     rent_amount_market_in_cents:
                                       type:
                                         - number
