@@ -13961,8 +13961,8 @@ paths:
                     results:
                       - integration_vendor: RESMAN
                         name: John Wick
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: 2a161bee-96c5-4939-88f6-8ae8c9428fed
+                        x_property_id: c08f3681-c8d6-4bc3-baf2-98c7b2840256
                         email: john@example.com
                         is_active: "null"
                         roles:
@@ -14215,8 +14215,8 @@ paths:
                     results:
                       integration_vendor: RESMAN
                       name: John Wick
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: 2a161bee-96c5-4939-88f6-8ae8c9428fed
+                      x_property_id: c08f3681-c8d6-4bc3-baf2-98c7b2840256
                       email: john@example.com
                       is_active: "null"
                       roles:
