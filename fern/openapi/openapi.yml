@@ -27318,48 +27318,86 @@ paths:
                 purchase_order_items:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      property_id:
-                        type: string
-                        description: The Propexo unique identifier for the property
-                      description:
-                        type: string
-                        description: Description of the purchase order item
-                      construction_job_id:
-                        type: string
-                        description: The Propexo unique identifier for the construction job
-                      stock_code:
-                        type: string
-                        description: The stock code for the purchase order item. You'll have to request
-                          this data from your customer
-                      quantity_ordered:
-                        type: string
-                        description: The quantity ordered for the purchase order item
-                      unit_price_in_cents:
-                        type: integer
-                        description: The unit price, in cents, of the purchase order item
-                      total_cost_in_cents:
-                        type: integer
-                        description: The total cost, in cents, of the lead
-                      cost_code:
-                        type: string
-                        description: The cost code of the purchase order item. You'll have to request
-                          this data from your customer
-                      category_code:
-                        type: string
-                        description: The category code for the purchase order item. You'll have to
-                          request this data from your customer
-                    required:
-                      - property_id
-                      - description
-                      - construction_job_id
-                      - stock_code
-                      - quantity_ordered
-                      - unit_price_in_cents
-                      - total_cost_in_cents
-                      - cost_code
-                      - category_code
+                    anyOf:
+                      - type: object
+                        properties:
+                          property_id:
+                            type: string
+                            description: The Propexo unique identifier for the property
+                          description:
+                            type: string
+                            description: Description of the purchase order item
+                          construction_job_id:
+                            type: string
+                            description: The Propexo unique identifier for the construction job
+                          financial_account_id:
+                            type: string
+                            description: The Propexo unique identifier for the financial account
+                          stock_code:
+                            type: string
+                            description: The stock code for the purchase order item. You'll have to request
+                              this data from your customer
+                          quantity_ordered:
+                            type: string
+                            description: The quantity ordered for the purchase order item
+                          unit_price_in_cents:
+                            type: integer
+                            description: The unit price, in cents, of the purchase order item
+                          total_cost_in_cents:
+                            type: integer
+                            description: The total cost, in cents, of the purchase order item
+                          cost_code:
+                            type: string
+                            description: The cost code of the purchase order item. You'll have to request
+                              this data from your customer
+                          category_code:
+                            type: string
+                            description: The category code for the purchase order item. You'll have to
+                              request this data from your customer
+                        required:
+                          - property_id
+                          - description
+                          - construction_job_id
+                          - stock_code
+                          - quantity_ordered
+                          - unit_price_in_cents
+                          - total_cost_in_cents
+                          - cost_code
+                          - category_code
+                        description: A purchase order item that is associated with a construction job
+                      - type: object
+                        properties:
+                          property_id:
+                            type: string
+                            description: The Propexo unique identifier for the property
+                          description:
+                            type: string
+                            description: Description of the purchase order item
+                          financial_account_id:
+                            type: string
+                            description: The Propexo unique identifier for the financial account
+                          stock_code:
+                            type: string
+                            description: The stock code for the purchase order item. You'll have to request
+                              this data from your customer
+                          quantity_ordered:
+                            type: string
+                            description: The quantity ordered for the purchase order item
+                          unit_price_in_cents:
+                            type: integer
+                            description: The unit price, in cents, of the purchase order item
+                          total_cost_in_cents:
+                            type: integer
+                            description: The total cost, in cents, of the purchase order item
+                        required:
+                          - property_id
+                          - description
+                          - financial_account_id
+                          - stock_code
+                          - quantity_ordered
+                          - unit_price_in_cents
+                          - total_cost_in_cents
+                        description: A purchase order item that's not associated with a construction job
                   minItems: 1
                   description: A list of the items associated with the purchase orders
                 number:
