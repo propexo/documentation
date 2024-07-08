@@ -21933,9 +21933,9 @@ paths:
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
                         term: "null"
+                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
-                        unit_number: "null"
                 ENTRATA:
                   value:
                     meta: {}
@@ -21964,9 +21964,9 @@ paths:
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
                         term: "null"
+                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
-                        unit_number: "null"
                 PROPERTYWARE:
                   value:
                     meta: {}
@@ -21995,9 +21995,9 @@ paths:
                         scheduled_move_out_date: sample_value
                         rent_due_date: "null"
                         term: "null"
+                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
-                        unit_number: "null"
                 REALPAGE:
                   value:
                     meta: {}
@@ -22026,24 +22026,24 @@ paths:
                         scheduled_move_out_date: sample_value
                         rent_due_date: "null"
                         term: "null"
+                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
-                        unit_number: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
                     results:
                       - integration_vendor: REALPAGE_RPX
                         deposit_amount_in_cents: "null"
-                        end_date: sample_value
+                        end_date: 2025-05-01
                         rent_amount_in_cents: sample_value
                         rent_due_day: "null"
-                        start_date: sample_value
-                        status: sample_value
-                        status_normalized: sample_value
-                        status_raw: sample_value
-                        type: sample_value
-                        x_id: sample_value
+                        start_date: 2024-05-01
+                        status: Former
+                        status_normalized: INACTIVE
+                        status_raw: Former
+                        type: Moved Out
+                        x_id: "19"
                         x_property_id: sample_value
                         x_resident_id: sample_value
                         x_unit_id: sample_value
@@ -22052,14 +22052,14 @@ paths:
                         deposit_date: "null"
                         realized_move_in_date: sample_value
                         realized_move_out_date: sample_value
-                        signature_date: sample_value
+                        signature_date: 2024-04-01
                         scheduled_move_in_date: sample_value
                         scheduled_move_out_date: "null"
                         rent_due_date: sample_value
                         term: sample_value
+                        unit_number: 1400A
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
-                        unit_number: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
@@ -22088,9 +22088,9 @@ paths:
                         scheduled_move_out_date: sample_value
                         rent_due_date: "null"
                         term: "null"
+                        unit_number: "null"
                         x_location_id: sample_value
                         rent_amount_market_in_cents: "null"
-                        unit_number: "null"
                 RENTVINE:
                   value:
                     meta: {}
@@ -22119,9 +22119,9 @@ paths:
                         scheduled_move_out_date: sample_value
                         rent_due_date: sample_value
                         term: "null"
+                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: 350000
-                        unit_number: "null"
                 RESMAN:
                   value:
                     meta: {}
@@ -22150,9 +22150,9 @@ paths:
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
                         term: "null"
+                        unit_number: sample_value
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
-                        unit_number: sample_value
                 Other:
                   value:
                     meta: {}
@@ -22181,9 +22181,9 @@ paths:
                         scheduled_move_out_date: 2022-07-31T00:00:00.000Z
                         rent_due_date: "null"
                         term: "null"
+                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: 75000
-                        unit_number: "null"
         "400":
           description: invalid input
     post:
@@ -22841,9 +22841,9 @@ paths:
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
                       term: "null"
+                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
-                      unit_number: "null"
                 ENTRATA:
                   value:
                     meta: {}
@@ -22872,9 +22872,9 @@ paths:
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
                       term: "null"
+                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
-                      unit_number: "null"
                 PROPERTYWARE:
                   value:
                     meta: {}
@@ -22903,9 +22903,9 @@ paths:
                       scheduled_move_out_date: sample_value
                       rent_due_date: "null"
                       term: "null"
+                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
-                      unit_number: "null"
                 REALPAGE:
                   value:
                     meta: {}
@@ -22934,24 +22934,24 @@ paths:
                       scheduled_move_out_date: sample_value
                       rent_due_date: "null"
                       term: "null"
+                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
-                      unit_number: "null"
                 REALPAGE_RPX:
                   value:
                     meta: {}
                     results:
                       integration_vendor: REALPAGE_RPX
                       deposit_amount_in_cents: "null"
-                      end_date: sample_value
+                      end_date: 2025-05-01
                       rent_amount_in_cents: sample_value
                       rent_due_day: "null"
-                      start_date: sample_value
-                      status: sample_value
-                      status_normalized: sample_value
-                      status_raw: sample_value
-                      type: sample_value
-                      x_id: sample_value
+                      start_date: 2024-05-01
+                      status: Former
+                      status_normalized: INACTIVE
+                      status_raw: Former
+                      type: Moved Out
+                      x_id: "19"
                       x_property_id: sample_value
                       x_resident_id: sample_value
                       x_unit_id: sample_value
@@ -22960,14 +22960,14 @@ paths:
                       deposit_date: "null"
                       realized_move_in_date: sample_value
                       realized_move_out_date: sample_value
-                      signature_date: sample_value
+                      signature_date: 2024-04-01
                       scheduled_move_in_date: sample_value
                       scheduled_move_out_date: "null"
                       rent_due_date: sample_value
                       term: sample_value
+                      unit_number: 1400A
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
-                      unit_number: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
@@ -22996,9 +22996,9 @@ paths:
                       scheduled_move_out_date: sample_value
                       rent_due_date: "null"
                       term: "null"
+                      unit_number: "null"
                       x_location_id: sample_value
                       rent_amount_market_in_cents: "null"
-                      unit_number: "null"
                 RENTVINE:
                   value:
                     meta: {}
@@ -23027,9 +23027,9 @@ paths:
                       scheduled_move_out_date: sample_value
                       rent_due_date: sample_value
                       term: "null"
+                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: 350000
-                      unit_number: "null"
                 RESMAN:
                   value:
                     meta: {}
@@ -23058,9 +23058,9 @@ paths:
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
                       term: "null"
+                      unit_number: sample_value
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
-                      unit_number: sample_value
                 Other:
                   value:
                     meta: {}
@@ -23089,9 +23089,9 @@ paths:
                       scheduled_move_out_date: 2022-07-31T00:00:00.000Z
                       rent_due_date: "null"
                       term: "null"
+                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: 75000
-                      unit_number: "null"
         "400":
           description: invalid input
     put:
