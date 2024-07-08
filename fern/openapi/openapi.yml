@@ -19515,7 +19515,6 @@ paths:
                   description: The last name associated with the lead
                 middle_name:
                   type: string
-                  maxLength: 30
                   description: The middle name associated with the lead
                 phone_1:
                   type: string
@@ -19649,8 +19648,11 @@ paths:
                   type: string
                   description: The Propexo unique identifier for the employee
                 date_of_birth:
-                  type: string
-                  format: date-time
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
                   description: The date of birth associated with the lead
                 desired_lease_term_in_months:
                   type: string
