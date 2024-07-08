@@ -13886,12 +13886,13 @@ paths:
                   value:
                     meta: {}
                     results:
-                      - name: "null"
-                        x_id: "null"
-                        x_property_id: "null"
-                        email: "null"
+                      - name: John Wick
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        email: john@example.com
                         is_active: "null"
-                        roles: "null"
+                        roles:
+                          - LEASING_AGENT
                         x_location_id: "null"
                 Other:
                   value:
@@ -14131,12 +14132,13 @@ paths:
                   value:
                     meta: {}
                     results:
-                      name: "null"
-                      x_id: "null"
-                      x_property_id: "null"
-                      email: "null"
+                      name: John Wick
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      email: john@example.com
                       is_active: "null"
-                      roles: "null"
+                      roles:
+                        - LEASING_AGENT
                       x_location_id: "null"
                 Other:
                   value:
@@ -31162,7 +31164,7 @@ paths:
                         date_completed: "null"
                         date_created: sample_value
                         date_scheduled: "null"
-                        employee_id: "null"
+                        employee_id: sample_value
                         service_category: sample_value
                         unit_number: sample_value
                         x_location_id: "null"
@@ -31949,7 +31951,7 @@ paths:
                       date_completed: "null"
                       date_created: sample_value
                       date_scheduled: "null"
-                      employee_id: "null"
+                      employee_id: sample_value
                       service_category: sample_value
                       unit_number: sample_value
                       x_location_id: "null"
@@ -32558,7 +32560,7 @@ paths:
                         date_completed: "null"
                         date_created: sample_value
                         date_scheduled: "null"
-                        employee_id: "null"
+                        employee_id: sample_value
                         service_category: sample_value
                         unit_number: sample_value
                         x_location_id: "null"
@@ -32964,7 +32966,7 @@ paths:
                       date_completed: "null"
                       date_created: sample_value
                       date_scheduled: "null"
-                      employee_id: "null"
+                      employee_id: sample_value
                       service_category: sample_value
                       unit_number: sample_value
                       x_location_id: "null"
@@ -33412,7 +33414,7 @@ paths:
                         date_completed: "null"
                         date_created: sample_value
                         date_scheduled: "null"
-                        employee_id: "null"
+                        employee_id: sample_value
                         service_category: sample_value
                         unit_number: sample_value
                         x_location_id: "null"
@@ -33918,7 +33920,7 @@ paths:
                       date_completed: "null"
                       date_created: sample_value
                       date_scheduled: "null"
-                      employee_id: "null"
+                      employee_id: sample_value
                       service_category: sample_value
                       unit_number: sample_value
                       x_location_id: "null"
@@ -34367,7 +34369,7 @@ paths:
                         date_completed: "null"
                         date_created: sample_value
                         date_scheduled: "null"
-                        employee_id: "null"
+                        employee_id: sample_value
                         service_category: sample_value
                         unit_number: sample_value
                         x_location_id: "null"
@@ -34773,7 +34775,7 @@ paths:
                       date_completed: "null"
                       date_created: sample_value
                       date_scheduled: "null"
-                      employee_id: "null"
+                      employee_id: sample_value
                       service_category: sample_value
                       unit_number: sample_value
                       x_location_id: "null"
@@ -35222,7 +35224,7 @@ paths:
                         date_completed: "null"
                         date_created: sample_value
                         date_scheduled: "null"
-                        employee_id: "null"
+                        employee_id: sample_value
                         service_category: sample_value
                         unit_number: sample_value
                         x_location_id: "null"
@@ -35628,7 +35630,7 @@ paths:
                       date_completed: "null"
                       date_created: sample_value
                       date_scheduled: "null"
-                      employee_id: "null"
+                      employee_id: sample_value
                       service_category: sample_value
                       unit_number: sample_value
                       x_location_id: "null"
@@ -36044,7 +36046,7 @@ paths:
                         date_completed: "null"
                         date_created: sample_value
                         date_scheduled: "null"
-                        employee_id: "null"
+                        employee_id: sample_value
                         service_category: sample_value
                         unit_number: sample_value
                         x_location_id: "null"
@@ -36464,7 +36466,7 @@ paths:
                       date_completed: "null"
                       date_created: sample_value
                       date_scheduled: "null"
-                      employee_id: "null"
+                      employee_id: sample_value
                       service_category: sample_value
                       unit_number: sample_value
                       x_location_id: "null"
@@ -36880,7 +36882,7 @@ paths:
                         date_completed: "null"
                         date_created: sample_value
                         date_scheduled: "null"
-                        employee_id: "null"
+                        employee_id: sample_value
                         service_category: sample_value
                         unit_number: sample_value
                         x_location_id: "null"
@@ -37300,7 +37302,7 @@ paths:
                       date_completed: "null"
                       date_created: sample_value
                       date_scheduled: "null"
-                      employee_id: "null"
+                      employee_id: sample_value
                       service_category: sample_value
                       unit_number: sample_value
                       x_location_id: "null"
