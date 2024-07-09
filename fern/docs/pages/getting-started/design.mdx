@@ -2,13 +2,9 @@
 
 Welcome to Propexo! This guide is designed to help you integrate your application with the Propexo API for the first time. We will walk you through the steps necessary to set up initial synchronization, manage ongoing syncs, and understand how to use webhooks and API requests effectively.
 
-## Getting Started
-
-Integrating with the Propexo API involves setting up your application to interact with various data models, such as properties, residents, and leases. By following this guide, you will learn how to establish the initial connection, handle data synchronization, and stay up-to-date with changes in your data.
-
 ## Webhooks
 
-Webhooks are a critical part of the Propexo integration process, providing real-time notifications for data changes. We recommend using webhooks as a robust notification system to receive timely updates with base-level payloads.
+Webhooks are an important part of the Propexo integration process, providing real-time notifications for new and changed incoming data. Instead of polling the Propexo API, we recommend subscribing/configuring your server to listen for the events that you care about. Using webhooks will lower the amount of data transferred between our systems, and because we send webhooks within seconds of detecting a data sync during the sync process, your system will be able to react as quickly as possible to data updates.
 
 ### Understanding Webhook Payloads
 
@@ -32,11 +28,13 @@ As shown, the `diff` object only includes the changed data. There is no referenc
 
 ## Synchronization Process
 
-Each new integration you set up will go through an initial synchronization process, followed by ongoing synchronizations to keep data up-to-date. Here's how to handle both types of syncs effectively.
+Each new integration (typically one per each of your customers) you set up will go through an initial synchronization process, followed by ongoing synchronizations to keep data up-to-date. Here's how to handle both types of syncs effectively.
 
 ### Initial Synchronization
 
 The initial synchronization process is crucial for initializing the data exchange between your application and Propexo. This ensures that all necessary data is correctly fetched and stored in the Propexo Data Cache.
+
+The primary difference between the initial sync and ongoing syncs (described below) is that the initial sync will not send `DATA_NEW` or `DATA_UPDATE` webhooks. This is because the initial sync is a bulk operation that can generate a large volume of data, which would be impractical to send via webhooks.
 
 #### First-Time Sync Diagram
 ![Propexo Initial Sync Diagram](https://propify-public-assets.s3.amazonaws.com/docs/first-time-sync.png)
@@ -44,7 +42,7 @@ The initial synchronization process is crucial for initializing the data exchang
 #### Steps to Set Up Initial Synchronization
 
 1. **Create/Enable Integration**:
-   - Use the Propexo API or Dashboard UI to create and enable a new integration. This step sets up the initial connection between the PMS and Propexo.
+   - Use the Propexo API or [Dashboard UI](https://app.propexo.com/integrations) to create and enable a new integration. This step sets up the initial connection between the PMS and Propexo.
    - Follow the [Propexo API documentation](https://docs.propexo.com/api-reference/api-reference/admin/create-an-integration) to create an integration.
 
 2. **Initiate Sync**:
@@ -90,7 +88,7 @@ After the initial synchronization, ongoing syncs ensure that your data remains u
 3. **Data Check**:
    - Propexo checks for new or updated data.
    - If new data is found, a `DATA_NEW` webhook notification is sent to your application for each new record.
-   - If existing data has been updated, a `DATA_UPDATE` webhook notification is sent for each record.
+   - If existing data has been updated, a `DATA_UPDATE` webhook notification is sent for each record, assuming you are subscribed to data updates for the associated model.
 
 4. **Completion Notification**:
    - After the sync process, a `SYNC_COMPLETE` webhook notification is sent to your application, indicating that the data is current and the synchronization cycle is complete.
@@ -109,7 +107,7 @@ After the initial synchronization, ongoing syncs ensure that your data remains u
    - When ready, enable the integration to begin the first sync.
 
 4. **Receive `FIRST_SYNC_COMPLETE` Event**:
-   - After a few minutes, you will receive the `FIRST_SYNC_COMPLETE` event. There are several variables that can affect sync speed. The most common variables are (adjustable) concurrency configurations in Propexo, and the size of your customer. Larger customers tend to have more data which translate into lengthier sync times.
+   - After a few minutes, you will receive the `FIRST_SYNC_COMPLETE` event. There are several variables that can affect sync speed. The most common variables are (adjustable) concurrency configurations in Propexo, and the size of your customer. Larger customers tend to have more data which translates into lengthier sync times.
 
 5. **Make API Requests**:
    - Make requests to the API for your enabled data models (e.g., properties, residents, leases).
