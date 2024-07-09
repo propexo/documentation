@@ -8526,6 +8526,50 @@ paths:
               examples: {}
         "400":
           description: invalid input
+  /v1/events/appointments/residents/cancel:
+    post:
+      tags:
+        - appointments
+      summary: Cancel an appointment for a resident
+      description: Cancel an appointment for a resident
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                event_id:
+                  type: string
+                  description: The Propexo unique identifier for the event
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Cancel an appointment for a resident
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
   /v1/charge-codes:
     get:
       tags:
@@ -9860,6 +9904,11 @@ paths:
                     transaction from your system. This can be an alphanumeric
                     string. This does not become the ID of the transaction in
                     Entrata. If not provided, Propexo will generate one
+                is_approval_required:
+                  type: boolean
+                  description: Whether or not the resident charge requires approval. This will
+                    require the charge be approved first before being posted to
+                    the ledger
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
