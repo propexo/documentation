@@ -20,11 +20,11 @@ navigation:
     layout:
       - section: Getting Started
         contents:
-          - page: Overview
+          - page: Introduction
             path: ./docs/pages/overview.mdx
-          - page: Integration Setup Guide
+          - page: System Overview
             path: ./docs/pages/getting-started/design.mdx
-          - page: Sample Integration
+          - page: Using Demo Data
             path: ./docs/pages/getting-started/propexo-sandbox.mdx
           - page: Your First Integration
             path: ./docs/pages/getting-started/first-integration.mdx
