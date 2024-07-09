@@ -21726,7 +21726,7 @@ paths:
                           type:
                             - number
                             - "null"
-                          description: The rent amount in cents for the lease For Entrata, your customers
+                          description: The rent amount in cents for the lease. For Entrata, your customers
                             must give you access to getArCodes in order to
                             populate rent amounts.
                         rent_amount_market_in_cents:
@@ -22634,7 +22634,7 @@ paths:
                         type:
                           - number
                           - "null"
-                        description: The rent amount in cents for the lease For Entrata, your customers
+                        description: The rent amount in cents for the lease. For Entrata, your customers
                           must give you access to getArCodes in order to
                           populate rent amounts.
                       rent_amount_market_in_cents:
@@ -44840,7 +44840,7 @@ webhooks:
                                   type:
                                     - number
                                     - "null"
-                                  description: The rent amount in cents for the lease For Entrata, your customers
+                                  description: The rent amount in cents for the lease. For Entrata, your customers
                                     must give you access to getArCodes in order
                                     to populate rent amounts.
                                 rent_amount_market_in_cents:
@@ -47977,7 +47977,7 @@ webhooks:
                                       type:
                                         - number
                                         - "null"
-                                      description: The rent amount in cents for the lease For Entrata, your customers
+                                      description: The rent amount in cents for the lease. For Entrata, your customers
                                         must give you access to getArCodes in
                                         order to populate rent amounts.
                                     rent_amount_market_in_cents:
@@ -50994,7 +50994,7 @@ webhooks:
                                       type:
                                         - number
                                         - "null"
-                                      description: The rent amount in cents for the lease For Entrata, your customers
+                                      description: The rent amount in cents for the lease. For Entrata, your customers
                                         must give you access to getArCodes in
                                         order to populate rent amounts.
                                     rent_amount_market_in_cents:
