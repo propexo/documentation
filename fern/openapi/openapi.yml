@@ -819,6 +819,7 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
+                                  - REALPAGE_PRICING_AND_AVAILABILITY
 
 
 
@@ -891,6 +892,7 @@ paths:
                                     - REALPAGE_RESIDENTS
                                     - REALPAGE_PROSPECT_MANAGEMENT
                                     - REALPAGE_SDE_CONVERGENT_BILLING
+                                    - REALPAGE_PRICING_AND_AVAILABILITY
 
 
 
@@ -2143,6 +2145,7 @@ paths:
                                 - REALPAGE_RESIDENTS
                                 - REALPAGE_PROSPECT_MANAGEMENT
                                 - REALPAGE_SDE_CONVERGENT_BILLING
+                                - REALPAGE_PRICING_AND_AVAILABILITY
 
 
 
@@ -2215,6 +2218,7 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
+                                  - REALPAGE_PRICING_AND_AVAILABILITY
 
 
 
@@ -38236,6 +38240,72 @@ paths:
                         name:
                           type: string
                           description: The name associated with the floor plan
+                        marketing_name:
+                          type:
+                            - string
+                            - "null"
+                          description: The marketing name of the floor plan
+                        code:
+                          type:
+                            - string
+                            - "null"
+                          description: The code associated with the floor plan
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          description: Description of the floor plan
+                        bedrooms:
+                          type:
+                            - integer
+                            - "null"
+                          exclusiveMinimum: 0
+                          description: The number of bedrooms associated with the floor plan
+                        bathrooms:
+                          type:
+                            - string
+                            - "null"
+                          description: The number of bathrooms associated with the floor plan
+                        bathrooms_full:
+                          type:
+                            - integer
+                            - "null"
+                          exclusiveMinimum: 0
+                          description: The number of full bathrooms associated with the floor plan
+                        bathrooms_half:
+                          type:
+                            - integer
+                            - "null"
+                          exclusiveMinimum: 0
+                          description: The number of half bathrooms associated with the floor plan
+                        max_occupants:
+                          type:
+                            - integer
+                            - "null"
+                          exclusiveMinimum: 0
+                          description: The maximum number of occupants for the floor plan
+                        rentable_square_feet:
+                          type:
+                            - integer
+                            - "null"
+                          exclusiveMinimum: 0
+                          description: The rentable square footage of the floor plan
+                        gross_square_feet:
+                          type:
+                            - integer
+                            - "null"
+                          exclusiveMinimum: 0
+                          description: The gross square footage of the floor plan
+                        rent_minimum_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The minimum rent of the floor plan
+                        rent_maximum_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The maximum rent of the floor plan
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -38256,6 +38326,18 @@ paths:
                         - x_property_id
                         - x_location_id
                         - name
+                        - marketing_name
+                        - code
+                        - description
+                        - bedrooms
+                        - bathrooms
+                        - bathrooms_full
+                        - bathrooms_half
+                        - max_occupants
+                        - rentable_square_feet
+                        - gross_square_feet
+                        - rent_minimum_in_cents
+                        - rent_maximum_in_cents
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -38702,6 +38784,72 @@ paths:
                       name:
                         type: string
                         description: The name associated with the floor plan
+                      marketing_name:
+                        type:
+                          - string
+                          - "null"
+                        description: The marketing name of the floor plan
+                      code:
+                        type:
+                          - string
+                          - "null"
+                        description: The code associated with the floor plan
+                      description:
+                        type:
+                          - string
+                          - "null"
+                        description: Description of the floor plan
+                      bedrooms:
+                        type:
+                          - integer
+                          - "null"
+                        exclusiveMinimum: 0
+                        description: The number of bedrooms associated with the floor plan
+                      bathrooms:
+                        type:
+                          - string
+                          - "null"
+                        description: The number of bathrooms associated with the floor plan
+                      bathrooms_full:
+                        type:
+                          - integer
+                          - "null"
+                        exclusiveMinimum: 0
+                        description: The number of full bathrooms associated with the floor plan
+                      bathrooms_half:
+                        type:
+                          - integer
+                          - "null"
+                        exclusiveMinimum: 0
+                        description: The number of half bathrooms associated with the floor plan
+                      max_occupants:
+                        type:
+                          - integer
+                          - "null"
+                        exclusiveMinimum: 0
+                        description: The maximum number of occupants for the floor plan
+                      rentable_square_feet:
+                        type:
+                          - integer
+                          - "null"
+                        exclusiveMinimum: 0
+                        description: The rentable square footage of the floor plan
+                      gross_square_feet:
+                        type:
+                          - integer
+                          - "null"
+                        exclusiveMinimum: 0
+                        description: The gross square footage of the floor plan
+                      rent_minimum_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The minimum rent of the floor plan
+                      rent_maximum_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The maximum rent of the floor plan
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -38722,6 +38870,18 @@ paths:
                       - x_property_id
                       - x_location_id
                       - name
+                      - marketing_name
+                      - code
+                      - description
+                      - bedrooms
+                      - bathrooms
+                      - bathrooms_full
+                      - bathrooms_half
+                      - max_occupants
+                      - rentable_square_feet
+                      - gross_square_feet
+                      - rent_minimum_in_cents
+                      - rent_maximum_in_cents
                       - integration_id
                       - integration_vendor
                       - property_id
