@@ -18281,10 +18281,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: "null"
-                        desired_min_rent_in_cents: "null"
-                        desired_num_bathrooms: "null"
-                        desired_num_bedrooms: "null"
+                        desired_max_rent_in_cents: 2600
+                        desired_min_rent_in_cents: 1200
+                        desired_num_bathrooms: 2
+                        desired_num_bedrooms: 2
                         desired_unit_number: "null"
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -18299,7 +18299,7 @@ paths:
                         phone_2_type: "null"
                         state: MA
                         status: sample_value
-                        target_move_in_date: "null"
+                        target_move_in_date: 2025-01-01T00:00:00.000Z
                         x_id: sample_value
                         x_lead_source_id: "null"
                         x_property_id: sample_value
@@ -19354,10 +19354,10 @@ paths:
                       desired_floor_plan_id: "null"
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: "null"
-                      desired_min_rent_in_cents: "null"
-                      desired_num_bathrooms: "null"
-                      desired_num_bedrooms: "null"
+                      desired_max_rent_in_cents: 2600
+                      desired_min_rent_in_cents: 1200
+                      desired_num_bathrooms: 2
+                      desired_num_bedrooms: 2
                       desired_unit_number: "null"
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -19372,7 +19372,7 @@ paths:
                       phone_2_type: "null"
                       state: MA
                       status: sample_value
-                      target_move_in_date: "null"
+                      target_move_in_date: 2025-01-01T00:00:00.000Z
                       x_id: sample_value
                       x_lead_source_id: "null"
                       x_property_id: sample_value
@@ -20161,10 +20161,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: "null"
-                        desired_min_rent_in_cents: "null"
-                        desired_num_bathrooms: "null"
-                        desired_num_bedrooms: "null"
+                        desired_max_rent_in_cents: 2600
+                        desired_min_rent_in_cents: 1200
+                        desired_num_bathrooms: 2
+                        desired_num_bedrooms: 2
                         desired_unit_number: "null"
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -20179,7 +20179,7 @@ paths:
                         phone_2_type: "null"
                         state: MA
                         status: sample_value
-                        target_move_in_date: "null"
+                        target_move_in_date: 2025-01-01T00:00:00.000Z
                         x_id: sample_value
                         x_lead_source_id: "null"
                         x_property_id: sample_value
@@ -20765,10 +20765,10 @@ paths:
                         desired_floor_plan_id: "null"
                         desired_floor_plan_name: "null"
                         desired_lease_term_in_months: "null"
-                        desired_max_rent_in_cents: "null"
-                        desired_min_rent_in_cents: "null"
-                        desired_num_bathrooms: "null"
-                        desired_num_bedrooms: "null"
+                        desired_max_rent_in_cents: 2600
+                        desired_min_rent_in_cents: 1200
+                        desired_num_bathrooms: 2
+                        desired_num_bedrooms: 2
                         desired_unit_number: "null"
                         desired_unit_type: "null"
                         email_1: example_email_1@email.com
@@ -20783,7 +20783,7 @@ paths:
                         phone_2_type: "null"
                         state: MA
                         status: sample_value
-                        target_move_in_date: "null"
+                        target_move_in_date: 2025-01-01T00:00:00.000Z
                         x_id: sample_value
                         x_lead_source_id: "null"
                         x_property_id: sample_value
@@ -21332,10 +21332,10 @@ paths:
                       desired_floor_plan_id: "null"
                       desired_floor_plan_name: "null"
                       desired_lease_term_in_months: "null"
-                      desired_max_rent_in_cents: "null"
-                      desired_min_rent_in_cents: "null"
-                      desired_num_bathrooms: "null"
-                      desired_num_bedrooms: "null"
+                      desired_max_rent_in_cents: 2600
+                      desired_min_rent_in_cents: 1200
+                      desired_num_bathrooms: 2
+                      desired_num_bedrooms: 2
                       desired_unit_number: "null"
                       desired_unit_type: "null"
                       email_1: example_email_1@email.com
@@ -21350,7 +21350,7 @@ paths:
                       phone_2_type: "null"
                       state: MA
                       status: sample_value
-                      target_move_in_date: "null"
+                      target_move_in_date: 2025-01-01T00:00:00.000Z
                       x_id: sample_value
                       x_lead_source_id: "null"
                       x_property_id: sample_value
@@ -31579,7 +31579,11 @@ paths:
               properties:
                 employee_id:
                   type: string
-                  description: The Propexo unique identifier for the employee
+                  description: The Propexo unique identifier for the employee. Please note that
+                    due to a lack of proper unique IDs in Resman, multiple
+                    duplicate employees may exist for the same actual employee.
+                    You may use any one of those duplicate record IDs for this
+                    API call.
                 integration_id:
                   type: string
                 vendor_id:
