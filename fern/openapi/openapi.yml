@@ -29329,7 +29329,9 @@ paths:
                           type:
                             - string
                             - "null"
-                          description: The date of birth associated with the resident
+                          description: The date of birth associated with the resident. If you want to pull
+                            in date of birth for Resman, you will need to
+                            contact Propexo support to enable it
                         email_1:
                           type:
                             - string
@@ -29749,7 +29751,7 @@ paths:
                         x_id: sample_value
                         x_property_id: sample_value
                         zip: "null"
-                        date_of_birth: "null"
+                        date_of_birth: sample_value
                         address_1_alternate: "null"
                         city_alternate: "null"
                         country: "null"
@@ -30213,7 +30215,9 @@ paths:
                         type:
                           - string
                           - "null"
-                        description: The date of birth associated with the resident
+                        description: The date of birth associated with the resident. If you want to pull
+                          in date of birth for Resman, you will need to contact
+                          Propexo support to enable it
                       email_1:
                         type:
                           - string
@@ -30633,7 +30637,7 @@ paths:
                       x_id: sample_value
                       x_property_id: sample_value
                       zip: "null"
-                      date_of_birth: "null"
+                      date_of_birth: sample_value
                       address_1_alternate: "null"
                       city_alternate: "null"
                       country: "null"
@@ -45811,7 +45815,9 @@ webhooks:
                                   type:
                                     - string
                                     - "null"
-                                  description: The date of birth associated with the resident
+                                  description: The date of birth associated with the resident. If you want to pull
+                                    in date of birth for Resman, you will need
+                                    to contact Propexo support to enable it
                                 email_1:
                                   type:
                                     - string
@@ -48949,7 +48955,10 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: The date of birth associated with the resident
+                                      description: The date of birth associated with the resident. If you want to pull
+                                        in date of birth for Resman, you will
+                                        need to contact Propexo support to
+                                        enable it
                                     email_1:
                                       type:
                                         - string
@@ -51966,7 +51975,10 @@ webhooks:
                                       type:
                                         - string
                                         - "null"
-                                      description: The date of birth associated with the resident
+                                      description: The date of birth associated with the resident. If you want to pull
+                                        in date of birth for Resman, you will
+                                        need to contact Propexo support to
+                                        enable it
                                     email_1:
                                       type:
                                         - string
