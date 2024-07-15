@@ -44169,6 +44169,7 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
+                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
@@ -47472,6 +47473,7 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
+                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
@@ -53970,6 +53972,7 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
+                            - APPFOLIO
                             - INTERNAL
                         successful_job_count:
                           type: number
@@ -54017,6 +54020,7 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
+                            - APPFOLIO
                             - INTERNAL
                         successful_job_count:
                           type: number
@@ -54065,6 +54069,7 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
+                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
@@ -54111,6 +54116,7 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
+                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
