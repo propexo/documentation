@@ -29432,6 +29432,173 @@ paths:
                             - "null"
                           description: The zip code associated with the resident
                           example: "02116"
+                        pets:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the resident pet
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the record was last seen from the PMS
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              name:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The name associated with the resident pet
+                              type:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The type associated with the resident pet
+                              breed:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The breed of the resident pet
+                              gender_raw:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The raw value for the gender of the resident pet
+                              age_in_years:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The age in years of the resident pet
+                              weight_in_pounds:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The weight in pounds of the resident pet
+                              is_fixed:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the resident pet is fixed
+                              is_service_animal:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the resident pet is a service animal
+                              notes:
+                                type:
+                                  - string
+                                  - "null"
+                                description: Notes associated with the resident pet
+                              custom_data:
+                                type:
+                                  - object
+                                  - "null"
+                                properties: {}
+                                description: Custom data
+                            required:
+                              - id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - x_id
+                              - name
+                              - type
+                              - breed
+                              - gender_raw
+                              - age_in_years
+                              - weight_in_pounds
+                              - is_fixed
+                              - is_service_animal
+                              - notes
+                              - custom_data
+                        vehicles:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the resident vehicle
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the record was last seen from the PMS
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              make:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The make of the resident vehicle
+                              model:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo data model (e.g. units, residents, applicants, etc.)
+                                  associated with the resident vehicle
+                              color:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The color of the resident vehicle
+                              year:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The year of the resident vehicle
+                              license_plate_number:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The license plate number of the resident vehicle
+                              license_plate_state:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The license plate state of the resident vehicle
+                              notes:
+                                type:
+                                  - string
+                                  - "null"
+                                description: Notes associated with the resident vehicle
+                              custom_data:
+                                type:
+                                  - object
+                                  - "null"
+                                properties: {}
+                                description: Custom data
+                            required:
+                              - id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - x_id
+                              - make
+                              - model
+                              - color
+                              - year
+                              - license_plate_number
+                              - license_plate_state
+                              - notes
+                              - custom_data
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -29477,6 +29644,8 @@ paths:
                         - state
                         - zip_alternate
                         - zip
+                        - pets
+                        - vehicles
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -30318,6 +30487,173 @@ paths:
                           - "null"
                         description: The zip code associated with the resident
                         example: "02116"
+                      pets:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the resident pet
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            name:
+                              type:
+                                - string
+                                - "null"
+                              description: The name associated with the resident pet
+                            type:
+                              type:
+                                - string
+                                - "null"
+                              description: The type associated with the resident pet
+                            breed:
+                              type:
+                                - string
+                                - "null"
+                              description: The breed of the resident pet
+                            gender_raw:
+                              type:
+                                - string
+                                - "null"
+                              description: The raw value for the gender of the resident pet
+                            age_in_years:
+                              type:
+                                - number
+                                - "null"
+                              description: The age in years of the resident pet
+                            weight_in_pounds:
+                              type:
+                                - number
+                                - "null"
+                              description: The weight in pounds of the resident pet
+                            is_fixed:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the resident pet is fixed
+                            is_service_animal:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the resident pet is a service animal
+                            notes:
+                              type:
+                                - string
+                                - "null"
+                              description: Notes associated with the resident pet
+                            custom_data:
+                              type:
+                                - object
+                                - "null"
+                              properties: {}
+                              description: Custom data
+                          required:
+                            - id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - x_id
+                            - name
+                            - type
+                            - breed
+                            - gender_raw
+                            - age_in_years
+                            - weight_in_pounds
+                            - is_fixed
+                            - is_service_animal
+                            - notes
+                            - custom_data
+                      vehicles:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the resident vehicle
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            make:
+                              type:
+                                - string
+                                - "null"
+                              description: The make of the resident vehicle
+                            model:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo data model (e.g. units, residents, applicants, etc.)
+                                associated with the resident vehicle
+                            color:
+                              type:
+                                - string
+                                - "null"
+                              description: The color of the resident vehicle
+                            year:
+                              type:
+                                - string
+                                - "null"
+                              description: The year of the resident vehicle
+                            license_plate_number:
+                              type:
+                                - string
+                                - "null"
+                              description: The license plate number of the resident vehicle
+                            license_plate_state:
+                              type:
+                                - string
+                                - "null"
+                              description: The license plate state of the resident vehicle
+                            notes:
+                              type:
+                                - string
+                                - "null"
+                              description: Notes associated with the resident vehicle
+                            custom_data:
+                              type:
+                                - object
+                                - "null"
+                              properties: {}
+                              description: Custom data
+                          required:
+                            - id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - x_id
+                            - make
+                            - model
+                            - color
+                            - year
+                            - license_plate_number
+                            - license_plate_state
+                            - notes
+                            - custom_data
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -30363,6 +30699,8 @@ paths:
                       - state
                       - zip_alternate
                       - zip
+                      - pets
+                      - vehicles
                       - integration_id
                       - integration_vendor
                       - property_id
@@ -45910,6 +46248,173 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The zip code associated with the resident
+                                pets:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The Propexo unique identifier for the resident pet
+                                      created_at:
+                                        type: string
+                                        description: The date record first entered Propexo
+                                      updated_at:
+                                        type: string
+                                        description: The date record was last updated in Propexo
+                                      last_seen:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The date the record was last seen from the PMS
+                                      x_id:
+                                        type: string
+                                        description: The external ID from the integration vendor
+                                      name:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The name associated with the resident pet
+                                      type:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The type associated with the resident pet
+                                      breed:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The breed of the resident pet
+                                      gender_raw:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The raw value for the gender of the resident pet
+                                      age_in_years:
+                                        type:
+                                          - number
+                                          - "null"
+                                        description: The age in years of the resident pet
+                                      weight_in_pounds:
+                                        type:
+                                          - number
+                                          - "null"
+                                        description: The weight in pounds of the resident pet
+                                      is_fixed:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the resident pet is fixed
+                                      is_service_animal:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the resident pet is a service animal
+                                      notes:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: Notes associated with the resident pet
+                                      custom_data:
+                                        type:
+                                          - object
+                                          - "null"
+                                        properties: {}
+                                        description: Custom data
+                                    required:
+                                      - id
+                                      - created_at
+                                      - updated_at
+                                      - last_seen
+                                      - x_id
+                                      - name
+                                      - type
+                                      - breed
+                                      - gender_raw
+                                      - age_in_years
+                                      - weight_in_pounds
+                                      - is_fixed
+                                      - is_service_animal
+                                      - notes
+                                      - custom_data
+                                vehicles:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The Propexo unique identifier for the resident vehicle
+                                      created_at:
+                                        type: string
+                                        description: The date record first entered Propexo
+                                      updated_at:
+                                        type: string
+                                        description: The date record was last updated in Propexo
+                                      last_seen:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The date the record was last seen from the PMS
+                                      x_id:
+                                        type: string
+                                        description: The external ID from the integration vendor
+                                      make:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The make of the resident vehicle
+                                      model:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The Propexo data model (e.g. units, residents, applicants, etc.)
+                                          associated with the resident vehicle
+                                      color:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The color of the resident vehicle
+                                      year:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The year of the resident vehicle
+                                      license_plate_number:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The license plate number of the resident vehicle
+                                      license_plate_state:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The license plate state of the resident vehicle
+                                      notes:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: Notes associated with the resident vehicle
+                                      custom_data:
+                                        type:
+                                          - object
+                                          - "null"
+                                        properties: {}
+                                        description: Custom data
+                                    required:
+                                      - id
+                                      - created_at
+                                      - updated_at
+                                      - last_seen
+                                      - x_id
+                                      - make
+                                      - model
+                                      - color
+                                      - year
+                                      - license_plate_number
+                                      - license_plate_state
+                                      - notes
+                                      - custom_data
                                 integration_id:
                                   type: string
                                   description: The Propexo unique identifier for the integration
@@ -49051,6 +49556,174 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the resident
+                                    pets:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident pet
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the resident pet
+                                          type:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The type associated with the resident pet
+                                          breed:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The breed of the resident pet
+                                          gender_raw:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The raw value for the gender of the resident pet
+                                          age_in_years:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The age in years of the resident pet
+                                          weight_in_pounds:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The weight in pounds of the resident pet
+                                          is_fixed:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the resident pet is fixed
+                                          is_service_animal:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the resident pet is a service animal
+                                          notes:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Notes associated with the resident pet
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - name
+                                          - type
+                                          - breed
+                                          - gender_raw
+                                          - age_in_years
+                                          - weight_in_pounds
+                                          - is_fixed
+                                          - is_service_animal
+                                          - notes
+                                          - custom_data
+                                    vehicles:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident vehicle
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          make:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The make of the resident vehicle
+                                          model:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo data model (e.g. units, residents, applicants, etc.)
+                                              associated with the resident
+                                              vehicle
+                                          color:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The color of the resident vehicle
+                                          year:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The year of the resident vehicle
+                                          license_plate_number:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The license plate number of the resident vehicle
+                                          license_plate_state:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The license plate state of the resident vehicle
+                                          notes:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Notes associated with the resident vehicle
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - make
+                                          - model
+                                          - color
+                                          - year
+                                          - license_plate_number
+                                          - license_plate_state
+                                          - notes
+                                          - custom_data
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
@@ -52071,6 +52744,174 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the resident
+                                    pets:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident pet
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the resident pet
+                                          type:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The type associated with the resident pet
+                                          breed:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The breed of the resident pet
+                                          gender_raw:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The raw value for the gender of the resident pet
+                                          age_in_years:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The age in years of the resident pet
+                                          weight_in_pounds:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The weight in pounds of the resident pet
+                                          is_fixed:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the resident pet is fixed
+                                          is_service_animal:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the resident pet is a service animal
+                                          notes:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Notes associated with the resident pet
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - name
+                                          - type
+                                          - breed
+                                          - gender_raw
+                                          - age_in_years
+                                          - weight_in_pounds
+                                          - is_fixed
+                                          - is_service_animal
+                                          - notes
+                                          - custom_data
+                                    vehicles:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the resident vehicle
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          make:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The make of the resident vehicle
+                                          model:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The Propexo data model (e.g. units, residents, applicants, etc.)
+                                              associated with the resident
+                                              vehicle
+                                          color:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The color of the resident vehicle
+                                          year:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The year of the resident vehicle
+                                          license_plate_number:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The license plate number of the resident vehicle
+                                          license_plate_state:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The license plate state of the resident vehicle
+                                          notes:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Notes associated with the resident vehicle
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - make
+                                          - model
+                                          - color
+                                          - year
+                                          - license_plate_number
+                                          - license_plate_state
+                                          - notes
+                                          - custom_data
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
