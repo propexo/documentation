@@ -819,6 +819,7 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
+                                  - REALPAGE_UNIT
                                   - REALPAGE_PRICING_AND_AVAILABILITY
 
 
@@ -892,6 +893,7 @@ paths:
                                     - REALPAGE_RESIDENTS
                                     - REALPAGE_PROSPECT_MANAGEMENT
                                     - REALPAGE_SDE_CONVERGENT_BILLING
+                                    - REALPAGE_UNIT
                                     - REALPAGE_PRICING_AND_AVAILABILITY
 
 
@@ -1115,6 +1117,8 @@ paths:
                         LICENSE_KEY:
                           type: string
                         ONESITE_USERNAME:
+                          type: string
+                        ONESITE_PASSWORD:
                           type: string
                         BASE_URL:
                           type: string
@@ -2145,6 +2149,7 @@ paths:
                                 - REALPAGE_RESIDENTS
                                 - REALPAGE_PROSPECT_MANAGEMENT
                                 - REALPAGE_SDE_CONVERGENT_BILLING
+                                - REALPAGE_UNIT
                                 - REALPAGE_PRICING_AND_AVAILABILITY
 
 
@@ -2218,6 +2223,7 @@ paths:
                                   - REALPAGE_RESIDENTS
                                   - REALPAGE_PROSPECT_MANAGEMENT
                                   - REALPAGE_SDE_CONVERGENT_BILLING
+                                  - REALPAGE_UNIT
                                   - REALPAGE_PRICING_AND_AVAILABILITY
 
 
@@ -2457,6 +2463,8 @@ paths:
                         LICENSE_KEY:
                           type: string
                         ONESITE_USERNAME:
+                          type: string
+                        ONESITE_PASSWORD:
                           type: string
                         BASE_URL:
                           type: string
@@ -41406,6 +41414,689 @@ paths:
               examples: {}
         "400":
           description: invalid input
+  /v1/units/details:
+    get:
+      tags:
+        - units
+      summary: Get all unit details
+      description: Get all unit details
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external unit id
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all unit details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the unit
+                          example: clwktsp9v000008l31iv218hn
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                          example: 2024-03-21T15:38:08.337Z
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                          example: 2024-03-22T10:59:45.119Z
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                          example: 2024-03-22T10:59:45.119Z
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        x_building_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the building (not necessarily the property) from
+                            the integration vendor
+                        x_floor_plan_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the floor plan from the integration vendor
+                        building_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The building number associated with the unit
+                        make_ready_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The make ready date of the unit
+                        made_ready_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The made ready date of the unit
+                        reserved_until_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the unit is reserved until
+                        floor_plan_market_rent_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The market rent cost of the floor plan, in cents
+                        unit_market_rent_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The market rent cost of the unit, in cents
+                        base_rent_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The base rent cost of the unit, in cents
+                        unit_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The unit number
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          description: Description of the unit
+                        floor_plan_name:
+                          type:
+                            - string
+                            - "null"
+                          description: The floor plan name associated with the unit
+                        accessible_hearing:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether or not the unit is accessible for the hearing impaired
+                        accessible_mobility:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether or not the unit is accessible for the mobility impaired
+                        accessible_vision:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether or not the unit is accessible for the vision impaired
+                        is_vacant:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the unit is vacant
+                        is_available:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the unit is available
+                        is_reserved:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the unit is reserved
+                        available_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date that the unit becomes available
+                        notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Notes associated with the unit
+                        gross_square_feet:
+                          type: integer
+                          minimum: 0
+                          description: The gross square footage of the unit
+                        rentable_square_feet:
+                          type: integer
+                          minimum: 0
+                          description: The rentable square footage of the unit
+                        city:
+                          type:
+                            - string
+                            - "null"
+                          description: The city associated with the unit
+                          example: Boston
+                        country:
+                          type:
+                            - string
+                            - "null"
+                          description: The country associated with the unit
+                          example: US
+                        state:
+                          type:
+                            - string
+                            - "null"
+                          description: The state associated with the unit
+                          example: MA
+                        address_1:
+                          type:
+                            - string
+                            - "null"
+                          description: The first address line associated with the unit
+                          example: 123 Main St
+                        address_2:
+                          type:
+                            - string
+                            - "null"
+                          description: The second address line associated with the unit
+                        zip:
+                          type:
+                            - string
+                            - "null"
+                          description: The zip code associated with the unit
+                          example: "02116"
+                        maximum_potential_lease_term:
+                          type:
+                            - string
+                            - "null"
+                          description: The maximum potential lease term of the unit
+                        minimum_potential_lease_term:
+                          type:
+                            - string
+                            - "null"
+                          description: The minimum potential lease term of the unit
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                          example: clwh5u07w000508me66sfh3um
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                          example: clwi5xiix000008l6ctdgafyh
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - x_building_id
+                        - x_floor_plan_id
+                        - building_number
+                        - make_ready_date
+                        - made_ready_date
+                        - reserved_until_date
+                        - floor_plan_market_rent_in_cents
+                        - unit_market_rent_in_cents
+                        - base_rent_in_cents
+                        - unit_number
+                        - description
+                        - floor_plan_name
+                        - accessible_hearing
+                        - accessible_mobility
+                        - accessible_vision
+                        - is_vacant
+                        - is_available
+                        - is_reserved
+                        - available_date
+                        - notes
+                        - gross_square_feet
+                        - rentable_square_feet
+                        - city
+                        - country
+                        - state
+                        - address_1
+                        - address_2
+                        - zip
+                        - maximum_potential_lease_term
+                        - minimum_potential_lease_term
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: BUILDIUM
+                        bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
+                        bedrooms: "2"
+                        building_name: sample_value
+                        city: Boston
+                        is_vacant: sample_value
+                        notes: sample_value
+                        number: sample_value
+                        rent_amount_market_in_cents: 350000
+                        square_feet: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: sample_value
+                        building_number: "null"
+                        floor_plan_code: "null"
+                        floor_plan_name: "null"
+                        is_available: "null"
+                        is_furnished: "null"
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        floor: "null"
+                        country: "null"
+                        x_location_id: "null"
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: ENTRATA
+                        bathrooms: "2"
+                        bathrooms_full: 2
+                        bathrooms_half: sample_value
+                        bedrooms: "3"
+                        building_name: Sunrise Apartments
+                        city: Springfield
+                        is_vacant: "null"
+                        notes: "null"
+                        number: A202
+                        rent_amount_market_in_cents: "null"
+                        square_feet: 1200
+                        state: IL
+                        street_address_1: 123 Main St
+                        street_address_2: "null"
+                        x_id: unitX123
+                        x_property_id: property456
+                        zip: "62704"
+                        pets_allowed: "null"
+                        building_number: Bldg5
+                        floor_plan_code: FP123
+                        floor_plan_name: 3BHK Deluxe
+                        is_available: true
+                        is_furnished: true
+                        rent_amount_max_in_cents: 200000
+                        rent_amount_min_in_cents: 180000
+                        floor: "null"
+                        country: "null"
+                        x_location_id: "null"
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: PROPERTYWARE
+                        bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
+                        bedrooms: sample_value
+                        building_name: sample_value
+                        city: Boston
+                        is_vacant: sample_value
+                        notes: sample_value
+                        number: "null"
+                        rent_amount_market_in_cents: 350000
+                        square_feet: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: sample_value
+                        building_number: "null"
+                        floor_plan_code: "null"
+                        floor_plan_name: "null"
+                        is_available: sample_value
+                        is_furnished: "null"
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        floor: sample_value
+                        country: "null"
+                        x_location_id: "null"
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE
+                        bathrooms: sample_value
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
+                        bedrooms: sample_value
+                        building_name: sample_value
+                        city: Tampa
+                        is_vacant: "false"
+                        notes: "null"
+                        number: "433"
+                        rent_amount_market_in_cents: 350000
+                        square_feet: sample_value
+                        state: FL
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: "null"
+                        building_number: "1"
+                        floor_plan_code: sample_value
+                        floor_plan_name: sample_value
+                        is_available: "true"
+                        is_furnished: "null"
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        floor: "3"
+                        country: US
+                        x_location_id: "null"
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE_RPX
+                        bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
+                        bedrooms: "null"
+                        building_name: sample_value
+                        city: Boston
+                        is_vacant: sample_value
+                        notes: "null"
+                        number: sample_value
+                        rent_amount_market_in_cents: 350000
+                        square_feet: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: "null"
+                        building_number: sample_value
+                        floor_plan_code: "null"
+                        floor_plan_name: sample_value
+                        is_available: sample_value
+                        is_furnished: "null"
+                        rent_amount_max_in_cents: sample_value
+                        rent_amount_min_in_cents: sample_value
+                        floor: sample_value
+                        country: US
+                        x_location_id: "null"
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTMANAGER
+                        bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
+                        bedrooms: sample_value
+                        building_name: "null"
+                        city: Boston
+                        is_vacant: sample_value
+                        notes: sample_value
+                        number: sample_value
+                        rent_amount_market_in_cents: 350000
+                        square_feet: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: "null"
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: "null"
+                        building_number: "null"
+                        floor_plan_code: sample_value
+                        floor_plan_name: sample_value
+                        is_available: "null"
+                        is_furnished: "null"
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        floor: "null"
+                        country: "null"
+                        x_location_id: sample_value
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTVINE
+                        bathrooms: "2.5"
+                        bathrooms_full: 2
+                        bathrooms_half: 1
+                        bedrooms: sample_value
+                        building_name: "null"
+                        city: Boston
+                        is_vacant: sample_value
+                        notes: "null"
+                        number: sample_value
+                        rent_amount_market_in_cents: 350000
+                        square_feet: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: "null"
+                        building_number: "null"
+                        floor_plan_code: "null"
+                        floor_plan_name: "null"
+                        is_available: "null"
+                        is_furnished: "null"
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        floor: "null"
+                        country: US
+                        x_location_id: "null"
+                        cats_allowed: sample_value
+                        dogs_allowed: sample_value
+                        pet_policy: sample_value
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RESMAN
+                        bathrooms: "null"
+                        bathrooms_full: "null"
+                        bathrooms_half: "null"
+                        bedrooms: "null"
+                        building_name: "null"
+                        city: Boston
+                        is_vacant: "null"
+                        notes: "null"
+                        number: sample_value
+                        rent_amount_market_in_cents: "null"
+                        square_feet: "null"
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: "null"
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: "null"
+                        building_number: sample_value
+                        floor_plan_code: "null"
+                        floor_plan_name: sample_value
+                        is_available: "null"
+                        is_furnished: "null"
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        floor: sample_value
+                        country: "null"
+                        x_location_id: "null"
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: Other
+                        bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
+                        bedrooms: sample_value
+                        building_name: sample_value
+                        city: Boston
+                        is_vacant: sample_value
+                        notes: "null"
+                        number: sample_value
+                        rent_amount_market_in_cents: 350000
+                        square_feet: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        pets_allowed: "null"
+                        building_number: sample_value
+                        floor_plan_code: sample_value
+                        floor_plan_name: sample_value
+                        is_available: sample_value
+                        is_furnished: sample_value
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        floor: "null"
+                        country: "null"
+                        x_location_id: "null"
+                        cats_allowed: "null"
+                        dogs_allowed: "null"
+                        pet_policy: "null"
+        "400":
+          description: invalid input
   /v1/units/{id}:
     get:
       tags:
@@ -42799,6 +43490,652 @@ paths:
                       - x_property_id
                       - x_location_id
                       - name
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: BUILDIUM
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
+                      bedrooms: "2"
+                      building_name: sample_value
+                      city: Boston
+                      is_vacant: sample_value
+                      notes: sample_value
+                      number: sample_value
+                      rent_amount_market_in_cents: 350000
+                      square_feet: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: sample_value
+                      building_number: "null"
+                      floor_plan_code: "null"
+                      floor_plan_name: "null"
+                      is_available: "null"
+                      is_furnished: "null"
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      floor: "null"
+                      country: "null"
+                      x_location_id: "null"
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: ENTRATA
+                      bathrooms: "2"
+                      bathrooms_full: 2
+                      bathrooms_half: sample_value
+                      bedrooms: "3"
+                      building_name: Sunrise Apartments
+                      city: Springfield
+                      is_vacant: "null"
+                      notes: "null"
+                      number: A202
+                      rent_amount_market_in_cents: "null"
+                      square_feet: 1200
+                      state: IL
+                      street_address_1: 123 Main St
+                      street_address_2: "null"
+                      x_id: unitX123
+                      x_property_id: property456
+                      zip: "62704"
+                      pets_allowed: "null"
+                      building_number: Bldg5
+                      floor_plan_code: FP123
+                      floor_plan_name: 3BHK Deluxe
+                      is_available: true
+                      is_furnished: true
+                      rent_amount_max_in_cents: 200000
+                      rent_amount_min_in_cents: 180000
+                      floor: "null"
+                      country: "null"
+                      x_location_id: "null"
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: PROPERTYWARE
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
+                      bedrooms: sample_value
+                      building_name: sample_value
+                      city: Boston
+                      is_vacant: sample_value
+                      notes: sample_value
+                      number: "null"
+                      rent_amount_market_in_cents: 350000
+                      square_feet: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: sample_value
+                      building_number: "null"
+                      floor_plan_code: "null"
+                      floor_plan_name: "null"
+                      is_available: sample_value
+                      is_furnished: "null"
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      floor: sample_value
+                      country: "null"
+                      x_location_id: "null"
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE
+                      bathrooms: sample_value
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
+                      bedrooms: sample_value
+                      building_name: sample_value
+                      city: Tampa
+                      is_vacant: "false"
+                      notes: "null"
+                      number: "433"
+                      rent_amount_market_in_cents: 350000
+                      square_feet: sample_value
+                      state: FL
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: "null"
+                      building_number: "1"
+                      floor_plan_code: sample_value
+                      floor_plan_name: sample_value
+                      is_available: "true"
+                      is_furnished: "null"
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      floor: "3"
+                      country: US
+                      x_location_id: "null"
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE_RPX
+                      bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
+                      bedrooms: "null"
+                      building_name: sample_value
+                      city: Boston
+                      is_vacant: sample_value
+                      notes: "null"
+                      number: sample_value
+                      rent_amount_market_in_cents: 350000
+                      square_feet: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: "null"
+                      building_number: sample_value
+                      floor_plan_code: "null"
+                      floor_plan_name: sample_value
+                      is_available: sample_value
+                      is_furnished: "null"
+                      rent_amount_max_in_cents: sample_value
+                      rent_amount_min_in_cents: sample_value
+                      floor: sample_value
+                      country: US
+                      x_location_id: "null"
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTMANAGER
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
+                      bedrooms: sample_value
+                      building_name: "null"
+                      city: Boston
+                      is_vacant: sample_value
+                      notes: sample_value
+                      number: sample_value
+                      rent_amount_market_in_cents: 350000
+                      square_feet: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: "null"
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: "null"
+                      building_number: "null"
+                      floor_plan_code: sample_value
+                      floor_plan_name: sample_value
+                      is_available: "null"
+                      is_furnished: "null"
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      floor: "null"
+                      country: "null"
+                      x_location_id: sample_value
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTVINE
+                      bathrooms: "2.5"
+                      bathrooms_full: 2
+                      bathrooms_half: 1
+                      bedrooms: sample_value
+                      building_name: "null"
+                      city: Boston
+                      is_vacant: sample_value
+                      notes: "null"
+                      number: sample_value
+                      rent_amount_market_in_cents: 350000
+                      square_feet: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: "null"
+                      building_number: "null"
+                      floor_plan_code: "null"
+                      floor_plan_name: "null"
+                      is_available: "null"
+                      is_furnished: "null"
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      floor: "null"
+                      country: US
+                      x_location_id: "null"
+                      cats_allowed: sample_value
+                      dogs_allowed: sample_value
+                      pet_policy: sample_value
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RESMAN
+                      bathrooms: "null"
+                      bathrooms_full: "null"
+                      bathrooms_half: "null"
+                      bedrooms: "null"
+                      building_name: "null"
+                      city: Boston
+                      is_vacant: "null"
+                      notes: "null"
+                      number: sample_value
+                      rent_amount_market_in_cents: "null"
+                      square_feet: "null"
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: "null"
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: "null"
+                      building_number: sample_value
+                      floor_plan_code: "null"
+                      floor_plan_name: sample_value
+                      is_available: "null"
+                      is_furnished: "null"
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      floor: sample_value
+                      country: "null"
+                      x_location_id: "null"
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: Other
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
+                      bedrooms: sample_value
+                      building_name: sample_value
+                      city: Boston
+                      is_vacant: sample_value
+                      notes: "null"
+                      number: sample_value
+                      rent_amount_market_in_cents: 350000
+                      square_feet: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      pets_allowed: "null"
+                      building_number: sample_value
+                      floor_plan_code: sample_value
+                      floor_plan_name: sample_value
+                      is_available: sample_value
+                      is_furnished: sample_value
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      floor: "null"
+                      country: "null"
+                      x_location_id: "null"
+                      cats_allowed: "null"
+                      dogs_allowed: "null"
+                      pet_policy: "null"
+        "400":
+          description: invalid input
+  /v1/units/details/{unit_detail_id}:
+    get:
+      tags:
+        - units
+      summary: Get a unit detail by ID
+      description: Get a unit detail by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: unit_detail_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get a unit detail by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the unit
+                        example: clwktsp9v000008l31iv218hn
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                        example: 2024-03-21T15:38:08.337Z
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                        example: 2024-03-22T10:59:45.119Z
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                        example: 2024-03-22T10:59:45.119Z
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      x_building_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the building (not necessarily the property) from
+                          the integration vendor
+                      x_floor_plan_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the floor plan from the integration vendor
+                      building_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The building number associated with the unit
+                      make_ready_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The make ready date of the unit
+                      made_ready_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The made ready date of the unit
+                      reserved_until_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the unit is reserved until
+                      floor_plan_market_rent_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The market rent cost of the floor plan, in cents
+                      unit_market_rent_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The market rent cost of the unit, in cents
+                      base_rent_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The base rent cost of the unit, in cents
+                      unit_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The unit number
+                      description:
+                        type:
+                          - string
+                          - "null"
+                        description: Description of the unit
+                      floor_plan_name:
+                        type:
+                          - string
+                          - "null"
+                        description: The floor plan name associated with the unit
+                      accessible_hearing:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether or not the unit is accessible for the hearing impaired
+                      accessible_mobility:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether or not the unit is accessible for the mobility impaired
+                      accessible_vision:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether or not the unit is accessible for the vision impaired
+                      is_vacant:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the unit is vacant
+                      is_available:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the unit is available
+                      is_reserved:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the unit is reserved
+                      available_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date that the unit becomes available
+                      notes:
+                        type:
+                          - string
+                          - "null"
+                        description: Notes associated with the unit
+                      gross_square_feet:
+                        type: integer
+                        minimum: 0
+                        description: The gross square footage of the unit
+                      rentable_square_feet:
+                        type: integer
+                        minimum: 0
+                        description: The rentable square footage of the unit
+                      city:
+                        type:
+                          - string
+                          - "null"
+                        description: The city associated with the unit
+                        example: Boston
+                      country:
+                        type:
+                          - string
+                          - "null"
+                        description: The country associated with the unit
+                        example: US
+                      state:
+                        type:
+                          - string
+                          - "null"
+                        description: The state associated with the unit
+                        example: MA
+                      address_1:
+                        type:
+                          - string
+                          - "null"
+                        description: The first address line associated with the unit
+                        example: 123 Main St
+                      address_2:
+                        type:
+                          - string
+                          - "null"
+                        description: The second address line associated with the unit
+                      zip:
+                        type:
+                          - string
+                          - "null"
+                        description: The zip code associated with the unit
+                        example: "02116"
+                      maximum_potential_lease_term:
+                        type:
+                          - string
+                          - "null"
+                        description: The maximum potential lease term of the unit
+                      minimum_potential_lease_term:
+                        type:
+                          - string
+                          - "null"
+                        description: The minimum potential lease term of the unit
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                        example: clwh5u07w000508me66sfh3um
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                        example: clwi5xiix000008l6ctdgafyh
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - x_building_id
+                      - x_floor_plan_id
+                      - building_number
+                      - make_ready_date
+                      - made_ready_date
+                      - reserved_until_date
+                      - floor_plan_market_rent_in_cents
+                      - unit_market_rent_in_cents
+                      - base_rent_in_cents
+                      - unit_number
+                      - description
+                      - floor_plan_name
+                      - accessible_hearing
+                      - accessible_mobility
+                      - accessible_vision
+                      - is_vacant
+                      - is_available
+                      - is_reserved
+                      - available_date
+                      - notes
+                      - gross_square_feet
+                      - rentable_square_feet
+                      - city
+                      - country
+                      - state
+                      - address_1
+                      - address_2
+                      - zip
+                      - maximum_potential_lease_term
+                      - minimum_potential_lease_term
                       - integration_id
                       - integration_vendor
                       - property_id
