@@ -17531,6 +17531,1003 @@ paths:
               examples: {}
         "400":
           description: invalid input
+  /v1/payable-registers:
+    get:
+      tags:
+        - invoices
+      summary: Get all payable registers
+      description: Get all payable registers
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all payable registers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the payable register
+                          example: clwktsp9v000008l31iv218hn
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                          example: 2024-03-21T15:38:08.337Z
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                          example: 2024-03-22T10:59:45.119Z
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                          example: 2024-03-22T10:59:45.119Z
+                        x_batch_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the associated batch
+                        amount_due_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The amount due on the payable register, in cents
+                          example: 10000
+                        amount_paid_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The amount paid on the payable register, in cents
+                          example: 10000
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
+                        due_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The due date associated with the payable register
+                        discount_amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The discount, in cents, of the payable register
+                        discount_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date a discount was issued on payable register
+                        invoice_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the payable register was issued
+                        invoice_number:
+                          type:
+                            - string
+                            - "null"
+                          description: The reference number for the payable register
+                        notes:
+                          type:
+                            - string
+                            - "null"
+                          description: Notes associated with the payable register
+                        post_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the payable register was posted. Some PMS systems only
+                            show the month.
+                        post_month:
+                          type:
+                            - string
+                            - "null"
+                          description: The month the payable register was posted.
+                        post_status_raw:
+                          type:
+                            - string
+                            - "null"
+                          description: The raw post status associated with the payable register
+                        sub_total_amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The sub total amount of the payable register
+                        total_amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The amount of the payable register, in cents
+                        status:
+                          type:
+                            - string
+                            - "null"
+                          description: The status associated with the payable register
+                        is_unpaid:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the payable register is unpaid or not
+                        is_adjustment:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the payable register is an adjustment or not
+                        is_credit_memo:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the payable register is a credit memo or not
+                        is_exempt_from_1099:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the payable register is exempt from a 1099 or not
+                        display_type:
+                          type:
+                            - string
+                            - "null"
+                          description: The display type of the payable register
+                        expense_type:
+                          type:
+                            - string
+                            - "null"
+                          description: The expense type of the payable register
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                          example: clwi5xiix000008l6ctdgafyh
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                          example: clwh5u07w000508me66sfh3um
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        payable_register_items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              payable_register_id:
+                                type: string
+                                description: The Propexo unique identifier for the payable register
+                              construction_job_id:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The Propexo unique identifier for the construction job
+                              amount_due_in_cents:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The amount due on the payable register item, in cents
+                              notes:
+                                type:
+                                  - string
+                                  - "null"
+                                description: Notes associated with the payable register item
+                              total_amount_in_cents:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The amount of the payable register item, in cents
+                              cost_code:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The cost code of the payable register item
+                            required:
+                              - payable_register_id
+                              - construction_job_id
+                              - amount_due_in_cents
+                              - notes
+                              - total_amount_in_cents
+                              - cost_code
+                          description: The payable register list items associated with the payable
+                            register
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_batch_id
+                        - amount_due_in_cents
+                        - amount_paid_in_cents
+                        - custom_data
+                        - due_date
+                        - discount_amount_in_cents
+                        - discount_date
+                        - invoice_date
+                        - invoice_number
+                        - notes
+                        - post_date
+                        - post_month
+                        - post_status_raw
+                        - sub_total_amount_in_cents
+                        - total_amount_in_cents
+                        - status
+                        - is_unpaid
+                        - is_adjustment
+                        - is_credit_memo
+                        - is_exempt_from_1099
+                        - display_type
+                        - expense_type
+                        - property_id
+                        - integration_id
+                        - integration_vendor
+                        - payable_register_items
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: BUILDIUM
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: "null"
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: "null"
+                        invoice_number: "null"
+                        notes: "null"
+                        post_date: "null"
+                        post_month: "null"
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: "null"
+                        x_id: "null"
+                        x_property_id: "null"
+                        x_vendor_id: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: ENTRATA
+                        amount_due_in_cents: 3500
+                        amount_paid_in_cents: 3500
+                        discount_amount_in_cents: 500
+                        due_date: 2024-03-03T00:00:00.000Z
+                        invoice_date: 2024-03-03T00:00:00.000Z
+                        invoice_number: INV-1234
+                        notes: This is a note
+                        post_date: 2024-03-03T00:00:00.000Z
+                        post_month: 2024-03-03
+                        post_status_raw: Posted
+                        sub_total_amount_in_cents: 3000
+                        total_amount_in_cents: 3500
+                        x_id: "1234567890"
+                        x_property_id: "123456"
+                        x_vendor_id: "1234567"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: PROPERTYWARE
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: "null"
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: "null"
+                        invoice_number: "null"
+                        notes: "null"
+                        post_date: "null"
+                        post_month: "null"
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: "null"
+                        x_id: "null"
+                        x_property_id: "null"
+                        x_vendor_id: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: "null"
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: "null"
+                        invoice_number: "null"
+                        notes: "null"
+                        post_date: "null"
+                        post_month: "null"
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: "null"
+                        x_id: "null"
+                        x_property_id: "null"
+                        x_vendor_id: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE_RPX
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: "null"
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: "null"
+                        invoice_number: "null"
+                        notes: "null"
+                        post_date: "null"
+                        post_month: "null"
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: "null"
+                        x_id: "null"
+                        x_property_id: "null"
+                        x_vendor_id: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTMANAGER
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: "null"
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: "null"
+                        invoice_number: "null"
+                        notes: "null"
+                        post_date: "null"
+                        post_month: "null"
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: "null"
+                        x_id: "null"
+                        x_property_id: "null"
+                        x_vendor_id: "null"
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTVINE
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: "null"
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: "null"
+                        invoice_number: "null"
+                        notes: "null"
+                        post_date: "null"
+                        post_month: "null"
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: "null"
+                        x_id: "null"
+                        x_property_id: "null"
+                        x_vendor_id: "null"
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RESMAN
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: "null"
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: "null"
+                        invoice_number: "null"
+                        notes: "null"
+                        post_date: "null"
+                        post_month: "null"
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: "null"
+                        x_id: "null"
+                        x_property_id: "null"
+                        x_vendor_id: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: Other
+                        amount_due_in_cents: "null"
+                        amount_paid_in_cents: 50000
+                        discount_amount_in_cents: "null"
+                        due_date: "null"
+                        invoice_date: 2014-09-05T00:00:00.000Z
+                        invoice_number: cxp34657
+                        notes: A string of data generally provided by the PMC
+                        post_date: "null"
+                        post_month: 2024-02-01
+                        post_status_raw: "null"
+                        sub_total_amount_in_cents: "null"
+                        total_amount_in_cents: 87500
+                        x_id: "34634663"
+                        x_property_id: nweghwz
+                        x_vendor_id: "null"
+        "400":
+          description: invalid input
+  /v1/payable-registers/{payable_register_id}:
+    get:
+      tags:
+        - invoices
+      summary: Get a payable register by ID
+      description: Get a payable register by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: payable_register_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get a payable register by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the payable register
+                        example: clwktsp9v000008l31iv218hn
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                        example: 2024-03-21T15:38:08.337Z
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                        example: 2024-03-22T10:59:45.119Z
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                        example: 2024-03-22T10:59:45.119Z
+                      x_batch_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the associated batch
+                      amount_due_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The amount due on the payable register, in cents
+                        example: 10000
+                      amount_paid_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The amount paid on the payable register, in cents
+                        example: 10000
+                      custom_data:
+                        type:
+                          - object
+                          - "null"
+                        properties: {}
+                        description: Custom data
+                      due_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The due date associated with the payable register
+                      discount_amount_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The discount, in cents, of the payable register
+                      discount_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date a discount was issued on payable register
+                      invoice_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the payable register was issued
+                      invoice_number:
+                        type:
+                          - string
+                          - "null"
+                        description: The reference number for the payable register
+                      notes:
+                        type:
+                          - string
+                          - "null"
+                        description: Notes associated with the payable register
+                      post_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the payable register was posted. Some PMS systems only
+                          show the month.
+                      post_month:
+                        type:
+                          - string
+                          - "null"
+                        description: The month the payable register was posted.
+                      post_status_raw:
+                        type:
+                          - string
+                          - "null"
+                        description: The raw post status associated with the payable register
+                      sub_total_amount_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The sub total amount of the payable register
+                      total_amount_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The amount of the payable register, in cents
+                      status:
+                        type:
+                          - string
+                          - "null"
+                        description: The status associated with the payable register
+                      is_unpaid:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the payable register is unpaid or not
+                      is_adjustment:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the payable register is an adjustment or not
+                      is_credit_memo:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the payable register is a credit memo or not
+                      is_exempt_from_1099:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the payable register is exempt from a 1099 or not
+                      display_type:
+                        type:
+                          - string
+                          - "null"
+                        description: The display type of the payable register
+                      expense_type:
+                        type:
+                          - string
+                          - "null"
+                        description: The expense type of the payable register
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                        example: clwi5xiix000008l6ctdgafyh
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                        example: clwh5u07w000508me66sfh3um
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      payable_register_items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            payable_register_id:
+                              type: string
+                              description: The Propexo unique identifier for the payable register
+                            construction_job_id:
+                              type:
+                                - string
+                                - "null"
+                              description: The Propexo unique identifier for the construction job
+                            amount_due_in_cents:
+                              type:
+                                - number
+                                - "null"
+                              description: The amount due on the payable register item, in cents
+                            notes:
+                              type:
+                                - string
+                                - "null"
+                              description: Notes associated with the payable register item
+                            total_amount_in_cents:
+                              type:
+                                - number
+                                - "null"
+                              description: The amount of the payable register item, in cents
+                            cost_code:
+                              type:
+                                - string
+                                - "null"
+                              description: The cost code of the payable register item
+                          required:
+                            - payable_register_id
+                            - construction_job_id
+                            - amount_due_in_cents
+                            - notes
+                            - total_amount_in_cents
+                            - cost_code
+                        description: The payable register list items associated with the payable
+                          register
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_batch_id
+                      - amount_due_in_cents
+                      - amount_paid_in_cents
+                      - custom_data
+                      - due_date
+                      - discount_amount_in_cents
+                      - discount_date
+                      - invoice_date
+                      - invoice_number
+                      - notes
+                      - post_date
+                      - post_month
+                      - post_status_raw
+                      - sub_total_amount_in_cents
+                      - total_amount_in_cents
+                      - status
+                      - is_unpaid
+                      - is_adjustment
+                      - is_credit_memo
+                      - is_exempt_from_1099
+                      - display_type
+                      - expense_type
+                      - property_id
+                      - integration_id
+                      - integration_vendor
+                      - payable_register_items
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: BUILDIUM
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: "null"
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: "null"
+                      invoice_number: "null"
+                      notes: "null"
+                      post_date: "null"
+                      post_month: "null"
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: "null"
+                      x_id: "null"
+                      x_property_id: "null"
+                      x_vendor_id: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: ENTRATA
+                      amount_due_in_cents: 3500
+                      amount_paid_in_cents: 3500
+                      discount_amount_in_cents: 500
+                      due_date: 2024-03-03T00:00:00.000Z
+                      invoice_date: 2024-03-03T00:00:00.000Z
+                      invoice_number: INV-1234
+                      notes: This is a note
+                      post_date: 2024-03-03T00:00:00.000Z
+                      post_month: 2024-03-03
+                      post_status_raw: Posted
+                      sub_total_amount_in_cents: 3000
+                      total_amount_in_cents: 3500
+                      x_id: "1234567890"
+                      x_property_id: "123456"
+                      x_vendor_id: "1234567"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: PROPERTYWARE
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: "null"
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: "null"
+                      invoice_number: "null"
+                      notes: "null"
+                      post_date: "null"
+                      post_month: "null"
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: "null"
+                      x_id: "null"
+                      x_property_id: "null"
+                      x_vendor_id: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: "null"
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: "null"
+                      invoice_number: "null"
+                      notes: "null"
+                      post_date: "null"
+                      post_month: "null"
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: "null"
+                      x_id: "null"
+                      x_property_id: "null"
+                      x_vendor_id: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE_RPX
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: "null"
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: "null"
+                      invoice_number: "null"
+                      notes: "null"
+                      post_date: "null"
+                      post_month: "null"
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: "null"
+                      x_id: "null"
+                      x_property_id: "null"
+                      x_vendor_id: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTMANAGER
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: "null"
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: "null"
+                      invoice_number: "null"
+                      notes: "null"
+                      post_date: "null"
+                      post_month: "null"
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: "null"
+                      x_id: "null"
+                      x_property_id: "null"
+                      x_vendor_id: "null"
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTVINE
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: "null"
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: "null"
+                      invoice_number: "null"
+                      notes: "null"
+                      post_date: "null"
+                      post_month: "null"
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: "null"
+                      x_id: "null"
+                      x_property_id: "null"
+                      x_vendor_id: "null"
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RESMAN
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: "null"
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: "null"
+                      invoice_number: "null"
+                      notes: "null"
+                      post_date: "null"
+                      post_month: "null"
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: "null"
+                      x_id: "null"
+                      x_property_id: "null"
+                      x_vendor_id: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: Other
+                      amount_due_in_cents: "null"
+                      amount_paid_in_cents: 50000
+                      discount_amount_in_cents: "null"
+                      due_date: "null"
+                      invoice_date: 2014-09-05T00:00:00.000Z
+                      invoice_number: cxp34657
+                      notes: A string of data generally provided by the PMC
+                      post_date: "null"
+                      post_month: 2024-02-01
+                      post_status_raw: "null"
+                      sub_total_amount_in_cents: "null"
+                      total_amount_in_cents: 87500
+                      x_id: "34634663"
+                      x_property_id: nweghwz
+                      x_vendor_id: "null"
+        "400":
+          description: invalid input
   /v1/leads:
     get:
       tags:
