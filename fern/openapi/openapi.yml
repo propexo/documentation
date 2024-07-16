@@ -24809,6 +24809,7 @@ paths:
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
+                        x_location_id: "null"
                         is_furnished: "null"
                 ENTRATA:
                   value:
@@ -24857,6 +24858,7 @@ paths:
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
+                        x_location_id: "null"
                         is_furnished: "null"
                 PROPERTYWARE:
                   value:
@@ -24905,6 +24907,7 @@ paths:
                         specials: sample_value
                         building_number: "null"
                         vacate_date: "null"
+                        x_location_id: "null"
                         is_furnished: "null"
                 REALPAGE:
                   value:
@@ -24953,6 +24956,7 @@ paths:
                         specials: "null"
                         building_number: sample_value
                         vacate_date: sample_value
+                        x_location_id: "null"
                         is_furnished: "null"
                 REALPAGE_RPX:
                   value:
@@ -25001,54 +25005,56 @@ paths:
                         specials: "null"
                         building_number: sample_value
                         vacate_date: sample_value
+                        x_location_id: "null"
                         is_furnished: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
                       - integration_vendor: RENTMANAGER
-                        application_url: "null"
-                        available_date: "null"
-                        bathrooms: "null"
-                        bathrooms_full: "null"
-                        bathrooms_half: "null"
-                        bedrooms: "null"
+                        application_url: https://www.google.com
+                        available_date: 2022-03-31T00:00:00.000Z
+                        bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
+                        bedrooms: "2"
                         building_name: "null"
-                        city: "null"
+                        city: Boston
                         country: "null"
-                        deposit_amount_in_cents: "null"
+                        deposit_amount_in_cents: 2000
                         image_urls_array: "null"
                         is_listed: "null"
                         listing_date: "null"
-                        number: "null"
-                        rent_amount_in_cents: "null"
-                        square_feet: "null"
-                        state: "null"
-                        street_address_1: "null"
+                        number: 101A
+                        rent_amount_in_cents: 2500
+                        square_feet: 1400
+                        state: MA
+                        street_address_1: 101 Main St
                         street_address_2: "null"
                         unit_description: "null"
-                        unit_id: "null"
+                        unit_id: clyop8ezc000l0cl8b8wmahkn
                         video_urls: "null"
-                        x_id: "null"
-                        x_property_id: "null"
-                        x_unit_id: "null"
-                        zip: "null"
-                        floor_plan_code: "null"
-                        floor_plan_name: "null"
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: sample_value
+                        zip: "02114"
+                        floor_plan_code: "8"
+                        floor_plan_name: 2B / 2B
                         is_available: "null"
-                        is_vacant: "null"
+                        is_vacant: true
                         lease_term: "null"
                         make_ready_date: "null"
                         floor: "null"
                         is_unit: "null"
                         listing_title: "null"
-                        marketing_name: "null"
-                        notes: "null"
+                        marketing_name: The Bungalow
+                        notes: Notes
                         property_description: "null"
-                        short_description: "null"
+                        short_description: A great place to live!
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
+                        x_location_id: sample_value
                         is_furnished: "null"
                 RENTVINE:
                   value:
@@ -25097,6 +25103,7 @@ paths:
                         specials: "null"
                         building_number: "null"
                         vacate_date: "null"
+                        x_location_id: "null"
                         is_furnished: sample_value
                 RESMAN:
                   value:
@@ -25145,6 +25152,7 @@ paths:
                         specials: "null"
                         building_number: "null"
                         vacate_date: sample_value
+                        x_location_id: "null"
                         is_furnished: "null"
                 Other:
                   value:
@@ -25193,6 +25201,7 @@ paths:
                         specials: "null"
                         building_number: "null"
                         vacate_date: 2024-05-07T00:00:00.000Z
+                        x_location_id: "null"
                         is_furnished: "null"
         "400":
           description: invalid input
@@ -25719,6 +25728,7 @@ paths:
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
+                      x_location_id: "null"
                       is_furnished: "null"
                 ENTRATA:
                   value:
@@ -25767,6 +25777,7 @@ paths:
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
+                      x_location_id: "null"
                       is_furnished: "null"
                 PROPERTYWARE:
                   value:
@@ -25815,6 +25826,7 @@ paths:
                       specials: sample_value
                       building_number: "null"
                       vacate_date: "null"
+                      x_location_id: "null"
                       is_furnished: "null"
                 REALPAGE:
                   value:
@@ -25863,6 +25875,7 @@ paths:
                       specials: "null"
                       building_number: sample_value
                       vacate_date: sample_value
+                      x_location_id: "null"
                       is_furnished: "null"
                 REALPAGE_RPX:
                   value:
@@ -25911,54 +25924,56 @@ paths:
                       specials: "null"
                       building_number: sample_value
                       vacate_date: sample_value
+                      x_location_id: "null"
                       is_furnished: "null"
                 RENTMANAGER:
                   value:
                     meta: {}
                     results:
                       integration_vendor: RENTMANAGER
-                      application_url: "null"
-                      available_date: "null"
-                      bathrooms: "null"
-                      bathrooms_full: "null"
-                      bathrooms_half: "null"
-                      bedrooms: "null"
+                      application_url: https://www.google.com
+                      available_date: 2022-03-31T00:00:00.000Z
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
+                      bedrooms: "2"
                       building_name: "null"
-                      city: "null"
+                      city: Boston
                       country: "null"
-                      deposit_amount_in_cents: "null"
+                      deposit_amount_in_cents: 2000
                       image_urls_array: "null"
                       is_listed: "null"
                       listing_date: "null"
-                      number: "null"
-                      rent_amount_in_cents: "null"
-                      square_feet: "null"
-                      state: "null"
-                      street_address_1: "null"
+                      number: 101A
+                      rent_amount_in_cents: 2500
+                      square_feet: 1400
+                      state: MA
+                      street_address_1: 101 Main St
                       street_address_2: "null"
                       unit_description: "null"
-                      unit_id: "null"
+                      unit_id: clyop8ezc000l0cl8b8wmahkn
                       video_urls: "null"
-                      x_id: "null"
-                      x_property_id: "null"
-                      x_unit_id: "null"
-                      zip: "null"
-                      floor_plan_code: "null"
-                      floor_plan_name: "null"
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: sample_value
+                      zip: "02114"
+                      floor_plan_code: "8"
+                      floor_plan_name: 2B / 2B
                       is_available: "null"
-                      is_vacant: "null"
+                      is_vacant: true
                       lease_term: "null"
                       make_ready_date: "null"
                       floor: "null"
                       is_unit: "null"
                       listing_title: "null"
-                      marketing_name: "null"
-                      notes: "null"
+                      marketing_name: The Bungalow
+                      notes: Notes
                       property_description: "null"
-                      short_description: "null"
+                      short_description: A great place to live!
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
+                      x_location_id: sample_value
                       is_furnished: "null"
                 RENTVINE:
                   value:
@@ -26007,6 +26022,7 @@ paths:
                       specials: "null"
                       building_number: "null"
                       vacate_date: "null"
+                      x_location_id: "null"
                       is_furnished: sample_value
                 RESMAN:
                   value:
@@ -26055,6 +26071,7 @@ paths:
                       specials: "null"
                       building_number: "null"
                       vacate_date: sample_value
+                      x_location_id: "null"
                       is_furnished: "null"
                 Other:
                   value:
@@ -26103,6 +26120,7 @@ paths:
                       specials: "null"
                       building_number: "null"
                       vacate_date: 2024-05-07T00:00:00.000Z
+                      x_location_id: "null"
                       is_furnished: "null"
         "400":
           description: invalid input
