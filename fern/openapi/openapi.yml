@@ -7926,6 +7926,222 @@ paths:
               examples: {}
         "400":
           description: invalid input
+  /v1/appointment-availability:
+    post:
+      tags:
+        - appointments
+      summary: Query Realtime Appointment Availability
+      description: Query Realtime Appointment Availability
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                property_id:
+                  type: string
+                  description: The Propexo unique identifier for the property
+                availability_start_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The start date of the availability to query. Realpage RPX will
+                    return results starting at midnight of this date in the
+                    local timezone of the property.
+                availability_duration_days:
+                  type: integer
+                  minimum: 1
+                  maximum: 7
+                  description: The duration of the availability query, in days
+                appointment_duration_minutes:
+                  type: integer
+                  exclusiveMinimum: 0
+                  default: 30
+                  description: The duration of the appointment, in minutes. Realpage RPX does not
+                    provide a default appointment duration. A value of 30
+                    minutes is assumed if this field is not provided.
+                calendar_types:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - GENERAL
+                      - RESIDENT
+                      - LEASING
+                      - MAINTENANCE
+                  description: The calendar groups to consider when evaluating what availability
+                    is possible, defaulting to the Resident and Leasing calendar
+                    groups if not provided.  Note that Entrata only supports API
+                    creation of appointment types for the Leasing group at this
+                    time.
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee. The API will only
+                    return availability for this employee.  If not provided,
+                    availability will be returned for all employees.
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Query Realtime Appointment Availability
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      job_id:
+                        type: string
+                        example: clwh5uics000608me9v74du0a
+                    required:
+                      - job_id
+                  result:
+                    type: array
+                    items:
+                      type:
+                        - object
+                        - "null"
+                      properties:
+                        last_seen:
+                          type: string
+                          description: The date the record was last seen from the PMS
+                        calendar_type:
+                          type: string
+                          enum:
+                            - AGENT_CALENDAR
+                            - PROPERTY_CALENDAR
+                            - ENTRATA_SELF_GUIDED_TOUR_CALENDAR
+                          description: The type of calendar
+                        x_property_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the property from the integration vendor
+                        x_agent_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the employee
+                        agent_first_name:
+                          type:
+                            - string
+                            - "null"
+                          description: The first name associated with the employee
+                        agent_last_name:
+                          type:
+                            - string
+                            - "null"
+                          description: The last name associated with the employee
+                        default_appointment_length:
+                          type:
+                            - number
+                            - "null"
+                          description: A default duration for an appointment on this calendar, in minutes
+                        minimum_appointment_lead_time:
+                          type:
+                            - number
+                            - "null"
+                          description: The minimum lead time before which you can book an appointment on
+                            this calendar, in minutes
+                        calendar_days:
+                          type: array
+                          items:
+                            type:
+                              - object
+                              - "null"
+                            properties:
+                              date:
+                                anyOf:
+                                  - type: string
+                                    format: date-time
+                                  - type: string
+                                    pattern: ^\d{4}-\d{2}-\d{2}$
+                                description: Date of the availability
+                              day_of_week:
+                                type: string
+                                description: Day of the week
+                              opening_time:
+                                type:
+                                  - string
+                                  - "null"
+                                pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                                description: The routine opening time for when the first appointment can be
+                                  booked into this calendar
+                              closing_time:
+                                type:
+                                  - string
+                                  - "null"
+                                pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                                description: The routine closing time for when the last appointment must
+                                  complete when being booked into this calendar
+                              simultaneous_appointment_mode:
+                                type: string
+                                enum:
+                                  - SINGLE
+                                  - MULTIPLE
+                                  - UNLIMITED
+                                description: What kind of simultaneous or double booked appointments are allowed
+                                  on this calendar
+                              max_simultaneous_appointments:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The maximum number of simultaneous appointments allowed at the same
+                                  moment in time on this calendar
+                              available_slots:
+                                type: array
+                                items:
+                                  type:
+                                    - object
+                                    - "null"
+                                  properties:
+                                    start:
+                                      type: string
+                                      pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                                      description: The start time of the slot
+                                    end:
+                                      type: string
+                                      pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
+                                      description: The end time of the slot
+                                  required:
+                                    - start
+                                    - end
+                                  description: A list of available time slots that are available for booking
+                            required:
+                              - date
+                              - day_of_week
+                              - opening_time
+                              - closing_time
+                              - simultaneous_appointment_mode
+                              - max_simultaneous_appointments
+                              - available_slots
+                            description: An array of days in the calendar, one for each of the days of
+                              availability that was queried
+                      required:
+                        - last_seen
+                        - calendar_type
+                        - x_property_id
+                        - x_agent_id
+                        - agent_first_name
+                        - agent_last_name
+                        - default_appointment_length
+                        - minimum_appointment_lead_time
+                        - calendar_days
+                      description: A set of availability configuration and slots for a given calendar
+                required:
+                  - meta
+                  - result
+              examples: {}
+        "400":
+          description: invalid input
   /v1/events/appointments/applicants:
     post:
       tags:
