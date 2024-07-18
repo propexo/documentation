@@ -8419,7 +8419,7 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the event
-          required: false
+          required: true
           name: event_id
           in: path
       requestBody:
@@ -8471,10 +8471,6 @@ paths:
                     - MEDIUM
                     - LOW
                   description: The priority of the appointment
-                integration_id:
-                  type: string
-              required:
-                - integration_id
       responses:
         "200":
           description: Update an appointment for an applicant
@@ -8554,7 +8550,7 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the event
-          required: false
+          required: true
           name: event_id
           in: path
       requestBody:
@@ -8606,10 +8602,6 @@ paths:
                     - MEDIUM
                     - LOW
                   description: The priority of the appointment
-                integration_id:
-                  type: string
-              required:
-                - integration_id
       responses:
         "200":
           description: Update an appointment for a lead
@@ -8689,7 +8681,7 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the event
-          required: false
+          required: true
           name: event_id
           in: path
       requestBody:
@@ -8727,10 +8719,6 @@ paths:
                 notes:
                   type: string
                   description: Notes associated with the event
-                integration_id:
-                  type: string
-              required:
-                - integration_id
       responses:
         "200":
           description: Update an appointment for a resident
@@ -11307,7 +11295,7 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the recurring resident charge
-          required: false
+          required: true
           name: recurring_resident_charge_id
           in: path
       requestBody:
@@ -11357,10 +11345,6 @@ paths:
                 reference_number:
                   type: string
                   description: The reference number for the recurring resident charge
-                integration_id:
-                  type: string
-              required:
-                - integration_id
       responses:
         "200":
           description: Update a recurring resident charge for an integration.
@@ -13076,7 +13060,7 @@ paths:
       parameters:
         - schema:
             type: string
-            description: The ID of the resource.
+            description: The Propexo unique identifier for the construction job
           required: true
           name: construction_job_id
           in: path
@@ -13227,7 +13211,7 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the contract
-          required: false
+          required: true
           name: contract_id
           in: path
       requestBody:
@@ -13266,10 +13250,6 @@ paths:
                   type: string
                   description: The retention percent of the contract. Must be a decimal number
                     with only 2 places
-                integration_id:
-                  type: string
-              required:
-                - integration_id
       responses:
         "200":
           description: Update a contract for an integration.
@@ -29511,7 +29491,7 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the purchase order
-          required: false
+          required: true
           name: purchase_order_id
           in: path
       requestBody:
@@ -29789,10 +29769,6 @@ paths:
                       - category_code
                   minItems: 1
                   description: A list of the items associated with the purchase orders
-                integration_id:
-                  type: string
-              required:
-                - integration_id
       responses:
         "200":
           description: Update a purchase order for an integration.
@@ -33955,7 +33931,7 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the service request
-          required: false
+          required: true
           name: service_request_id
           in: path
       requestBody:
@@ -34077,10 +34053,6 @@ paths:
                     - 24 hours
                     - Emergency
                   description: The priority level associated with the service request
-                integration_id:
-                  type: string
-              required:
-                - integration_id
       responses:
         "200":
           description: Update a service request for an integration.
