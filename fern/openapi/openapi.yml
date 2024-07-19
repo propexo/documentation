@@ -44918,6 +44918,12 @@ paths:
                               - email
                               - is_primary
                               - name
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -44945,6 +44951,7 @@ paths:
                         - third_party_id
                         - type
                         - contacts
+                        - custom_data
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -45350,6 +45357,12 @@ paths:
                             - email
                             - is_primary
                             - name
+                      custom_data:
+                        type:
+                          - object
+                          - "null"
+                        properties: {}
+                        description: Custom data
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -45377,6 +45390,7 @@ paths:
                       - third_party_id
                       - type
                       - contacts
+                      - custom_data
                       - integration_id
                       - integration_vendor
                       - property_id
@@ -45785,6 +45799,12 @@ paths:
                               - email
                               - is_primary
                               - name
+                        custom_data:
+                          type:
+                            - object
+                            - "null"
+                          properties: {}
+                          description: Custom data
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -45812,6 +45832,7 @@ paths:
                         - third_party_id
                         - type
                         - contacts
+                        - custom_data
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -49917,6 +49938,12 @@ webhooks:
                                       - email
                                       - is_primary
                                       - name
+                                custom_data:
+                                  type:
+                                    - object
+                                    - "null"
+                                  properties: {}
+                                  description: Custom data
                                 integration_id:
                                   type: string
                                   description: The Propexo unique identifier for the integration
@@ -53227,6 +53254,12 @@ webhooks:
                                           - email
                                           - is_primary
                                           - name
+                                    custom_data:
+                                      type:
+                                        - object
+                                        - "null"
+                                      properties: {}
+                                      description: Custom data
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
@@ -56415,6 +56448,12 @@ webhooks:
                                           - email
                                           - is_primary
                                           - name
+                                    custom_data:
+                                      type:
+                                        - object
+                                        - "null"
+                                      properties: {}
+                                      description: Custom data
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
