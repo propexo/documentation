@@ -7953,9 +7953,9 @@ paths:
                       format: date-time
                     - type: string
                       pattern: ^\d{4}-\d{2}-\d{2}$
-                  description: The start date of the availability to query. Realpage RPX will
-                    return results starting at midnight of this date in the
-                    local timezone of the property.
+                  description: The start date of the availability to query. RealPage Partner
+                    Exchange will return results starting at midnight of this
+                    date in the local timezone of the property.
                 availability_duration_days:
                   type: integer
                   minimum: 1
@@ -7965,9 +7965,10 @@ paths:
                   type: integer
                   exclusiveMinimum: 0
                   default: 30
-                  description: The duration of the appointment, in minutes. Realpage RPX does not
-                    provide a default appointment duration. A value of 30
-                    minutes is assumed if this field is not provided.
+                  description: The duration of the appointment, in minutes. RealPage Partner
+                    Exchange does not provide a default appointment duration. A
+                    value of 30 minutes is assumed if this field is not
+                    provided.
                 calendar_types:
                   type: array
                   items:
