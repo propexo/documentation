@@ -26938,29 +26938,29 @@ paths:
                     meta: {}
                     results:
                       - integration_vendor: REALPAGE_RPX
-                        city: Boston
-                        is_active: "null"
+                        city: Seattle
+                        is_active: true
                         manager_email: sample_value
                         manager_name: "null"
                         manager_phone_1: sample_value
                         manager_phone_1_type: sample_value
                         manager_phone_2: sample_value
                         manager_phone_2_type: sample_value
-                        name: sample_value
+                        name: Western Frontier
                         notes: "null"
                         number_of_units: "null"
-                        state: MA
+                        state: WA
                         street_address_1: sample_value
                         street_address_2: sample_value
                         type_normalized: "null"
                         type_raw: "null"
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "1236712"
+                        x_property_id: "1236712"
                         year_built: "null"
                         zip: "02116"
                         country: US
                         type: "null"
-                        website: "null"
+                        website: sample_value
                         county: sample_value
                         building_number: "null"
                         x_building_id: "null"
@@ -27682,29 +27682,29 @@ paths:
                     meta: {}
                     results:
                       integration_vendor: REALPAGE_RPX
-                      city: Boston
-                      is_active: "null"
+                      city: Seattle
+                      is_active: true
                       manager_email: sample_value
                       manager_name: "null"
                       manager_phone_1: sample_value
                       manager_phone_1_type: sample_value
                       manager_phone_2: sample_value
                       manager_phone_2_type: sample_value
-                      name: sample_value
+                      name: Western Frontier
                       notes: "null"
                       number_of_units: "null"
-                      state: MA
+                      state: WA
                       street_address_1: sample_value
                       street_address_2: sample_value
                       type_normalized: "null"
                       type_raw: "null"
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "1236712"
+                      x_property_id: "1236712"
                       year_built: "null"
                       zip: "02116"
                       country: US
                       type: "null"
-                      website: "null"
+                      website: sample_value
                       county: sample_value
                       building_number: "null"
                       x_building_id: "null"
