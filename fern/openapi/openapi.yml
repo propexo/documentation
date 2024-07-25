@@ -19437,7 +19437,7 @@ paths:
                         desired_amenities: "null"
                         desired_floor_plan_id: Z000000050
                         desired_floor_plan_name: "null"
-                        desired_lease_term_in_months: 12
+                        desired_lease_term_in_months: "12"
                         desired_max_rent_in_cents: 325000
                         desired_min_rent_in_cents: 325000
                         desired_num_bathrooms: "null"
@@ -20510,7 +20510,7 @@ paths:
                       desired_amenities: "null"
                       desired_floor_plan_id: Z000000050
                       desired_floor_plan_name: "null"
-                      desired_lease_term_in_months: 12
+                      desired_lease_term_in_months: "12"
                       desired_max_rent_in_cents: 325000
                       desired_min_rent_in_cents: 325000
                       desired_num_bathrooms: "null"
@@ -21317,7 +21317,7 @@ paths:
                         desired_amenities: "null"
                         desired_floor_plan_id: Z000000050
                         desired_floor_plan_name: "null"
-                        desired_lease_term_in_months: 12
+                        desired_lease_term_in_months: "12"
                         desired_max_rent_in_cents: 325000
                         desired_min_rent_in_cents: 325000
                         desired_num_bathrooms: "null"
@@ -21921,7 +21921,7 @@ paths:
                         desired_amenities: "null"
                         desired_floor_plan_id: Z000000050
                         desired_floor_plan_name: "null"
-                        desired_lease_term_in_months: 12
+                        desired_lease_term_in_months: "12"
                         desired_max_rent_in_cents: 325000
                         desired_min_rent_in_cents: 325000
                         desired_num_bathrooms: "null"
@@ -22488,7 +22488,7 @@ paths:
                       desired_amenities: "null"
                       desired_floor_plan_id: Z000000050
                       desired_floor_plan_name: "null"
-                      desired_lease_term_in_months: 12
+                      desired_lease_term_in_months: "12"
                       desired_max_rent_in_cents: 325000
                       desired_min_rent_in_cents: 325000
                       desired_num_bathrooms: "null"
