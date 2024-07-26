@@ -3403,30 +3403,41 @@ paths:
                           integration_id:
                             type: string
                             description: The Propexo unique identifier for the integration
-                          updated_at:
-                            type: string
-                            description: The last time this rate limit was recorded
-                          day_limit:
-                            type:
-                              - integer
-                              - "null"
-                            description: The maxmimum number of requests per day we can query
-                          hour_limit:
-                            type:
-                              - integer
-                              - "null"
-                            description: The maxmimum number of requests per hour we can query
-                          minute_limit:
-                            type:
-                              - integer
-                              - "null"
-                            description: The maxmimum number of requests per minute we can query
+                          api_ratelimits:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                api:
+                                  type: string
+                                  description: The Entrata API associated with the rate limits
+                                updated_at:
+                                  type: string
+                                  description: The last time this rate limit was recorded
+                                day_limit:
+                                  type:
+                                    - integer
+                                    - "null"
+                                  description: The maxmimum number of requests per day we can query
+                                hour_limit:
+                                  type:
+                                    - integer
+                                    - "null"
+                                  description: The maxmimum number of requests per hour we can query
+                                minute_limit:
+                                  type:
+                                    - integer
+                                    - "null"
+                                  description: The maxmimum number of requests per minute we can query
+                              required:
+                                - api
+                                - updated_at
+                                - day_limit
+                                - hour_limit
+                                - minute_limit
                         required:
                           - integration_id
-                          - updated_at
-                          - day_limit
-                          - hour_limit
-                          - minute_limit
+                          - api_ratelimits
                       - type: object
                         properties:
                           integration_id:
