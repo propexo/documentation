@@ -1238,7 +1238,8 @@ paths:
                   minimum: 1
                   default: 12
                   description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
-                    following: Sync every 12 HOURs)'
+                    following: Sync every 12 HOURs). This value will be used if
+                    the use_custom_schedule is set to false.'
                 sync_cadence:
                   type: string
                   enum:
@@ -1250,7 +1251,8 @@ paths:
                     - SECOND
                   default: HOUR
                   description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
-                    following: Sync every 12 HOURs)'
+                    following: Sync every 12 HOURs). This value will be used if
+                    the use_custom_schedule is set to false.'
                 max_request_cadence:
                   type: string
                   enum:
@@ -1308,6 +1310,72 @@ paths:
                   default: false
                   description: Opt-in to allow manual syncs for this integration to be triggered
                     via the API
+                custom_sync_schedule:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - WEEK_BASED
+                    timezone:
+                      type: string
+                      enum:
+                        - UTC
+                        - America/Anchorage
+                        - America/Denver
+                        - America/Chicago
+                        - America/Los_Angeles
+                        - America/New_York
+                        - Pacific/Honolulu
+                        - America/Phoenix
+                    interval:
+                      type: object
+                      additionalProperties:
+                        type: object
+                        properties:
+                          slots:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                start:
+                                  type: string
+                                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                end:
+                                  type: string
+                                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                enabled:
+                                  type: boolean
+                                sync_frequency:
+                                  type: integer
+                                  exclusiveMinimum: 0
+                                sync_cadence:
+                                  type: string
+                                  enum:
+                                    - MINUTE
+                                    - HOUR
+                                    - DAY
+                                    - WEEK
+                                    - MONTH
+                                    - SECOND
+                              required:
+                                - start
+                                - end
+                                - enabled
+                                - sync_frequency
+                                - sync_cadence
+                        required:
+                          - slots
+                  required:
+                    - type
+                    - timezone
+                    - interval
+                  description: A custom sync schedule configuration object which will be respected
+                    if use_custom_schedule is set to true
+                use_custom_sync_schedule:
+                  type: boolean
+                  default: false
+                  description: Opt-in to use the configured custom_sync_schedule
               required:
                 - integration_vendor
                 - credentials
@@ -1367,7 +1435,8 @@ paths:
                       sync_frequency:
                         type: integer
                         description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
-                          following: Sync every 12 HOURs)'
+                          following: Sync every 12 HOURs). This value will be
+                          used if the use_custom_schedule is set to false.'
                       sync_cadence:
                         type: string
                         enum:
@@ -1378,7 +1447,8 @@ paths:
                           - MONTH
                           - SECOND
                         description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
-                          following: Sync every 12 HOURs)'
+                          following: Sync every 12 HOURs). This value will be
+                          used if the use_custom_schedule is set to false.'
                       max_request_cadence:
                         type: string
                         enum:
@@ -1435,6 +1505,70 @@ paths:
                         type: boolean
                         description: Whether or not manual syncs are allowed to be triggered on this
                           integration
+                      custom_sync_schedule:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            enum:
+                              - WEEK_BASED
+                          timezone:
+                            type: string
+                            enum:
+                              - UTC
+                              - America/Anchorage
+                              - America/Denver
+                              - America/Chicago
+                              - America/Los_Angeles
+                              - America/New_York
+                              - Pacific/Honolulu
+                              - America/Phoenix
+                          interval:
+                            type: object
+                            additionalProperties:
+                              type: object
+                              properties:
+                                slots:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      start:
+                                        type: string
+                                        pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                      end:
+                                        type: string
+                                        pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                      enabled:
+                                        type: boolean
+                                      sync_frequency:
+                                        type: integer
+                                        exclusiveMinimum: 0
+                                      sync_cadence:
+                                        type: string
+                                        enum:
+                                          - MINUTE
+                                          - HOUR
+                                          - DAY
+                                          - WEEK
+                                          - MONTH
+                                          - SECOND
+                                    required:
+                                      - start
+                                      - end
+                                      - enabled
+                                      - sync_frequency
+                                      - sync_cadence
+                              required:
+                                - slots
+                        required:
+                          - type
+                          - timezone
+                          - interval
+                        description: A custom sync schedule configuration object
+                      use_custom_sync_schedule:
+                        type: boolean
+                        description: Opt-in to use the configured custom_sync_schedule
                     required:
                       - id
                       - created_at
@@ -1451,6 +1585,7 @@ paths:
                       - ping_results
                       - new_properties_are_enabled
                       - allow_manual_syncs
+                      - use_custom_sync_schedule
                 required:
                   - result
               examples: {}
@@ -2583,7 +2718,8 @@ paths:
                 sync_frequency:
                   type: integer
                   description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
-                    following: Sync every 12 HOURs)'
+                    following: Sync every 12 HOURs). This value will be used if
+                    the use_custom_schedule is set to false.'
                 sync_cadence:
                   type: string
                   enum:
@@ -2594,7 +2730,8 @@ paths:
                     - MONTH
                     - SECOND
                   description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
-                    following: Sync every 12 HOURs)'
+                    following: Sync every 12 HOURs). This value will be used if
+                    the use_custom_schedule is set to false.'
                 max_request_cadence:
                   type: string
                   enum:
@@ -2643,6 +2780,70 @@ paths:
                   default: false
                   description: Whether or not manual syncs are allowed to be triggered on this
                     integration
+                custom_sync_schedule:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - WEEK_BASED
+                    timezone:
+                      type: string
+                      enum:
+                        - UTC
+                        - America/Anchorage
+                        - America/Denver
+                        - America/Chicago
+                        - America/Los_Angeles
+                        - America/New_York
+                        - Pacific/Honolulu
+                        - America/Phoenix
+                    interval:
+                      type: object
+                      additionalProperties:
+                        type: object
+                        properties:
+                          slots:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                start:
+                                  type: string
+                                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                end:
+                                  type: string
+                                  pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                enabled:
+                                  type: boolean
+                                sync_frequency:
+                                  type: integer
+                                  exclusiveMinimum: 0
+                                sync_cadence:
+                                  type: string
+                                  enum:
+                                    - MINUTE
+                                    - HOUR
+                                    - DAY
+                                    - WEEK
+                                    - MONTH
+                                    - SECOND
+                              required:
+                                - start
+                                - end
+                                - enabled
+                                - sync_frequency
+                                - sync_cadence
+                        required:
+                          - slots
+                  required:
+                    - type
+                    - timezone
+                    - interval
+                  description: A custom sync schedule configuration object
+                use_custom_sync_schedule:
+                  type: boolean
+                  description: Opt-in to use the configured custom_sync_schedule
       responses:
         "200":
           description: Update an integration
@@ -2698,7 +2899,8 @@ paths:
                           - integer
                           - "null"
                         description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
-                          following: Sync every 12 HOURs)'
+                          following: Sync every 12 HOURs). This value will be
+                          used if the use_custom_schedule is set to false.'
                       sync_cadence:
                         type:
                           - string
@@ -2711,7 +2913,8 @@ paths:
                           - MONTH
                           - SECOND
                         description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
-                          following: Sync every 12 HOURs)'
+                          following: Sync every 12 HOURs). This value will be
+                          used if the use_custom_schedule is set to false.'
                       max_request_cadence:
                         type: string
                         enum:
@@ -2761,6 +2964,70 @@ paths:
                         type: boolean
                         description: Whether or not manual syncs are allowed to be triggered on this
                           integration
+                      custom_sync_schedule:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            enum:
+                              - WEEK_BASED
+                          timezone:
+                            type: string
+                            enum:
+                              - UTC
+                              - America/Anchorage
+                              - America/Denver
+                              - America/Chicago
+                              - America/Los_Angeles
+                              - America/New_York
+                              - Pacific/Honolulu
+                              - America/Phoenix
+                          interval:
+                            type: object
+                            additionalProperties:
+                              type: object
+                              properties:
+                                slots:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      start:
+                                        type: string
+                                        pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                      end:
+                                        type: string
+                                        pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
+                                      enabled:
+                                        type: boolean
+                                      sync_frequency:
+                                        type: integer
+                                        exclusiveMinimum: 0
+                                      sync_cadence:
+                                        type: string
+                                        enum:
+                                          - MINUTE
+                                          - HOUR
+                                          - DAY
+                                          - WEEK
+                                          - MONTH
+                                          - SECOND
+                                    required:
+                                      - start
+                                      - end
+                                      - enabled
+                                      - sync_frequency
+                                      - sync_cadence
+                              required:
+                                - slots
+                        required:
+                          - type
+                          - timezone
+                          - interval
+                        description: A custom sync schedule configuration object
+                      use_custom_sync_schedule:
+                        type: boolean
+                        description: Opt-in to use the configured custom_sync_schedule
                     required:
                       - id
                       - created_at
