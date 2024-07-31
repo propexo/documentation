@@ -1344,8 +1344,6 @@ paths:
                                 end:
                                   type: string
                                   pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
-                                enabled:
-                                  type: boolean
                                 sync_frequency:
                                   type: integer
                                   exclusiveMinimum: 0
@@ -1361,7 +1359,6 @@ paths:
                               required:
                                 - start
                                 - end
-                                - enabled
                                 - sync_frequency
                                 - sync_cadence
                         required:
@@ -1539,8 +1536,6 @@ paths:
                                       end:
                                         type: string
                                         pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
-                                      enabled:
-                                        type: boolean
                                       sync_frequency:
                                         type: integer
                                         exclusiveMinimum: 0
@@ -1556,7 +1551,6 @@ paths:
                                     required:
                                       - start
                                       - end
-                                      - enabled
                                       - sync_frequency
                                       - sync_cadence
                               required:
@@ -2814,8 +2808,6 @@ paths:
                                 end:
                                   type: string
                                   pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
-                                enabled:
-                                  type: boolean
                                 sync_frequency:
                                   type: integer
                                   exclusiveMinimum: 0
@@ -2831,7 +2823,6 @@ paths:
                               required:
                                 - start
                                 - end
-                                - enabled
                                 - sync_frequency
                                 - sync_cadence
                         required:
@@ -2998,8 +2989,6 @@ paths:
                                       end:
                                         type: string
                                         pattern: (?:[01]\d|2[0123]):(?:[012345]\d)
-                                      enabled:
-                                        type: boolean
                                       sync_frequency:
                                         type: integer
                                         exclusiveMinimum: 0
@@ -3015,7 +3004,6 @@ paths:
                                     required:
                                       - start
                                       - end
-                                      - enabled
                                       - sync_frequency
                                       - sync_cadence
                               required:
