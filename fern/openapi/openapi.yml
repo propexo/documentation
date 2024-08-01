@@ -5735,6 +5735,117 @@ paths:
                             - "null"
                           description: The zip code associated with the applicant
                           example: "02116"
+                        pets:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the applicant pet
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the record was last seen from the PMS
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              age_in_years:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The age in years of the applicant pet
+                              breed:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The breed of the applicant pet
+                              color:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The color of the applicant pet
+                              gender_raw:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The raw value for the gender of the applicant pet
+                              is_declawed:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the applicant pet is declawed
+                              is_fixed:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the applicant pet is fixed
+                              is_service_animal:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the applicant pet is a service animal
+                              is_trained:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the applicant pet is trained
+                              is_vaccinated:
+                                type:
+                                  - boolean
+                                  - "null"
+                                description: Whether the applicant pet is vaccinated
+                              name:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The name associated with the applicant pet
+                              notes:
+                                type:
+                                  - string
+                                  - "null"
+                                description: Notes associated with the applicant pet
+                              type:
+                                type: string
+                                description: The type associated with the applicant pet
+                              weight_in_pounds:
+                                type:
+                                  - number
+                                  - "null"
+                                description: The weight in pounds of the applicant pet
+                              custom_data:
+                                type:
+                                  - object
+                                  - "null"
+                                properties: {}
+                                description: Custom data
+                            required:
+                              - id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - x_id
+                              - age_in_years
+                              - breed
+                              - color
+                              - gender_raw
+                              - is_declawed
+                              - is_fixed
+                              - is_service_animal
+                              - is_trained
+                              - is_vaccinated
+                              - name
+                              - notes
+                              - type
+                              - weight_in_pounds
+                              - custom_data
                         integration_id:
                           type: string
                           description: The Propexo unique identifier for the integration
@@ -5815,6 +5926,7 @@ paths:
                         - state
                         - zip_alternate
                         - zip
+                        - pets
                         - integration_id
                         - integration_vendor
                         - property_id
@@ -6701,6 +6813,117 @@ paths:
                           - "null"
                         description: The zip code associated with the applicant
                         example: "02116"
+                      pets:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the applicant pet
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            age_in_years:
+                              type:
+                                - number
+                                - "null"
+                              description: The age in years of the applicant pet
+                            breed:
+                              type:
+                                - string
+                                - "null"
+                              description: The breed of the applicant pet
+                            color:
+                              type:
+                                - string
+                                - "null"
+                              description: The color of the applicant pet
+                            gender_raw:
+                              type:
+                                - string
+                                - "null"
+                              description: The raw value for the gender of the applicant pet
+                            is_declawed:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the applicant pet is declawed
+                            is_fixed:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the applicant pet is fixed
+                            is_service_animal:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the applicant pet is a service animal
+                            is_trained:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the applicant pet is trained
+                            is_vaccinated:
+                              type:
+                                - boolean
+                                - "null"
+                              description: Whether the applicant pet is vaccinated
+                            name:
+                              type:
+                                - string
+                                - "null"
+                              description: The name associated with the applicant pet
+                            notes:
+                              type:
+                                - string
+                                - "null"
+                              description: Notes associated with the applicant pet
+                            type:
+                              type: string
+                              description: The type associated with the applicant pet
+                            weight_in_pounds:
+                              type:
+                                - number
+                                - "null"
+                              description: The weight in pounds of the applicant pet
+                            custom_data:
+                              type:
+                                - object
+                                - "null"
+                              properties: {}
+                              description: Custom data
+                          required:
+                            - id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - x_id
+                            - age_in_years
+                            - breed
+                            - color
+                            - gender_raw
+                            - is_declawed
+                            - is_fixed
+                            - is_service_animal
+                            - is_trained
+                            - is_vaccinated
+                            - name
+                            - notes
+                            - type
+                            - weight_in_pounds
+                            - custom_data
                       integration_id:
                         type: string
                         description: The Propexo unique identifier for the integration
@@ -6781,6 +7004,7 @@ paths:
                       - state
                       - zip_alternate
                       - zip
+                      - pets
                       - integration_id
                       - integration_vendor
                       - property_id
@@ -47486,6 +47710,117 @@ webhooks:
                                     - string
                                     - "null"
                                   description: The zip code associated with the applicant
+                                pets:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The Propexo unique identifier for the applicant pet
+                                      created_at:
+                                        type: string
+                                        description: The date record first entered Propexo
+                                      updated_at:
+                                        type: string
+                                        description: The date record was last updated in Propexo
+                                      last_seen:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The date the record was last seen from the PMS
+                                      x_id:
+                                        type: string
+                                        description: The external ID from the integration vendor
+                                      age_in_years:
+                                        type:
+                                          - number
+                                          - "null"
+                                        description: The age in years of the applicant pet
+                                      breed:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The breed of the applicant pet
+                                      color:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The color of the applicant pet
+                                      gender_raw:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The raw value for the gender of the applicant pet
+                                      is_declawed:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the applicant pet is declawed
+                                      is_fixed:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the applicant pet is fixed
+                                      is_service_animal:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the applicant pet is a service animal
+                                      is_trained:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the applicant pet is trained
+                                      is_vaccinated:
+                                        type:
+                                          - boolean
+                                          - "null"
+                                        description: Whether the applicant pet is vaccinated
+                                      name:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The name associated with the applicant pet
+                                      notes:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: Notes associated with the applicant pet
+                                      type:
+                                        type: string
+                                        description: The type associated with the applicant pet
+                                      weight_in_pounds:
+                                        type:
+                                          - number
+                                          - "null"
+                                        description: The weight in pounds of the applicant pet
+                                      custom_data:
+                                        type:
+                                          - object
+                                          - "null"
+                                        properties: {}
+                                        description: Custom data
+                                    required:
+                                      - id
+                                      - created_at
+                                      - updated_at
+                                      - last_seen
+                                      - x_id
+                                      - age_in_years
+                                      - breed
+                                      - color
+                                      - gender_raw
+                                      - is_declawed
+                                      - is_fixed
+                                      - is_service_animal
+                                      - is_trained
+                                      - is_vaccinated
+                                      - name
+                                      - notes
+                                      - type
+                                      - weight_in_pounds
+                                      - custom_data
                                 integration_id:
                                   type: string
                                   description: The Propexo unique identifier for the integration
@@ -50805,6 +51140,117 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the applicant
+                                    pets:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the applicant pet
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          age_in_years:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The age in years of the applicant pet
+                                          breed:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The breed of the applicant pet
+                                          color:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The color of the applicant pet
+                                          gender_raw:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The raw value for the gender of the applicant pet
+                                          is_declawed:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is declawed
+                                          is_fixed:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is fixed
+                                          is_service_animal:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is a service animal
+                                          is_trained:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is trained
+                                          is_vaccinated:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is vaccinated
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the applicant pet
+                                          notes:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Notes associated with the applicant pet
+                                          type:
+                                            type: string
+                                            description: The type associated with the applicant pet
+                                          weight_in_pounds:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The weight in pounds of the applicant pet
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - age_in_years
+                                          - breed
+                                          - color
+                                          - gender_raw
+                                          - is_declawed
+                                          - is_fixed
+                                          - is_service_animal
+                                          - is_trained
+                                          - is_vaccinated
+                                          - name
+                                          - notes
+                                          - type
+                                          - weight_in_pounds
+                                          - custom_data
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
@@ -53999,6 +54445,117 @@ webhooks:
                                         - string
                                         - "null"
                                       description: The zip code associated with the applicant
+                                    pets:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the applicant pet
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          age_in_years:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The age in years of the applicant pet
+                                          breed:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The breed of the applicant pet
+                                          color:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The color of the applicant pet
+                                          gender_raw:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The raw value for the gender of the applicant pet
+                                          is_declawed:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is declawed
+                                          is_fixed:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is fixed
+                                          is_service_animal:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is a service animal
+                                          is_trained:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is trained
+                                          is_vaccinated:
+                                            type:
+                                              - boolean
+                                              - "null"
+                                            description: Whether the applicant pet is vaccinated
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the applicant pet
+                                          notes:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: Notes associated with the applicant pet
+                                          type:
+                                            type: string
+                                            description: The type associated with the applicant pet
+                                          weight_in_pounds:
+                                            type:
+                                              - number
+                                              - "null"
+                                            description: The weight in pounds of the applicant pet
+                                          custom_data:
+                                            type:
+                                              - object
+                                              - "null"
+                                            properties: {}
+                                            description: Custom data
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - age_in_years
+                                          - breed
+                                          - color
+                                          - gender_raw
+                                          - is_declawed
+                                          - is_fixed
+                                          - is_service_animal
+                                          - is_trained
+                                          - is_vaccinated
+                                          - name
+                                          - notes
+                                          - type
+                                          - weight_in_pounds
+                                          - custom_data
                                     integration_id:
                                       type: string
                                       description: The Propexo unique identifier for the integration
