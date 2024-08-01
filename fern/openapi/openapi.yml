@@ -47013,12 +47013,14 @@ webhooks:
                             - amenities
                             - applicants
                             - applicants-to-applications
+                            - applicants-to-events
                             - applications
                             - construction-jobs
                             - employees
                             - events
                             - invoices
                             - leads
+                            - leads-to-events
                             - leases
                             - listings
                             - locations
@@ -47026,6 +47028,7 @@ webhooks:
                             - resident-charges
                             - resident-payments
                             - residents
+                            - residents-to-events
                             - residents-to-leases
                             - screenings
                             - service-request-vendors
@@ -50250,12 +50253,14 @@ webhooks:
                             - amenities
                             - applicants
                             - applicants-to-applications
+                            - applicants-to-events
                             - applications
                             - construction-jobs
                             - employees
                             - events
                             - invoices
                             - leads
+                            - leads-to-events
                             - leases
                             - listings
                             - locations
@@ -50263,6 +50268,7 @@ webhooks:
                             - resident-charges
                             - resident-payments
                             - residents
+                            - residents-to-events
                             - residents-to-leases
                             - screenings
                             - service-request-vendors
@@ -50323,12 +50329,14 @@ webhooks:
                             - amenities
                             - applicants
                             - applicants-to-applications
+                            - applicants-to-events
                             - applications
                             - construction-jobs
                             - employees
                             - events
                             - invoices
                             - leads
+                            - leads-to-events
                             - leases
                             - listings
                             - locations
@@ -50336,6 +50344,7 @@ webhooks:
                             - resident-charges
                             - resident-payments
                             - residents
+                            - residents-to-events
                             - residents-to-leases
                             - screenings
                             - service-request-vendors
@@ -56763,12 +56772,14 @@ webhooks:
                             - amenities
                             - applicants
                             - applicants-to-applications
+                            - applicants-to-events
                             - applications
                             - construction-jobs
                             - employees
                             - events
                             - invoices
                             - leads
+                            - leads-to-events
                             - leases
                             - listings
                             - locations
@@ -56776,6 +56787,7 @@ webhooks:
                             - resident-charges
                             - resident-payments
                             - residents
+                            - residents-to-events
                             - residents-to-leases
                             - screenings
                             - service-request-vendors
