@@ -489,7 +489,8 @@ paths:
         - admin
       summary: Get logs by job ID
       description: Get all logs for a job ID. This returns an array because jobs can
-        have multiple log entries (in the case of retries on failed jobs).
+        have multiple log entries (for example, in the case of retries on failed
+        jobs)
       security:
         - bearerAuth: []
       parameters:
@@ -541,7 +542,8 @@ paths:
       responses:
         "200":
           description: Get all logs for a job ID. This returns an array because jobs can
-            have multiple log entries (in the case of retries on failed jobs).
+            have multiple log entries (for example, in the case of retries on
+            failed jobs)
           content:
             application/json:
               schema:
@@ -1699,7 +1701,7 @@ paths:
                             enum:
                               - ADMIN
                               - DEVELOPER
-                          description: The roles the user has assigned to them
+                          description: The roles assigned to the user
                       required:
                         - id
                         - created_at
