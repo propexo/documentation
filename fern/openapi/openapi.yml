@@ -1264,23 +1264,27 @@ paths:
                     - SECOND
                   default: SECOND
                   description: 'The cadence at which to limit the max request frequency. (e.g.
-                    "SECOND" in the following: 1 request per 2 SECONDs)'
+                    "SECOND" in the following: 1 request per 2 SECONDs).
+                    Requests cannot be made less frequently than once per
+                    minute'
                   example: SECOND
                 max_request_frequency:
                   type: number
                   minimum: 1
                   default: 1
                   description: 'The maximum number of requests sent to the PMS API per cadence
-                    unit. (e.g. "2" in the following: 1 request per 2 SECONDs)'
+                    unit. (e.g. "2" in the following: 1 request per 2 SECONDs).
+                    Requests cannot be made less frequently than once per
+                    minute'
                   example: 1
                 max_job_concurrency:
                   type: integer
-                  maximum: 1
+                  maximum: 100
                   minimum: 1
                   default: 1
                   description: 'Maximum number of jobs that can be run at once for the
                     integration. (e.g. "1" in the following: 1 request per 2
-                    SECONDs) — Please contact support to increase this limit.'
+                    SECONDs)'
                   example: 1
                 active:
                   type: boolean
@@ -1457,25 +1461,26 @@ paths:
                           - SECOND
                         default: SECOND
                         description: 'The cadence at which to limit the max request frequency. (e.g.
-                          "SECOND" in the following: 1 request per 2 SECONDs)'
+                          "SECOND" in the following: 1 request per 2 SECONDs).
+                          Requests cannot be made less frequently than once per
+                          minute'
                         example: SECOND
                       max_request_frequency:
                         type: number
                         minimum: 1
-                        default: 10
+                        default: 1
                         description: 'The maximum number of requests sent to the PMS API per cadence
                           unit. (e.g. "2" in the following: 1 request per 2
-                          SECONDs)'
+                          SECONDs). Requests cannot be made less frequently than
+                          once per minute'
                         example: 10
                       max_job_concurrency:
                         type: integer
-                        maximum: 1
                         minimum: 1
                         default: 1
                         description: 'Maximum number of jobs that can be run at once for the
                           integration. (e.g. "1" in the following: 1 request per
-                          2 SECONDs) — Please contact support to increase this
-                          limit.'
+                          2 SECONDs)'
                         example: 1
                       base_url:
                         type:
@@ -2737,23 +2742,27 @@ paths:
                     - SECOND
                   default: SECOND
                   description: 'The cadence at which to limit the max request frequency. (e.g.
-                    "SECOND" in the following: 1 request per 2 SECONDs)'
+                    "SECOND" in the following: 1 request per 2 SECONDs).
+                    Requests cannot be made less frequently than once per
+                    minute'
                   example: SECOND
                 max_request_frequency:
                   type: number
                   minimum: 1
                   default: 1
                   description: 'The maximum number of requests sent to the PMS API per cadence
-                    unit. (e.g. "2" in the following: 1 request per 2 SECONDs)'
+                    unit. (e.g. "2" in the following: 1 request per 2 SECONDs).
+                    Requests cannot be made less frequently than once per
+                    minute'
                   example: 1
                 max_job_concurrency:
                   type: integer
-                  maximum: 1
+                  maximum: 100
                   minimum: 1
                   default: 1
                   description: 'Maximum number of jobs that can be run at once for the
                     integration. (e.g. "1" in the following: 1 request per 2
-                    SECONDs) — Please contact support to increase this limit.'
+                    SECONDs)'
                   example: 1
                 active:
                   type: boolean
@@ -2917,7 +2926,9 @@ paths:
                           - SECOND
                         default: SECOND
                         description: 'The cadence at which to limit the max request frequency. (e.g.
-                          "SECOND" in the following: 1 request per 2 SECONDs)'
+                          "SECOND" in the following: 1 request per 2 SECONDs).
+                          Requests cannot be made less frequently than once per
+                          minute'
                         example: SECOND
                       max_request_frequency:
                         type: number
@@ -2925,17 +2936,16 @@ paths:
                         default: 10
                         description: 'The maximum number of requests sent to the PMS API per cadence
                           unit. (e.g. "2" in the following: 1 request per 2
-                          SECONDs)'
+                          SECONDs). Requests cannot be made less frequently than
+                          once per minute'
                         example: 10
                       max_job_concurrency:
                         type: integer
-                        maximum: 1
                         minimum: 1
                         default: 1
                         description: 'Maximum number of jobs that can be run at once for the
                           integration. (e.g. "1" in the following: 1 request per
-                          2 SECONDs) — Please contact support to increase this
-                          limit.'
+                          2 SECONDs)'
                         example: 1
                       base_url:
                         type:
@@ -7802,8 +7812,8 @@ paths:
                     meta: {}
                     results:
                       - integration_vendor: BUILDIUM
-                        status: sample_value
-                        x_id: sample_value
+                        status: APPROVED
+                        x_id: "12"
                         x_property_id: sample_value
                         x_unit_id: "null"
                         x_location_id: "null"
@@ -8078,8 +8088,8 @@ paths:
                     meta: {}
                     results:
                       integration_vendor: BUILDIUM
-                      status: sample_value
-                      x_id: sample_value
+                      status: APPROVED
+                      x_id: "12"
                       x_property_id: sample_value
                       x_unit_id: "null"
                       x_location_id: "null"
