@@ -15260,11 +15260,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: "null"
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: "null"
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 ENTRATA:
@@ -15278,11 +15278,11 @@ paths:
                         x_property_id: "123456"
                         agent_name: John Doe
                         appointment_datetime: 2020-02-03T10:15:00Z
+                        appointment_duration_minutes: 30
                         event_datetime: 2020-02-03T11:30:00Z
                         event_name: Appointment
                         reasons_for_event: Initial contact
                         x_type_id: "78901"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 PROPERTYWARE:
@@ -15296,11 +15296,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: "null"
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: sample_value
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE:
@@ -15314,11 +15314,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: sample_value
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE_RPX:
@@ -15332,11 +15332,11 @@ paths:
                         x_property_id: "4221692"
                         agent_name: John Smith
                         appointment_datetime: 2024-04-21T15:38:08.339Z
+                        appointment_duration_minutes: 30
                         event_datetime: 2024-01-19T10:01:08.810Z
                         event_name: Phone call
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: 30
                         x_leasing_agent_id: "65125332"
                         x_location_id: "null"
                 RENTMANAGER:
@@ -15350,11 +15350,11 @@ paths:
                         x_property_id: "123"
                         agent_name: "null"
                         appointment_datetime: 2024-06-03T00:00:00.000Z
+                        appointment_duration_minutes: 30
                         event_datetime: sample_value
                         event_name: Resident Appointment
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: 30
                         x_leasing_agent_id: "null"
                         x_location_id: "123"
                 RENTVINE:
@@ -15368,11 +15368,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: "null"
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: sample_value
                         x_location_id: "null"
                 RESMAN:
@@ -15386,11 +15386,11 @@ paths:
                         x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
                         agent_name: John Doe
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: "null"
                         reasons_for_event: Initial contact
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                         x_location_id: "null"
                 Other:
@@ -15404,11 +15404,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: sample_value
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
         "400":
@@ -15614,11 +15614,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: "null"
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: "null"
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 ENTRATA:
@@ -15632,11 +15632,11 @@ paths:
                       x_property_id: "123456"
                       agent_name: John Doe
                       appointment_datetime: 2020-02-03T10:15:00Z
+                      appointment_duration_minutes: 30
                       event_datetime: 2020-02-03T11:30:00Z
                       event_name: Appointment
                       reasons_for_event: Initial contact
                       x_type_id: "78901"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 PROPERTYWARE:
@@ -15650,11 +15650,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: "null"
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: sample_value
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE:
@@ -15668,11 +15668,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: sample_value
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE_RPX:
@@ -15686,11 +15686,11 @@ paths:
                       x_property_id: "4221692"
                       agent_name: John Smith
                       appointment_datetime: 2024-04-21T15:38:08.339Z
+                      appointment_duration_minutes: 30
                       event_datetime: 2024-01-19T10:01:08.810Z
                       event_name: Phone call
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: 30
                       x_leasing_agent_id: "65125332"
                       x_location_id: "null"
                 RENTMANAGER:
@@ -15704,11 +15704,11 @@ paths:
                       x_property_id: "123"
                       agent_name: "null"
                       appointment_datetime: 2024-06-03T00:00:00.000Z
+                      appointment_duration_minutes: 30
                       event_datetime: sample_value
                       event_name: Resident Appointment
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: 30
                       x_leasing_agent_id: "null"
                       x_location_id: "123"
                 RENTVINE:
@@ -15722,11 +15722,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: "null"
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: sample_value
                       x_location_id: "null"
                 RESMAN:
@@ -15740,11 +15740,11 @@ paths:
                       x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
                       agent_name: John Doe
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: "null"
                       reasons_for_event: Initial contact
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                       x_location_id: "null"
                 Other:
@@ -15758,11 +15758,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: sample_value
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
         "400":
@@ -16272,11 +16272,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: "null"
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: "null"
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 ENTRATA:
@@ -16290,11 +16290,11 @@ paths:
                         x_property_id: "123456"
                         agent_name: John Doe
                         appointment_datetime: 2020-02-03T10:15:00Z
+                        appointment_duration_minutes: 30
                         event_datetime: 2020-02-03T11:30:00Z
                         event_name: Appointment
                         reasons_for_event: Initial contact
                         x_type_id: "78901"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 PROPERTYWARE:
@@ -16308,11 +16308,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: "null"
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: sample_value
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE:
@@ -16326,11 +16326,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: sample_value
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
                 REALPAGE_RPX:
@@ -16344,11 +16344,11 @@ paths:
                         x_property_id: "4221692"
                         agent_name: John Smith
                         appointment_datetime: 2024-04-21T15:38:08.339Z
+                        appointment_duration_minutes: 30
                         event_datetime: 2024-01-19T10:01:08.810Z
                         event_name: Phone call
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: 30
                         x_leasing_agent_id: "65125332"
                         x_location_id: "null"
                 RENTMANAGER:
@@ -16362,11 +16362,11 @@ paths:
                         x_property_id: "123"
                         agent_name: "null"
                         appointment_datetime: 2024-06-03T00:00:00.000Z
+                        appointment_duration_minutes: 30
                         event_datetime: sample_value
                         event_name: Resident Appointment
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: 30
                         x_leasing_agent_id: "null"
                         x_location_id: "123"
                 RENTVINE:
@@ -16380,11 +16380,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: "null"
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: "null"
                         reasons_for_event: "null"
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: sample_value
                         x_location_id: "null"
                 RESMAN:
@@ -16398,11 +16398,11 @@ paths:
                         x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
                         agent_name: John Doe
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: "null"
                         reasons_for_event: Initial contact
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                         x_location_id: "null"
                 Other:
@@ -16416,11 +16416,11 @@ paths:
                         x_property_id: sample_value
                         agent_name: sample_value
                         appointment_datetime: "null"
+                        appointment_duration_minutes: "null"
                         event_datetime: sample_value
                         event_name: sample_value
                         reasons_for_event: sample_value
                         x_type_id: "null"
-                        appointment_duration_minutes: "null"
                         x_leasing_agent_id: "null"
                         x_location_id: "null"
         "400":
@@ -16589,11 +16589,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: "null"
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: "null"
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 ENTRATA:
@@ -16607,11 +16607,11 @@ paths:
                       x_property_id: "123456"
                       agent_name: John Doe
                       appointment_datetime: 2020-02-03T10:15:00Z
+                      appointment_duration_minutes: 30
                       event_datetime: 2020-02-03T11:30:00Z
                       event_name: Appointment
                       reasons_for_event: Initial contact
                       x_type_id: "78901"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 PROPERTYWARE:
@@ -16625,11 +16625,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: "null"
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: sample_value
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE:
@@ -16643,11 +16643,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: sample_value
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
                 REALPAGE_RPX:
@@ -16661,11 +16661,11 @@ paths:
                       x_property_id: "4221692"
                       agent_name: John Smith
                       appointment_datetime: 2024-04-21T15:38:08.339Z
+                      appointment_duration_minutes: 30
                       event_datetime: 2024-01-19T10:01:08.810Z
                       event_name: Phone call
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: 30
                       x_leasing_agent_id: "65125332"
                       x_location_id: "null"
                 RENTMANAGER:
@@ -16679,11 +16679,11 @@ paths:
                       x_property_id: "123"
                       agent_name: "null"
                       appointment_datetime: 2024-06-03T00:00:00.000Z
+                      appointment_duration_minutes: 30
                       event_datetime: sample_value
                       event_name: Resident Appointment
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: 30
                       x_leasing_agent_id: "null"
                       x_location_id: "123"
                 RENTVINE:
@@ -16697,11 +16697,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: "null"
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: "null"
                       reasons_for_event: "null"
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: sample_value
                       x_location_id: "null"
                 RESMAN:
@@ -16715,11 +16715,11 @@ paths:
                       x_property_id: 107c9ff1-7d21-407a-bdbd-e66224c10048
                       agent_name: John Doe
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: "null"
                       reasons_for_event: Initial contact
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: 4f4f1b5a-9ec0-40bc-a886-e0dae65b8df8
                       x_location_id: "null"
                 Other:
@@ -16733,11 +16733,11 @@ paths:
                       x_property_id: sample_value
                       agent_name: sample_value
                       appointment_datetime: "null"
+                      appointment_duration_minutes: "null"
                       event_datetime: sample_value
                       event_name: sample_value
                       reasons_for_event: sample_value
                       x_type_id: "null"
-                      appointment_duration_minutes: "null"
                       x_leasing_agent_id: "null"
                       x_location_id: "null"
         "400":
