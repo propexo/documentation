@@ -14735,12 +14735,13 @@ paths:
                     meta: {}
                     results:
                       - integration_vendor: Other
-                        name: sample_value
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        name: Mark's Plumbing
+                        x_id: marksplumbing
+                        x_property_id: meadowpark
                         email: "null"
                         is_active: "null"
-                        roles: "null"
+                        roles:
+                          - MAINTENANCE
                         x_location_id: "null"
         "400":
           description: invalid input
@@ -14989,12 +14990,13 @@ paths:
                     meta: {}
                     results:
                       integration_vendor: Other
-                      name: sample_value
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      name: Mark's Plumbing
+                      x_id: marksplumbing
+                      x_property_id: meadowpark
                       email: "null"
                       is_active: "null"
-                      roles: "null"
+                      roles:
+                        - MAINTENANCE
                       x_location_id: "null"
         "400":
           description: invalid input
@@ -33301,40 +33303,41 @@ paths:
                               - status_raw
                               - service_request_id
                           description: History of notes and/or updates related to the service request
-                        employee:
-                          type:
-                            - object
-                            - "null"
-                          properties:
-                            id:
-                              type: string
-                              description: The Propexo unique identifier for the employee
-                            created_at:
-                              type: string
-                              description: The date record first entered Propexo
-                            updated_at:
-                              type: string
-                              description: The date record was last updated in Propexo
-                            last_seen:
-                              type:
-                                - string
-                                - "null"
-                              description: The date the record was last seen from the PMS
-                            x_id:
-                              type: string
-                              description: The external ID from the integration vendor
-                            name:
-                              type:
-                                - string
-                                - "null"
-                              description: The name associated with the employee
-                          required:
-                            - id
-                            - created_at
-                            - updated_at
-                            - last_seen
-                            - x_id
-                            - name
+                        employees:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: The Propexo unique identifier for the employee
+                              created_at:
+                                type: string
+                                description: The date record first entered Propexo
+                              updated_at:
+                                type: string
+                                description: The date record was last updated in Propexo
+                              last_seen:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The date the record was last seen from the PMS
+                              x_id:
+                                type: string
+                                description: The external ID from the integration vendor
+                              name:
+                                type:
+                                  - string
+                                  - "null"
+                                description: The name associated with the employee
+                            required:
+                              - id
+                              - created_at
+                              - updated_at
+                              - last_seen
+                              - x_id
+                              - name
+                          description: An array of all employees assigned to the service request
                       required:
                         - id
                         - created_at
@@ -33367,7 +33370,7 @@ paths:
                         - employee_id
                         - vendors
                         - history
-                        - employee
+                        - employees
                 required:
                   - meta
                   - results
@@ -34100,40 +34103,41 @@ paths:
                             - status_raw
                             - service_request_id
                         description: History of notes and/or updates related to the service request
-                      employee:
-                        type:
-                          - object
-                          - "null"
-                        properties:
-                          id:
-                            type: string
-                            description: The Propexo unique identifier for the employee
-                          created_at:
-                            type: string
-                            description: The date record first entered Propexo
-                          updated_at:
-                            type: string
-                            description: The date record was last updated in Propexo
-                          last_seen:
-                            type:
-                              - string
-                              - "null"
-                            description: The date the record was last seen from the PMS
-                          x_id:
-                            type: string
-                            description: The external ID from the integration vendor
-                          name:
-                            type:
-                              - string
-                              - "null"
-                            description: The name associated with the employee
-                        required:
-                          - id
-                          - created_at
-                          - updated_at
-                          - last_seen
-                          - x_id
-                          - name
+                      employees:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: The Propexo unique identifier for the employee
+                            created_at:
+                              type: string
+                              description: The date record first entered Propexo
+                            updated_at:
+                              type: string
+                              description: The date record was last updated in Propexo
+                            last_seen:
+                              type:
+                                - string
+                                - "null"
+                              description: The date the record was last seen from the PMS
+                            x_id:
+                              type: string
+                              description: The external ID from the integration vendor
+                            name:
+                              type:
+                                - string
+                                - "null"
+                              description: The name associated with the employee
+                          required:
+                            - id
+                            - created_at
+                            - updated_at
+                            - last_seen
+                            - x_id
+                            - name
+                        description: An array of all employees assigned to the service request
                     required:
                       - id
                       - created_at
@@ -34166,7 +34170,7 @@ paths:
                       - employee_id
                       - vendors
                       - history
-                      - employee
+                      - employees
                 required:
                   - meta
                   - results
@@ -50195,40 +50199,41 @@ webhooks:
                                     required:
                                       - vendor_id
                                   description: List of vendor IDs associated with the service request
-                                employee:
-                                  type:
-                                    - object
-                                    - "null"
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: The Propexo unique identifier for the employee
-                                    created_at:
-                                      type: string
-                                      description: The date record first entered Propexo
-                                    updated_at:
-                                      type: string
-                                      description: The date record was last updated in Propexo
-                                    last_seen:
-                                      type:
-                                        - string
-                                        - "null"
-                                      description: The date the record was last seen from the PMS
-                                    x_id:
-                                      type: string
-                                      description: The external ID from the integration vendor
-                                    name:
-                                      type:
-                                        - string
-                                        - "null"
-                                      description: The name associated with the employee
-                                  required:
-                                    - id
-                                    - created_at
-                                    - updated_at
-                                    - last_seen
-                                    - x_id
-                                    - name
+                                employees:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The Propexo unique identifier for the employee
+                                      created_at:
+                                        type: string
+                                        description: The date record first entered Propexo
+                                      updated_at:
+                                        type: string
+                                        description: The date record was last updated in Propexo
+                                      last_seen:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The date the record was last seen from the PMS
+                                      x_id:
+                                        type: string
+                                        description: The external ID from the integration vendor
+                                      name:
+                                        type:
+                                          - string
+                                          - "null"
+                                        description: The name associated with the employee
+                                    required:
+                                      - id
+                                      - created_at
+                                      - updated_at
+                                      - last_seen
+                                      - x_id
+                                      - name
+                                  description: An array of all employees assigned to the service request
                               title: service-requests
                             - type: object
                               properties:
@@ -53628,40 +53633,41 @@ webhooks:
                                         required:
                                           - vendor_id
                                       description: List of vendor IDs associated with the service request
-                                    employee:
-                                      type:
-                                        - object
-                                        - "null"
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: The Propexo unique identifier for the employee
-                                        created_at:
-                                          type: string
-                                          description: The date record first entered Propexo
-                                        updated_at:
-                                          type: string
-                                          description: The date record was last updated in Propexo
-                                        last_seen:
-                                          type:
-                                            - string
-                                            - "null"
-                                          description: The date the record was last seen from the PMS
-                                        x_id:
-                                          type: string
-                                          description: The external ID from the integration vendor
-                                        name:
-                                          type:
-                                            - string
-                                            - "null"
-                                          description: The name associated with the employee
-                                      required:
-                                        - id
-                                        - created_at
-                                        - updated_at
-                                        - last_seen
-                                        - x_id
-                                        - name
+                                    employees:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the employee
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the employee
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - name
+                                      description: An array of all employees assigned to the service request
                                   title: service-requests
                                 - type: object
                                   properties:
@@ -56933,40 +56939,41 @@ webhooks:
                                         required:
                                           - vendor_id
                                       description: List of vendor IDs associated with the service request
-                                    employee:
-                                      type:
-                                        - object
-                                        - "null"
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: The Propexo unique identifier for the employee
-                                        created_at:
-                                          type: string
-                                          description: The date record first entered Propexo
-                                        updated_at:
-                                          type: string
-                                          description: The date record was last updated in Propexo
-                                        last_seen:
-                                          type:
-                                            - string
-                                            - "null"
-                                          description: The date the record was last seen from the PMS
-                                        x_id:
-                                          type: string
-                                          description: The external ID from the integration vendor
-                                        name:
-                                          type:
-                                            - string
-                                            - "null"
-                                          description: The name associated with the employee
-                                      required:
-                                        - id
-                                        - created_at
-                                        - updated_at
-                                        - last_seen
-                                        - x_id
-                                        - name
+                                    employees:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: The Propexo unique identifier for the employee
+                                          created_at:
+                                            type: string
+                                            description: The date record first entered Propexo
+                                          updated_at:
+                                            type: string
+                                            description: The date record was last updated in Propexo
+                                          last_seen:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The date the record was last seen from the PMS
+                                          x_id:
+                                            type: string
+                                            description: The external ID from the integration vendor
+                                          name:
+                                            type:
+                                              - string
+                                              - "null"
+                                            description: The name associated with the employee
+                                        required:
+                                          - id
+                                          - created_at
+                                          - updated_at
+                                          - last_seen
+                                          - x_id
+                                          - name
+                                      description: An array of all employees assigned to the service request
                                   title: service-requests
                                 - type: object
                                   properties:
