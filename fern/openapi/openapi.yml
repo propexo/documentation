@@ -851,6 +851,15 @@ paths:
                                   - REALPAGE_RPX_PROSPECTS_SURVEY
                                   - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                   - REALPAGE_RPX_FLOOR_PLANS
+                                  - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
+                                  - REALPAGE_RPX_LEAD_RELATIONSHIPS
+                                  - REALPAGE_RPX_LEAD_SOURCES
+                                  - REALPAGE_RPX_LEASING_AGENTS
+                                  - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                                  - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
+                                  - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
+                                  - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
+                                  - REALPAGE_RPX_APPOINTMENTS
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
                                   - ENTRATA_LEAD_EVENTS
@@ -939,6 +948,15 @@ paths:
                                     - REALPAGE_RPX_PROSPECTS_SURVEY
                                     - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                     - REALPAGE_RPX_FLOOR_PLANS
+                                    - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
+                                    - REALPAGE_RPX_LEAD_RELATIONSHIPS
+                                    - REALPAGE_RPX_LEAD_SOURCES
+                                    - REALPAGE_RPX_LEASING_AGENTS
+                                    - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                                    - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
+                                    - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
+                                    - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
+                                    - REALPAGE_RPX_APPOINTMENTS
                                     - ENTRATA_AMENITIES
                                     - ENTRATA_LEASES
                                     - ENTRATA_LEAD_EVENTS
@@ -2344,6 +2362,15 @@ paths:
                                 - REALPAGE_RPX_PROSPECTS_SURVEY
                                 - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                 - REALPAGE_RPX_FLOOR_PLANS
+                                - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
+                                - REALPAGE_RPX_LEAD_RELATIONSHIPS
+                                - REALPAGE_RPX_LEAD_SOURCES
+                                - REALPAGE_RPX_LEASING_AGENTS
+                                - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                                - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
+                                - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
+                                - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
+                                - REALPAGE_RPX_APPOINTMENTS
                                 - ENTRATA_AMENITIES
                                 - ENTRATA_LEASES
                                 - ENTRATA_LEAD_EVENTS
@@ -2432,6 +2459,15 @@ paths:
                                   - REALPAGE_RPX_PROSPECTS_SURVEY
                                   - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
                                   - REALPAGE_RPX_FLOOR_PLANS
+                                  - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
+                                  - REALPAGE_RPX_LEAD_RELATIONSHIPS
+                                  - REALPAGE_RPX_LEAD_SOURCES
+                                  - REALPAGE_RPX_LEASING_AGENTS
+                                  - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                                  - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
+                                  - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
+                                  - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
+                                  - REALPAGE_RPX_APPOINTMENTS
                                   - ENTRATA_AMENITIES
                                   - ENTRATA_LEASES
                                   - ENTRATA_LEAD_EVENTS
