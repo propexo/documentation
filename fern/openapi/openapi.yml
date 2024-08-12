@@ -1373,13 +1373,13 @@ paths:
                       type: string
                       enum:
                         - UTC
-                        - America/Anchorage
-                        - America/Denver
-                        - America/Chicago
-                        - America/Los_Angeles
                         - America/New_York
-                        - Pacific/Honolulu
+                        - America/Chicago
+                        - America/Denver
                         - America/Phoenix
+                        - America/Los_Angeles
+                        - America/Anchorage
+                        - Pacific/Honolulu
                     interval:
                       type: object
                       additionalProperties:
@@ -1566,13 +1566,13 @@ paths:
                             type: string
                             enum:
                               - UTC
-                              - America/Anchorage
-                              - America/Denver
-                              - America/Chicago
-                              - America/Los_Angeles
                               - America/New_York
-                              - Pacific/Honolulu
+                              - America/Chicago
+                              - America/Denver
                               - America/Phoenix
+                              - America/Los_Angeles
+                              - America/Anchorage
+                              - Pacific/Honolulu
                           interval:
                             type: object
                             additionalProperties:
@@ -2888,13 +2888,13 @@ paths:
                       type: string
                       enum:
                         - UTC
-                        - America/Anchorage
-                        - America/Denver
-                        - America/Chicago
-                        - America/Los_Angeles
                         - America/New_York
-                        - Pacific/Honolulu
+                        - America/Chicago
+                        - America/Denver
                         - America/Phoenix
+                        - America/Los_Angeles
+                        - America/Anchorage
+                        - Pacific/Honolulu
                     interval:
                       type: object
                       additionalProperties:
@@ -3070,13 +3070,13 @@ paths:
                             type: string
                             enum:
                               - UTC
-                              - America/Anchorage
-                              - America/Denver
-                              - America/Chicago
-                              - America/Los_Angeles
                               - America/New_York
-                              - Pacific/Honolulu
+                              - America/Chicago
+                              - America/Denver
                               - America/Phoenix
+                              - America/Los_Angeles
+                              - America/Anchorage
+                              - Pacific/Honolulu
                           interval:
                             type: object
                             additionalProperties:
