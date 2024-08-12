@@ -20192,7 +20192,7 @@ paths:
                         phone_2: sample_value
                         phone_2_type: "null"
                         state: MA
-                        status: "null"
+                        status: lost
                         target_move_in_date: sample_value
                         x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                         x_lead_source_id: sample_value
@@ -21265,7 +21265,7 @@ paths:
                       phone_2: sample_value
                       phone_2_type: "null"
                       state: MA
-                      status: "null"
+                      status: lost
                       target_move_in_date: sample_value
                       x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                       x_lead_source_id: sample_value
@@ -22072,7 +22072,7 @@ paths:
                         phone_2: sample_value
                         phone_2_type: "null"
                         state: MA
-                        status: "null"
+                        status: lost
                         target_move_in_date: sample_value
                         x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                         x_lead_source_id: sample_value
@@ -22676,7 +22676,7 @@ paths:
                         phone_2: sample_value
                         phone_2_type: "null"
                         state: MA
-                        status: "null"
+                        status: lost
                         target_move_in_date: sample_value
                         x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                         x_lead_source_id: sample_value
@@ -23243,7 +23243,7 @@ paths:
                       phone_2: sample_value
                       phone_2_type: "null"
                       state: MA
-                      status: "null"
+                      status: lost
                       target_move_in_date: sample_value
                       x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                       x_lead_source_id: sample_value
