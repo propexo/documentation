@@ -892,6 +892,7 @@ paths:
                                   - RENTVINE_BASE
                                   - MRI_BASE
                                   - RESMAN_BASE
+                                  - APPFOLIO_BASE
                               enabled:
                                 type: boolean
                               version:
@@ -989,6 +990,7 @@ paths:
                                     - RENTVINE_BASE
                                     - MRI_BASE
                                     - RESMAN_BASE
+                                    - APPFOLIO_BASE
                             required:
                               - enabled
                               - from_interfaces
@@ -2403,6 +2405,7 @@ paths:
                                 - RENTVINE_BASE
                                 - MRI_BASE
                                 - RESMAN_BASE
+                                - APPFOLIO_BASE
                             enabled:
                               type: boolean
                             version:
@@ -2500,6 +2503,7 @@ paths:
                                   - RENTVINE_BASE
                                   - MRI_BASE
                                   - RESMAN_BASE
+                                  - APPFOLIO_BASE
                           required:
                             - enabled
                             - from_interfaces
