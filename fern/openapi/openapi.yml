@@ -25913,48 +25913,48 @@ paths:
                     meta: {}
                     results:
                       - integration_vendor: RESMAN
-                        application_url: sample_value
-                        available_date: sample_value
+                        application_url: https://property-url.myresman.com/Portal/Applicants/ExampleURL
+                        available_date: 2023-02-05T00:00:00.000Z
                         bathrooms: "1.5"
                         bathrooms_full: 1
                         bathrooms_half: 1
-                        bedrooms: sample_value
-                        building_name: sample_value
-                        city: Boston
-                        country: US
-                        deposit_amount_in_cents: sample_value
+                        bedrooms: "2"
+                        building_name: Gateway Court
+                        city: Burlington
+                        country: United States
+                        deposit_amount_in_cents: "35000"
                         image_urls_array: sample_value
-                        is_listed: "null"
+                        is_listed: true
                         listing_date: "null"
-                        number: sample_value
-                        rent_amount_in_cents: sample_value
-                        square_feet: sample_value
-                        state: MA
-                        street_address_1: sample_value
-                        street_address_2: sample_value
+                        number: "210"
+                        rent_amount_in_cents: "175000"
+                        square_feet: "997"
+                        state: CA
+                        street_address_1: 123 Main Street
+                        street_address_2: "210"
                         unit_description: "null"
-                        unit_id: sample_value
+                        unit_id: "null"
                         video_urls: "null"
-                        x_id: sample_value
+                        x_id: sdPFT6040dA8y8lCPYd87tpdFtLASs
                         x_property_id: sample_value
                         x_unit_id: "null"
-                        zip: "02116"
-                        floor_plan_code: "null"
-                        floor_plan_name: sample_value
-                        is_available: sample_value
+                        zip: "90210"
+                        floor_plan_code: A4 WASHINGTON
+                        floor_plan_name: Washington - 2 Bedroom, 2 Bathroom
+                        is_available: true
                         is_vacant: sample_value
                         lease_term: sample_value
-                        make_ready_date: sample_value
-                        floor: sample_value
+                        make_ready_date: 2023-02-10T00:00:00.000Z
+                        floor: "2"
                         is_unit: "null"
                         listing_title: "null"
-                        marketing_name: "null"
+                        marketing_name: "210"
                         notes: "null"
-                        property_description: "null"
+                        property_description: An apartment in the heart of the city.
                         short_description: "null"
                         specials: "null"
                         building_number: "null"
-                        vacate_date: sample_value
+                        vacate_date: 2023-02-10T00:00:00.000Z
                         x_location_id: "null"
                         is_furnished: "null"
                 Other:
@@ -26832,48 +26832,48 @@ paths:
                     meta: {}
                     results:
                       integration_vendor: RESMAN
-                      application_url: sample_value
-                      available_date: sample_value
+                      application_url: https://property-url.myresman.com/Portal/Applicants/ExampleURL
+                      available_date: 2023-02-05T00:00:00.000Z
                       bathrooms: "1.5"
                       bathrooms_full: 1
                       bathrooms_half: 1
-                      bedrooms: sample_value
-                      building_name: sample_value
-                      city: Boston
-                      country: US
-                      deposit_amount_in_cents: sample_value
+                      bedrooms: "2"
+                      building_name: Gateway Court
+                      city: Burlington
+                      country: United States
+                      deposit_amount_in_cents: "35000"
                       image_urls_array: sample_value
-                      is_listed: "null"
+                      is_listed: true
                       listing_date: "null"
-                      number: sample_value
-                      rent_amount_in_cents: sample_value
-                      square_feet: sample_value
-                      state: MA
-                      street_address_1: sample_value
-                      street_address_2: sample_value
+                      number: "210"
+                      rent_amount_in_cents: "175000"
+                      square_feet: "997"
+                      state: CA
+                      street_address_1: 123 Main Street
+                      street_address_2: "210"
                       unit_description: "null"
-                      unit_id: sample_value
+                      unit_id: "null"
                       video_urls: "null"
-                      x_id: sample_value
+                      x_id: sdPFT6040dA8y8lCPYd87tpdFtLASs
                       x_property_id: sample_value
                       x_unit_id: "null"
-                      zip: "02116"
-                      floor_plan_code: "null"
-                      floor_plan_name: sample_value
-                      is_available: sample_value
+                      zip: "90210"
+                      floor_plan_code: A4 WASHINGTON
+                      floor_plan_name: Washington - 2 Bedroom, 2 Bathroom
+                      is_available: true
                       is_vacant: sample_value
                       lease_term: sample_value
-                      make_ready_date: sample_value
-                      floor: sample_value
+                      make_ready_date: 2023-02-10T00:00:00.000Z
+                      floor: "2"
                       is_unit: "null"
                       listing_title: "null"
-                      marketing_name: "null"
+                      marketing_name: "210"
                       notes: "null"
-                      property_description: "null"
+                      property_description: An apartment in the heart of the city.
                       short_description: "null"
                       specials: "null"
                       building_number: "null"
-                      vacate_date: sample_value
+                      vacate_date: 2023-02-10T00:00:00.000Z
                       x_location_id: "null"
                       is_furnished: "null"
                 Other:
