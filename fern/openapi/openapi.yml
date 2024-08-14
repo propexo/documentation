@@ -823,6 +823,21 @@ paths:
                                   - REALPAGE_SDE_CONVERGENT_BILLING
                                   - REALPAGE_UNIT
                                   - REALPAGE_PRICING_AND_AVAILABILITY
+                                  - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
+                                  - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
+                                  - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
+                                  - REALPAGE_PROSPECT_MANAGEMENT_LEAD
+                                  - REALPAGE_PROSPECT_MANAGEMENT_LEAD_SOURCES
+                                  - REALPAGE_PROSPECT_MANAGEMENT_PROPERTIES
+                                  - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_LOGS
+                                  - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_TYPES
+                                  - REALPAGE_RESIDENTS_RESIDENT_GENERAL_INFO
+                                  - REALPAGE_RESIDENTS_RESIDENT_LEASE
+                                  - REALPAGE_RESIDENTS_RESIDENT_LEDGER
+                                  - REALPAGE_RESIDENTS_RESIDENT_LIST
+                                  - REALPAGE_FACILITIES_SERVICE_REQUESTS
+                                  - REALPAGE_PROSPECT_MANAGEMENT_UNITS
+                                  - REALPAGE_UNIT_UNIT_DETAILS
 
 
 
@@ -921,6 +936,21 @@ paths:
                                     - REALPAGE_SDE_CONVERGENT_BILLING
                                     - REALPAGE_UNIT
                                     - REALPAGE_PRICING_AND_AVAILABILITY
+                                    - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
+                                    - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
+                                    - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
+                                    - REALPAGE_PROSPECT_MANAGEMENT_LEAD
+                                    - REALPAGE_PROSPECT_MANAGEMENT_LEAD_SOURCES
+                                    - REALPAGE_PROSPECT_MANAGEMENT_PROPERTIES
+                                    - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_LOGS
+                                    - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_TYPES
+                                    - REALPAGE_RESIDENTS_RESIDENT_GENERAL_INFO
+                                    - REALPAGE_RESIDENTS_RESIDENT_LEASE
+                                    - REALPAGE_RESIDENTS_RESIDENT_LEDGER
+                                    - REALPAGE_RESIDENTS_RESIDENT_LIST
+                                    - REALPAGE_FACILITIES_SERVICE_REQUESTS
+                                    - REALPAGE_PROSPECT_MANAGEMENT_UNITS
+                                    - REALPAGE_UNIT_UNIT_DETAILS
 
 
 
@@ -2336,6 +2366,21 @@ paths:
                                 - REALPAGE_SDE_CONVERGENT_BILLING
                                 - REALPAGE_UNIT
                                 - REALPAGE_PRICING_AND_AVAILABILITY
+                                - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
+                                - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
+                                - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
+                                - REALPAGE_PROSPECT_MANAGEMENT_LEAD
+                                - REALPAGE_PROSPECT_MANAGEMENT_LEAD_SOURCES
+                                - REALPAGE_PROSPECT_MANAGEMENT_PROPERTIES
+                                - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_LOGS
+                                - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_TYPES
+                                - REALPAGE_RESIDENTS_RESIDENT_GENERAL_INFO
+                                - REALPAGE_RESIDENTS_RESIDENT_LEASE
+                                - REALPAGE_RESIDENTS_RESIDENT_LEDGER
+                                - REALPAGE_RESIDENTS_RESIDENT_LIST
+                                - REALPAGE_FACILITIES_SERVICE_REQUESTS
+                                - REALPAGE_PROSPECT_MANAGEMENT_UNITS
+                                - REALPAGE_UNIT_UNIT_DETAILS
 
 
 
@@ -2434,6 +2479,21 @@ paths:
                                   - REALPAGE_SDE_CONVERGENT_BILLING
                                   - REALPAGE_UNIT
                                   - REALPAGE_PRICING_AND_AVAILABILITY
+                                  - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
+                                  - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
+                                  - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
+                                  - REALPAGE_PROSPECT_MANAGEMENT_LEAD
+                                  - REALPAGE_PROSPECT_MANAGEMENT_LEAD_SOURCES
+                                  - REALPAGE_PROSPECT_MANAGEMENT_PROPERTIES
+                                  - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_LOGS
+                                  - REALPAGE_RESIDENTS_RESIDENT_ACTIVITY_TYPES
+                                  - REALPAGE_RESIDENTS_RESIDENT_GENERAL_INFO
+                                  - REALPAGE_RESIDENTS_RESIDENT_LEASE
+                                  - REALPAGE_RESIDENTS_RESIDENT_LEDGER
+                                  - REALPAGE_RESIDENTS_RESIDENT_LIST
+                                  - REALPAGE_FACILITIES_SERVICE_REQUESTS
+                                  - REALPAGE_PROSPECT_MANAGEMENT_UNITS
+                                  - REALPAGE_UNIT_UNIT_DETAILS
 
 
 
