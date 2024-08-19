@@ -8333,6 +8333,531 @@ paths:
                       x_location_id: "null"
         "400":
           description: invalid input
+  /v1/application-templates:
+    get:
+      tags:
+        - applications
+      summary: Get all Application Templates
+      description: Get all Application Templates
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all Application Templates
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the application template
+                          example: clwktsp9v000008l31iv218hn
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                          example: 2024-03-21T15:38:08.337Z
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                          example: 2024-03-22T10:59:45.119Z
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                          example: 2024-03-22T10:59:45.119Z
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        name:
+                          type: string
+                          description: The name associated with the application template
+                        is_active:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the application template is active
+                        is_default:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether this record is the default application template
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                          example: clwh5u07w000508me66sfh3um
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                          example: clwi5xiix000008l6ctdgafyh
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - name
+                        - is_active
+                        - is_default
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: BUILDIUM
+                        status: APPROVED
+                        x_id: "12"
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        x_location_id: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: ENTRATA
+                        status: approved
+                        x_id: application789
+                        x_property_id: property456
+                        x_unit_id: "null"
+                        x_location_id: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: PROPERTYWARE
+                        status: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: sample_value
+                        x_location_id: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE
+                        status: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        x_location_id: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE_RPX
+                        status: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        x_location_id: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTMANAGER
+                        status: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        x_location_id: sample_value
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTVINE
+                        status: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: sample_value
+                        x_location_id: "null"
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RESMAN
+                        status: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        x_location_id: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: Other
+                        status: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_unit_id: "null"
+                        x_location_id: "null"
+        "400":
+          description: invalid input
+  /v1/application-templates/{application_template_id}:
+    get:
+      tags:
+        - applications
+      summary: Get Application Template by ID
+      description: Get Application Template by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: application_template_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get Application Template by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the application template
+                        example: clwktsp9v000008l31iv218hn
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                        example: 2024-03-21T15:38:08.337Z
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                        example: 2024-03-22T10:59:45.119Z
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                        example: 2024-03-22T10:59:45.119Z
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      name:
+                        type: string
+                        description: The name associated with the application template
+                      is_active:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the application template is active
+                      is_default:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether this record is the default application template
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                        example: clwh5u07w000508me66sfh3um
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                        example: clwi5xiix000008l6ctdgafyh
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - name
+                      - is_active
+                      - is_default
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                required:
+                  - meta
+                  - results
+              examples:
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: BUILDIUM
+                      status: APPROVED
+                      x_id: "12"
+                      x_property_id: sample_value
+                      x_unit_id: "null"
+                      x_location_id: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: ENTRATA
+                      status: approved
+                      x_id: application789
+                      x_property_id: property456
+                      x_unit_id: "null"
+                      x_location_id: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: PROPERTYWARE
+                      status: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: sample_value
+                      x_location_id: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE
+                      status: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: "null"
+                      x_location_id: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE_RPX
+                      status: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: "null"
+                      x_location_id: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTMANAGER
+                      status: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: "null"
+                      x_location_id: sample_value
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTVINE
+                      status: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: sample_value
+                      x_location_id: "null"
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RESMAN
+                      status: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: "null"
+                      x_location_id: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: Other
+                      status: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_unit_id: "null"
+                      x_location_id: "null"
+        "400":
+          description: invalid input
   /v1/appointments:
     get:
       tags:
