@@ -10761,23 +10761,19 @@ paths:
           name: integration_vendor
           in: query
         - schema:
-            anyOf:
-              - type: string
-                format: date-time
-              - type: string
-                pattern: ^\d{4}-\d{2}-\d{2}$
+            type:
+              - string
+              - "null"
             description: The start of the transaction date range to search. Inclusive.
-          required: true
+          required: false
           name: transaction_date_start
           in: query
         - schema:
-            anyOf:
-              - type: string
-                format: date-time
-              - type: string
-                pattern: ^\d{4}-\d{2}-\d{2}$
+            type:
+              - string
+              - "null"
             description: The end of the transaction date range to search. Inclusive.
-          required: true
+          required: false
           name: transaction_date_end
           in: query
       responses:
@@ -12628,7 +12624,7 @@ paths:
             type:
               - string
               - "null"
-            description: ""
+            description: The start of the transaction date range to search. Inclusive.
           required: false
           name: transaction_date_start
           in: query
@@ -12636,7 +12632,7 @@ paths:
             type:
               - string
               - "null"
-            description: ""
+            description: The end of the transaction date range to search. Inclusive.
           required: false
           name: transaction_date_end
           in: query
