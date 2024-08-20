@@ -26548,7 +26548,7 @@ paths:
                     results:
                       - integration_vendor: Other
                         application_url: "null"
-                        available_date: "null"
+                        available_date: 2024-05-07T00:00:00.000Z
                         bathrooms: "1.5"
                         bathrooms_full: 1
                         bathrooms_half: 1
@@ -26567,9 +26567,9 @@ paths:
                         street_address_1: 123 Main St
                         street_address_2: sample_value
                         unit_description: "null"
-                        unit_id: clwqjwc1e000008i7fnrrayzc:lkeutd:R4
+                        unit_id: clwqjwc1e000008i7fnrrayzc:lkeutd:1234
                         video_urls: "null"
-                        x_id: R4
+                        x_id: "1234"
                         x_property_id: clwqjwc1e000008i7fnrrayzc:23423:34634
                         x_unit_id: "null"
                         zip: "02116"
@@ -27467,7 +27467,7 @@ paths:
                     results:
                       integration_vendor: Other
                       application_url: "null"
-                      available_date: "null"
+                      available_date: 2024-05-07T00:00:00.000Z
                       bathrooms: "1.5"
                       bathrooms_full: 1
                       bathrooms_half: 1
@@ -27486,9 +27486,9 @@ paths:
                       street_address_1: 123 Main St
                       street_address_2: sample_value
                       unit_description: "null"
-                      unit_id: clwqjwc1e000008i7fnrrayzc:lkeutd:R4
+                      unit_id: clwqjwc1e000008i7fnrrayzc:lkeutd:1234
                       video_urls: "null"
-                      x_id: R4
+                      x_id: "1234"
                       x_property_id: clwqjwc1e000008i7fnrrayzc:23423:34634
                       x_unit_id: "null"
                       zip: "02116"
@@ -41395,7 +41395,7 @@ paths:
                         state: MA
                         street_address_1: sample_value
                         street_address_2: sample_value
-                        x_id: sample_value
+                        x_id: "1234"
                         x_property_id: sample_value
                         zip: "02116"
                         pets_allowed: "null"
@@ -41939,7 +41939,7 @@ paths:
                       state: MA
                       street_address_1: sample_value
                       street_address_2: sample_value
-                      x_id: sample_value
+                      x_id: "1234"
                       x_property_id: sample_value
                       zip: "02116"
                       pets_allowed: "null"
@@ -42643,7 +42643,7 @@ paths:
                         state: MA
                         street_address_1: sample_value
                         street_address_2: sample_value
-                        x_id: sample_value
+                        x_id: "1234"
                         x_property_id: sample_value
                         zip: "02116"
                         pets_allowed: "null"
@@ -43452,7 +43452,7 @@ paths:
                         state: MA
                         street_address_1: sample_value
                         street_address_2: sample_value
-                        x_id: sample_value
+                        x_id: "1234"
                         x_property_id: sample_value
                         zip: "02116"
                         pets_allowed: "null"
@@ -44105,7 +44105,7 @@ paths:
                       state: MA
                       street_address_1: sample_value
                       street_address_2: sample_value
-                      x_id: sample_value
+                      x_id: "1234"
                       x_property_id: sample_value
                       zip: "02116"
                       pets_allowed: "null"
@@ -44712,7 +44712,7 @@ paths:
                         state: MA
                         street_address_1: sample_value
                         street_address_2: sample_value
-                        x_id: sample_value
+                        x_id: "1234"
                         x_property_id: sample_value
                         zip: "02116"
                         pets_allowed: "null"
@@ -45178,7 +45178,7 @@ paths:
                       state: MA
                       street_address_1: sample_value
                       street_address_2: sample_value
-                      x_id: sample_value
+                      x_id: "1234"
                       x_property_id: sample_value
                       zip: "02116"
                       pets_allowed: "null"
@@ -45824,7 +45824,7 @@ paths:
                       state: MA
                       street_address_1: sample_value
                       street_address_2: sample_value
-                      x_id: sample_value
+                      x_id: "1234"
                       x_property_id: sample_value
                       zip: "02116"
                       pets_allowed: "null"
