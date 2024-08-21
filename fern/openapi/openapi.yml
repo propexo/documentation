@@ -33877,6 +33877,11 @@ paths:
                             - string
                             - "null"
                           description: Details about the service request
+                        service_priority:
+                          type:
+                            - string
+                            - "null"
+                          description: The priority level associated with the service request
                         status_raw:
                           type:
                             - string
@@ -34037,6 +34042,7 @@ paths:
                         - service_category
                         - service_description
                         - service_details
+                        - service_priority
                         - status_raw
                         - vendor_notes
                         - unit_number
@@ -34677,6 +34683,11 @@ paths:
                           - string
                           - "null"
                         description: Details about the service request
+                      service_priority:
+                        type:
+                          - string
+                          - "null"
+                        description: The priority level associated with the service request
                       status_raw:
                         type:
                           - string
@@ -34837,6 +34848,7 @@ paths:
                       - service_category
                       - service_description
                       - service_details
+                      - service_priority
                       - status_raw
                       - vendor_notes
                       - unit_number
@@ -50828,6 +50840,11 @@ webhooks:
                                     - string
                                     - "null"
                                   description: Details about the service request
+                                service_priority:
+                                  type:
+                                    - string
+                                    - "null"
+                                  description: The priority level associated with the service request
                                 status_raw:
                                   type:
                                     - string
@@ -54262,6 +54279,11 @@ webhooks:
                                         - string
                                         - "null"
                                       description: Details about the service request
+                                    service_priority:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The priority level associated with the service request
                                     status_raw:
                                       type:
                                         - string
@@ -57568,6 +57590,11 @@ webhooks:
                                         - string
                                         - "null"
                                       description: Details about the service request
+                                    service_priority:
+                                      type:
+                                        - string
+                                        - "null"
+                                      description: The priority level associated with the service request
                                     status_raw:
                                       type:
                                         - string
