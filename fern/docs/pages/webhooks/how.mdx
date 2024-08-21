@@ -18,18 +18,16 @@ const express = require('express');
 const app = express();
 
 app.post('/webhook/leases', async (req, res) => {
-    const data = req.body;
+    const lease = req.body;
 
     // Perform business logic
-    for (const lease of data.results) {
-        const { status: prevStatus } = lease.previous;
-        const { status } = lease.new;
-        if (prevStatus === 'pending' && status === 'approved') {
-            const { email } = lease.tenant;
-            // Send an email to the tenant
-            await app.sendEmail(email, 'Your lease has been approved');
-        }
-    };
+    const { status: prevStatus } = lease?.diff?.previous;
+    const { status } = lease?.diff?.new;
+    if (prevStatus === 'pending' && status === 'approved') {
+        const { email } = lease?.tenant;
+        // Send an email to the tenant
+        await app.sendEmail(email, 'Your lease has been approved');
+    }
 
     res.send(200);
 });
