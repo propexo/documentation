@@ -907,7 +907,8 @@ paths:
                                   - RENTVINE_BASE
                                   - MRI_BASE
                                   - RESMAN_BASE
-                                  - APPFOLIO_BASE
+
+
                               enabled:
                                 type: boolean
                               version:
@@ -1020,7 +1021,8 @@ paths:
                                     - RENTVINE_BASE
                                     - MRI_BASE
                                     - RESMAN_BASE
-                                    - APPFOLIO_BASE
+
+
                             required:
                               - enabled
                               - from_interfaces
@@ -2450,7 +2452,8 @@ paths:
                                 - RENTVINE_BASE
                                 - MRI_BASE
                                 - RESMAN_BASE
-                                - APPFOLIO_BASE
+
+
                             enabled:
                               type: boolean
                             version:
@@ -2563,7 +2566,8 @@ paths:
                                   - RENTVINE_BASE
                                   - MRI_BASE
                                   - RESMAN_BASE
-                                  - APPFOLIO_BASE
+
+
                           required:
                             - enabled
                             - from_interfaces
@@ -47928,7 +47932,6 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
-                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
@@ -51361,7 +51364,6 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
-                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
@@ -58112,7 +58114,6 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
-                            - APPFOLIO
                             - INTERNAL
                         successful_job_count:
                           type: number
@@ -58160,7 +58161,6 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
-                            - APPFOLIO
                             - INTERNAL
                         successful_job_count:
                           type: number
@@ -58209,7 +58209,6 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
-                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
@@ -58256,7 +58255,6 @@ webhooks:
                             - REALPAGE_RPX
                             - MRI
                             - RESMAN
-                            - APPFOLIO
                             - INTERNAL
                         event:
                           type: string
