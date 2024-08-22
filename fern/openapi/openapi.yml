@@ -1304,20 +1304,6 @@ paths:
                         - apiKey
                       description: ResMan authentication credentials
                       title: Resman
-                    - type: object
-                      properties:
-                        clientId:
-                          type: string
-                        clientSecret:
-                          type: string
-                        developerId:
-                          type: string
-                      required:
-                        - clientId
-                        - clientSecret
-                        - developerId
-                      description: AppFolio authentication credentials
-                      title: AppFolio
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
@@ -2879,20 +2865,6 @@ paths:
                         - apiKey
                       description: ResMan authentication credentials
                       title: Resman
-                    - type: object
-                      properties:
-                        clientId:
-                          type: string
-                        clientSecret:
-                          type: string
-                        developerId:
-                          type: string
-                      required:
-                        - clientId
-                        - clientSecret
-                        - developerId
-                      description: AppFolio authentication credentials
-                      title: AppFolio
                   description: JSON encoded credentials for accessing the integration vendor API
                 name:
                   type: string
