@@ -7847,6 +7847,53 @@ paths:
               examples: {}
         "400":
           description: invalid input
+  /v1/rentable-items/applicants/assign:
+    post:
+      tags:
+        - applicants
+      summary: Assign a rentable item for an applicant
+      description: Assign a rentable item for an applicant
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                rentable_item_id:
+                  type: string
+                  description: The Propexo unique identifier for the rentable item
+                applicant_id:
+                  type: string
+                  description: The Propexo unique identifier for the applicant
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Assign a rentable item for an applicant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                    example: clwh5uics000608me9v74du0a
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+              examples: {}
+        "400":
+          description: invalid input
   /v1/applications:
     get:
       tags:
@@ -30119,6 +30166,1149 @@ paths:
                   - job_id
                   - data
               examples: {}
+        "400":
+          description: invalid input
+  /v1/rentable-items:
+    get:
+      tags:
+        - properties
+      summary: Get all rentable items
+      description: Get all rentable items
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - BUILDIUM
+              - ENTRATA
+              - PROPERTYWARE
+              - REALPAGE
+              - RENTMANAGER
+              - RENTVINE
+              - REALPAGE_RPX
+              - MRI
+              - RESMAN
+            description: The property management system of record
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Get all rentable items
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propexo unique identifier for the rentable item
+                          example: clwktsp9v000008l31iv218hn
+                        created_at:
+                          type: string
+                          description: The date record first entered Propexo
+                          example: 2024-03-21T15:38:08.337Z
+                        updated_at:
+                          type: string
+                          description: The date record was last updated in Propexo
+                          example: 2024-03-22T10:59:45.119Z
+                        last_seen:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the record was last seen from the PMS
+                          example: 2024-03-22T10:59:45.119Z
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_property_id:
+                          type: string
+                          description: The external ID of the property from the integration vendor
+                        x_location_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the location from the integration vendor
+                        x_applicant_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the applicant from the integration vendor
+                        x_lead_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the lead from the integration vendor
+                        x_resident_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the resident from the integration vendor
+                        x_type_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the type from the integration vendor
+                        x_charge_code_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The external ID of the charge code from the integration vendor
+                        amount_in_cents:
+                          type:
+                            - number
+                            - "null"
+                          description: The amount of the rentable item, in cents
+                          example: 325000
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          description: Description of the rentable item
+                        is_available:
+                          type:
+                            - boolean
+                            - "null"
+                          description: Whether the rentable item is available
+                        reserved_until_date:
+                          type:
+                            - string
+                            - "null"
+                          description: The date the rentable item is reserved until
+                        type:
+                          type:
+                            - string
+                            - "null"
+                          description: The type associated with the rentable item
+                        integration_id:
+                          type: string
+                          description: The Propexo unique identifier for the integration
+                          example: clwh5u07w000508me66sfh3um
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propexo unique identifier for the property
+                          example: clwi5xiix000008l6ctdgafyh
+                        applicant_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the applicant
+                        lead_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the lead
+                        resident_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the resident
+                        charge_code_id:
+                          type:
+                            - string
+                            - "null"
+                          description: The Propexo unique identifier for the charge code
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - last_seen
+                        - x_id
+                        - x_property_id
+                        - x_location_id
+                        - x_applicant_id
+                        - x_lead_id
+                        - x_resident_id
+                        - x_type_id
+                        - x_charge_code_id
+                        - amount_in_cents
+                        - description
+                        - is_available
+                        - reserved_until_date
+                        - type
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                        - applicant_id
+                        - lead_id
+                        - resident_id
+                        - charge_code_id
+                required:
+                  - meta
+                  - results
+              examples:
+                APPFOLIO:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: APPFOLIO
+                        city: Boston
+                        name: The Extravagant Manor
+                        state: MA
+                        street_address_1: 123 Waldorf Way
+                        street_address_2: Apt 314
+                        type_normalized: COMMERCIAL
+                        type_raw: Commercial
+                        x_id: 89fde903-5c1d-4908-aa7b-0523616f83a4
+                        x_property_id: efdb3455-df23-4fb4-a157-8426cc9ea75a
+                        zip: "31812"
+                        is_active: "null"
+                        manager_email: "null"
+                        manager_name: "null"
+                        manager_phone_1: "null"
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
+                        notes: "null"
+                        number_of_units: "null"
+                        year_built: "null"
+                        country: "null"
+                        type: "null"
+                        website: "null"
+                        county: "null"
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: "null"
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: BUILDIUM
+                        city: Boston
+                        name: Estates at East Lake
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        type_normalized: MULTI_FAMILY
+                        type_raw: multifam
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        is_active: true
+                        manager_email: name@example.com
+                        manager_name: Rachel Smith
+                        manager_phone_1: "6175551234"
+                        manager_phone_1_type: MAIN
+                        manager_phone_2: "6175551234"
+                        manager_phone_2_type: MOBILE
+                        notes: A quaint colonial in a nice suburban neighborhood.
+                        number_of_units: 100
+                        year_built: 2004
+                        country: "null"
+                        type: "null"
+                        website: "null"
+                        county: "null"
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: ENTRATA
+                        city: New York
+                        name: Central Park Apartments
+                        state: NY
+                        street_address_1: 123 Central Park West
+                        street_address_2: "null"
+                        type_normalized: "null"
+                        type_raw: "null"
+                        x_id: property123
+                        x_property_id: property123
+                        zip: "10023"
+                        is_active: true
+                        manager_email: manager@example.com
+                        manager_name: "null"
+                        manager_phone_1: "null"
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
+                        notes: "null"
+                        number_of_units: "null"
+                        year_built: 1990
+                        country: USA
+                        type: Residential
+                        website: https://www.example.com
+                        county: "null"
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: PROPERTYWARE
+                        city: Boston
+                        name: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        type_normalized: sample_value
+                        type_raw: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        is_active: true
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: sample_value
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: sample_value
+                        notes: sample_value
+                        number_of_units: "null"
+                        year_built: "null"
+                        country: US
+                        type: "null"
+                        website: sample_value
+                        county: sample_value
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE
+                        city: Boston
+                        name: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        type_normalized: "null"
+                        type_raw: "null"
+                        x_id: "5213123"
+                        x_property_id: "5213124"
+                        zip: "02116"
+                        is_active: "null"
+                        manager_email: sample_value
+                        manager_name: "null"
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: "null"
+                        notes: "null"
+                        number_of_units: "null"
+                        year_built: "null"
+                        country: US
+                        type: "null"
+                        website: sample_value
+                        county: sample_value
+                        building_number: "1"
+                        x_building_id: "1"
+                        x_location_id: "null"
+                        x_created_at: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: REALPAGE_RPX
+                        city: Seattle
+                        name: Western Frontier
+                        state: WA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        type_normalized: "null"
+                        type_raw: "null"
+                        x_id: "1236712"
+                        x_property_id: "1236712"
+                        zip: "02116"
+                        is_active: true
+                        manager_email: sample_value
+                        manager_name: "null"
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: sample_value
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: sample_value
+                        notes: "null"
+                        number_of_units: "null"
+                        year_built: "null"
+                        country: US
+                        type: "null"
+                        website: sample_value
+                        county: sample_value
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTMANAGER
+                        city: Boston
+                        name: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: "null"
+                        type_normalized: sample_value
+                        type_raw: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        is_active: sample_value
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: sample_value
+                        manager_phone_2_type: "null"
+                        notes: sample_value
+                        number_of_units: sample_value
+                        year_built: "null"
+                        country: "null"
+                        type: "null"
+                        website: "null"
+                        county: "null"
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: sample_value
+                        x_created_at: "null"
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RENTVINE
+                        city: Boston
+                        name: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        type_normalized: "null"
+                        type_raw: "null"
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        is_active: sample_value
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
+                        notes: sample_value
+                        number_of_units: "null"
+                        year_built: sample_value
+                        country: US
+                        type: sample_value
+                        website: sample_value
+                        county: sample_value
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: sample_value
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: RESMAN
+                        city: Boston
+                        name: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: "null"
+                        type_normalized: "null"
+                        type_raw: "null"
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        is_active: "null"
+                        manager_email: sample_value
+                        manager_name: sample_value
+                        manager_phone_1: sample_value
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
+                        notes: "null"
+                        number_of_units: "null"
+                        year_built: "null"
+                        country: "null"
+                        type: "null"
+                        website: "null"
+                        county: "null"
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      - integration_vendor: Other
+                        city: Boston
+                        name: sample_value
+                        state: MA
+                        street_address_1: sample_value
+                        street_address_2: sample_value
+                        type_normalized: sample_value
+                        type_raw: sample_value
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        zip: "02116"
+                        is_active: "null"
+                        manager_email: "null"
+                        manager_name: "null"
+                        manager_phone_1: "null"
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
+                        notes: "null"
+                        number_of_units: "null"
+                        year_built: "null"
+                        country: "null"
+                        type: "null"
+                        website: "null"
+                        county: "null"
+                        building_number: "null"
+                        x_building_id: "null"
+                        x_location_id: "null"
+                        x_created_at: "null"
+        "400":
+          description: invalid input
+  /v1/rentable-items/{rentable_item_id}:
+    get:
+      tags:
+        - properties
+      summary: Get rentable item by ID
+      description: Get rentable item by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: rentable_item_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Get rentable item by ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        minimum: 0
+                      limit:
+                        type: integer
+                        minimum: 0
+                        maximum: 250
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        type:
+                          - boolean
+                          - "null"
+                      total:
+                        type: integer
+                        minimum: 0
+                    required:
+                      - orderBy
+                  results:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: The Propexo unique identifier for the rentable item
+                        example: clwktsp9v000008l31iv218hn
+                      created_at:
+                        type: string
+                        description: The date record first entered Propexo
+                        example: 2024-03-21T15:38:08.337Z
+                      updated_at:
+                        type: string
+                        description: The date record was last updated in Propexo
+                        example: 2024-03-22T10:59:45.119Z
+                      last_seen:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the record was last seen from the PMS
+                        example: 2024-03-22T10:59:45.119Z
+                      x_id:
+                        type: string
+                        description: The external ID from the integration vendor
+                      x_property_id:
+                        type: string
+                        description: The external ID of the property from the integration vendor
+                      x_location_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the location from the integration vendor
+                      x_applicant_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the applicant from the integration vendor
+                      x_lead_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the lead from the integration vendor
+                      x_resident_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the resident from the integration vendor
+                      x_type_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the type from the integration vendor
+                      x_charge_code_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The external ID of the charge code from the integration vendor
+                      amount_in_cents:
+                        type:
+                          - number
+                          - "null"
+                        description: The amount of the rentable item, in cents
+                        example: 325000
+                      description:
+                        type:
+                          - string
+                          - "null"
+                        description: Description of the rentable item
+                      is_available:
+                        type:
+                          - boolean
+                          - "null"
+                        description: Whether the rentable item is available
+                      reserved_until_date:
+                        type:
+                          - string
+                          - "null"
+                        description: The date the rentable item is reserved until
+                      type:
+                        type:
+                          - string
+                          - "null"
+                        description: The type associated with the rentable item
+                      integration_id:
+                        type: string
+                        description: The Propexo unique identifier for the integration
+                        example: clwh5u07w000508me66sfh3um
+                      integration_vendor:
+                        type: string
+                        description: The property management system of record
+                      property_id:
+                        type: string
+                        description: The Propexo unique identifier for the property
+                        example: clwi5xiix000008l6ctdgafyh
+                      applicant_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the applicant
+                      lead_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the lead
+                      resident_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the resident
+                      charge_code_id:
+                        type:
+                          - string
+                          - "null"
+                        description: The Propexo unique identifier for the charge code
+                    required:
+                      - id
+                      - created_at
+                      - updated_at
+                      - last_seen
+                      - x_id
+                      - x_property_id
+                      - x_location_id
+                      - x_applicant_id
+                      - x_lead_id
+                      - x_resident_id
+                      - x_type_id
+                      - x_charge_code_id
+                      - amount_in_cents
+                      - description
+                      - is_available
+                      - reserved_until_date
+                      - type
+                      - integration_id
+                      - integration_vendor
+                      - property_id
+                      - applicant_id
+                      - lead_id
+                      - resident_id
+                      - charge_code_id
+                required:
+                  - meta
+                  - results
+              examples:
+                APPFOLIO:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: APPFOLIO
+                      city: Boston
+                      name: The Extravagant Manor
+                      state: MA
+                      street_address_1: 123 Waldorf Way
+                      street_address_2: Apt 314
+                      type_normalized: COMMERCIAL
+                      type_raw: Commercial
+                      x_id: 89fde903-5c1d-4908-aa7b-0523616f83a4
+                      x_property_id: efdb3455-df23-4fb4-a157-8426cc9ea75a
+                      zip: "31812"
+                      is_active: "null"
+                      manager_email: "null"
+                      manager_name: "null"
+                      manager_phone_1: "null"
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
+                      notes: "null"
+                      number_of_units: "null"
+                      year_built: "null"
+                      country: "null"
+                      type: "null"
+                      website: "null"
+                      county: "null"
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: "null"
+                BUILDIUM:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: BUILDIUM
+                      city: Boston
+                      name: Estates at East Lake
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      type_normalized: MULTI_FAMILY
+                      type_raw: multifam
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      is_active: true
+                      manager_email: name@example.com
+                      manager_name: Rachel Smith
+                      manager_phone_1: "6175551234"
+                      manager_phone_1_type: MAIN
+                      manager_phone_2: "6175551234"
+                      manager_phone_2_type: MOBILE
+                      notes: A quaint colonial in a nice suburban neighborhood.
+                      number_of_units: 100
+                      year_built: 2004
+                      country: "null"
+                      type: "null"
+                      website: "null"
+                      county: "null"
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: "null"
+                ENTRATA:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: ENTRATA
+                      city: New York
+                      name: Central Park Apartments
+                      state: NY
+                      street_address_1: 123 Central Park West
+                      street_address_2: "null"
+                      type_normalized: "null"
+                      type_raw: "null"
+                      x_id: property123
+                      x_property_id: property123
+                      zip: "10023"
+                      is_active: true
+                      manager_email: manager@example.com
+                      manager_name: "null"
+                      manager_phone_1: "null"
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
+                      notes: "null"
+                      number_of_units: "null"
+                      year_built: 1990
+                      country: USA
+                      type: Residential
+                      website: https://www.example.com
+                      county: "null"
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: "null"
+                PROPERTYWARE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: PROPERTYWARE
+                      city: Boston
+                      name: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      type_normalized: sample_value
+                      type_raw: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      is_active: true
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: sample_value
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: sample_value
+                      notes: sample_value
+                      number_of_units: "null"
+                      year_built: "null"
+                      country: US
+                      type: "null"
+                      website: sample_value
+                      county: sample_value
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: "null"
+                REALPAGE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE
+                      city: Boston
+                      name: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      type_normalized: "null"
+                      type_raw: "null"
+                      x_id: "5213123"
+                      x_property_id: "5213124"
+                      zip: "02116"
+                      is_active: "null"
+                      manager_email: sample_value
+                      manager_name: "null"
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: "null"
+                      notes: "null"
+                      number_of_units: "null"
+                      year_built: "null"
+                      country: US
+                      type: "null"
+                      website: sample_value
+                      county: sample_value
+                      building_number: "1"
+                      x_building_id: "1"
+                      x_location_id: "null"
+                      x_created_at: "null"
+                REALPAGE_RPX:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: REALPAGE_RPX
+                      city: Seattle
+                      name: Western Frontier
+                      state: WA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      type_normalized: "null"
+                      type_raw: "null"
+                      x_id: "1236712"
+                      x_property_id: "1236712"
+                      zip: "02116"
+                      is_active: true
+                      manager_email: sample_value
+                      manager_name: "null"
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: sample_value
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: sample_value
+                      notes: "null"
+                      number_of_units: "null"
+                      year_built: "null"
+                      country: US
+                      type: "null"
+                      website: sample_value
+                      county: sample_value
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: "null"
+                RENTMANAGER:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTMANAGER
+                      city: Boston
+                      name: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: "null"
+                      type_normalized: sample_value
+                      type_raw: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      is_active: sample_value
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: sample_value
+                      manager_phone_2_type: "null"
+                      notes: sample_value
+                      number_of_units: sample_value
+                      year_built: "null"
+                      country: "null"
+                      type: "null"
+                      website: "null"
+                      county: "null"
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: sample_value
+                      x_created_at: "null"
+                RENTVINE:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RENTVINE
+                      city: Boston
+                      name: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      type_normalized: "null"
+                      type_raw: "null"
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      is_active: sample_value
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
+                      notes: sample_value
+                      number_of_units: "null"
+                      year_built: sample_value
+                      country: US
+                      type: sample_value
+                      website: sample_value
+                      county: sample_value
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: sample_value
+                RESMAN:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: RESMAN
+                      city: Boston
+                      name: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: "null"
+                      type_normalized: "null"
+                      type_raw: "null"
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      is_active: "null"
+                      manager_email: sample_value
+                      manager_name: sample_value
+                      manager_phone_1: sample_value
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
+                      notes: "null"
+                      number_of_units: "null"
+                      year_built: "null"
+                      country: "null"
+                      type: "null"
+                      website: "null"
+                      county: "null"
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: "null"
+                Other:
+                  value:
+                    meta: {}
+                    results:
+                      integration_vendor: Other
+                      city: Boston
+                      name: sample_value
+                      state: MA
+                      street_address_1: sample_value
+                      street_address_2: sample_value
+                      type_normalized: sample_value
+                      type_raw: sample_value
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      zip: "02116"
+                      is_active: "null"
+                      manager_email: "null"
+                      manager_name: "null"
+                      manager_phone_1: "null"
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
+                      notes: "null"
+                      number_of_units: "null"
+                      year_built: "null"
+                      country: "null"
+                      type: "null"
+                      website: "null"
+                      county: "null"
+                      building_number: "null"
+                      x_building_id: "null"
+                      x_location_id: "null"
+                      x_created_at: "null"
         "400":
           description: invalid input
   /v1/purchase-orders:
