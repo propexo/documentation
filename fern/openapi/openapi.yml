@@ -21387,6 +21387,80 @@ paths:
                 property_id:
                   type: string
                   description: The Propexo unique identifier for the property
+                first_name:
+                  type: string
+                  description: The first name associated with the lead
+                last_name:
+                  type: string
+                  description: The last name associated with the lead
+                employee_id:
+                  type: string
+                  description: The Propexo unique identifier for the employee
+                desired_unit_ids:
+                  type: array
+                  items:
+                    type: string
+                  maxItems: 25
+                  description: An array of the Propexo unit IDs that the lead is interested in
+                number_of_additional_occupants:
+                  type: integer
+                  minimum: 0
+                  description: The number of additional occupants associated with the lead
+                desired_bathrooms:
+                  type: string
+                  description: The desired number of bathrooms
+                desired_bedrooms:
+                  type: integer
+                  minimum: 0
+                  description: The desired number of bedrooms
+                credit_score:
+                  type: string
+                  description: The credit score of the lead
+                desired_move_in_date:
+                  anyOf:
+                    - type: string
+                      format: date-time
+                    - type: string
+                      pattern: ^\d{4}-\d{2}-\d{2}$
+                  description: The desired move in date of the lead
+                email_1:
+                  type: string
+                  description: The primary email address associated with the lead
+                has_cats:
+                  type: boolean
+                  description: Whether or not the lead has cats
+                has_dogs:
+                  type: boolean
+                  description: Whether or not the lead has dogs
+                has_other_pets:
+                  type: boolean
+                  description: Whether or not the lead has pets that aren't dogs or cats
+                desired_max_rent_in_cents:
+                  type: integer
+                  description: The maximum rent cost the lead is looking to pay, in cents
+                monthly_income_in_cents:
+                  type: integer
+                  minimum: 0
+                  description: The monthly income of the lead, in cents
+                middle_initial:
+                  type: string
+                  minLength: 1
+                  maxLength: 1
+                  description: The middle initial of the lead
+                phone_1:
+                  type: string
+                  description: Primary phone number associated with the lead
+                lead_source:
+                  type: string
+                  description: The name of the source of the lead
+                status:
+                  type: string
+                  enum:
+                    - ACTIVE
+                    - COLD
+                    - INACTIVE
+                    - WAITLISTED
+                  description: The status associated with the lead
                 lead_source_id:
                   type: string
                   description: The Propexo unique identifier for the lead source
@@ -21396,15 +21470,6 @@ paths:
                 lease_period_id:
                   type: string
                   description: The Propexo unique identifier for the lease period
-                first_name:
-                  type: string
-                  description: The first name associated with the lead
-                last_name:
-                  type: string
-                  description: The last name associated with the lead
-                phone_1:
-                  type: string
-                  description: Primary phone number associated with the lead
                 phone_1_type:
                   type: string
                   enum:
@@ -21427,9 +21492,6 @@ paths:
                     - MOBILE
                     - WORK
                   description: Type of the secondary phone number
-                email_1:
-                  type: string
-                  description: The primary email address associated with the lead
                 address_1:
                   type: string
                   description: The first address line associated with the lead
@@ -21453,9 +21515,6 @@ paths:
                       pattern: ^\d{4}-\d{2}-\d{2}$
                   description: The move-in date associated with the lead. The timestamp will be
                     stripped off and only the date will be used
-                desired_max_rent_in_cents:
-                  type: integer
-                  description: The maximum rent cost the lead is looking to pay, in cents
                 desired_min_rent_in_cents:
                   type:
                     - number
@@ -21539,9 +21598,6 @@ paths:
                     - type: string
                       pattern: ^\d{4}-\d{2}-\d{2}$
                   description: The date of birth associated with the lead
-                employee_id:
-                  type: string
-                  description: The Propexo unique identifier for the employee
                 desired_lease_term_in_months:
                   type: string
                   description: The amount of months for the lease term
