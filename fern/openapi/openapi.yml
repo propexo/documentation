@@ -24851,6 +24851,24 @@ paths:
           required: false
           name: integration_vendor
           in: query
+        - schema:
+            type: string
+            enum:
+              - ACTIVE
+              - INACTIVE
+              - OTHER
+              - PENDING
+              - EVICTED
+            description: The normalized status for the lease
+          required: false
+          name: status_normalized
+          in: query
+        - schema:
+            type: string
+            description: The raw status associated with the lease
+          required: false
+          name: status_raw
+          in: query
       responses:
         "200":
           description: Get all leases
@@ -25075,12 +25093,12 @@ paths:
                             - OTHER
                             - PENDING
                             - EVICTED
-                          description: The Propexo normalized status of the lease
+                          description: The normalized status for the lease
                         status_raw:
                           type:
                             - string
                             - "null"
-                          description: The raw status value of the lease from the PMS
+                          description: The raw status associated with the lease
                         term:
                           type:
                             - string
@@ -26014,12 +26032,12 @@ paths:
                           - OTHER
                           - PENDING
                           - EVICTED
-                        description: The Propexo normalized status of the lease
+                        description: The normalized status for the lease
                       status_raw:
                         type:
                           - string
                           - "null"
-                        description: The raw status value of the lease from the PMS
+                        description: The raw status associated with the lease
                       term:
                         type:
                           - string
@@ -53652,12 +53670,12 @@ webhooks:
                                     - OTHER
                                     - PENDING
                                     - EVICTED
-                                  description: The Propexo normalized status of the lease
+                                  description: The normalized status for the lease
                                 status_raw:
                                   type:
                                     - string
                                     - "null"
-                                  description: The raw status value of the lease from the PMS
+                                  description: The raw status associated with the lease
                                 term:
                                   type:
                                     - string
@@ -57087,12 +57105,12 @@ webhooks:
                                         - OTHER
                                         - PENDING
                                         - EVICTED
-                                      description: The Propexo normalized status of the lease
+                                      description: The normalized status for the lease
                                     status_raw:
                                       type:
                                         - string
                                         - "null"
-                                      description: The raw status value of the lease from the PMS
+                                      description: The raw status associated with the lease
                                     term:
                                       type:
                                         - string
@@ -60398,12 +60416,12 @@ webhooks:
                                         - OTHER
                                         - PENDING
                                         - EVICTED
-                                      description: The Propexo normalized status of the lease
+                                      description: The normalized status for the lease
                                     status_raw:
                                       type:
                                         - string
                                         - "null"
-                                      description: The raw status value of the lease from the PMS
+                                      description: The raw status associated with the lease
                                     term:
                                       type:
                                         - string
