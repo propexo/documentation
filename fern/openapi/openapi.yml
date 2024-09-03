@@ -25308,11 +25308,11 @@ paths:
                         realized_move_in_date: "null"
                         realized_move_out_date: "null"
                         signature_date: "null"
+                        unit_number: "null"
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
                 BUILDIUM:
@@ -25339,11 +25339,11 @@ paths:
                         realized_move_in_date: "null"
                         realized_move_out_date: "null"
                         signature_date: "null"
+                        unit_number: "null"
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
                 ENTRATA:
@@ -25370,11 +25370,11 @@ paths:
                         realized_move_in_date: 2023-06-25T00:00:00Z
                         realized_move_out_date: 2024-06-20T00:00:00Z
                         signature_date: 2023-06-10T00:00:00Z
+                        unit_number: "43"
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
                 PROPERTYWARE:
@@ -25401,11 +25401,11 @@ paths:
                         realized_move_in_date: "null"
                         realized_move_out_date: "null"
                         signature_date: "null"
+                        unit_number: "null"
                         scheduled_move_in_date: sample_value
                         scheduled_move_out_date: sample_value
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
                 REALPAGE:
@@ -25432,11 +25432,11 @@ paths:
                         realized_move_in_date: sample_value
                         realized_move_out_date: sample_value
                         signature_date: "null"
+                        unit_number: "null"
                         scheduled_move_in_date: sample_value
                         scheduled_move_out_date: sample_value
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
                 REALPAGE_RPX:
@@ -25463,11 +25463,11 @@ paths:
                         realized_move_in_date: sample_value
                         realized_move_out_date: sample_value
                         signature_date: 2024-04-01
+                        unit_number: 1400A
                         scheduled_move_in_date: sample_value
                         scheduled_move_out_date: "null"
                         rent_due_date: sample_value
                         term: sample_value
-                        unit_number: 1400A
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
                 RENTMANAGER:
@@ -25494,11 +25494,11 @@ paths:
                         realized_move_in_date: sample_value
                         realized_move_out_date: sample_value
                         signature_date: "null"
+                        unit_number: "null"
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: sample_value
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: "null"
                         x_location_id: sample_value
                         rent_amount_market_in_cents: "null"
                 RENTVINE:
@@ -25525,11 +25525,11 @@ paths:
                         realized_move_in_date: sample_value
                         realized_move_out_date: sample_value
                         signature_date: "null"
+                        unit_number: "null"
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: sample_value
                         rent_due_date: sample_value
                         term: "null"
-                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: 350000
                 RESMAN:
@@ -25556,11 +25556,11 @@ paths:
                         realized_move_in_date: "null"
                         realized_move_out_date: "null"
                         signature_date: 2024-03-21T00:00:00.000Z
+                        unit_number: sample_value
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: "null"
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: sample_value
                         x_location_id: "null"
                         rent_amount_market_in_cents: "null"
                 Other:
@@ -25587,11 +25587,11 @@ paths:
                         realized_move_in_date: 2021-07-31T00:00:00.000Z
                         realized_move_out_date: 2022-07-31T00:00:00.000Z
                         signature_date: 2023-08-23T00:00:00.000Z
+                        unit_number: D1
                         scheduled_move_in_date: 2021-07-31T00:00:00.000Z
                         scheduled_move_out_date: 2022-07-31T00:00:00.000Z
                         rent_due_date: "null"
                         term: "null"
-                        unit_number: "null"
                         x_location_id: "null"
                         rent_amount_market_in_cents: 75000
         "400":
@@ -26247,11 +26247,11 @@ paths:
                       realized_move_in_date: "null"
                       realized_move_out_date: "null"
                       signature_date: "null"
+                      unit_number: "null"
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
                 BUILDIUM:
@@ -26278,11 +26278,11 @@ paths:
                       realized_move_in_date: "null"
                       realized_move_out_date: "null"
                       signature_date: "null"
+                      unit_number: "null"
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
                 ENTRATA:
@@ -26309,11 +26309,11 @@ paths:
                       realized_move_in_date: 2023-06-25T00:00:00Z
                       realized_move_out_date: 2024-06-20T00:00:00Z
                       signature_date: 2023-06-10T00:00:00Z
+                      unit_number: "43"
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
                 PROPERTYWARE:
@@ -26340,11 +26340,11 @@ paths:
                       realized_move_in_date: "null"
                       realized_move_out_date: "null"
                       signature_date: "null"
+                      unit_number: "null"
                       scheduled_move_in_date: sample_value
                       scheduled_move_out_date: sample_value
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
                 REALPAGE:
@@ -26371,11 +26371,11 @@ paths:
                       realized_move_in_date: sample_value
                       realized_move_out_date: sample_value
                       signature_date: "null"
+                      unit_number: "null"
                       scheduled_move_in_date: sample_value
                       scheduled_move_out_date: sample_value
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
                 REALPAGE_RPX:
@@ -26402,11 +26402,11 @@ paths:
                       realized_move_in_date: sample_value
                       realized_move_out_date: sample_value
                       signature_date: 2024-04-01
+                      unit_number: 1400A
                       scheduled_move_in_date: sample_value
                       scheduled_move_out_date: "null"
                       rent_due_date: sample_value
                       term: sample_value
-                      unit_number: 1400A
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
                 RENTMANAGER:
@@ -26433,11 +26433,11 @@ paths:
                       realized_move_in_date: sample_value
                       realized_move_out_date: sample_value
                       signature_date: "null"
+                      unit_number: "null"
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: sample_value
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: "null"
                       x_location_id: sample_value
                       rent_amount_market_in_cents: "null"
                 RENTVINE:
@@ -26464,11 +26464,11 @@ paths:
                       realized_move_in_date: sample_value
                       realized_move_out_date: sample_value
                       signature_date: "null"
+                      unit_number: "null"
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: sample_value
                       rent_due_date: sample_value
                       term: "null"
-                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: 350000
                 RESMAN:
@@ -26495,11 +26495,11 @@ paths:
                       realized_move_in_date: "null"
                       realized_move_out_date: "null"
                       signature_date: 2024-03-21T00:00:00.000Z
+                      unit_number: sample_value
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: "null"
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: sample_value
                       x_location_id: "null"
                       rent_amount_market_in_cents: "null"
                 Other:
@@ -26526,11 +26526,11 @@ paths:
                       realized_move_in_date: 2021-07-31T00:00:00.000Z
                       realized_move_out_date: 2022-07-31T00:00:00.000Z
                       signature_date: 2023-08-23T00:00:00.000Z
+                      unit_number: D1
                       scheduled_move_in_date: 2021-07-31T00:00:00.000Z
                       scheduled_move_out_date: 2022-07-31T00:00:00.000Z
                       rent_due_date: "null"
                       term: "null"
-                      unit_number: "null"
                       x_location_id: "null"
                       rent_amount_market_in_cents: 75000
         "400":
