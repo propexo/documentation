@@ -46572,7 +46572,7 @@ paths:
                         status_raw: sample_value
                         term: sample_value
                         type: sample_value
-                        unit_number: sample_value
+                        unit_number: 101A
                         unit_id: sample_value
                         property_id: sample_value
                         integration_id: sample_value
@@ -47175,7 +47175,7 @@ paths:
                       status_raw: sample_value
                       term: sample_value
                       type: sample_value
-                      unit_number: sample_value
+                      unit_number: 101A
                       unit_id: sample_value
                       property_id: sample_value
                       integration_id: sample_value
