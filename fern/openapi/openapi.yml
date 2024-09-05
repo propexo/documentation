@@ -8797,9 +8797,6 @@ components:
     _v1_events_appointments_leads_{event_id}_put_input:
       type: object
       properties:
-        unit_id:
-          type: string
-          description: The Propexo unique identifier for the unit
         appointment_date:
           anyOf:
             - type: string
@@ -8817,6 +8814,15 @@ components:
           type: integer
           exclusiveMinimum: 0
           description: The duration of the appointment, in minutes
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee
+        notes:
+          type: string
+          description: Notes associated with the event
+        unit_id:
+          type: string
+          description: The Propexo unique identifier for the unit
         appointment_type:
           type: string
           enum:
@@ -8830,9 +8836,6 @@ components:
           type: string
           maxLength: 50
           description: The title associated with the event
-        notes:
-          type: string
-          description: Notes associated with the event
         priority:
           type: string
           enum:
