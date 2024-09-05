@@ -7783,6 +7783,12 @@ components:
           type: integer
           exclusiveMinimum: 0
           description: The duration of the appointment, in minutes
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee
+        notes:
+          type: string
+          description: Notes associated with the event
         appointment_type:
           type: string
           enum:
@@ -7792,16 +7798,10 @@ components:
             - VIRTUAL_TOUR
           description: The type of appointment. This is specific to Entrata and correlates
             to the types of calendar appointments available
-        notes:
-          type: string
-          description: Notes associated with the event
         title:
           type: string
           maxLength: 50
           description: The title associated with the event
-        employee_id:
-          type: string
-          description: The Propexo unique identifier for the employee
         priority:
           type: string
           enum:
