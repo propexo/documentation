@@ -69,6 +69,7 @@ navigation:
           - page: Overview
             path: ./docs/pages/overview.mdx
       - api: API Reference
+        display-errors: true
   - tab: use-cases
     layout:
       - section: Use Cases
