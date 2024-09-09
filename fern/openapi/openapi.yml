@@ -153,6 +153,24 @@ components:
       required:
         - meta
         - results
+    errorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+              additionalProperties: {}
+          required:
+            - code
+            - message
+      required:
+        - error
     _v1_admin_job-logs_{job_log_id}__get_input:
       type: object
       properties:
@@ -30785,6 +30803,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_data-diffs__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/job-logs/{job_log_id}/:
     get:
       description: Get a single log record by log ID. A log will only have a single
@@ -30849,6 +30886,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_job-logs_{job_log_id}__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/job-logs/{job_log_id}/data:
     get:
       description: Get a link to the job log raw request and response data of a write
@@ -30874,6 +30930,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_job-logs_{job_log_id}_data_get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/logs/jobs/:
     get:
       description: Get all logs
@@ -30946,6 +31021,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_logs_jobs__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/logs/jobs/{id}:
     get:
       description: Get all logs for a job ID. This returns an array because jobs can
@@ -31019,6 +31113,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_logs_jobs_{id}_get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/:
     get:
       description: Get all my integrations
@@ -31100,6 +31213,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_integrations__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create an integration
       summary: Create an integration
@@ -31120,6 +31252,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_integrations__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/users/:
     get:
       description: Get all my users
@@ -31181,6 +31332,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_users__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a user
       summary: Create a user
@@ -31201,6 +31371,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_users__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/users/{id}:
     get:
       description: Get user by id
@@ -31262,6 +31451,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_users_{id}_get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a user
       summary: Update a user
@@ -31290,6 +31498,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_users_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/write-status/{root_job_id}:
     get:
       description: Query for the status of a write operation created via the API. The
@@ -31316,6 +31543,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_write-status_{root_job_id}_get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/:
     get:
       description: Get integration by id
@@ -31377,6 +31623,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update an integration
       summary: Update an integration
@@ -31405,6 +31670,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}__put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     delete:
       description: Delete an integration
       summary: Delete an integration
@@ -31435,6 +31719,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}__delete_out\
                   put"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/back-sync:
     post:
       description: Trigger a backsync on an integration.
@@ -31466,6 +31769,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_back-sync_p\
                   ost_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/manual-sync:
     post:
       description: Trigger a manual sync on an integration. This is only allowed on
@@ -31500,6 +31822,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_manual-sync\
                   _post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/properties:
     get:
       description: Get all my property configurations
@@ -31562,6 +31903,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_properties_\
                   get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/job-schedules/:
     get:
       description: Get job schedules by integration id
@@ -31624,6 +31984,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_job-schedul\
                   es__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/normalization/{model}/{field}:
     get:
       description: Get the normalized values mappings for a specific field
@@ -31680,6 +32059,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_normalization_{model}_{field}_get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/properties/{property_configuration_id}:
     put:
       description: Update a property configuration
@@ -31718,6 +32116,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_properties_\
                   {property_configuration_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/rate-limits/:
     get:
       description: The current PMS rate limits associated with your integration.
@@ -31781,6 +32198,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_rate-limits\
                   __get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/job-schedules/{job_schedule_id}/:
     get:
       description: Get job schedule by id
@@ -31850,6 +32286,25 @@ paths:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_job-schedul\
                   es_{job_schedule_id}__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/amenities/:
     get:
       description: Get all amenities
@@ -32283,6 +32738,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create an amenity for an integration.
       summary: Create amenity
@@ -32303,6 +32777,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_amenities__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/amenities/{amenity_id}:
     put:
       description: Update an amenity for an integration.
@@ -32332,6 +32825,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_amenities_{amenity_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     get:
       description: Get an amenity by ID
       summary: Get an amenity by ID
@@ -32721,6 +33233,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/amenities/units/{id}:
     post:
       description: Create a unit amenity for any integration. This is a convenience
@@ -32752,6 +33283,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_amenities_units_{id}_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update unit amenities for any integration. This is a convenience
         endpoint that acts as a generic proxy for all amenity creation
@@ -32782,6 +33332,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_amenities_units_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/amenities/properties/{id}:
     post:
       description: Create a property amenity for any integration. This is a
@@ -32813,6 +33382,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_amenities_properties_{id}_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update property amenities for any integration. This is a
         convenience endpoint that acts as a generic proxy for all amenity
@@ -32843,6 +33431,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_amenities_properties_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/applicants/:
     get:
       description: Get all applicants
@@ -33737,6 +34344,25 @@ paths:
                             x_id: sample_value
                             status_raw: sample_value
                             screening_date: 2024-07-01T00:00:00.000Z
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create an applicant for an integration.
       summary: Create applicant
@@ -33757,6 +34383,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_applicants__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/applicants/{id}:
     get:
       description: Get an applicant by ID
@@ -34608,6 +35253,25 @@ paths:
                           x_id: sample_value
                           status_raw: sample_value
                           screening_date: 2024-07-01T00:00:00.000Z
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update an applicant for an integration.
       summary: Update applicant
@@ -34636,6 +35300,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_applicants_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/rentable-items/applicants/assign:
     post:
       description: Assign a rentable item for an applicant
@@ -34657,6 +35340,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_rentable-items_applicants_assign_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/applications/:
     get:
       description: Get all applications
@@ -35051,6 +35753,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create an Application for an integration.
       summary: Create Application
@@ -35071,6 +35792,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_applications__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/applications/{id}:
     get:
       description: Get an application by ID
@@ -35422,6 +36162,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update an Application for an Integration.
       summary: Update Application
@@ -35450,6 +36209,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_applications_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/application-statuses/:
     get:
       description: Get all Application Statuses
@@ -35748,6 +36526,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/application-statuses/{application_status_id}:
     get:
       description: Get an Application Status by ID
@@ -36020,6 +36817,25 @@ paths:
                       property_id: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/application-templates/:
     get:
       description: Get all Application Templates
@@ -36354,6 +37170,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/application-templates/{application_template_id}:
     get:
       description: Get Application Template by ID
@@ -36646,6 +37481,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/appointments/:
     get:
       description: Get all appointments
@@ -37068,6 +37922,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/appointment-availability/:
     post:
       description: Query Realtime Appointment Availability
@@ -37089,6 +37962,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_appointment-availability__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/applicants:
     post:
       description: Create an appointment for an applicant
@@ -37110,6 +38002,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_appointments_applicants_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/leads:
     post:
       description: Create an appointment for a lead
@@ -37131,6 +38042,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_appointments_leads_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/residents:
     post:
       description: Create an appointment for a resident
@@ -37152,6 +38082,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_appointments_residents_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/applicants/{event_id}:
     put:
       description: Update an appointment for an applicant
@@ -37183,6 +38132,25 @@ paths:
                 $ref: "#/components/schemas/_v1_events_appointments_applicants_{event_id}_put_o\
                   utput"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/applicants/cancel:
     post:
       description: Cancel an appointment for an applicant
@@ -37206,6 +38174,25 @@ paths:
                 $ref: "#/components/schemas/_v1_events_appointments_applicants_cancel_post_outp\
                   ut"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/leads/{event_id}:
     put:
       description: Update an appointment for a lead
@@ -37235,6 +38222,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_appointments_leads_{event_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/leads/cancel:
     post:
       description: Cancel an appointment for a lead
@@ -37256,6 +38262,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_appointments_leads_cancel_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/residents/{event_id}:
     put:
       description: Update an appointment for a resident
@@ -37287,6 +38312,25 @@ paths:
                 $ref: "#/components/schemas/_v1_events_appointments_residents_{event_id}_put_ou\
                   tput"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/appointments/residents/cancel:
     post:
       description: Cancel an appointment for a resident
@@ -37309,6 +38353,25 @@ paths:
                 $ref: "#/components/schemas/_v1_events_appointments_residents_cancel_post_outpu\
                   t"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/charge-codes/:
     get:
       description: Get all charge codes
@@ -37647,6 +38710,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/charge-codes/{charge_code_id}:
     get:
       description: Get a charge code by ID
@@ -37958,6 +39040,25 @@ paths:
                       property_id: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/financial-accounts/:
     get:
       description: Get all financial accounts
@@ -38293,6 +39394,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/financial-accounts/{financial_account_id}:
     get:
       description: Get a financial account by ID
@@ -38595,6 +39715,25 @@ paths:
                       property_id: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/resident-charges/:
     get:
       description: The Resident Charges model provides a limited, one-sided view of a
@@ -39113,6 +40252,25 @@ paths:
                             updated_at: 2024-07-01T00:00:00.000Z
                             last_seen: 2024-07-01T00:00:00.000Z
                             custom_data: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a resident charge for an integration.
       summary: Create resident charge
@@ -39133,6 +40291,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_resident-charges__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/resident-charges/{resident_charge_id}:
     get:
       description: The Resident Charges model provides a limited, one-sided view of a
@@ -39697,6 +40874,25 @@ paths:
                           updated_at: 2024-07-01T00:00:00.000Z
                           last_seen: 2024-07-01T00:00:00.000Z
                           custom_data: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/recurring-resident-charges/:
     get:
       description: Get all recurring resident charges
@@ -40151,6 +41347,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a recurring resident charge for an integration.
       summary: Create a recurring resident charge
@@ -40171,6 +41386,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_recurring-resident-charges__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/recurring-resident-charges/{recurring_resident_charge_id}:
     get:
       description: Get recurring resident charge by ID
@@ -40583,6 +41817,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a recurring resident charge for an integration.
       summary: Update a recurring resident charge
@@ -40613,6 +41866,25 @@ paths:
                 $ref: "#/components/schemas/_v1_recurring-resident-charges_{recurring_resident_\
                   charge_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/resident-payments/:
     get:
       description: The Resident Payments model provides a limited, one-sided view of a
@@ -41131,6 +42403,25 @@ paths:
                             updated_at: 2024-07-01T00:00:00.000Z
                             last_seen: 2024-07-01T00:00:00.000Z
                             custom_data: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a resident payment for an integration.
       summary: Create resident payment
@@ -41151,6 +42442,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_resident-payments__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/resident-payments/{resident_payment_id}:
     get:
       description: The Resident Payments model provides a limited, one-sided view of a
@@ -41715,6 +43025,25 @@ paths:
                           updated_at: 2024-07-01T00:00:00.000Z
                           last_seen: 2024-07-01T00:00:00.000Z
                           custom_data: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/construction-jobs/:
     get:
       description: Get all construction jobs
@@ -42103,6 +43432,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a construction job for an integration.
       summary: Create construction job
@@ -42123,6 +43471,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_construction-jobs__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/construction-jobs/{construction_job_id}:
     get:
       description: Get construction job by ID
@@ -42485,6 +43852,25 @@ paths:
                       property_id: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a construction job for an integration.
       summary: Update construction job
@@ -42515,6 +43901,25 @@ paths:
                 $ref: "#/components/schemas/_v1_construction-jobs_{construction_job_id}_put_out\
                   put"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/contracts/:
     post:
       description: Create a contract for an integration.
@@ -42536,6 +43941,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_contracts__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/contracts/{contract_id}:
     put:
       description: Update a contract for an integration.
@@ -42565,6 +43989,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_contracts_{contract_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/construction-jobs/{construction_job_id}/details:
     get:
       description: Get all construction job details for a specific construction job
@@ -42921,6 +44364,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/construction-jobs/{construction_job_id}/contracts:
     get:
       description: Get all contracts for a specific construction job
@@ -43367,6 +44829,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/construction-jobs/contracts/{contract_id}/details:
     get:
       description: Get all contract details for a specific contract
@@ -43773,6 +45254,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/employees/:
     get:
       description: Get all employees
@@ -44080,6 +45580,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/employees/{employee_id}:
     get:
       description: Get an employee by ID
@@ -44351,6 +45870,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/:
     get:
       description: Get all events
@@ -44773,6 +46311,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/{event_id}:
     get:
       description: Get an event by ID
@@ -45124,6 +46681,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/applicants:
     post:
       description: Create an applicant event for an integration.
@@ -45145,6 +46721,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_applicants_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/leads:
     post:
       description: Create a lead event for an integration.
@@ -45166,6 +46761,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_leads_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/events/residents:
     post:
       description: Create a resident event for an integration.
@@ -45187,6 +46801,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_events_residents_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/event-types/:
     get:
       description: Get all event types
@@ -45549,6 +47182,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/event-types/{event_type_id}:
     get:
       description: Get event type by ID
@@ -45850,6 +47502,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/file-types/:
     get:
       description: Get all file types
@@ -46229,6 +47900,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a file type for an integration.
       summary: Create file type
@@ -46249,6 +47939,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_file-types__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/file-types/{file_type_id}:
     get:
       description: Get file type by ID
@@ -46560,6 +48269,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/invoices/:
     get:
       description: Get all invoices
@@ -47027,6 +48755,25 @@ paths:
                             amount_due_in_cents: default value
                             notes: sample_value
                             total_amount_in_cents: default value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create an invoice for an integration.
       summary: Create invoice
@@ -47047,6 +48794,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_invoices__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/invoices/{invoice_id}:
     get:
       description: Get an invoice by ID
@@ -47478,6 +49244,25 @@ paths:
                           amount_due_in_cents: default value
                           notes: sample_value
                           total_amount_in_cents: default value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a invoice for an integration.
       summary: Update invoice
@@ -47506,6 +49291,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_invoices_{invoice_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/payable-registers/:
     get:
       description: Get all payable registers
@@ -48063,6 +49867,25 @@ paths:
                             notes: sample_value
                             total_amount_in_cents: default value
                             cost_code: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/payable-registers/{payable_register_id}:
     get:
       description: Get a payable register by ID
@@ -48585,6 +50408,25 @@ paths:
                           notes: sample_value
                           total_amount_in_cents: default value
                           cost_code: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/leads/:
     get:
       description: Get all leads. Buildium does not support leads via their API.
@@ -49408,6 +51250,25 @@ paths:
                             x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                             status_raw: sample_value
                             screening_date: 2024-07-01T00:00:00.000Z
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a lead for an integration.
       summary: Create lead
@@ -49428,6 +51289,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_leads__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/leads/{id}:
     get:
       description: Get a lead by ID. Buildium does not support leads via their API.
@@ -50179,6 +52059,25 @@ paths:
                           x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                           status_raw: sample_value
                           screening_date: 2024-07-01T00:00:00.000Z
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a lead.
       summary: Update lead
@@ -50207,6 +52106,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_leads_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/lead-relationships/:
     get:
       description: Get all lead relationships
@@ -50528,6 +52446,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/lead-sources/:
     get:
       description: Get all lead sources
@@ -50842,6 +52779,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/lead-sources/{lead_source_id}:
     get:
       description: Get lead source by ID
@@ -51113,6 +53069,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/leases/:
     get:
       description: Get all leases
@@ -51847,6 +53822,25 @@ paths:
                             last_seen: 2024-07-01T00:00:00.000Z
                             name: sample_value
                             lease_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a lease for an integration.
       summary: Create lease
@@ -51867,6 +53861,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_leases__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/leases/{lease_id}:
     get:
       description: Get a lease by ID
@@ -52508,6 +54521,25 @@ paths:
                           last_seen: 2024-07-01T00:00:00.000Z
                           name: sample_value
                           lease_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a lease for an integration.
       summary: Update lease
@@ -52536,6 +54568,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_leases_{lease_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/listings/:
     get:
       description: Get all listings
@@ -53297,6 +55348,25 @@ paths:
                         unit_id: "null"
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a listing for an integration.
       summary: "*Create listing"
@@ -53317,6 +55387,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_listings__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/listings/{listing_id}:
     get:
       description: Get a listing by ID
@@ -54028,6 +56117,25 @@ paths:
                       unit_id: "null"
                       integration_id: sample_value
                       integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a listing for an integration.
       summary: Update listing
@@ -54056,6 +56164,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_listings_{listing_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/properties/:
     get:
       description: Get all properties
@@ -54651,6 +56778,25 @@ paths:
                         zip: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a property for an integration.
       summary: Create property
@@ -54671,6 +56817,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_properties__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/properties/{id}:
     get:
       description: Get a property by ID
@@ -55222,6 +57387,25 @@ paths:
                       zip: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a property for an integration.
       summary: Update property
@@ -55250,6 +57434,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_properties_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/rentable-items/:
     get:
       description: Get all rentable items
@@ -55694,6 +57897,25 @@ paths:
                         lead_id: sample_value
                         resident_id: sample_value
                         charge_code_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/rentable-items/{rentable_item_id}:
     get:
       description: Get rentable item by ID
@@ -56095,6 +58317,25 @@ paths:
                       lead_id: sample_value
                       resident_id: sample_value
                       charge_code_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/purchase-orders/:
     get:
       description: Get all purchase orders
@@ -56643,6 +58884,25 @@ paths:
                         integration_vendor: sample_value
                         invoice_id: sample_value
                         parent_purchase_order_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a purchase order for an integration.
       summary: Create a purchase order
@@ -56663,6 +58923,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_purchase-orders__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/purchase-orders/{purchase_order_id}:
     get:
       description: Get purchase order by ID
@@ -57184,6 +59463,25 @@ paths:
                       integration_vendor: sample_value
                       invoice_id: sample_value
                       parent_purchase_order_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a purchase order for an integration.
       summary: Update a purchase order
@@ -57212,6 +59510,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_purchase-orders_{purchase_order_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/purchase-orders/{purchase_order_id}/items:
     get:
       description: Get all purchase order items for a specific purchase order
@@ -57628,6 +59945,25 @@ paths:
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/residents/:
     get:
       description: Get all residents
@@ -58577,6 +60913,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a resident for an integration.
       summary: Create resident
@@ -58597,6 +60952,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_residents__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/residents/{id}:
     get:
       description: Get a resident by ID
@@ -59488,6 +61862,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a resident for an integration.
       summary: Update resident
@@ -59516,6 +61909,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_residents_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-requests/:
     get:
       description: Get all service requests
@@ -60241,6 +62653,25 @@ paths:
                             last_seen: 2024-07-01T00:00:00.000Z
                             x_id: sample_value
                             name: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a service request for an integration.
       summary: Create service request
@@ -60261,6 +62692,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_service-requests__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-requests/{service_request_id}:
     get:
       description: Get a service request by ID
@@ -60923,6 +63373,25 @@ paths:
                           last_seen: 2024-07-01T00:00:00.000Z
                           x_id: sample_value
                           name: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a service request for an integration.
       summary: Update service request
@@ -60952,6 +63421,25 @@ paths:
                 $ref: "#/components/schemas/_v1_service-requests_{service_request_id}_put_outpu\
                   t"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-categories/:
     get:
       description: Get all service request categories
@@ -61303,6 +63791,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-categories/{service_request_category_id}:
     get:
       description: Get service request category by ID
@@ -61605,6 +64112,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-history/:
     get:
       description: Get all service request history
@@ -61959,6 +64485,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Generate service request history for an integration.
       summary: Create service request history
@@ -61979,6 +64524,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_service-request-history__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-history/{service_request_history_id}:
     get:
       description: Get service request history by ID
@@ -62291,6 +64855,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-priorities/:
     get:
       description: Get all service request priorities
@@ -62642,6 +65225,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-priorities/{service_request_priority_id}:
     get:
       description: Get service request priority by ID
@@ -62944,6 +65546,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-statuses/:
     get:
       description: Get all service request statuses
@@ -63295,6 +65916,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-statuses/{service_request_status_id}:
     get:
       description: Get service request status by ID
@@ -63597,6 +66237,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-locations/:
     get:
       description: Get all service request locations
@@ -63905,6 +66564,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-locations/{service_request_location_id}:
     get:
       description: Get a service request location by ID
@@ -64221,6 +66899,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-problems/:
     get:
       description: Get all service request problems
@@ -64529,6 +67226,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/service-request-problems/{service_request_problem_id}:
     get:
       description: Get a service request problem by ID
@@ -64845,6 +67561,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/timezones/:
     get:
       description: Get all timezones
@@ -65172,6 +67907,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/concessions/:
     get:
       description: Get all concessions
@@ -65656,6 +68410,25 @@ paths:
                         property_id: sample_value
                         unit_id: sample_value
                         floor_plan_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/concessions/{concession_id}:
     get:
       description: Get concession by ID
@@ -66097,6 +68870,25 @@ paths:
                       property_id: sample_value
                       unit_id: sample_value
                       floor_plan_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/floor-plans/:
     get:
       description: Get all floor plans
@@ -66531,6 +69323,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/floor-plans/{floor_plan_id}:
     get:
       description: Get floor plan by ID
@@ -66922,6 +69733,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/units/:
     get:
       description: Get all units
@@ -67543,6 +70373,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a unit for a property.
       summary: Create unit
@@ -67563,6 +70412,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_units__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/units/details:
     get:
       description: Get all unit details
@@ -68167,6 +71035,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/units/{id}:
     get:
       description: Get a unit by ID
@@ -68728,6 +71615,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a unit for a property.
       summary: Update unit
@@ -68756,6 +71662,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_units_{id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/unit-types/:
     get:
       description: Get all unit types
@@ -69070,6 +71995,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/unit-types/{unit_type_id}:
     get:
       description: Get unit type by ID
@@ -69341,6 +72285,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/units/details/{unit_detail_id}:
     get:
       description: Get a unit detail by ID
@@ -69902,6 +72865,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/vendors/:
     get:
       description: Get all vendors
@@ -70413,6 +73395,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a vendor for an integration.
       summary: Create a vendor
@@ -70433,6 +73434,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_vendors__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/vendors/{vendor_id}:
     get:
       description: Get vendor by ID
@@ -70894,6 +73914,25 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a vendor for an integration.
       summary: Update vendor
@@ -70922,6 +73961,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_vendors_{vendor_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/vendors/properties/{property_id}:
     get:
       description: Get all vendors by property ID
@@ -71383,6 +74441,25 @@ paths:
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/webhooks/:
     get:
       description: Get all webhooks
@@ -71447,6 +74524,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_webhooks__get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     post:
       description: Create a webhook
       summary: Create a webhook
@@ -71467,6 +74563,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_webhooks__post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/webhooks/{webhook_id}:
     get:
       description: Get a webhook by ID
@@ -71528,6 +74643,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_webhooks_{webhook_id}_get_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     put:
       description: Update a webhook
       summary: Update a webhook
@@ -71556,6 +74690,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_webhooks_{webhook_id}_put_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
     delete:
       description: Delete a webhook
       summary: Delete a webhook
@@ -71584,6 +74737,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_webhooks_{webhook_id}_delete_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/webhooks/{webhook_id}/triggers:
     post:
       description: Create a webhook trigger
@@ -71613,6 +74785,25 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_webhooks_{webhook_id}_triggers_post_output"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/webhooks/triggers/{webhook_trigger_id}:
     delete:
       description: Delete a webhook trigger
@@ -71644,4 +74835,23 @@ paths:
                 $ref: "#/components/schemas/_v1_webhooks_triggers_{webhook_trigger_id}_delete_o\
                   utput"
               examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
 webhooks: {}
