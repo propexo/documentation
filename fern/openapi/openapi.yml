@@ -8423,6 +8423,274 @@ components:
       required:
         - meta
         - results
+    _v1_applications_{id}_put_input:
+      type: object
+      properties:
+        application_id:
+          type: string
+          description: The Propexo unique identifier for the application
+        unit_id:
+          type: string
+          description: The Propexo unique identifier for the unit for this application
+        employee_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the employee who is assigned to
+            process this application, or none to be assigned to nobody
+        application_status_id:
+          type: string
+          description: The Propexo unique identifier for the application status for this
+            application
+    _v1_applications_{id}_put_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
+    _v1_application-statuses__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          type: string
+          enum:
+            - SAMPLE2
+            - BUILDIUM
+            - ENTRATA
+            - MRI
+            - PROPERTYWARE
+            - REALPAGE
+            - REALPAGE_RPX
+            - RENTMANAGER
+            - RENTVINE
+            - RESMAN
+            - SAMPLE1
+          description: The property management system of record
+    _v1_application-statuses__get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+            total:
+              type: integer
+              minimum: 0
+          required:
+            - orderBy
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the application status
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location from the integration vendor
+              name:
+                type: string
+                description: The name associated with the application status
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                type: string
+                description: The property management system of record
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - name
+              - property_id
+              - integration_id
+              - integration_vendor
+      required:
+        - meta
+        - results
+    _v1_application-statuses_{application_status_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_application-statuses_{application_status_id}_get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+            total:
+              type: integer
+              minimum: 0
+          required:
+            - orderBy
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the application status
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location from the integration vendor
+            name:
+              type: string
+              description: The name associated with the application status
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              type: string
+              description: The property management system of record
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - name
+            - property_id
+            - integration_id
+            - integration_vendor
+      required:
+        - meta
+        - results
     _v1_application-templates__get_input:
       type: object
       properties:
@@ -34805,6 +35073,561 @@ paths:
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
+    put:
+      description: Update an Application for an Integration.
+      summary: Update Application
+      tags:
+        - applications
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the application
+          required: true
+          description: The Propexo unique identifier for the application
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_applications_{id}_put_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_applications_{id}_put_output"
+              examples: {}
+  /v1/application-statuses/:
+    get:
+      description: Get all Application Statuses
+      summary: Get all Application Statuses
+      tags:
+        - applications
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The property management system of record
+          required: false
+          description: The property management system of record
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_application-statuses__get_output"
+              examples:
+                BUILDIUM:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: "12"
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                ENTRATA:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: application789
+                        x_property_id: property456
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                MRI:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                PROPERTYWARE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                REALPAGE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                REALPAGE_RPX:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                RENTMANAGER:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                RENTVINE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                RESMAN:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        property_id: sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+  /v1/application-statuses/{application_status_id}:
+    get:
+      description: Get an Application Status by ID
+      summary: Get an Application Status by ID
+      tags:
+        - applications
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: application_status_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_application-statuses_{application_status_id}_ge\
+                  t_output"
+              examples:
+                BUILDIUM:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: "12"
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                ENTRATA:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: application789
+                      x_property_id: property456
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                MRI:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                PROPERTYWARE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                REALPAGE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                REALPAGE_RPX:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                RENTMANAGER:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                RENTVINE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                RESMAN:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      property_id: sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
   /v1/application-templates/:
     get:
       description: Get all Application Templates
@@ -42211,10 +43034,10 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "142"
+                        x_property_id: na
                         x_location_id: sample_value
-                        name: sample_value
+                        name: John Doe
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -42461,10 +43284,10 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "142"
+                      x_property_id: na
                       x_location_id: sample_value
-                      name: sample_value
+                      name: John Doe
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
