@@ -7605,6 +7605,7 @@ components:
                 description: The issuing state of the license plate
             required:
               - make
+          maxItems: 4
           default: []
           description: A list of vehicles for the application
         other_occupants:
@@ -7664,11 +7665,10 @@ components:
                 description: Type of the secondary phone number
               address_1:
                 type: string
-                description: The first address line associated with the occupant's historical
-                  address
+                description: The first address line associated with the occupant
               city:
                 type: string
-                description: The city associated with the occupant's historical address
+                description: The city associated with the occupant
               state:
                 type: string
                 enum:
@@ -7745,7 +7745,7 @@ components:
                 description: The state associated with the occupant
               zip:
                 type: string
-                description: The zip code associated with the occupant's historical address
+                description: The zip code associated with the occupant
             required:
               - relationship
               - first_name
@@ -7895,7 +7895,7 @@ components:
                   Support for help
               notice_provided:
                 type: boolean
-                description: Whether notice been given to the applicant's historical address
+                description: Whether notice has been given to the applicant's historical address
               property_name:
                 type: string
                 description: The property name of the applicant's historical address
@@ -8514,12 +8514,10 @@ components:
           description: The Propexo unique identifier for the applicant
         first_name:
           type: string
-          description: The first name associated with the applicant. Required if lead_id
-            is not specified
+          description: The first name associated with the applicant
         last_name:
           type: string
-          description: The last name associated with the applicant. Required if lead_id is
-            not specified
+          description: The last name associated with the applicant
         middle_name:
           type: string
           description: The middle name associated with the applicant
@@ -8713,7 +8711,7 @@ components:
                   Support for help
               notice_provided:
                 type: boolean
-                description: Whether notice been given to the applicant's historical address
+                description: Whether notice has been given to the applicant's historical address
               property_name:
                 type: string
                 description: The property name of the applicant's historical address
@@ -9065,6 +9063,7 @@ components:
                 description: The issuing state of the license plate
             required:
               - make
+          maxItems: 4
           default: []
           description: A list of vehicles for the application
         pets:
@@ -9217,11 +9216,10 @@ components:
                 description: Type of the secondary phone number
               address_1:
                 type: string
-                description: The first address line associated with the occupant's historical
-                  address
+                description: The first address line associated with the occupant
               city:
                 type: string
-                description: The city associated with the occupant's historical address
+                description: The city associated with the occupant
               state:
                 type: string
                 enum:
@@ -9298,7 +9296,7 @@ components:
                 description: The state associated with the occupant
               zip:
                 type: string
-                description: The zip code associated with the occupant's historical address
+                description: The zip code associated with the occupant
             required:
               - relationship
               - first_name
