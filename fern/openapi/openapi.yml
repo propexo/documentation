@@ -724,6 +724,7 @@ components:
                         - ENTRATA_GL_ACCOUNTS
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                        - PROPERTYWARE_REST_READ_PROPERTIES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -831,6 +832,7 @@ components:
                           - ENTRATA_GL_ACCOUNTS
                           - ENTRATA_LEASE_DETAILS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                          - PROPERTYWARE_REST_READ_PROPERTIES
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -1173,8 +1175,23 @@ components:
               required:
                 - username
                 - password
-              description: Propertyware authentication credentials
+              description: Propertyware SOAP authentication credentials
               title: Propertyware SOAP
+            - type: object
+              properties:
+                clientId:
+                  type: string
+                clientSecret:
+                  type: string
+                systemId:
+                  type: string
+                  description: The system/organization ID to query data from
+              required:
+                - clientId
+                - clientSecret
+                - systemId
+              description: Propertyware REST authentication credentials
+              title: Propertyware REST
             - type: object
               properties:
                 PMC_ID:
@@ -2652,6 +2669,7 @@ components:
                       - ENTRATA_GL_ACCOUNTS
                       - ENTRATA_LEASE_DETAILS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                      - PROPERTYWARE_REST_READ_PROPERTIES
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -2759,6 +2777,7 @@ components:
                         - ENTRATA_GL_ACCOUNTS
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                        - PROPERTYWARE_REST_READ_PROPERTIES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -3111,8 +3130,23 @@ components:
               required:
                 - username
                 - password
-              description: Propertyware authentication credentials
+              description: Propertyware SOAP authentication credentials
               title: Propertyware SOAP
+            - type: object
+              properties:
+                clientId:
+                  type: string
+                clientSecret:
+                  type: string
+                systemId:
+                  type: string
+                  description: The system/organization ID to query data from
+              required:
+                - clientId
+                - clientSecret
+                - systemId
+              description: Propertyware REST authentication credentials
+              title: Propertyware REST
             - type: object
               properties:
                 PMC_ID:
@@ -57310,38 +57344,38 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_created_at: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_building_id: sample_value
-                        building_number: sample_value
-                        city: sample_value
-                        country: sample_value
-                        county: sample_value
+                        x_created_at: 2023-12-12T00:00:00.000Z
+                        x_id: "3423478"
+                        x_property_id: "3423478"
+                        x_building_id: "null"
+                        building_number: "null"
+                        city: Tampa
+                        country: United States
+                        county: Orange
                         custom_data: {}
                         is_active: true
-                        manager_email: sample_value
-                        manager_name: sample_value
-                        manager_phone_1: sample_value
-                        manager_phone_1_type: default value
-                        manager_phone_2: sample_value
-                        manager_phone_2_type: default value
-                        name: sample_value
-                        notes: sample_value
-                        number_of_units: 42
-                        square_footage: 42
+                        manager_email: manager@example.com
+                        manager_name: johndoe
+                        manager_phone_1: "null"
+                        manager_phone_1_type: "null"
+                        manager_phone_2: "null"
+                        manager_phone_2_type: "null"
+                        name: The Green Meadows
+                        notes: "null"
+                        number_of_units: 2
+                        square_footage: 1200
                         square_feet: 42
-                        state: sample_value
-                        street_address_1: sample_value
-                        street_address_2: sample_value
+                        state: FL
+                        street_address_1: 131 Douglas Drive
+                        street_address_2: Suite 2
                         address_1: sample_value
                         address_2: sample_value
-                        type: sample_value
-                        type_raw: sample_value
-                        type_normalized: default value
+                        type: "null"
+                        type_raw: APARTMENT
+                        type_normalized: RESIDENTIAL
                         website: sample_value
-                        year_built: 42
-                        zip: sample_value
+                        year_built: 1963
+                        zip: "12722"
                         integration_id: sample_value
                         integration_vendor: sample_value
                 REALPAGE:
@@ -57919,38 +57953,38 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_created_at: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_building_id: sample_value
-                      building_number: sample_value
-                      city: sample_value
-                      country: sample_value
-                      county: sample_value
+                      x_created_at: 2023-12-12T00:00:00.000Z
+                      x_id: "3423478"
+                      x_property_id: "3423478"
+                      x_building_id: "null"
+                      building_number: "null"
+                      city: Tampa
+                      country: United States
+                      county: Orange
                       custom_data: {}
                       is_active: true
-                      manager_email: sample_value
-                      manager_name: sample_value
-                      manager_phone_1: sample_value
-                      manager_phone_1_type: default value
-                      manager_phone_2: sample_value
-                      manager_phone_2_type: default value
-                      name: sample_value
-                      notes: sample_value
-                      number_of_units: 42
-                      square_footage: 42
+                      manager_email: manager@example.com
+                      manager_name: johndoe
+                      manager_phone_1: "null"
+                      manager_phone_1_type: "null"
+                      manager_phone_2: "null"
+                      manager_phone_2_type: "null"
+                      name: The Green Meadows
+                      notes: "null"
+                      number_of_units: 2
+                      square_footage: 1200
                       square_feet: 42
-                      state: sample_value
-                      street_address_1: sample_value
-                      street_address_2: sample_value
+                      state: FL
+                      street_address_1: 131 Douglas Drive
+                      street_address_2: Suite 2
                       address_1: sample_value
                       address_2: sample_value
-                      type: sample_value
-                      type_raw: sample_value
-                      type_normalized: default value
+                      type: "null"
+                      type_raw: APARTMENT
+                      type_normalized: RESIDENTIAL
                       website: sample_value
-                      year_built: 42
-                      zip: sample_value
+                      year_built: 1963
+                      zip: "12722"
                       integration_id: sample_value
                       integration_vendor: sample_value
                 REALPAGE:
@@ -58518,8 +58552,8 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "3423478"
+                        x_property_id: "3423478"
                         x_location_id: sample_value
                         x_applicant_id: sample_value
                         x_lead_id: sample_value
@@ -58530,7 +58564,7 @@ paths:
                         description: sample_value
                         is_available: true
                         reserved_until_date: 2024-07-01T00:00:00.000Z
-                        type: sample_value
+                        type: "null"
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -58938,8 +58972,8 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "3423478"
+                      x_property_id: "3423478"
                       x_location_id: sample_value
                       x_applicant_id: sample_value
                       x_lead_id: sample_value
@@ -58950,7 +58984,7 @@ paths:
                       description: sample_value
                       is_available: true
                       reserved_until_date: 2024-07-01T00:00:00.000Z
-                      type: sample_value
+                      type: "null"
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
