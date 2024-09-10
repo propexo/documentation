@@ -24636,6 +24636,11 @@ components:
                   always provided by PMS vendors, but may be the only data
                   provided to identify a unit associated with a service request
                   in some cases.
+              order_number:
+                type:
+                  - string
+                  - "null"
+                description: The order number of the service request
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -24777,6 +24782,7 @@ components:
               - status_raw
               - vendor_notes
               - unit_number
+              - order_number
               - integration_id
               - integration_vendor
               - property_id
@@ -25131,6 +25137,11 @@ components:
                 always provided by PMS vendors, but may be the only data
                 provided to identify a unit associated with a service request in
                 some cases.
+            order_number:
+              type:
+                - string
+                - "null"
+              description: The order number of the service request
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -25272,6 +25283,7 @@ components:
             - status_raw
             - vendor_notes
             - unit_number
+            - order_number
             - integration_id
             - integration_vendor
             - property_id
@@ -62887,6 +62899,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -62947,6 +62960,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63007,6 +63021,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63067,6 +63082,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63127,6 +63143,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63187,6 +63204,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63247,6 +63265,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63307,6 +63326,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63367,6 +63387,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63427,6 +63448,7 @@ paths:
                         status_raw: sample_value
                         vendor_notes: sample_value
                         unit_number: sample_value
+                        order_number: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -63607,6 +63629,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -63667,6 +63690,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -63727,6 +63751,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -63787,6 +63812,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -63847,6 +63873,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -63907,6 +63934,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -63967,6 +63995,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -64027,6 +64056,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -64087,6 +64117,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -64147,6 +64178,7 @@ paths:
                       status_raw: sample_value
                       vendor_notes: sample_value
                       unit_number: sample_value
+                      order_number: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
