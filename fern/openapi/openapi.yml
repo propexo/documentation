@@ -668,6 +668,7 @@ components:
                         - REALPAGE_FACILITIES_SERVICE_REQUESTS
                         - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                         - REALPAGE_UNIT_UNIT_DETAILS
+                        - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
                         - SAMPLE1_GUESTCARD
                         - SAMPLE1_RESIDENT_TRANSACTIONS
                         - SAMPLE1_RESIDENT_DATA
@@ -776,6 +777,7 @@ components:
                           - REALPAGE_FACILITIES_SERVICE_REQUESTS
                           - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                           - REALPAGE_UNIT_UNIT_DETAILS
+                          - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
                           - SAMPLE1_GUESTCARD
                           - SAMPLE1_RESIDENT_TRANSACTIONS
                           - SAMPLE1_RESIDENT_DATA
@@ -2613,6 +2615,7 @@ components:
                       - REALPAGE_FACILITIES_SERVICE_REQUESTS
                       - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                       - REALPAGE_UNIT_UNIT_DETAILS
+                      - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
                       - SAMPLE1_GUESTCARD
                       - SAMPLE1_RESIDENT_TRANSACTIONS
                       - SAMPLE1_RESIDENT_DATA
@@ -2721,6 +2724,7 @@ components:
                         - REALPAGE_FACILITIES_SERVICE_REQUESTS
                         - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                         - REALPAGE_UNIT_UNIT_DETAILS
+                        - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
                         - SAMPLE1_GUESTCARD
                         - SAMPLE1_RESIDENT_TRANSACTIONS
                         - SAMPLE1_RESIDENT_DATA
