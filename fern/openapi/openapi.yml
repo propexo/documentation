@@ -56762,8 +56762,8 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
+                        x_property_id: ae9994dd-846f-4466-9752-306df25f7882
                         x_resident_id: "null"
                         x_unit_id: sample_value
                         residents_meta_data:
@@ -56787,7 +56787,7 @@ paths:
                         rent_due_date: 2024-07-01T00:00:00.000Z
                         scheduled_move_in_date: "null"
                         scheduled_move_out_date: "null"
-                        signature_date: 2024-03-21T00:00:00.000Z
+                        signature_date: 2024-01-02T00:00:00.000Z
                         start_date: "null"
                         status: sample_value
                         status_normalized: "null"
@@ -57461,8 +57461,8 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
+                      x_property_id: ae9994dd-846f-4466-9752-306df25f7882
                       x_resident_id: "null"
                       x_unit_id: sample_value
                       residents_meta_data:
@@ -57486,7 +57486,7 @@ paths:
                       rent_due_date: 2024-07-01T00:00:00.000Z
                       scheduled_move_in_date: "null"
                       scheduled_move_out_date: "null"
-                      signature_date: 2024-03-21T00:00:00.000Z
+                      signature_date: 2024-01-02T00:00:00.000Z
                       start_date: "null"
                       status: sample_value
                       status_normalized: "null"
