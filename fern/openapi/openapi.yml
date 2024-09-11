@@ -6078,7 +6078,14 @@ components:
           description: The Propexo unique identifier for the property
         lease_period_id:
           type: string
-          description: The Propexo unique identifier for the lease period
+          description: The lease period to use for the application. If supplied, this
+            field must be one of the approved lease periods defined on the
+            Rentvine template. You can see a list of available choices for each
+            application template on the appropriate lease period endpoint.
+            Depending on the Rentvine template, this field can be customized to
+            be either required or optional. You will need to work with your
+            customer directly to configure this field to your application
+            requirements or to change the list of available lease periods
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source
@@ -6197,7 +6204,1069 @@ components:
           description: The move-in date associated with the lease
         middle_name:
           type: string
-          description: The middle name associated with the applicant
+          description: The middle name associated with the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        application_template_id:
+          type: string
+          description: "The Propexo unique identifier for the application template. The
+            Rentvine application template dynamically defines which fields are
+            required for each applicant/application: whether a field is active,
+            disabled, required, or optional. A template may also allow some
+            enums to be modified or for entire fields to be
+            relabeled/repurposed. The functionality of a template is extensive
+            and will likely require that you work with your customer to define a
+            custom template for your application use case"
+        leasing_agent_first_name:
+          type: string
+          description: The first name of the leasing agent. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        leasing_agent_last_name:
+          type: string
+          description: The last name of the leasing agent. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        leasing_agent_contact_info:
+          type: string
+          description: The contact info for the leasing agent. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        rent_amount_in_cents:
+          type: integer
+          minimum: 0
+          description: The rent amount in cents that the applicant will pay for the unit.
+            This field is not configurable on the Rentvine template and is
+            always required
+        security_deposit_in_cents:
+          type: integer
+          minimum: 0
+          description: The security deposit in cents that the applicant will pay for the
+            unit. Depending on the Rentvine template, this field can be
+            customized to be either required or optional. You will need to work
+            with your customer directly to configure this field to your
+            application requirements
+        type:
+          type: string
+          enum:
+            - APPLICANT
+            - CO_APPLICANT
+            - OCCUPANT
+            - GUARANTOR
+          description: The type of applicant. Depending on the Rentvine template, this
+            field can be customized to be either required or optional. You will
+            need to work with your customer directly to configure this field to
+            your application requirements. Although the field itself can be made
+            optional/required, the value must be one of the available choices
+            and cannot be modified as part of the template
+        marital_status:
+          type: string
+          enum:
+            - SINGLE
+            - MARRIED
+            - ENGAGED
+            - SEPARATED
+            - DIVORCED
+            - WIDOWED
+            - UNMARRIED_PARTNERS
+          description: The marital status of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements. Although the
+            field itself can be made optional/required, the value must be one of
+            the available choices and cannot be modified as part of the template
+        maiden_name:
+          type: string
+          description: The maiden name or birth name of the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        height:
+          type: string
+          description: The height of the applicant. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
+        weight:
+          type: string
+          description: The weight of the applicant. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
+        eye_color:
+          type: string
+          description: The eye color of the applicant. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
+        hair_color:
+          type: string
+          description: The hair color of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        phone_3:
+          type: string
+          pattern: ^\+?\d{1,50}$
+          description: Third phone number associated with the applicant. An applicant can
+            have no more than one of each phone type. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        phone_3_type:
+          type: string
+          enum:
+            - HOME
+            - WORK
+            - MOBILE
+          description: Type of the third phone number. An applicant can have no more than
+            one of each phone type.
+        identification_number:
+          type: string
+          description: The Social Security Number or Individual Taxpayer Identification
+            Number associated with the applicant. Rentvine uses a pre-2011
+            validation scheme for SSN's meaning that some valid SSNs will be
+            incorrectly rejected. Reach out to support if you find that a valid
+            SSN is being rejected. This field is not configurable on the
+            Rentvine template and is always required
+        citizenship:
+          type: string
+          description: The country of citizenship of the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        place_of_birth:
+          type: string
+          description: The place of birth of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        passport_number:
+          type: string
+          description: The passport number of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        student_id:
+          type: string
+          description: The student ID number of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        drivers_license_number:
+          type: string
+          description: The driver's license number of the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        drivers_license_state:
+          type: string
+          description: The issuing state of the applicant's driver's license. Depending on
+            the Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        lead_source:
+          type: string
+          description: The name of the lead source associated with the applicant
+        emergency_contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the emergency contact. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              last_name:
+                type: string
+                description: The last name of the emergency contact. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              relationship:
+                type: string
+                description: The relationship of the emergency contact to the applicant.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              address_1:
+                type: string
+                description: The first line of the address of the emergency contact. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              address_2:
+                type: string
+                description: The second line of the address of the emergency contact. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              city:
+                type: string
+                description: The city of the address of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              state:
+                type: string
+                description: The state of the address of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              zip:
+                type: string
+                description: The zip code of the address of the emergency contact. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              country:
+                type: string
+                description: The country of the address of the emergency contact. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              phone_1:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              phone_2:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The second phone number of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              email_1:
+                type: string
+                format: email
+                description: The email of the emergency contact. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+          description: A list of emergency contacts for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        application_references:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the applicant's reference. This field is not
+                  configurable on the Rentvine template and is always required
+              last_name:
+                type: string
+                description: The last name of the applicant's reference. This field is not
+                  configurable on the Rentvine template and is always required
+              relationship:
+                type: string
+                description: The relationship of the applicant's reference to the applicant.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              address_1:
+                type: string
+                description: The first line of the address of the applicant's reference.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              address_2:
+                type: string
+                description: The second line of the address of the applicant's reference.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              city:
+                type: string
+                description: The city of the address of the applicant's reference. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              state:
+                type: string
+                description: The state of the address of the applicant's reference. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              zip:
+                type: string
+                description: The zip code of the address of the applicant's reference. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              country:
+                type: string
+                description: The country of the address of the applicant's reference. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              phone_1:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the applicant's reference. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - first_name
+              - last_name
+          description: A list of applicant references for the application. Depending on
+            the Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        vehicles:
+          type: array
+          items:
+            type: object
+            properties:
+              make:
+                type: string
+                description: The make of the vehicle. This field is not configurable on the
+                  Rentvine template and is always required
+              model:
+                type: string
+                description: The model of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              year:
+                type: integer
+                description: The year the vehicle was made. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              license_plate_number:
+                type: string
+                description: The license plate number of the vehicle. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              license_plate_state:
+                type: string
+                description: The issuing state of the license plate. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              monthly_payment_in_cents:
+                type: integer
+                minimum: 0
+                description: If the vehicle is leased or financed, the applicant's monthly
+                  payment for the vehicle in cents. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              insurance_carrier:
+                type: string
+                description: The insurance carrier for the applicant's vehicle. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - make
+          description: A list of vehicles for the application. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        other_occupants:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the occupant. This field is not configurable on
+                  the Rentvine template and is always required
+              last_name:
+                type: string
+                description: The last name of the occupant. This field is not configurable on
+                  the Rentvine template and is always required
+              date_of_birth:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date of birth of the occupant. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              relationship:
+                type: string
+                enum:
+                  - OTHER
+                description: The relationship of the occupant to the applicant. The only allowed
+                  value is "OTHER" and is used to represent non-applicants under
+                  18 years old. Contact Propexo Support if you need to support a
+                  workflow that allows adding additional applicants to an
+                  application
+              relationship_detail:
+                type: string
+                description: The relationship detail of the occupant to the applicant. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+            required:
+              - first_name
+              - last_name
+              - relationship
+          description: A list of other occupants who will live in the unit, such as
+            children, etc. Depending on the Rentvine template, this array can be
+            customized to be either required or optional. The template may also
+            require a minimum number of items in the array in order to pass
+            validation. You will need to work with your customer directly to
+            configure this field to your application requirements. Do not
+            include any applicants in this list. If your application use case
+            requires creating multiple applicants in the same application,
+            please reach out to Propexo Support for help.
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name associated with the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              type:
+                type: string
+                description: The type associated with the applicant pet (or breed). This field
+                  is not configurable on the Rentvine template and is always
+                  required
+              age_in_years:
+                type: integer
+                minimum: 0
+                description: The age in years of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              weight_in_pounds:
+                type: integer
+                minimum: 0
+                description: The weight in pounds of the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              is_trained:
+                type: boolean
+                description: Whether the applicant pet is trained. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the applicant pet. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              gender:
+                type: string
+                enum:
+                  - MALE
+                  - FEMALE
+                  - UNSPECIFIED
+                description: The gender of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_declawed:
+                type: boolean
+                description: Whether the applicant pet is declawed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_vaccinated:
+                type: boolean
+                description: Whether the applicant pet is vaccinated. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_fixed:
+                type: boolean
+                description: Whether the applicant pet is fixed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+            required:
+              - type
+          description: A list of applicant pets. Depending on the Rentvine template, this
+            array can be customized to be either required or optional. The
+            template may also require a minimum number of items in the array in
+            order to pass validation. You will need to work with your customer
+            directly to configure this field to your application requirements
+        address_history:
+          type: array
+          items:
+            type: object
+            properties:
+              address_1:
+                type: string
+                description: The first address line associated with the applicant's historical
+                  address. This field is not configurable on the Rentvine
+                  template and is always required
+              address_2:
+                type: string
+                description: The second address line associated with the applicant's historical
+                  address. Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              city:
+                type: string
+                description: The city associated with the applicant's historical address. This
+                  field is not configurable on the Rentvine template and is
+                  always required
+              state:
+                type: string
+                enum:
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                  - AL
+                  - AK
+                  - AS
+                  - AZ
+                  - AR
+                  - AA
+                  - AE
+                  - AP
+                  - CA
+                  - CO
+                  - CT
+                  - DE
+                  - DC
+                  - FL
+                  - GA
+                  - GU
+                  - HI
+                  - ID
+                  - IL
+                  - IN
+                  - IA
+                  - KS
+                  - KY
+                  - LA
+                  - ME
+                  - MD
+                  - MA
+                  - MI
+                  - MN
+                  - MS
+                  - MO
+                  - MT
+                  - NE
+                  - NV
+                  - NH
+                  - NJ
+                  - NM
+                  - NY
+                  - NC
+                  - ND
+                  - MP
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - RI
+                  - SC
+                  - SD
+                  - TN
+                  - TX
+                  - UM
+                  - UT
+                  - VT
+                  - VI
+                  - VA
+                  - WA
+                  - WV
+                  - WI
+                  - WY
+                description: The state associated with the applicant's historical address. This
+                  field is not configurable on the Rentvine template and is
+                  always required
+              zip:
+                type: string
+                description: The zip code associated with the applicant's historical address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              country:
+                type: string
+                enum:
+                  - US
+                  - CA
+                description: The country associated with the applicant's historical address.
+                  This field is not configurable on the Rentvine template and is
+                  always required. If your application needs to support
+                  submitting an applicant who previously or currently reside(s)
+                  in another country, please reach out to Propexo Support for
+                  help
+              address_type:
+                type: string
+                enum:
+                  - OWN
+                  - RENT
+                description: Whether the applicant previously owned or rented at this address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              monthly_payment_in_cents:
+                type: integer
+                minimum: 0
+                description: For the applicant's historical address, the applicant's monthly
+                  payment for rent or mortgage in cents. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              move_in_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date when the applicant moved into this historical address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              move_out_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date when the applicant moved out of this address. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements. Leave out this field to indicate that the given
+                  array item is the applicant's current address.  At least one
+                  address in this array (the current address) is required.
+              manager_name:
+                type: string
+                description: The name of a property manager who works at this address. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              manager_phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of a property manager who works at this address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              manager_email:
+                type: string
+                format: email
+                description: The email of a property manager who works at this address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              reason_for_leaving:
+                type: string
+                description: The reason the applicant decided to leave this address. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              manager_type:
+                type: string
+                enum:
+                  - LANDLORD
+                  - PROPERTY_MANAGER
+                  - RELATIVE
+                  - FRIEND
+                  - APARTMENT
+                description: The type of property manager who works at this address. This field
+                  is ignored for the current address. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+            required:
+              - address_1
+              - city
+              - state
+              - zip
+              - country
+          minItems: 1
+          description: The address history of the applicant. At least one address (the
+            current address) must be provided. Note that Rentvine allows
+            configuring different application template requirements for the
+            current address vs. historical addresses. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements. Assuming that a minimum number of addresses are
+            required in the application template, the current address does not
+            count towards the minimum number
+        employment_history:
+          type: array
+          items:
+            type: object
+            properties:
+              is_current_employer:
+                type: boolean
+                description: Whether this employment history entry is for a current employer.
+                  This field is not configurable on the Rentvine template and is
+                  always required
+              name:
+                type: string
+                description: The name of the employer. This field is not configurable on the
+                  Rentvine template and is always required
+              phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              address_1:
+                type: string
+                description: The first line of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              address_2:
+                type: string
+                description: The second line of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              city:
+                type: string
+                description: The city of the address of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              state:
+                type: string
+                description: The state of the address of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              zip:
+                type: string
+                description: The zip code of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              country:
+                type: string
+                description: The country of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              supervisor_first_name:
+                type: string
+                description: The first name of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_last_name:
+                type: string
+                description: The last name of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_title:
+                type: string
+                description: The title of the applicant's supervisor at this employer. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              supervisor_phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_email:
+                type: string
+                format: email
+                description: The email of the applicant's supervisor at this employer. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              position:
+                type: string
+                description: The position held at this employer, or the job description of the
+                  applicant. Depending on the Rentvine template, this field can
+                  be customized to be either required or optional. You will need
+                  to work with your customer directly to configure this field to
+                  your application requirements
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income of the applicant at this employer in cents. This
+                  field is not configurable on the Rentvine template and is
+                  always required
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date of the applicant's employment at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date of the applicant's employment at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+            required:
+              - is_current_employer
+              - name
+              - monthly_income_in_cents
+          description: The employment history of the applicant. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        other_income:
+          type: array
+          items:
+            type: object
+            properties:
+              source:
+                type: string
+                description: The source of the income for the applicant. This field is not
+                  configurable on the Rentvine template and is always required
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income from this income source in cents. This field is
+                  not configurable on the Rentvine template and is always
+                  required
+              phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number related to this income source to use for income
+                  verification. Depending on the Rentvine template, this field
+                  can be customized to be either required or optional. You will
+                  need to work with your customer directly to configure this
+                  field to your application requirements
+            required:
+              - source
+              - monthly_income_in_cents
+          description: A list of other income sources for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        bank_accounts:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name of the bank where the account is held. This field is not
+                  configurable on the Rentvine template and is always required
+              account_type:
+                type: string
+                enum:
+                  - SAVINGS
+                  - CHECKING
+                description: The type of bank account. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              account_number:
+                type: string
+                description: The account number of the bank account. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              balance_in_cents:
+                type: integer
+                minimum: 0
+                description: The current balance of the bank account in cents. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - name
+          description: A list of bank accounts for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        credit_cards:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name of the bank or issuer of the credit card. This field is
+                  not configurable on the Rentvine template and is always
+                  required
+              balance_in_cents:
+                type: integer
+                minimum: 0
+                description: The current balance of the credit card in cents. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - name
+          description: A list of credit cards for the applicant. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        assistance:
+          type: object
+          properties:
+            agency_name:
+              type: string
+              description: The name of the agency who is providing assistance for the
+                applicant. Depending on the Rentvine template, this field can be
+                customized to be either required or optional. You will need to
+                work with your customer directly to configure this field to your
+                application requirements
+            county:
+              type: string
+              description: The county where the agency is located. Depending on the Rentvine
+                template, this field can be customized to be either required or
+                optional. You will need to work with your customer directly to
+                configure this field to your application requirements
+            technician_name:
+              type: string
+              description: The name of the agency's contact assigned to support the applicant.
+                Depending on the Rentvine template, this field can be customized
+                to be either required or optional. You will need to work with
+                your customer directly to configure this field to your
+                application requirements
+            phone:
+              type: string
+              pattern: ^\+?\d{1,50}$
+              description: The phone number of the agency or of the agency's contact.
+                Depending on the Rentvine template, this field can be customized
+                to be either required or optional. You will need to work with
+                your customer directly to configure this field to your
+                application requirements
+            assistance_amount_in_cents:
+              type: integer
+              minimum: 0
+              description: The amount of assistance for the applicant in cents. Depending on
+                the Rentvine template, this field can be customized to be either
+                required or optional. You will need to work with your customer
+                directly to configure this field to your application
+                requirements
+            beds_allowed:
+              type: string
+              description: The number of beds allowed for the applicant. Depending on the
+                Rentvine template, this field can be customized to be either
+                required or optional. You will need to work with your customer
+                directly to configure this field to your application
+                requirements
+            are_utilities_covered:
+              type: boolean
+              description: Whether utilities are covered for the applicant. Depending on the
+                Rentvine template, this field can be customized to be either
+                required or optional. You will need to work with your customer
+                directly to configure this field to your application
+                requirements
+          description: Details for payment assistance for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        application_id:
+          type: string
+          description: Optionally, the Propexo unique identifier for the application onto
+            which you'd like to add this applicant. If omitted, Rentvine will
+            create a new application for this applicant.
         lead_id:
           type: string
           description: The Propexo unique identifier for the lead
@@ -6253,9 +7322,6 @@ components:
         leasing_agent:
           type: string
           description: The full name of the leasing agent associated with the applicant
-        lead_source:
-          type: string
-          description: The name of the lead source associated with the applicant
       required:
         - integration_id
     _v1_applicants__post_output:
@@ -6773,7 +7839,14 @@ components:
           description: The Propexo unique identifier for the application
         lease_period_id:
           type: string
-          description: The Propexo unique identifier for the lease period
+          description: The lease period to use for the application. If supplied, this
+            field must be one of the approved lease periods defined on the
+            Rentvine template. You can see a list of available choices for each
+            application template on the appropriate lease period endpoint.
+            Depending on the Rentvine template, this field can be customized to
+            be either required or optional. You will need to work with your
+            customer directly to configure this field to your application
+            requirements or to change the list of available lease periods
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -6905,13 +7978,1077 @@ components:
           description: The zip code associated with the applicant
         middle_name:
           type: string
-          description: The middle name associated with the applicant
+          description: The middle name associated with the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
         country:
           type: string
           description: The country associated with the applicant
         x_property_id:
           type: string
           description: The external ID of the property from the integration vendor
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        application_template_id:
+          type: string
+          description: "The Propexo unique identifier for the application template. The
+            Rentvine application template dynamically defines which fields are
+            required for each applicant/application: whether a field is active,
+            disabled, required, or optional. A template may also allow some
+            enums to be modified or for entire fields to be
+            relabeled/repurposed. The functionality of a template is extensive
+            and will likely require that you work with your customer to define a
+            custom template for your application use case"
+        leasing_agent_first_name:
+          type: string
+          description: The first name of the leasing agent. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        leasing_agent_last_name:
+          type: string
+          description: The last name of the leasing agent. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        leasing_agent_contact_info:
+          type: string
+          description: The contact info for the leasing agent. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        rent_amount_in_cents:
+          type: integer
+          minimum: 0
+          description: The rent amount in cents that the applicant will pay for the unit.
+            This field is not configurable on the Rentvine template and is
+            always required
+        security_deposit_in_cents:
+          type: integer
+          minimum: 0
+          description: The security deposit in cents that the applicant will pay for the
+            unit. Depending on the Rentvine template, this field can be
+            customized to be either required or optional. You will need to work
+            with your customer directly to configure this field to your
+            application requirements
+        type:
+          type: string
+          enum:
+            - APPLICANT
+            - CO_APPLICANT
+            - OCCUPANT
+            - GUARANTOR
+          description: The type of applicant. Depending on the Rentvine template, this
+            field can be customized to be either required or optional. You will
+            need to work with your customer directly to configure this field to
+            your application requirements. Although the field itself can be made
+            optional/required, the value must be one of the available choices
+            and cannot be modified as part of the template
+        marital_status:
+          type: string
+          enum:
+            - SINGLE
+            - MARRIED
+            - ENGAGED
+            - SEPARATED
+            - DIVORCED
+            - WIDOWED
+            - UNMARRIED_PARTNERS
+          description: The marital status of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements. Although the
+            field itself can be made optional/required, the value must be one of
+            the available choices and cannot be modified as part of the template
+        maiden_name:
+          type: string
+          description: The maiden name or birth name of the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        height:
+          type: string
+          description: The height of the applicant. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
+        weight:
+          type: string
+          description: The weight of the applicant. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
+        eye_color:
+          type: string
+          description: The eye color of the applicant. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
+        hair_color:
+          type: string
+          description: The hair color of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        phone_3:
+          type: string
+          pattern: ^\+?\d{1,50}$
+          description: Third phone number associated with the applicant. An applicant can
+            have no more than one of each phone type. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        phone_3_type:
+          type: string
+          enum:
+            - HOME
+            - WORK
+            - MOBILE
+          description: Type of the third phone number. An applicant can have no more than
+            one of each phone type.
+        identification_number:
+          type: string
+          description: The Social Security Number or Individual Taxpayer Identification
+            Number associated with the applicant. Rentvine uses a pre-2011
+            validation scheme for SSN's meaning that some valid SSNs will be
+            incorrectly rejected. Reach out to support if you find that a valid
+            SSN is being rejected. This field is not configurable on the
+            Rentvine template and is always required
+        citizenship:
+          type: string
+          description: The country of citizenship of the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        place_of_birth:
+          type: string
+          description: The place of birth of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        passport_number:
+          type: string
+          description: The passport number of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        student_id:
+          type: string
+          description: The student ID number of the applicant. Depending on the Rentvine
+            template, this field can be customized to be either required or
+            optional. You will need to work with your customer directly to
+            configure this field to your application requirements
+        drivers_license_number:
+          type: string
+          description: The driver's license number of the applicant. Depending on the
+            Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        drivers_license_state:
+          type: string
+          description: The issuing state of the applicant's driver's license. Depending on
+            the Rentvine template, this field can be customized to be either
+            required or optional. You will need to work with your customer
+            directly to configure this field to your application requirements
+        lead_source:
+          type: string
+          description: The name of the source of the lead or how the applicant heard of
+            the property management company. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
+        emergency_contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the emergency contact. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              last_name:
+                type: string
+                description: The last name of the emergency contact. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              relationship:
+                type: string
+                description: The relationship of the emergency contact to the applicant.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              address_1:
+                type: string
+                description: The first line of the address of the emergency contact. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              address_2:
+                type: string
+                description: The second line of the address of the emergency contact. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              city:
+                type: string
+                description: The city of the address of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              state:
+                type: string
+                description: The state of the address of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              zip:
+                type: string
+                description: The zip code of the address of the emergency contact. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              country:
+                type: string
+                description: The country of the address of the emergency contact. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              phone_1:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              phone_2:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The second phone number of the emergency contact. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              email_1:
+                type: string
+                format: email
+                description: The email of the emergency contact. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+          description: A list of emergency contacts for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        application_references:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the applicant's reference. This field is not
+                  configurable on the Rentvine template and is always required
+              last_name:
+                type: string
+                description: The last name of the applicant's reference. This field is not
+                  configurable on the Rentvine template and is always required
+              relationship:
+                type: string
+                description: The relationship of the applicant's reference to the applicant.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              address_1:
+                type: string
+                description: The first line of the address of the applicant's reference.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              address_2:
+                type: string
+                description: The second line of the address of the applicant's reference.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              city:
+                type: string
+                description: The city of the address of the applicant's reference. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              state:
+                type: string
+                description: The state of the address of the applicant's reference. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              zip:
+                type: string
+                description: The zip code of the address of the applicant's reference. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              country:
+                type: string
+                description: The country of the address of the applicant's reference. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              phone_1:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the applicant's reference. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - first_name
+              - last_name
+          description: A list of applicant references for the application. Depending on
+            the Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        vehicles:
+          type: array
+          items:
+            type: object
+            properties:
+              make:
+                type: string
+                description: The make of the vehicle. This field is not configurable on the
+                  Rentvine template and is always required
+              model:
+                type: string
+                description: The model of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              year:
+                type: integer
+                description: The year the vehicle was made. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              license_plate_number:
+                type: string
+                description: The license plate number of the vehicle. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              license_plate_state:
+                type: string
+                description: The issuing state of the license plate. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              monthly_payment_in_cents:
+                type: integer
+                minimum: 0
+                description: If the vehicle is leased or financed, the applicant's monthly
+                  payment for the vehicle in cents. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              insurance_carrier:
+                type: string
+                description: The insurance carrier for the applicant's vehicle. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - make
+          description: A list of vehicles for the application. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        other_occupants:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the occupant. This field is not configurable on
+                  the Rentvine template and is always required
+              last_name:
+                type: string
+                description: The last name of the occupant. This field is not configurable on
+                  the Rentvine template and is always required
+              date_of_birth:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date of birth of the occupant. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              relationship:
+                type: string
+                enum:
+                  - OTHER
+                description: The relationship of the occupant to the applicant. The only allowed
+                  value is "OTHER" and is used to represent non-applicants under
+                  18 years old. Contact Propexo Support if you need to support a
+                  workflow that allows adding additional applicants to an
+                  application
+              relationship_detail:
+                type: string
+                description: The relationship detail of the occupant to the applicant. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+            required:
+              - first_name
+              - last_name
+              - relationship
+          description: A list of other occupants who will live in the unit, such as
+            children, etc. Depending on the Rentvine template, this array can be
+            customized to be either required or optional. The template may also
+            require a minimum number of items in the array in order to pass
+            validation. You will need to work with your customer directly to
+            configure this field to your application requirements. Do not
+            include any applicants in this list. If your application use case
+            requires creating multiple applicants in the same application,
+            please reach out to Propexo Support for help.
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name associated with the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              type:
+                type: string
+                description: The type associated with the applicant pet (or breed). This field
+                  is not configurable on the Rentvine template and is always
+                  required
+              age_in_years:
+                type: integer
+                minimum: 0
+                description: The age in years of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              weight_in_pounds:
+                type: integer
+                minimum: 0
+                description: The weight in pounds of the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              is_trained:
+                type: boolean
+                description: Whether the applicant pet is trained. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the applicant pet. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              gender:
+                type: string
+                enum:
+                  - MALE
+                  - FEMALE
+                  - UNSPECIFIED
+                description: The gender of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_declawed:
+                type: boolean
+                description: Whether the applicant pet is declawed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_vaccinated:
+                type: boolean
+                description: Whether the applicant pet is vaccinated. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_fixed:
+                type: boolean
+                description: Whether the applicant pet is fixed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+            required:
+              - type
+          description: A list of applicant pets. Depending on the Rentvine template, this
+            array can be customized to be either required or optional. The
+            template may also require a minimum number of items in the array in
+            order to pass validation. You will need to work with your customer
+            directly to configure this field to your application requirements
+        address_history:
+          type: array
+          items:
+            type: object
+            properties:
+              address_1:
+                type: string
+                description: The first address line associated with the applicant's historical
+                  address. This field is not configurable on the Rentvine
+                  template and is always required
+              address_2:
+                type: string
+                description: The second address line associated with the applicant's historical
+                  address. Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              city:
+                type: string
+                description: The city associated with the applicant's historical address. This
+                  field is not configurable on the Rentvine template and is
+                  always required
+              state:
+                type: string
+                enum:
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                  - AL
+                  - AK
+                  - AS
+                  - AZ
+                  - AR
+                  - AA
+                  - AE
+                  - AP
+                  - CA
+                  - CO
+                  - CT
+                  - DE
+                  - DC
+                  - FL
+                  - GA
+                  - GU
+                  - HI
+                  - ID
+                  - IL
+                  - IN
+                  - IA
+                  - KS
+                  - KY
+                  - LA
+                  - ME
+                  - MD
+                  - MA
+                  - MI
+                  - MN
+                  - MS
+                  - MO
+                  - MT
+                  - NE
+                  - NV
+                  - NH
+                  - NJ
+                  - NM
+                  - NY
+                  - NC
+                  - ND
+                  - MP
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - RI
+                  - SC
+                  - SD
+                  - TN
+                  - TX
+                  - UM
+                  - UT
+                  - VT
+                  - VI
+                  - VA
+                  - WA
+                  - WV
+                  - WI
+                  - WY
+                description: The state associated with the applicant's historical address. This
+                  field is not configurable on the Rentvine template and is
+                  always required
+              zip:
+                type: string
+                description: The zip code associated with the applicant's historical address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              country:
+                type: string
+                enum:
+                  - US
+                  - CA
+                description: The country associated with the applicant's historical address.
+                  This field is not configurable on the Rentvine template and is
+                  always required. If your application needs to support
+                  submitting an applicant who previously or currently reside(s)
+                  in another country, please reach out to Propexo Support for
+                  help
+              address_type:
+                type: string
+                enum:
+                  - OWN
+                  - RENT
+                description: Whether the applicant previously owned or rented at this address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              monthly_payment_in_cents:
+                type: integer
+                minimum: 0
+                description: For the applicant's historical address, the applicant's monthly
+                  payment for rent or mortgage in cents. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              move_in_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date when the applicant moved into this historical address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              move_out_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date when the applicant moved out of this address. Depending on
+                  the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements. Leave out this field to indicate that the given
+                  array item is the applicant's current address.  At least one
+                  address in this array (the current address) is required.
+              manager_name:
+                type: string
+                description: The name of a property manager who works at this address. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              manager_phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of a property manager who works at this address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              manager_email:
+                type: string
+                format: email
+                description: The email of a property manager who works at this address.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              reason_for_leaving:
+                type: string
+                description: The reason the applicant decided to leave this address. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              manager_type:
+                type: string
+                enum:
+                  - LANDLORD
+                  - PROPERTY_MANAGER
+                  - RELATIVE
+                  - FRIEND
+                  - APARTMENT
+                description: The type of property manager who works at this address. This field
+                  is ignored for the current address. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+            required:
+              - address_1
+              - city
+              - state
+              - zip
+              - country
+          minItems: 1
+          description: The address history of the applicant. At least one address (the
+            current address) must be provided. Note that Rentvine allows
+            configuring different application template requirements for the
+            current address vs. historical addresses. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements. Assuming that a minimum number of addresses are
+            required in the application template, the current address does not
+            count towards the minimum number
+        employment_history:
+          type: array
+          items:
+            type: object
+            properties:
+              is_current_employer:
+                type: boolean
+                description: Whether this employment history entry is for a current employer.
+                  This field is not configurable on the Rentvine template and is
+                  always required
+              name:
+                type: string
+                description: The name of the employer. This field is not configurable on the
+                  Rentvine template and is always required
+              phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              address_1:
+                type: string
+                description: The first line of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              address_2:
+                type: string
+                description: The second line of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              city:
+                type: string
+                description: The city of the address of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              state:
+                type: string
+                description: The state of the address of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              zip:
+                type: string
+                description: The zip code of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              country:
+                type: string
+                description: The country of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              supervisor_first_name:
+                type: string
+                description: The first name of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_last_name:
+                type: string
+                description: The last name of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_title:
+                type: string
+                description: The title of the applicant's supervisor at this employer. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              supervisor_phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_email:
+                type: string
+                format: email
+                description: The email of the applicant's supervisor at this employer. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              position:
+                type: string
+                description: The position held at this employer, or the job description of the
+                  applicant. Depending on the Rentvine template, this field can
+                  be customized to be either required or optional. You will need
+                  to work with your customer directly to configure this field to
+                  your application requirements
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income of the applicant at this employer in cents. This
+                  field is not configurable on the Rentvine template and is
+                  always required
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date of the applicant's employment at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date of the applicant's employment at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+            required:
+              - is_current_employer
+              - name
+              - monthly_income_in_cents
+          description: The employment history of the applicant. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        other_income:
+          type: array
+          items:
+            type: object
+            properties:
+              source:
+                type: string
+                description: The source of the income for the applicant. This field is not
+                  configurable on the Rentvine template and is always required
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income from this income source in cents. This field is
+                  not configurable on the Rentvine template and is always
+                  required
+              phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number related to this income source to use for income
+                  verification. Depending on the Rentvine template, this field
+                  can be customized to be either required or optional. You will
+                  need to work with your customer directly to configure this
+                  field to your application requirements
+            required:
+              - source
+              - monthly_income_in_cents
+          description: A list of other income sources for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        bank_accounts:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name of the bank where the account is held. This field is not
+                  configurable on the Rentvine template and is always required
+              account_type:
+                type: string
+                enum:
+                  - SAVINGS
+                  - CHECKING
+                description: The type of bank account. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              account_number:
+                type: string
+                description: The account number of the bank account. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              balance_in_cents:
+                type: integer
+                minimum: 0
+                description: The current balance of the bank account in cents. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - name
+          description: A list of bank accounts for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
+        credit_cards:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name of the bank or issuer of the credit card. This field is
+                  not configurable on the Rentvine template and is always
+                  required
+              balance_in_cents:
+                type: integer
+                minimum: 0
+                description: The current balance of the credit card in cents. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - name
+          description: A list of credit cards for the applicant. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        assistance:
+          type: object
+          properties:
+            agency_name:
+              type: string
+              description: The name of the agency who is providing assistance for the
+                applicant. Depending on the Rentvine template, this field can be
+                customized to be either required or optional. You will need to
+                work with your customer directly to configure this field to your
+                application requirements
+            county:
+              type: string
+              description: The county where the agency is located. Depending on the Rentvine
+                template, this field can be customized to be either required or
+                optional. You will need to work with your customer directly to
+                configure this field to your application requirements
+            technician_name:
+              type: string
+              description: The name of the agency's contact assigned to support the applicant.
+                Depending on the Rentvine template, this field can be customized
+                to be either required or optional. You will need to work with
+                your customer directly to configure this field to your
+                application requirements
+            phone:
+              type: string
+              pattern: ^\+?\d{1,50}$
+              description: The phone number of the agency or of the agency's contact.
+                Depending on the Rentvine template, this field can be customized
+                to be either required or optional. You will need to work with
+                your customer directly to configure this field to your
+                application requirements
+            assistance_amount_in_cents:
+              type: integer
+              minimum: 0
+              description: The amount of assistance for the applicant in cents. Depending on
+                the Rentvine template, this field can be customized to be either
+                required or optional. You will need to work with your customer
+                directly to configure this field to your application
+                requirements
+            beds_allowed:
+              type: string
+              description: The number of beds allowed for the applicant. Depending on the
+                Rentvine template, this field can be customized to be either
+                required or optional. You will need to work with your customer
+                directly to configure this field to your application
+                requirements
+            are_utilities_covered:
+              type: boolean
+              description: Whether utilities are covered for the applicant. Depending on the
+                Rentvine template, this field can be customized to be either
+                required or optional. You will need to work with your customer
+                directly to configure this field to your application
+                requirements
+          description: Details for payment assistance for the applicant. Depending on the
+            Rentvine template, this array can be customized to be either
+            required or optional. The template may also require a minimum number
+            of items in the array in order to pass validation. You will need to
+            work with your customer directly to configure this field to your
+            application requirements
         application_date:
           type: string
           format: date-time
@@ -7172,9 +9309,6 @@ components:
             relabeled/repurposed. The functionality of a template is extensive
             and will likely require that you work with your customer to define a
             custom template for your application use case"
-        unit_id:
-          type: string
-          description: The Propexo unique identifier for the unit
         leasing_agent_first_name:
           type: string
           description: The first name of the leasing agent. Depending on the Rentvine
@@ -8221,6 +10355,9 @@ components:
             of items in the array in order to pass validation. You will need to
             work with your customer directly to configure this field to your
             application requirements
+        unit_id:
+          type: string
+          description: The Propexo unique identifier for the unit
         property_id:
           type: string
           description: The Propexo unique identifier for the property
