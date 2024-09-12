@@ -726,6 +726,7 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_LEASES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -835,6 +836,7 @@ components:
                           - ENTRATA_LEASE_DETAILS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                           - PROPERTYWARE_REST_READ_PROPERTIES
+                          - PROPERTYWARE_REST_READ_LEASES
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2673,6 +2675,7 @@ components:
                       - ENTRATA_LEASE_DETAILS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                       - PROPERTYWARE_REST_READ_PROPERTIES
+                      - PROPERTYWARE_REST_READ_LEASES
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -2782,6 +2785,7 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_LEASES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -56472,10 +56476,10 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        x_resident_id: sample_value
-                        x_unit_id: sample_value
+                        x_id: "1237981"
+                        x_property_id: "65412321"
+                        x_resident_id: "null"
+                        x_unit_id: "5613212"
                         residents_meta_data:
                           - resident_id: sample_value
                             x_resident_type: sample_value
@@ -56483,28 +56487,28 @@ paths:
                             move_in_date: 2024-07-01T00:00:00.000Z
                             move_out_date: 2024-07-01T00:00:00.000Z
                             notice_date: 2024-07-01T00:00:00.000Z
-                        application_date: 2024-07-01T00:00:00.000Z
+                        application_date: "null"
                         custom_data: {}
-                        deposit_amount: sample_value
-                        deposit_amount_in_cents: default value
-                        deposit_date: 2024-07-01T00:00:00.000Z
-                        end_date: 2024-07-01T00:00:00.000Z
-                        realized_move_in_date: 2024-07-01T00:00:00.000Z
-                        realized_move_out_date: 2024-07-01T00:00:00.000Z
-                        rent_amount_in_cents: default value
-                        rent_amount_market_in_cents: default value
-                        rent_due_day: 42
-                        rent_due_date: 2024-07-01T00:00:00.000Z
-                        scheduled_move_in_date: 2024-07-01T00:00:00.000Z
-                        scheduled_move_out_date: 2024-07-01T00:00:00.000Z
-                        signature_date: 2024-07-01T00:00:00.000Z
-                        start_date: 2024-07-01T00:00:00.000Z
-                        status: sample_value
-                        status_normalized: default value
-                        status_raw: sample_value
-                        term: sample_value
-                        type: sample_value
-                        unit_number: sample_value
+                        deposit_amount: "null"
+                        deposit_amount_in_cents: "null"
+                        deposit_date: "null"
+                        end_date: 2024-06-27T00:00:00.000Z
+                        realized_move_in_date: 2023-06-27T00:00:00.000Z
+                        realized_move_out_date: 2024-06-27T00:00:00.000Z
+                        rent_amount_in_cents: 150000
+                        rent_amount_market_in_cents: "null"
+                        rent_due_day: "null"
+                        rent_due_date: "null"
+                        scheduled_move_in_date: "null"
+                        scheduled_move_out_date: 2024-06-27T00:00:00.000Z
+                        signature_date: 2024-03-14T00:00:00.000Z
+                        start_date: 2023-06-30T00:00:00.000Z
+                        status: "null"
+                        status_normalized: OTHER
+                        status_raw: Draft
+                        term: "null"
+                        type: "null"
+                        unit_number: "null"
                         unit_id: sample_value
                         property_id: sample_value
                         integration_id: sample_value
@@ -57171,10 +57175,10 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      x_resident_id: sample_value
-                      x_unit_id: sample_value
+                      x_id: "1237981"
+                      x_property_id: "65412321"
+                      x_resident_id: "null"
+                      x_unit_id: "5613212"
                       residents_meta_data:
                         - resident_id: sample_value
                           x_resident_type: sample_value
@@ -57182,28 +57186,28 @@ paths:
                           move_in_date: 2024-07-01T00:00:00.000Z
                           move_out_date: 2024-07-01T00:00:00.000Z
                           notice_date: 2024-07-01T00:00:00.000Z
-                      application_date: 2024-07-01T00:00:00.000Z
+                      application_date: "null"
                       custom_data: {}
-                      deposit_amount: sample_value
-                      deposit_amount_in_cents: default value
-                      deposit_date: 2024-07-01T00:00:00.000Z
-                      end_date: 2024-07-01T00:00:00.000Z
-                      realized_move_in_date: 2024-07-01T00:00:00.000Z
-                      realized_move_out_date: 2024-07-01T00:00:00.000Z
-                      rent_amount_in_cents: default value
-                      rent_amount_market_in_cents: default value
-                      rent_due_day: 42
-                      rent_due_date: 2024-07-01T00:00:00.000Z
-                      scheduled_move_in_date: 2024-07-01T00:00:00.000Z
-                      scheduled_move_out_date: 2024-07-01T00:00:00.000Z
-                      signature_date: 2024-07-01T00:00:00.000Z
-                      start_date: 2024-07-01T00:00:00.000Z
-                      status: sample_value
-                      status_normalized: default value
-                      status_raw: sample_value
-                      term: sample_value
-                      type: sample_value
-                      unit_number: sample_value
+                      deposit_amount: "null"
+                      deposit_amount_in_cents: "null"
+                      deposit_date: "null"
+                      end_date: 2024-06-27T00:00:00.000Z
+                      realized_move_in_date: 2023-06-27T00:00:00.000Z
+                      realized_move_out_date: 2024-06-27T00:00:00.000Z
+                      rent_amount_in_cents: 150000
+                      rent_amount_market_in_cents: "null"
+                      rent_due_day: "null"
+                      rent_due_date: "null"
+                      scheduled_move_in_date: "null"
+                      scheduled_move_out_date: 2024-06-27T00:00:00.000Z
+                      signature_date: 2024-03-14T00:00:00.000Z
+                      start_date: 2023-06-30T00:00:00.000Z
+                      status: "null"
+                      status_normalized: OTHER
+                      status_raw: Draft
+                      term: "null"
+                      type: "null"
+                      unit_number: "null"
                       unit_id: sample_value
                       property_id: sample_value
                       integration_id: sample_value
