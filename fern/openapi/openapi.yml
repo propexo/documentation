@@ -12387,12 +12387,7 @@ components:
           pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
           description: The time when the appointment will occur. Please refer to our
             appointment times section in the docs to see how each individual PMS
-            handles timezones. The time is in the local time of the
-            property/location.  In RentManager, the default timezone is an
-            optional setting that the PMC can set and will be stored on the
-            Propexo Timezone model.  You may need to read in this setting and
-            convert to the local timezone for the appointment time to be
-            correct.
+            handles timezones
         appointment_duration_minutes:
           type: integer
           exclusiveMinimum: 0
@@ -12408,6 +12403,7 @@ components:
             to the types of calendar appointments available
         notes:
           type: string
+          maxLength: 256
           description: Notes associated with the event
         title:
           type: string
@@ -12460,8 +12456,7 @@ components:
           pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
           description: The time when the appointment will occur. Please refer to our
             appointment times section in the docs to see how each individual PMS
-            handles timezones. The time is in the local time of the
-            property/location.
+            handles timezones
         appointment_duration_minutes:
           type: integer
           exclusiveMinimum: 0
@@ -12471,6 +12466,7 @@ components:
           description: The Propexo unique identifier for the employee
         notes:
           type: string
+          maxLength: 256
           description: Notes associated with the event
         appointment_type:
           type: string
