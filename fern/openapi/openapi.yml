@@ -727,6 +727,7 @@ components:
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_READ_RESIDENTS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -837,6 +838,7 @@ components:
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                           - PROPERTYWARE_REST_READ_PROPERTIES
                           - PROPERTYWARE_REST_READ_LEASES
+                          - PROPERTYWARE_REST_READ_RESIDENTS
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2676,6 +2678,7 @@ components:
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                       - PROPERTYWARE_REST_READ_PROPERTIES
                       - PROPERTYWARE_REST_READ_LEASES
+                      - PROPERTYWARE_REST_READ_RESIDENTS
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -2786,6 +2789,7 @@ components:
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_READ_RESIDENTS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -63413,8 +63417,8 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_lease_id: sample_value
+                        x_id: "1988912"
+                        x_lease_id: "null"
                         leases_meta_data:
                           - lease_id: sample_value
                             x_resident_type: sample_value
@@ -63422,39 +63426,39 @@ paths:
                             move_in_date: 2024-07-01T00:00:00.000Z
                             move_out_date: 2024-07-01T00:00:00.000Z
                             notice_date: 2024-07-01T00:00:00.000Z
-                        address_1_alternate: sample_value
-                        address_1: sample_value
-                        address_2_alternate: sample_value
-                        address_2: sample_value
-                        balance_in_cents: default value
-                        city_alternate: sample_value
-                        city: sample_value
-                        country_alternate: sample_value
-                        country: sample_value
+                        address_1_alternate: "null"
+                        address_1: 101 Canal St
+                        address_2_alternate: "null"
+                        address_2: Unit 2
+                        balance_in_cents: "null"
+                        city_alternate: "null"
+                        city: Boston
+                        country_alternate: "null"
+                        country: USA
                         custom_data: {}
-                        date_of_birth: 2024-07-01T00:00:00.000Z
-                        email_1: sample_value
-                        email_2: sample_value
-                        first_name: sample_value
-                        is_employee: true
-                        last_name: sample_value
-                        late_balance_in_cents: default value
-                        middle_name: sample_value
-                        notes: sample_value
-                        phone_1_type: default value
-                        phone_1: sample_value
-                        phone_2_type: default value
-                        phone_2: sample_value
-                        state_alternate: sample_value
-                        state: sample_value
-                        zip_alternate: sample_value
-                        zip: sample_value
+                        date_of_birth: 1989-01-01T00:00:00.000Z
+                        email_1: example@example.org
+                        email_2: example2@example.org
+                        first_name: John
+                        is_employee: "null"
+                        last_name: Doe
+                        late_balance_in_cents: "null"
+                        middle_name: Connor
+                        notes: Great tenant.
+                        phone_1_type: MOBILE
+                        phone_1: 555-555-5555
+                        phone_2_type: HOME
+                        phone_2: 555-555-5556
+                        state_alternate: "null"
+                        state: MA
+                        zip_alternate: "null"
+                        zip: "78912"
                         pets:
                           - id: sample_value
                             created_at: 2024-07-01T00:00:00.000Z
                             updated_at: 2024-07-01T00:00:00.000Z
                             last_seen: 2024-07-01T00:00:00.000Z
-                            x_id: sample_value
+                            x_id: "1988912"
                             name: sample_value
                             type: sample_value
                             breed: sample_value
@@ -63463,21 +63467,21 @@ paths:
                             weight_in_pounds: 42
                             is_fixed: true
                             is_service_animal: true
-                            notes: sample_value
+                            notes: Great tenant.
                             custom_data: {}
                         vehicles:
                           - id: sample_value
                             created_at: 2024-07-01T00:00:00.000Z
                             updated_at: 2024-07-01T00:00:00.000Z
                             last_seen: 2024-07-01T00:00:00.000Z
-                            x_id: sample_value
+                            x_id: "1988912"
                             make: sample_value
                             model: sample_value
                             color: sample_value
                             year: sample_value
                             license_plate_number: sample_value
                             license_plate_state: sample_value
-                            notes: sample_value
+                            notes: Great tenant.
                             custom_data: {}
                         integration_id: sample_value
                         integration_vendor: sample_value
@@ -64362,8 +64366,8 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_lease_id: sample_value
+                      x_id: "1988912"
+                      x_lease_id: "null"
                       leases_meta_data:
                         - lease_id: sample_value
                           x_resident_type: sample_value
@@ -64371,39 +64375,39 @@ paths:
                           move_in_date: 2024-07-01T00:00:00.000Z
                           move_out_date: 2024-07-01T00:00:00.000Z
                           notice_date: 2024-07-01T00:00:00.000Z
-                      address_1_alternate: sample_value
-                      address_1: sample_value
-                      address_2_alternate: sample_value
-                      address_2: sample_value
-                      balance_in_cents: default value
-                      city_alternate: sample_value
-                      city: sample_value
-                      country_alternate: sample_value
-                      country: sample_value
+                      address_1_alternate: "null"
+                      address_1: 101 Canal St
+                      address_2_alternate: "null"
+                      address_2: Unit 2
+                      balance_in_cents: "null"
+                      city_alternate: "null"
+                      city: Boston
+                      country_alternate: "null"
+                      country: USA
                       custom_data: {}
-                      date_of_birth: 2024-07-01T00:00:00.000Z
-                      email_1: sample_value
-                      email_2: sample_value
-                      first_name: sample_value
-                      is_employee: true
-                      last_name: sample_value
-                      late_balance_in_cents: default value
-                      middle_name: sample_value
-                      notes: sample_value
-                      phone_1_type: default value
-                      phone_1: sample_value
-                      phone_2_type: default value
-                      phone_2: sample_value
-                      state_alternate: sample_value
-                      state: sample_value
-                      zip_alternate: sample_value
-                      zip: sample_value
+                      date_of_birth: 1989-01-01T00:00:00.000Z
+                      email_1: example@example.org
+                      email_2: example2@example.org
+                      first_name: John
+                      is_employee: "null"
+                      last_name: Doe
+                      late_balance_in_cents: "null"
+                      middle_name: Connor
+                      notes: Great tenant.
+                      phone_1_type: MOBILE
+                      phone_1: 555-555-5555
+                      phone_2_type: HOME
+                      phone_2: 555-555-5556
+                      state_alternate: "null"
+                      state: MA
+                      zip_alternate: "null"
+                      zip: "78912"
                       pets:
                         - id: sample_value
                           created_at: 2024-07-01T00:00:00.000Z
                           updated_at: 2024-07-01T00:00:00.000Z
                           last_seen: 2024-07-01T00:00:00.000Z
-                          x_id: sample_value
+                          x_id: "1988912"
                           name: sample_value
                           type: sample_value
                           breed: sample_value
@@ -64412,21 +64416,21 @@ paths:
                           weight_in_pounds: 42
                           is_fixed: true
                           is_service_animal: true
-                          notes: sample_value
+                          notes: Great tenant.
                           custom_data: {}
                       vehicles:
                         - id: sample_value
                           created_at: 2024-07-01T00:00:00.000Z
                           updated_at: 2024-07-01T00:00:00.000Z
                           last_seen: 2024-07-01T00:00:00.000Z
-                          x_id: sample_value
+                          x_id: "1988912"
                           make: sample_value
                           model: sample_value
                           color: sample_value
                           year: sample_value
                           license_plate_number: sample_value
                           license_plate_state: sample_value
-                          notes: sample_value
+                          notes: Great tenant.
                           custom_data: {}
                       integration_id: sample_value
                       integration_vendor: sample_value
