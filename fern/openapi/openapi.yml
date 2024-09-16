@@ -726,6 +726,7 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_LEASES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - BUILDIUM_BASE
@@ -837,6 +838,7 @@ components:
                           - ENTRATA_LEASE_DETAILS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                           - PROPERTYWARE_REST_READ_PROPERTIES
+                          - PROPERTYWARE_REST_READ_UNITS
                           - PROPERTYWARE_REST_READ_LEASES
                           - PROPERTYWARE_REST_READ_RESIDENTS
                           - BUILDIUM_BASE
@@ -2677,6 +2679,7 @@ components:
                       - ENTRATA_LEASE_DETAILS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                       - PROPERTYWARE_REST_READ_PROPERTIES
+                      - PROPERTYWARE_REST_READ_UNITS
                       - PROPERTYWARE_REST_READ_LEASES
                       - PROPERTYWARE_REST_READ_RESIDENTS
                       - BUILDIUM_BASE
@@ -2788,6 +2791,7 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_LEASES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - BUILDIUM_BASE
@@ -71204,8 +71208,8 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "19827389"
+                        x_property_id: "29827389"
                         x_location_id: sample_value
                         x_unit_id: sample_value
                         x_floor_plan_id: sample_value
@@ -71664,8 +71668,8 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "19827389"
+                      x_property_id: "29827389"
                       x_location_id: sample_value
                       x_unit_id: sample_value
                       x_floor_plan_id: sample_value
@@ -72147,17 +72151,17 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "19827389"
+                        x_property_id: "29827389"
                         x_location_id: sample_value
                         name: sample_value
                         marketing_name: sample_value
                         code: sample_value
                         description: sample_value
-                        bedrooms: 42
-                        bathrooms: sample_value
-                        bathrooms_full: 42
-                        bathrooms_half: 42
+                        bedrooms: "1"
+                        bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
                         max_occupants: 42
                         rentable_square_feet: 42
                         gross_square_feet: 42
@@ -72557,17 +72561,17 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "19827389"
+                      x_property_id: "29827389"
                       x_location_id: sample_value
                       name: sample_value
                       marketing_name: sample_value
                       code: sample_value
                       description: sample_value
-                      bedrooms: 42
-                      bathrooms: sample_value
-                      bathrooms_full: 42
-                      bathrooms_half: 42
+                      bedrooms: "1"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
                       max_occupants: 42
                       rentable_square_feet: 42
                       gross_square_feet: 42
@@ -73095,39 +73099,39 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
-                        bathrooms: sample_value
-                        bathrooms_full: 42
-                        bathrooms_half: 42
-                        bedrooms: sample_value
-                        building_name: sample_value
-                        building_number: sample_value
-                        city: sample_value
-                        country: sample_value
+                        x_id: "19827389"
+                        x_property_id: "29827389"
+                        bathrooms: "1.5"
+                        bathrooms_full: 1
+                        bathrooms_half: 1
+                        bedrooms: "1"
+                        building_name: "null"
+                        building_number: "null"
+                        city: Boston
+                        country: country
                         custom_data: {}
-                        floor_plan_code: sample_value
-                        floor_plan_name: sample_value
+                        floor_plan_code: "null"
+                        floor_plan_name: "null"
                         floor: sample_value
                         is_available: true
-                        is_furnished: true
+                        is_furnished: "null"
                         is_listed: true
                         is_vacant: true
-                        number: sample_value
-                        rent_amount_market_in_cents: default value
-                        rent_amount_max_in_cents: default value
-                        rent_amount_min_in_cents: default value
-                        square_feet: 42
+                        number: "null"
+                        rent_amount_market_in_cents: 120000
+                        rent_amount_max_in_cents: "null"
+                        rent_amount_min_in_cents: "null"
+                        square_feet: 1150
                         state: sample_value
-                        street_address_1: sample_value
-                        street_address_2: sample_value
+                        street_address_1: 131 Westfield Ave
+                        street_address_2: Suite 2
                         address_1: sample_value
                         address_2: sample_value
-                        zip: sample_value
+                        zip: "14120"
                         pets_allowed: true
-                        dogs_allowed: true
-                        cats_allowed: true
-                        pet_policy: sample_value
+                        dogs_allowed: "null"
+                        cats_allowed: "null"
+                        pet_policy: "null"
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -73757,12 +73761,12 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "19827389"
+                        x_property_id: "29827389"
                         x_location_id: sample_value
                         x_building_id: sample_value
                         x_floor_plan_id: sample_value
-                        building_number: sample_value
+                        building_number: "null"
                         make_ready_date: 2024-07-01T00:00:00.000Z
                         made_ready_date: 2024-07-01T00:00:00.000Z
                         reserved_until_date: 2024-07-01T00:00:00.000Z
@@ -73771,7 +73775,7 @@ paths:
                         base_rent_in_cents: default value
                         unit_number: sample_value
                         description: sample_value
-                        floor_plan_name: sample_value
+                        floor_plan_name: "null"
                         accessible_hearing: true
                         accessible_mobility: true
                         accessible_vision: true
@@ -73779,15 +73783,15 @@ paths:
                         is_available: true
                         is_reserved: true
                         available_date: 2024-07-01T00:00:00.000Z
-                        notes: sample_value
+                        notes: "null"
                         gross_square_feet: 42
                         rentable_square_feet: 42
-                        city: sample_value
-                        country: sample_value
+                        city: Boston
+                        country: country
                         state: sample_value
                         address_1: sample_value
                         address_2: sample_value
-                        zip: sample_value
+                        zip: "14120"
                         maximum_potential_lease_term: sample_value
                         minimum_potential_lease_term: sample_value
                         integration_id: sample_value
@@ -74337,39 +74341,39 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
-                      bathrooms: sample_value
-                      bathrooms_full: 42
-                      bathrooms_half: 42
-                      bedrooms: sample_value
-                      building_name: sample_value
-                      building_number: sample_value
-                      city: sample_value
-                      country: sample_value
+                      x_id: "19827389"
+                      x_property_id: "29827389"
+                      bathrooms: "1.5"
+                      bathrooms_full: 1
+                      bathrooms_half: 1
+                      bedrooms: "1"
+                      building_name: "null"
+                      building_number: "null"
+                      city: Boston
+                      country: country
                       custom_data: {}
-                      floor_plan_code: sample_value
-                      floor_plan_name: sample_value
+                      floor_plan_code: "null"
+                      floor_plan_name: "null"
                       floor: sample_value
                       is_available: true
-                      is_furnished: true
+                      is_furnished: "null"
                       is_listed: true
                       is_vacant: true
-                      number: sample_value
-                      rent_amount_market_in_cents: default value
-                      rent_amount_max_in_cents: default value
-                      rent_amount_min_in_cents: default value
-                      square_feet: 42
+                      number: "null"
+                      rent_amount_market_in_cents: 120000
+                      rent_amount_max_in_cents: "null"
+                      rent_amount_min_in_cents: "null"
+                      square_feet: 1150
                       state: sample_value
-                      street_address_1: sample_value
-                      street_address_2: sample_value
+                      street_address_1: 131 Westfield Ave
+                      street_address_2: Suite 2
                       address_1: sample_value
                       address_2: sample_value
-                      zip: sample_value
+                      zip: "14120"
                       pets_allowed: true
-                      dogs_allowed: true
-                      cats_allowed: true
-                      pet_policy: sample_value
+                      dogs_allowed: "null"
+                      cats_allowed: "null"
+                      pet_policy: "null"
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -74891,8 +74895,8 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "19827389"
+                        x_property_id: "29827389"
                         x_location_id: sample_value
                         name: sample_value
                         integration_id: sample_value
@@ -75181,8 +75185,8 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "19827389"
+                      x_property_id: "29827389"
                       x_location_id: sample_value
                       name: sample_value
                       integration_id: sample_value
@@ -75587,12 +75591,12 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "19827389"
+                      x_property_id: "29827389"
                       x_location_id: sample_value
                       x_building_id: sample_value
                       x_floor_plan_id: sample_value
-                      building_number: sample_value
+                      building_number: "null"
                       make_ready_date: 2024-07-01T00:00:00.000Z
                       made_ready_date: 2024-07-01T00:00:00.000Z
                       reserved_until_date: 2024-07-01T00:00:00.000Z
@@ -75601,7 +75605,7 @@ paths:
                       base_rent_in_cents: default value
                       unit_number: sample_value
                       description: sample_value
-                      floor_plan_name: sample_value
+                      floor_plan_name: "null"
                       accessible_hearing: true
                       accessible_mobility: true
                       accessible_vision: true
@@ -75609,15 +75613,15 @@ paths:
                       is_available: true
                       is_reserved: true
                       available_date: 2024-07-01T00:00:00.000Z
-                      notes: sample_value
+                      notes: "null"
                       gross_square_feet: 42
                       rentable_square_feet: 42
-                      city: sample_value
-                      country: sample_value
+                      city: Boston
+                      country: country
                       state: sample_value
                       address_1: sample_value
                       address_2: sample_value
-                      zip: sample_value
+                      zip: "14120"
                       maximum_potential_lease_term: sample_value
                       minimum_potential_lease_term: sample_value
                       integration_id: sample_value
