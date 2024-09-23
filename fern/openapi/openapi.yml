@@ -729,6 +729,7 @@ components:
                         - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_LEASES
                         - PROPERTYWARE_REST_READ_RESIDENTS
+                        - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -841,6 +842,7 @@ components:
                           - PROPERTYWARE_REST_READ_UNITS
                           - PROPERTYWARE_REST_READ_LEASES
                           - PROPERTYWARE_REST_READ_RESIDENTS
+                          - PROPERTYWARE_REST_CREATE_DOCUMENT
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2682,6 +2684,7 @@ components:
                       - PROPERTYWARE_REST_READ_UNITS
                       - PROPERTYWARE_REST_READ_LEASES
                       - PROPERTYWARE_REST_READ_RESIDENTS
+                      - PROPERTYWARE_REST_CREATE_DOCUMENT
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -2794,6 +2797,7 @@ components:
                         - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_LEASES
                         - PROPERTYWARE_REST_READ_RESIDENTS
+                        - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
