@@ -21829,6 +21829,45 @@ components:
           description: The status associated with the lease. Must be one of "1" (Pending),
             "2" (Active), "3" (Notice Given), "4" (Vacated), "5" (Evicting), "6"
             (Closed), "7" (Moved Out), "8" (Evicted), or "9" (Lease Broken).
+        tenant_ids:
+          type: array
+          items:
+            type: string
+          description: An array of Propexo lead, applicant, or resident IDs. This must
+            also include the primary contact ID
+        move_in_date:
+          type: string
+          format: date-time
+          description: The move-in date associated with the lease
+        move_out_date:
+          type: string
+          format: date-time
+          description: The move-out date associated with the lease
+        rent_amount_in_cents:
+          type: integer
+          minimum: 0
+          description: The rent amount in cents for the lease
+        notes:
+          type: string
+          description: Notes associated with the lease
+        signature_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The signature date of the lease
+        deposit_amount_in_cents:
+          type: integer
+          minimum: 0
+          description: The deposit amount in cents associated with the lease
+        deposit_charge_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The deposit date associated with the lease
         realized_move_in_date:
           type: string
           format: date-time
@@ -21840,14 +21879,6 @@ components:
         id:
           type: string
           description: The Propexo unique identifier for the lease
-        move_in_date:
-          type: string
-          format: date-time
-          description: The move-in date associated with the lease
-        move_out_date:
-          type: string
-          format: date-time
-          description: The move-out date associated with the lease
     _v1_leases_{lease_id}_put_output:
       type: object
       properties:
