@@ -726,8 +726,17 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
-                        - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_READ_LEASE_CHARGES
+                        - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                        - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
                         - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
+                        - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                        - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
+                        - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                        - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                        - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
+                        - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - BUILDIUM_BASE
@@ -839,8 +848,17 @@ components:
                           - ENTRATA_LEASE_DETAILS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                           - PROPERTYWARE_REST_READ_PROPERTIES
-                          - PROPERTYWARE_REST_READ_UNITS
+                          - PROPERTYWARE_REST_READ_LEASE_CHARGES
+                          - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                          - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
                           - PROPERTYWARE_REST_READ_LEASES
+                          - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
+                          - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                          - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
+                          - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                          - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                          - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
+                          - PROPERTYWARE_REST_READ_UNITS
                           - PROPERTYWARE_REST_READ_RESIDENTS
                           - PROPERTYWARE_REST_CREATE_DOCUMENT
                           - BUILDIUM_BASE
@@ -2681,8 +2699,17 @@ components:
                       - ENTRATA_LEASE_DETAILS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                       - PROPERTYWARE_REST_READ_PROPERTIES
-                      - PROPERTYWARE_REST_READ_UNITS
+                      - PROPERTYWARE_REST_READ_LEASE_CHARGES
+                      - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                      - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
                       - PROPERTYWARE_REST_READ_LEASES
+                      - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
+                      - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                      - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
+                      - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                      - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                      - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
+                      - PROPERTYWARE_REST_READ_UNITS
                       - PROPERTYWARE_REST_READ_RESIDENTS
                       - PROPERTYWARE_REST_CREATE_DOCUMENT
                       - BUILDIUM_BASE
@@ -2794,8 +2821,17 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
-                        - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_READ_LEASE_CHARGES
+                        - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                        - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
                         - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
+                        - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                        - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
+                        - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                        - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                        - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
+                        - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - BUILDIUM_BASE
@@ -13534,6 +13570,16 @@ components:
                   - string
                   - "null"
                 description: The raw value for amount from the PMS
+              amount_paid_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The amount paid on the resident charge, in cents
+              amount_paid_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw value for amount paid from the PMS
               due_date:
                 type:
                   - string
@@ -13685,6 +13731,8 @@ components:
               - x_unit_id
               - amount_in_cents
               - amount_raw
+              - amount_paid_in_cents
+              - amount_paid_raw
               - due_date
               - name
               - description
@@ -13893,6 +13941,16 @@ components:
                 - string
                 - "null"
               description: The raw value for amount from the PMS
+            amount_paid_in_cents:
+              type:
+                - number
+                - "null"
+              description: The amount paid on the resident charge, in cents
+            amount_paid_raw:
+              type:
+                - string
+                - "null"
+              description: The raw value for amount paid from the PMS
             due_date:
               type:
                 - string
@@ -14044,6 +14102,8 @@ components:
             - x_unit_id
             - amount_in_cents
             - amount_raw
+            - amount_paid_in_cents
+            - amount_paid_raw
             - due_date
             - name
             - description
@@ -42894,6 +42954,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -42944,6 +43006,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -42994,6 +43058,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43044,6 +43110,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43094,6 +43162,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43144,6 +43214,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43194,6 +43266,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43244,6 +43318,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43294,6 +43370,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43344,6 +43422,8 @@ paths:
                         x_unit_id: sample_value
                         amount_in_cents: default value
                         amount_raw: sample_value
+                        amount_paid_in_cents: default value
+                        amount_paid_raw: sample_value
                         due_date: 2024-07-01T00:00:00.000Z
                         name: sample_value
                         description: sample_value
@@ -43516,6 +43596,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43566,6 +43648,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43616,6 +43700,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43666,6 +43752,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43716,6 +43804,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43766,6 +43856,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43816,6 +43908,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43866,6 +43960,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43916,6 +44012,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
@@ -43966,6 +44064,8 @@ paths:
                       x_unit_id: sample_value
                       amount_in_cents: default value
                       amount_raw: sample_value
+                      amount_paid_in_cents: default value
+                      amount_paid_raw: sample_value
                       due_date: 2024-07-01T00:00:00.000Z
                       name: sample_value
                       description: sample_value
