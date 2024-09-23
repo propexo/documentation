@@ -12146,6 +12146,24 @@ components:
                   - string
                   - "null"
                 description: Reasons that the event occurred
+              associated_lead_ids:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
+              associated_applicant_ids:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
+              associated_resident_ids:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -12172,6 +12190,9 @@ components:
               - notes
               - agent_name
               - reasons_for_event
+              - associated_lead_ids
+              - associated_applicant_ids
+              - associated_resident_ids
               - integration_id
               - integration_vendor
               - property_id
@@ -16756,6 +16777,24 @@ components:
                   - string
                   - "null"
                 description: Reasons that the event occurred
+              associated_lead_ids:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
+              associated_applicant_ids:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
+              associated_resident_ids:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -16782,6 +16821,9 @@ components:
               - notes
               - agent_name
               - reasons_for_event
+              - associated_lead_ids
+              - associated_applicant_ids
+              - associated_resident_ids
               - integration_id
               - integration_vendor
               - property_id
@@ -16913,6 +16955,24 @@ components:
                 - string
                 - "null"
               description: Reasons that the event occurred
+            associated_lead_ids:
+              type:
+                - array
+                - "null"
+              items:
+                type: string
+            associated_applicant_ids:
+              type:
+                - array
+                - "null"
+              items:
+                type: string
+            associated_resident_ids:
+              type:
+                - array
+                - "null"
+              items:
+                type: string
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -16939,6 +16999,9 @@ components:
             - notes
             - agent_name
             - reasons_for_event
+            - associated_lead_ids
+            - associated_applicant_ids
+            - associated_resident_ids
             - integration_id
             - integration_vendor
             - property_id
@@ -40650,6 +40713,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40679,6 +40748,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40708,6 +40783,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40737,6 +40818,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40766,6 +40853,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40795,6 +40888,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40824,6 +40923,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40853,6 +40958,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40882,6 +40993,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -40911,6 +41028,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49039,6 +49162,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49068,6 +49197,12 @@ paths:
                         notes: This is a note.
                         agent_name: John Doe
                         reasons_for_event: Initial contact
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49097,6 +49232,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49126,6 +49267,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49155,6 +49302,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49184,6 +49337,12 @@ paths:
                         notes: sample_value
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49213,6 +49372,12 @@ paths:
                         notes: Short tour of the property.
                         agent_name: John Smith
                         reasons_for_event: "null"
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49242,6 +49407,12 @@ paths:
                         notes: Unit is ready to tour
                         agent_name: sample_value
                         reasons_for_event: sample_value
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49271,6 +49442,12 @@ paths:
                         notes: sample_value
                         agent_name: "null"
                         reasons_for_event: "null"
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49300,6 +49477,12 @@ paths:
                         notes: Nice person, firm handshake.
                         agent_name: John Doe
                         reasons_for_event: Initial contact
+                        associated_lead_ids:
+                          - sample_value
+                        associated_applicant_ids:
+                          - sample_value
+                        associated_resident_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                         property_id: sample_value
@@ -49409,6 +49592,12 @@ paths:
                       notes: sample_value
                       agent_name: sample_value
                       reasons_for_event: sample_value
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49438,6 +49627,12 @@ paths:
                       notes: This is a note.
                       agent_name: John Doe
                       reasons_for_event: Initial contact
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49467,6 +49662,12 @@ paths:
                       notes: sample_value
                       agent_name: sample_value
                       reasons_for_event: sample_value
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49496,6 +49697,12 @@ paths:
                       notes: sample_value
                       agent_name: sample_value
                       reasons_for_event: sample_value
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49525,6 +49732,12 @@ paths:
                       notes: sample_value
                       agent_name: sample_value
                       reasons_for_event: sample_value
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49554,6 +49767,12 @@ paths:
                       notes: sample_value
                       agent_name: sample_value
                       reasons_for_event: sample_value
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49583,6 +49802,12 @@ paths:
                       notes: Short tour of the property.
                       agent_name: John Smith
                       reasons_for_event: "null"
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49612,6 +49837,12 @@ paths:
                       notes: Unit is ready to tour
                       agent_name: sample_value
                       reasons_for_event: sample_value
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49641,6 +49872,12 @@ paths:
                       notes: sample_value
                       agent_name: "null"
                       reasons_for_event: "null"
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
@@ -49670,6 +49907,12 @@ paths:
                       notes: Nice person, firm handshake.
                       agent_name: John Doe
                       reasons_for_event: Initial contact
+                      associated_lead_ids:
+                        - sample_value
+                      associated_applicant_ids:
+                        - sample_value
+                      associated_resident_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                       property_id: sample_value
