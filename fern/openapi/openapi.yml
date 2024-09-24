@@ -7858,9 +7858,9 @@ components:
         first_name:
           type: string
           description: The first name associated with the applicant
-        x_unit_id:
+        unit_id:
           type: string
-          description: "Deprecated: The external ID of the unit from the integration vendor"
+          description: The Propexo unique identifier for the unit
         email_1:
           type: string
           description: The primary email address associated with the applicant
@@ -7903,9 +7903,6 @@ components:
             be either required or optional. You will need to work with your
             customer directly to configure this field to your application
             requirements or to change the list of available lease periods
-        unit_id:
-          type: string
-          description: The Propexo unique identifier for the unit
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source
@@ -25909,6 +25906,9 @@ components:
       properties:
         integration_id:
           type: string
+        lease_id:
+          type: string
+          description: The Propexo unique identifier for the lease
         last_name:
           type: string
           description: The last name of the resident.  This value maps to both the
