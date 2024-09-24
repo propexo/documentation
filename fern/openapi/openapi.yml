@@ -738,6 +738,7 @@ components:
                         - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
                         - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_RESIDENTS
+                        - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
@@ -860,6 +861,7 @@ components:
                           - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
                           - PROPERTYWARE_REST_READ_UNITS
                           - PROPERTYWARE_REST_READ_RESIDENTS
+                          - PROPERTYWARE_REST_UPDATE_CONTACTS
                           - PROPERTYWARE_REST_CREATE_DOCUMENT
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
@@ -2711,6 +2713,7 @@ components:
                       - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
                       - PROPERTYWARE_REST_READ_UNITS
                       - PROPERTYWARE_REST_READ_RESIDENTS
+                      - PROPERTYWARE_REST_UPDATE_CONTACTS
                       - PROPERTYWARE_REST_CREATE_DOCUMENT
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
@@ -2833,6 +2836,7 @@ components:
                         - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
                         - PROPERTYWARE_REST_READ_UNITS
                         - PROPERTYWARE_REST_READ_RESIDENTS
+                        - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
@@ -26591,8 +26595,7 @@ components:
         email_2:
           type: string
           format: email
-          description: The secondary email address for the resident.  This value maps to
-            the altEmail property of the Contact object
+          description: The secondary email address associated with the resident
         date_of_birth:
           type: string
           format: date-time
@@ -26642,8 +26645,7 @@ components:
           description: Country of the resident's secondary/alternate address.
         notes:
           type: string
-          description: Any notes about the resident. This maps to the comments property of
-            the Contact object
+          description: Notes associated with the resident
         phone_1:
           type: string
           description: The primary phone number for the resident.
@@ -26658,18 +26660,16 @@ components:
             phone number.
         phone_2:
           type: string
-          description: Secondary phone number for the resident.  Depending on the value of
-            phone_1_type, this may map to the properties fax, homePhone,
-            mobilePhone, or workPhone.
+          description: Secondary phone number associated with the resident
         phone_2_type:
           type: string
           enum:
+            - FAX
             - HOME
             - MOBILE
+            - OTHER
             - WORK
-            - FAX
-          description: The type of the secondary phone. Must be one of 'HOME', 'MOBILE',
-            'WORK', or 'FAX'
+          description: Type of the secondary phone number
         custom_data:
           type: object
           properties: {}
