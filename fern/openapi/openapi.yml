@@ -59978,7 +59978,7 @@ paths:
                         custom_data: {}
                         is_active: true
                         manager_email: "null"
-                        manager_name: "null"
+                        manager_name: Acme Property Management
                         manager_phone_1: "null"
                         manager_phone_1_type: "null"
                         manager_phone_2: "null"
@@ -60587,7 +60587,7 @@ paths:
                       custom_data: {}
                       is_active: true
                       manager_email: "null"
-                      manager_name: "null"
+                      manager_name: Acme Property Management
                       manager_phone_1: "null"
                       manager_phone_1_type: "null"
                       manager_phone_2: "null"
