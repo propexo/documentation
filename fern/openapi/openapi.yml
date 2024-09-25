@@ -726,6 +726,7 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_LEASE_CHARGES
                         - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
                         - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
@@ -850,6 +851,7 @@ components:
                           - ENTRATA_LEASE_DETAILS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                           - PROPERTYWARE_REST_READ_PROPERTIES
+                          - PROPERTYWARE_REST_READ_PORTFOLIOS
                           - PROPERTYWARE_REST_READ_LEASE_CHARGES
                           - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
                           - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
@@ -2703,6 +2705,7 @@ components:
                       - ENTRATA_LEASE_DETAILS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                       - PROPERTYWARE_REST_READ_PROPERTIES
+                      - PROPERTYWARE_REST_READ_PORTFOLIOS
                       - PROPERTYWARE_REST_READ_LEASE_CHARGES
                       - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
                       - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
@@ -2827,6 +2830,7 @@ components:
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_LEASE_CHARGES
                         - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
                         - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
@@ -22781,6 +22785,478 @@ components:
       required:
         - job_id
         - data
+    _v1_owners__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          type: string
+          enum:
+            - SAMPLE2
+            - BUILDIUM
+            - ENTRATA
+            - MRI
+            - PROPERTYWARE
+            - PROPERTYWARE_REST
+            - REALPAGE
+            - REALPAGE_RPX
+            - RENTMANAGER
+            - RENTVINE
+            - RESMAN
+            - SAMPLE1
+          description: The property management system of record
+    _v1_owners__get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+            total:
+              type: integer
+              minimum: 0
+          required:
+            - orderBy
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the owner
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location from the integration vendor
+              address_1:
+                type:
+                  - string
+                  - "null"
+                description: The first address line associated with the owner
+              address_2:
+                type:
+                  - string
+                  - "null"
+                description: The second address line associated with the owner
+              city:
+                type:
+                  - string
+                  - "null"
+                description: The city associated with the owner
+              country:
+                type:
+                  - string
+                  - "null"
+                description: The country associated with the owner
+              state:
+                type:
+                  - string
+                  - "null"
+                description: The state associated with the owner
+              zip:
+                type:
+                  - string
+                  - "null"
+                description: The zip code associated with the owner
+              first_name:
+                type:
+                  - string
+                  - "null"
+                description: The first name associated with the owner
+              middle_name:
+                type:
+                  - string
+                  - "null"
+                description: The middle name associated with the owner
+              last_name:
+                type:
+                  - string
+                  - "null"
+                description: The last name associated with the owner
+              company_name:
+                type:
+                  - string
+                  - "null"
+                description: The name of the company associated with the owner
+              notes:
+                type:
+                  - string
+                  - "null"
+                description: Notes associated with the owner
+              email_1:
+                type:
+                  - string
+                  - "null"
+                description: The primary email address associated with the owner
+              email_2:
+                type:
+                  - string
+                  - "null"
+                description: The secondary email address associated with the owner
+              phone_1:
+                type:
+                  - string
+                  - "null"
+                description: Primary phone number associated with the owner
+              phone_1_type:
+                type:
+                  - string
+                  - "null"
+                enum:
+                  - FAX
+                  - HOME
+                  - MOBILE
+                  - OTHER
+                  - WORK
+                description: Type of the primary phone number
+              phone_2:
+                type:
+                  - string
+                  - "null"
+                description: Secondary phone number associated with the owner
+              phone_2_type:
+                type:
+                  - string
+                  - "null"
+                enum:
+                  - FAX
+                  - HOME
+                  - MOBILE
+                  - OTHER
+                  - WORK
+                description: Type of the secondary phone number
+              associated_property_ids:
+                type: array
+                items:
+                  type: string
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                type: string
+                description: The property management system of record
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - address_1
+              - address_2
+              - city
+              - country
+              - state
+              - zip
+              - first_name
+              - middle_name
+              - last_name
+              - company_name
+              - notes
+              - email_1
+              - email_2
+              - phone_1
+              - phone_1_type
+              - phone_2
+              - phone_2_type
+              - associated_property_ids
+              - integration_id
+              - integration_vendor
+              - property_id
+      required:
+        - meta
+        - results
+    _v1_owners_{owner_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_owners_{owner_id}_get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+            total:
+              type: integer
+              minimum: 0
+          required:
+            - orderBy
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the owner
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location from the integration vendor
+            address_1:
+              type:
+                - string
+                - "null"
+              description: The first address line associated with the owner
+            address_2:
+              type:
+                - string
+                - "null"
+              description: The second address line associated with the owner
+            city:
+              type:
+                - string
+                - "null"
+              description: The city associated with the owner
+            country:
+              type:
+                - string
+                - "null"
+              description: The country associated with the owner
+            state:
+              type:
+                - string
+                - "null"
+              description: The state associated with the owner
+            zip:
+              type:
+                - string
+                - "null"
+              description: The zip code associated with the owner
+            first_name:
+              type:
+                - string
+                - "null"
+              description: The first name associated with the owner
+            middle_name:
+              type:
+                - string
+                - "null"
+              description: The middle name associated with the owner
+            last_name:
+              type:
+                - string
+                - "null"
+              description: The last name associated with the owner
+            company_name:
+              type:
+                - string
+                - "null"
+              description: The name of the company associated with the owner
+            notes:
+              type:
+                - string
+                - "null"
+              description: Notes associated with the owner
+            email_1:
+              type:
+                - string
+                - "null"
+              description: The primary email address associated with the owner
+            email_2:
+              type:
+                - string
+                - "null"
+              description: The secondary email address associated with the owner
+            phone_1:
+              type:
+                - string
+                - "null"
+              description: Primary phone number associated with the owner
+            phone_1_type:
+              type:
+                - string
+                - "null"
+              enum:
+                - FAX
+                - HOME
+                - MOBILE
+                - OTHER
+                - WORK
+              description: Type of the primary phone number
+            phone_2:
+              type:
+                - string
+                - "null"
+              description: Secondary phone number associated with the owner
+            phone_2_type:
+              type:
+                - string
+                - "null"
+              enum:
+                - FAX
+                - HOME
+                - MOBILE
+                - OTHER
+                - WORK
+              description: Type of the secondary phone number
+            associated_property_ids:
+              type: array
+              items:
+                type: string
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              type: string
+              description: The property management system of record
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - address_1
+            - address_2
+            - city
+            - country
+            - state
+            - zip
+            - first_name
+            - middle_name
+            - last_name
+            - company_name
+            - notes
+            - email_1
+            - email_2
+            - phone_1
+            - phone_1_type
+            - phone_2
+            - phone_2_type
+            - associated_property_ids
+            - integration_id
+            - integration_vendor
+            - property_id
+      required:
+        - meta
+        - results
     _v1_properties__get_input:
       type: object
       properties:
@@ -23072,6 +23548,10 @@ components:
                   - string
                   - "null"
                 description: The zip code associated with the property
+              associated_owner_ids:
+                type: array
+                items:
+                  type: string
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -23116,6 +23596,7 @@ components:
               - website
               - year_built
               - zip
+              - associated_owner_ids
               - integration_id
               - integration_vendor
       required:
@@ -23467,6 +23948,10 @@ components:
                 - string
                 - "null"
               description: The zip code associated with the property
+            associated_owner_ids:
+              type: array
+              items:
+                type: string
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -23511,6 +23996,7 @@ components:
             - website
             - year_built
             - zip
+            - associated_owner_ids
             - integration_id
             - integration_vendor
       required:
@@ -33394,6 +33880,7 @@ components:
             - leases
             - listings
             - locations
+            - owners
             - properties
             - resident_charges
             - resident_payments
@@ -33751,6 +34238,7 @@ components:
             - leases
             - listings
             - locations
+            - owners
             - properties
             - resident_charges
             - resident_payments
@@ -59557,6 +60045,982 @@ paths:
                           path: []
                           message: "Unrecognized key(s) in object: 'foo'"
                       name: ZodError
+  /v1/owners/:
+    get:
+      description: Get all owners
+      summary: Get all owners
+      tags:
+        - owners
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The property management system of record
+          required: false
+          description: The property management system of record
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_owners__get_output"
+              examples:
+                BUILDIUM:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                ENTRATA:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                MRI:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                PROPERTYWARE_SOAP:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                PROPERTYWARE_REST:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: "18273981"
+                        x_property_id: na
+                        x_location_id: sample_value
+                        address_1: 101 Bright St
+                        address_2: Unit 3
+                        city: Boston
+                        country: United States
+                        state: MA
+                        zip: "78162"
+                        first_name: Mike
+                        middle_name: Leon
+                        last_name: Jones
+                        company_name: Management Co LLC
+                        notes: Manages all the multi-unit properties.
+                        email_1: email.me@management.co
+                        email_2: email.alt@management.co
+                        phone_1: (555) 555-5555
+                        phone_1_type: MOBILE
+                        phone_2: (555) 555-5554
+                        phone_2_type: WORK
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                REALPAGE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                REALPAGE_RPX:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                RENTMANAGER:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                RENTVINE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                RESMAN:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        address_1: sample_value
+                        address_2: sample_value
+                        city: sample_value
+                        country: sample_value
+                        state: sample_value
+                        zip: sample_value
+                        first_name: sample_value
+                        middle_name: sample_value
+                        last_name: sample_value
+                        company_name: sample_value
+                        notes: sample_value
+                        email_1: sample_value
+                        email_2: sample_value
+                        phone_1: sample_value
+                        phone_1_type: default value
+                        phone_2: sample_value
+                        phone_2_type: default value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/owners/{owner_id}:
+    get:
+      description: Get an owner by ID
+      summary: Get an owner by ID
+      tags:
+        - owners
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: owner_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_owners_{owner_id}_get_output"
+              examples:
+                BUILDIUM:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                ENTRATA:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                MRI:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                PROPERTYWARE_SOAP:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                PROPERTYWARE_REST:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: "18273981"
+                      x_property_id: na
+                      x_location_id: sample_value
+                      address_1: 101 Bright St
+                      address_2: Unit 3
+                      city: Boston
+                      country: United States
+                      state: MA
+                      zip: "78162"
+                      first_name: Mike
+                      middle_name: Leon
+                      last_name: Jones
+                      company_name: Management Co LLC
+                      notes: Manages all the multi-unit properties.
+                      email_1: email.me@management.co
+                      email_2: email.alt@management.co
+                      phone_1: (555) 555-5555
+                      phone_1_type: MOBILE
+                      phone_2: (555) 555-5554
+                      phone_2_type: WORK
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                REALPAGE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                REALPAGE_RPX:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                RENTMANAGER:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                RENTVINE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                RESMAN:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      address_1: sample_value
+                      address_2: sample_value
+                      city: sample_value
+                      country: sample_value
+                      state: sample_value
+                      zip: sample_value
+                      first_name: sample_value
+                      middle_name: sample_value
+                      last_name: sample_value
+                      company_name: sample_value
+                      notes: sample_value
+                      email_1: sample_value
+                      email_2: sample_value
+                      phone_1: sample_value
+                      phone_1_type: default value
+                      phone_2: sample_value
+                      phone_2_type: default value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/properties/:
     get:
       description: Get all properties
@@ -59709,6 +61173,8 @@ paths:
                         website: sample_value
                         year_built: 2004
                         zip: sample_value
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 ENTRATA:
@@ -59758,6 +61224,8 @@ paths:
                         website: https://www.example.com
                         year_built: 1990
                         zip: "10023"
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 MRI:
@@ -59807,6 +61275,8 @@ paths:
                         website: sample_value
                         year_built: 42
                         zip: sample_value
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 PROPERTYWARE_SOAP:
@@ -59856,6 +61326,8 @@ paths:
                         website: sample_value
                         year_built: 42
                         zip: sample_value
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 PROPERTYWARE_REST:
@@ -59905,6 +61377,8 @@ paths:
                         website: sample_value
                         year_built: 1963
                         zip: "12722"
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 REALPAGE:
@@ -59954,6 +61428,8 @@ paths:
                         website: sample_value
                         year_built: 42
                         zip: sample_value
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 REALPAGE_RPX:
@@ -60003,6 +61479,8 @@ paths:
                         website: sample_value
                         year_built: "null"
                         zip: "null"
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 RENTMANAGER:
@@ -60052,6 +61530,8 @@ paths:
                         website: sample_value
                         year_built: 42
                         zip: sample_value
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 RENTVINE:
@@ -60101,6 +61581,8 @@ paths:
                         website: sample_value
                         year_built: 42
                         zip: sample_value
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
                 RESMAN:
@@ -60150,6 +61632,8 @@ paths:
                         website: sample_value
                         year_built: 42
                         zip: sample_value
+                        associated_owner_ids:
+                          - sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
         "400":
@@ -60318,6 +61802,8 @@ paths:
                       website: sample_value
                       year_built: 2004
                       zip: sample_value
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 ENTRATA:
@@ -60367,6 +61853,8 @@ paths:
                       website: https://www.example.com
                       year_built: 1990
                       zip: "10023"
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 MRI:
@@ -60416,6 +61904,8 @@ paths:
                       website: sample_value
                       year_built: 42
                       zip: sample_value
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 PROPERTYWARE_SOAP:
@@ -60465,6 +61955,8 @@ paths:
                       website: sample_value
                       year_built: 42
                       zip: sample_value
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 PROPERTYWARE_REST:
@@ -60514,6 +62006,8 @@ paths:
                       website: sample_value
                       year_built: 1963
                       zip: "12722"
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 REALPAGE:
@@ -60563,6 +62057,8 @@ paths:
                       website: sample_value
                       year_built: 42
                       zip: sample_value
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 REALPAGE_RPX:
@@ -60612,6 +62108,8 @@ paths:
                       website: sample_value
                       year_built: "null"
                       zip: "null"
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 RENTMANAGER:
@@ -60661,6 +62159,8 @@ paths:
                       website: sample_value
                       year_built: 42
                       zip: sample_value
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 RENTVINE:
@@ -60710,6 +62210,8 @@ paths:
                       website: sample_value
                       year_built: 42
                       zip: sample_value
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
                 RESMAN:
@@ -60759,6 +62261,8 @@ paths:
                       website: sample_value
                       year_built: 42
                       zip: sample_value
+                      associated_owner_ids:
+                        - sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
         "400":
@@ -63813,7 +65317,7 @@ paths:
                             move_out_date: 2024-07-01T00:00:00.000Z
                             notice_date: 2024-07-01T00:00:00.000Z
                         address_1_alternate: "null"
-                        address_1: 101 Canal St
+                        address_1: 101 Bright St
                         address_2_alternate: "null"
                         address_2: Unit 2
                         balance_in_cents: "null"
@@ -64762,7 +66266,7 @@ paths:
                           move_out_date: 2024-07-01T00:00:00.000Z
                           notice_date: 2024-07-01T00:00:00.000Z
                       address_1_alternate: "null"
-                      address_1: 101 Canal St
+                      address_1: 101 Bright St
                       address_2_alternate: "null"
                       address_2: Unit 2
                       balance_in_cents: "null"
