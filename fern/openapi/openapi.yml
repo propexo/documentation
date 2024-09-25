@@ -741,6 +741,7 @@ components:
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - BUILDIUM_BASE
@@ -867,6 +868,7 @@ components:
                           - PROPERTYWARE_REST_READ_RESIDENTS
                           - PROPERTYWARE_REST_UPDATE_CONTACTS
                           - PROPERTYWARE_REST_CREATE_DOCUMENT
+                          - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                           - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                           - BUILDIUM_BASE
@@ -2722,6 +2724,7 @@ components:
                       - PROPERTYWARE_REST_READ_RESIDENTS
                       - PROPERTYWARE_REST_UPDATE_CONTACTS
                       - PROPERTYWARE_REST_CREATE_DOCUMENT
+                      - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                       - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                       - BUILDIUM_BASE
@@ -2848,6 +2851,7 @@ components:
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - BUILDIUM_BASE
@@ -15036,12 +15040,6 @@ components:
         reference_number:
           type: string
           description: The reference number for the resident payment
-        charge_code_id:
-          type: string
-          description: The Propexo unique identifier for the charge code
-        notes:
-          type: string
-          description: Notes associated with the resident payment
         payment_type:
           type: string
           enum:
@@ -15054,6 +15052,12 @@ components:
             - eCheck
             - Money Order
           description: The method of payment
+        charge_code_id:
+          type: string
+          description: The Propexo unique identifier for the charge code
+        notes:
+          type: string
+          description: Notes associated with the resident payment
         batch_id:
           type: string
           description: An identifier for the transaction batch. This should be unique to
