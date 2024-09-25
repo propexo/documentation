@@ -741,6 +741,7 @@ components:
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
@@ -866,6 +867,7 @@ components:
                           - PROPERTYWARE_REST_READ_RESIDENTS
                           - PROPERTYWARE_REST_UPDATE_CONTACTS
                           - PROPERTYWARE_REST_CREATE_DOCUMENT
+                          - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
@@ -2720,6 +2722,7 @@ components:
                       - PROPERTYWARE_REST_READ_RESIDENTS
                       - PROPERTYWARE_REST_UPDATE_CONTACTS
                       - PROPERTYWARE_REST_CREATE_DOCUMENT
+                      - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
@@ -2845,6 +2848,7 @@ components:
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
