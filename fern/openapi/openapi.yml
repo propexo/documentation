@@ -744,6 +744,7 @@ components:
                         - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
+                        - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -871,6 +872,7 @@ components:
                           - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                           - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
+                          - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2727,6 +2729,7 @@ components:
                       - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                       - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
+                      - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -2854,6 +2857,7 @@ components:
                         - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
+                        - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -14393,7 +14397,8 @@ components:
           type: integer
           minimum: 1
           maximum: 31
-          description: The day of the month the charge is due
+          description: The day of the month the charge is due. When frequency_normalized
+            is set to 'WEEKLY', the charge_due_day must be between 1 and 7
         start_date:
           anyOf:
             - type: string
@@ -14411,8 +14416,12 @@ components:
         frequency_normalized:
           type: string
           enum:
-            - MONTHLY
             - WEEKLY
+            - MONTHLY
+            - QUARTERLY
+            - SEMIANNUAL
+            - ANNUAL
+            - ANNUAL_ACCRUAL
           description: The frequency of the recurring resident charge
         reference_number:
           type: string
