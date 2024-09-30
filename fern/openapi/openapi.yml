@@ -21194,8 +21194,11 @@ components:
           type: string
           description: The Propexo unique identifier for the unit
         start_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The start date associated with the lease
         first_name:
           type: string
@@ -21224,8 +21227,11 @@ components:
           type: string
           description: The Propexo unique identifier for the financial account
         end_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The end date associated with the lease
         send_welcome_email:
           type: boolean
@@ -21307,6 +21313,7 @@ components:
             to the lease ledger
         rent_amount_in_cents:
           type: integer
+          exclusiveMinimum: 0
           description: The rent amount in cents for the lease
         rent_due_date:
           anyOf:
@@ -21326,8 +21333,11 @@ components:
           type: string
           description: The Propexo unique identifier for the floor plan
         scheduled_move_in_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The move-in date associated with the lease
         primary_contact_id:
           type: string
@@ -21352,11 +21362,8 @@ components:
         status:
           type: string
           enum:
-            - Draft
-            - Active
-            - Active - Notice Given
-            - Terminated
-            - Eviction
+            - PENDING
+            - ACTIVE
           description: The status associated with the lease
         resident_id:
           type: string
@@ -21369,18 +21376,126 @@ components:
           type: string
           format: date-time
           description: The move-out date associated with the lease
-        x_property_id:
+        employee_id:
           type: string
-          pattern: ^[0-9]+$
-          description: The external ID of the property from the integration vendor
-        x_resident_id:
-          type: string
-          pattern: ^[0-9]+$
-          description: The external ID of the resident from the integration vendor
-        x_unit_id:
-          type: string
-          pattern: ^[0-9]+$
-          description: The external ID of the unit from the integration vendor
+          description: The Propexo unique identifier for the employee
+        nsf_fee_amount_in_cents:
+          type: integer
+          exclusiveMinimum: 0
+          description: The NSF fee amount in cents for the lease
+        associated_resident_ids:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: A list of Propexo Resident IDs associated with the lease
+        resident_charges:
+          type: array
+          items:
+            type: object
+            properties:
+              financial_account_id:
+                type: string
+                description: The Propexo unique identifier for the financial account
+              post_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The post date for the resident charge
+              description:
+                type: string
+                description: Description of the resident charge
+              amount_in_cents:
+                type: integer
+                exclusiveMinimum: 0
+                description: The amount of the resident charge, in cents
+              is_prorated:
+                type: boolean
+                description: Whether or not the resident charge is prorated
+            required:
+              - financial_account_id
+              - post_date
+              - description
+              - amount_in_cents
+              - is_prorated
+          default: []
+          description: A list of move in charges for the lease
+        recurring_resident_charges:
+          type: array
+          items:
+            type: object
+            properties:
+              financial_account_id:
+                type: string
+                description: The Propexo unique identifier for the financial account
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date associated with the recurring resident charge
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date associated with the recurring resident charge
+              description:
+                type: string
+                description: Description of the resident charge
+              amount_in_cents:
+                type: integer
+                exclusiveMinimum: 0
+                description: The amount of the recurring resident charge, in cents
+              charge_due_day:
+                type: integer
+                exclusiveMinimum: 0
+                minimum: 1
+                maximum: 31
+                description: The day of the month the charge is due
+              frequency_raw:
+                type: integer
+                exclusiveMinimum: 0
+                minimum: 1
+                maximum: 12
+                description: The raw value of the frequency of the recurring resident charge.
+                  This will be the frequency (in months) for Rentvine
+            required:
+              - financial_account_id
+              - start_date
+              - description
+              - amount_in_cents
+              - charge_due_day
+              - frequency_raw
+          default: []
+          description: A list of recurring charges for the lease
+        other_occupants:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name associated with the occupant
+              last_name:
+                type: string
+                description: The last name associated with the occupant
+              date_of_birth:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date of birth associated with the occupant
+            required:
+              - first_name
+              - last_name
+          default: []
+          description: A list of other occupants for the lease
       required:
         - integration_id
     _v1_leases__post_output:
@@ -21769,12 +21884,18 @@ components:
             - AtWill
           description: The type associated with the lease
         start_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The start date associated with the lease
         end_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The end date associated with the lease
         is_eviction_pending:
           type: boolean
@@ -21844,24 +21965,21 @@ components:
           description: An array of Propexo lead, applicant, or resident IDs. This must
             also include the primary contact ID
         scheduled_move_out_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The scheduled move-out date associated with the lease
         status:
           type: string
           enum:
-            - "1"
-            - "2"
-            - "3"
-            - "4"
-            - "5"
-            - "6"
-            - "7"
-            - "8"
-            - "9"
-          description: The status associated with the lease. Must be one of "1" (Pending),
-            "2" (Active), "3" (Notice Given), "4" (Vacated), "5" (Evicting), "6"
-            (Closed), "7" (Moved Out), "8" (Evicted), or "9" (Lease Broken).
+            - Draft
+            - Active
+            - Active - Notice Given
+            - Terminated
+            - Eviction
+          description: The status associated with the lease
         tenant_ids:
           type: array
           items:
@@ -21869,12 +21987,18 @@ components:
           description: An array of Propexo lead, applicant, or resident IDs. This must
             also include the primary contact ID
         move_in_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The move-in date associated with the lease
         move_out_date:
-          type: string
-          format: date-time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
           description: The move-out date associated with the lease
         rent_amount_in_cents:
           type: integer
@@ -21909,9 +22033,6 @@ components:
           type: string
           format: date-time
           description: The move-out date associated with the lease
-        id:
-          type: string
-          description: The Propexo unique identifier for the lease
     _v1_leases_{lease_id}_put_output:
       type: object
       properties:
@@ -27795,6 +27916,10 @@ components:
         service_request_status_id:
           type: string
           description: The Propexo unique identifier for the service request status
+        vendor_notes:
+          type: string
+          maxLength: 127
+          description: Vendor/technician notes associated with the service request
         reported_by:
           type: string
           description: The name of the person who reported this service request
