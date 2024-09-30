@@ -897,8 +897,10 @@ components:
                   performed for an integration.
               allow_manual_syncs:
                 type: boolean
-                description: Whether or not manual syncs are allowed to be triggered on this
-                  integration
+                default: true
+                description: "Deprecated: This is no longer configurable and will always be
+                  true"
+                deprecated: true
               configuration_meta_data:
                 type: array
                 items:
@@ -940,7 +942,6 @@ components:
               - models
               - can_authenticate
               - last_data_access_check
-              - allow_manual_syncs
               - configuration_meta_data
       required:
         - meta
@@ -1446,9 +1447,9 @@ components:
           example: clwsc909e000008l73rix7mae
         allow_manual_syncs:
           type: boolean
-          default: false
-          description: Opt-in to allow manual syncs for this integration to be triggered
-            via the API
+          default: true
+          description: "Deprecated: This is no longer configurable and will always be true"
+          deprecated: true
         custom_sync_schedule:
           type: object
           properties:
@@ -1831,8 +1832,10 @@ components:
                 for them.
             allow_manual_syncs:
               type: boolean
-              description: Whether or not manual syncs are allowed to be triggered on this
-                integration
+              default: true
+              description: "Deprecated: This is no longer configurable and will always be
+                true"
+              deprecated: true
             custom_sync_schedule:
               type: object
               properties:
@@ -2107,7 +2110,6 @@ components:
             - is_archived
             - ping_results
             - new_properties_are_enabled
-            - allow_manual_syncs
             - use_custom_sync_schedule
       required:
         - result
@@ -2882,8 +2884,10 @@ components:
                 performed for an integration.
             allow_manual_syncs:
               type: boolean
-              description: Whether or not manual syncs are allowed to be triggered on this
-                integration
+              default: true
+              description: "Deprecated: This is no longer configurable and will always be
+                true"
+              deprecated: true
             configuration_meta_data:
               type: array
               items:
@@ -2933,7 +2937,6 @@ components:
             - models
             - can_authenticate
             - last_data_access_check
-            - allow_manual_syncs
             - configuration_meta_data
             - is_running_sync
             - is_running_data_access_check
@@ -3429,9 +3432,9 @@ components:
             for them.
         allow_manual_syncs:
           type: boolean
-          default: false
-          description: Whether or not manual syncs are allowed to be triggered on this
-            integration
+          default: true
+          description: "Deprecated: This is no longer configurable and will always be true"
+          deprecated: true
         custom_sync_schedule:
           type: object
           properties:
@@ -3805,8 +3808,10 @@ components:
                 for them.
             allow_manual_syncs:
               type: boolean
-              description: Whether or not manual syncs are allowed to be triggered on this
-                integration
+              default: true
+              description: "Deprecated: This is no longer configurable and will always be
+                true"
+              deprecated: true
             custom_sync_schedule:
               type: object
               properties:
@@ -4079,7 +4084,6 @@ components:
             - base_url
             - is_archived
             - new_properties_are_enabled
-            - allow_manual_syncs
       required:
         - result
     _v1_admin_integrations_{integration_id}__delete_input:
@@ -4398,9 +4402,12 @@ components:
         trigger_integration_resync:
           type: boolean
           default: false
-          description: Triggers a resync of the integration to ingest new property data.
-            This is only allowed in sandbox and at least five minutes after the
-            most recent sync has completed for this integration.
+          description: Triggers a resync of the integration after updating the
+            property.  This request will not trigger a new sync if one is
+            already in progress, and no HTTP failure will be returned in this
+            case.  If you need clearer feedback, consider the POST
+            v1/admin/integrations/{id}/manual-sync endpoint as an alternative to
+            using this flag.
       required:
         - enabled
     _v1_admin_integrations_{integration_id}_properties_{property_configuration_id}_put_output:
@@ -35449,10 +35456,9 @@ paths:
                       name: ZodError
   /v1/admin/integrations/{integration_id}/manual-sync:
     post:
-      description: Trigger a manual sync on an integration. This is only allowed on
-        integrations that have `allow_manual_syncs` set to `true`. this request
-        has no impact if a sync is already in progress, but the endpoint will
-        return a 400 with a corresponding error code.
+      description: Trigger a manual sync on an integration. This request has no impact
+        if a sync is already in progress, but the endpoint will return a 400
+        with a corresponding error code.
       summary: Trigger a manual sync on an integration.
       tags:
         - admin
