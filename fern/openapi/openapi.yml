@@ -6295,6 +6295,9 @@ components:
             Rentvine template, this field can be customized to be either
             required or optional. You will need to work with your customer
             directly to configure this field to your application requirements
+        notes:
+          type: string
+          description: Notes associated with the applicant
         application_template_id:
           type: string
           description: "The Propexo unique identifier for the application template. The
@@ -7403,9 +7406,6 @@ components:
         desired_lease_term_in_months:
           type: string
           description: The desired lease term in months of the applicant
-        notes:
-          type: string
-          description: Notes associated with the applicant
         leasing_agent:
           type: string
           description: The full name of the leasing agent associated with the applicant
@@ -8069,9 +8069,9 @@ components:
         country:
           type: string
           description: The country associated with the applicant
-        x_property_id:
+        notes:
           type: string
-          description: The external ID of the property from the integration vendor
+          description: Notes associated with the applicant
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -9157,9 +9157,6 @@ components:
         rent_amount_market_in_cents:
           type: integer
           description: The market rent amount in cents for the lease
-        notes:
-          type: string
-          description: Notes associated with the applicant
     _v1_applicants_{id}_put_output:
       type: object
       properties:
@@ -26662,9 +26659,9 @@ components:
         rent_period:
           type: string
           enum:
-            - monthly
-            - weekly
-            - daily
+            - MONTHLY
+            - WEEKLY
+            - DAILY
           description: How often the resident is expected to pay rent.  Allowed values are
             "monthly", "weekly", and "daily".  Maps to the RentPeriod property
             of the Tenant object.
@@ -27368,9 +27365,9 @@ components:
         rent_period:
           type: string
           enum:
-            - monthly
-            - weekly
-            - daily
+            - MONTHLY
+            - WEEKLY
+            - DAILY
           description: How often the resident is expected to pay rent.  Allowed values are
             "monthly", "weekly", and "daily".  Maps to the RentPeriod property
             of the Tenant object.
@@ -28374,6 +28371,12 @@ components:
         completion_notes:
           type: string
           description: Closing notes associated with the service request
+        service_request_status_id:
+          type: string
+          description: The Propexo unique identifier for the service request status
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee
         reported_by:
           type: string
           description: The name of the person who reported this service request
