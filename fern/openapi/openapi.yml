@@ -55958,51 +55958,51 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_created_at: 2024-07-01T00:00:00.000Z
-                        x_guestcard_id: sample_value
+                        x_created_at: "null"
+                        x_guestcard_id: "null"
                         x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                         x_leasing_agent_id: acef1ca1-d1c9-4c0c-8b03-f82b891402e9
                         x_property_id: ae9994dd-846f-4466-9752-306df25f7882
-                        x_unit_id: sample_value
-                        x_updated_at: 2024-07-01T00:00:00.000Z
-                        x_lead_source_id: sample_value
-                        address_1: sample_value
-                        address_2: sample_value
-                        city: sample_value
-                        country: sample_value
+                        x_unit_id: "null"
+                        x_updated_at: "null"
+                        x_lead_source_id: 000f2ced-b403-48ac-83a3-c0762b726198
+                        address_1: 7810 West St
+                        address_2: Apt 3
+                        city: Orlando
+                        country: FL
                         custom_data: {}
-                        date_of_birth: 2024-07-01T00:00:00.000Z
-                        desired_amenities: sample_value
-                        desired_floor_plan_id: sample_value
-                        desired_floor_plan_name: sample_value
-                        desired_lease_term_in_months: sample_value
+                        date_of_birth: "null"
+                        desired_amenities: "null"
+                        desired_floor_plan_id: "null"
+                        desired_floor_plan_name: "null"
+                        desired_lease_term_in_months: "null"
                         desired_max_rent_in_cents: default value
-                        desired_max_square_ft: 42
+                        desired_max_square_ft: "null"
                         desired_min_rent_in_cents: default value
-                        desired_min_square_ft: 42
-                        desired_num_bathrooms: 42
+                        desired_min_square_ft: "null"
+                        desired_num_bathrooms: "1.5"
                         desired_num_bedrooms: 42
                         desired_unit_number: sample_value
-                        desired_unit_type: sample_value
-                        email_1: sample_value
-                        email_2: sample_value
-                        first_name: sample_value
-                        ils: sample_value
-                        last_name: sample_value
-                        lead_source: sample_value
-                        leasing_agent: sample_value
-                        middle_name: sample_value
-                        notes: sample_value
-                        number_of_occupants: 42
-                        pet_details: sample_value
-                        phone_1_type: sample_value
-                        phone_1: sample_value
-                        phone_2_type: sample_value
-                        phone_2: sample_value
-                        state: sample_value
+                        desired_unit_type: "null"
+                        email_1: john.doe@example.com
+                        email_2: john.doe2@example.com
+                        first_name: John
+                        ils: "null"
+                        last_name: Doe
+                        lead_source: 2a15e56e-1fd7-4b63-88b5-81a79b0703ab
+                        leasing_agent: Jane Doe
+                        middle_name: Arnold
+                        notes: Looking for a 12 month lease.
+                        number_of_occupants: 2
+                        pet_details: "null"
+                        phone_1_type: "null"
+                        phone_1: (555) 555-5555
+                        phone_2_type: "null"
+                        phone_2: (555) 555-5554
+                        state: FL
                         status: lost
-                        target_move_in_date: 2024-07-01T00:00:00.000Z
-                        zip: sample_value
+                        target_move_in_date: 2023-10-31T00:00:00.000Z
+                        zip: "32801"
                         property_id: sample_value
                         integration_id: sample_value
                         integration_vendor: sample_value
@@ -56767,51 +56767,51 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_created_at: 2024-07-01T00:00:00.000Z
-                      x_guestcard_id: sample_value
+                      x_created_at: "null"
+                      x_guestcard_id: "null"
                       x_id: f526684a-e2c3-4425-bc65-559fa015fd5b
                       x_leasing_agent_id: acef1ca1-d1c9-4c0c-8b03-f82b891402e9
                       x_property_id: ae9994dd-846f-4466-9752-306df25f7882
-                      x_unit_id: sample_value
-                      x_updated_at: 2024-07-01T00:00:00.000Z
-                      x_lead_source_id: sample_value
-                      address_1: sample_value
-                      address_2: sample_value
-                      city: sample_value
-                      country: sample_value
+                      x_unit_id: "null"
+                      x_updated_at: "null"
+                      x_lead_source_id: 000f2ced-b403-48ac-83a3-c0762b726198
+                      address_1: 7810 West St
+                      address_2: Apt 3
+                      city: Orlando
+                      country: FL
                       custom_data: {}
-                      date_of_birth: 2024-07-01T00:00:00.000Z
-                      desired_amenities: sample_value
-                      desired_floor_plan_id: sample_value
-                      desired_floor_plan_name: sample_value
-                      desired_lease_term_in_months: sample_value
+                      date_of_birth: "null"
+                      desired_amenities: "null"
+                      desired_floor_plan_id: "null"
+                      desired_floor_plan_name: "null"
+                      desired_lease_term_in_months: "null"
                       desired_max_rent_in_cents: default value
-                      desired_max_square_ft: 42
+                      desired_max_square_ft: "null"
                       desired_min_rent_in_cents: default value
-                      desired_min_square_ft: 42
-                      desired_num_bathrooms: 42
+                      desired_min_square_ft: "null"
+                      desired_num_bathrooms: "1.5"
                       desired_num_bedrooms: 42
                       desired_unit_number: sample_value
-                      desired_unit_type: sample_value
-                      email_1: sample_value
-                      email_2: sample_value
-                      first_name: sample_value
-                      ils: sample_value
-                      last_name: sample_value
-                      lead_source: sample_value
-                      leasing_agent: sample_value
-                      middle_name: sample_value
-                      notes: sample_value
-                      number_of_occupants: 42
-                      pet_details: sample_value
-                      phone_1_type: sample_value
-                      phone_1: sample_value
-                      phone_2_type: sample_value
-                      phone_2: sample_value
-                      state: sample_value
+                      desired_unit_type: "null"
+                      email_1: john.doe@example.com
+                      email_2: john.doe2@example.com
+                      first_name: John
+                      ils: "null"
+                      last_name: Doe
+                      lead_source: 2a15e56e-1fd7-4b63-88b5-81a79b0703ab
+                      leasing_agent: Jane Doe
+                      middle_name: Arnold
+                      notes: Looking for a 12 month lease.
+                      number_of_occupants: 2
+                      pet_details: "null"
+                      phone_1_type: "null"
+                      phone_1: (555) 555-5555
+                      phone_2_type: "null"
+                      phone_2: (555) 555-5554
+                      state: FL
                       status: lost
-                      target_move_in_date: 2024-07-01T00:00:00.000Z
-                      zip: sample_value
+                      target_move_in_date: 2023-10-31T00:00:00.000Z
+                      zip: "32801"
                       property_id: sample_value
                       integration_id: sample_value
                       integration_vendor: sample_value
