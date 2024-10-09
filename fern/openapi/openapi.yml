@@ -38824,39 +38824,39 @@ paths:
                         last_seen: 2024-07-01T00:00:00.000Z
                         x_id: sample_value
                         x_property_id: sample_value
-                        x_unit_id: sample_value
-                        x_lease_id: sample_value
+                        x_unit_id: "null"
+                        x_lease_id: "null"
                         x_lead_id: sample_value
-                        address_1_alternate: sample_value
-                        address_1: sample_value
-                        address_2_alternate: sample_value
-                        address_2: sample_value
+                        address_1_alternate: "null"
+                        address_1: "null"
+                        address_2_alternate: "null"
+                        address_2: "null"
                         applications:
                           - applicant_id: sample_value
                             application_id: sample_value
                             status: sample_value
                             status_raw: sample_value
                             status_normalized: default value
-                        city_alternate: sample_value
-                        city: sample_value
-                        country_alternate: sample_value
-                        country: sample_value
+                        city_alternate: "null"
+                        city: "null"
+                        country_alternate: "null"
+                        country: "null"
                         custom_data: {}
-                        date_of_birth: 2024-07-01T00:00:00.000Z
+                        date_of_birth: "null"
                         email_1: sample_value
-                        email_2: sample_value
+                        email_2: "null"
                         first_name: sample_value
                         last_name: sample_value
-                        middle_name: sample_value
-                        notes: sample_value
+                        middle_name: "null"
+                        notes: "null"
                         phone_1_type: default value
                         phone_1: sample_value
                         phone_2_type: default value
                         phone_2: sample_value
-                        state_alternate: sample_value
-                        state: sample_value
-                        zip_alternate: sample_value
-                        zip: sample_value
+                        state_alternate: "null"
+                        state: "null"
+                        zip_alternate: "null"
+                        zip: "null"
                         pets:
                           - id: sample_value
                             created_at: 2024-07-01T00:00:00.000Z
@@ -38873,7 +38873,7 @@ paths:
                             is_trained: true
                             is_vaccinated: true
                             name: sample_value
-                            notes: sample_value
+                            notes: "null"
                             type: sample_value
                             weight_in_pounds: 42
                             custom_data: {}
@@ -39733,39 +39733,39 @@ paths:
                       last_seen: 2024-07-01T00:00:00.000Z
                       x_id: sample_value
                       x_property_id: sample_value
-                      x_unit_id: sample_value
-                      x_lease_id: sample_value
+                      x_unit_id: "null"
+                      x_lease_id: "null"
                       x_lead_id: sample_value
-                      address_1_alternate: sample_value
-                      address_1: sample_value
-                      address_2_alternate: sample_value
-                      address_2: sample_value
+                      address_1_alternate: "null"
+                      address_1: "null"
+                      address_2_alternate: "null"
+                      address_2: "null"
                       applications:
                         - applicant_id: sample_value
                           application_id: sample_value
                           status: sample_value
                           status_raw: sample_value
                           status_normalized: default value
-                      city_alternate: sample_value
-                      city: sample_value
-                      country_alternate: sample_value
-                      country: sample_value
+                      city_alternate: "null"
+                      city: "null"
+                      country_alternate: "null"
+                      country: "null"
                       custom_data: {}
-                      date_of_birth: 2024-07-01T00:00:00.000Z
+                      date_of_birth: "null"
                       email_1: sample_value
-                      email_2: sample_value
+                      email_2: "null"
                       first_name: sample_value
                       last_name: sample_value
-                      middle_name: sample_value
-                      notes: sample_value
+                      middle_name: "null"
+                      notes: "null"
                       phone_1_type: default value
                       phone_1: sample_value
                       phone_2_type: default value
                       phone_2: sample_value
-                      state_alternate: sample_value
-                      state: sample_value
-                      zip_alternate: sample_value
-                      zip: sample_value
+                      state_alternate: "null"
+                      state: "null"
+                      zip_alternate: "null"
+                      zip: "null"
                       pets:
                         - id: sample_value
                           created_at: 2024-07-01T00:00:00.000Z
@@ -39782,7 +39782,7 @@ paths:
                           is_trained: true
                           is_vaccinated: true
                           name: sample_value
-                          notes: sample_value
+                          notes: "null"
                           type: sample_value
                           weight_in_pounds: 42
                           custom_data: {}
