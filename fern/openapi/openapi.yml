@@ -60062,7 +60062,7 @@ paths:
                         last_seen: 2024-07-01T00:00:00.000Z
                         x_id: sdPFT6040dA8y8lCPYd87tpdFtLASs
                         x_property_id: sample_value
-                        x_unit_id: sample_value
+                        x_unit_id: "null"
                         is_unit: true
                         available_date: 2023-02-05T00:00:00.000Z
                         application_url: https://property-url.myresman.com/Portal/Applicants/ExampleURL
@@ -60078,8 +60078,7 @@ paths:
                         floor_plan_code: A4 WASHINGTON
                         floor_plan_name: Washington - 2 Bedroom, 2 Bathroom
                         floor: "2"
-                        image_urls:
-                          - sample_value
+                        image_urls: "null"
                         is_available: true
                         is_furnished: "null"
                         is_listed: true
@@ -60105,8 +60104,7 @@ paths:
                         zip: "90210"
                         make_ready_date: 2023-02-10T00:00:00.000Z
                         vacate_date: 2023-02-10T00:00:00.000Z
-                        video_urls:
-                          - sample_value
+                        video_urls: "null"
                         property_id: sample_value
                         unit_id: "null"
                         integration_id: sample_value
@@ -60831,7 +60829,7 @@ paths:
                       last_seen: 2024-07-01T00:00:00.000Z
                       x_id: sdPFT6040dA8y8lCPYd87tpdFtLASs
                       x_property_id: sample_value
-                      x_unit_id: sample_value
+                      x_unit_id: "null"
                       is_unit: true
                       available_date: 2023-02-05T00:00:00.000Z
                       application_url: https://property-url.myresman.com/Portal/Applicants/ExampleURL
@@ -60847,8 +60845,7 @@ paths:
                       floor_plan_code: A4 WASHINGTON
                       floor_plan_name: Washington - 2 Bedroom, 2 Bathroom
                       floor: "2"
-                      image_urls:
-                        - sample_value
+                      image_urls: "null"
                       is_available: true
                       is_furnished: "null"
                       is_listed: true
@@ -60874,8 +60871,7 @@ paths:
                       zip: "90210"
                       make_ready_date: 2023-02-10T00:00:00.000Z
                       vacate_date: 2023-02-10T00:00:00.000Z
-                      video_urls:
-                        - sample_value
+                      video_urls: "null"
                       property_id: sample_value
                       unit_id: "null"
                       integration_id: sample_value
