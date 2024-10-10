@@ -4208,6 +4208,91 @@ components:
       required:
         - meta
         - results
+    _v1_admin_integrations_{integration_id}_property-lists_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_admin_integrations_{integration_id}_property-lists_get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+            total:
+              type: integer
+              minimum: 0
+          required:
+            - orderBy
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: ID
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              property_list_id:
+                type: string
+                description: The Propexo unique identifier for the property list
+              x_property_list_id:
+                type: string
+                description: The external ID from the integration vendor
+              enabled:
+                type: boolean
+                description: Whether the property list is enabled and will have data ingested
+            required:
+              - id
+              - created_at
+              - integration_id
+              - property_list_id
+              - x_property_list_id
+              - enabled
+      required:
+        - meta
+        - results
     _v1_admin_integrations_{integration_id}_job-schedules__get_input:
       type: object
       properties:
@@ -25386,6 +25471,268 @@ components:
       required:
         - meta
         - results
+    _v1_property-lists__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+        associated_property_id:
+          type: string
+          description: "The Propexo unique identifier for the property. Note: This will
+            filter for results only containing property lists that are
+            associated with this property id"
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          type: string
+          enum:
+            - SAMPLE2
+            - BUILDIUM
+            - ENTRATA
+            - MRI
+            - PROPERTYWARE
+            - PROPERTYWARE_REST
+            - REALPAGE
+            - REALPAGE_RPX
+            - RENTMANAGER
+            - RENTVINE
+            - RESMAN
+            - SAMPLE1
+          description: The property management system of record
+    _v1_property-lists__get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+            total:
+              type: integer
+              minimum: 0
+          required:
+            - orderBy
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the property list
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location from the integration vendor
+              name:
+                type:
+                  - string
+                  - "null"
+                description: The name associated with the property list
+              associated_property_ids:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                type: string
+                description: The property management system of record
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - name
+              - associated_property_ids
+              - integration_id
+              - integration_vendor
+              - property_id
+      required:
+        - meta
+        - results
+    _v1_property-lists_{property_list_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_property-lists_{property_list_id}_get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+            total:
+              type: integer
+              minimum: 0
+          required:
+            - orderBy
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the property list
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location from the integration vendor
+            name:
+              type:
+                - string
+                - "null"
+              description: The name associated with the property list
+            associated_property_ids:
+              type:
+                - array
+                - "null"
+              items:
+                type: string
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              type: string
+              description: The property management system of record
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - name
+            - associated_property_ids
+            - integration_id
+            - integration_vendor
+            - property_id
+      required:
+        - meta
+        - results
     _v1_purchase-orders__get_input:
       type: object
       properties:
@@ -36445,6 +36792,87 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_properties_\
                   get_output"
+              examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/admin/integrations/{integration_id}/property-lists:
+    get:
+      description: Get all my property list configurations
+      summary: Get all my property list configurations
+      tags:
+        - admin
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: integration_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_property-li\
+                  sts_get_output"
               examples: {}
         "400":
           description: Bad Request
@@ -64092,6 +64520,666 @@ paths:
                       lead_id: sample_value
                       resident_id: sample_value
                       charge_code_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/property-lists/:
+    get:
+      description: Get all property lists
+      summary: Get all property lists
+      tags:
+        - properties
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: "The Propexo unique identifier for the property. Note: This will
+              filter for results only containing property lists that are
+              associated with this property id"
+          required: false
+          description: "The Propexo unique identifier for the property. Note: This will
+            filter for results only containing property lists that are
+            associated with this property id"
+          name: associated_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The property management system of record
+          required: false
+          description: The property management system of record
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_property-lists__get_output"
+              examples:
+                BUILDIUM:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: Estates at East Lake
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                ENTRATA:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: property123
+                        x_property_id: property123
+                        x_location_id: sample_value
+                        name: Central Park Apartments
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                MRI:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                PROPERTYWARE_SOAP:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                PROPERTYWARE_REST:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: "3423478"
+                        x_property_id: "3423478"
+                        x_location_id: sample_value
+                        name: The Green Meadows
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                REALPAGE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: "5213123"
+                        x_property_id: "5213124"
+                        x_location_id: sample_value
+                        name: sample_value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                REALPAGE_RPX:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: "1236712"
+                        x_property_id: "1236712"
+                        x_location_id: sample_value
+                        name: Western Frontier
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                RENTMANAGER:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                RENTVINE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+                RESMAN:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      - id: sample_value
+                        created_at: 2024-07-01T00:00:00.000Z
+                        updated_at: 2024-07-01T00:00:00.000Z
+                        last_seen: 2024-07-01T00:00:00.000Z
+                        x_id: sample_value
+                        x_property_id: sample_value
+                        x_location_id: sample_value
+                        name: sample_value
+                        associated_property_ids:
+                          - sample_value
+                        integration_id: sample_value
+                        integration_vendor: sample_value
+                        property_id: sample_value
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/property-lists/{property_list_id}:
+    get:
+      description: Get a property list by ID
+      summary: Get a property list by ID
+      tags:
+        - properties
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: property_list_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_property-lists_{property_list_id}_get_output"
+              examples:
+                BUILDIUM:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: Estates at East Lake
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                ENTRATA:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: property123
+                      x_property_id: property123
+                      x_location_id: sample_value
+                      name: Central Park Apartments
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                MRI:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                PROPERTYWARE_SOAP:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                PROPERTYWARE_REST:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: "3423478"
+                      x_property_id: "3423478"
+                      x_location_id: sample_value
+                      name: The Green Meadows
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                REALPAGE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: "5213123"
+                      x_property_id: "5213124"
+                      x_location_id: sample_value
+                      name: sample_value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                REALPAGE_RPX:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: "1236712"
+                      x_property_id: "1236712"
+                      x_location_id: sample_value
+                      name: Western Frontier
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                RENTMANAGER:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                RENTVINE:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
+                RESMAN:
+                  value:
+                    meta:
+                      offset: 42
+                      limit: 42
+                      orderBy:
+                        - {}
+                      hasMore: true
+                      total: 42
+                    results:
+                      id: sample_value
+                      created_at: 2024-07-01T00:00:00.000Z
+                      updated_at: 2024-07-01T00:00:00.000Z
+                      last_seen: 2024-07-01T00:00:00.000Z
+                      x_id: sample_value
+                      x_property_id: sample_value
+                      x_location_id: sample_value
+                      name: sample_value
+                      associated_property_ids:
+                        - sample_value
+                      integration_id: sample_value
+                      integration_vendor: sample_value
+                      property_id: sample_value
         "400":
           description: Bad Request
           content:
