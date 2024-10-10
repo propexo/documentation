@@ -4293,6 +4293,53 @@ components:
       required:
         - meta
         - results
+    _v1_admin_integrations_{integration_id}_property-lists_post_input:
+      type: object
+      properties:
+        x_property_list_id:
+          type: string
+          description: The external ID from the PMS for the property list. This is not the
+            Propexo ID. You may need to request this value from your customer
+        enabled:
+          type: boolean
+          description: Whether or not we should be syncing data for this property list on
+            this integration
+      required:
+        - x_property_list_id
+        - enabled
+    _v1_admin_integrations_{integration_id}_property-lists_post_output:
+      type: object
+      properties:
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: ID
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            property_list_id:
+              type: string
+              description: The Propexo unique identifier for the property list
+            x_property_list_id:
+              type: string
+              description: The external ID from the integration vendor
+            enabled:
+              type: boolean
+              description: Whether the property list is enabled and will have data ingested
+          required:
+            - id
+            - created_at
+            - integration_id
+            - property_list_id
+            - x_property_list_id
+            - enabled
+      required:
+        - results
     _v1_admin_integrations_{integration_id}_job-schedules__get_input:
       type: object
       properties:
@@ -4458,28 +4505,6 @@ components:
     _v1_admin_integrations_{integration_id}_properties_{property_configuration_id}_put_input:
       type: object
       properties:
-        order-by:
-          type: string
-          default: created_at:desc
-          description: "Order the results by a field. Optionally include asc or desc
-            preceded by a colon (default is asc). Example:
-            ?order-by=updated_at:desc"
-        offset:
-          type:
-            - integer
-            - "null"
-          minimum: 0
-          default: 0
-          description: Can be used for paginating results
-        limit:
-          type:
-            - integer
-            - "null"
-          minimum: 0
-          maximum: 250
-          default: 100
-          description: A number between 1 and 250 to determine the number of results to
-            return in a single query
         enabled:
           type: boolean
           description: Whether or not we should be syncing data for this property on this
@@ -4523,6 +4548,48 @@ components:
             - created_at
             - integration_id
             - property_id
+            - enabled
+      required:
+        - results
+    _v1_admin_integrations_{integration_id}_property-lists_{property_list_configuration_id}_put_input:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Whether or not we should be syncing data for this property list on
+            this integration.
+      required:
+        - enabled
+    _v1_admin_integrations_{integration_id}_property-lists_{property_list_configuration_id}_put_output:
+      type: object
+      properties:
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: ID
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            property_list_id:
+              type: string
+              description: The Propexo unique identifier for the property list
+            x_property_list_id:
+              type: string
+              description: The external ID from the integration vendor
+            enabled:
+              type: boolean
+              description: Whether the property list is enabled and will have data ingested
+          required:
+            - id
+            - created_at
+            - integration_id
+            - property_list_id
+            - x_property_list_id
             - enabled
       required:
         - results
@@ -36893,6 +36960,55 @@ paths:
                           path: []
                           message: "Unrecognized key(s) in object: 'foo'"
                       name: ZodError
+    post:
+      description: Create a property list configuration
+      summary: Create a property list configuration
+      tags:
+        - admin
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_property-li\
+                sts_post_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_property-li\
+                  sts_post_output"
+              examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
   /v1/admin/integrations/{integration_id}/job-schedules/:
     get:
       description: Get job schedules by integration id
@@ -37086,6 +37202,63 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_properties_\
                   {property_configuration_id}_put_output"
+              examples: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/admin/integrations/{integration_id}/property-lists/{property_list_configuration_id}:
+    put:
+      description: Update a property list configuration
+      summary: Update a property list configuration
+      tags:
+        - admin
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: path
+        - schema:
+            type: string
+            description: The ID of the property list configuration record.
+          required: true
+          description: The ID of the property list configuration record.
+          name: property_list_configuration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_property-li\
+                sts_{property_list_configuration_id}_put_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_property-li\
+                  sts_{property_list_configuration_id}_put_output"
               examples: {}
         "400":
           description: Bad Request
