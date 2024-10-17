@@ -20954,13 +20954,43 @@ components:
           description: The Propexo unique identifier for the unit
         resident_id:
           type: string
-          description: The Propexo resident id.
+          description: The Propexo unique identifier for the resident. If you use this
+            filter in conjunction with one of the move-in/move-out date filters,
+            it will not be honored and will be overridden by the date filter.
         property_id:
           type: string
-          description: The Propexo property id
+          description: The Propexo unique identifier for the property
         integration_id:
           type: string
-          description: The Propexo integration id
+          description: The Propexo unique identifier for the integration
+        before_move_in_date:
+          type:
+            - string
+            - "null"
+          description: "Filter to residents moving in before this date. Format:
+            YYYY-MM-DD. Date filter combinations will act with AND logic on a
+            single record."
+        after_move_in_date:
+          type:
+            - string
+            - "null"
+          description: "Filter to residents moving in after this date. Format: YYYY-MM-DD.
+            Date filter combinations will act with AND logic on a single
+            record."
+        before_move_out_date:
+          type:
+            - string
+            - "null"
+          description: "Filter to residents moving out before this date. Format:
+            YYYY-MM-DD. Date filter combinations will act with AND logic on a
+            single record."
+        after_move_out_date:
+          type:
+            - string
+            - "null"
+          description: "Filter to residents moving out after this date. Format:
+            YYYY-MM-DD. Date filter combinations will act with AND logic on a
+            single record."
         integration_vendor:
           type: string
           enum:
@@ -20976,7 +21006,7 @@ components:
             - RENTVINE
             - RESMAN
             - SAMPLE1
-          description: The integration vendor for the lease.
+          description: The property management system of record
         status_normalized:
           type: string
           enum:
@@ -58539,24 +58569,81 @@ paths:
           in: query
         - schema:
             type: string
-            description: The Propexo resident id.
+            description: The Propexo unique identifier for the resident. If you use this
+              filter in conjunction with one of the move-in/move-out date
+              filters, it will not be honored and will be overridden by the date
+              filter.
           required: false
-          description: The Propexo resident id.
+          description: The Propexo unique identifier for the resident. If you use this
+            filter in conjunction with one of the move-in/move-out date filters,
+            it will not be honored and will be overridden by the date filter.
           name: resident_id
           in: query
         - schema:
             type: string
-            description: The Propexo property id
+            description: The Propexo unique identifier for the property
           required: false
-          description: The Propexo property id
+          description: The Propexo unique identifier for the property
           name: property_id
           in: query
         - schema:
             type: string
-            description: The Propexo integration id
+            description: The Propexo unique identifier for the integration
           required: false
-          description: The Propexo integration id
+          description: The Propexo unique identifier for the integration
           name: integration_id
+          in: query
+        - schema:
+            type:
+              - string
+              - "null"
+            description: "Filter to residents moving in before this date. Format:
+              YYYY-MM-DD. Date filter combinations will act with AND logic on a
+              single record."
+          required: false
+          description: "Filter to residents moving in before this date. Format:
+            YYYY-MM-DD. Date filter combinations will act with AND logic on a
+            single record."
+          name: before_move_in_date
+          in: query
+        - schema:
+            type:
+              - string
+              - "null"
+            description: "Filter to residents moving in after this date. Format: YYYY-MM-DD.
+              Date filter combinations will act with AND logic on a single
+              record."
+          required: false
+          description: "Filter to residents moving in after this date. Format: YYYY-MM-DD.
+            Date filter combinations will act with AND logic on a single
+            record."
+          name: after_move_in_date
+          in: query
+        - schema:
+            type:
+              - string
+              - "null"
+            description: "Filter to residents moving out before this date. Format:
+              YYYY-MM-DD. Date filter combinations will act with AND logic on a
+              single record."
+          required: false
+          description: "Filter to residents moving out before this date. Format:
+            YYYY-MM-DD. Date filter combinations will act with AND logic on a
+            single record."
+          name: before_move_out_date
+          in: query
+        - schema:
+            type:
+              - string
+              - "null"
+            description: "Filter to residents moving out after this date. Format:
+              YYYY-MM-DD. Date filter combinations will act with AND logic on a
+              single record."
+          required: false
+          description: "Filter to residents moving out after this date. Format:
+            YYYY-MM-DD. Date filter combinations will act with AND logic on a
+            single record."
+          name: after_move_out_date
           in: query
         - schema:
             type: string
@@ -58573,9 +58660,9 @@ paths:
               - RENTVINE
               - RESMAN
               - SAMPLE1
-            description: The integration vendor for the lease.
+            description: The property management system of record
           required: false
-          description: The integration vendor for the lease.
+          description: The property management system of record
           name: integration_vendor
           in: query
         - schema:
