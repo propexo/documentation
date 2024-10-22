@@ -61858,26 +61858,26 @@ paths:
                         created_at: 2024-07-01T00:00:00.000Z
                         updated_at: 2024-07-01T00:00:00.000Z
                         last_seen: 2024-07-01T00:00:00.000Z
-                        x_id: sample_value
-                        x_property_id: sample_value
+                        x_id: "78912890"
+                        x_property_id: na
                         x_location_id: sample_value
-                        address_1: sample_value
-                        address_2: sample_value
-                        city: sample_value
-                        country: sample_value
-                        state: sample_value
-                        zip: sample_value
-                        first_name: sample_value
-                        middle_name: sample_value
-                        last_name: sample_value
-                        company_name: sample_value
-                        notes: sample_value
-                        email_1: sample_value
-                        email_2: sample_value
-                        phone_1: sample_value
-                        phone_1_type: default value
-                        phone_2: sample_value
-                        phone_2_type: default value
+                        address_1: 122 Bay Avenue
+                        address_2: Suite 3
+                        city: San Francisco
+                        country: USA
+                        state: CA
+                        zip: "12374"
+                        first_name: John
+                        middle_name: "null"
+                        last_name: Doe
+                        company_name: John's Property Management Co
+                        notes: "null"
+                        email_1: john.doe@test.com
+                        email_2: "null"
+                        phone_1: (555) 555-5555
+                        phone_1_type: MOBILE
+                        phone_2: (555) 555-5554
+                        phone_2_type: HOME
                         associated_property_ids:
                           - sample_value
                         integration_id: sample_value
@@ -62328,26 +62328,26 @@ paths:
                       created_at: 2024-07-01T00:00:00.000Z
                       updated_at: 2024-07-01T00:00:00.000Z
                       last_seen: 2024-07-01T00:00:00.000Z
-                      x_id: sample_value
-                      x_property_id: sample_value
+                      x_id: "78912890"
+                      x_property_id: na
                       x_location_id: sample_value
-                      address_1: sample_value
-                      address_2: sample_value
-                      city: sample_value
-                      country: sample_value
-                      state: sample_value
-                      zip: sample_value
-                      first_name: sample_value
-                      middle_name: sample_value
-                      last_name: sample_value
-                      company_name: sample_value
-                      notes: sample_value
-                      email_1: sample_value
-                      email_2: sample_value
-                      phone_1: sample_value
-                      phone_1_type: default value
-                      phone_2: sample_value
-                      phone_2_type: default value
+                      address_1: 122 Bay Avenue
+                      address_2: Suite 3
+                      city: San Francisco
+                      country: USA
+                      state: CA
+                      zip: "12374"
+                      first_name: John
+                      middle_name: "null"
+                      last_name: Doe
+                      company_name: John's Property Management Co
+                      notes: "null"
+                      email_1: john.doe@test.com
+                      email_2: "null"
+                      phone_1: (555) 555-5555
+                      phone_1_type: MOBILE
+                      phone_2: (555) 555-5554
+                      phone_2_type: HOME
                       associated_property_ids:
                         - sample_value
                       integration_id: sample_value
