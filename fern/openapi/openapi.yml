@@ -12759,6 +12759,9 @@ components:
         resident_id:
           type: string
           description: The Propexo unique identifier for the resident
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee
         appointment_date:
           anyOf:
             - type: string
