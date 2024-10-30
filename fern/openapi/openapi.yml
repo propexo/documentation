@@ -15832,26 +15832,6 @@ components:
         amount_in_cents:
           type: integer
           description: The amount of the resident payment, in cents
-        payment_method_raw:
-          type: string
-          enum:
-            - Check
-            - Cash
-            - MoneyOrder
-            - CashierCheck
-            - DirectDeposit
-            - CreditCard
-            - ElectronicPayment
-          description: The raw method of payment for the resident payment
-        send_email_receipt:
-          type: boolean
-          description: Indicates whether the payee would like to have a receipt emailed
-        description:
-          type: string
-          description: Description of the resident payment
-        reference_number:
-          type: string
-          description: The reference number for the resident payment
         payment_type:
           type: string
           enum:
@@ -15864,6 +15844,15 @@ components:
             - eCheck
             - Money Order
           description: The method of payment
+        send_email_receipt:
+          type: boolean
+          description: Indicates whether the payee would like to have a receipt emailed
+        description:
+          type: string
+          description: Description of the resident payment
+        reference_number:
+          type: string
+          description: The reference number for the resident payment
         charge_code_id:
           type: string
           description: The Propexo unique identifier for the charge code
