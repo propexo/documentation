@@ -24346,10 +24346,10 @@ components:
           description: The move-in date associated with the lease
         first_name:
           type: string
-          description: The first name associated with the resident
+          description: The first name associated with the applicant
         last_name:
           type: string
-          description: The last name associated with the resident
+          description: The last name associated with the applicant
         address_1:
           type: string
           description: The first address line associated with the resident
@@ -24368,14 +24368,18 @@ components:
         email_1:
           type: string
           format: email
-          description: The primary email address associated with the resident
+          description: The primary email address associated with the applicant
         phone_1:
           type: string
-          description: Primary phone number associated with the resident
+          pattern: ^\d{10}$
+          description: Primary phone number associated with the applicant
         date_of_birth:
-          type: string
-          format: date-time
-          description: The date of birth associated with the resident
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The date of birth associated with the applicant
         primary_contact_id:
           type: string
           description: The Propexo unique identifier of the primary contact. This must
@@ -24420,21 +24424,21 @@ components:
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The move-in date associated with the lease
+          description: The desired move-in date to the unit listed in the application
         move_out_date:
           anyOf:
             - type: string
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The move-out date associated with the lease
+          description: The desired move-out date to the unit listed in the application
         rent_amount_in_cents:
           type: integer
           minimum: 0
           description: The rent amount in cents for the lease
         notes:
           type: string
-          description: Notes associated with the lease
+          description: Notes associated with the applicant
         signature_date:
           anyOf:
             - type: string
@@ -24461,6 +24465,754 @@ components:
           type: string
           format: date-time
           description: The move-out date associated with the lease
+        middle_name:
+          type: string
+          description: The middle name associated with the applicant
+        maiden_name:
+          type: string
+          description: The maiden name associated with the applicant
+        phone_1_type:
+          type: string
+          enum:
+            - FAX
+            - HOME
+            - MOBILE
+            - WORK
+          description: Type of the primary phone number
+        phone_2:
+          type: string
+          pattern: ^\d{10}$
+          description: Secondary phone number associated with the applicant
+        phone_2_type:
+          type: string
+          enum:
+            - FAX
+            - HOME
+            - MOBILE
+            - WORK
+          description: Type of the secondary phone number
+        desired_lease_term_in_months:
+          type: string
+          description: The desired lease term in months of the applicant
+        is_evicted:
+          type: boolean
+          description: Whether the applicant has been evicted
+        is_felony:
+          type: boolean
+          description: Whether the applicant has a felony
+        is_criminal_charge:
+          type: boolean
+          description: Whether the applicant has a criminal charge
+        eviction_description:
+          type: string
+          description: The description of the eviction
+        felony_description:
+          type: string
+          description: The description of the felony
+        criminal_charge_description:
+          type: string
+          description: The description of the criminal charge
+        marital_status:
+          type: string
+          enum:
+            - SINGLE
+            - MARRIED
+          description: The marital status of the applicant
+        identification_number:
+          type: string
+          description: The social security number of the applicant
+        drivers_license_number:
+          type: string
+          description: The driver's license number of the applicant
+        address_history:
+          type: array
+          items:
+            type: object
+            properties:
+              address_1:
+                type: string
+                description: The first address line associated with the applicant's historical
+                  address
+              city:
+                type: string
+                description: The city associated with the applicant's historical address
+              state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The state associated with the applicant
+              zip:
+                type: string
+                description: The zip code associated with the applicant's historical address
+              country:
+                type: string
+                enum:
+                  - US
+                  - CA
+                description: The country associated with the applicant's historical address. If
+                  your application needs to support submitting an applicant who
+                  resides in another country, please reach out to Propexo
+                  Support for help
+              notice_provided:
+                type: boolean
+                description: Whether notice has been given to the applicant's historical address
+              property_name:
+                type: string
+                description: The property name of the applicant's historical address
+              reason_for_leaving:
+                type: string
+                description: The reason the applicant left their historical address
+              monthly_payment_in_cents:
+                type: integer
+                minimum: 0
+                description: For the applicant's historical address, the applicant's monthly
+                  payment for rent or mortgage in cents
+              move_in_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date when the applicant moved into their historical address
+              move_out_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date when the applicant moved out of their historical address.
+                  If this is the applicant's current address, omit this field
+              manager_phone:
+                type: string
+                pattern: ^\d{10}$
+                description: The phone number of a property manager who works at this address
+              manager_email:
+                type: string
+                format: email
+                description: The email of a property manager who works at this address
+              management_company:
+                type: string
+                description: The name of the company who owns the property at this address
+            required:
+              - address_1
+              - city
+              - state
+              - zip
+              - notice_provided
+              - move_in_date
+          maxItems: 2
+          default: []
+          description: The address history of the applicant
+        emergency_contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the emergency contact
+              last_name:
+                type: string
+                description: The last name of the emergency contact
+              relationship:
+                type: string
+                enum:
+                  - DAUGHTER
+                  - FRIEND
+                  - HUSBAND
+                  - SON
+                  - WIFE
+                  - OTHER
+                description: The relationship of the emergency contact to the applicant
+              address_1:
+                type: string
+                description: The first line of the address of the emergency contact
+              city:
+                type: string
+                description: The city of the address of the emergency contact
+              state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The state of the address of the emergency contact
+              zip:
+                type: string
+                description: The zip code of the address of the emergency contact
+              country:
+                type: string
+                enum:
+                  - US
+                  - CA
+                description: The country of the address of the emergency contact. If your
+                  application needs to support submitting an applicant who
+                  resides in another country, please reach out to Propexo
+                  Support for help
+              phone_1:
+                type: string
+                pattern: ^\d{10}$
+                description: The phone number of the emergency contact
+            required:
+              - first_name
+              - last_name
+              - relationship
+          maxItems: 1
+          default: []
+          description: A list of emergency contacts for the applicant
+        employment_history:
+          type: array
+          items:
+            type: object
+            properties:
+              is_current_employer:
+                type: boolean
+                description: Whether this employment history entry is for a current employer
+              name:
+                type: string
+                description: The name of the employer
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date of the applicant's employment at this employer
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date of the applicant's employment at this employer. Ignore
+                  this field if is_current_employer is set to true
+              address_1:
+                type: string
+                description: The first line of the address of the employer
+              city:
+                type: string
+                description: The city of the address of the employer
+              state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The state of the address of the employer
+              zip:
+                type: string
+                description: The zip code of the address of the employer
+              phone:
+                type: string
+                pattern: ^\d{10}$
+                description: The phone number of the employer
+              supervisor_first_name:
+                type: string
+                description: The first name of the applicant's supervisor at this employer
+              supervisor_last_name:
+                type: string
+                description: The last name of the applicant's supervisor at this employer
+              position:
+                type: string
+                description: The position held at this employer, or the job description of the
+                  applicant
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income of the applicant at this employer in cents
+            required:
+              - is_current_employer
+              - name
+              - start_date
+              - monthly_income_in_cents
+          maxItems: 2
+          default: []
+          description: The employment history of the applicant
+        other_income:
+          type: array
+          items:
+            type: object
+            properties:
+              source:
+                type: string
+                description: The source of the income for the applicant
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income from this income source in cents
+            required:
+              - source
+              - monthly_income_in_cents
+          maxItems: 2
+          default: []
+          description: A list of other income sources for the applicant
+        vehicles:
+          type: array
+          items:
+            type: object
+            properties:
+              make:
+                type: string
+                description: The make of the vehicle
+              model:
+                type: string
+                description: The model of the vehicle
+              year:
+                type: integer
+                description: The year the vehicle was made
+              color:
+                type: string
+                description: The color of the vehicle
+              license_plate_number:
+                type: string
+                description: The license plate number of the vehicle
+              license_plate_state:
+                type: string
+                description: The issuing state of the license plate
+            required:
+              - make
+          maxItems: 4
+          default: []
+          description: A list of vehicles for the application
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                description: The type associated with the applicant pet
+              name:
+                type: string
+                description: The name associated with the applicant pet
+              age_in_years:
+                type: integer
+                minimum: 0
+                description: The age in years of the applicant pet
+              weight_in_pounds:
+                type: integer
+                minimum: 0
+                description: The weight in pounds of the applicant pet
+              breed:
+                type: string
+                description: The breed of the applicant pet
+              color:
+                type: string
+                description: The color of the applicant pet
+              gender:
+                type: string
+                description: The raw value for the gender of the applicant pet
+              is_fixed:
+                type: boolean
+                description: Whether the applicant pet is fixed
+              is_service_animal:
+                type: boolean
+                description: Whether the applicant pet is a service animal
+            required:
+              - type
+          maxItems: 6
+          default: []
+          description: A list of applicant pets
+        concession_fees:
+          type: array
+          items:
+            type: object
+            properties:
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date of the applicant's recurring concession fee
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date of the applicant's recurring concession fee
+              concession_id:
+                type: string
+                description: The Propexo unique identifier for the concession. This concession
+                  must be associated with the unit that the applicant is
+                  applying for
+            required:
+              - start_date
+              - end_date
+              - concession_id
+          default: []
+          description: A list of concession fees for the application
+        application_fees:
+          type: array
+          items:
+            type: object
+            properties:
+              charge_code_id:
+                type: string
+                description: The Propexo unique identifier for the charge code. This must be an
+                  application fee charge code
+              amount_in_cents:
+                type: integer
+                minimum: 0
+                description: The application fee amount in cents
+              description:
+                type: string
+                description: Description of the application fee
+            required:
+              - charge_code_id
+              - amount_in_cents
+          default: []
+          description: A list of application fees for the application
+        other_occupants:
+          type: array
+          items:
+            type: object
+            properties:
+              relationship:
+                type: string
+                enum:
+                  - ROOMMATE
+                  - SPOUSE
+                  - GUARANTOR
+                  - OTHER
+                description: The relationship of the occupant to the applicant
+              first_name:
+                type: string
+                description: The first name associated with the occupant
+              last_name:
+                type: string
+                description: The last name associated with the occupant
+              third_party_id:
+                type: string
+                description: A unique ID you would like to associate with the occupant. This is
+                  not the Sample1 occupant ID
+              organization_name:
+                type: string
+                description: The name of your organization. Sample1 uses this for associating an
+                  occupant
+              email_1:
+                type: string
+                format: email
+                description: The primary email address associated with the occupant
+              phone_1:
+                type: string
+                pattern: ^\d{10}$
+                description: Primary phone number associated with the occupant
+              phone_1_type:
+                type: string
+                enum:
+                  - FAX
+                  - HOME
+                  - MOBILE
+                  - WORK
+                description: Type of the primary phone number
+              phone_2:
+                type: string
+                pattern: ^\d{10}$
+                description: Secondary phone number associated with the occupant
+              phone_2_type:
+                type: string
+                enum:
+                  - FAX
+                  - HOME
+                  - MOBILE
+                  - WORK
+                description: Type of the secondary phone number
+              address_1:
+                type: string
+                description: The first address line associated with the occupant
+              city:
+                type: string
+                description: The city associated with the occupant
+              state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The state associated with the occupant
+              zip:
+                type: string
+                description: The zip code associated with the occupant
+            required:
+              - relationship
+              - first_name
+              - last_name
+              - third_party_id
+              - organization_name
+          default: []
+          description: A list of other occupants for the application
     _v1_leases_{lease_id}_put_output:
       type: object
       properties:
