@@ -22681,6 +22681,39 @@ components:
                   provided by PMS vendors, but may be the only data provided to
                   identify a unit associated with a service request in some
                   cases.
+              write_off_amount_in_cents:
+                type:
+                  - string
+                  - "null"
+                pattern: ^d+$
+                description: The write off amount for the lease, in cents
+              write_off_amount_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw write off amount of the lease from the PMS
+              balance_amount_in_cents:
+                type:
+                  - string
+                  - "null"
+                pattern: ^d+$
+                description: The balance amount for the lease, in cents
+              balance_amount_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw balance amount of the lease from the PMS
+              past_due_balance_in_cents:
+                type:
+                  - string
+                  - "null"
+                pattern: ^d+$
+                description: The past due balance for the lease, in cents
+              past_due_balance_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw past due balance of the lease from the PMS
               unit_id:
                 type:
                   - string
@@ -22772,6 +22805,12 @@ components:
               - term
               - type
               - unit_number
+              - write_off_amount_in_cents
+              - write_off_amount_raw
+              - balance_amount_in_cents
+              - balance_amount_raw
+              - past_due_balance_in_cents
+              - past_due_balance_raw
               - unit_id
               - property_id
               - integration_id
@@ -24132,6 +24171,39 @@ components:
               description: The unit number associated with the lease. This isn't always
                 provided by PMS vendors, but may be the only data provided to
                 identify a unit associated with a service request in some cases.
+            write_off_amount_in_cents:
+              type:
+                - string
+                - "null"
+              pattern: ^d+$
+              description: The write off amount for the lease, in cents
+            write_off_amount_raw:
+              type:
+                - string
+                - "null"
+              description: The raw write off amount of the lease from the PMS
+            balance_amount_in_cents:
+              type:
+                - string
+                - "null"
+              pattern: ^d+$
+              description: The balance amount for the lease, in cents
+            balance_amount_raw:
+              type:
+                - string
+                - "null"
+              description: The raw balance amount of the lease from the PMS
+            past_due_balance_in_cents:
+              type:
+                - string
+                - "null"
+              pattern: ^d+$
+              description: The past due balance for the lease, in cents
+            past_due_balance_raw:
+              type:
+                - string
+                - "null"
+              description: The raw past due balance of the lease from the PMS
             unit_id:
               type:
                 - string
@@ -24223,6 +24295,12 @@ components:
             - term
             - type
             - unit_number
+            - write_off_amount_in_cents
+            - write_off_amount_raw
+            - balance_amount_in_cents
+            - balance_amount_raw
+            - past_due_balance_in_cents
+            - past_due_balance_raw
             - unit_id
             - property_id
             - integration_id
