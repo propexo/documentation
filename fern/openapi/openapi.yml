@@ -1417,6 +1417,14 @@ components:
                 - developerId
               description: Sample2 authentication credentials
               title: Sample2
+            - type: object
+              properties:
+                apiKey:
+                  type: string
+              required:
+                - apiKey
+              description: Knock authentication credentials
+              title: Knock
           description: JSON encoded credentials for accessing the integration vendor API
         name:
           type: string
@@ -3450,6 +3458,14 @@ components:
                 - developerId
               description: Sample2 authentication credentials
               title: Sample2
+            - type: object
+              properties:
+                apiKey:
+                  type: string
+              required:
+                - apiKey
+              description: Knock authentication credentials
+              title: Knock
           description: JSON encoded credentials for accessing the integration vendor API
         name:
           type: string
