@@ -31055,29 +31055,107 @@ components:
           format: email
           description: The secondary email address associated with the resident
         date_of_birth:
-          type: string
-          format: date-time
-          description: The date of birth of the resident.  This value maps to the
-            PrimaryContact.DateOfBirth property of the Tenant object.
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The date of birth associated with the resident
         address_1:
           type: string
-          description: Street address for the resident. This maps to the Street property
-            of the primary address of the Tenant object
+          description: The first address line associated with the resident
         address_2:
           type: string
-          description: Street address for the resident.
+          description: The second address line associated with the resident
         city:
           type: string
-          description: City of the resident's primary address
+          description: The city associated with the resident
         state:
           type: string
-          description: State of the resident's primary address
+          enum:
+            - AB
+            - BC
+            - MB
+            - NB
+            - NL
+            - NT
+            - NS
+            - NU
+            - ON
+            - PE
+            - QC
+            - SK
+            - YT
+            - AL
+            - AK
+            - AS
+            - AZ
+            - AR
+            - AA
+            - AE
+            - AP
+            - CA
+            - CO
+            - CT
+            - DE
+            - DC
+            - FL
+            - GA
+            - GU
+            - HI
+            - ID
+            - IL
+            - IN
+            - IA
+            - KS
+            - KY
+            - LA
+            - ME
+            - MD
+            - MA
+            - MI
+            - MN
+            - MS
+            - MO
+            - MT
+            - NE
+            - NV
+            - NH
+            - NJ
+            - NM
+            - NY
+            - NC
+            - ND
+            - MP
+            - OH
+            - OK
+            - OR
+            - PA
+            - PR
+            - RI
+            - SC
+            - SD
+            - TN
+            - TX
+            - UM
+            - UT
+            - VT
+            - VI
+            - VA
+            - WA
+            - WV
+            - WI
+            - WY
+          description: The state associated with the resident
         zip:
           type: string
-          description: Zip/Postal Code of the resident's primary address
+          description: The zip code associated with the resident
         country:
           type: string
-          description: Country of the resident's primary address
+          enum:
+            - US
+            - CA
+          description: The country associated with the resident
         address_1_alternate:
           type: string
           description: Secondary/alternate street address for the resident. This maps to
@@ -31135,8 +31213,7 @@ components:
           deprecated: true
         middle_name:
           type: string
-          description: The middle name of the resident.  This value maps to the
-            PrimaryContact.MiddleName property of the Tenant object
+          description: The middle name associated with the resident
         events:
           type: array
           items:
@@ -31203,6 +31280,9 @@ components:
           maximum: 31
           description: Day of the month on which the tenant's rent is due.  Maps to the
             RentDueDay property of the Tenant object
+        is_primary:
+          type: boolean
+          description: Whether the resident is the primary record
     _v1_residents_{id}_put_output:
       type: object
       properties:
