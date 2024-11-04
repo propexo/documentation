@@ -5691,7 +5691,6 @@ components:
           deprecated: true
         integration_id:
           type: string
-          format: cuid
         vendor:
           type: string
           enum:
@@ -5815,7 +5814,6 @@ components:
           deprecated: true
         integration_id:
           type: string
-          format: cuid
         vendor:
           type: string
           enum:
