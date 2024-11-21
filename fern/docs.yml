@@ -4,6 +4,10 @@ instances:
 
 title: Propexo | Docs
 
+js:
+    - path: ./js/hubspot.js
+    - path: ./js/vector.js
+
 tabs:
   documentation:
     display-name: Documentation
