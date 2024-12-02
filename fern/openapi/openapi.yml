@@ -783,6 +783,7 @@ components:
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                        - PROPERTYWARE_REST_CREATE_UNIT
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -914,6 +915,7 @@ components:
                           - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                           - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                          - PROPERTYWARE_REST_CREATE_UNIT
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2811,6 +2813,7 @@ components:
                       - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                       - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                      - PROPERTYWARE_REST_CREATE_UNIT
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -2942,6 +2945,7 @@ components:
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                        - PROPERTYWARE_REST_CREATE_UNIT
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -12568,6 +12572,9 @@ components:
         x_property_id:
           type: string
           description: The external ID of the property from the integration vendor
+        x_type_id:
+          type: string
+          description: The external ID of the type from the integration vendor
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
@@ -12843,9 +12850,7 @@ components:
         result:
           type: array
           items:
-            type:
-              - object
-              - "null"
+            type: object
             properties:
               last_seen:
                 type: string
@@ -12857,16 +12862,11 @@ components:
                   - PROPERTY_CALENDAR
                   - ENTRATA_SELF_GUIDED_TOUR_CALENDAR
                 description: The type of calendar
-              x_property_id:
-                type:
-                  - string
-                  - "null"
-                description: The external ID of the property from the integration vendor
               x_agent_id:
                 type:
                   - string
                   - "null"
-                description: The Propexo unique identifier for the employee
+                description: The external ID of the agent from the integration vendor
               agent_first_name:
                 type:
                   - string
@@ -12888,12 +12888,19 @@ components:
                   - "null"
                 description: The minimum lead time before which you can book an appointment on
                   this calendar, in minutes
+              timezone:
+                type:
+                  - string
+                  - "null"
+                description: The timezone of the calendar, if such metadata is available. Please
+                  contact Propexo Support if you are working with properties
+                  outside of the United States and Canada as there may be
+                  options for populating this field depending on your business
+                  case and integration vendor.
               calendar_days:
                 type: array
                 items:
-                  type:
-                    - object
-                    - "null"
+                  type: object
                   properties:
                     date:
                       anyOf:
@@ -12925,6 +12932,7 @@ components:
                         - SINGLE
                         - MULTIPLE
                         - UNLIMITED
+                        - UNKNOWN
                       description: What kind of simultaneous or double booked appointments are allowed
                         on this calendar
                     max_simultaneous_appointments:
@@ -12945,9 +12953,11 @@ components:
                             pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
                             description: The start time of the slot
                           end:
-                            type: string
+                            type:
+                              - string
+                              - "null"
                             pattern: (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)
-                            description: The end time of the slot
+                            description: The end time of the slot which may not be available in all cases
                         required:
                           - start
                           - end
@@ -12959,16 +12969,22 @@ components:
                     - simultaneous_appointment_mode
                     - max_simultaneous_appointments
                     - available_slots
+              x_property_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the property from the integration vendor
             required:
               - last_seen
               - calendar_type
-              - x_property_id
               - x_agent_id
               - agent_first_name
               - agent_last_name
               - default_appointment_length
               - minimum_appointment_lead_time
+              - timezone
               - calendar_days
+              - x_property_id
       required:
         - meta
         - result
@@ -13176,6 +13192,9 @@ components:
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
+        notes:
+          type: string
+          description: Notes associated with the event
         appointment_date:
           anyOf:
             - type: string
@@ -13206,9 +13225,6 @@ components:
           type: string
           maxLength: 50
           description: The title associated with the event
-        notes:
-          type: string
-          description: Notes associated with the event
         priority:
           type: string
           enum:
@@ -15090,6 +15106,19 @@ components:
         reference_number:
           type: string
           description: The reference number for the recurring resident charge
+        day_due:
+          type: integer
+          exclusiveMinimum: 0
+          minimum: 1
+          maximum: 31
+          description: The day of the month the charge is due
+        frequency_raw:
+          type: integer
+          exclusiveMinimum: 0
+          minimum: 1
+          maximum: 24
+          description: The raw value of the frequency of the recurring resident charge (in
+            months)
       required:
         - integration_id
     _v1_recurring-resident-charges__post_output:
@@ -17583,6 +17612,9 @@ components:
         x_property_id:
           type: string
           description: The external ID of the property from the integration vendor
+        x_type_id:
+          type: string
+          description: The external ID of the type from the integration vendor
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
@@ -22212,6 +22244,10 @@ components:
         status_raw:
           type: string
           description: The raw status associated with the lease
+        unit_number:
+          type: string
+          description: The unit number of the lease. When using this, the Propexo
+            `property_id` filter must be added as well.
     _v1_leases__get_output:
       type: object
       properties:
@@ -25934,6 +25970,306 @@ components:
       required:
         - job_id
         - data
+    _v1_note-categories__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          type: string
+          enum:
+            - SAMPLE2
+            - BUILDIUM
+            - ENTRATA
+            - MRI
+            - PROPERTYWARE
+            - PROPERTYWARE_REST
+            - REALPAGE
+            - REALPAGE_RPX
+            - RENTMANAGER
+            - RENTVINE
+            - RESMAN
+            - SAMPLE1
+          description: The property management system of record
+    _v1_note-categories__get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+              description: The offset of the first result
+              example: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+              description: The number of results to return
+              example: 100
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+              description: Whether there are more results
+            total:
+              type: integer
+              minimum: 0
+              description: The total number of results
+              example: 1000
+          required:
+            - orderBy
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the note category
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location from the integration vendor
+              is_active:
+                type:
+                  - boolean
+                  - "null"
+                description: Whether the note category is active
+              name:
+                type: string
+                description: The name associated with the note category
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                type: string
+                enum:
+                  - SAMPLE2
+                  - BUILDIUM
+                  - ENTRATA
+                  - MRI
+                  - PROPERTYWARE
+                  - PROPERTYWARE_REST
+                  - REALPAGE
+                  - REALPAGE_RPX
+                  - RENTMANAGER
+                  - RENTVINE
+                  - RESMAN
+                  - SAMPLE1
+                description: The property management system of record
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - is_active
+              - name
+              - integration_id
+              - integration_vendor
+              - property_id
+      required:
+        - meta
+        - results
+    _v1_note-categories_{note_category_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_note-categories_{note_category_id}_get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+              description: The offset of the first result
+              example: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+              description: The number of results to return
+              example: 100
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+              description: Whether there are more results
+            total:
+              type: integer
+              minimum: 0
+              description: The total number of results
+              example: 1000
+          required:
+            - orderBy
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the note category
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location from the integration vendor
+            is_active:
+              type:
+                - boolean
+                - "null"
+              description: Whether the note category is active
+            name:
+              type: string
+              description: The name associated with the note category
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              type: string
+              enum:
+                - SAMPLE2
+                - BUILDIUM
+                - ENTRATA
+                - MRI
+                - PROPERTYWARE
+                - PROPERTYWARE_REST
+                - REALPAGE
+                - REALPAGE_RPX
+                - RENTMANAGER
+                - RENTVINE
+                - RESMAN
+                - SAMPLE1
+              description: The property management system of record
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - is_active
+            - name
+            - integration_id
+            - integration_vendor
+            - property_id
+      required:
+        - meta
+        - results
     _v1_owners__get_input:
       type: object
       properties:
@@ -31057,6 +31393,10 @@ components:
             - RESMAN
             - SAMPLE1
           description: The property management system of record
+        unit_number:
+          type: string
+          description: The unit number of the service request. When using this, the
+            Propexo `property_id` filter must be added as well.
     _v1_service-requests__get_output:
       type: object
       properties:
@@ -34200,6 +34540,11 @@ components:
                 description: The UTC offset numeric value of the timezone. In the event that
                   daylight savings time is observed, the offset will always
                   represent standard time
+              server_time_error_seconds:
+                type:
+                  - number
+                  - "null"
+                description: The number of seconds the server is off by
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -34233,6 +34578,7 @@ components:
               - is_active
               - observes_daylight_savings
               - offset
+              - server_time_error_seconds
               - integration_id
               - integration_vendor
               - property_id
@@ -35233,8 +35579,8 @@ components:
           description: The integration vendor for the unit.
         unit_number:
           type: string
-          description: The unit number of the service request. When using this, the
-            Propexo `property_id` filter must be added as well.
+          description: The number of the unit. When using this, the Propexo `property_id`
+            filter must be added as well.
     _v1_units__get_output:
       type: object
       properties:
@@ -41978,6 +42324,13 @@ paths:
           in: query
         - schema:
             type: string
+            description: The external ID of the type from the integration vendor
+          required: false
+          description: The external ID of the type from the integration vendor
+          name: x_type_id
+          in: query
+        - schema:
+            type: string
             description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
@@ -44601,6 +44954,13 @@ paths:
           in: query
         - schema:
             type: string
+            description: The external ID of the type from the integration vendor
+          required: false
+          description: The external ID of the type from the integration vendor
+          name: x_type_id
+          in: query
+        - schema:
+            type: string
             description: The Propexo unique identifier for the location associated with the
               property. This is the location specified in RentManager
           required: false
@@ -46688,6 +47048,15 @@ paths:
           description: The raw status associated with the lease
           name: status_raw
           in: query
+        - schema:
+            type: string
+            description: The unit number of the lease. When using this, the Propexo
+              `property_id` filter must be added as well.
+          required: false
+          description: The unit number of the lease. When using this, the Propexo
+            `property_id` filter must be added as well.
+          name: unit_number
+          in: query
       responses:
         "200":
           description: Successful response
@@ -47150,6 +47519,214 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_listings_{listing_id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/note-categories/:
+    get:
+      description: Get all Note Categories
+      summary: Get all Note Categories
+      tags:
+        - locations
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the property from the integration vendor
+          required: false
+          description: The external ID of the property from the integration vendor
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The property management system of record
+          required: false
+          description: The property management system of record
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_note-categories__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/note-categories/{note_category_id}:
+    get:
+      description: Get Note Category by ID
+      summary: Get Note Category by ID
+      tags:
+        - locations
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: note_category_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_note-categories_{note_category_id}_get_output"
         "400":
           description: Bad Request
           content:
@@ -48847,6 +49424,15 @@ paths:
           required: false
           description: The property management system of record
           name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The unit number of the service request. When using this, the
+              Propexo `property_id` filter must be added as well.
+          required: false
+          description: The unit number of the service request. When using this, the
+            Propexo `property_id` filter must be added as well.
+          name: unit_number
           in: query
       responses:
         "200":
@@ -50969,11 +51555,11 @@ paths:
           in: query
         - schema:
             type: string
-            description: The unit number of the service request. When using this, the
-              Propexo `property_id` filter must be added as well.
+            description: The number of the unit. When using this, the Propexo `property_id`
+              filter must be added as well.
           required: false
-          description: The unit number of the service request. When using this, the
-            Propexo `property_id` filter must be added as well.
+          description: The number of the unit. When using this, the Propexo `property_id`
+            filter must be added as well.
           name: unit_number
           in: query
       responses:
