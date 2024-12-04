@@ -14306,6 +14306,16 @@ components:
                   - string
                   - "null"
                 description: The Propexo unique identifier for the financial account
+              unit_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the unit
+              lease_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the lease
               allocations:
                 type: array
                 items:
@@ -14413,6 +14423,8 @@ components:
               - property_id
               - resident_id
               - financial_account_id
+              - unit_id
+              - lease_id
               - allocations
       required:
         - meta
@@ -14697,6 +14709,16 @@ components:
                 - string
                 - "null"
               description: The Propexo unique identifier for the financial account
+            unit_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the unit
+            lease_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the lease
             allocations:
               type: array
               items:
@@ -14804,6 +14826,8 @@ components:
             - property_id
             - resident_id
             - financial_account_id
+            - unit_id
+            - lease_id
             - allocations
       required:
         - meta
@@ -15638,6 +15662,16 @@ components:
                   - string
                   - "null"
                 description: The Propexo unique identifier for the financial account
+              unit_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the unit
+              lease_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the lease
               allocations:
                 type: array
                 items:
@@ -15743,6 +15777,8 @@ components:
               - property_id
               - resident_id
               - financial_account_id
+              - unit_id
+              - lease_id
               - allocations
       required:
         - meta
@@ -16009,6 +16045,16 @@ components:
                 - string
                 - "null"
               description: The Propexo unique identifier for the financial account
+            unit_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the unit
+            lease_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the lease
             allocations:
               type: array
               items:
@@ -16114,6 +16160,8 @@ components:
             - property_id
             - resident_id
             - financial_account_id
+            - unit_id
+            - lease_id
             - allocations
       required:
         - meta
