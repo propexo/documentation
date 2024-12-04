@@ -2263,6 +2263,7 @@ components:
                   enum:
                     - ADMIN
                     - DEVELOPER
+                    - SUPPORT
             required:
               - id
               - created_at
@@ -2297,6 +2298,7 @@ components:
             enum:
               - ADMIN
               - DEVELOPER
+              - SUPPORT
           description: The roles the user has assigned to them
       required:
         - first_name
@@ -2335,6 +2337,7 @@ components:
                 enum:
                   - ADMIN
                   - DEVELOPER
+                  - SUPPORT
           required:
             - id
             - created_at
@@ -2435,6 +2438,7 @@ components:
                 enum:
                   - ADMIN
                   - DEVELOPER
+                  - SUPPORT
           required:
             - id
             - created_at
@@ -2462,6 +2466,7 @@ components:
             enum:
               - ADMIN
               - DEVELOPER
+              - SUPPORT
           description: The roles the user has assigned to them
     _v1_admin_users_{id}_put_output:
       type: object
@@ -2500,6 +2505,7 @@ components:
                 enum:
                   - ADMIN
                   - DEVELOPER
+                  - SUPPORT
           required:
             - id
             - created_at
