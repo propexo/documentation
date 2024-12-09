@@ -18,7 +18,7 @@ tabs:
   kb:
     display-name: Knowledge Base
     icon: book-open
-    href: https://propexo-knowledge-base.help.usepylon.com
+    href: https://kb.propexo.com
   use-cases:
     display-name: Use Cases
     icon: puzzle-piece
