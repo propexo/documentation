@@ -6079,7 +6079,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the unit from the integration vendor
+                description: "DEPRECATED: Use x_unit_id_preferred instead"
+                deprecated: true
+                x-fern-availability: deprecated
               x_lease_id:
                 type:
                   - string
@@ -6092,6 +6094,10 @@ components:
                   - string
                   - "null"
                 description: The external ID of the lead from the integration vendor
+              x_unit_id_preferred:
+                type: array
+                items:
+                  type: string
               address_1_alternate:
                 type:
                   - string
@@ -6393,6 +6399,10 @@ components:
               property_id:
                 type: string
                 description: The Propexo unique identifier for the property
+              unit_id_preferred:
+                type: array
+                items:
+                  type: string
               screenings:
                 type: array
                 items:
@@ -6437,6 +6447,7 @@ components:
               - x_unit_id
               - x_lease_id
               - x_lead_id
+              - x_unit_id_preferred
               - address_1_alternate
               - address_1
               - address_2_alternate
@@ -6466,6 +6477,7 @@ components:
               - integration_id
               - integration_vendor
               - property_id
+              - unit_id_preferred
               - screenings
       required:
         - meta
@@ -7869,7 +7881,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the unit from the integration vendor
+              description: "DEPRECATED: Use x_unit_id_preferred instead"
+              deprecated: true
+              x-fern-availability: deprecated
             x_lease_id:
               type:
                 - string
@@ -7882,6 +7896,10 @@ components:
                 - string
                 - "null"
               description: The external ID of the lead from the integration vendor
+            x_unit_id_preferred:
+              type: array
+              items:
+                type: string
             address_1_alternate:
               type:
                 - string
@@ -8183,6 +8201,10 @@ components:
             property_id:
               type: string
               description: The Propexo unique identifier for the property
+            unit_id_preferred:
+              type: array
+              items:
+                type: string
             screenings:
               type: array
               items:
@@ -8227,6 +8249,7 @@ components:
             - x_unit_id
             - x_lease_id
             - x_lead_id
+            - x_unit_id_preferred
             - address_1_alternate
             - address_1
             - address_2_alternate
@@ -8256,6 +8279,7 @@ components:
             - integration_id
             - integration_vendor
             - property_id
+            - unit_id_preferred
             - screenings
       required:
         - meta
