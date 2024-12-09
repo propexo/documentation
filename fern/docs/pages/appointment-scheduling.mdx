@@ -21,3 +21,13 @@ Rent Manager allows property managers to set both global and property specific t
 ### ResMan
 
 ResMan interprets the appointment date and time as being UTC (offset of +00:00). The appointment date and time will be displayed in the timezone of the logged in user (not the property or portfolio account) in ResMan's portal.
+
+### Yardi
+
+Yardi interprets appointment date and time as being in the timezone of the property.
+Those can be read in our `/timezones` endpoint.
+
+If the property doesn't have a specific timezone configured, there will be an integration global timezone record that should be used in that case.
+The time for this record is based on the Yardi server's configured timezone.
+
+In the case that the Yardi server time is different than the current time, we provide the `server_time_error_seconds` field on the `/timezones` endpoint as well.
