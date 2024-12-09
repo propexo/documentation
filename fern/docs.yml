@@ -15,6 +15,10 @@ tabs:
   api:
     display-name: API Reference
     icon: code
+  kb:
+    display-name: Knowledge Base
+    icon: book-open
+    href: https://propexo-knowledge-base.help.usepylon.com
   use-cases:
     display-name: Use Cases
     icon: puzzle-piece
@@ -66,6 +70,7 @@ navigation:
             path: ./docs/pages/webhooks/how.mdx
           - page: Sync Complete Webhook
             path: ./docs/pages/webhooks/sync-complete.mdx
+  - tab: kb
   - tab: api
     layout:
       - section: Introduction
