@@ -31408,6 +31408,100 @@ components:
       required:
         - job_id
         - data
+    _v1_resident-pets__post_input:
+      type: object
+      properties:
+        integration_id:
+          type: string
+        resident_id:
+          type: string
+          description: The Propexo unique identifier for the resident
+        is_service_animal:
+          type: boolean
+          description: Whether the resident pet is a service animal
+        age_in_years:
+          type: integer
+          minimum: 0
+          description: The age in years of the resident pet
+        color:
+          type: string
+          description: The color of the resident pet
+        gender_raw:
+          type: string
+          description: The raw value for the gender of the resident pet
+        is_fixed:
+          type: boolean
+          description: Whether the resident pet is fixed
+        name:
+          type: string
+          description: The name associated with the resident pet
+        type:
+          type: string
+          description: The type associated with the resident pet
+        weight_in_pounds:
+          type: integer
+          minimum: 0
+          description: The weight in pounds of the resident pet
+      required:
+        - integration_id
+    _v1_resident-pets__post_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
+    _v1_resident-pets_{pet_id}_put_input:
+      type: object
+      properties:
+        is_service_animal:
+          type: boolean
+          description: Whether the resident pet is a service animal
+        age_in_years:
+          type: integer
+          minimum: 0
+          description: The age in years of the resident pet
+        color:
+          type: string
+          description: The color of the resident pet
+        gender_raw:
+          type: string
+          description: The raw value for the gender of the resident pet
+        is_fixed:
+          type: boolean
+          description: Whether the resident pet is fixed
+        name:
+          type: string
+          description: The name associated with the resident pet
+        type:
+          type: string
+          description: The type associated with the resident pet
+        weight_in_pounds:
+          type: integer
+          minimum: 0
+          description: The weight in pounds of the resident pet
+        resident_pet_id:
+          type: string
+          description: The Propexo unique identifier for the resident pet
+      required:
+        - resident_pet_id
+    _v1_resident-pets_{pet_id}_put_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
     _v1_service-requests__get_input:
       type: object
       properties:
@@ -49367,6 +49461,92 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_residents_{id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/resident-pets/:
+    post:
+      description: Create a resident pet for an integration.
+      summary: Create resident pet
+      tags:
+        - residents
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_resident-pets__post_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_resident-pets__post_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/resident-pets/{pet_id}:
+    put:
+      description: Update a resident pet for an integration.
+      summary: Update resident pet
+      tags:
+        - residents
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the resident pet
+          required: false
+          description: The Propexo unique identifier for the resident pet
+          name: pet_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_resident-pets_{pet_id}_put_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_resident-pets_{pet_id}_put_output"
         "400":
           description: Bad Request
           content:
