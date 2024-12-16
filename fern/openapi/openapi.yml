@@ -25123,6 +25123,509 @@ components:
       required:
         - job_id
         - data
+    _v1_lease-transfers__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        resident_id:
+          type: string
+          description: The Propexo unique identifier for the resident
+        lease_id_next:
+          type: string
+          description: The Propexo unique identifier for the next lease
+        lease_id_previous:
+          type: string
+          description: The Propexo unique identifier for the previous lease
+        unit_id_next:
+          type: string
+          description: The Propexo unique identifier for the next unit
+        unit_id_previous:
+          type: string
+          description: The Propexo unique identifier for the previous unit
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          type: string
+          enum:
+            - SAMPLE2
+            - BUILDIUM
+            - ENTRATA
+            - MRI
+            - PROPERTYWARE
+            - PROPERTYWARE_REST
+            - REALPAGE
+            - REALPAGE_RPX
+            - RENTMANAGER
+            - RENTVINE
+            - RESMAN
+            - SAMPLE1
+          description: The property management system of record
+    _v1_lease-transfers__get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+              description: The offset of the first result
+              example: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+              description: The number of results to return
+              example: 100
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+              description: Whether there are more results
+            total:
+              type: integer
+              minimum: 0
+              description: The total number of results
+              example: 1000
+          required:
+            - orderBy
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the lease transfer
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location from the integration vendor
+              x_resident_id:
+                type: string
+                description: The external ID of the resident from the integration vendor
+              x_lease_id_next:
+                type: string
+                description: The external ID of the next lease from the integration vendor
+              x_lease_property_id_next:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the property associated with the next lease from
+                  the integration vendor
+              x_lease_id_previous:
+                type: string
+                description: The external ID of the previous lease from the integration vendor
+              x_lease_property_id_previous:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the property associated with the previous lease
+                  from the integration vendor
+              x_unit_id_next:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the next unit from the integration vendor
+              x_unit_id_previous:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the previous unit from the integration vendor
+              resident_type:
+                type:
+                  - string
+                  - "null"
+                description: The normalized type of the resident
+              resident_type_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw type of the resident
+              lease_status_next:
+                type:
+                  - string
+                  - "null"
+                description: The normalized status of the next lease
+              lease_status_next_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw status of the next lease
+              lease_status_previous:
+                type:
+                  - string
+                  - "null"
+                description: The normalized status of the previous lease
+              lease_status_previous_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw status of the previous lease
+              transfer_effective_date:
+                type:
+                  - string
+                  - "null"
+                description: The effective date of the lease transfer
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                type: string
+                enum:
+                  - SAMPLE2
+                  - BUILDIUM
+                  - ENTRATA
+                  - MRI
+                  - PROPERTYWARE
+                  - PROPERTYWARE_REST
+                  - REALPAGE
+                  - REALPAGE_RPX
+                  - RENTMANAGER
+                  - RENTVINE
+                  - RESMAN
+                  - SAMPLE1
+                description: The property management system of record
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+              resident_id:
+                type: string
+                description: The Propexo unique identifier for the resident
+              lease_id_next:
+                type: string
+                description: The Propexo unique identifier for the next lease
+              lease_id_previous:
+                type: string
+                description: The Propexo unique identifier for the previous lease
+              unit_id_next:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the next unit
+              unit_id_previous:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the previous unit
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - x_resident_id
+              - x_lease_id_next
+              - x_lease_property_id_next
+              - x_lease_id_previous
+              - x_lease_property_id_previous
+              - x_unit_id_next
+              - x_unit_id_previous
+              - resident_type
+              - resident_type_raw
+              - lease_status_next
+              - lease_status_next_raw
+              - lease_status_previous
+              - lease_status_previous_raw
+              - transfer_effective_date
+              - integration_id
+              - integration_vendor
+              - property_id
+              - resident_id
+              - lease_id_next
+              - lease_id_previous
+              - unit_id_next
+              - unit_id_previous
+      required:
+        - meta
+        - results
+    _v1_lease-transfers_{lease_transfer_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_lease-transfers_{lease_transfer_id}_get_output:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              minimum: 0
+              description: The offset of the first result
+              example: 0
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 250
+              description: The number of results to return
+              example: 100
+            orderBy:
+              type: array
+              items:
+                type: object
+                properties: {}
+            hasMore:
+              type:
+                - boolean
+                - "null"
+              description: Whether there are more results
+            total:
+              type: integer
+              minimum: 0
+              description: The total number of results
+              example: 1000
+          required:
+            - orderBy
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the lease transfer
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location from the integration vendor
+            x_resident_id:
+              type: string
+              description: The external ID of the resident from the integration vendor
+            x_lease_id_next:
+              type: string
+              description: The external ID of the next lease from the integration vendor
+            x_lease_property_id_next:
+              type:
+                - string
+                - "null"
+              description: The external ID of the property associated with the next lease from
+                the integration vendor
+            x_lease_id_previous:
+              type: string
+              description: The external ID of the previous lease from the integration vendor
+            x_lease_property_id_previous:
+              type:
+                - string
+                - "null"
+              description: The external ID of the property associated with the previous lease
+                from the integration vendor
+            x_unit_id_next:
+              type:
+                - string
+                - "null"
+              description: The external ID of the next unit from the integration vendor
+            x_unit_id_previous:
+              type:
+                - string
+                - "null"
+              description: The external ID of the previous unit from the integration vendor
+            resident_type:
+              type:
+                - string
+                - "null"
+              description: The normalized type of the resident
+            resident_type_raw:
+              type:
+                - string
+                - "null"
+              description: The raw type of the resident
+            lease_status_next:
+              type:
+                - string
+                - "null"
+              description: The normalized status of the next lease
+            lease_status_next_raw:
+              type:
+                - string
+                - "null"
+              description: The raw status of the next lease
+            lease_status_previous:
+              type:
+                - string
+                - "null"
+              description: The normalized status of the previous lease
+            lease_status_previous_raw:
+              type:
+                - string
+                - "null"
+              description: The raw status of the previous lease
+            transfer_effective_date:
+              type:
+                - string
+                - "null"
+              description: The effective date of the lease transfer
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              type: string
+              enum:
+                - SAMPLE2
+                - BUILDIUM
+                - ENTRATA
+                - MRI
+                - PROPERTYWARE
+                - PROPERTYWARE_REST
+                - REALPAGE
+                - REALPAGE_RPX
+                - RENTMANAGER
+                - RENTVINE
+                - RESMAN
+                - SAMPLE1
+              description: The property management system of record
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+            resident_id:
+              type: string
+              description: The Propexo unique identifier for the resident
+            lease_id_next:
+              type: string
+              description: The Propexo unique identifier for the next lease
+            lease_id_previous:
+              type: string
+              description: The Propexo unique identifier for the previous lease
+            unit_id_next:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the next unit
+            unit_id_previous:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the previous unit
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - x_resident_id
+            - x_lease_id_next
+            - x_lease_property_id_next
+            - x_lease_id_previous
+            - x_lease_property_id_previous
+            - x_unit_id_next
+            - x_unit_id_previous
+            - resident_type
+            - resident_type_raw
+            - lease_status_next
+            - lease_status_next_raw
+            - lease_status_previous
+            - lease_status_previous_raw
+            - transfer_effective_date
+            - integration_id
+            - integration_vendor
+            - property_id
+            - resident_id
+            - lease_id_next
+            - lease_id_previous
+            - unit_id_next
+            - unit_id_previous
+      required:
+        - meta
+        - results
     _v1_listings__get_input:
       type: object
       properties:
@@ -47399,6 +47902,249 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_leases_{lease_id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/lease-transfers/:
+    get:
+      description: Get all Lease Transfers
+      summary: Get all Lease Transfers
+      tags:
+        - leases
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the property from the integration vendor
+          required: false
+          description: The external ID of the property from the integration vendor
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property. This is the location specified in RentManager
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property. This is the location specified in RentManager
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the resident
+          required: false
+          description: The Propexo unique identifier for the resident
+          name: resident_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the next lease
+          required: false
+          description: The Propexo unique identifier for the next lease
+          name: lease_id_next
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the previous lease
+          required: false
+          description: The Propexo unique identifier for the previous lease
+          name: lease_id_previous
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the next unit
+          required: false
+          description: The Propexo unique identifier for the next unit
+          name: unit_id_next
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the previous unit
+          required: false
+          description: The Propexo unique identifier for the previous unit
+          name: unit_id_previous
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The property management system of record
+          required: false
+          description: The property management system of record
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_lease-transfers__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/lease-transfers/{lease_transfer_id}:
+    get:
+      description: Get Lease Transfer by ID
+      summary: Get Lease Transfer by ID
+      tags:
+        - leases
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: lease_transfer_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_lease-transfers_{lease_transfer_id}_get_output"
         "400":
           description: Bad Request
           content:
