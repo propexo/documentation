@@ -47715,7 +47715,7 @@ paths:
       description: Get all Note Categories
       summary: Get all Note Categories
       tags:
-        - locations
+        - note-categories
       security:
         - bearerAuth: []
       parameters:
@@ -47844,7 +47844,7 @@ paths:
       description: Get Note Category by ID
       summary: Get Note Category by ID
       tags:
-        - locations
+        - note-categories
       security:
         - bearerAuth: []
       parameters:
