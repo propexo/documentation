@@ -34,6 +34,8 @@ navigation:
             path: ./docs/pages/getting-started/design.mdx
           - page: Your First Integration
             path: ./docs/pages/getting-started/first-integration.mdx
+          - page: Sandbox vs Production
+            path: ./docs/pages/getting-started/sandbox-vs-production.mdx
       - section: About the API
         contents:
           - page: Authentication
