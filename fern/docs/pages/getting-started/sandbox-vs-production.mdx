@@ -1,0 +1,45 @@
+There are some differences between the Propexo sandbox and production environments. It is important to be aware of these differences to avoid any issues with your integration development.
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Sandbox</th>
+      <th>Production</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Domain</td>
+      <td>`https://api.sandbox.propexo.com`</td>
+      <td>`https://api.propexo.com`</td>
+    </tr>
+    <tr>
+      <td>Data Retention</td>
+      <td>180 days</td>
+      <td>Delete on request only</td>
+    </tr>
+    <tr>
+      <td>Automatic Syncs</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Credentials</td>
+      <td>Propexo-provided Buildium</td>
+      <td>Bring your own</td>
+    </tr>
+  </tbody>
+</table>
+
+## Data Retention
+- Sandbox has a data retention policy of 180 days per integration. This means that any data in the sandbox will be deleted after 180 days of inactivity for that integration.
+- Production data retention is indefinite, but can be deleted upon request.
+
+## Automatic Syncs
+- Sandbox integrations do not automatically run syncs. You will need to manually run syncs for your sandbox integrations.
+- Production integrations automatically run syncs. You have the option to run syncs on a standard schedule (e.g. every 24 hours), a custom schedule (e.g. every 20 minutes 9-5 M-F), or on-demand.
+
+## Credentials
+- Sandbox: Propexo can optionally provide a test environment against the Buildium API. We are not able to offer any other test environment at this time.
+- Production: You are responsible for providing your own credentials for all PM Systems.
