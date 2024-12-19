@@ -25922,11 +25922,15 @@ components:
                   - string
                   - "null"
                 description: The first address line associated with the listing
+                x-propexo:
+                  derivedFromField: street_address_1
               address_2:
                 type:
                   - string
                   - "null"
                 description: The second address line associated with the listing
+                x-propexo:
+                  derivedFromField: street_address_1
               property_description:
                 type:
                   - string
@@ -26359,11 +26363,15 @@ components:
                 - string
                 - "null"
               description: The first address line associated with the listing
+              x-propexo:
+                derivedFromField: street_address_1
             address_2:
               type:
                 - string
                 - "null"
               description: The second address line associated with the listing
+              x-propexo:
+                derivedFromField: street_address_1
             property_description:
               type:
                 - string
@@ -27615,11 +27623,15 @@ components:
                   - string
                   - "null"
                 description: The first address line associated with the property
+                x-propexo:
+                  derivedFromField: street_address_1
               address_2:
                 type:
                   - string
                   - "null"
                 description: The second address line associated with the property
+                x-propexo:
+                  derivedFromField: street_address_2
               type:
                 type:
                   - string
@@ -28035,11 +28047,15 @@ components:
                 - string
                 - "null"
               description: The first address line associated with the property
+              x-propexo:
+                derivedFromField: street_address_1
             address_2:
               type:
                 - string
                 - "null"
               description: The second address line associated with the property
+              x-propexo:
+                derivedFromField: street_address_2
             type:
               type:
                 - string
@@ -36447,11 +36463,15 @@ components:
                   - string
                   - "null"
                 description: The first address line associated with the unit
+                x-propexo:
+                  derivedFromField: street_address_1
               address_2:
                 type:
                   - string
                   - "null"
                 description: The second address line associated with the unit
+                x-propexo:
+                  derivedFromField: street_address_1
               zip:
                 type:
                   - string
@@ -37195,11 +37215,15 @@ components:
                 - string
                 - "null"
               description: The first address line associated with the unit
+              x-propexo:
+                derivedFromField: street_address_1
             address_2:
               type:
                 - string
                 - "null"
               description: The second address line associated with the unit
+              x-propexo:
+                derivedFromField: street_address_1
             zip:
               type:
                 - string
