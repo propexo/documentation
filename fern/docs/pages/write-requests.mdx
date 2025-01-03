@@ -19,4 +19,28 @@ Generic endpoints are designed to be a single point of entry across all Property
     * **Granular PMS functionality** — Not all functionality is permitted by every PMS. For example, some PMSs allow you to update a `notes` field on the residents model, but some do not. This could impact your development plans, so it is important to know what is and is not possible with each PMS. Our private docs detail which fields are and are not available for each PMS.
     * **High Level PMS functionality** — In addition to granular functionality, we also provide a high level overview of the functionality available for each PMS. For example, some PMSs allow you to create (`POST`) a new `unit`, while many do not. Propexo's private docs will inform you when certain high level functionality is not permitted by a PMS API.
 
-* **Validation Utility** — There are cases where you may want to force a request payload that does not meet validation requirements for a certain PMS, but would be ok for another PMS. For example, our generic `PUT /residents` endpoint exposes a `notes` field that is not available on all PMSs. If you have customers using `BUILDIUM` (who supports `notes` on `residents`) and others using `RENT MANAGER` (who does _not_ support `notes` on `residents`), you can still use the generic endpoint and append `?ignore_unknown_fields=true` to each request against the generic `PUT /residents` endpoint. That way, you do not need to code against individual PMSs. Propexo will accept your request payload with `notes` and we will pass it through to `BUILDIUM` and strip it out for `RENT MANAGER`. If you do not append the `?ignore_unknown_fields=true` query string param, you will receive a `400` error response when attempting to update the `notes` field for a `RENT MANAGER` customer. 
+* **Validation Utility** — There are cases where you may want to force a request payload that does not meet validation requirements for a certain PMS, but would be ok for another PMS. For example, our generic `PUT /residents` endpoint exposes a `notes` field that is not available on all PMSs. If you have customers using `BUILDIUM` (who supports `notes` on `residents`) and others using `RENT MANAGER` (who does _not_ support `notes` on `residents`), you can still use the generic endpoint and append `?ignore_unknown_fields=true` to each request against the generic `PUT /residents` endpoint. That way, you do not need to code against individual PMSs. Propexo will accept your request payload with `notes` and we will pass it through to `BUILDIUM` and strip it out for `RENT MANAGER`. If you do not append the `?ignore_unknown_fields=true` query string param, you will receive a `400` error response when attempting to update the `notes` field for a `RENT MANAGER` customer.
+
+## Checking the status of write requests
+
+Propexo makes sure to validate the input data for write requests as much as possible at our API so you can be informed of any possible errors as soon as possible.
+
+However, there are some issues that involve data we don't have access to that will fail during our asynchronous write request to the PMS directly.
+For example, if you're updating a resident to be on a different lease, it's possible that Propexo doesn't currently have all the details on that individual and they may have already been reassigned within the PMS directly.
+In a case like this, Propexo will encounter and record the error.
+
+To see this error, you can use our [write operation status endpoint](https://docs.propexo.com/api-reference/api-reference/admin/check-the-status-of-a-write-operation) (`GET /v1/admin/write-status/:root_job_id`), where `root_job_id` is the `job_id` field returned from a successful write operation request to the Propexo API:
+
+```json
+{
+    "meta": {
+        "job_id": "cm4ublxhn5008550276138abyzlg821i"
+    },
+    "result": {}
+}
+```
+
+This endpoint will return whether or not the write operation was successful, any errors that were encountered, and the IDs of any records that were created due to the write operation.
+
+Due to the asynchronous nature of Propexo syncs and write operations, it's always possible for data have to been modified between the time you attempt to write it and the time the data was last read into our system or modified by the source.
+We recommend polling this endpoint after a write operation to ensure the data was written as expected.
