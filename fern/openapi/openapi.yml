@@ -15151,16 +15151,22 @@ components:
         frequency_normalized:
           type: string
           enum:
-            - WEEKLY
+            - DAILY
             - MONTHLY
-            - QUARTERLY
-            - SEMIANNUAL
-            - ANNUAL
-            - ANNUAL_ACCRUAL
+            - WEEKLY
           description: The frequency of the recurring resident charge
         reference_number:
           type: string
           description: The reference number for the recurring resident charge
+        resident_id:
+          type: string
+          description: The Propexo unique identifier for the resident
+        charge_code_id:
+          type: string
+          description: The Propexo unique identifier for the charge code
+        notes:
+          type: string
+          description: Notes associated with the recurring resident charge
         day_due:
           type: integer
           exclusiveMinimum: 0
