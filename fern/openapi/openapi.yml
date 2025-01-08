@@ -15033,6 +15033,7 @@ components:
                   - OTHER
                   - WEEKLY
                   - MONTHLY
+                  - DAILY
                 description: The frequency of the recurring resident charge
               charge_due_day:
                 type:
@@ -15333,6 +15334,7 @@ components:
                 - OTHER
                 - WEEKLY
                 - MONTHLY
+                - DAILY
               description: The frequency of the recurring resident charge
             charge_due_day:
               type:
