@@ -15164,9 +15164,6 @@ components:
         charge_code_id:
           type: string
           description: The Propexo unique identifier for the charge code
-        notes:
-          type: string
-          description: Notes associated with the recurring resident charge
         day_due:
           type: integer
           exclusiveMinimum: 0
@@ -15426,7 +15423,7 @@ components:
         amount_in_cents:
           type: integer
           exclusiveMinimum: 0
-          description: The amount of the recurring resident charge, in cents
+          description: The amount of the resident charge, in cents
         description:
           type: string
           description: Description of the recurring resident charge
@@ -15441,10 +15438,12 @@ components:
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The start date associated with the recurring resident charge
+          description: The start date associated with the recurring resident charge.
+            Required if frequency is DAILY or WEEKLY
         frequency_normalized:
           type: string
           enum:
+            - DAILY
             - MONTHLY
             - WEEKLY
           description: The frequency of the recurring resident charge
@@ -15458,6 +15457,9 @@ components:
         reference_number:
           type: string
           description: The reference number for the recurring resident charge
+        charge_code_id:
+          type: string
+          description: The Propexo unique identifier for the charge code
     _v1_recurring-resident-charges_{recurring_resident_charge_id}_put_output:
       type: object
       properties:
