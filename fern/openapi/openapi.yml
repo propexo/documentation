@@ -52666,8 +52666,16 @@ paths:
                       name: ZodError
   /v1/units/details:
     get:
-      description: Get all unit details
-      summary: Get all unit details
+      description: 'Get all unit details. Note: "Unit Details" are not units
+        themselves, but rather details regarding application/listing information
+        on a unit. This is a separate concept from generic units data, and is
+        required to be enabled as its own model. It is uncommon for customers to
+        require this data. Please contact support with questions'
+      summary: 'Get all unit details. Note: "Unit Details" are not units themselves,
+        but rather details regarding application/listing information on a unit.
+        This is a separate concept from generic units data, and is required to
+        be enabled as its own model. It is uncommon for customers to require
+        this data. Please contact support with questions'
       tags:
         - units
       security:
@@ -53114,8 +53122,16 @@ paths:
                       name: ZodError
   /v1/units/details/{unit_detail_id}:
     get:
-      description: Get a unit detail by ID
-      summary: Get a unit detail by ID
+      description: 'Get a unit detail by ID. Note: "Unit Details" are not units
+        themselves, but rather details regarding application/listing information
+        on a unit. This is a separate concept from generic units data, and is
+        required to be enabled as its own model. It is uncommon for customers to
+        require this data. Please contact support with questions'
+      summary: 'Get a unit detail by ID. Note: "Unit Details" are not units
+        themselves, but rather details regarding application/listing information
+        on a unit. This is a separate concept from generic units data, and is
+        required to be enabled as its own model. It is uncommon for customers to
+        require this data. Please contact support with questions'
       tags:
         - units
       security:
