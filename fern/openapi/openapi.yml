@@ -784,13 +784,29 @@ components:
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_UNIT
+                        - RESMAN_BASE
+                        - RESMAN_READ_ACCOUNTS
+                        - RESMAN_READ_EMPLOYEES
+                        - RESMAN_READ_LEADS
+                        - RESMAN_READ_LEAD_SOURCES
+                        - RESMAN_READ_LEASES
+                        - RESMAN_READ_LEASES_PARTNER_API
+                        - RESMAN_READ_LISTINGS
+                        - RESMAN_READ_MOVE_OUTS
+                        - RESMAN_READ_PROPERTIES
+                        - RESMAN_READ_RESIDENTS_AND_APPLICANTS
+                        - RESMAN_READ_RESIDENTS_DOB
+                        - RESMAN_READ_RESIDENT_CHARGE_CODES
+                        - RESMAN_READ_RESIDENT_TRANSACTIONS
+                        - RESMAN_READ_SERVICE_REQUESTS
+                        - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
+                        - RESMAN_READ_UNITS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
                         - RENTVINE_BASE
                         - MRI_BASE
-                        - RESMAN_BASE
                         - SAMPLE2_BASE
                         - KNOCK_BASE
                         - SAMPLE3_BASE
@@ -916,13 +932,29 @@ components:
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                           - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                           - PROPERTYWARE_REST_CREATE_UNIT
+                          - RESMAN_BASE
+                          - RESMAN_READ_ACCOUNTS
+                          - RESMAN_READ_EMPLOYEES
+                          - RESMAN_READ_LEADS
+                          - RESMAN_READ_LEAD_SOURCES
+                          - RESMAN_READ_LEASES
+                          - RESMAN_READ_LEASES_PARTNER_API
+                          - RESMAN_READ_LISTINGS
+                          - RESMAN_READ_MOVE_OUTS
+                          - RESMAN_READ_PROPERTIES
+                          - RESMAN_READ_RESIDENTS_AND_APPLICANTS
+                          - RESMAN_READ_RESIDENTS_DOB
+                          - RESMAN_READ_RESIDENT_CHARGE_CODES
+                          - RESMAN_READ_RESIDENT_TRANSACTIONS
+                          - RESMAN_READ_SERVICE_REQUESTS
+                          - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
+                          - RESMAN_READ_UNITS
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
                           - RENTMANAGER_BASE
                           - RENTVINE_BASE
                           - MRI_BASE
-                          - RESMAN_BASE
                           - SAMPLE2_BASE
                           - KNOCK_BASE
                           - SAMPLE3_BASE
@@ -2820,13 +2852,29 @@ components:
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                       - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                       - PROPERTYWARE_REST_CREATE_UNIT
+                      - RESMAN_BASE
+                      - RESMAN_READ_ACCOUNTS
+                      - RESMAN_READ_EMPLOYEES
+                      - RESMAN_READ_LEADS
+                      - RESMAN_READ_LEAD_SOURCES
+                      - RESMAN_READ_LEASES
+                      - RESMAN_READ_LEASES_PARTNER_API
+                      - RESMAN_READ_LISTINGS
+                      - RESMAN_READ_MOVE_OUTS
+                      - RESMAN_READ_PROPERTIES
+                      - RESMAN_READ_RESIDENTS_AND_APPLICANTS
+                      - RESMAN_READ_RESIDENTS_DOB
+                      - RESMAN_READ_RESIDENT_CHARGE_CODES
+                      - RESMAN_READ_RESIDENT_TRANSACTIONS
+                      - RESMAN_READ_SERVICE_REQUESTS
+                      - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
+                      - RESMAN_READ_UNITS
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
                       - RENTMANAGER_BASE
                       - RENTVINE_BASE
                       - MRI_BASE
-                      - RESMAN_BASE
                       - SAMPLE2_BASE
                       - KNOCK_BASE
                       - SAMPLE3_BASE
@@ -2952,13 +3000,29 @@ components:
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_UNIT
+                        - RESMAN_BASE
+                        - RESMAN_READ_ACCOUNTS
+                        - RESMAN_READ_EMPLOYEES
+                        - RESMAN_READ_LEADS
+                        - RESMAN_READ_LEAD_SOURCES
+                        - RESMAN_READ_LEASES
+                        - RESMAN_READ_LEASES_PARTNER_API
+                        - RESMAN_READ_LISTINGS
+                        - RESMAN_READ_MOVE_OUTS
+                        - RESMAN_READ_PROPERTIES
+                        - RESMAN_READ_RESIDENTS_AND_APPLICANTS
+                        - RESMAN_READ_RESIDENTS_DOB
+                        - RESMAN_READ_RESIDENT_CHARGE_CODES
+                        - RESMAN_READ_RESIDENT_TRANSACTIONS
+                        - RESMAN_READ_SERVICE_REQUESTS
+                        - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
+                        - RESMAN_READ_UNITS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
                         - RENTVINE_BASE
                         - MRI_BASE
-                        - RESMAN_BASE
                         - SAMPLE2_BASE
                         - KNOCK_BASE
                         - SAMPLE3_BASE
