@@ -14357,6 +14357,12 @@ components:
                   - boolean
                   - "null"
                 description: Whether the resident charge is open and not yet settled
+              post_month:
+                type:
+                  - string
+                  - "null"
+                pattern: ^\d{4}-(?:0[1-9]|1[0-2])$
+                description: The post month for the resident charge
               custom_data:
                 type:
                   - object
@@ -14505,6 +14511,7 @@ components:
               - transaction_date
               - transaction_source
               - is_open
+              - post_month
               - custom_data
               - integration_id
               - integration_vendor
@@ -14760,6 +14767,12 @@ components:
                 - boolean
                 - "null"
               description: Whether the resident charge is open and not yet settled
+            post_month:
+              type:
+                - string
+                - "null"
+              pattern: ^\d{4}-(?:0[1-9]|1[0-2])$
+              description: The post month for the resident charge
             custom_data:
               type:
                 - object
@@ -14908,6 +14921,7 @@ components:
             - transaction_date
             - transaction_source
             - is_open
+            - post_month
             - custom_data
             - integration_id
             - integration_vendor
@@ -15723,6 +15737,12 @@ components:
                   - boolean
                   - "null"
                 description: Whether the resident payment is open and not yet settled
+              post_month:
+                type:
+                  - string
+                  - "null"
+                pattern: ^\d{4}-(?:0[1-9]|1[0-2])$
+                description: The post month for the resident payment
               custom_data:
                 type:
                   - object
@@ -15869,6 +15889,7 @@ components:
               - reference_number
               - transaction_date
               - is_open
+              - post_month
               - custom_data
               - integration_id
               - integration_vendor
@@ -16106,6 +16127,12 @@ components:
                 - boolean
                 - "null"
               description: Whether the resident payment is open and not yet settled
+            post_month:
+              type:
+                - string
+                - "null"
+              pattern: ^\d{4}-(?:0[1-9]|1[0-2])$
+              description: The post month for the resident payment
             custom_data:
               type:
                 - object
@@ -16252,6 +16279,7 @@ components:
             - reference_number
             - transaction_date
             - is_open
+            - post_month
             - custom_data
             - integration_id
             - integration_vendor
