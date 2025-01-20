@@ -22580,16 +22580,18 @@ components:
                 type:
                   - string
                   - "null"
-                description: "DEPRECATED: Reference residents_meta_data instead"
-                deprecated: true
-                x-fern-availability: deprecated
+                description: "The realized move-in date associated with the lease. Note: This
+                  move in date is at the lease level and could be different per
+                  resident. Please use residents_meta_data to view resident move
+                  in dates"
               realized_move_out_date:
                 type:
                   - string
                   - "null"
-                description: "DEPRECATED: Reference residents_meta_data instead"
-                deprecated: true
-                x-fern-availability: deprecated
+                description: "The realized move-out date associated with the lease. Note: This
+                  move out date is at the lease level and could be different per
+                  resident. Please use residents_meta_data to view resident move
+                  out dates"
               rent_amount_in_cents:
                 type:
                   - number
@@ -22615,16 +22617,18 @@ components:
                 type:
                   - string
                   - "null"
-                description: "DEPRECATED: Reference residents_meta_data instead"
-                deprecated: true
-                x-fern-availability: deprecated
+                description: "The scheduled move-in date associated with the lease. Note: This
+                  move in date is at the lease level and could be different per
+                  resident. Please use residents_meta_data to view resident move
+                  in dates"
               scheduled_move_out_date:
                 type:
                   - string
                   - "null"
-                description: "DEPRECATED: Reference residents_meta_data instead"
-                deprecated: true
-                x-fern-availability: deprecated
+                description: "The scheduled move-out date associated with the lease. Note: This
+                  move out date is at the lease level and could be different per
+                  resident. Please use residents_meta_data to view resident move
+                  out dates"
               signature_date:
                 type:
                   - string
@@ -24068,16 +24072,18 @@ components:
               type:
                 - string
                 - "null"
-              description: "DEPRECATED: Reference residents_meta_data instead"
-              deprecated: true
-              x-fern-availability: deprecated
+              description: "The realized move-in date associated with the lease. Note: This
+                move in date is at the lease level and could be different per
+                resident. Please use residents_meta_data to view resident move
+                in dates"
             realized_move_out_date:
               type:
                 - string
                 - "null"
-              description: "DEPRECATED: Reference residents_meta_data instead"
-              deprecated: true
-              x-fern-availability: deprecated
+              description: "The realized move-out date associated with the lease. Note: This
+                move out date is at the lease level and could be different per
+                resident. Please use residents_meta_data to view resident move
+                out dates"
             rent_amount_in_cents:
               type:
                 - number
@@ -24103,16 +24109,18 @@ components:
               type:
                 - string
                 - "null"
-              description: "DEPRECATED: Reference residents_meta_data instead"
-              deprecated: true
-              x-fern-availability: deprecated
+              description: "The scheduled move-in date associated with the lease. Note: This
+                move in date is at the lease level and could be different per
+                resident. Please use residents_meta_data to view resident move
+                in dates"
             scheduled_move_out_date:
               type:
                 - string
                 - "null"
-              description: "DEPRECATED: Reference residents_meta_data instead"
-              deprecated: true
-              x-fern-availability: deprecated
+              description: "The scheduled move-out date associated with the lease. Note: This
+                move out date is at the lease level and could be different per
+                resident. Please use residents_meta_data to view resident move
+                out dates"
             signature_date:
               type:
                 - string
