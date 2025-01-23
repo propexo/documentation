@@ -802,6 +802,7 @@ components:
                         - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                         - RESMAN_READ_UNITS
                         - RESMAN_READ_INVOICES
+                        - RESMAN_READ_VENDORS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -951,6 +952,7 @@ components:
                           - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                           - RESMAN_READ_UNITS
                           - RESMAN_READ_INVOICES
+                          - RESMAN_READ_VENDORS
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2872,6 +2874,7 @@ components:
                       - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                       - RESMAN_READ_UNITS
                       - RESMAN_READ_INVOICES
+                      - RESMAN_READ_VENDORS
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -3021,6 +3024,7 @@ components:
                         - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                         - RESMAN_READ_UNITS
                         - RESMAN_READ_INVOICES
+                        - RESMAN_READ_VENDORS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
