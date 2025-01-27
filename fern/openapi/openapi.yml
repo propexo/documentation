@@ -14942,6 +14942,45 @@ components:
       required:
         - meta
         - results
+    _v1_resident-credits__post_input:
+      type: object
+      properties:
+        integration_id:
+          type: string
+        lease_id:
+          type: string
+          description: The Propexo unique identifier for the lease
+        financial_account_id:
+          type: string
+          description: The Propexo unique identifier for the financial account
+        amount_in_cents:
+          type: integer
+          exclusiveMinimum: 0
+          description: The amount of the resident credit, in cents
+        transaction_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The transaction date of the resident credit
+        description:
+          type: string
+          description: Description of the resident credit
+      required:
+        - integration_id
+    _v1_resident-credits__post_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
     _v1_recurring-resident-charges__get_input:
       type: object
       properties:
@@ -44276,6 +44315,45 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_resident-charges_{resident_charge_id}_get_outpu\
                   t"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+              example:
+                error:
+                  code: invalid_request
+                  message: invalid request
+                  details:
+                    details:
+                      issues:
+                        - code: unrecognized_keys
+                          keys:
+                            - foo
+                          path: []
+                          message: "Unrecognized key(s) in object: 'foo'"
+                      name: ZodError
+  /v1/resident-credits/:
+    post:
+      description: Create a resident credit for an integration.
+      summary: Create resident credit
+      tags:
+        - billing-and-payments
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_resident-credits__post_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_resident-credits__post_output"
         "400":
           description: Bad Request
           content:
