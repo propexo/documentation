@@ -14215,6 +14215,12 @@ components:
             - RESMAN
             - SAMPLE1
           description: The property management system of record
+        resident_id:
+          type: string
+          description: The Propexo unique identifier for the resident
+        lease_id:
+          type: string
+          description: The Propexo unique identifier for the lease
         transaction_date_start:
           type:
             - string
@@ -15644,6 +15650,12 @@ components:
             - RESMAN
             - SAMPLE1
           description: The property management system of record
+        resident_id:
+          type: string
+          description: The Propexo unique identifier for the resident
+        lease_id:
+          type: string
+          description: The Propexo unique identifier for the lease
         transaction_date_start:
           type:
             - string
@@ -44171,6 +44183,20 @@ paths:
           name: integration_vendor
           in: query
         - schema:
+            type: string
+            description: The Propexo unique identifier for the resident
+          required: false
+          description: The Propexo unique identifier for the resident
+          name: resident_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the lease
+          required: false
+          description: The Propexo unique identifier for the lease
+          name: lease_id
+          in: query
+        - schema:
             type:
               - string
               - "null"
@@ -44742,6 +44768,20 @@ paths:
           required: false
           description: The property management system of record
           name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the resident
+          required: false
+          description: The Propexo unique identifier for the resident
+          name: resident_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the lease
+          required: false
+          description: The Propexo unique identifier for the lease
+          name: lease_id
           in: query
         - schema:
             type:
