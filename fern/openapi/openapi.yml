@@ -716,6 +716,7 @@ components:
                         - REALPAGE_RPX_READ_PROPERTIES
                         - REALPAGE_RPX_UNITS
                         - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                        - REALPAGE_RPX_RESIDENT_TRANSACTIONS
                         - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                         - REALPAGE_RPX_PROSPECT_MANAGEMENT
                         - REALPAGE_RPX_PRICING_AND_AVAILABILITY
@@ -866,6 +867,7 @@ components:
                           - REALPAGE_RPX_READ_PROPERTIES
                           - REALPAGE_RPX_UNITS
                           - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                          - REALPAGE_RPX_RESIDENT_TRANSACTIONS
                           - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                           - REALPAGE_RPX_PROSPECT_MANAGEMENT
                           - REALPAGE_RPX_PRICING_AND_AVAILABILITY
@@ -2788,6 +2790,7 @@ components:
                       - REALPAGE_RPX_READ_PROPERTIES
                       - REALPAGE_RPX_UNITS
                       - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                      - REALPAGE_RPX_RESIDENT_TRANSACTIONS
                       - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                       - REALPAGE_RPX_PROSPECT_MANAGEMENT
                       - REALPAGE_RPX_PRICING_AND_AVAILABILITY
@@ -2938,6 +2941,7 @@ components:
                         - REALPAGE_RPX_READ_PROPERTIES
                         - REALPAGE_RPX_UNITS
                         - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                        - REALPAGE_RPX_RESIDENT_TRANSACTIONS
                         - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                         - REALPAGE_RPX_PROSPECT_MANAGEMENT
                         - REALPAGE_RPX_PRICING_AND_AVAILABILITY
