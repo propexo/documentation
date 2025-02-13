@@ -112,6 +112,10 @@ components:
               model:
                 type: string
                 description: The name of the model the data diff is for
+              model_record_id:
+                type: string
+                description: The ID of the record the data diff is for. For example, if model is
+                  'units', this would represent the ID of the unit
               event_type:
                 type: string
                 enum:
@@ -151,6 +155,7 @@ components:
             required:
               - id
               - model
+              - model_record_id
               - event_type
               - data_diff
               - created_at
