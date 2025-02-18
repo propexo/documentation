@@ -21231,6 +21231,11 @@ components:
               property_id:
                 type: string
                 description: The Propexo unique identifier for the property
+              lead_source_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the lead source
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -21336,6 +21341,7 @@ components:
               - target_move_in_date
               - zip
               - property_id
+              - lead_source_id
               - integration_id
               - integration_vendor
               - screenings
@@ -21979,6 +21985,11 @@ components:
             property_id:
               type: string
               description: The Propexo unique identifier for the property
+            lead_source_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the lead source
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -22084,6 +22095,7 @@ components:
             - target_move_in_date
             - zip
             - property_id
+            - lead_source_id
             - integration_id
             - integration_vendor
             - screenings
