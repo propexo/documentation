@@ -769,6 +769,7 @@ components:
                         - ENTRATA_GL_ACCOUNTS
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                        - ENTRATA_CALL_LOGS
                         - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_LEASE_CHARGES
@@ -920,6 +921,7 @@ components:
                           - ENTRATA_GL_ACCOUNTS
                           - ENTRATA_LEASE_DETAILS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                          - ENTRATA_CALL_LOGS
                           - PROPERTYWARE_REST_READ_PROPERTIES
                           - PROPERTYWARE_REST_READ_PORTFOLIOS
                           - PROPERTYWARE_REST_READ_LEASE_CHARGES
@@ -2843,6 +2845,7 @@ components:
                       - ENTRATA_GL_ACCOUNTS
                       - ENTRATA_LEASE_DETAILS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                      - ENTRATA_CALL_LOGS
                       - PROPERTYWARE_REST_READ_PROPERTIES
                       - PROPERTYWARE_REST_READ_PORTFOLIOS
                       - PROPERTYWARE_REST_READ_LEASE_CHARGES
@@ -2994,6 +2997,7 @@ components:
                         - ENTRATA_GL_ACCOUNTS
                         - ENTRATA_LEASE_DETAILS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
+                        - ENTRATA_CALL_LOGS
                         - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_LEASE_CHARGES
