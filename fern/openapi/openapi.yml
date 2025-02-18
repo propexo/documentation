@@ -17675,6 +17675,22 @@ components:
                   - string
                   - "null"
                 description: The name associated with the employee
+              email:
+                type:
+                  - string
+                  - "null"
+                description: The primary email address associated with the employee
+              is_active:
+                type:
+                  - boolean
+                  - "null"
+                description: Whether the employee is active
+              roles:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: string
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -17706,6 +17722,9 @@ components:
               - x_property_id
               - x_location_id
               - name
+              - email
+              - is_active
+              - roles
               - integration_id
               - integration_vendor
               - property_id
@@ -17804,6 +17823,22 @@ components:
                 - string
                 - "null"
               description: The name associated with the employee
+            email:
+              type:
+                - string
+                - "null"
+              description: The primary email address associated with the employee
+            is_active:
+              type:
+                - boolean
+                - "null"
+              description: Whether the employee is active
+            roles:
+              type:
+                - array
+                - "null"
+              items:
+                type: string
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -17835,6 +17870,9 @@ components:
             - x_property_id
             - x_location_id
             - name
+            - email
+            - is_active
+            - roles
             - integration_id
             - integration_vendor
             - property_id
