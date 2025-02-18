@@ -5162,6 +5162,8 @@ components:
                 items:
                   type: string
                   example: https://loremflickr.com/640/480/apartment
+                  x-propexo:
+                    derivedFromField: image_urls_array
               meta_data:
                 type:
                   - object
@@ -5557,6 +5559,8 @@ components:
               items:
                 type: string
                 example: https://loremflickr.com/640/480/apartment
+                x-propexo:
+                  derivedFromField: image_urls_array
             meta_data:
               type:
                 - object
@@ -17690,9 +17694,7 @@ components:
                   - "null"
                 description: Whether the employee is active
               roles:
-                type:
-                  - array
-                  - "null"
+                type: array
                 items:
                   type: string
               integration_id:
@@ -17838,9 +17840,7 @@ components:
                 - "null"
               description: Whether the employee is active
             roles:
-              type:
-                - array
-                - "null"
+              type: array
               items:
                 type: string
             integration_id:
@@ -26068,9 +26068,7 @@ components:
                   - "null"
                 description: The floor number/name associated with the listing
               image_urls:
-                type:
-                  - array
-                  - "null"
+                type: array
                 items:
                   type: string
               is_available:
@@ -26509,9 +26507,7 @@ components:
                 - "null"
               description: The floor number/name associated with the listing
             image_urls:
-              type:
-                - array
-                - "null"
+              type: array
               items:
                 type: string
             is_available:
