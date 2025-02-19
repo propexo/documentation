@@ -810,6 +810,14 @@ components:
                         - RESMAN_READ_UNITS
                         - RESMAN_READ_INVOICES
                         - RESMAN_READ_VENDORS
+                        - SAMPLE2_READ_APPOINTMENTS
+                        - SAMPLE2_READ_EMPLOYEES
+                        - SAMPLE2_READ_LEADS
+                        - SAMPLE2_READ_LISTINGS
+                        - SAMPLE2_READ_PROPERTIES
+                        - SAMPLE2_READ_RESIDENTS
+                        - SAMPLE2_READ_SERVICE_REQUESTS
+                        - SAMPLE2_READ_UNITS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -962,6 +970,14 @@ components:
                           - RESMAN_READ_UNITS
                           - RESMAN_READ_INVOICES
                           - RESMAN_READ_VENDORS
+                          - SAMPLE2_READ_APPOINTMENTS
+                          - SAMPLE2_READ_EMPLOYEES
+                          - SAMPLE2_READ_LEADS
+                          - SAMPLE2_READ_LISTINGS
+                          - SAMPLE2_READ_PROPERTIES
+                          - SAMPLE2_READ_RESIDENTS
+                          - SAMPLE2_READ_SERVICE_REQUESTS
+                          - SAMPLE2_READ_UNITS
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2886,6 +2902,14 @@ components:
                       - RESMAN_READ_UNITS
                       - RESMAN_READ_INVOICES
                       - RESMAN_READ_VENDORS
+                      - SAMPLE2_READ_APPOINTMENTS
+                      - SAMPLE2_READ_EMPLOYEES
+                      - SAMPLE2_READ_LEADS
+                      - SAMPLE2_READ_LISTINGS
+                      - SAMPLE2_READ_PROPERTIES
+                      - SAMPLE2_READ_RESIDENTS
+                      - SAMPLE2_READ_SERVICE_REQUESTS
+                      - SAMPLE2_READ_UNITS
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -3038,6 +3062,14 @@ components:
                         - RESMAN_READ_UNITS
                         - RESMAN_READ_INVOICES
                         - RESMAN_READ_VENDORS
+                        - SAMPLE2_READ_APPOINTMENTS
+                        - SAMPLE2_READ_EMPLOYEES
+                        - SAMPLE2_READ_LEADS
+                        - SAMPLE2_READ_LISTINGS
+                        - SAMPLE2_READ_PROPERTIES
+                        - SAMPLE2_READ_RESIDENTS
+                        - SAMPLE2_READ_SERVICE_REQUESTS
+                        - SAMPLE2_READ_UNITS
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
