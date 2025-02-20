@@ -1293,6 +1293,17 @@ components:
               title: Entrata
             - type: object
               properties:
+                apiKey:
+                  type: string
+                companyId:
+                  type: string
+              required:
+                - apiKey
+                - companyId
+              description: Authentication credentials for Entrata's 2025 API update
+              title: Entrata
+            - type: object
+              properties:
                 clientId:
                   type: string
                 databaseName:
@@ -3392,6 +3403,17 @@ components:
                 - accessToken
                 - companyId
               description: Entrata authentication credentials
+              title: Entrata
+            - type: object
+              properties:
+                apiKey:
+                  type: string
+                companyId:
+                  type: string
+              required:
+                - apiKey
+                - companyId
+              description: Authentication credentials for Entrata's 2025 API update
               title: Entrata
             - type: object
               properties:
