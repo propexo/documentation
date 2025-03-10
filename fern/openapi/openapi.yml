@@ -22103,6 +22103,11 @@ components:
             - string
             - "null"
           description: The external ID of the unit from the integration vendor
+        x_floor_plan_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the floor plan from the integration vendor
         is_unit:
           type: boolean
           description: True if the listing is for a unit, false if it is not associated
@@ -22329,6 +22334,11 @@ components:
             - string
             - "null"
           description: The Propexo unique identifier for the unit
+        floor_plan_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the floor plan
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -22342,6 +22352,7 @@ components:
         - x_id
         - x_property_id
         - x_unit_id
+        - x_floor_plan_id
         - is_unit
         - available_date
         - application_url
@@ -22386,6 +22397,7 @@ components:
         - video_urls
         - property_id
         - unit_id
+        - floor_plan_id
         - integration_id
         - integration_vendor
     _v1_listings__get_output:
@@ -30765,6 +30777,11 @@ components:
               x_property_id:
                 type: string
                 description: The external ID of the property from the integration vendor
+              x_floor_plan_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the floor plan from the integration vendor
               bathrooms:
                 type:
                   - string
@@ -30931,6 +30948,11 @@ components:
                   - string
                   - "null"
                 description: The pet policy for the unit
+              floor_plan_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the floor plan
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -30946,6 +30968,7 @@ components:
               - last_seen
               - x_id
               - x_property_id
+              - x_floor_plan_id
               - bathrooms
               - bathrooms_full
               - bathrooms_half
@@ -30977,6 +31000,7 @@ components:
               - dogs_allowed
               - cats_allowed
               - pet_policy
+              - floor_plan_id
               - integration_id
               - integration_vendor
               - property_id
@@ -31419,6 +31443,11 @@ components:
             x_property_id:
               type: string
               description: The external ID of the property from the integration vendor
+            x_floor_plan_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the floor plan from the integration vendor
             bathrooms:
               type:
                 - string
@@ -31585,6 +31614,11 @@ components:
                 - string
                 - "null"
               description: The pet policy for the unit
+            floor_plan_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the floor plan
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -31600,6 +31634,7 @@ components:
             - last_seen
             - x_id
             - x_property_id
+            - x_floor_plan_id
             - bathrooms
             - bathrooms_full
             - bathrooms_half
@@ -31631,6 +31666,7 @@ components:
             - dogs_allowed
             - cats_allowed
             - pet_policy
+            - floor_plan_id
             - integration_id
             - integration_vendor
             - property_id
