@@ -616,31 +616,53 @@ components:
                         - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - ENTRATA_AMENITIES
-                        - ENTRATA_LEASES
-                        - ENTRATA_LEAD_EVENTS
-                        - ENTRATA_LEASE_TRANSACTIONS
-                        - ENTRATA_LISTINGS
-                        - ENTRATA_PROPERTIES
-                        - ENTRATA_PROSPECTS
-                        - ENTRATA_RESIDENTS
-                        - ENTRATA_UNITS
-                        - ENTRATA_VENDORS
-                        - ENTRATA_WORK_ORDERS
-                        - ENTRATA_INVOICES
-                        - ENTRATA_LEAD_PICK_LIST
-                        - ENTRATA_LEASE_PICK_LIST
-                        - ENTRATA_PROPERTY_PICK_LIST
-                        - ENTRATA_PURCHASE_ORDERS
-                        - ENTRATA_UNIT_TYPES
-                        - ENTRATA_VENDOR_PICK_LIST
-                        - ENTRATA_WORK_ORDER_PICK_LIST
-                        - ENTRATA_VENDOR_LOCATIONS
                         - ENTRATA_AR_CODES
+                        - ENTRATA_CALL_LOGS
+                        - ENTRATA_CREATE_AMENITY
+                        - ENTRATA_CREATE_APPLICANT
+                        - ENTRATA_CREATE_EVENT
+                        - ENTRATA_CREATE_INVOICE
+                        - ENTRATA_CREATE_LEAD
+                        - ENTRATA_CREATE_LEASE
+                        - ENTRATA_CREATE_LEASE_DOCUMENTS
+                        - ENTRATA_CREATE_LEASE_TRANSACTION
+                        - ENTRATA_CREATE_LISTING
+                        - ENTRATA_CREATE_PURCHASE_ORDER
+                        - ENTRATA_CREATE_RESIDENT_CHARGE
+                        - ENTRATA_CREATE_SERVICE_REQUEST
+                        - ENTRATA_CREATE_SERVICE_REQUEST_FILE
+                        - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
+                        - ENTRATA_CREATE_UNIT
+                        - ENTRATA_CREATE_VENDOR
                         - ENTRATA_FLOOR_PLANS
                         - ENTRATA_GL_ACCOUNTS
+                        - ENTRATA_INVOICES
+                        - ENTRATA_LEAD_EVENTS
+                        - ENTRATA_LEAD_PICK_LIST
                         - ENTRATA_LEASE_DETAILS
+                        - ENTRATA_LEASE_PICK_LIST
+                        - ENTRATA_LEASE_TRANSACTIONS
+                        - ENTRATA_LEASES
+                        - ENTRATA_LISTINGS
+                        - ENTRATA_PROPERTIES
+                        - ENTRATA_PROPERTY_PICK_LIST
+                        - ENTRATA_PROSPECTS
+                        - ENTRATA_PURCHASE_ORDERS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
-                        - ENTRATA_CALL_LOGS
+                        - ENTRATA_RESIDENTS
+                        - ENTRATA_UNIT_TYPES
+                        - ENTRATA_UNITS
+                        - ENTRATA_UPDATE_AMENITY
+                        - ENTRATA_UPDATE_APPLICANT
+                        - ENTRATA_UPDATE_LEAD
+                        - ENTRATA_UPDATE_LEASE
+                        - ENTRATA_UPDATE_RESIDENT
+                        - ENTRATA_UPDATE_SERVICE_REQUEST
+                        - ENTRATA_VENDOR_LOCATIONS
+                        - ENTRATA_VENDOR_PICK_LIST
+                        - ENTRATA_VENDORS
+                        - ENTRATA_WORK_ORDER_PICK_LIST
+                        - ENTRATA_WORK_ORDERS
                         - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_LEASE_CHARGES
@@ -776,31 +798,53 @@ components:
                           - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
                           - REALPAGE_RPX_APPOINTMENTS
                           - ENTRATA_AMENITIES
-                          - ENTRATA_LEASES
-                          - ENTRATA_LEAD_EVENTS
-                          - ENTRATA_LEASE_TRANSACTIONS
-                          - ENTRATA_LISTINGS
-                          - ENTRATA_PROPERTIES
-                          - ENTRATA_PROSPECTS
-                          - ENTRATA_RESIDENTS
-                          - ENTRATA_UNITS
-                          - ENTRATA_VENDORS
-                          - ENTRATA_WORK_ORDERS
-                          - ENTRATA_INVOICES
-                          - ENTRATA_LEAD_PICK_LIST
-                          - ENTRATA_LEASE_PICK_LIST
-                          - ENTRATA_PROPERTY_PICK_LIST
-                          - ENTRATA_PURCHASE_ORDERS
-                          - ENTRATA_UNIT_TYPES
-                          - ENTRATA_VENDOR_PICK_LIST
-                          - ENTRATA_WORK_ORDER_PICK_LIST
-                          - ENTRATA_VENDOR_LOCATIONS
                           - ENTRATA_AR_CODES
+                          - ENTRATA_CALL_LOGS
+                          - ENTRATA_CREATE_AMENITY
+                          - ENTRATA_CREATE_APPLICANT
+                          - ENTRATA_CREATE_EVENT
+                          - ENTRATA_CREATE_INVOICE
+                          - ENTRATA_CREATE_LEAD
+                          - ENTRATA_CREATE_LEASE
+                          - ENTRATA_CREATE_LEASE_DOCUMENTS
+                          - ENTRATA_CREATE_LEASE_TRANSACTION
+                          - ENTRATA_CREATE_LISTING
+                          - ENTRATA_CREATE_PURCHASE_ORDER
+                          - ENTRATA_CREATE_RESIDENT_CHARGE
+                          - ENTRATA_CREATE_SERVICE_REQUEST
+                          - ENTRATA_CREATE_SERVICE_REQUEST_FILE
+                          - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
+                          - ENTRATA_CREATE_UNIT
+                          - ENTRATA_CREATE_VENDOR
                           - ENTRATA_FLOOR_PLANS
                           - ENTRATA_GL_ACCOUNTS
+                          - ENTRATA_INVOICES
+                          - ENTRATA_LEAD_EVENTS
+                          - ENTRATA_LEAD_PICK_LIST
                           - ENTRATA_LEASE_DETAILS
+                          - ENTRATA_LEASE_PICK_LIST
+                          - ENTRATA_LEASE_TRANSACTIONS
+                          - ENTRATA_LEASES
+                          - ENTRATA_LISTINGS
+                          - ENTRATA_PROPERTIES
+                          - ENTRATA_PROPERTY_PICK_LIST
+                          - ENTRATA_PROSPECTS
+                          - ENTRATA_PURCHASE_ORDERS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
-                          - ENTRATA_CALL_LOGS
+                          - ENTRATA_RESIDENTS
+                          - ENTRATA_UNIT_TYPES
+                          - ENTRATA_UNITS
+                          - ENTRATA_UPDATE_AMENITY
+                          - ENTRATA_UPDATE_APPLICANT
+                          - ENTRATA_UPDATE_LEAD
+                          - ENTRATA_UPDATE_LEASE
+                          - ENTRATA_UPDATE_RESIDENT
+                          - ENTRATA_UPDATE_SERVICE_REQUEST
+                          - ENTRATA_VENDOR_LOCATIONS
+                          - ENTRATA_VENDOR_PICK_LIST
+                          - ENTRATA_VENDORS
+                          - ENTRATA_WORK_ORDER_PICK_LIST
+                          - ENTRATA_WORK_ORDERS
                           - PROPERTYWARE_REST_READ_PROPERTIES
                           - PROPERTYWARE_REST_READ_PORTFOLIOS
                           - PROPERTYWARE_REST_READ_LEASE_CHARGES
@@ -2622,31 +2666,53 @@ components:
                       - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
                       - REALPAGE_RPX_APPOINTMENTS
                       - ENTRATA_AMENITIES
-                      - ENTRATA_LEASES
-                      - ENTRATA_LEAD_EVENTS
-                      - ENTRATA_LEASE_TRANSACTIONS
-                      - ENTRATA_LISTINGS
-                      - ENTRATA_PROPERTIES
-                      - ENTRATA_PROSPECTS
-                      - ENTRATA_RESIDENTS
-                      - ENTRATA_UNITS
-                      - ENTRATA_VENDORS
-                      - ENTRATA_WORK_ORDERS
-                      - ENTRATA_INVOICES
-                      - ENTRATA_LEAD_PICK_LIST
-                      - ENTRATA_LEASE_PICK_LIST
-                      - ENTRATA_PROPERTY_PICK_LIST
-                      - ENTRATA_PURCHASE_ORDERS
-                      - ENTRATA_UNIT_TYPES
-                      - ENTRATA_VENDOR_PICK_LIST
-                      - ENTRATA_WORK_ORDER_PICK_LIST
-                      - ENTRATA_VENDOR_LOCATIONS
                       - ENTRATA_AR_CODES
+                      - ENTRATA_CALL_LOGS
+                      - ENTRATA_CREATE_AMENITY
+                      - ENTRATA_CREATE_APPLICANT
+                      - ENTRATA_CREATE_EVENT
+                      - ENTRATA_CREATE_INVOICE
+                      - ENTRATA_CREATE_LEAD
+                      - ENTRATA_CREATE_LEASE
+                      - ENTRATA_CREATE_LEASE_DOCUMENTS
+                      - ENTRATA_CREATE_LEASE_TRANSACTION
+                      - ENTRATA_CREATE_LISTING
+                      - ENTRATA_CREATE_PURCHASE_ORDER
+                      - ENTRATA_CREATE_RESIDENT_CHARGE
+                      - ENTRATA_CREATE_SERVICE_REQUEST
+                      - ENTRATA_CREATE_SERVICE_REQUEST_FILE
+                      - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
+                      - ENTRATA_CREATE_UNIT
+                      - ENTRATA_CREATE_VENDOR
                       - ENTRATA_FLOOR_PLANS
                       - ENTRATA_GL_ACCOUNTS
+                      - ENTRATA_INVOICES
+                      - ENTRATA_LEAD_EVENTS
+                      - ENTRATA_LEAD_PICK_LIST
                       - ENTRATA_LEASE_DETAILS
+                      - ENTRATA_LEASE_PICK_LIST
+                      - ENTRATA_LEASE_TRANSACTIONS
+                      - ENTRATA_LEASES
+                      - ENTRATA_LISTINGS
+                      - ENTRATA_PROPERTIES
+                      - ENTRATA_PROPERTY_PICK_LIST
+                      - ENTRATA_PROSPECTS
+                      - ENTRATA_PURCHASE_ORDERS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
-                      - ENTRATA_CALL_LOGS
+                      - ENTRATA_RESIDENTS
+                      - ENTRATA_UNIT_TYPES
+                      - ENTRATA_UNITS
+                      - ENTRATA_UPDATE_AMENITY
+                      - ENTRATA_UPDATE_APPLICANT
+                      - ENTRATA_UPDATE_LEAD
+                      - ENTRATA_UPDATE_LEASE
+                      - ENTRATA_UPDATE_RESIDENT
+                      - ENTRATA_UPDATE_SERVICE_REQUEST
+                      - ENTRATA_VENDOR_LOCATIONS
+                      - ENTRATA_VENDOR_PICK_LIST
+                      - ENTRATA_VENDORS
+                      - ENTRATA_WORK_ORDER_PICK_LIST
+                      - ENTRATA_WORK_ORDERS
                       - PROPERTYWARE_REST_READ_PROPERTIES
                       - PROPERTYWARE_REST_READ_PORTFOLIOS
                       - PROPERTYWARE_REST_READ_LEASE_CHARGES
@@ -2782,31 +2848,53 @@ components:
                         - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - ENTRATA_AMENITIES
-                        - ENTRATA_LEASES
-                        - ENTRATA_LEAD_EVENTS
-                        - ENTRATA_LEASE_TRANSACTIONS
-                        - ENTRATA_LISTINGS
-                        - ENTRATA_PROPERTIES
-                        - ENTRATA_PROSPECTS
-                        - ENTRATA_RESIDENTS
-                        - ENTRATA_UNITS
-                        - ENTRATA_VENDORS
-                        - ENTRATA_WORK_ORDERS
-                        - ENTRATA_INVOICES
-                        - ENTRATA_LEAD_PICK_LIST
-                        - ENTRATA_LEASE_PICK_LIST
-                        - ENTRATA_PROPERTY_PICK_LIST
-                        - ENTRATA_PURCHASE_ORDERS
-                        - ENTRATA_UNIT_TYPES
-                        - ENTRATA_VENDOR_PICK_LIST
-                        - ENTRATA_WORK_ORDER_PICK_LIST
-                        - ENTRATA_VENDOR_LOCATIONS
                         - ENTRATA_AR_CODES
+                        - ENTRATA_CALL_LOGS
+                        - ENTRATA_CREATE_AMENITY
+                        - ENTRATA_CREATE_APPLICANT
+                        - ENTRATA_CREATE_EVENT
+                        - ENTRATA_CREATE_INVOICE
+                        - ENTRATA_CREATE_LEAD
+                        - ENTRATA_CREATE_LEASE
+                        - ENTRATA_CREATE_LEASE_DOCUMENTS
+                        - ENTRATA_CREATE_LEASE_TRANSACTION
+                        - ENTRATA_CREATE_LISTING
+                        - ENTRATA_CREATE_PURCHASE_ORDER
+                        - ENTRATA_CREATE_RESIDENT_CHARGE
+                        - ENTRATA_CREATE_SERVICE_REQUEST
+                        - ENTRATA_CREATE_SERVICE_REQUEST_FILE
+                        - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
+                        - ENTRATA_CREATE_UNIT
+                        - ENTRATA_CREATE_VENDOR
                         - ENTRATA_FLOOR_PLANS
                         - ENTRATA_GL_ACCOUNTS
+                        - ENTRATA_INVOICES
+                        - ENTRATA_LEAD_EVENTS
+                        - ENTRATA_LEAD_PICK_LIST
                         - ENTRATA_LEASE_DETAILS
+                        - ENTRATA_LEASE_PICK_LIST
+                        - ENTRATA_LEASE_TRANSACTIONS
+                        - ENTRATA_LEASES
+                        - ENTRATA_LISTINGS
+                        - ENTRATA_PROPERTIES
+                        - ENTRATA_PROPERTY_PICK_LIST
+                        - ENTRATA_PROSPECTS
+                        - ENTRATA_PURCHASE_ORDERS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
-                        - ENTRATA_CALL_LOGS
+                        - ENTRATA_RESIDENTS
+                        - ENTRATA_UNIT_TYPES
+                        - ENTRATA_UNITS
+                        - ENTRATA_UPDATE_AMENITY
+                        - ENTRATA_UPDATE_APPLICANT
+                        - ENTRATA_UPDATE_LEAD
+                        - ENTRATA_UPDATE_LEASE
+                        - ENTRATA_UPDATE_RESIDENT
+                        - ENTRATA_UPDATE_SERVICE_REQUEST
+                        - ENTRATA_VENDOR_LOCATIONS
+                        - ENTRATA_VENDOR_PICK_LIST
+                        - ENTRATA_VENDORS
+                        - ENTRATA_WORK_ORDER_PICK_LIST
+                        - ENTRATA_WORK_ORDERS
                         - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_LEASE_CHARGES
