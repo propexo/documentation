@@ -1115,7 +1115,7 @@ components:
                 - Username
                 - Password
                 - companyId
-              description: RentManager authentication credentials
+              description: Rent Manager authentication credentials
               title: RentManagerSandbox
             - type: object
               properties:
@@ -1126,7 +1126,7 @@ components:
               required:
                 - PartnerToken
                 - companyId
-              description: RentManager authentication credentials
+              description: Rent Manager authentication credentials
               title: RentManagerProduction
             - type: object
               properties:
@@ -3175,7 +3175,7 @@ components:
                 - Username
                 - Password
                 - companyId
-              description: RentManager authentication credentials
+              description: Rent Manager authentication credentials
               title: RentManagerSandbox
             - type: object
               properties:
@@ -3186,7 +3186,7 @@ components:
               required:
                 - PartnerToken
                 - companyId
-              description: RentManager authentication credentials
+              description: Rent Manager authentication credentials
               title: RentManagerProduction
             - type: object
               properties:
@@ -4803,7 +4803,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -5748,7 +5748,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -8881,7 +8881,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo property id
@@ -11210,7 +11210,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -11429,7 +11429,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -11950,7 +11950,7 @@ components:
           description: The time when the appointment will occur. Please refer to our
             appointment times section in the docs to see how each individual PMS
             handles timezones. The time is in the local time of the
-            property/location.  In RentManager, the default timezone is an
+            property/location.  In Rent Manager, the default timezone is an
             optional setting that the PMC can set and will be stored on the
             Propexo Timezone model.  You may need to read in this setting and
             convert to the local timezone for the appointment time to be
@@ -12159,7 +12159,7 @@ components:
           description: The time when the appointment will occur. Please refer to our
             appointment times section in the docs to see how each individual PMS
             handles timezones. The time is in the local time of the
-            property/location.  In RentManager, the default timezone is an
+            property/location.  In Rent Manager, the default timezone is an
             optional setting that the PMC can set and will be stored on the
             Propexo Timezone model.  You may need to read in this setting and
             convert to the local timezone for the appointment time to be
@@ -13455,7 +13455,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -14654,7 +14654,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -15814,7 +15814,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -16043,7 +16043,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -16611,7 +16611,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -16831,7 +16831,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the file type
@@ -17089,7 +17089,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -17625,7 +17625,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -17927,7 +17927,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         x_unit_id:
           type: string
           description: The external unit id
@@ -18955,7 +18955,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -19058,7 +19058,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -19259,7 +19259,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -21747,7 +21747,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -22151,7 +22151,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -22581,7 +22581,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         listing_id:
           type: string
           description: The Propexo unique identifier for the listing
@@ -22842,7 +22842,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -23040,7 +23040,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -23459,7 +23459,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         integration_id:
           type: string
           description: The Propexo integration id
@@ -24235,7 +24235,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -24581,7 +24581,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         associated_property_id:
           type: string
           description: "The Propexo unique identifier for the property. Note: This will
@@ -26072,7 +26072,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo property id
@@ -27570,7 +27570,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -28544,7 +28544,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -28773,7 +28773,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -29089,7 +29089,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -29321,7 +29321,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -29951,7 +29951,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -30076,7 +30076,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -30473,7 +30473,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -30822,7 +30822,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo property id
@@ -31231,7 +31231,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -31868,7 +31868,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -32324,7 +32324,7 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -35108,7 +35108,7 @@ paths:
   /v1/admin/integrations/{integration_id}/rate-limits/:
     get:
       description: The current PMS rate limits associated with your integration.
-        Currently only supported for RentManager and Entrata
+        Currently only supported for Rent Manager and Entrata
       summary: The current PMS rate limits associated with your integration.
       tags:
         - admin
@@ -35303,10 +35303,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -35678,10 +35678,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -35937,10 +35937,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -36330,10 +36330,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -36520,10 +36520,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -37507,10 +37507,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -37971,10 +37971,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -38722,10 +38722,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -38911,10 +38911,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -39192,10 +39192,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -39385,10 +39385,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -39596,10 +39596,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -39822,10 +39822,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -40006,10 +40006,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -40267,10 +40267,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -40376,10 +40376,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -40567,10 +40567,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -40907,10 +40907,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -41117,10 +41117,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -41258,10 +41258,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -41480,10 +41480,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -41648,10 +41648,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -41831,10 +41831,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -42057,10 +42057,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -42225,10 +42225,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -42730,10 +42730,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -43030,10 +43030,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -43302,10 +43302,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -43478,10 +43478,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -43686,10 +43686,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -43869,10 +43869,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -44426,10 +44426,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -44535,10 +44535,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -44710,10 +44710,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -44893,10 +44893,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -45040,10 +45040,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -45248,10 +45248,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
@@ -45507,10 +45507,10 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in RentManager
+              property. This is the location specified in Rent Manager
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in RentManager
+            property. This is the location specified in Rent Manager
           name: location_id
           in: query
         - schema:
