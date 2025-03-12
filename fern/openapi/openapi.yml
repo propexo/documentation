@@ -663,27 +663,33 @@ components:
                         - ENTRATA_VENDORS
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
-                        - PROPERTYWARE_REST_READ_PROPERTIES
-                        - PROPERTYWARE_REST_READ_PORTFOLIOS
-                        - PROPERTYWARE_REST_READ_LEASE_CHARGES
-                        - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
-                        - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
-                        - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_CREATE_DOCUMENT
+                        - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_CREDIT
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
+                        - PROPERTYWARE_REST_CREATE_UNIT
                         - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
                         - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                        - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
+                        - PROPERTYWARE_REST_READ_LEASE_CHARGES
                         - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
-                        - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
-                        - PROPERTYWARE_REST_READ_LEASE_REFUNDS
                         - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
-                        - PROPERTYWARE_REST_READ_UNITS
-                        - PROPERTYWARE_REST_READ_RESIDENTS
-                        - PROPERTYWARE_REST_UPDATE_CONTACTS
-                        - PROPERTYWARE_REST_CREATE_DOCUMENT
-                        - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
-                        - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                        - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                        - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                        - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                        - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_READ_PORTFOLIOS
+                        - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
-                        - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
-                        - PROPERTYWARE_REST_CREATE_UNIT
+                        - PROPERTYWARE_REST_READ_RESIDENTS
+                        - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_UPDATE_CONTACTS
+                        - PROPERTYWARE_REST_UPDATE_DOCUMENT
+                        - PROPERTYWARE_REST_UPDATE_LEASE
+                        - PROPERTYWARE_REST_UPDATE_LEASE_CUSTOM_FIELDS
+                        - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
+                        - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                         - RESMAN_BASE
                         - RESMAN_READ_ACCOUNTS
                         - RESMAN_READ_EMPLOYEES
@@ -845,27 +851,33 @@ components:
                           - ENTRATA_VENDORS
                           - ENTRATA_WORK_ORDER_PICK_LIST
                           - ENTRATA_WORK_ORDERS
-                          - PROPERTYWARE_REST_READ_PROPERTIES
-                          - PROPERTYWARE_REST_READ_PORTFOLIOS
-                          - PROPERTYWARE_REST_READ_LEASE_CHARGES
-                          - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
-                          - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
-                          - PROPERTYWARE_REST_READ_LEASES
+                          - PROPERTYWARE_REST_CREATE_DOCUMENT
+                          - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                          - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                          - PROPERTYWARE_REST_CREATE_RESIDENT_CREDIT
+                          - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
+                          - PROPERTYWARE_REST_CREATE_UNIT
                           - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
                           - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                          - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
+                          - PROPERTYWARE_REST_READ_LEASE_CHARGES
                           - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
-                          - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
-                          - PROPERTYWARE_REST_READ_LEASE_REFUNDS
                           - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
-                          - PROPERTYWARE_REST_READ_UNITS
-                          - PROPERTYWARE_REST_READ_RESIDENTS
-                          - PROPERTYWARE_REST_UPDATE_CONTACTS
-                          - PROPERTYWARE_REST_CREATE_DOCUMENT
-                          - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
-                          - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                          - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                          - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                          - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                          - PROPERTYWARE_REST_READ_LEASES
+                          - PROPERTYWARE_REST_READ_PORTFOLIOS
+                          - PROPERTYWARE_REST_READ_PROPERTIES
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
-                          - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
-                          - PROPERTYWARE_REST_CREATE_UNIT
+                          - PROPERTYWARE_REST_READ_RESIDENTS
+                          - PROPERTYWARE_REST_READ_UNITS
+                          - PROPERTYWARE_REST_UPDATE_CONTACTS
+                          - PROPERTYWARE_REST_UPDATE_DOCUMENT
+                          - PROPERTYWARE_REST_UPDATE_LEASE
+                          - PROPERTYWARE_REST_UPDATE_LEASE_CUSTOM_FIELDS
+                          - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
+                          - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                           - RESMAN_BASE
                           - RESMAN_READ_ACCOUNTS
                           - RESMAN_READ_EMPLOYEES
@@ -2713,27 +2725,33 @@ components:
                       - ENTRATA_VENDORS
                       - ENTRATA_WORK_ORDER_PICK_LIST
                       - ENTRATA_WORK_ORDERS
-                      - PROPERTYWARE_REST_READ_PROPERTIES
-                      - PROPERTYWARE_REST_READ_PORTFOLIOS
-                      - PROPERTYWARE_REST_READ_LEASE_CHARGES
-                      - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
-                      - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
-                      - PROPERTYWARE_REST_READ_LEASES
+                      - PROPERTYWARE_REST_CREATE_DOCUMENT
+                      - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                      - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                      - PROPERTYWARE_REST_CREATE_RESIDENT_CREDIT
+                      - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
+                      - PROPERTYWARE_REST_CREATE_UNIT
                       - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
                       - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                      - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
+                      - PROPERTYWARE_REST_READ_LEASE_CHARGES
                       - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
-                      - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
-                      - PROPERTYWARE_REST_READ_LEASE_REFUNDS
                       - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
-                      - PROPERTYWARE_REST_READ_UNITS
-                      - PROPERTYWARE_REST_READ_RESIDENTS
-                      - PROPERTYWARE_REST_UPDATE_CONTACTS
-                      - PROPERTYWARE_REST_CREATE_DOCUMENT
-                      - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
-                      - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                      - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                      - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                      - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                      - PROPERTYWARE_REST_READ_LEASES
+                      - PROPERTYWARE_REST_READ_PORTFOLIOS
+                      - PROPERTYWARE_REST_READ_PROPERTIES
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
-                      - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
-                      - PROPERTYWARE_REST_CREATE_UNIT
+                      - PROPERTYWARE_REST_READ_RESIDENTS
+                      - PROPERTYWARE_REST_READ_UNITS
+                      - PROPERTYWARE_REST_UPDATE_CONTACTS
+                      - PROPERTYWARE_REST_UPDATE_DOCUMENT
+                      - PROPERTYWARE_REST_UPDATE_LEASE
+                      - PROPERTYWARE_REST_UPDATE_LEASE_CUSTOM_FIELDS
+                      - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
+                      - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                       - RESMAN_BASE
                       - RESMAN_READ_ACCOUNTS
                       - RESMAN_READ_EMPLOYEES
@@ -2895,27 +2913,33 @@ components:
                         - ENTRATA_VENDORS
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
-                        - PROPERTYWARE_REST_READ_PROPERTIES
-                        - PROPERTYWARE_REST_READ_PORTFOLIOS
-                        - PROPERTYWARE_REST_READ_LEASE_CHARGES
-                        - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
-                        - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
-                        - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_CREATE_DOCUMENT
+                        - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_CREDIT
+                        - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
+                        - PROPERTYWARE_REST_CREATE_UNIT
                         - PROPERTYWARE_REST_READ_FINANCIAL_ACCOUNTS
                         - PROPERTYWARE_REST_READ_GENERAL_LEDGER
+                        - PROPERTYWARE_REST_READ_LEASE_ADJUSTMENTS
+                        - PROPERTYWARE_REST_READ_LEASE_CHARGES
                         - PROPERTYWARE_REST_READ_LEASE_CREDIT_MEMOS
-                        - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
-                        - PROPERTYWARE_REST_READ_LEASE_REFUNDS
                         - PROPERTYWARE_REST_READ_LEASE_DISCOUNTS
-                        - PROPERTYWARE_REST_READ_UNITS
-                        - PROPERTYWARE_REST_READ_RESIDENTS
-                        - PROPERTYWARE_REST_UPDATE_CONTACTS
-                        - PROPERTYWARE_REST_CREATE_DOCUMENT
-                        - PROPERTYWARE_REST_CREATE_RESIDENT_PAYMENT
-                        - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
+                        - PROPERTYWARE_REST_READ_LEASE_JOURNAL_ENTRIES
+                        - PROPERTYWARE_REST_READ_LEASE_PAYMENTS
+                        - PROPERTYWARE_REST_READ_LEASE_REFUNDS
+                        - PROPERTYWARE_REST_READ_LEASES
+                        - PROPERTYWARE_REST_READ_PORTFOLIOS
+                        - PROPERTYWARE_REST_READ_PROPERTIES
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
-                        - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
-                        - PROPERTYWARE_REST_CREATE_UNIT
+                        - PROPERTYWARE_REST_READ_RESIDENTS
+                        - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_UPDATE_CONTACTS
+                        - PROPERTYWARE_REST_UPDATE_DOCUMENT
+                        - PROPERTYWARE_REST_UPDATE_LEASE
+                        - PROPERTYWARE_REST_UPDATE_LEASE_CUSTOM_FIELDS
+                        - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
+                        - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                         - RESMAN_BASE
                         - RESMAN_READ_ACCOUNTS
                         - RESMAN_READ_EMPLOYEES
