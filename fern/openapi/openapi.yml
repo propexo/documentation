@@ -709,6 +709,7 @@ components:
                         - RESMAN_READ_UNITS
                         - RESMAN_READ_INVOICES
                         - RESMAN_READ_VENDORS
+                        - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
                         - SAMPLE2_READ_LEADS
@@ -717,6 +718,7 @@ components:
                         - SAMPLE2_READ_RESIDENTS
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_UNITS
+                        - SAMPLE2_UPDATE_LEAD
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
@@ -897,6 +899,7 @@ components:
                           - RESMAN_READ_UNITS
                           - RESMAN_READ_INVOICES
                           - RESMAN_READ_VENDORS
+                          - SAMPLE2_CREATE_LEAD
                           - SAMPLE2_READ_APPOINTMENTS
                           - SAMPLE2_READ_EMPLOYEES
                           - SAMPLE2_READ_LEADS
@@ -905,6 +908,7 @@ components:
                           - SAMPLE2_READ_RESIDENTS
                           - SAMPLE2_READ_SERVICE_REQUESTS
                           - SAMPLE2_READ_UNITS
+                          - SAMPLE2_UPDATE_LEAD
                           - BUILDIUM_BASE
                           - ENTRATA_BASE
                           - PROPERTYWARE_BASE
@@ -2771,6 +2775,7 @@ components:
                       - RESMAN_READ_UNITS
                       - RESMAN_READ_INVOICES
                       - RESMAN_READ_VENDORS
+                      - SAMPLE2_CREATE_LEAD
                       - SAMPLE2_READ_APPOINTMENTS
                       - SAMPLE2_READ_EMPLOYEES
                       - SAMPLE2_READ_LEADS
@@ -2779,6 +2784,7 @@ components:
                       - SAMPLE2_READ_RESIDENTS
                       - SAMPLE2_READ_SERVICE_REQUESTS
                       - SAMPLE2_READ_UNITS
+                      - SAMPLE2_UPDATE_LEAD
                       - BUILDIUM_BASE
                       - ENTRATA_BASE
                       - PROPERTYWARE_BASE
@@ -2959,6 +2965,7 @@ components:
                         - RESMAN_READ_UNITS
                         - RESMAN_READ_INVOICES
                         - RESMAN_READ_VENDORS
+                        - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
                         - SAMPLE2_READ_LEADS
@@ -2967,6 +2974,7 @@ components:
                         - SAMPLE2_READ_RESIDENTS
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_UNITS
+                        - SAMPLE2_UPDATE_LEAD
                         - BUILDIUM_BASE
                         - ENTRATA_BASE
                         - PROPERTYWARE_BASE
