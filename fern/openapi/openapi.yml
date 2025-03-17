@@ -691,8 +691,15 @@ components:
                         - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
                         - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                         - RESMAN_BASE
+                        - RESMAN_CREATE_APPLICANT
+                        - RESMAN_CREATE_INVOICE
+                        - RESMAN_CREATE_LEAD
+                        - RESMAN_CREATE_RESIDENT_CHARGE
+                        - RESMAN_CREATE_RESIDENT_PAYMENT
+                        - RESMAN_CREATE_SERVICE_REQUEST
                         - RESMAN_READ_ACCOUNTS
                         - RESMAN_READ_EMPLOYEES
+                        - RESMAN_READ_INVOICES
                         - RESMAN_READ_LEADS
                         - RESMAN_READ_LEAD_SOURCES
                         - RESMAN_READ_LEASES
@@ -707,8 +714,10 @@ components:
                         - RESMAN_READ_SERVICE_REQUESTS
                         - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                         - RESMAN_READ_UNITS
-                        - RESMAN_READ_INVOICES
                         - RESMAN_READ_VENDORS
+                        - RESMAN_UPDATE_APPLICANT
+                        - RESMAN_UPDATE_LEAD
+                        - RESMAN_UPDATE_SERVICE_REQUEST
                         - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
@@ -881,8 +890,15 @@ components:
                           - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
                           - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                           - RESMAN_BASE
+                          - RESMAN_CREATE_APPLICANT
+                          - RESMAN_CREATE_INVOICE
+                          - RESMAN_CREATE_LEAD
+                          - RESMAN_CREATE_RESIDENT_CHARGE
+                          - RESMAN_CREATE_RESIDENT_PAYMENT
+                          - RESMAN_CREATE_SERVICE_REQUEST
                           - RESMAN_READ_ACCOUNTS
                           - RESMAN_READ_EMPLOYEES
+                          - RESMAN_READ_INVOICES
                           - RESMAN_READ_LEADS
                           - RESMAN_READ_LEAD_SOURCES
                           - RESMAN_READ_LEASES
@@ -897,8 +913,10 @@ components:
                           - RESMAN_READ_SERVICE_REQUESTS
                           - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                           - RESMAN_READ_UNITS
-                          - RESMAN_READ_INVOICES
                           - RESMAN_READ_VENDORS
+                          - RESMAN_UPDATE_APPLICANT
+                          - RESMAN_UPDATE_LEAD
+                          - RESMAN_UPDATE_SERVICE_REQUEST
                           - SAMPLE2_CREATE_LEAD
                           - SAMPLE2_READ_APPOINTMENTS
                           - SAMPLE2_READ_EMPLOYEES
@@ -2757,8 +2775,15 @@ components:
                       - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
                       - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                       - RESMAN_BASE
+                      - RESMAN_CREATE_APPLICANT
+                      - RESMAN_CREATE_INVOICE
+                      - RESMAN_CREATE_LEAD
+                      - RESMAN_CREATE_RESIDENT_CHARGE
+                      - RESMAN_CREATE_RESIDENT_PAYMENT
+                      - RESMAN_CREATE_SERVICE_REQUEST
                       - RESMAN_READ_ACCOUNTS
                       - RESMAN_READ_EMPLOYEES
+                      - RESMAN_READ_INVOICES
                       - RESMAN_READ_LEADS
                       - RESMAN_READ_LEAD_SOURCES
                       - RESMAN_READ_LEASES
@@ -2773,8 +2798,10 @@ components:
                       - RESMAN_READ_SERVICE_REQUESTS
                       - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                       - RESMAN_READ_UNITS
-                      - RESMAN_READ_INVOICES
                       - RESMAN_READ_VENDORS
+                      - RESMAN_UPDATE_APPLICANT
+                      - RESMAN_UPDATE_LEAD
+                      - RESMAN_UPDATE_SERVICE_REQUEST
                       - SAMPLE2_CREATE_LEAD
                       - SAMPLE2_READ_APPOINTMENTS
                       - SAMPLE2_READ_EMPLOYEES
@@ -2947,8 +2974,15 @@ components:
                         - PROPERTYWARE_REST_UPDATE_PROPERTY_CUSTOM_FIELDS
                         - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                         - RESMAN_BASE
+                        - RESMAN_CREATE_APPLICANT
+                        - RESMAN_CREATE_INVOICE
+                        - RESMAN_CREATE_LEAD
+                        - RESMAN_CREATE_RESIDENT_CHARGE
+                        - RESMAN_CREATE_RESIDENT_PAYMENT
+                        - RESMAN_CREATE_SERVICE_REQUEST
                         - RESMAN_READ_ACCOUNTS
                         - RESMAN_READ_EMPLOYEES
+                        - RESMAN_READ_INVOICES
                         - RESMAN_READ_LEADS
                         - RESMAN_READ_LEAD_SOURCES
                         - RESMAN_READ_LEASES
@@ -2963,8 +2997,10 @@ components:
                         - RESMAN_READ_SERVICE_REQUESTS
                         - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                         - RESMAN_READ_UNITS
-                        - RESMAN_READ_INVOICES
                         - RESMAN_READ_VENDORS
+                        - RESMAN_UPDATE_APPLICANT
+                        - RESMAN_UPDATE_LEAD
+                        - RESMAN_UPDATE_SERVICE_REQUEST
                         - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
