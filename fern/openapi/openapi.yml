@@ -589,32 +589,53 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
-                        - REALPAGE_RPX_READ_PROPERTIES
-                        - REALPAGE_RPX_UNITS
-                        - REALPAGE_RPX_RESIDENT_MANAGEMENT
-                        - REALPAGE_RPX_RESIDENT_TRANSACTIONS
-                        - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
-                        - REALPAGE_RPX_PROSPECT_MANAGEMENT
-                        - REALPAGE_RPX_PRICING_AND_AVAILABILITY
-                        - REALPAGE_RPX_FACILITIES
-                        - REALPAGE_RPX_CONVERGENT_BILLING
+                        - REALPAGE_RPX_APPOINTMENTS
+                        - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
-                        - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                         - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
-                        - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
-                        - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
-                        - REALPAGE_RPX_PROSPECTS_SURVEY
-                        - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                        - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
+                        - REALPAGE_RPX_CREATE_APPOINTMENT
+                        - REALPAGE_RPX_CREATE_LEAD
+                        - REALPAGE_RPX_CREATE_LEAD_EVENT
+                        - REALPAGE_RPX_CREATE_RESIDENT_ACTIVITY_LOG
+                        - REALPAGE_RPX_CREATE_RESIDENT_CHARGE
+                        - REALPAGE_RPX_CREATE_SERVICE_REQUEST
+                        - REALPAGE_RPX_UPDATE_APPOINTMENT
+                        - REALPAGE_RPX_UPDATE_APPOINTMENT_CANCEL
+                        - REALPAGE_RPX_UPDATE_LEAD
+                        - REALPAGE_RPX_UPDATE_SERVICE_REQUEST
                         - REALPAGE_RPX_FLOOR_PLANS
+                        - REALPAGE_RPX_LEADS
                         - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
                         - REALPAGE_RPX_LEAD_RELATIONSHIPS
                         - REALPAGE_RPX_LEAD_SOURCES
+                        - REALPAGE_RPX_LISTINGS
                         - REALPAGE_RPX_LEASING_AGENTS
+                        - REALPAGE_RPX_PROSPECTS_SURVEY
+                        - REALPAGE_RPX_READ_PROPERTIES
+                        - REALPAGE_RPX_READ_PROPERTY_DATA
+                        - REALPAGE_RPX_RESIDENTS
+                        - REALPAGE_RPX_RESIDENT_ACTIVITY_LOGS
                         - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                        - REALPAGE_RPX_RESIDENT_LEDGER
+                        - REALPAGE_RPX_RESIDENT_TRANSACTION_CODES
+                        - REALPAGE_RPX_SERVICE_REQUESTS
                         - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
                         - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
                         - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
-                        - REALPAGE_RPX_APPOINTMENTS
+                        - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                        - REALPAGE_RPX_UNITS
+                        - REALPAGE_RPX_UNITS_BY_PROPERTY
+                        - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                        - REALPAGE_RPX_CONVERGENT_BILLING
+                        - REALPAGE_RPX_FACILITIES
+                        - REALPAGE_RPX_PRICING_AND_AVAILABILITY
+                        - REALPAGE_RPX_PROSPECT_MANAGEMENT
+                        - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                        - REALPAGE_RPX_RESIDENT_TRANSACTIONS
+                        - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                        - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                        - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                         - ENTRATA_AMENITIES
                         - ENTRATA_AR_CODES
                         - ENTRATA_CALL_LOGS
@@ -729,15 +750,15 @@ components:
                         - SAMPLE2_READ_UNITS
                         - SAMPLE2_UPDATE_LEAD
                         - BUILDIUM_BASE
-                        - ENTRATA_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
                         - RENTVINE_BASE
                         - MRI_BASE
-                        - SAMPLE2_BASE
                         - KNOCK_BASE
                         - SAMPLE3_BASE
                         - FUNNEL_BASE
+                        - SAMPLE2_BASE
+                        - ENTRATA_BASE
                     enabled:
                       type: boolean
                     version:
@@ -788,32 +809,53 @@ components:
                           - SAMPLE1_SERVICES
                           - SAMPLE1_JOB_COST
                           - SAMPLE1_VENDOR_INVOICING
-                          - REALPAGE_RPX_READ_PROPERTIES
-                          - REALPAGE_RPX_UNITS
-                          - REALPAGE_RPX_RESIDENT_MANAGEMENT
-                          - REALPAGE_RPX_RESIDENT_TRANSACTIONS
-                          - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
-                          - REALPAGE_RPX_PROSPECT_MANAGEMENT
-                          - REALPAGE_RPX_PRICING_AND_AVAILABILITY
-                          - REALPAGE_RPX_FACILITIES
-                          - REALPAGE_RPX_CONVERGENT_BILLING
+                          - REALPAGE_RPX_APPOINTMENTS
+                          - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                           - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
-                          - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                           - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
-                          - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
-                          - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
-                          - REALPAGE_RPX_PROSPECTS_SURVEY
-                          - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                          - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
+                          - REALPAGE_RPX_CREATE_APPOINTMENT
+                          - REALPAGE_RPX_CREATE_LEAD
+                          - REALPAGE_RPX_CREATE_LEAD_EVENT
+                          - REALPAGE_RPX_CREATE_RESIDENT_ACTIVITY_LOG
+                          - REALPAGE_RPX_CREATE_RESIDENT_CHARGE
+                          - REALPAGE_RPX_CREATE_SERVICE_REQUEST
+                          - REALPAGE_RPX_UPDATE_APPOINTMENT
+                          - REALPAGE_RPX_UPDATE_APPOINTMENT_CANCEL
+                          - REALPAGE_RPX_UPDATE_LEAD
+                          - REALPAGE_RPX_UPDATE_SERVICE_REQUEST
                           - REALPAGE_RPX_FLOOR_PLANS
+                          - REALPAGE_RPX_LEADS
                           - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
                           - REALPAGE_RPX_LEAD_RELATIONSHIPS
                           - REALPAGE_RPX_LEAD_SOURCES
+                          - REALPAGE_RPX_LISTINGS
                           - REALPAGE_RPX_LEASING_AGENTS
+                          - REALPAGE_RPX_PROSPECTS_SURVEY
+                          - REALPAGE_RPX_READ_PROPERTIES
+                          - REALPAGE_RPX_READ_PROPERTY_DATA
+                          - REALPAGE_RPX_RESIDENTS
+                          - REALPAGE_RPX_RESIDENT_ACTIVITY_LOGS
                           - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                          - REALPAGE_RPX_RESIDENT_LEDGER
+                          - REALPAGE_RPX_RESIDENT_TRANSACTION_CODES
+                          - REALPAGE_RPX_SERVICE_REQUESTS
                           - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
                           - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
                           - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
-                          - REALPAGE_RPX_APPOINTMENTS
+                          - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                          - REALPAGE_RPX_UNITS
+                          - REALPAGE_RPX_UNITS_BY_PROPERTY
+                          - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                          - REALPAGE_RPX_CONVERGENT_BILLING
+                          - REALPAGE_RPX_FACILITIES
+                          - REALPAGE_RPX_PRICING_AND_AVAILABILITY
+                          - REALPAGE_RPX_PROSPECT_MANAGEMENT
+                          - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                          - REALPAGE_RPX_RESIDENT_TRANSACTIONS
+                          - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                          - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                          - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                           - ENTRATA_AMENITIES
                           - ENTRATA_AR_CODES
                           - ENTRATA_CALL_LOGS
@@ -928,15 +970,15 @@ components:
                           - SAMPLE2_READ_UNITS
                           - SAMPLE2_UPDATE_LEAD
                           - BUILDIUM_BASE
-                          - ENTRATA_BASE
                           - PROPERTYWARE_BASE
                           - RENTMANAGER_BASE
                           - RENTVINE_BASE
                           - MRI_BASE
-                          - SAMPLE2_BASE
                           - KNOCK_BASE
                           - SAMPLE3_BASE
                           - FUNNEL_BASE
+                          - SAMPLE2_BASE
+                          - ENTRATA_BASE
                   required:
                     - enabled
                     - from_interfaces
@@ -2673,32 +2715,53 @@ components:
                       - SAMPLE1_SERVICES
                       - SAMPLE1_JOB_COST
                       - SAMPLE1_VENDOR_INVOICING
-                      - REALPAGE_RPX_READ_PROPERTIES
-                      - REALPAGE_RPX_UNITS
-                      - REALPAGE_RPX_RESIDENT_MANAGEMENT
-                      - REALPAGE_RPX_RESIDENT_TRANSACTIONS
-                      - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
-                      - REALPAGE_RPX_PROSPECT_MANAGEMENT
-                      - REALPAGE_RPX_PRICING_AND_AVAILABILITY
-                      - REALPAGE_RPX_FACILITIES
-                      - REALPAGE_RPX_CONVERGENT_BILLING
+                      - REALPAGE_RPX_APPOINTMENTS
+                      - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                       - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
-                      - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                       - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
-                      - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
-                      - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
-                      - REALPAGE_RPX_PROSPECTS_SURVEY
-                      - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                      - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
+                      - REALPAGE_RPX_CREATE_APPOINTMENT
+                      - REALPAGE_RPX_CREATE_LEAD
+                      - REALPAGE_RPX_CREATE_LEAD_EVENT
+                      - REALPAGE_RPX_CREATE_RESIDENT_ACTIVITY_LOG
+                      - REALPAGE_RPX_CREATE_RESIDENT_CHARGE
+                      - REALPAGE_RPX_CREATE_SERVICE_REQUEST
+                      - REALPAGE_RPX_UPDATE_APPOINTMENT
+                      - REALPAGE_RPX_UPDATE_APPOINTMENT_CANCEL
+                      - REALPAGE_RPX_UPDATE_LEAD
+                      - REALPAGE_RPX_UPDATE_SERVICE_REQUEST
                       - REALPAGE_RPX_FLOOR_PLANS
+                      - REALPAGE_RPX_LEADS
                       - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
                       - REALPAGE_RPX_LEAD_RELATIONSHIPS
                       - REALPAGE_RPX_LEAD_SOURCES
+                      - REALPAGE_RPX_LISTINGS
                       - REALPAGE_RPX_LEASING_AGENTS
+                      - REALPAGE_RPX_PROSPECTS_SURVEY
+                      - REALPAGE_RPX_READ_PROPERTIES
+                      - REALPAGE_RPX_READ_PROPERTY_DATA
+                      - REALPAGE_RPX_RESIDENTS
+                      - REALPAGE_RPX_RESIDENT_ACTIVITY_LOGS
                       - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                      - REALPAGE_RPX_RESIDENT_LEDGER
+                      - REALPAGE_RPX_RESIDENT_TRANSACTION_CODES
+                      - REALPAGE_RPX_SERVICE_REQUESTS
                       - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
                       - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
                       - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
-                      - REALPAGE_RPX_APPOINTMENTS
+                      - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                      - REALPAGE_RPX_UNITS
+                      - REALPAGE_RPX_UNITS_BY_PROPERTY
+                      - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                      - REALPAGE_RPX_CONVERGENT_BILLING
+                      - REALPAGE_RPX_FACILITIES
+                      - REALPAGE_RPX_PRICING_AND_AVAILABILITY
+                      - REALPAGE_RPX_PROSPECT_MANAGEMENT
+                      - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                      - REALPAGE_RPX_RESIDENT_TRANSACTIONS
+                      - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                      - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                      - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                       - ENTRATA_AMENITIES
                       - ENTRATA_AR_CODES
                       - ENTRATA_CALL_LOGS
@@ -2813,15 +2876,15 @@ components:
                       - SAMPLE2_READ_UNITS
                       - SAMPLE2_UPDATE_LEAD
                       - BUILDIUM_BASE
-                      - ENTRATA_BASE
                       - PROPERTYWARE_BASE
                       - RENTMANAGER_BASE
                       - RENTVINE_BASE
                       - MRI_BASE
-                      - SAMPLE2_BASE
                       - KNOCK_BASE
                       - SAMPLE3_BASE
                       - FUNNEL_BASE
+                      - SAMPLE2_BASE
+                      - ENTRATA_BASE
                   enabled:
                     type: boolean
                   version:
@@ -2872,32 +2935,53 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
-                        - REALPAGE_RPX_READ_PROPERTIES
-                        - REALPAGE_RPX_UNITS
-                        - REALPAGE_RPX_RESIDENT_MANAGEMENT
-                        - REALPAGE_RPX_RESIDENT_TRANSACTIONS
-                        - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
-                        - REALPAGE_RPX_PROSPECT_MANAGEMENT
-                        - REALPAGE_RPX_PRICING_AND_AVAILABILITY
-                        - REALPAGE_RPX_FACILITIES
-                        - REALPAGE_RPX_CONVERGENT_BILLING
+                        - REALPAGE_RPX_APPOINTMENTS
+                        - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
-                        - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
                         - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
-                        - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
-                        - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
-                        - REALPAGE_RPX_PROSPECTS_SURVEY
-                        - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                        - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
+                        - REALPAGE_RPX_CREATE_APPOINTMENT
+                        - REALPAGE_RPX_CREATE_LEAD
+                        - REALPAGE_RPX_CREATE_LEAD_EVENT
+                        - REALPAGE_RPX_CREATE_RESIDENT_ACTIVITY_LOG
+                        - REALPAGE_RPX_CREATE_RESIDENT_CHARGE
+                        - REALPAGE_RPX_CREATE_SERVICE_REQUEST
+                        - REALPAGE_RPX_UPDATE_APPOINTMENT
+                        - REALPAGE_RPX_UPDATE_APPOINTMENT_CANCEL
+                        - REALPAGE_RPX_UPDATE_LEAD
+                        - REALPAGE_RPX_UPDATE_SERVICE_REQUEST
                         - REALPAGE_RPX_FLOOR_PLANS
+                        - REALPAGE_RPX_LEADS
                         - REALPAGE_RPX_LEAD_ACTIVITY_TYPES
                         - REALPAGE_RPX_LEAD_RELATIONSHIPS
                         - REALPAGE_RPX_LEAD_SOURCES
+                        - REALPAGE_RPX_LISTINGS
                         - REALPAGE_RPX_LEASING_AGENTS
+                        - REALPAGE_RPX_PROSPECTS_SURVEY
+                        - REALPAGE_RPX_READ_PROPERTIES
+                        - REALPAGE_RPX_READ_PROPERTY_DATA
+                        - REALPAGE_RPX_RESIDENTS
+                        - REALPAGE_RPX_RESIDENT_ACTIVITY_LOGS
                         - REALPAGE_RPX_RESIDENT_ACTIVITY_TYPES
+                        - REALPAGE_RPX_RESIDENT_LEDGER
+                        - REALPAGE_RPX_RESIDENT_TRANSACTION_CODES
+                        - REALPAGE_RPX_SERVICE_REQUESTS
                         - REALPAGE_RPX_SERVICE_REQUEST_ISSUES
                         - REALPAGE_RPX_SERVICE_REQUEST_LOCATIONS
                         - REALPAGE_RPX_SERVICE_REQUEST_PRIORITIES
-                        - REALPAGE_RPX_APPOINTMENTS
+                        - REALPAGE_RPX_SERVICE_REQUESTS_SURVEY
+                        - REALPAGE_RPX_UNITS
+                        - REALPAGE_RPX_UNITS_BY_PROPERTY
+                        - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                        - REALPAGE_RPX_CONVERGENT_BILLING
+                        - REALPAGE_RPX_FACILITIES
+                        - REALPAGE_RPX_PRICING_AND_AVAILABILITY
+                        - REALPAGE_RPX_PROSPECT_MANAGEMENT
+                        - REALPAGE_RPX_RESIDENT_MANAGEMENT
+                        - REALPAGE_RPX_RESIDENT_TRANSACTIONS
+                        - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENT_LEDGER
+                        - REALPAGE_RPX_CONVERGENT_BILLING_TRANSACTION_CODES
+                        - REALPAGE_RPX_RESIDENT_MANAGEMENT_EVENTS
                         - ENTRATA_AMENITIES
                         - ENTRATA_AR_CODES
                         - ENTRATA_CALL_LOGS
@@ -3012,15 +3096,15 @@ components:
                         - SAMPLE2_READ_UNITS
                         - SAMPLE2_UPDATE_LEAD
                         - BUILDIUM_BASE
-                        - ENTRATA_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
                         - RENTVINE_BASE
                         - MRI_BASE
-                        - SAMPLE2_BASE
                         - KNOCK_BASE
                         - SAMPLE3_BASE
                         - FUNNEL_BASE
+                        - SAMPLE2_BASE
+                        - ENTRATA_BASE
                 required:
                   - enabled
                   - from_interfaces
