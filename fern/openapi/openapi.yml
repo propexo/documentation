@@ -561,12 +561,14 @@ components:
                     interface_name:
                       type: string
                       enum:
-                        - REALPAGE_FACILITIES
-                        - REALPAGE_RESIDENTS
-                        - REALPAGE_PROSPECT_MANAGEMENT
-                        - REALPAGE_SDE_CONVERGENT_BILLING
-                        - REALPAGE_UNIT
-                        - REALPAGE_PRICING_AND_AVAILABILITY
+                        - REALPAGE_CREATE_LEAD
+                        - REALPAGE_CREATE_LEAD_EVENT
+                        - REALPAGE_CREATE_RESIDENT_ACTIVITY_LOG
+                        - REALPAGE_CREATE_SERVICE_REQUEST
+                        - REALPAGE_UPDATE_APPLICANT
+                        - REALPAGE_UPDATE_LEAD
+                        - REALPAGE_UPDATE_RESIDENT
+                        - REALPAGE_UPDATE_SERVICE_REQUEST
                         - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
                         - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
                         - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
@@ -583,12 +585,12 @@ components:
                         - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                         - REALPAGE_UNIT_UNIT_DETAILS
                         - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
-                        - SAMPLE1_GUESTCARD
-                        - SAMPLE1_RESIDENT_TRANSACTIONS
-                        - SAMPLE1_RESIDENT_DATA
-                        - SAMPLE1_SERVICES
-                        - SAMPLE1_JOB_COST
-                        - SAMPLE1_VENDOR_INVOICING
+                        - REALPAGE_SDE_CONVERGENT_BILLING
+                        - REALPAGE_FACILITIES
+                        - REALPAGE_PRICING_AND_AVAILABILITY
+                        - REALPAGE_PROSPECT_MANAGEMENT
+                        - REALPAGE_RESIDENTS
+                        - REALPAGE_UNIT
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
@@ -684,6 +686,7 @@ components:
                         - ENTRATA_VENDORS
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
+                        - ENTRATA_BASE
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -749,6 +752,13 @@ components:
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_UNITS
                         - SAMPLE2_UPDATE_LEAD
+                        - SAMPLE2_BASE
+                        - SAMPLE1_GUESTCARD
+                        - SAMPLE1_RESIDENT_TRANSACTIONS
+                        - SAMPLE1_RESIDENT_DATA
+                        - SAMPLE1_SERVICES
+                        - SAMPLE1_JOB_COST
+                        - SAMPLE1_VENDOR_INVOICING
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
@@ -757,8 +767,6 @@ components:
                         - KNOCK_BASE
                         - SAMPLE3_BASE
                         - FUNNEL_BASE
-                        - SAMPLE2_BASE
-                        - ENTRATA_BASE
                     enabled:
                       type: boolean
                     version:
@@ -781,12 +789,14 @@ components:
                       items:
                         type: string
                         enum:
-                          - REALPAGE_FACILITIES
-                          - REALPAGE_RESIDENTS
-                          - REALPAGE_PROSPECT_MANAGEMENT
-                          - REALPAGE_SDE_CONVERGENT_BILLING
-                          - REALPAGE_UNIT
-                          - REALPAGE_PRICING_AND_AVAILABILITY
+                          - REALPAGE_CREATE_LEAD
+                          - REALPAGE_CREATE_LEAD_EVENT
+                          - REALPAGE_CREATE_RESIDENT_ACTIVITY_LOG
+                          - REALPAGE_CREATE_SERVICE_REQUEST
+                          - REALPAGE_UPDATE_APPLICANT
+                          - REALPAGE_UPDATE_LEAD
+                          - REALPAGE_UPDATE_RESIDENT
+                          - REALPAGE_UPDATE_SERVICE_REQUEST
                           - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
                           - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
                           - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
@@ -803,12 +813,12 @@ components:
                           - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                           - REALPAGE_UNIT_UNIT_DETAILS
                           - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
-                          - SAMPLE1_GUESTCARD
-                          - SAMPLE1_RESIDENT_TRANSACTIONS
-                          - SAMPLE1_RESIDENT_DATA
-                          - SAMPLE1_SERVICES
-                          - SAMPLE1_JOB_COST
-                          - SAMPLE1_VENDOR_INVOICING
+                          - REALPAGE_SDE_CONVERGENT_BILLING
+                          - REALPAGE_FACILITIES
+                          - REALPAGE_PRICING_AND_AVAILABILITY
+                          - REALPAGE_PROSPECT_MANAGEMENT
+                          - REALPAGE_RESIDENTS
+                          - REALPAGE_UNIT
                           - REALPAGE_RPX_APPOINTMENTS
                           - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                           - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
@@ -904,6 +914,7 @@ components:
                           - ENTRATA_VENDORS
                           - ENTRATA_WORK_ORDER_PICK_LIST
                           - ENTRATA_WORK_ORDERS
+                          - ENTRATA_BASE
                           - PROPERTYWARE_REST_CREATE_DOCUMENT
                           - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                           - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -969,6 +980,13 @@ components:
                           - SAMPLE2_READ_SERVICE_REQUESTS
                           - SAMPLE2_READ_UNITS
                           - SAMPLE2_UPDATE_LEAD
+                          - SAMPLE2_BASE
+                          - SAMPLE1_GUESTCARD
+                          - SAMPLE1_RESIDENT_TRANSACTIONS
+                          - SAMPLE1_RESIDENT_DATA
+                          - SAMPLE1_SERVICES
+                          - SAMPLE1_JOB_COST
+                          - SAMPLE1_VENDOR_INVOICING
                           - BUILDIUM_BASE
                           - PROPERTYWARE_BASE
                           - RENTMANAGER_BASE
@@ -977,8 +995,6 @@ components:
                           - KNOCK_BASE
                           - SAMPLE3_BASE
                           - FUNNEL_BASE
-                          - SAMPLE2_BASE
-                          - ENTRATA_BASE
                   required:
                     - enabled
                     - from_interfaces
@@ -2687,12 +2703,14 @@ components:
                   interface_name:
                     type: string
                     enum:
-                      - REALPAGE_FACILITIES
-                      - REALPAGE_RESIDENTS
-                      - REALPAGE_PROSPECT_MANAGEMENT
-                      - REALPAGE_SDE_CONVERGENT_BILLING
-                      - REALPAGE_UNIT
-                      - REALPAGE_PRICING_AND_AVAILABILITY
+                      - REALPAGE_CREATE_LEAD
+                      - REALPAGE_CREATE_LEAD_EVENT
+                      - REALPAGE_CREATE_RESIDENT_ACTIVITY_LOG
+                      - REALPAGE_CREATE_SERVICE_REQUEST
+                      - REALPAGE_UPDATE_APPLICANT
+                      - REALPAGE_UPDATE_LEAD
+                      - REALPAGE_UPDATE_RESIDENT
+                      - REALPAGE_UPDATE_SERVICE_REQUEST
                       - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
                       - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
                       - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
@@ -2709,12 +2727,12 @@ components:
                       - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                       - REALPAGE_UNIT_UNIT_DETAILS
                       - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
-                      - SAMPLE1_GUESTCARD
-                      - SAMPLE1_RESIDENT_TRANSACTIONS
-                      - SAMPLE1_RESIDENT_DATA
-                      - SAMPLE1_SERVICES
-                      - SAMPLE1_JOB_COST
-                      - SAMPLE1_VENDOR_INVOICING
+                      - REALPAGE_SDE_CONVERGENT_BILLING
+                      - REALPAGE_FACILITIES
+                      - REALPAGE_PRICING_AND_AVAILABILITY
+                      - REALPAGE_PROSPECT_MANAGEMENT
+                      - REALPAGE_RESIDENTS
+                      - REALPAGE_UNIT
                       - REALPAGE_RPX_APPOINTMENTS
                       - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                       - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
@@ -2810,6 +2828,7 @@ components:
                       - ENTRATA_VENDORS
                       - ENTRATA_WORK_ORDER_PICK_LIST
                       - ENTRATA_WORK_ORDERS
+                      - ENTRATA_BASE
                       - PROPERTYWARE_REST_CREATE_DOCUMENT
                       - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                       - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -2875,6 +2894,13 @@ components:
                       - SAMPLE2_READ_SERVICE_REQUESTS
                       - SAMPLE2_READ_UNITS
                       - SAMPLE2_UPDATE_LEAD
+                      - SAMPLE2_BASE
+                      - SAMPLE1_GUESTCARD
+                      - SAMPLE1_RESIDENT_TRANSACTIONS
+                      - SAMPLE1_RESIDENT_DATA
+                      - SAMPLE1_SERVICES
+                      - SAMPLE1_JOB_COST
+                      - SAMPLE1_VENDOR_INVOICING
                       - BUILDIUM_BASE
                       - PROPERTYWARE_BASE
                       - RENTMANAGER_BASE
@@ -2883,8 +2909,6 @@ components:
                       - KNOCK_BASE
                       - SAMPLE3_BASE
                       - FUNNEL_BASE
-                      - SAMPLE2_BASE
-                      - ENTRATA_BASE
                   enabled:
                     type: boolean
                   version:
@@ -2907,12 +2931,14 @@ components:
                     items:
                       type: string
                       enum:
-                        - REALPAGE_FACILITIES
-                        - REALPAGE_RESIDENTS
-                        - REALPAGE_PROSPECT_MANAGEMENT
-                        - REALPAGE_SDE_CONVERGENT_BILLING
-                        - REALPAGE_UNIT
-                        - REALPAGE_PRICING_AND_AVAILABILITY
+                        - REALPAGE_CREATE_LEAD
+                        - REALPAGE_CREATE_LEAD_EVENT
+                        - REALPAGE_CREATE_RESIDENT_ACTIVITY_LOG
+                        - REALPAGE_CREATE_SERVICE_REQUEST
+                        - REALPAGE_UPDATE_APPLICANT
+                        - REALPAGE_UPDATE_LEAD
+                        - REALPAGE_UPDATE_RESIDENT
+                        - REALPAGE_UPDATE_SERVICE_REQUEST
                         - REALPAGE_PROSPECT_MANAGEMENT_ALL_LEADS
                         - REALPAGE_RESIDENTS_APPLICANT_GENERAL_INFO
                         - REALPAGE_PRICING_AND_AVAILABILITY_FLOOR_PLANS
@@ -2929,12 +2955,12 @@ components:
                         - REALPAGE_PROSPECT_MANAGEMENT_UNITS
                         - REALPAGE_UNIT_UNIT_DETAILS
                         - REALPAGE_PRICING_AND_AVAILABILITY_RENT_MATRIX
-                        - SAMPLE1_GUESTCARD
-                        - SAMPLE1_RESIDENT_TRANSACTIONS
-                        - SAMPLE1_RESIDENT_DATA
-                        - SAMPLE1_SERVICES
-                        - SAMPLE1_JOB_COST
-                        - SAMPLE1_VENDOR_INVOICING
+                        - REALPAGE_SDE_CONVERGENT_BILLING
+                        - REALPAGE_FACILITIES
+                        - REALPAGE_PRICING_AND_AVAILABILITY
+                        - REALPAGE_PROSPECT_MANAGEMENT
+                        - REALPAGE_RESIDENTS
+                        - REALPAGE_UNIT
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
@@ -3030,6 +3056,7 @@ components:
                         - ENTRATA_VENDORS
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
+                        - ENTRATA_BASE
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -3095,6 +3122,13 @@ components:
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_UNITS
                         - SAMPLE2_UPDATE_LEAD
+                        - SAMPLE2_BASE
+                        - SAMPLE1_GUESTCARD
+                        - SAMPLE1_RESIDENT_TRANSACTIONS
+                        - SAMPLE1_RESIDENT_DATA
+                        - SAMPLE1_SERVICES
+                        - SAMPLE1_JOB_COST
+                        - SAMPLE1_VENDOR_INVOICING
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
@@ -3103,8 +3137,6 @@ components:
                         - KNOCK_BASE
                         - SAMPLE3_BASE
                         - FUNNEL_BASE
-                        - SAMPLE2_BASE
-                        - ENTRATA_BASE
                 required:
                   - enabled
                   - from_interfaces
