@@ -4391,6 +4391,22 @@ components:
             - success
       required:
         - result
+    _v1_admin_integrations_{integration_id}_data-access_post_input:
+      type: object
+      properties: {}
+    _v1_admin_integrations_{integration_id}_data-access_post_output:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            began_data_access:
+              type: boolean
+              description: Whether or not the data access check was successfully started.
+          required:
+            - began_data_access
+      required:
+        - result
     _v1_admin_integrations_{integration_id}_properties_get_input:
       type: object
       properties:
@@ -34911,6 +34927,46 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_manual-sync\
+                  _post_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/admin/integrations/{integration_id}/data-access:
+    post:
+      description: Trigger a data access check on an integration. This will reassess
+        access to various data models. Using this can result in different
+        detected access and can affect the data that is pulled in each sync and
+        pushed during write operations. Only one data access check can be
+        running at a time.
+      summary: Trigger a data access check on an integration.
+      tags:
+        - admin
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: true
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_data-access\
+                _post_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_admin_integrations_{integration_id}_data-access\
                   _post_output"
         "400":
           description: Bad Request
