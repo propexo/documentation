@@ -2315,79 +2315,6 @@ components:
       required:
         - meta
         - results
-    _v1_admin_users__post_input:
-      type: object
-      properties:
-        first_name:
-          type: string
-          description: The first name of the user
-        last_name:
-          type: string
-          description: The last name of the user
-        email:
-          type: string
-          format: email
-          description: The email of the user
-        phone:
-          type: string
-          description: The phone number of the user
-        roles:
-          type: array
-          items:
-            type: string
-            enum:
-              - ADMIN
-              - DEVELOPER
-              - SUPPORT
-          description: The roles the user has assigned to them
-      required:
-        - first_name
-        - last_name
-        - email
-        - roles
-    _v1_admin_users__post_output:
-      type: object
-      properties:
-        result:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique identifier for the users
-            created_at:
-              type: string
-              description: The date the users was created
-            updated_at:
-              type: string
-              description: The date the user was last updated
-            first_name:
-              type: string
-              description: The first name of the user
-            last_name:
-              type: string
-              description: The last name of the user
-            email:
-              type: string
-              format: email
-              description: The email of the user
-            roles:
-              type: array
-              items:
-                type: string
-                enum:
-                  - ADMIN
-                  - DEVELOPER
-                  - SUPPORT
-          required:
-            - id
-            - created_at
-            - updated_at
-            - first_name
-            - last_name
-            - email
-            - roles
-      required:
-        - result
     _v1_admin_users_{id}_get_input:
       type: object
       properties:
@@ -2461,73 +2388,6 @@ components:
       required:
         - meta
         - results
-    _v1_admin_users_{id}_put_input:
-      type: object
-      properties:
-        first_name:
-          type: string
-          description: The first name of the user
-        last_name:
-          type: string
-          description: The last name of the user
-        roles:
-          type: array
-          items:
-            type: string
-            enum:
-              - ADMIN
-              - DEVELOPER
-              - SUPPORT
-          description: The roles the user has assigned to them
-    _v1_admin_users_{id}_put_output:
-      type: object
-      properties:
-        result:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique identifier for the user
-            created_at:
-              type: string
-              description: The date the users was created
-            updated_at:
-              type: string
-              description: The date the user was last updated
-            first_name:
-              type: string
-              description: The first name of the user
-            last_name:
-              type: string
-              description: The last name of the user
-            email:
-              type: string
-              format: email
-              description: The email of the user
-            phone:
-              type:
-                - string
-                - "null"
-              description: The phone number of the user
-            roles:
-              type: array
-              items:
-                type: string
-                enum:
-                  - ADMIN
-                  - DEVELOPER
-                  - SUPPORT
-          required:
-            - id
-            - created_at
-            - updated_at
-            - first_name
-            - last_name
-            - email
-            - phone
-            - roles
-      required:
-        - result
     _v1_admin_write-status_{root_job_id}_get_input:
       type: object
       properties: {}
@@ -34571,31 +34431,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/errorResponse"
-    post:
-      description: Create a user
-      summary: Create a user
-      tags:
-        - admin
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/_v1_admin_users__post_input"
-      responses:
-        "200":
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/_v1_admin_users__post_output"
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/errorResponse"
   /v1/admin/users/{id}:
     get:
       description: Get user by id
@@ -34656,39 +34491,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_admin_users_{id}_get_output"
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/errorResponse"
-    put:
-      description: Update a user
-      summary: Update a user
-      tags:
-        - admin
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The unique identifier for the user
-          required: true
-          description: The unique identifier for the user
-          name: id
-          in: path
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/_v1_admin_users_{id}_put_input"
-      responses:
-        "200":
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/_v1_admin_users_{id}_put_output"
         "400":
           description: Bad Request
           content:
