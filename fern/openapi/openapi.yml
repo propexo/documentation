@@ -4943,6 +4943,11 @@ components:
                   example: https://loremflickr.com/640/480/apartment
                   x-propexo:
                     derivedFromField: image_urls_array
+              is_unit_amenity:
+                type:
+                  - boolean
+                  - "null"
+                description: Whether the amenity is a unit amenity
               meta_data:
                 type:
                   - object
@@ -5137,6 +5142,7 @@ components:
               - custom_data
               - description
               - image_urls
+              - is_unit_amenity
               - meta_data
               - name_normalized
               - name
@@ -5299,6 +5305,11 @@ components:
                 example: https://loremflickr.com/640/480/apartment
                 x-propexo:
                   derivedFromField: image_urls_array
+            is_unit_amenity:
+              type:
+                - boolean
+                - "null"
+              description: Whether the amenity is a unit amenity
             meta_data:
               type:
                 - object
@@ -5493,6 +5504,7 @@ components:
             - custom_data
             - description
             - image_urls
+            - is_unit_amenity
             - meta_data
             - name_normalized
             - name
