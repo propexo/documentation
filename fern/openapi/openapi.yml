@@ -22310,6 +22310,11 @@ components:
             - string
             - "null"
           description: The country associated with the listing
+        custom_data:
+          type:
+            - object
+            - "null"
+          properties: {}
         deposit_amount_in_cents:
           type:
             - number
@@ -22512,6 +22517,7 @@ components:
         - building_number
         - city
         - country
+        - custom_data
         - deposit_amount_in_cents
         - floor_plan_code
         - floor_plan_name
