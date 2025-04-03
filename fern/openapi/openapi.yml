@@ -33460,27 +33460,97 @@ components:
           type: string
           enum:
             - amenities
+            - ap_codes
+            - ap_codes_to_construction_job
+            - applicant_pets
             - applicants
+            - applicants_to_applications
+            - applicants_to_events
+            - application_statuses
             - applications
+            - call_logs
+            - charge_codes
+            - concessions
+            - construction_job_details
             - construction_jobs
+            - contract_details
+            - contracts
+            - crm_agents
+            - crm_attributions
+            - crm_communities
+            - crm_communities_to_agents
+            - crm_communities_to_attributions
+            - crm_events
+            - crm_listings
             - employees
+            - entrata_lease_periods
+            - entrata_unit_types
+            - entrata_vendor_locations
+            - event_types
             - events
+            - file_types
+            - financial_accounts
+            - floor_plans
+            - integration_configuration_meta_data
+            - invoice_items
             - invoices
+            - lead_pets
+            - lead_relationships
+            - lead_sources
             - leads
+            - leads_to_events
+            - lease_services
+            - lease_transfers
             - leases
             - listings
             - locations
+            - note_categories
             - owners
+            - owners_to_properties
+            - payable_register_items
+            - payable_registers
             - properties
+            - property_lists
+            - property_lists_to_properties
+            - purchase_order_items
+            - purchase_order_items_to_invoices
+            - purchase_orders
+            - recurring_resident_charges
+            - rentable_items
+            - rentvine_application_templates
+            - resident_allocations
             - resident_charges
             - resident_payments
+            - resident_pets
+            - resident_vehicles
             - residents
+            - residents_to_events
+            - residents_to_leases
             - screenings
+            - service_request_access_contacts
+            - service_request_categories
+            - service_request_locations
+            - service_request_notes
+            - service_request_priorities
+            - service_request_problems
+            - service_request_statuses
+            - service_request_vendor_categories
+            - service_request_vendor_contacts
             - service_request_vendors
+            - service_request_vendors_insurance
+            - service_request_vendors_to_properties
             - service_requests
+            - service_requests_to_employees
+            - service_requests_to_vendors
             - timezones
             - transactions
+            - unit_details
+            - unit_pricing
             - units
+            - units_to_amenity
+            - vendor_insurance_coverage_types
+            - vendor_insurance_policy_types
+            - vendor_payment_types
           description: The model for the webhook trigger to monitor. Only applies to
             DATA_UPDATE and DATA_NEW triggers
       required:
@@ -33796,27 +33866,97 @@ components:
           type: string
           enum:
             - amenities
+            - ap_codes
+            - ap_codes_to_construction_job
+            - applicant_pets
             - applicants
+            - applicants_to_applications
+            - applicants_to_events
+            - application_statuses
             - applications
+            - call_logs
+            - charge_codes
+            - concessions
+            - construction_job_details
             - construction_jobs
+            - contract_details
+            - contracts
+            - crm_agents
+            - crm_attributions
+            - crm_communities
+            - crm_communities_to_agents
+            - crm_communities_to_attributions
+            - crm_events
+            - crm_listings
             - employees
+            - entrata_lease_periods
+            - entrata_unit_types
+            - entrata_vendor_locations
+            - event_types
             - events
+            - file_types
+            - financial_accounts
+            - floor_plans
+            - integration_configuration_meta_data
+            - invoice_items
             - invoices
+            - lead_pets
+            - lead_relationships
+            - lead_sources
             - leads
+            - leads_to_events
+            - lease_services
+            - lease_transfers
             - leases
             - listings
             - locations
+            - note_categories
             - owners
+            - owners_to_properties
+            - payable_register_items
+            - payable_registers
             - properties
+            - property_lists
+            - property_lists_to_properties
+            - purchase_order_items
+            - purchase_order_items_to_invoices
+            - purchase_orders
+            - recurring_resident_charges
+            - rentable_items
+            - rentvine_application_templates
+            - resident_allocations
             - resident_charges
             - resident_payments
+            - resident_pets
+            - resident_vehicles
             - residents
+            - residents_to_events
+            - residents_to_leases
             - screenings
+            - service_request_access_contacts
+            - service_request_categories
+            - service_request_locations
+            - service_request_notes
+            - service_request_priorities
+            - service_request_problems
+            - service_request_statuses
+            - service_request_vendor_categories
+            - service_request_vendor_contacts
             - service_request_vendors
+            - service_request_vendors_insurance
+            - service_request_vendors_to_properties
             - service_requests
+            - service_requests_to_employees
+            - service_requests_to_vendors
             - timezones
             - transactions
+            - unit_details
+            - unit_pricing
             - units
+            - units_to_amenity
+            - vendor_insurance_coverage_types
+            - vendor_insurance_policy_types
+            - vendor_payment_types
           description: The model for the webhook trigger to monitor. Only applies to
             DATA_UPDATE and DATA_NEW triggers
       required:
