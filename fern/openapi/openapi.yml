@@ -5115,9 +5115,15 @@ components:
                       type: string
                       description: The Propexo unique identifier for the unit
                       example: cm2j4jbzf0002eiozdudz9bda
+                    cost_in_cents:
+                      type:
+                        - number
+                        - "null"
+                      description: Cost in cents for the amenity on a particular unit
                   required:
                     - amenity_id
                     - unit_id
+                    - cost_in_cents
                   x-propexo:
                     derivedFromModel: units_to_amenity
               integration_id:
@@ -5477,9 +5483,15 @@ components:
                     type: string
                     description: The Propexo unique identifier for the unit
                     example: cm2j4jbzf0002eiozdudz9bda
+                  cost_in_cents:
+                    type:
+                      - number
+                      - "null"
+                    description: Cost in cents for the amenity on a particular unit
                 required:
                   - amenity_id
                   - unit_id
+                  - cost_in_cents
                 x-propexo:
                   derivedFromModel: units_to_amenity
             integration_id:
