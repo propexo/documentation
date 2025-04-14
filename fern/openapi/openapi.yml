@@ -6048,6 +6048,16 @@ components:
             - string
             - "null"
           description: The state associated with the applicant
+        type_normalized:
+          type:
+            - string
+            - "null"
+          description: The normalized type associated with the applicant
+        type_raw:
+          type:
+            - string
+            - "null"
+          description: The raw type associated with the applicant
         zip_alternate:
           type:
             - string
@@ -6252,6 +6262,8 @@ components:
         - phone_2
         - state_alternate
         - state
+        - type_normalized
+        - type_raw
         - zip_alternate
         - zip
         - pets
