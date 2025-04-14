@@ -23773,6 +23773,16 @@ components:
                   - string
                   - "null"
                 description: The zip code associated with the property
+              long_description:
+                type:
+                  - string
+                  - "null"
+                description: A long description of the property
+              short_description:
+                type:
+                  - string
+                  - "null"
+                description: A short description of the property
               associated_owner_ids:
                 type: array
                 items:
@@ -23820,6 +23830,8 @@ components:
               - website
               - year_built
               - zip
+              - long_description
+              - short_description
               - associated_owner_ids
               - integration_id
               - integration_vendor
@@ -24154,6 +24166,16 @@ components:
                 - string
                 - "null"
               description: The zip code associated with the property
+            long_description:
+              type:
+                - string
+                - "null"
+              description: A long description of the property
+            short_description:
+              type:
+                - string
+                - "null"
+              description: A short description of the property
             associated_owner_ids:
               type: array
               items:
@@ -24201,6 +24223,8 @@ components:
             - website
             - year_built
             - zip
+            - long_description
+            - short_description
             - associated_owner_ids
             - integration_id
             - integration_vendor
