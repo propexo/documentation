@@ -716,6 +716,7 @@ components:
                         - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                         - RESMAN_BASE
                         - RESMAN_CREATE_APPLICANT
+                        - RESMAN_CREATE_FILE_UPLOAD
                         - RESMAN_CREATE_INVOICE
                         - RESMAN_CREATE_LEAD
                         - RESMAN_CREATE_RESIDENT_CHARGE
@@ -944,6 +945,7 @@ components:
                           - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                           - RESMAN_BASE
                           - RESMAN_CREATE_APPLICANT
+                          - RESMAN_CREATE_FILE_UPLOAD
                           - RESMAN_CREATE_INVOICE
                           - RESMAN_CREATE_LEAD
                           - RESMAN_CREATE_RESIDENT_CHARGE
@@ -2718,6 +2720,7 @@ components:
                       - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                       - RESMAN_BASE
                       - RESMAN_CREATE_APPLICANT
+                      - RESMAN_CREATE_FILE_UPLOAD
                       - RESMAN_CREATE_INVOICE
                       - RESMAN_CREATE_LEAD
                       - RESMAN_CREATE_RESIDENT_CHARGE
@@ -2946,6 +2949,7 @@ components:
                         - PROPERTYWARE_REST_UPDATE_UNIT_CUSTOM_FIELDS
                         - RESMAN_BASE
                         - RESMAN_CREATE_APPLICANT
+                        - RESMAN_CREATE_FILE_UPLOAD
                         - RESMAN_CREATE_INVOICE
                         - RESMAN_CREATE_LEAD
                         - RESMAN_CREATE_RESIDENT_CHARGE
