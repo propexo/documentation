@@ -30716,6 +30716,10 @@ components:
                   - number
                   - "null"
                 description: The maximum rent of the floor plan
+              image_urls:
+                type: array
+                items:
+                  type: string
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -30745,6 +30749,7 @@ components:
               - gross_square_feet
               - rent_minimum_in_cents
               - rent_maximum_in_cents
+              - image_urls
               - integration_id
               - integration_vendor
               - property_id
@@ -30880,6 +30885,10 @@ components:
                 - number
                 - "null"
               description: The maximum rent of the floor plan
+            image_urls:
+              type: array
+              items:
+                type: string
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -30909,6 +30918,7 @@ components:
             - gross_square_feet
             - rent_minimum_in_cents
             - rent_maximum_in_cents
+            - image_urls
             - integration_id
             - integration_vendor
             - property_id
