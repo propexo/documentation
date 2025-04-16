@@ -13667,7 +13667,7 @@ components:
                 type:
                   - integer
                   - "null"
-                exclusiveMinimum: 0
+                minimum: 0
                 description: The due date associated with the recurring resident charge
               custom_data:
                 type:
@@ -13930,7 +13930,7 @@ components:
               type:
                 - integer
                 - "null"
-              exclusiveMinimum: 0
+              minimum: 0
               description: The due date associated with the recurring resident charge
             custom_data:
               type:
@@ -30669,7 +30669,7 @@ components:
                 type:
                   - integer
                   - "null"
-                exclusiveMinimum: 0
+                minimum: 0
                 description: The number of bedrooms associated with the floor plan
               bathrooms:
                 type:
@@ -30680,31 +30680,31 @@ components:
                 type:
                   - integer
                   - "null"
-                exclusiveMinimum: 0
+                minimum: 0
                 description: The number of full bathrooms associated with the floor plan
               bathrooms_half:
                 type:
                   - integer
                   - "null"
-                exclusiveMinimum: 0
+                minimum: 0
                 description: The number of half bathrooms associated with the floor plan
               max_occupants:
                 type:
                   - integer
                   - "null"
-                exclusiveMinimum: 0
+                minimum: 0
                 description: The maximum number of occupants for the floor plan
               rentable_square_feet:
                 type:
                   - integer
                   - "null"
-                exclusiveMinimum: 0
+                minimum: 0
                 description: The rentable square footage of the floor plan
               gross_square_feet:
                 type:
                   - integer
                   - "null"
-                exclusiveMinimum: 0
+                minimum: 0
                 description: The gross square footage of the floor plan
               rent_minimum_in_cents:
                 type:
@@ -30838,7 +30838,7 @@ components:
               type:
                 - integer
                 - "null"
-              exclusiveMinimum: 0
+              minimum: 0
               description: The number of bedrooms associated with the floor plan
             bathrooms:
               type:
@@ -30849,31 +30849,31 @@ components:
               type:
                 - integer
                 - "null"
-              exclusiveMinimum: 0
+              minimum: 0
               description: The number of full bathrooms associated with the floor plan
             bathrooms_half:
               type:
                 - integer
                 - "null"
-              exclusiveMinimum: 0
+              minimum: 0
               description: The number of half bathrooms associated with the floor plan
             max_occupants:
               type:
                 - integer
                 - "null"
-              exclusiveMinimum: 0
+              minimum: 0
               description: The maximum number of occupants for the floor plan
             rentable_square_feet:
               type:
                 - integer
                 - "null"
-              exclusiveMinimum: 0
+              minimum: 0
               description: The rentable square footage of the floor plan
             gross_square_feet:
               type:
                 - integer
                 - "null"
-              exclusiveMinimum: 0
+              minimum: 0
               description: The gross square footage of the floor plan
             rent_minimum_in_cents:
               type:
