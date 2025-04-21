@@ -743,6 +743,7 @@ components:
                         - RESMAN_UPDATE_APPLICANT
                         - RESMAN_UPDATE_LEAD
                         - RESMAN_UPDATE_SERVICE_REQUEST
+                        - SAMPLE2_CREATE_APPOINTMENT
                         - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
@@ -753,6 +754,7 @@ components:
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_UNITS
                         - SAMPLE2_UPDATE_LEAD
+                        - SAMPLE2_UPDATE_APPOINTMENT
                         - SAMPLE2_BASE
                         - SAMPLE1_GUESTCARD
                         - SAMPLE1_RESIDENT_TRANSACTIONS
@@ -972,6 +974,7 @@ components:
                           - RESMAN_UPDATE_APPLICANT
                           - RESMAN_UPDATE_LEAD
                           - RESMAN_UPDATE_SERVICE_REQUEST
+                          - SAMPLE2_CREATE_APPOINTMENT
                           - SAMPLE2_CREATE_LEAD
                           - SAMPLE2_READ_APPOINTMENTS
                           - SAMPLE2_READ_EMPLOYEES
@@ -982,6 +985,7 @@ components:
                           - SAMPLE2_READ_SERVICE_REQUESTS
                           - SAMPLE2_READ_UNITS
                           - SAMPLE2_UPDATE_LEAD
+                          - SAMPLE2_UPDATE_APPOINTMENT
                           - SAMPLE2_BASE
                           - SAMPLE1_GUESTCARD
                           - SAMPLE1_RESIDENT_TRANSACTIONS
@@ -2747,6 +2751,7 @@ components:
                       - RESMAN_UPDATE_APPLICANT
                       - RESMAN_UPDATE_LEAD
                       - RESMAN_UPDATE_SERVICE_REQUEST
+                      - SAMPLE2_CREATE_APPOINTMENT
                       - SAMPLE2_CREATE_LEAD
                       - SAMPLE2_READ_APPOINTMENTS
                       - SAMPLE2_READ_EMPLOYEES
@@ -2757,6 +2762,7 @@ components:
                       - SAMPLE2_READ_SERVICE_REQUESTS
                       - SAMPLE2_READ_UNITS
                       - SAMPLE2_UPDATE_LEAD
+                      - SAMPLE2_UPDATE_APPOINTMENT
                       - SAMPLE2_BASE
                       - SAMPLE1_GUESTCARD
                       - SAMPLE1_RESIDENT_TRANSACTIONS
@@ -2976,6 +2982,7 @@ components:
                         - RESMAN_UPDATE_APPLICANT
                         - RESMAN_UPDATE_LEAD
                         - RESMAN_UPDATE_SERVICE_REQUEST
+                        - SAMPLE2_CREATE_APPOINTMENT
                         - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
@@ -2986,6 +2993,7 @@ components:
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_UNITS
                         - SAMPLE2_UPDATE_LEAD
+                        - SAMPLE2_UPDATE_APPOINTMENT
                         - SAMPLE2_BASE
                         - SAMPLE1_GUESTCARD
                         - SAMPLE1_RESIDENT_TRANSACTIONS
