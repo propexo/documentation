@@ -641,6 +641,7 @@ components:
                         - ENTRATA_AMENITIES
                         - ENTRATA_AR_CODES
                         - ENTRATA_CALL_LOGS
+                        - ENTRATA_CONCESSIONS
                         - ENTRATA_CREATE_AMENITY
                         - ENTRATA_CREATE_APPLICANT
                         - ENTRATA_CREATE_EVENT
@@ -873,6 +874,7 @@ components:
                           - ENTRATA_AMENITIES
                           - ENTRATA_AR_CODES
                           - ENTRATA_CALL_LOGS
+                          - ENTRATA_CONCESSIONS
                           - ENTRATA_CREATE_AMENITY
                           - ENTRATA_CREATE_APPLICANT
                           - ENTRATA_CREATE_EVENT
@@ -2651,6 +2653,7 @@ components:
                       - ENTRATA_AMENITIES
                       - ENTRATA_AR_CODES
                       - ENTRATA_CALL_LOGS
+                      - ENTRATA_CONCESSIONS
                       - ENTRATA_CREATE_AMENITY
                       - ENTRATA_CREATE_APPLICANT
                       - ENTRATA_CREATE_EVENT
@@ -2883,6 +2886,7 @@ components:
                         - ENTRATA_AMENITIES
                         - ENTRATA_AR_CODES
                         - ENTRATA_CALL_LOGS
+                        - ENTRATA_CONCESSIONS
                         - ENTRATA_CREATE_AMENITY
                         - ENTRATA_CREATE_APPLICANT
                         - ENTRATA_CREATE_EVENT
