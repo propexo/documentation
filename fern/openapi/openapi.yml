@@ -668,6 +668,7 @@ components:
                         - ENTRATA_LEASES
                         - ENTRATA_LISTINGS
                         - ENTRATA_PROPERTIES
+                        - ENTRATA_PET_TYPES
                         - ENTRATA_PROPERTY_PICK_LIST
                         - ENTRATA_PROSPECTS
                         - ENTRATA_PURCHASE_ORDERS
@@ -899,6 +900,7 @@ components:
                           - ENTRATA_LEASES
                           - ENTRATA_LISTINGS
                           - ENTRATA_PROPERTIES
+                          - ENTRATA_PET_TYPES
                           - ENTRATA_PROPERTY_PICK_LIST
                           - ENTRATA_PROSPECTS
                           - ENTRATA_PURCHASE_ORDERS
@@ -2676,6 +2678,7 @@ components:
                       - ENTRATA_LEASES
                       - ENTRATA_LISTINGS
                       - ENTRATA_PROPERTIES
+                      - ENTRATA_PET_TYPES
                       - ENTRATA_PROPERTY_PICK_LIST
                       - ENTRATA_PROSPECTS
                       - ENTRATA_PURCHASE_ORDERS
@@ -2907,6 +2910,7 @@ components:
                         - ENTRATA_LEASES
                         - ENTRATA_LISTINGS
                         - ENTRATA_PROPERTIES
+                        - ENTRATA_PET_TYPES
                         - ENTRATA_PROPERTY_PICK_LIST
                         - ENTRATA_PROSPECTS
                         - ENTRATA_PURCHASE_ORDERS
@@ -23920,6 +23924,16 @@ components:
                   - string
                   - "null"
                 description: A short description of the property
+              pet_types:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: The name associated with the pet type
+                  required:
+                    - name
               associated_owner_ids:
                 type: array
                 items:
@@ -23969,6 +23983,7 @@ components:
               - zip
               - long_description
               - short_description
+              - pet_types
               - associated_owner_ids
               - integration_id
               - integration_vendor
@@ -24313,6 +24328,16 @@ components:
                 - string
                 - "null"
               description: A short description of the property
+            pet_types:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: The name associated with the pet type
+                required:
+                  - name
             associated_owner_ids:
               type: array
               items:
@@ -24362,6 +24387,7 @@ components:
             - zip
             - long_description
             - short_description
+            - pet_types
             - associated_owner_ids
             - integration_id
             - integration_vendor
