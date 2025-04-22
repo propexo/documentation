@@ -23924,6 +23924,32 @@ components:
                   - string
                   - "null"
                 description: A short description of the property
+              office_hours:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    day_of_week:
+                      type: string
+                      enum:
+                        - SUNDAY
+                        - MONDAY
+                        - TUESDAY
+                        - WEDNESDAY
+                        - THURSDAY
+                        - FRIDAY
+                        - SATURDAY
+                      description: The day of the week associated with the office hours
+                    open_time:
+                      type: string
+                      description: The opening time for the office
+                    close_time:
+                      type: string
+                      description: The closing time for the office
+                  required:
+                    - day_of_week
+                    - open_time
+                    - close_time
               pet_types:
                 type: array
                 items:
@@ -23983,6 +24009,7 @@ components:
               - zip
               - long_description
               - short_description
+              - office_hours
               - pet_types
               - associated_owner_ids
               - integration_id
@@ -24328,6 +24355,32 @@ components:
                 - string
                 - "null"
               description: A short description of the property
+            office_hours:
+              type: array
+              items:
+                type: object
+                properties:
+                  day_of_week:
+                    type: string
+                    enum:
+                      - SUNDAY
+                      - MONDAY
+                      - TUESDAY
+                      - WEDNESDAY
+                      - THURSDAY
+                      - FRIDAY
+                      - SATURDAY
+                    description: The day of the week associated with the office hours
+                  open_time:
+                    type: string
+                    description: The opening time for the office
+                  close_time:
+                    type: string
+                    description: The closing time for the office
+                required:
+                  - day_of_week
+                  - open_time
+                  - close_time
             pet_types:
               type: array
               items:
@@ -24387,6 +24440,7 @@ components:
             - zip
             - long_description
             - short_description
+            - office_hours
             - pet_types
             - associated_owner_ids
             - integration_id
