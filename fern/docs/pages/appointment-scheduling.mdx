@@ -3,31 +3,3 @@
 When scheduling appointments with a Property Management System, there are some important considerations to keep in mind. This guide will walk you through the process of setting up appointments, and how each PM system differs in its approach to scheduling. The primary point of consideration is around the lack of time zone/daylight savings time support in most PM systems, which can lead to confusion and scheduling errors.  Because so many systems do not store any time zone configuration for a given property, we recommend that you add configuration to your database to store each property's timezone information.  
 
 While it may be possible to automatically calculate the appropriate timezone for each property based upon the property's address information, the quality and completeness of property address information may not always be adequate to accurately calculate the appropriate timezone for a property.  Regardless of how you choose to configure the timezone settings in your system, we strongly recommend that you perform live testing with each property before going live.  This will ensure that any appointments created or modified via the API will be scheduled at the expected time for end users.
-
-
-### Entrata
-Entrata expects all times to be in Mountain Time (UTC-7:00 or UTC-6:00 depending on daylight savings).  Times will be automatically converted based on the local time of the property when an end user views the appointment time in the browser.
-
-
-### RealPage
-
-RealPage interprets the appointment date and time as being local to the timezone of the property the appointment is associated with.  Times will not be converted without you intervening.  Times will not be automatically adjusted for daylight savings.  RealPage has a configuration setting to save the default timezone for a property, but many properties leave this setting unconfigured in our experience.  Unfortunately, RealPage does not currently offer an API to query the property's timezone settings.
-
-### Rent Manager
-
-Rent Manager allows property managers to set both global and property specific timezone settings. These configurations can be pulled in via our [GET /timezones](https://docs.propexo.com/api-reference/api-reference/timezones/get-all-timezones) API endpoint which should be utilized to determine the timezone for which your appointment is set. If no timezone settings are found, Rent Manager suggests by default you send your appointment in Eastern Time (UTC-5:00 or UTC-4:00 depending on daylight savings)
-
-
-### ResMan
-
-ResMan interprets the appointment date and time as being UTC (offset of +00:00). The appointment date and time will be displayed in the timezone of the logged in user (not the property or portfolio account) in ResMan's portal.
-
-### Yardi
-
-Yardi interprets appointment date and time as being in the timezone of the property.
-Those can be read in our `/timezones` endpoint.
-
-If the property doesn't have a specific timezone configured, there will be an integration global timezone record that should be used in that case.
-The time for this record is based on the Yardi server's configured timezone.
-
-In the case that the Yardi server time is different than the current time, we provide the `server_time_error_seconds` field on the `/timezones` endpoint as well.
