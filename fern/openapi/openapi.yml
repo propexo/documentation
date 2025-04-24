@@ -5000,7 +5000,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -5969,7 +5970,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -9114,7 +9116,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo property id
@@ -9147,7 +9150,9 @@ components:
           type:
             - string
             - "null"
-          description: The external ID of the location from the integration vendor
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
         x_property_id:
           type: string
           description: The external ID of the property from the integration vendor
@@ -11345,7 +11350,9 @@ components:
           type:
             - string
             - "null"
-          description: The external ID of the location from the integration vendor
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
         name:
           type: string
           description: The name associated with the application status
@@ -11449,7 +11456,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -11492,7 +11500,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type: string
                 description: The name associated with the application template
@@ -11590,7 +11600,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type: string
               description: The name associated with the application template
@@ -11668,7 +11680,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -11730,7 +11743,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               event_name:
                 type:
                   - string
@@ -12515,7 +12530,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               debit_gl_account:
                 type:
                   - string
@@ -12627,7 +12644,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             debit_gl_account:
               type:
                 - string
@@ -12752,7 +12771,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type:
                   - string
@@ -12858,7 +12879,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type:
                 - string
@@ -12996,7 +13019,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_lease_id:
                 type:
                   - string
@@ -13377,7 +13402,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_lease_id:
               type:
                 - string
@@ -13694,7 +13721,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -13740,7 +13768,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_financial_account_id:
                 type:
                   - string
@@ -14003,7 +14033,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_financial_account_id:
               type:
                 - string
@@ -14275,7 +14307,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_lease_id:
                 type:
                   - string
@@ -14636,7 +14670,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_lease_id:
               type:
                 - string
@@ -14893,7 +14929,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -14936,7 +14973,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_lead_source_id:
                 type:
                   - string
@@ -15048,7 +15087,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_lead_source_id:
               type:
                 - string
@@ -15170,7 +15211,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_gl_account_id:
                 type:
                   - string
@@ -15330,7 +15373,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_gl_account_id:
               type:
                 - string
@@ -15624,7 +15669,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               category_description:
                 type:
                   - string
@@ -15753,7 +15800,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_construction_job_id:
                 type:
                   - string
@@ -15935,7 +15984,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_category_id:
                 type:
                   - string
@@ -16053,7 +16104,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -16096,7 +16148,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type:
                   - string
@@ -16199,7 +16253,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type:
                 - string
@@ -16282,7 +16338,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -16344,7 +16401,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               event_name:
                 type:
                   - string
@@ -16502,7 +16561,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             event_name:
               type:
                 - string
@@ -16850,7 +16911,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -16899,7 +16961,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               code:
                 type:
                   - string
@@ -16996,7 +17060,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             code:
               type:
                 - string
@@ -17070,7 +17136,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the file type
@@ -17122,7 +17189,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               code:
                 type:
                   - string
@@ -17256,7 +17325,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             code:
               type:
                 - string
@@ -17328,7 +17399,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -17864,7 +17936,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -18166,7 +18239,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         x_unit_id:
           type: string
           description: The external unit id
@@ -19206,7 +19280,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -19249,7 +19324,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type: string
                 description: The name associated with the lead relationship
@@ -19309,7 +19386,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -19352,7 +19430,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type:
                   - string
@@ -19440,7 +19520,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type:
                 - string
@@ -19510,7 +19592,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -21998,7 +22081,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -22056,7 +22140,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_resident_id:
                 type: string
                 description: The external ID of the resident from the integration vendor
@@ -22242,7 +22328,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_resident_id:
               type: string
               description: The external ID of the resident from the integration vendor
@@ -22402,7 +22490,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -22688,6 +22777,13 @@ components:
           description: The Propexo unique identifier for the integration
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
+        x_location_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
       required:
         - id
         - created_at
@@ -22745,6 +22841,7 @@ components:
         - floor_plan_id
         - integration_id
         - integration_vendor
+        - x_location_id
     _v1_listings__get_output:
       type: object
       properties:
@@ -22838,7 +22935,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         listing_id:
           type: string
           description: The Propexo unique identifier for the listing
@@ -23099,7 +23197,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -23142,7 +23241,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               is_active:
                 type:
                   - boolean
@@ -23234,7 +23335,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             is_active:
               type:
                 - boolean
@@ -23297,7 +23400,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -23340,7 +23444,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               address_1:
                 type:
                   - string
@@ -23539,7 +23645,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             address_1:
               type:
                 - string
@@ -23716,7 +23824,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         integration_id:
           type: string
           description: The Propexo integration id
@@ -24592,7 +24701,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -24635,7 +24745,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_applicant_id:
                 type:
                   - string
@@ -24801,7 +24913,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_applicant_id:
               type:
                 - string
@@ -24938,7 +25052,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         associated_property_id:
           type: string
           description: "The Propexo unique identifier for the property. Note: This will
@@ -24983,7 +25098,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type:
                   - string
@@ -25078,7 +25195,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type:
                 - string
@@ -25183,7 +25302,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_invoice_id:
                 type:
                   - string
@@ -25773,7 +25894,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_invoice_id:
               type:
                 - string
@@ -26306,7 +26429,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               description:
                 type:
                   - string
@@ -26429,7 +26554,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo property id
@@ -27927,7 +28053,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -27983,7 +28110,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_unit_id:
                 type:
                   - string
@@ -28471,7 +28600,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_unit_id:
               type:
                 - string
@@ -28901,7 +29032,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -28944,7 +29076,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               code:
                 type:
                   - string
@@ -29050,7 +29184,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             code:
               type:
                 - string
@@ -29130,7 +29266,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -29178,7 +29315,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               notes:
                 type:
                   - string
@@ -29363,7 +29502,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             notes:
               type:
                 - string
@@ -29446,7 +29587,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -29489,7 +29631,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               code:
                 type:
                   - string
@@ -29595,7 +29739,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             code:
               type:
                 - string
@@ -29678,7 +29824,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -29721,7 +29868,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               code:
                 type:
                   - string
@@ -29827,7 +29976,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             code:
               type:
                 - string
@@ -29943,7 +30094,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type: string
                 description: The name of the service request location
@@ -30043,7 +30196,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type: string
               description: The name of the service request location
@@ -30145,7 +30300,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type: string
                 description: The name of the service request problem
@@ -30245,7 +30402,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type: string
               description: The name of the service request problem
@@ -30308,7 +30467,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -30351,7 +30511,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               is_active:
                 type:
                   - boolean
@@ -30433,7 +30595,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -30476,7 +30639,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_unit_id:
                 type:
                   - string
@@ -30666,7 +30831,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_unit_id:
               type:
                 - string
@@ -30830,7 +30997,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -30873,7 +31041,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type: string
                 description: The name associated with the floor plan
@@ -31042,7 +31212,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type: string
               description: The name associated with the floor plan
@@ -31189,7 +31361,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo property id
@@ -31598,7 +31771,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -31641,7 +31815,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               x_building_id:
                 type:
                   - string
@@ -32235,7 +32411,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -32278,7 +32455,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               name:
                 type: string
                 description: The name associated with the unit type
@@ -32364,7 +32543,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             name:
               type: string
               description: The name associated with the unit type
@@ -32450,7 +32631,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             x_building_id:
               type:
                 - string
@@ -32691,7 +32874,8 @@ components:
         location_id:
           type: string
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -32731,7 +32915,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               account_number:
                 type:
                   - string
@@ -33091,7 +33277,9 @@ components:
               type:
                 - string
                 - "null"
-              description: The external ID of the location from the integration vendor
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
             account_number:
               type:
                 - string
@@ -33448,7 +33636,9 @@ components:
                 type:
                   - string
                   - "null"
-                description: The external ID of the location from the integration vendor
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
               account_number:
                 type:
                   - string
@@ -35821,10 +36011,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -36196,10 +36388,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -36455,10 +36649,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -36848,10 +37044,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -37038,10 +37236,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -38025,10 +38225,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -38489,10 +38691,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -39240,10 +39444,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -39429,10 +39635,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -39710,10 +39918,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -39903,10 +40113,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -40114,10 +40326,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -40340,10 +40554,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -40524,10 +40740,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -40785,10 +41003,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -40894,10 +41114,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -41085,10 +41307,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -41425,10 +41649,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -41635,10 +41861,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -41776,10 +42004,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -41998,10 +42228,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -42166,10 +42398,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -42349,10 +42583,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -42575,10 +42811,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -42743,10 +42981,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -43248,10 +43488,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -43548,10 +43790,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -43820,10 +44064,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -43996,10 +44242,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -44204,10 +44452,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -44387,10 +44637,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -44944,10 +45196,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -45053,10 +45307,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -45228,10 +45484,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -45411,10 +45669,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -45558,10 +45818,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -45766,10 +46028,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
@@ -46025,10 +46289,12 @@ paths:
         - schema:
             type: string
             description: The Propexo unique identifier for the location associated with the
-              property. This is the location specified in Rent Manager
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
           required: false
           description: The Propexo unique identifier for the location associated with the
-            property. This is the location specified in Rent Manager
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
           name: location_id
           in: query
         - schema:
