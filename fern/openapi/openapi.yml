@@ -9206,6 +9206,11 @@ components:
         property_id:
           type: string
           description: The Propexo unique identifier for the property
+        unit_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the unit
       required:
         - id
         - created_at
@@ -9221,6 +9226,7 @@ components:
         - integration_id
         - integration_vendor
         - property_id
+        - unit_id
     _v1_applications__get_output:
       type: object
       properties:
