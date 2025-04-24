@@ -673,6 +673,7 @@ components:
                         - ENTRATA_PROPERTY_PICK_LIST
                         - ENTRATA_PROSPECTS
                         - ENTRATA_PURCHASE_ORDERS
+                        - ENTRATA_RENTABLE_ITEMS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - ENTRATA_RESIDENTS
                         - ENTRATA_UNIT_TYPES
@@ -906,6 +907,7 @@ components:
                           - ENTRATA_PROPERTY_PICK_LIST
                           - ENTRATA_PROSPECTS
                           - ENTRATA_PURCHASE_ORDERS
+                          - ENTRATA_RENTABLE_ITEMS
                           - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                           - ENTRATA_RESIDENTS
                           - ENTRATA_UNIT_TYPES
@@ -2685,6 +2687,7 @@ components:
                       - ENTRATA_PROPERTY_PICK_LIST
                       - ENTRATA_PROSPECTS
                       - ENTRATA_PURCHASE_ORDERS
+                      - ENTRATA_RENTABLE_ITEMS
                       - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                       - ENTRATA_RESIDENTS
                       - ENTRATA_UNIT_TYPES
@@ -2918,6 +2921,7 @@ components:
                         - ENTRATA_PROPERTY_PICK_LIST
                         - ENTRATA_PROSPECTS
                         - ENTRATA_PURCHASE_ORDERS
+                        - ENTRATA_RENTABLE_ITEMS
                         - ENTRATA_RESIDENT_TRANSACTION_ALLOCATIONS
                         - ENTRATA_RESIDENTS
                         - ENTRATA_UNIT_TYPES
