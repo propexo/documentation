@@ -18748,12 +18748,11 @@ components:
           type: integer
           minimum: 0
           description: The number of additional occupants associated with the lead
-        desired_bathrooms:
-          type: string
+        desired_num_bathrooms:
+          type: number
           description: The desired number of bathrooms
-        desired_bedrooms:
-          type: integer
-          minimum: 0
+        desired_num_bedrooms:
+          type: number
           description: The desired number of bedrooms
         credit_score:
           type: string
@@ -18803,6 +18802,15 @@ components:
             - INACTIVE
             - WAITLISTED
           description: The status associated with the lead
+        desired_bathrooms:
+          type: string
+          description: Deprecated. Use desired_num_bathrooms instead.
+          deprecated: true
+        desired_bedrooms:
+          type: integer
+          minimum: 0
+          description: Deprecated. Use desired_num_bedrooms instead.
+          deprecated: true
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source
@@ -18862,12 +18870,6 @@ components:
             - number
             - "null"
           description: The minimum rent cost the lead is looking to pay, in cents
-        desired_num_bathrooms:
-          type: number
-          description: The desired number of bathrooms
-        desired_num_bedrooms:
-          type: number
-          description: The desired number of bedrooms
         number_of_occupants:
           type: integer
           description: The number of occupants living in the unit
@@ -19024,12 +19026,11 @@ components:
           type: integer
           minimum: 0
           description: The number of additional occupants associated with the lead
-        desired_bathrooms:
-          type: string
+        desired_num_bathrooms:
+          type: number
           description: The desired number of bathrooms
-        desired_bedrooms:
-          type: integer
-          minimum: 0
+        desired_num_bedrooms:
+          type: number
           description: The desired number of bedrooms
         credit_score:
           type: string
@@ -19093,6 +19094,15 @@ components:
             - DUPLICATE
             - OTHER
           description: The reason the lead is inactive
+        desired_bathrooms:
+          type: string
+          description: Deprecated. Use desired_num_bathrooms instead.
+          deprecated: true
+        desired_bedrooms:
+          type: integer
+          minimum: 0
+          description: Deprecated. Use desired_num_bedrooms instead.
+          deprecated: true
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -19147,12 +19157,6 @@ components:
               pattern: ^\d{4}-\d{2}-\d{2}$
           description: The move-in date associated with the lead. The timestamp will be
             stripped off and only the date will be used
-        desired_num_bedrooms:
-          type: number
-          description: The desired number of bedrooms
-        desired_num_bathrooms:
-          type: number
-          description: The desired number of bathrooms
         desired_min_rent_in_cents:
           type:
             - number
