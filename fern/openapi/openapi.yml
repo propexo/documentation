@@ -18757,13 +18757,14 @@ components:
         credit_score:
           type: string
           description: The credit score of the lead
-        desired_move_in_date:
+        target_move_in_date:
           anyOf:
             - type: string
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The desired move in date of the lead
+          description: The move-in date associated with the lead. The timestamp will be
+            stripped off and only the date will be used
         email_1:
           type: string
           description: The primary email address associated with the lead
@@ -18802,6 +18803,14 @@ components:
             - INACTIVE
             - WAITLISTED
           description: The status associated with the lead
+        desired_move_in_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: Deprecated. Use target_move_in_date instead.
+          deprecated: true
         desired_bathrooms:
           type: string
           description: Deprecated. Use desired_num_bathrooms instead.
@@ -18857,14 +18866,6 @@ components:
         zip:
           type: string
           description: The zip code associated with the lead
-        target_move_in_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The move-in date associated with the lead. The timestamp will be
-            stripped off and only the date will be used
         desired_min_rent_in_cents:
           type:
             - number
@@ -19035,13 +19036,14 @@ components:
         credit_score:
           type: string
           description: The credit score of the lead
-        desired_move_in_date:
+        target_move_in_date:
           anyOf:
             - type: string
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The desired move in date of the lead
+          description: The move-in date associated with the lead. The timestamp will be
+            stripped off and only the date will be used
         email_1:
           type: string
           description: The primary email address associated with the lead
@@ -19094,6 +19096,14 @@ components:
             - DUPLICATE
             - OTHER
           description: The reason the lead is inactive
+        desired_move_in_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: Deprecated. Use target_move_in_date instead.
+          deprecated: true
         desired_bathrooms:
           type: string
           description: Deprecated. Use desired_num_bathrooms instead.
@@ -19149,14 +19159,6 @@ components:
         zip:
           type: string
           description: The zip code associated with the lead
-        target_move_in_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The move-in date associated with the lead. The timestamp will be
-            stripped off and only the date will be used
         desired_min_rent_in_cents:
           type:
             - number
