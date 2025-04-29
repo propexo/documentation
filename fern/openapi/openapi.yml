@@ -18750,6 +18750,7 @@ components:
           description: The number of additional occupants associated with the lead
         desired_num_bathrooms:
           type: number
+          minimum: 0
           description: The desired number of bathrooms
         desired_num_bedrooms:
           type: number
@@ -18778,7 +18779,8 @@ components:
           type: boolean
           description: Whether or not the lead has pets that aren't dogs or cats
         desired_max_rent_in_cents:
-          type: integer
+          type: number
+          minimum: 0
           description: The maximum rent cost the lead is looking to pay, in cents
         monthly_income_in_cents:
           type: integer
@@ -18946,6 +18948,9 @@ components:
         desired_lease_term_in_months:
           type: string
           description: The amount of months for the lease term
+        floor_plan_id:
+          type: string
+          description: The Propexo unique identifier for the floor plan
         organization_name:
           type: string
           description: The name of your organization. Sample1 uses this for associating a
@@ -19029,6 +19034,7 @@ components:
           description: The number of additional occupants associated with the lead
         desired_num_bathrooms:
           type: number
+          minimum: 0
           description: The desired number of bathrooms
         desired_num_bedrooms:
           type: number
@@ -19057,7 +19063,8 @@ components:
           type: boolean
           description: Whether or not the lead has pets that aren't dogs or cats
         desired_max_rent_in_cents:
-          type: integer
+          type: number
+          minimum: 0
           description: The maximum rent cost the lead is looking to pay, in cents
         monthly_income_in_cents:
           type: integer
@@ -19240,6 +19247,9 @@ components:
         desired_lease_term_in_months:
           type: string
           description: The amount of months for the lease term
+        floor_plan_id:
+          type: string
+          description: The Propexo unique identifier for the floor plan
     _v1_leads_{id}_put_output:
       type: object
       properties:
