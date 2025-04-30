@@ -1084,31 +1084,6 @@ components:
               properties: {}
             - type: object
               properties:
-                username:
-                  type: string
-                password:
-                  type: string
-                companyId:
-                  type: string
-              required:
-                - username
-                - password
-                - companyId
-              description: Entrata authentication credentials
-              title: EntrataLegacy
-            - type: object
-              properties:
-                accessToken:
-                  type: string
-                companyId:
-                  type: string
-              required:
-                - accessToken
-                - companyId
-              description: Entrata authentication credentials
-              title: Entrata
-            - type: object
-              properties:
                 apiKey:
                   type: string
                 companyId:
@@ -1116,7 +1091,7 @@ components:
               required:
                 - apiKey
                 - companyId
-              description: Authentication credentials for Entrata's 2025 API update
+              description: Entrata authentication credentials
               title: Entrata
             - type: object
               properties:
@@ -3108,31 +3083,6 @@ components:
               properties: {}
             - type: object
               properties:
-                username:
-                  type: string
-                password:
-                  type: string
-                companyId:
-                  type: string
-              required:
-                - username
-                - password
-                - companyId
-              description: Entrata authentication credentials
-              title: EntrataLegacy
-            - type: object
-              properties:
-                accessToken:
-                  type: string
-                companyId:
-                  type: string
-              required:
-                - accessToken
-                - companyId
-              description: Entrata authentication credentials
-              title: Entrata
-            - type: object
-              properties:
                 apiKey:
                   type: string
                 companyId:
@@ -3140,7 +3090,7 @@ components:
               required:
                 - apiKey
                 - companyId
-              description: Authentication credentials for Entrata's 2025 API update
+              description: Entrata authentication credentials
               title: Entrata
             - type: object
               properties:
