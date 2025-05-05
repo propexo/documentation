@@ -19695,6 +19695,11 @@ components:
                   - string
                   - "null"
                 description: The date the resident gave notice
+              custom_data:
+                type:
+                  - object
+                  - "null"
+                properties: {}
             required:
               - resident_id
               - x_resident_type
@@ -19702,6 +19707,7 @@ components:
               - move_in_date
               - move_out_date
               - notice_date
+              - custom_data
             x-propexo:
               derivedFromModel: residents_to_leases
         application_date:
@@ -26606,6 +26612,11 @@ components:
                         - string
                         - "null"
                       description: The date the resident gave notice
+                    custom_data:
+                      type:
+                        - object
+                        - "null"
+                      properties: {}
                   required:
                     - lease_id
                     - x_resident_type
@@ -26613,6 +26624,7 @@ components:
                     - move_in_date
                     - move_out_date
                     - notice_date
+                    - custom_data
                   x-propexo:
                     derivedFromModel: residents_to_leases
               address_1_alternate:
@@ -27258,6 +27270,11 @@ components:
                       - string
                       - "null"
                     description: The date the resident gave notice
+                  custom_data:
+                    type:
+                      - object
+                      - "null"
+                    properties: {}
                 required:
                   - lease_id
                   - x_resident_type
@@ -27265,6 +27282,7 @@ components:
                   - move_in_date
                   - move_out_date
                   - notice_date
+                  - custom_data
                 x-propexo:
                   derivedFromModel: residents_to_leases
             address_1_alternate:
