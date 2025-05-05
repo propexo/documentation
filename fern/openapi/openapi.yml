@@ -739,6 +739,7 @@ components:
                         - RESMAN_READ_RESIDENTS_DOB
                         - RESMAN_READ_RESIDENT_CHARGE_CODES
                         - RESMAN_READ_RESIDENT_TRANSACTIONS
+                        - RESMAN_READ_RENTABLE_ITEMS
                         - RESMAN_READ_SERVICE_REQUESTS
                         - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                         - RESMAN_READ_UNITS
@@ -973,6 +974,7 @@ components:
                           - RESMAN_READ_RESIDENTS_DOB
                           - RESMAN_READ_RESIDENT_CHARGE_CODES
                           - RESMAN_READ_RESIDENT_TRANSACTIONS
+                          - RESMAN_READ_RENTABLE_ITEMS
                           - RESMAN_READ_SERVICE_REQUESTS
                           - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                           - RESMAN_READ_UNITS
@@ -2735,6 +2737,7 @@ components:
                       - RESMAN_READ_RESIDENTS_DOB
                       - RESMAN_READ_RESIDENT_CHARGE_CODES
                       - RESMAN_READ_RESIDENT_TRANSACTIONS
+                      - RESMAN_READ_RENTABLE_ITEMS
                       - RESMAN_READ_SERVICE_REQUESTS
                       - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                       - RESMAN_READ_UNITS
@@ -2969,6 +2972,7 @@ components:
                         - RESMAN_READ_RESIDENTS_DOB
                         - RESMAN_READ_RESIDENT_CHARGE_CODES
                         - RESMAN_READ_RESIDENT_TRANSACTIONS
+                        - RESMAN_READ_RENTABLE_ITEMS
                         - RESMAN_READ_SERVICE_REQUESTS
                         - RESMAN_READ_SERVICE_REQUEST_CATEGORIES
                         - RESMAN_READ_UNITS
