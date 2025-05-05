@@ -30720,6 +30720,16 @@ components:
                   - integer
                   - "null"
                 description: The percentage amount of the concession
+              lease_term_in_months:
+                type:
+                  - integer
+                  - "null"
+                description: The amount of months for the lease term
+              lease_term_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw value for the lease term
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -30762,6 +30772,8 @@ components:
               - number_of_occurrences
               - fixed_amount_in_cents
               - percentage_amount
+              - lease_term_in_months
+              - lease_term_raw
               - integration_id
               - integration_vendor
               - property_id
@@ -30912,6 +30924,16 @@ components:
                 - integer
                 - "null"
               description: The percentage amount of the concession
+            lease_term_in_months:
+              type:
+                - integer
+                - "null"
+              description: The amount of months for the lease term
+            lease_term_raw:
+              type:
+                - string
+                - "null"
+              description: The raw value for the lease term
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -30954,6 +30976,8 @@ components:
             - number_of_occurrences
             - fixed_amount_in_cents
             - percentage_amount
+            - lease_term_in_months
+            - lease_term_raw
             - integration_id
             - integration_vendor
             - property_id
