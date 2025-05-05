@@ -1307,6 +1307,7 @@ components:
                   type: string
                 companyId:
                   type: string
+                  pattern: ^\w+$
                 baseUrl:
                   type: string
                 common_data:
@@ -1328,6 +1329,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -1353,6 +1355,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -1378,6 +1381,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -1403,6 +1407,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -1428,6 +1433,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -1453,6 +1459,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -3306,6 +3313,7 @@ components:
                   type: string
                 companyId:
                   type: string
+                  pattern: ^\w+$
                 baseUrl:
                   type: string
                 common_data:
@@ -3327,6 +3335,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -3352,6 +3361,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -3377,6 +3387,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -3402,6 +3413,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -3427,6 +3439,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
@@ -3452,6 +3465,7 @@ components:
                       type: string
                     companyId:
                       type: string
+                      pattern: ^\w+$
                     baseUrl:
                       type: string
                   required:
