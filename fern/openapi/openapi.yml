@@ -31143,6 +31143,12 @@ components:
                 type: array
                 items:
                   type: string
+              unit_count:
+                type:
+                  - integer
+                  - "null"
+                minimum: 0
+                description: The number of units associated with the floor plan
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -31173,6 +31179,7 @@ components:
               - rent_minimum_in_cents
               - rent_maximum_in_cents
               - image_urls
+              - unit_count
               - integration_id
               - integration_vendor
               - property_id
@@ -31314,6 +31321,12 @@ components:
               type: array
               items:
                 type: string
+            unit_count:
+              type:
+                - integer
+                - "null"
+              minimum: 0
+              description: The number of units associated with the floor plan
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -31344,6 +31357,7 @@ components:
             - rent_minimum_in_cents
             - rent_maximum_in_cents
             - image_urls
+            - unit_count
             - integration_id
             - integration_vendor
             - property_id
