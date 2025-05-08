@@ -31149,6 +31149,36 @@ components:
                   - "null"
                 minimum: 0
                 description: The number of units associated with the floor plan
+              deposit_amount_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The deposit amount in cents associated with the floor plan
+              deposit_amount_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw deposit amount associated with the floor plan
+              deposit_amount_min_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The minimum deposit amount in cents associated with the floor plan
+              deposit_amount_max_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The maximum deposit amount in cents associated with the floor plan
+              deposit_amount_min_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw minimum deposit amount associated with the floor plan
+              deposit_amount_max_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw maximum deposit amount associated with the floor plan
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -31180,6 +31210,12 @@ components:
               - rent_maximum_in_cents
               - image_urls
               - unit_count
+              - deposit_amount_in_cents
+              - deposit_amount_raw
+              - deposit_amount_min_in_cents
+              - deposit_amount_max_in_cents
+              - deposit_amount_min_raw
+              - deposit_amount_max_raw
               - integration_id
               - integration_vendor
               - property_id
@@ -31327,6 +31363,36 @@ components:
                 - "null"
               minimum: 0
               description: The number of units associated with the floor plan
+            deposit_amount_in_cents:
+              type:
+                - number
+                - "null"
+              description: The deposit amount in cents associated with the floor plan
+            deposit_amount_raw:
+              type:
+                - string
+                - "null"
+              description: The raw deposit amount associated with the floor plan
+            deposit_amount_min_in_cents:
+              type:
+                - number
+                - "null"
+              description: The minimum deposit amount in cents associated with the floor plan
+            deposit_amount_max_in_cents:
+              type:
+                - number
+                - "null"
+              description: The maximum deposit amount in cents associated with the floor plan
+            deposit_amount_min_raw:
+              type:
+                - string
+                - "null"
+              description: The raw minimum deposit amount associated with the floor plan
+            deposit_amount_max_raw:
+              type:
+                - string
+                - "null"
+              description: The raw maximum deposit amount associated with the floor plan
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -31358,6 +31424,12 @@ components:
             - rent_maximum_in_cents
             - image_urls
             - unit_count
+            - deposit_amount_in_cents
+            - deposit_amount_raw
+            - deposit_amount_min_in_cents
+            - deposit_amount_max_in_cents
+            - deposit_amount_min_raw
+            - deposit_amount_max_raw
             - integration_id
             - integration_vendor
             - property_id
