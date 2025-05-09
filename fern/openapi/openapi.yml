@@ -1038,7 +1038,9 @@ components:
                     last_seen:
                       type: string
                     interface_name:
-                      type: string
+                      type:
+                        - string
+                        - "null"
                     configuration_data:
                       type: object
                       properties: {}
@@ -3036,7 +3038,9 @@ components:
                   last_seen:
                     type: string
                   interface_name:
-                    type: string
+                    type:
+                      - string
+                      - "null"
                   configuration_data:
                     type: object
                     properties: {}
