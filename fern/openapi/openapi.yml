@@ -22753,6 +22753,11 @@ components:
             - "null"
           items:
             type: string
+        status_raw:
+          type:
+            - string
+            - "null"
+          description: The raw status associated with the listing
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -22830,6 +22835,7 @@ components:
         - make_ready_date
         - vacate_date
         - video_urls
+        - status_raw
         - property_id
         - unit_id
         - floor_plan_id
