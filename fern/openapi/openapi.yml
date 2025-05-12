@@ -14870,6 +14870,331 @@ components:
       required:
         - meta
         - results
+    _v1_fees__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        floor_plan_id:
+          type: string
+          description: The Propexo unique identifier for the floor plan
+        unit_id:
+          type: string
+          description: The Propexo unique identifier for the unit
+        charge_code_id:
+          type: string
+          description: The Propexo unique identifier for the charge code
+    _v1_fees__get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the fee
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
+              x_charge_code_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the charge code from the integration vendor
+              x_floor_plan_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the floor plan from the integration vendor
+              x_unit_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the unit from the integration vendor
+              amount_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The amount of the fee, in cents
+              amount_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw value for amount from the PMS
+              charge_code_name:
+                type:
+                  - string
+                  - "null"
+                description: The name of the charge code
+              description:
+                type:
+                  - string
+                  - "null"
+                description: Description of the fee
+              name:
+                type:
+                  - string
+                  - "null"
+                description: The name associated with the fee
+              custom_data:
+                type:
+                  - object
+                  - "null"
+                additionalProperties: {}
+                description: Custom data
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                $ref: "#/components/schemas/Enum1"
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+              floor_plan_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the floor plan
+              unit_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the unit
+              charge_code_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the charge code
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - x_charge_code_id
+              - x_floor_plan_id
+              - x_unit_id
+              - amount_in_cents
+              - amount_raw
+              - charge_code_name
+              - description
+              - name
+              - custom_data
+              - integration_id
+              - integration_vendor
+              - property_id
+              - floor_plan_id
+              - unit_id
+              - charge_code_id
+            x-propexo:
+              derivedFromModel: fees
+      required:
+        - meta
+        - results
+    _v1_fees_{fee_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_fees_{fee_id}_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the fee
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
+            x_charge_code_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the charge code from the integration vendor
+            x_floor_plan_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the floor plan from the integration vendor
+            x_unit_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the unit from the integration vendor
+            amount_in_cents:
+              type:
+                - number
+                - "null"
+              description: The amount of the fee, in cents
+            amount_raw:
+              type:
+                - string
+                - "null"
+              description: The raw value for amount from the PMS
+            charge_code_name:
+              type:
+                - string
+                - "null"
+              description: The name of the charge code
+            description:
+              type:
+                - string
+                - "null"
+              description: Description of the fee
+            name:
+              type:
+                - string
+                - "null"
+              description: The name associated with the fee
+            custom_data:
+              type:
+                - object
+                - "null"
+              additionalProperties: {}
+              description: Custom data
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              $ref: "#/components/schemas/Enum1"
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+            floor_plan_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the floor plan
+            unit_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the unit
+            charge_code_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the charge code
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - x_charge_code_id
+            - x_floor_plan_id
+            - x_unit_id
+            - amount_in_cents
+            - amount_raw
+            - charge_code_name
+            - description
+            - name
+            - custom_data
+            - integration_id
+            - integration_vendor
+            - property_id
+            - floor_plan_id
+            - unit_id
+            - charge_code_id
+          x-propexo:
+            derivedFromModel: fees
+      required:
+        - meta
+        - results
     _v1_call-logs__get_input:
       type: object
       properties:
@@ -38751,6 +39076,152 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_resident-payments_{resident_payment_id}_get_out\
                   put"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/fees/:
+    get:
+      description: Get all fees
+      summary: Get all fees
+      tags:
+        - billing-and-payments
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the floor plan
+          required: false
+          description: The Propexo unique identifier for the floor plan
+          name: floor_plan_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the unit
+          required: false
+          description: The Propexo unique identifier for the unit
+          name: unit_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the charge code
+          required: false
+          description: The Propexo unique identifier for the charge code
+          name: charge_code_id
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_fees__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/fees/{fee_id}:
+    get:
+      description: Get fee by ID
+      summary: Get fee by ID
+      tags:
+        - billing-and-payments
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: fee_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_fees_{fee_id}_get_output"
         "400":
           description: Bad Request
           content:
