@@ -25940,6 +25940,373 @@ components:
       required:
         - job_id
         - data
+    _v1_resident-insurance__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        resident_id:
+          type: string
+          description: The Propexo unique identifier for the resident
+        unit_id:
+          type: string
+          description: The Propexo unique identifier for the unit
+        lease_id:
+          type: string
+          description: The Propexo unique identifier for the lease
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          type: string
+    _v1_resident-insurance__get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the resident insurance
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
+              x_unit_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the unit from the integration vendor
+              x_lease_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the lease from the integration vendor
+              x_resident_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the resident from the integration vendor
+              provider:
+                type:
+                  - string
+                  - "null"
+                description: The insurance provider name
+              insurance_type:
+                type:
+                  - string
+                  - "null"
+                description: The type of insurance
+              policy_number:
+                type:
+                  - string
+                  - "null"
+                description: The insurance policy number
+              effective_date:
+                type:
+                  - string
+                  - "null"
+                description: The date the insurance becomes effective
+              expiration_date:
+                type:
+                  - string
+                  - "null"
+                description: The date the insurance expires
+              cancellation_date:
+                type:
+                  - string
+                  - "null"
+                description: The date the insurance was cancelled
+              liability_amount_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The liability amount in cents
+              liability_amount_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw liability amount string
+              notes:
+                type:
+                  - string
+                  - "null"
+                description: Additional notes about the insurance
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                $ref: "#/components/schemas/Enum1"
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+              unit_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the unit
+              lease_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the lease
+              resident_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the resident
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - x_unit_id
+              - x_lease_id
+              - x_resident_id
+              - provider
+              - insurance_type
+              - policy_number
+              - effective_date
+              - expiration_date
+              - cancellation_date
+              - liability_amount_in_cents
+              - liability_amount_raw
+              - notes
+              - integration_id
+              - integration_vendor
+              - property_id
+              - unit_id
+              - lease_id
+              - resident_id
+            x-propexo:
+              derivedFromModel: resident_insurance
+      required:
+        - meta
+        - results
+    _v1_resident-insurance_{resident_insurance_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_resident-insurance_{resident_insurance_id}_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the resident insurance
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
+            x_unit_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the unit from the integration vendor
+            x_lease_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the lease from the integration vendor
+            x_resident_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the resident from the integration vendor
+            provider:
+              type:
+                - string
+                - "null"
+              description: The insurance provider name
+            insurance_type:
+              type:
+                - string
+                - "null"
+              description: The type of insurance
+            policy_number:
+              type:
+                - string
+                - "null"
+              description: The insurance policy number
+            effective_date:
+              type:
+                - string
+                - "null"
+              description: The date the insurance becomes effective
+            expiration_date:
+              type:
+                - string
+                - "null"
+              description: The date the insurance expires
+            cancellation_date:
+              type:
+                - string
+                - "null"
+              description: The date the insurance was cancelled
+            liability_amount_in_cents:
+              type:
+                - number
+                - "null"
+              description: The liability amount in cents
+            liability_amount_raw:
+              type:
+                - string
+                - "null"
+              description: The raw liability amount string
+            notes:
+              type:
+                - string
+                - "null"
+              description: Additional notes about the insurance
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              $ref: "#/components/schemas/Enum1"
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+            unit_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the unit
+            lease_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the lease
+            resident_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the resident
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - x_unit_id
+            - x_lease_id
+            - x_resident_id
+            - provider
+            - insurance_type
+            - policy_number
+            - effective_date
+            - expiration_date
+            - cancellation_date
+            - liability_amount_in_cents
+            - liability_amount_raw
+            - notes
+            - integration_id
+            - integration_vendor
+            - property_id
+            - unit_id
+            - lease_id
+            - resident_id
+          x-propexo:
+            derivedFromModel: resident_insurance
+      required:
+        - meta
+        - results
     _v1_service-requests__get_input:
       type: object
       properties:
@@ -30997,6 +31364,7 @@ components:
             - rentvine_application_templates
             - resident_allocations
             - resident_charges
+            - resident_insurance
             - resident_payments
             - resident_pets
             - resident_vehicles
@@ -31405,6 +31773,7 @@ components:
             - rentvine_application_templates
             - resident_allocations
             - resident_charges
+            - resident_insurance
             - resident_payments
             - resident_pets
             - resident_vehicles
@@ -40874,6 +41243,172 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_resident-pets_{pet_id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/resident-insurance/:
+    get:
+      description: Get all resident insurance
+      summary: Get all resident insurance
+      tags:
+        - residents
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the resident
+          required: false
+          description: The Propexo unique identifier for the resident
+          name: resident_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the unit
+          required: false
+          description: The Propexo unique identifier for the unit
+          name: unit_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the lease
+          required: false
+          description: The Propexo unique identifier for the lease
+          name: lease_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+          required: false
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_resident-insurance__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/resident-insurance/{resident_insurance_id}:
+    get:
+      description: Get resident insurance by ID
+      summary: Get resident insurance by ID
+      tags:
+        - residents
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: resident_insurance_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_resident-insurance_{resident_insurance_id}_get_\
+                  output"
         "400":
           description: Bad Request
           content:
