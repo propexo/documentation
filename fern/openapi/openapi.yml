@@ -658,6 +658,7 @@ components:
                         - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
                         - ENTRATA_CREATE_UNIT
                         - ENTRATA_CREATE_VENDOR
+                        - ENTRATA_FEES
                         - ENTRATA_FLOOR_PLANS
                         - ENTRATA_GL_ACCOUNTS
                         - ENTRATA_INVOICES
@@ -893,6 +894,7 @@ components:
                           - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
                           - ENTRATA_CREATE_UNIT
                           - ENTRATA_CREATE_VENDOR
+                          - ENTRATA_FEES
                           - ENTRATA_FLOOR_PLANS
                           - ENTRATA_GL_ACCOUNTS
                           - ENTRATA_INVOICES
@@ -2658,6 +2660,7 @@ components:
                       - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
                       - ENTRATA_CREATE_UNIT
                       - ENTRATA_CREATE_VENDOR
+                      - ENTRATA_FEES
                       - ENTRATA_FLOOR_PLANS
                       - ENTRATA_GL_ACCOUNTS
                       - ENTRATA_INVOICES
@@ -2893,6 +2896,7 @@ components:
                         - ENTRATA_CREATE_SERVICE_REQUEST_NOTE
                         - ENTRATA_CREATE_UNIT
                         - ENTRATA_CREATE_VENDOR
+                        - ENTRATA_FEES
                         - ENTRATA_FLOOR_PLANS
                         - ENTRATA_GL_ACCOUNTS
                         - ENTRATA_INVOICES
