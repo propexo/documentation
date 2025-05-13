@@ -34439,9 +34439,11 @@ components:
             - owners_to_properties
             - payable_register_items
             - payable_registers
+            - pet_types
             - properties
             - property_lists
             - property_lists_to_properties
+            - property_office_hours
             - purchase_order_items
             - purchase_order_items_to_invoices
             - purchase_orders
@@ -34845,9 +34847,11 @@ components:
             - owners_to_properties
             - payable_register_items
             - payable_registers
+            - pet_types
             - properties
             - property_lists
             - property_lists_to_properties
+            - property_office_hours
             - purchase_order_items
             - purchase_order_items_to_invoices
             - purchase_orders
