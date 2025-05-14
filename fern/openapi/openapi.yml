@@ -2425,6 +2425,21 @@ components:
         - write_status
         - errors
         - created_record_id
+    _v1_admin_retry-write_{root_job_id}_post_input:
+      type: object
+      properties: {}
+    _v1_admin_retry-write_{root_job_id}_post_output:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the write operation has been queued to be retried.
+        job_id:
+          type: string
+          description: The new job ID of the write operation that was queued.
+      required:
+        - success
+        - job_id
     _v1_admin_integrations_{integration_id}__get_input:
       type: object
       properties:
@@ -32528,6 +32543,41 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_admin_write-status_{root_job_id}_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/admin/retry-write/{root_job_id}:
+    post:
+      description: Retry a write operation that failed. Only failed write operations
+        can be retried.
+      summary: Retry a write operation
+      tags:
+        - admin
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The job ID of the write job retry
+          required: true
+          description: The job ID of the write job retry
+          name: root_job_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_admin_retry-write_{root_job_id}_post_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_admin_retry-write_{root_job_id}_post_output"
         "400":
           description: Bad Request
           content:
