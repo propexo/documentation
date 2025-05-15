@@ -502,8 +502,11 @@ components:
                 type:
                   - integer
                   - "null"
-                description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
-                  following: Sync every 12 HOURs)'
+                description: 'Deprecated: See the job schedules endpoint for this information.
+                  The interval of the scheduled sync frequency. (e.g. "12" in
+                  the following: Sync every 12 HOURs)'
+                deprecated: true
+                x-fern-availability: deprecated
               sync_cadence:
                 type:
                   - string
@@ -515,8 +518,11 @@ components:
                   - WEEK
                   - MONTH
                   - SECOND
-                description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
-                  following: Sync every 12 HOURs)'
+                description: 'Deprecated: See the job schedules endpoint for this information.
+                  The cadence of the scheduled sync frequency. (e.g. "HOUR" in
+                  the following: Sync every 12 HOURs)'
+                deprecated: true
+                x-fern-availability: deprecated
               max_job_concurrency:
                 type: integer
                 description: Maximum number of jobs that can be run at once for the integration
@@ -2519,8 +2525,11 @@ components:
               type:
                 - integer
                 - "null"
-              description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+              description: 'Deprecated: See the job schedules endpoint for this information.
+                The interval of the scheduled sync frequency. (e.g. "12" in the
                 following: Sync every 12 HOURs)'
+              deprecated: true
+              x-fern-availability: deprecated
             sync_cadence:
               type:
                 - string
@@ -2532,8 +2541,11 @@ components:
                 - WEEK
                 - MONTH
                 - SECOND
-              description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+              description: 'Deprecated: See the job schedules endpoint for this information.
+                The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
                 following: Sync every 12 HOURs)'
+              deprecated: true
+              x-fern-availability: deprecated
             max_job_concurrency:
               type: integer
               description: Maximum number of jobs that can be run at once for the integration
@@ -3882,9 +3894,12 @@ components:
               type:
                 - integer
                 - "null"
-              description: 'The interval of the scheduled sync frequency. (e.g. "12" in the
+              description: 'Deprecated: See the job schedules endpoint for this information.
+                The interval of the scheduled sync frequency. (e.g. "12" in the
                 following: Sync every 12 HOURs). This value will be used if the
                 use_custom_schedule is set to false.'
+              x-fern-availability: deprecated
+              deprecated: true
             sync_cadence:
               type:
                 - string
@@ -3896,9 +3911,12 @@ components:
                 - WEEK
                 - MONTH
                 - SECOND
-              description: 'The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
+              description: 'Deprecated: See the job schedules endpoint for this information.
+                The cadence of the scheduled sync frequency. (e.g. "HOUR" in the
                 following: Sync every 12 HOURs). This value will be used if the
                 use_custom_schedule is set to false.'
+              x-fern-availability: deprecated
+              deprecated: true
             max_request_cadence:
               type: string
               enum:
