@@ -260,6 +260,119 @@ components:
     _v1_admin_job-logs_{job_log_id}_data_get_output:
       type: object
       properties: {}
+    _v1_admin_logs_writes__get_input:
+      type: object
+      properties:
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 100
+          description: Number of records to return
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Number of records to skip
+        time_range:
+          type: string
+          enum:
+            - hour
+            - month
+            - week
+            - day
+          description: Filter logs by time range
+        integration_id:
+          type: string
+          description: Filter logs by integration ID
+        status:
+          type: string
+          enum:
+            - SUCCESS
+            - FAILURE
+          description: Filter logs by status
+    _v1_admin_logs_writes__get_output:
+      type: object
+      properties:
+        results:
+          type: object
+          properties:
+            logs:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  created_at:
+                    type: string
+                  job_id:
+                    type: string
+                  job_log_id:
+                    type: string
+                  status:
+                    type: string
+                    enum:
+                      - SUCCESS
+                      - FAILURE
+                  integration_id:
+                    type: string
+                  operation_type:
+                    type: string
+                  parameters: {}
+                  error:
+                    type:
+                      - string
+                      - "null"
+                  name:
+                    type: string
+                  vendor:
+                    type: string
+                    enum:
+                      - SAMPLE2
+                      - BUILDIUM
+                      - ENTRATA
+                      - FUNNEL
+                      - INTERNAL
+                      - KNOCK
+                      - MRI
+                      - PROPERTYWARE
+                      - PROPERTYWARE_REST
+                      - REALPAGE
+                      - REALPAGE_RPX
+                      - SAMPLE3
+                      - RENTMANAGER
+                      - RENTVINE
+                      - RESMAN
+                      - SAMPLE1
+                required:
+                  - id
+                  - created_at
+                  - job_id
+                  - job_log_id
+                  - status
+                  - integration_id
+                  - operation_type
+                  - error
+                  - name
+                  - vendor
+          required:
+            - logs
+        meta:
+          type: object
+          properties:
+            limit:
+              type: integer
+            offset:
+              type: integer
+          required:
+            - limit
+            - offset
+      required:
+        - results
+        - meta
     _v1_admin_logs_jobs__get_input:
       type: object
       properties:
@@ -32132,6 +32245,79 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_admin_job-logs_{job_log_id}_data_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/admin/logs/writes/:
+    get:
+      description: Query write job logs with various filters. Returns the most recent
+        record for each job_id.
+      summary: Query write job logs
+      tags:
+        - admin
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 100
+            description: Number of records to return
+          required: false
+          description: Number of records to return
+          name: limit
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Number of records to skip
+          required: false
+          description: Number of records to skip
+          name: offset
+          in: query
+        - schema:
+            type: string
+            enum:
+              - hour
+              - month
+              - week
+              - day
+            description: Filter logs by time range
+          required: false
+          description: Filter logs by time range
+          name: time_range
+          in: query
+        - schema:
+            type: string
+            description: Filter logs by integration ID
+          required: false
+          description: Filter logs by integration ID
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SUCCESS
+              - FAILURE
+            description: Filter logs by status
+          required: false
+          description: Filter logs by status
+          name: status
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_admin_logs_writes__get_output"
         "400":
           description: Bad Request
           content:
