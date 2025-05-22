@@ -293,6 +293,33 @@ components:
             - SUCCESS
             - FAILURE
           description: Filter logs by status
+        write_category:
+          type: string
+          enum:
+            - amenities
+            - applicants
+            - applications
+            - contracts
+            - crm_listings
+            - events
+            - file_types
+            - file_upload
+            - invoices
+            - leads
+            - leases
+            - listings
+            - properties
+            - purchase_orders
+            - recurring_resident_charges
+            - resident_charges
+            - resident_payments
+            - resident_pets
+            - residents
+            - service_request_vendors
+            - service_requests
+            - transactions
+            - units
+          description: Filter logs by write category
     _v1_admin_logs_writes__get_output:
       type: object
       properties:
@@ -319,7 +346,7 @@ components:
                       - FAILURE
                   integration_id:
                     type: string
-                  operation_type:
+                  job_type:
                     type: string
                   parameters: {}
                   error:
@@ -354,25 +381,14 @@ components:
                   - job_log_id
                   - status
                   - integration_id
-                  - operation_type
+                  - job_type
                   - error
                   - name
                   - vendor
           required:
             - logs
-        meta:
-          type: object
-          properties:
-            limit:
-              type: integer
-            offset:
-              type: integer
-          required:
-            - limit
-            - offset
       required:
         - results
-        - meta
     _v1_admin_logs_jobs__get_input:
       type: object
       properties:
@@ -32310,6 +32326,37 @@ paths:
           required: false
           description: Filter logs by status
           name: status
+          in: query
+        - schema:
+            type: string
+            enum:
+              - amenities
+              - applicants
+              - applications
+              - contracts
+              - crm_listings
+              - events
+              - file_types
+              - file_upload
+              - invoices
+              - leads
+              - leases
+              - listings
+              - properties
+              - purchase_orders
+              - recurring_resident_charges
+              - resident_charges
+              - resident_payments
+              - resident_pets
+              - residents
+              - service_request_vendors
+              - service_requests
+              - transactions
+              - units
+            description: Filter logs by write category
+          required: false
+          description: Filter logs by write category
+          name: write_category
           in: query
       responses:
         "200":
