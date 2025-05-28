@@ -684,6 +684,11 @@ components:
                   - string
                   - "null"
                 description: The timestamp of the last time a sync was completed.
+              last_completed_back_sync:
+                type:
+                  - string
+                  - "null"
+                description: The timestamp of the last time a back sync was completed.
               new_properties_are_enabled:
                 type: boolean
                 description: Whether or not properties need to be approved before ingesting data
@@ -1205,6 +1210,7 @@ components:
               - base_url
               - is_archived
               - last_completed_sync
+              - last_completed_back_sync
               - new_properties_are_enabled
               - integration_interfaces
               - models
@@ -2709,6 +2715,11 @@ components:
                 - string
                 - "null"
               description: The timestamp of the last time a sync was completed.
+            last_completed_back_sync:
+              type:
+                - string
+                - "null"
+              description: The timestamp of the last time a back sync was completed.
             new_properties_are_enabled:
               type: boolean
               description: Whether or not properties need to be approved before ingesting data
@@ -3238,6 +3249,7 @@ components:
             - base_url
             - is_archived
             - last_completed_sync
+            - last_completed_back_sync
             - new_properties_are_enabled
             - integration_interfaces
             - models
