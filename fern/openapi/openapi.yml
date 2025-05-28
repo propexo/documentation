@@ -19297,7 +19297,8 @@ components:
           items:
             type: string
           minItems: 1
-          description: A list of Propexo Resident IDs associated with the lease
+          description: A list of Propexo Resident IDs associated with the lease. The
+            resident must be a primary.
         resident_charges:
           type: array
           items:
