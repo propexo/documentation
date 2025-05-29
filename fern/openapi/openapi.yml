@@ -16026,6 +16026,36 @@ components:
         title:
           type: string
           description: The title associated with the event
+        call_phone_number_from:
+          type: string
+          description: The phone number that the call was made from. Required for call
+            event types.
+        call_phone_number_to:
+          type: string
+          description: The phone number that the call was received on. Required for call
+            event types.
+        call_status:
+          type: string
+          enum:
+            - BUSY
+            - ABANDONED
+            - DISCONNECTED
+            - FAILURE_TO_CONNECT
+            - NO_ANSWER
+            - ANSWER
+            - VOICEMAIL
+          description: The status of the call. Required for call event types.
+        call_duration:
+          type: integer
+          minimum: 0
+          maximum: 86400
+          description: The duration of the call in seconds. Required for call event types.
+        call_audio_link:
+          type: string
+          format: uri
+          description: The URL of the audio file for the call. This can be any valid URL
+            and doesn't necessarily need to link to a audio file. Required for
+            call event types.
         event_name:
           type: string
           enum:
