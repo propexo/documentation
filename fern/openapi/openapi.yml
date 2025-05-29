@@ -4399,7 +4399,10 @@ components:
         - success
     _v1_admin_integrations_{integration_id}_back-sync_post_input:
       type: object
-      properties: {}
+      properties:
+        sync_config_id:
+          type: string
+          description: The Propexo unique identifier for a sync configuration
     _v1_admin_integrations_{integration_id}_back-sync_post_output:
       type: object
       properties:
@@ -4414,7 +4417,10 @@ components:
         - result
     _v1_admin_integrations_{integration_id}_manual-sync_post_input:
       type: object
-      properties: {}
+      properties:
+        sync_config_id:
+          type: string
+          description: The Propexo unique identifier for a sync configuration
     _v1_admin_integrations_{integration_id}_manual-sync_post_output:
       type: object
       properties:
