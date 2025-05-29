@@ -15997,6 +15997,12 @@ components:
         event_type_id:
           type: string
           description: The Propexo unique identifier for the event type
+        event_result_id:
+          type: string
+          description: The Propexo unique identifier for the event result
+        event_sub_type_id:
+          type: string
+          description: The Propexo unique identifier for the event sub type
         employee_id:
           type: string
           description: The Propexo unique identifier for the employee
@@ -16318,6 +16324,328 @@ components:
           $ref: "#/components/schemas/ResponseMeta"
         results:
           $ref: "#/components/schemas/EventType"
+      required:
+        - meta
+        - results
+    _v1_event-sub-types__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+        event_type_id:
+          type: string
+          description: The Propexo unique identifier for the event type
+    EventSubType:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The Propexo unique identifier for the event sub type
+        created_at:
+          type: string
+          description: The date record first entered Propexo
+        updated_at:
+          type: string
+          description: The date record was last updated in Propexo
+        last_seen:
+          type:
+            - string
+            - "null"
+          description: The date the record was last seen from the PMS
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        x_location_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
+        x_event_type_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the event type from the integration vendor
+        name:
+          type: string
+          description: The name associated with the event sub type
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        event_type_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the event type
+      required:
+        - id
+        - created_at
+        - updated_at
+        - last_seen
+        - x_id
+        - x_property_id
+        - x_location_id
+        - x_event_type_id
+        - name
+        - integration_id
+        - integration_vendor
+        - property_id
+        - event_type_id
+      x-propexo:
+        derivedFromModel: event_sub_types
+    _v1_event-sub-types__get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/EventSubType"
+      required:
+        - meta
+        - results
+    _v1_event-sub-types_{event_sub_type_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_event-sub-types_{event_sub_type_id}_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          $ref: "#/components/schemas/EventSubType"
+      required:
+        - meta
+        - results
+    _v1_event-results__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+        event_type_id:
+          type: string
+          description: The Propexo unique identifier for the event type
+    EventResult:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The Propexo unique identifier for the event type
+        created_at:
+          type: string
+          description: The date record first entered Propexo
+        updated_at:
+          type: string
+          description: The date record was last updated in Propexo
+        last_seen:
+          type:
+            - string
+            - "null"
+          description: The date the record was last seen from the PMS
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        x_location_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
+        x_event_type_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the type from the integration vendor
+        name:
+          type: string
+          description: The name associated with the event type
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        event_type_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the event type
+      required:
+        - id
+        - created_at
+        - updated_at
+        - last_seen
+        - x_id
+        - x_property_id
+        - x_location_id
+        - x_event_type_id
+        - name
+        - integration_id
+        - integration_vendor
+        - property_id
+        - event_type_id
+      x-propexo:
+        derivedFromModel: event_results
+    _v1_event-results__get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/EventResult"
+      required:
+        - meta
+        - results
+    _v1_event-results_{event_result_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_event-results_{event_result_id}_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          $ref: "#/components/schemas/EventResult"
       required:
         - meta
         - results
@@ -31541,6 +31869,8 @@ components:
             - entrata_lease_periods
             - entrata_unit_types
             - entrata_vendor_locations
+            - event_results
+            - event_sub_types
             - event_types
             - events
             - file_types
@@ -31950,6 +32280,8 @@ components:
             - entrata_lease_periods
             - entrata_unit_types
             - entrata_vendor_locations
+            - event_results
+            - event_sub_types
             - event_types
             - events
             - file_types
@@ -37911,6 +38243,388 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_event-types_{event_type_id}_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/event-sub-types/:
+    get:
+      description: Get all event sub types
+      summary: Get all event sub types
+      tags:
+        - events
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the property from the integration vendor
+          required: false
+          description: The external ID of the property from the integration vendor
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event type
+          required: false
+          description: The Propexo unique identifier for the event type
+          name: event_type_id
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_event-sub-types__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/event-sub-types/{event_sub_type_id}:
+    get:
+      description: Get event sub type by ID
+      summary: Get event sub type by ID
+      tags:
+        - events
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: event_sub_type_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_event-sub-types_{event_sub_type_id}_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/event-results/:
+    get:
+      description: Get all event results
+      summary: Get all event results
+      tags:
+        - events
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the property from the integration vendor
+          required: false
+          description: The external ID of the property from the integration vendor
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event type
+          required: false
+          description: The Propexo unique identifier for the event type
+          name: event_type_id
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_event-results__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/event-results/{event_result_id}:
+    get:
+      description: Get event result by ID
+      summary: Get event result by ID
+      tags:
+        - events
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: event_result_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_event-results_{event_result_id}_get_output"
         "400":
           description: Bad Request
           content:
