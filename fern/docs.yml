@@ -8,6 +8,9 @@ js:
     - path: ./js/hubspot.js
     - path: ./js/vector.js
 
+experimental:
+  openapi-parser-v3: true
+
 tabs:
   documentation:
     display-name: Documentation
