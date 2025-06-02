@@ -16532,9 +16532,6 @@ components:
           description: The Propexo unique identifier for the integration
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
-        event_type_id:
-          type: string
-          description: The Propexo unique identifier for the event type
     EventResult:
       type: object
       properties:
@@ -16565,11 +16562,6 @@ components:
           description: The external ID of the location (exclusive to Rent Manager
             integrations). This is always null for non-Rent Manager
             integrations.
-        x_event_type_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the type from the integration vendor
         name:
           type: string
           description: The name associated with the event type
@@ -16581,11 +16573,10 @@ components:
         property_id:
           type: string
           description: The Propexo unique identifier for the property
-        event_type_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the event type
+        associated_event_type_ids:
+          type: array
+          items:
+            type: string
       required:
         - id
         - created_at
@@ -16594,12 +16585,11 @@ components:
         - x_id
         - x_property_id
         - x_location_id
-        - x_event_type_id
         - name
         - integration_id
         - integration_vendor
         - property_id
-        - event_type_id
+        - associated_event_type_ids
       x-propexo:
         derivedFromModel: event_results
     _v1_event-results__get_output:
@@ -31870,6 +31860,7 @@ components:
             - entrata_unit_types
             - entrata_vendor_locations
             - event_results
+            - event_results_to_event_types
             - event_sub_types
             - event_types
             - events
@@ -32281,6 +32272,7 @@ components:
             - entrata_unit_types
             - entrata_vendor_locations
             - event_results
+            - event_results_to_event_types
             - event_sub_types
             - event_types
             - events
@@ -38544,13 +38536,6 @@ paths:
           required: false
           description: The integration vendor associated with the data diff
           name: integration_vendor
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the event type
-          required: false
-          description: The Propexo unique identifier for the event type
-          name: event_type_id
           in: query
       responses:
         "200":
