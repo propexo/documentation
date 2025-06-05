@@ -6217,7 +6217,7 @@ components:
                 type:
                   - string
                   - "null"
-                description: DEPRECATED. Use status_raw
+                description: DEPRECATED. Use status_raw or status_normalized
                 deprecated: true
                 x-fern-availability: deprecated
               status_raw:
@@ -9321,7 +9321,7 @@ components:
           description: The external ID of the unit from the integration vendor
         status:
           type: string
-          description: The application status
+          description: The raw status associated with the application
         custom_data:
           type:
             - object
@@ -18081,7 +18081,7 @@ components:
           type:
             - string
             - "null"
-          description: The status of the lead
+          description: The raw status associated with the lead
         target_move_in_date:
           type:
             - string
