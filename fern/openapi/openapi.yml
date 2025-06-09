@@ -16109,6 +16109,9 @@ components:
             - ACTIVE
             - FUTURE
           description: The status associated with the event
+        lead_source_id:
+          type: string
+          description: The Propexo unique identifier for the lead source
         agent_name:
           type: string
           description: The name of the leasing agent associated with the event
