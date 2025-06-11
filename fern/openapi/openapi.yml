@@ -5168,6 +5168,9 @@ components:
           description: The Propexo unique identifier for the integration
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
+        unit_id:
+          type: string
+          description: The Propexo unique identifier for the unit
     _v1_amenities__get_output:
       type: object
       properties:
@@ -34239,6 +34242,13 @@ paths:
           required: false
           description: The integration vendor associated with the data diff
           name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the unit
+          required: false
+          description: The Propexo unique identifier for the unit
+          name: unit_id
           in: query
       responses:
         "200":
