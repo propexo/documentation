@@ -32590,7 +32590,7 @@ components:
 paths:
   /v1/admin/data-diffs/:
     get:
-      description: Get all data diffs
+      description: Get all data diffs. Data diffs are stored for 30 days.
       summary: Get all data diffs
       tags:
         - admin
