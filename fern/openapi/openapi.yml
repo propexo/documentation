@@ -23198,8 +23198,26 @@ components:
               name:
                 type: string
                 description: The name associated with the pet type
+              is_allowed:
+                type:
+                  - boolean
+                  - "null"
+                description: Whether the pet type is allowed or not
+              description:
+                type:
+                  - string
+                  - "null"
+                description: Description of the pet type
+              notes:
+                type:
+                  - string
+                  - "null"
+                description: Notes associated with the pet type
             required:
               - name
+              - is_allowed
+              - description
+              - notes
         associated_owner_ids:
           type: array
           items:
