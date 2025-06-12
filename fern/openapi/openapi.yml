@@ -14128,6 +14128,10 @@ components:
         notes:
           type: string
           description: Notes associated with the resident payment
+        allocate_prepays:
+          type: boolean
+          description: Whether to allocate prepays to the resident payment. This is a flag
+            passed directly to Rent Manager
         batch_id:
           type: string
           description: An identifier for the transaction batch. This should be unique to
