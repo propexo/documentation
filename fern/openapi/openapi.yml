@@ -30621,6 +30621,67 @@ components:
               name:
                 type: string
                 description: The name associated with the unit type
+              bedrooms:
+                type:
+                  - integer
+                  - "null"
+                minimum: 0
+                description: The number of bedrooms associated with the unit type
+              bathrooms:
+                type:
+                  - string
+                  - "null"
+                description: The number of bathrooms associated with the unit type
+              bathrooms_full:
+                type:
+                  - integer
+                  - "null"
+                minimum: 0
+                description: The number of full bathrooms associated with the unit type
+              bathrooms_half:
+                type:
+                  - integer
+                  - "null"
+                minimum: 0
+                description: The number of half bathrooms associated with the unit type
+              rentable_square_feet:
+                type:
+                  - integer
+                  - "null"
+                minimum: 0
+                description: The rentable square footage of the unit type
+              gross_square_feet:
+                type:
+                  - integer
+                  - "null"
+                minimum: 0
+                description: The gross square footage of the unit type
+              rent_minimum_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The minimum rent of the unit type
+              rent_maximum_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The maximum rent of the unit type
+              unit_count:
+                type:
+                  - integer
+                  - "null"
+                minimum: 0
+                description: The number of units associated with the unit type
+              deposit_amount_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The deposit amount in cents associated with the unit type
+              deposit_amount_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw deposit amount associated with the unit type
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -30638,6 +30699,17 @@ components:
               - x_property_id
               - x_location_id
               - name
+              - bedrooms
+              - bathrooms
+              - bathrooms_full
+              - bathrooms_half
+              - rentable_square_feet
+              - gross_square_feet
+              - rent_minimum_in_cents
+              - rent_maximum_in_cents
+              - unit_count
+              - deposit_amount_in_cents
+              - deposit_amount_raw
               - integration_id
               - integration_vendor
               - property_id
@@ -30709,6 +30781,67 @@ components:
             name:
               type: string
               description: The name associated with the unit type
+            bedrooms:
+              type:
+                - integer
+                - "null"
+              minimum: 0
+              description: The number of bedrooms associated with the unit type
+            bathrooms:
+              type:
+                - string
+                - "null"
+              description: The number of bathrooms associated with the unit type
+            bathrooms_full:
+              type:
+                - integer
+                - "null"
+              minimum: 0
+              description: The number of full bathrooms associated with the unit type
+            bathrooms_half:
+              type:
+                - integer
+                - "null"
+              minimum: 0
+              description: The number of half bathrooms associated with the unit type
+            rentable_square_feet:
+              type:
+                - integer
+                - "null"
+              minimum: 0
+              description: The rentable square footage of the unit type
+            gross_square_feet:
+              type:
+                - integer
+                - "null"
+              minimum: 0
+              description: The gross square footage of the unit type
+            rent_minimum_in_cents:
+              type:
+                - number
+                - "null"
+              description: The minimum rent of the unit type
+            rent_maximum_in_cents:
+              type:
+                - number
+                - "null"
+              description: The maximum rent of the unit type
+            unit_count:
+              type:
+                - integer
+                - "null"
+              minimum: 0
+              description: The number of units associated with the unit type
+            deposit_amount_in_cents:
+              type:
+                - number
+                - "null"
+              description: The deposit amount in cents associated with the unit type
+            deposit_amount_raw:
+              type:
+                - string
+                - "null"
+              description: The raw deposit amount associated with the unit type
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -30726,6 +30859,17 @@ components:
             - x_property_id
             - x_location_id
             - name
+            - bedrooms
+            - bathrooms
+            - bathrooms_full
+            - bathrooms_half
+            - rentable_square_feet
+            - gross_square_feet
+            - rent_minimum_in_cents
+            - rent_maximum_in_cents
+            - unit_count
+            - deposit_amount_in_cents
+            - deposit_amount_raw
             - integration_id
             - integration_vendor
             - property_id
