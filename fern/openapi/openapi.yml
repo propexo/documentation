@@ -29397,6 +29397,11 @@ components:
             - string
             - "null"
           description: The raw maximum deposit amount associated with the floor plan
+        custom_data:
+          type:
+            - object
+            - "null"
+          properties: {}
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -29434,6 +29439,7 @@ components:
         - deposit_amount_max_in_cents
         - deposit_amount_min_raw
         - deposit_amount_max_raw
+        - custom_data
         - integration_id
         - integration_vendor
         - property_id
