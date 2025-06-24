@@ -13047,6 +13047,16 @@ components:
             - string
             - "null"
           description: The raw value for amount from the PMS
+        amount_open_in_cents:
+          type:
+            - number
+            - "null"
+          description: The amount open on the resident charge, in cents
+        amount_open_raw:
+          type:
+            - string
+            - "null"
+          description: The raw value for open amount from the PMS
         amount_paid_in_cents:
           type:
             - number
@@ -13229,6 +13239,8 @@ components:
         - x_charge_code_id
         - amount_in_cents
         - amount_raw
+        - amount_open_in_cents
+        - amount_open_raw
         - amount_paid_in_cents
         - amount_paid_raw
         - due_date
