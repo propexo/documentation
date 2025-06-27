@@ -3,4 +3,5 @@ groups:
   publish:
     generators: []
 api:
-  path: openapi/openapi.yml
+  specs:
+    - openapi: openapi/openapi.yml
