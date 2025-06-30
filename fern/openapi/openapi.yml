@@ -6802,6 +6802,10 @@ components:
             Rentvine template, this field can be customized to be either
             required or optional. You will need to work with your customer
             directly to configure this field to your application requirements
+        application_date:
+          type: string
+          format: date-time
+          description: The application date associated with the applicant
         application_template_id:
           type: string
           description: "The Propexo unique identifier for the application template. The
@@ -7864,10 +7868,6 @@ components:
         lead_id:
           type: string
           description: The Propexo unique identifier for the lead
-        application_date:
-          type: string
-          format: date-time
-          description: The application date associated with the applicant
         start_date:
           type: string
           format: date-time
