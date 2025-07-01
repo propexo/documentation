@@ -1407,6 +1407,442 @@ components:
                   description: This is also sometimes referred to as a "client ID"
                 siteId:
                   type: string
+                method_specific:
+                  type: object
+                  properties:
+                    insertfollowup:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the insertfollowup on the Prospect
+                        Management interface.
+                    insertprospect:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the insertprospect on the Prospect
+                        Management interface.
+                    insertactivity:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the insertactivity on the Prospect
+                        Management interface.
+                    addresidentactivitylog:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the addresidentactivitylog on the
+                        Collections interface.
+                    postsinglecharge:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the postsinglecharge on the
+                        Transactions interface.
+                    addservicerequest:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the addservicerequest on the Facilities
+                        interface.
+                    getscheduledappointments:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getscheduledappointments on the
+                        null interface.
+                    getfloorplanlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getfloorplanlist on the Pricing and
+                        Availability interface.
+                    prospectsearch:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the prospectsearch on the Prospect
+                        Management interface.
+                    getactivitytypes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getactivitytypes on the Prospect
+                        Management interface.
+                    getpicklistprospect:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getpicklistprospect on the Prospect
+                        Management interface.
+                    getmarketingsourcesbyproperty:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getmarketingsourcesbyproperty on
+                        the Prospect Management interface.
+                    getleaseinfo:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getleaseinfo on the Convergent
+                        Billing interface.
+                    getleasingagentsbyproperty:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getleasingagentsbyproperty on the
+                        Prospect Management interface.
+                    getunitlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getunitlist on the Pricing and
+                        Availability interface.
+                    getsubscriptions:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getsubscriptions on the AppPartner
+                        interface.
+                    getprospectsurveylist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getprospectsurveylist on the Survey
+                        Interfaces interface.
+                    getresidentlistinfo:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentlistinfo on the Resident
+                        Management interface.
+                    getresidentconvergent:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentconvergent on the
+                        Convergent Billing interface.
+                    getresidentactivitytypes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentactivitytypes on the
+                        Collections interface.
+                    getresidentsactivitylogbydaterange:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentsactivitylogbydaterange
+                        on the Resident Management interface.
+                    getresidentledger:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentledger on the
+                        Transactions interface.
+                    transactioncodes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the transactioncodes on the
+                        Transactions interface.
+                    getservicerequest:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getservicerequest on the Facilities
+                        interface.
+                    getworkordersurveylist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getworkordersurveylist on the
+                        Survey Interfaces interface.
+                    getserviceissuelist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getserviceissuelist on the
+                        Facilities interface.
+                    getlocationlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getlocationlist on the Facilities
+                        interface.
+                    getwoprioritylist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getwoprioritylist on the Facilities
+                        interface.
+                    getunits:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getunits on the Convergent Billing
+                        interface.
+                    getunitsbyproperty:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getunitsbyproperty on the Prospect
+                        Management interface.
+                    unitlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the unitlist on the Units interface.
+                    updateprospect:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the updateprospect on the Prospect
+                        Management interface.
+                    updateservicerequest:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the updateservicerequest on the
+                        Facilities interface.
+                    getagentsappointmenttimes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getagentsappointmenttimes on the
+                        Prospect Management interface.
+                    getsitelist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getsitelist on the AppPartner
+                        interface.
+                    updatesitesubscriptionstatus:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the updatesitesubscriptionstatus on the
+                        AppPartner interface.
+                  description: If Realpage requires you to have method specific credentials, you
+                    can specify them per API method here
               required:
                 - baseUrl
                 - licensekey
@@ -3448,6 +3884,442 @@ components:
                   description: This is also sometimes referred to as a "client ID"
                 siteId:
                   type: string
+                method_specific:
+                  type: object
+                  properties:
+                    insertfollowup:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the insertfollowup on the Prospect
+                        Management interface.
+                    insertprospect:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the insertprospect on the Prospect
+                        Management interface.
+                    insertactivity:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the insertactivity on the Prospect
+                        Management interface.
+                    addresidentactivitylog:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the addresidentactivitylog on the
+                        Collections interface.
+                    postsinglecharge:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the postsinglecharge on the
+                        Transactions interface.
+                    addservicerequest:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the addservicerequest on the Facilities
+                        interface.
+                    getscheduledappointments:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getscheduledappointments on the
+                        null interface.
+                    getfloorplanlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getfloorplanlist on the Pricing and
+                        Availability interface.
+                    prospectsearch:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the prospectsearch on the Prospect
+                        Management interface.
+                    getactivitytypes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getactivitytypes on the Prospect
+                        Management interface.
+                    getpicklistprospect:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getpicklistprospect on the Prospect
+                        Management interface.
+                    getmarketingsourcesbyproperty:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getmarketingsourcesbyproperty on
+                        the Prospect Management interface.
+                    getleaseinfo:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getleaseinfo on the Convergent
+                        Billing interface.
+                    getleasingagentsbyproperty:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getleasingagentsbyproperty on the
+                        Prospect Management interface.
+                    getunitlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getunitlist on the Pricing and
+                        Availability interface.
+                    getsubscriptions:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getsubscriptions on the AppPartner
+                        interface.
+                    getprospectsurveylist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getprospectsurveylist on the Survey
+                        Interfaces interface.
+                    getresidentlistinfo:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentlistinfo on the Resident
+                        Management interface.
+                    getresidentconvergent:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentconvergent on the
+                        Convergent Billing interface.
+                    getresidentactivitytypes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentactivitytypes on the
+                        Collections interface.
+                    getresidentsactivitylogbydaterange:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentsactivitylogbydaterange
+                        on the Resident Management interface.
+                    getresidentledger:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getresidentledger on the
+                        Transactions interface.
+                    transactioncodes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the transactioncodes on the
+                        Transactions interface.
+                    getservicerequest:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getservicerequest on the Facilities
+                        interface.
+                    getworkordersurveylist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getworkordersurveylist on the
+                        Survey Interfaces interface.
+                    getserviceissuelist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getserviceissuelist on the
+                        Facilities interface.
+                    getlocationlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getlocationlist on the Facilities
+                        interface.
+                    getwoprioritylist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getwoprioritylist on the Facilities
+                        interface.
+                    getunits:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getunits on the Convergent Billing
+                        interface.
+                    getunitsbyproperty:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getunitsbyproperty on the Prospect
+                        Management interface.
+                    unitlist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the unitlist on the Units interface.
+                    updateprospect:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the updateprospect on the Prospect
+                        Management interface.
+                    updateservicerequest:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the updateservicerequest on the
+                        Facilities interface.
+                    getagentsappointmenttimes:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getagentsappointmenttimes on the
+                        Prospect Management interface.
+                    getsitelist:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the getsitelist on the AppPartner
+                        interface.
+                    updatesitesubscriptionstatus:
+                      type: object
+                      properties:
+                        baseUrl:
+                          type: string
+                        licensekey:
+                          type: string
+                      required:
+                        - baseUrl
+                        - licensekey
+                      description: The credentials specific to the updatesitesubscriptionstatus on the
+                        AppPartner interface.
+                  description: If Realpage requires you to have method specific credentials, you
+                    can specify them per API method here
               required:
                 - baseUrl
                 - licensekey
