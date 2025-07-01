@@ -13319,6 +13319,18 @@ components:
           type: string
           maxLength: 50
           description: The title associated with the event
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
         priority:
           type: string
           enum:
@@ -13382,7 +13394,8 @@ components:
           description: The duration of the appointment, in minutes
         employee_id:
           type: string
-          description: The Propexo unique identifier for the employee
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
         notes:
           type: string
           description: Notes associated with the event
@@ -13402,6 +13415,14 @@ components:
           type: string
           maxLength: 50
           description: The title associated with the event
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
         priority:
           type: string
           enum:
@@ -13464,6 +13485,21 @@ components:
             Propexo Timezone model.  You may need to read in this setting and
             convert to the local timezone for the appointment time to be
             correct.
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
+        notes:
+          type: string
+          description: Notes associated with the event
         appointment_duration_minutes:
           type: integer
           exclusiveMinimum: 0
@@ -13472,9 +13508,6 @@ components:
           type: string
           maxLength: 50
           description: The title associated with the event
-        notes:
-          type: string
-          description: Notes associated with the event
     _v1_events_appointments_residents_{event_id}_put_output:
       type: object
       properties:
@@ -17644,6 +17677,117 @@ components:
       required:
         - meta
         - results
+    _v1_events_applicants_{event_id}_put_input:
+      type: object
+      properties:
+        event_datetime:
+          type: string
+          format: date-time
+          description: The date when the event will occur
+        event_type_id:
+          type: string
+          description: The Propexo unique identifier for the event type
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
+        notes:
+          type: string
+          description: Notes associated with the event
+    _v1_events_applicants_{event_id}_put_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
+    _v1_events_leads_{event_id}_put_input:
+      type: object
+      properties:
+        event_datetime:
+          type: string
+          format: date-time
+          description: The date when the event will occur
+        event_type_id:
+          type: string
+          description: The Propexo unique identifier for the event type
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
+        notes:
+          type: string
+          description: Notes associated with the event
+    _v1_events_leads_{event_id}_put_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
+    _v1_events_residents_{event_id}_put_input:
+      type: object
+      properties:
+        event_datetime:
+          type: string
+          format: date-time
+          description: The date when the event will occur
+        event_type_id:
+          type: string
+          description: The Propexo unique identifier for the event type
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
+        notes:
+          type: string
+          description: Notes associated with the event
+    _v1_events_residents_{event_id}_put_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
     _v1_file-types__get_input:
       type: object
       properties:
@@ -40104,6 +40248,108 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_event-results_{event_result_id}_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/events/applicants/{event_id}:
+    put:
+      description: Update an event for an applicant
+      summary: Update an event for an applicant
+      tags:
+        - events
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: true
+          description: The Propexo unique identifier for the event
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_events_applicants_{event_id}_put_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_events_applicants_{event_id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/events/leads/{event_id}:
+    put:
+      description: Update an event for a lead
+      summary: Update an event for a lead
+      tags:
+        - events
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: true
+          description: The Propexo unique identifier for the event
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_events_leads_{event_id}_put_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_events_leads_{event_id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/events/residents/{event_id}:
+    put:
+      description: Update an event for a resident
+      summary: Update an event for a resident
+      tags:
+        - events
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the event
+          required: true
+          description: The Propexo unique identifier for the event
+          name: event_id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_events_residents_{event_id}_put_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_events_residents_{event_id}_put_output"
         "400":
           description: Bad Request
           content:
