@@ -13109,6 +13109,14 @@ components:
         employee_id:
           type: string
           description: The Propexo unique identifier for the employee
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
         priority:
           type: string
           enum:
@@ -13178,6 +13186,14 @@ components:
           type: string
           maxLength: 50
           description: The title associated with the event
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
         priority:
           type: string
           enum:
@@ -13210,9 +13226,6 @@ components:
         resident_id:
           type: string
           description: The Propexo unique identifier for the resident
-        employee_id:
-          type: string
-          description: The Propexo unique identifier for the employee
         appointment_date:
           anyOf:
             - type: string
@@ -13231,6 +13244,20 @@ components:
             Propexo Timezone model.  You may need to read in this setting and
             convert to the local timezone for the appointment time to be
             correct.
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
+        notes:
+          type: string
+          description: Notes associated with the event
         appointment_duration_minutes:
           type: integer
           exclusiveMinimum: 0
@@ -13239,9 +13266,6 @@ components:
           type: string
           maxLength: 50
           description: The title associated with the event
-        notes:
-          type: string
-          description: Notes associated with the event
       required:
         - integration_id
     _v1_events_appointments_residents_post_output:
@@ -16868,7 +16892,8 @@ components:
           description: The Propexo unique identifier for the event type
         employee_id:
           type: string
-          description: The Propexo unique identifier for the employee
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit. Only some PMS events
@@ -16891,6 +16916,14 @@ components:
         title:
           type: string
           description: The title associated with the event
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
         event_name:
           type: string
           enum:
@@ -17022,6 +17055,15 @@ components:
         email_send:
           type: boolean
           description: Whether the email should be sent.
+        status:
+          type: string
+          enum:
+            - LEASED
+            - LOST
+            - UNQUALIFIED
+            - ACTIVE
+            - FUTURE
+          description: The status associated with the event
         event_name:
           type: string
           enum:
@@ -17037,15 +17079,6 @@ components:
             - SelfGuidedTour
             - Application
           description: The name or type of event
-        status:
-          type: string
-          enum:
-            - LEASED
-            - LOST
-            - UNQUALIFIED
-            - ACTIVE
-            - FUTURE
-          description: The status associated with the event
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source
@@ -17088,7 +17121,8 @@ components:
           description: The Propexo unique identifier for the event type
         employee_id:
           type: string
-          description: The Propexo unique identifier for the employee
+          description: The Propexo unique identifier for the employee. Must have a role of
+            LEASING_AGENT
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit
@@ -17110,6 +17144,14 @@ components:
         title:
           type: string
           description: The title associated with the event
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - OPEN
+            - REVIEW
+            - DENIED
+          description: The raw status associated with the event
         event_name:
           type: string
           description: The name or type of event
