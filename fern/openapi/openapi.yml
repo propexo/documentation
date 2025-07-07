@@ -7013,6 +7013,9 @@ components:
           description: The Propexo unique identifier for the integration
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
+        email_1:
+          type: string
+          description: The primary email address associated with the applicant
     Applicant:
       type: object
       properties:
@@ -36068,6 +36071,13 @@ paths:
           required: false
           description: The integration vendor associated with the data diff
           name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The primary email address associated with the applicant
+          required: false
+          description: The primary email address associated with the applicant
+          name: email_1
           in: query
       responses:
         "200":
