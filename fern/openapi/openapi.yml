@@ -26508,6 +26508,9 @@ components:
           description: The Propexo integration id
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
+        email_1:
+          type: string
+          description: The primary email address associated with the resident
     _v1_residents__get_output:
       type: object
       properties:
@@ -44010,6 +44013,13 @@ paths:
           required: false
           description: The integration vendor associated with the data diff
           name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The primary email address associated with the resident
+          required: false
+          description: The primary email address associated with the resident
+          name: email_1
           in: query
       responses:
         "200":
