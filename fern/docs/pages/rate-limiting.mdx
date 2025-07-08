@@ -32,7 +32,7 @@ Each API response includes helpful headers that show your current usage:
 - `x-ratelimit-limit`: The total number of requests allowed per minute.
 - `x-ratelimit-remaining`: The number of requests you have left in the current minute.
 
-If you use **80%** of your allowed requests, the API will slow things down slightly by adding a **2-second delay** between requests.  
+If you use **80%** of your allowed requests, the API will slow things down slightly by adding a **2-second delay** to each response.  
 If you hit **100%**, the API will return a **429 error** and block new requests until the minute resets. After that, you’re good to go again.
 
 ---
