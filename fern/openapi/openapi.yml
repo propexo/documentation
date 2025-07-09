@@ -7588,6 +7588,16 @@ components:
           items:
             type: object
             properties:
+              employee_id:
+                type: string
+                description: The Propexo unique identifier for the employee
+              lead_source_id:
+                type: string
+                description: The Propexo unique identifier for the lead source
+              unit_id:
+                type: string
+                description: The Propexo unique identifier for the unit. Only some events use
+                  this, including "Show" and "Appointment".
               event_name:
                 type: string
                 enum:
@@ -7602,38 +7612,24 @@ components:
                   - Application
                   - SelfGuidedTour
                   - Application
-                description: The name/type of the event. This has to be from a predefined set of
-                  PMS events.
+                description: The name or type of event. This has to be from a predefined set of
+                  events.
               event_datetime:
                 type: string
                 format: date-time
-                description: The date and time that the event occurred.
+                description: The date when the event will occur
               notes:
                 type: string
                 maxLength: 256
-                description: General notes about the event.
-              agent_name:
-                type: string
-                description: The name of the agent associated with the address.
-              lead_source:
-                type: string
-                description: The source of the lead associated with the lead event. This has to
-                  be from a preset list of lead sources that have to be
-                  registered inside of the PMS.
+                description: Notes associated with the event
               reasons_for_event:
                 type: string
-                description: The reason the event occurred.
-              unit_id:
-                type: string
-                description: The Propexo unit ID associated with the lead event. Only some PMS
-                  events use this, including "Show" and "Appointment".
+                description: The reasons for the event
             required:
+              - employee_id
               - event_name
               - event_datetime
-              - agent_name
-          description: "DEPRECATED: Please use /events endpoints to write events. Array of
-            events associated with this applicant"
-          deprecated: true
+          description: A list of events to create for the new applicant
         move_in_date:
           type: string
           format: date-time
@@ -7647,17 +7643,17 @@ components:
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The target move in date for the applicant. The timestamp will be
+          description: The move-in date associated with the lead. The timestamp will be
             stripped off and only the date will be used
         desired_num_bedrooms:
           type: number
-          description: The desired number of bedrooms of the applicant
+          description: The desired number of bedrooms
         desired_num_bathrooms:
           type: string
           description: The desired number of bathrooms
         desired_lease_term_in_months:
           type: string
-          description: The desired lease term in months of the applicant
+          description: The amount of months for the lease term
         number_of_occupants:
           type: number
           description: The number of occupants for the applicant
@@ -7844,7 +7840,11 @@ components:
             directly to configure this field to your application requirements
         lead_source:
           type: string
-          description: The name of the lead source associated with the applicant
+          description: The name of the source of the lead or how the applicant heard of
+            the property management company. Depending on the Rentvine template,
+            this field can be customized to be either required or optional. You
+            will need to work with your customer directly to configure this
+            field to your application requirements
         emergency_contacts:
           type: array
           items:
@@ -8763,17 +8763,17 @@ components:
         rent_amount_market_in_cents:
           type: integer
           description: The market rent amount in cents for the lease
+        employee_id:
+          type: string
+          description: The Propexo unique identifier for the employee
+        third_party_id:
+          type: string
+          description: A unique value provided to the PMS to uniquely identify the
+            applicant from your system.
         organization_name:
           type: string
-          description: The name of your organization. Sample1 uses this for associating an
+          description: The name of your organization. Sample1 uses this for associating a
             applicant
-        unique_applicant_id:
-          type: string
-          description: A unique ID you associate with a applicant. This is not the Sample1
-            applicant ID.
-        leasing_agent:
-          type: string
-          description: The full name of the leasing agent associated with the applicant
       required:
         - integration_id
     _v1_applicants__post_output:
@@ -8943,53 +8943,49 @@ components:
           items:
             type: object
             properties:
-              event_name:
+              unit_id:
                 type: string
-                enum:
-                  - Other
-                  - WalkIn
-                  - Chat
-                  - Email
-                  - Text
-                  - Webservice
-                  - Appointment
-                  - Show
-                  - Application
-                  - SelfGuidedTour
-                  - Application
-                description: The name/type of the event. This has to be from a predefined set of
-                  PMS events.
+                description: The Propexo unique identifier for the unit
+              x_type_id:
+                type: string
+                description: The PMS id for the event type.
+              x_leasing_agent_id:
+                type: string
+                description: The PMS id for the leasing agent.
+              x_sub_type_id:
+                type: string
+                description: The PMS id for the event sub type.
+              x_result_id:
+                type: string
+                description: The PMS id for the event result.
               event_datetime:
                 type: string
                 format: date-time
-                description: The date and time that the event occurred.
+                description: The date and time that the event occured.
+              appointment_datetime:
+                type: string
+                format: date-time
+                description: The date and time that the appointment will occur. Required if
+                  using appointment type.
+              time_from:
+                type: string
+              time_to:
+                type: string
               notes:
                 type: string
-                maxLength: 256
                 description: General notes about the event.
-              agent_name:
+              title:
                 type: string
-                description: The name of the agent associated with the address.
-              lead_source:
-                type: string
-                description: The source of the lead associated with the lead event. This has to
-                  be from a preset list of lead sources that have to be
-                  registered inside of the PMS.
+                description: Title for the event.
               reasons_for_event:
                 type: string
                 description: The reason the event occurred.
-              unit_id:
-                type: string
-                description: The Propexo unit ID associated with the lead event. Only some PMS
-                  events use this, including "Show" and "Appointment".
               id:
                 type: string
-                description: The Propexo unique identifier for the event. Required if attempting
-                  to update an existing event associated with an applicant.
+                description: The Propexo unique identifier for the event. Only required if
+                  attempting to update an existing event.
             required:
-              - event_name
-              - event_datetime
-              - agent_name
+              - x_type_id
           description: "DEPRECATED: Please use /events endpoints to write events. Array of
             events associated with this applicant"
           deprecated: true
@@ -19672,48 +19668,48 @@ components:
           items:
             type: object
             properties:
+              employee_id:
+                type: string
+                description: The Propexo unique identifier for the employee
+              lead_source_id:
+                type: string
+                description: The Propexo unique identifier for the lead source
               unit_id:
                 type: string
-                description: The Propexo unique identifier for the unit
-              x_type_id:
+                description: The Propexo unique identifier for the unit. Only some events use
+                  this, including "Show" and "Appointment".
+              event_name:
                 type: string
-                description: The PMS id for the event type.
-              x_leasing_agent_id:
-                type: string
-                description: The PMS id for the leasing agent.
-              x_sub_type_id:
-                type: string
-                description: The PMS id for the event sub type.
-              x_result_id:
-                type: string
-                description: The PMS id for the event result.
+                enum:
+                  - Other
+                  - WalkIn
+                  - Chat
+                  - Email
+                  - Text
+                  - Webservice
+                  - Appointment
+                  - Show
+                  - Application
+                  - SelfGuidedTour
+                  - Application
+                description: The name or type of event. This has to be from a predefined set of
+                  events.
               event_datetime:
                 type: string
                 format: date-time
-                description: The date and time that the event occured.
-              appointment_datetime:
-                type: string
-                format: date-time
-                description: The date and time that the appointment will occur. Required if
-                  using appointment type.
-              time_from:
-                type: string
-              time_to:
-                type: string
+                description: The date when the event will occur
               notes:
                 type: string
-                description: General notes about the event.
-              title:
-                type: string
-                description: Title for the event.
+                maxLength: 256
+                description: Notes associated with the event
               reasons_for_event:
                 type: string
-                description: The reason the event occurred.
+                description: The reasons for the event
             required:
-              - x_type_id
-          description: "DEPRECATED: Please use /events endpoints to write events. Array of
-            events associated with this lead"
-          deprecated: true
+              - employee_id
+              - event_name
+              - event_datetime
+          description: A list of events to create for the new lead
         address_type_id:
           type: string
           description: The Propexo unique identifier for the address type
@@ -19750,13 +19746,14 @@ components:
         floor_plan_id:
           type: string
           description: The Propexo unique identifier for the floor plan
+        third_party_id:
+          type: string
+          description: A unique value provided to the PMS to uniquely identify the lead
+            from your system.
         organization_name:
           type: string
           description: The name of your organization. Sample1 uses this for associating a
-            prospect
-        third_party_id:
-          type: string
-          description: Any unique ID you would like to associate with a lead.
+            lead
       required:
         - integration_id
     _v1_leads__post_output:
