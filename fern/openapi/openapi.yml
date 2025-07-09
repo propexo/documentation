@@ -7601,6 +7601,8 @@ components:
               event_name:
                 type: string
                 enum:
+                  - CallToProspect
+                  - CallFromProspect
                   - Other
                   - WalkIn
                   - Chat
@@ -16959,11 +16961,12 @@ components:
         event_name:
           type: string
           enum:
+            - CallToProspect
+            - CallFromProspect
             - Other
             - WalkIn
             - Chat
             - Email
-            - Text
             - Webservice
             - Appointment
             - Show
@@ -17099,11 +17102,12 @@ components:
         event_name:
           type: string
           enum:
+            - CallToProspect
+            - CallFromProspect
             - Other
             - WalkIn
             - Chat
             - Email
-            - Text
             - Webservice
             - Appointment
             - Show
@@ -19681,6 +19685,8 @@ components:
               event_name:
                 type: string
                 enum:
+                  - CallToProspect
+                  - CallFromProspect
                   - Other
                   - WalkIn
                   - Chat
