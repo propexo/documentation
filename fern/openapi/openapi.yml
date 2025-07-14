@@ -5275,6 +5275,39 @@ components:
         sync_config_id:
           type: string
           description: The Propexo unique identifier for a sync configuration
+        models_to_sync:
+          type: array
+          items:
+            type: string
+            enum:
+              - amenities
+              - applicants
+              - applications
+              - construction_jobs
+              - employees
+              - events
+              - invoices
+              - leads
+              - leases
+              - listings
+              - locations
+              - owners
+              - properties
+              - resident_charges
+              - resident_payments
+              - residents
+              - transactions
+              - timezones
+              - units
+              - screenings
+              - service_requests
+              - service_request_vendors
+          description: A list of the specific models to sync. This will only ingest the
+            models specified during the sync and any relational models. For
+            example, requesting "residents" and "leases" will also query their
+            relational data. This can be used for times when only a limited
+            amount of data would like to be synced. If you'd like this as part
+            of your scheduled syncs, please contact Propexo support.
     _v1_admin_integrations_{integration_id}_back-sync_post_output:
       type: object
       properties:
@@ -5293,6 +5326,39 @@ components:
         sync_config_id:
           type: string
           description: The Propexo unique identifier for a sync configuration
+        models_to_sync:
+          type: array
+          items:
+            type: string
+            enum:
+              - amenities
+              - applicants
+              - applications
+              - construction_jobs
+              - employees
+              - events
+              - invoices
+              - leads
+              - leases
+              - listings
+              - locations
+              - owners
+              - properties
+              - resident_charges
+              - resident_payments
+              - residents
+              - transactions
+              - timezones
+              - units
+              - screenings
+              - service_requests
+              - service_request_vendors
+          description: A list of the specific models to sync. This will only ingest the
+            models specified during the sync and any relational models. For
+            example, requesting "residents" and "leases" will also query their
+            relational data. This can be used for times when only a limited
+            amount of data would like to be synced. If you'd like this as part
+            of your scheduled syncs, please contact Propexo support.
     _v1_admin_integrations_{integration_id}_manual-sync_post_output:
       type: object
       properties:
@@ -34966,9 +35032,9 @@ paths:
       parameters:
         - schema:
             type: string
-            description: The Propexo unique identifier for the integration
+            description: The ID of the resource.
           required: true
-          description: The Propexo unique identifier for the integration
+          description: The ID of the resource.
           name: integration_id
           in: path
       requestBody:
@@ -35004,9 +35070,9 @@ paths:
       parameters:
         - schema:
             type: string
-            description: The Propexo unique identifier for the integration
+            description: The ID of the resource.
           required: true
-          description: The Propexo unique identifier for the integration
+          description: The ID of the resource.
           name: integration_id
           in: path
       requestBody:
