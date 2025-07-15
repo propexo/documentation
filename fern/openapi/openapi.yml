@@ -1493,7 +1493,7 @@ components:
                         - baseUrl
                         - licensekey
                       description: The credentials specific to the getscheduledappointments on the
-                        null interface.
+                        Prospect Management interface.
                     getfloorplanlist:
                       type: object
                       properties:
@@ -3970,7 +3970,7 @@ components:
                         - baseUrl
                         - licensekey
                       description: The credentials specific to the getscheduledappointments on the
-                        null interface.
+                        Prospect Management interface.
                     getfloorplanlist:
                       type: object
                       properties:
