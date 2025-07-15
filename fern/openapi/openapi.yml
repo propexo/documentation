@@ -27938,6 +27938,34 @@ components:
           description: "DEPRECATED: Please use /events endpoints to write events. Array of
             events associated with this resident"
           deprecated: true
+        lead_source_id:
+          type: string
+          description: The Propexo unique identifier for the lead source
+        middle_initial:
+          type: string
+          minLength: 1
+          maxLength: 1
+          description: The middle initial of the resident
+        qualified:
+          type: boolean
+          description: Whether the resident is qualified
+        gender:
+          type: string
+          enum:
+            - MALE
+            - FEMALE
+          description: The gender of the resident
+        guarantor:
+          type: boolean
+          description: Indicates if the resident is a guarantor for the primary resident.
+        monthly_income_in_cents:
+          type: integer
+          minimum: 0
+          description: The monthly income of the resident, in cents
+        no_checks_in_cash_receipts:
+          type: boolean
+          description: To restrict the resident from making payments by check, set this to
+            true. Defaults to false.
         rent_period:
           type: string
           enum:
