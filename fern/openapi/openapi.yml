@@ -19023,6 +19023,28 @@ components:
       required:
         - job_id
         - data
+    _v1_payable-registers_cancel_post_input:
+      type: object
+      properties:
+        integration_id:
+          type: string
+        payable_register_id:
+          type: string
+          description: The Propexo unique identifier for the payable register
+      required:
+        - integration_id
+    _v1_payable-registers_cancel_post_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
     _v1_payable-registers_{payable_register_id}_get_input:
       type: object
       properties:
@@ -41015,6 +41037,32 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_payable-registers__post_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/payable-registers/cancel:
+    post:
+      description: Cancel a payable register
+      summary: Cancel a payable register
+      tags:
+        - invoices
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_v1_payable-registers_cancel_post_input"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_payable-registers_cancel_post_output"
         "400":
           description: Bad Request
           content:
