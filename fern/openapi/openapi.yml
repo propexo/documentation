@@ -889,9 +889,11 @@ components:
                         - RESMAN_UPDATE_LEAD
                         - RESMAN_UPDATE_SERVICE_REQUEST
                         - SAMPLE2_CREATE_APPOINTMENT
+                        - SAMPLE2_CREATE_CHARGE
                         - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
+                        - SAMPLE2_READ_FINANCIAL_ACCOUNTS
                         - SAMPLE2_READ_LEADS
                         - SAMPLE2_READ_LISTINGS
                         - SAMPLE2_READ_PROPERTIES
@@ -1126,9 +1128,11 @@ components:
                           - RESMAN_UPDATE_LEAD
                           - RESMAN_UPDATE_SERVICE_REQUEST
                           - SAMPLE2_CREATE_APPOINTMENT
+                          - SAMPLE2_CREATE_CHARGE
                           - SAMPLE2_CREATE_LEAD
                           - SAMPLE2_READ_APPOINTMENTS
                           - SAMPLE2_READ_EMPLOYEES
+                          - SAMPLE2_READ_FINANCIAL_ACCOUNTS
                           - SAMPLE2_READ_LEADS
                           - SAMPLE2_READ_LISTINGS
                           - SAMPLE2_READ_PROPERTIES
@@ -3358,9 +3362,11 @@ components:
                       - RESMAN_UPDATE_LEAD
                       - RESMAN_UPDATE_SERVICE_REQUEST
                       - SAMPLE2_CREATE_APPOINTMENT
+                      - SAMPLE2_CREATE_CHARGE
                       - SAMPLE2_CREATE_LEAD
                       - SAMPLE2_READ_APPOINTMENTS
                       - SAMPLE2_READ_EMPLOYEES
+                      - SAMPLE2_READ_FINANCIAL_ACCOUNTS
                       - SAMPLE2_READ_LEADS
                       - SAMPLE2_READ_LISTINGS
                       - SAMPLE2_READ_PROPERTIES
@@ -3595,9 +3601,11 @@ components:
                         - RESMAN_UPDATE_LEAD
                         - RESMAN_UPDATE_SERVICE_REQUEST
                         - SAMPLE2_CREATE_APPOINTMENT
+                        - SAMPLE2_CREATE_CHARGE
                         - SAMPLE2_CREATE_LEAD
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
+                        - SAMPLE2_READ_FINANCIAL_ACCOUNTS
                         - SAMPLE2_READ_LEADS
                         - SAMPLE2_READ_LISTINGS
                         - SAMPLE2_READ_PROPERTIES
@@ -14289,9 +14297,6 @@ components:
         amount_in_cents:
           type: integer
           description: The amount of the resident charge, in cents
-        reference_number:
-          type: string
-          description: The reference number for the resident charge
         transaction_date:
           type: string
           format: date-time
@@ -14299,6 +14304,9 @@ components:
         description:
           type: string
           description: Description of the resident charge
+        reference_number:
+          type: string
+          description: The reference number for the resident charge
         charge_code_id:
           type: string
           description: The Propexo ID for the charge code associated with this new charge
