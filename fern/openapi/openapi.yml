@@ -898,6 +898,7 @@ components:
                         - SAMPLE2_READ_LISTINGS
                         - SAMPLE2_READ_PROPERTIES
                         - SAMPLE2_READ_RESIDENTS
+                        - SAMPLE2_READ_RECURRING_CHARGES
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_TENANT_LEDGERS
                         - SAMPLE2_READ_UNITS
@@ -1137,6 +1138,7 @@ components:
                           - SAMPLE2_READ_LISTINGS
                           - SAMPLE2_READ_PROPERTIES
                           - SAMPLE2_READ_RESIDENTS
+                          - SAMPLE2_READ_RECURRING_CHARGES
                           - SAMPLE2_READ_SERVICE_REQUESTS
                           - SAMPLE2_READ_TENANT_LEDGERS
                           - SAMPLE2_READ_UNITS
@@ -3371,6 +3373,7 @@ components:
                       - SAMPLE2_READ_LISTINGS
                       - SAMPLE2_READ_PROPERTIES
                       - SAMPLE2_READ_RESIDENTS
+                      - SAMPLE2_READ_RECURRING_CHARGES
                       - SAMPLE2_READ_SERVICE_REQUESTS
                       - SAMPLE2_READ_TENANT_LEDGERS
                       - SAMPLE2_READ_UNITS
@@ -3610,6 +3613,7 @@ components:
                         - SAMPLE2_READ_LISTINGS
                         - SAMPLE2_READ_PROPERTIES
                         - SAMPLE2_READ_RESIDENTS
+                        - SAMPLE2_READ_RECURRING_CHARGES
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_TENANT_LEDGERS
                         - SAMPLE2_READ_UNITS
