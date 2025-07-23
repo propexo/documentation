@@ -18150,6 +18150,42 @@ components:
                   - string
                   - "null"
                 description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
+              x_vendor_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the vendor from the integration vendor
+              x_financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the financial account from the integration
+                  vendor
+              x_cash_financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the cash financial account from the integration
+                  vendor
+              x_ap_financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the AP financial account from the integration
+                  vendor
               amount_due_in_cents:
                 type:
                   - number
@@ -18224,6 +18260,21 @@ components:
               property_id:
                 type: string
                 description: The Propexo unique identifier for the property
+              financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the financial account
+              cash_financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the cash financial account
+              ap_financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the ap financial account
               integration_id:
                 type: string
                 description: The Propexo unique identifier for the integration
@@ -18234,6 +18285,31 @@ components:
                 items:
                   type: object
                   properties:
+                    x_id:
+                      type: string
+                      description: The external ID from the integration vendor
+                    x_property_id:
+                      type: string
+                      description: The external ID of the property from the integration vendor
+                    x_location_id:
+                      type:
+                        - string
+                        - "null"
+                      description: The external ID of the location (exclusive to Rent Manager
+                        integrations). This is always null for non-Rent Manager
+                        integrations.
+                    x_gl_account_id:
+                      type:
+                        - string
+                        - "null"
+                      description: The external ID of the financial account from the integration
+                        vendor
+                    x_cash_financial_account_id:
+                      type:
+                        - string
+                        - "null"
+                      description: The external ID of the cash financial account from the integration
+                        vendor
                     invoice_id:
                       type: string
                       description: The Propexo unique identifier for the invoice
@@ -18257,12 +18333,33 @@ components:
                         - number
                         - "null"
                       description: The amount of the invoice item, in cents
+                    property_id:
+                      type: string
+                      description: The Propexo unique identifier for the property
+                    financial_account_id:
+                      type:
+                        - string
+                        - "null"
+                      description: The Propexo unique identifier for the financial account
+                    cash_financial_account_id:
+                      type:
+                        - string
+                        - "null"
+                      description: The Propexo unique identifier for the cash financial account
                   required:
+                    - x_id
+                    - x_property_id
+                    - x_location_id
+                    - x_gl_account_id
+                    - x_cash_financial_account_id
                     - invoice_id
                     - construction_job_id
                     - amount_due_in_cents
                     - notes
                     - total_amount_in_cents
+                    - property_id
+                    - financial_account_id
+                    - cash_financial_account_id
                   x-propexo:
                     derivedFromModel: invoice_items
             required:
@@ -18270,6 +18367,13 @@ components:
               - created_at
               - updated_at
               - last_seen
+              - x_id
+              - x_property_id
+              - x_location_id
+              - x_vendor_id
+              - x_financial_account_id
+              - x_cash_financial_account_id
+              - x_ap_financial_account_id
               - amount_due_in_cents
               - amount_paid_in_cents
               - custom_data
@@ -18285,6 +18389,9 @@ components:
               - sub_total_amount_in_cents
               - total_amount_in_cents
               - property_id
+              - financial_account_id
+              - cash_financial_account_id
+              - ap_financial_account_id
               - integration_id
               - integration_vendor
               - invoice_items
@@ -18469,6 +18576,42 @@ components:
                 - string
                 - "null"
               description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
+            x_vendor_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the vendor from the integration vendor
+            x_financial_account_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the financial account from the integration
+                vendor
+            x_cash_financial_account_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the cash financial account from the integration
+                vendor
+            x_ap_financial_account_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the AP financial account from the integration
+                vendor
             amount_due_in_cents:
               type:
                 - number
@@ -18543,6 +18686,21 @@ components:
             property_id:
               type: string
               description: The Propexo unique identifier for the property
+            financial_account_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the financial account
+            cash_financial_account_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the cash financial account
+            ap_financial_account_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the ap financial account
             integration_id:
               type: string
               description: The Propexo unique identifier for the integration
@@ -18553,6 +18711,31 @@ components:
               items:
                 type: object
                 properties:
+                  x_id:
+                    type: string
+                    description: The external ID from the integration vendor
+                  x_property_id:
+                    type: string
+                    description: The external ID of the property from the integration vendor
+                  x_location_id:
+                    type:
+                      - string
+                      - "null"
+                    description: The external ID of the location (exclusive to Rent Manager
+                      integrations). This is always null for non-Rent Manager
+                      integrations.
+                  x_gl_account_id:
+                    type:
+                      - string
+                      - "null"
+                    description: The external ID of the financial account from the integration
+                      vendor
+                  x_cash_financial_account_id:
+                    type:
+                      - string
+                      - "null"
+                    description: The external ID of the cash financial account from the integration
+                      vendor
                   invoice_id:
                     type: string
                     description: The Propexo unique identifier for the invoice
@@ -18576,12 +18759,33 @@ components:
                       - number
                       - "null"
                     description: The amount of the invoice item, in cents
+                  property_id:
+                    type: string
+                    description: The Propexo unique identifier for the property
+                  financial_account_id:
+                    type:
+                      - string
+                      - "null"
+                    description: The Propexo unique identifier for the financial account
+                  cash_financial_account_id:
+                    type:
+                      - string
+                      - "null"
+                    description: The Propexo unique identifier for the cash financial account
                 required:
+                  - x_id
+                  - x_property_id
+                  - x_location_id
+                  - x_gl_account_id
+                  - x_cash_financial_account_id
                   - invoice_id
                   - construction_job_id
                   - amount_due_in_cents
                   - notes
                   - total_amount_in_cents
+                  - property_id
+                  - financial_account_id
+                  - cash_financial_account_id
                 x-propexo:
                   derivedFromModel: invoice_items
           required:
@@ -18589,6 +18793,13 @@ components:
             - created_at
             - updated_at
             - last_seen
+            - x_id
+            - x_property_id
+            - x_location_id
+            - x_vendor_id
+            - x_financial_account_id
+            - x_cash_financial_account_id
+            - x_ap_financial_account_id
             - amount_due_in_cents
             - amount_paid_in_cents
             - custom_data
@@ -18604,6 +18815,9 @@ components:
             - sub_total_amount_in_cents
             - total_amount_in_cents
             - property_id
+            - financial_account_id
+            - cash_financial_account_id
+            - ap_financial_account_id
             - integration_id
             - integration_vendor
             - invoice_items
@@ -18680,6 +18894,41 @@ components:
             - string
             - "null"
           description: The date the record was last seen from the PMS
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        x_location_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
+        x_financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the financial account from the integration vendor
+        x_cash_financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the cash financial account from the integration
+            vendor
+        x_ap_financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the AP financial account from the integration
+            vendor
+        x_vendor_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the vendor from the integration vendor
         x_batch_id:
           type:
             - string
@@ -18794,6 +19043,21 @@ components:
         property_id:
           type: string
           description: The Propexo unique identifier for the property
+        financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the financial account
+        cash_financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the cash financial account
+        ap_financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the ap financial account
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -18804,6 +19068,31 @@ components:
           items:
             type: object
             properties:
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
+              x_gl_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the financial account from the integration
+                  vendor
+              x_cash_financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the cash financial account from the integration
+                  vendor
               payable_register_id:
                 type: string
                 description: The Propexo unique identifier for the payable register
@@ -18832,13 +19121,34 @@ components:
                   - string
                   - "null"
                 description: The cost code of the payable register item
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+              financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the financial account
+              cash_financial_account_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the cash financial account
             required:
+              - x_id
+              - x_property_id
+              - x_location_id
+              - x_gl_account_id
+              - x_cash_financial_account_id
               - payable_register_id
               - construction_job_id
               - amount_due_in_cents
               - notes
               - total_amount_in_cents
               - cost_code
+              - property_id
+              - financial_account_id
+              - cash_financial_account_id
             x-propexo:
               derivedFromModel: payable_register_items
       required:
@@ -18846,6 +19156,13 @@ components:
         - created_at
         - updated_at
         - last_seen
+        - x_id
+        - x_property_id
+        - x_location_id
+        - x_financial_account_id
+        - x_cash_financial_account_id
+        - x_ap_financial_account_id
+        - x_vendor_id
         - x_batch_id
         - amount_due_in_cents
         - amount_paid_in_cents
@@ -18869,6 +19186,9 @@ components:
         - display_type
         - expense_type
         - property_id
+        - financial_account_id
+        - cash_financial_account_id
+        - ap_financial_account_id
         - integration_id
         - integration_vendor
         - payable_register_items
