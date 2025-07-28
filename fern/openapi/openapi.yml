@@ -849,6 +849,7 @@ components:
                         - PROPERTYWARE_REST_READ_LEASES
                         - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_PROSPECTS
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_READ_UNITS
@@ -1089,6 +1090,7 @@ components:
                           - PROPERTYWARE_REST_READ_LEASES
                           - PROPERTYWARE_REST_READ_PORTFOLIOS
                           - PROPERTYWARE_REST_READ_PROPERTIES
+                          - PROPERTYWARE_REST_READ_PROSPECTS
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                           - PROPERTYWARE_REST_READ_RESIDENTS
                           - PROPERTYWARE_REST_READ_UNITS
@@ -3324,6 +3326,7 @@ components:
                       - PROPERTYWARE_REST_READ_LEASES
                       - PROPERTYWARE_REST_READ_PORTFOLIOS
                       - PROPERTYWARE_REST_READ_PROPERTIES
+                      - PROPERTYWARE_REST_READ_PROSPECTS
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                       - PROPERTYWARE_REST_READ_RESIDENTS
                       - PROPERTYWARE_REST_READ_UNITS
@@ -3564,6 +3567,7 @@ components:
                         - PROPERTYWARE_REST_READ_LEASES
                         - PROPERTYWARE_REST_READ_PORTFOLIOS
                         - PROPERTYWARE_REST_READ_PROPERTIES
+                        - PROPERTYWARE_REST_READ_PROSPECTS
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_READ_UNITS
