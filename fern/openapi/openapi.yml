@@ -10854,6 +10854,77 @@ components:
                 description: The license plate number of the vehicle
               license_plate_state:
                 type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
                 description: The issuing state of the license plate
             required:
               - make
@@ -12200,6 +12271,77 @@ components:
                 description: The license plate number of the vehicle
               license_plate_state:
                 type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
                 description: The issuing state of the license plate
             required:
               - make
