@@ -5303,20 +5303,27 @@ components:
               - amenities
               - applicants
               - applications
+              - charge_codes
               - construction_jobs
+              - contracts
               - employees
+              - event_types
               - events
+              - financial_accounts
+              - floor_plans
               - invoices
               - leads
               - leases
               - listings
               - locations
               - owners
+              - payable_registers
               - properties
+              - purchase_orders
+              - rentable_items
               - resident_charges
               - resident_payments
               - residents
-              - transactions
               - timezones
               - units
               - screenings
@@ -5354,20 +5361,27 @@ components:
               - amenities
               - applicants
               - applications
+              - charge_codes
               - construction_jobs
+              - contracts
               - employees
+              - event_types
               - events
+              - financial_accounts
+              - floor_plans
               - invoices
               - leads
               - leases
               - listings
               - locations
               - owners
+              - payable_registers
               - properties
+              - purchase_orders
+              - rentable_items
               - resident_charges
               - resident_payments
               - residents
-              - transactions
               - timezones
               - units
               - screenings
