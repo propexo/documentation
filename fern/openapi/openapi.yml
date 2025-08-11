@@ -8874,6 +8874,7 @@ components:
           description: The Propexo unique identifier for the employee
         third_party_id:
           type: string
+          minLength: 1
           description: A unique value provided to the PMS to uniquely identify the
             applicant from your system.
         organization_name:
@@ -11582,6 +11583,7 @@ components:
             lead_id is not specified
         third_party_id:
           type: string
+          minLength: 1
           description: A unique ID you would like to associate with the applicant. This is
             not the Sample1 applicant ID. Required if lead_id is not specified
         organization_name:
@@ -12480,6 +12482,7 @@ components:
                 description: The last name associated with the occupant
               third_party_id:
                 type: string
+                minLength: 1
                 description: A unique ID you would like to associate with the occupant. This is
                   not the Sample1 occupant ID
               organization_name:
@@ -20369,6 +20372,7 @@ components:
           description: The Propexo unique identifier for the floor plan
         third_party_id:
           type: string
+          minLength: 1
           description: A unique value provided to the PMS to uniquely identify the lead
             from your system.
         organization_name:
@@ -21727,6 +21731,7 @@ components:
                 description: The last name associated with the occupant
               third_party_id:
                 type: string
+                minLength: 1
                 description: A unique ID you would like to associate with the occupant. This is
                   not the Sample1 occupant ID
               organization_name:
@@ -21862,6 +21867,7 @@ components:
             lead_id is not specified
         third_party_id:
           type: string
+          minLength: 1
           description: A unique ID you would like to associate with the applicant. This is
             not the Sample1 applicant ID. Required if lead_id is not specified
         organization_name:
@@ -23310,6 +23316,7 @@ components:
                 description: The last name associated with the occupant
               third_party_id:
                 type: string
+                minLength: 1
                 description: A unique ID you would like to associate with the occupant. This is
                   not the Sample1 occupant ID
               organization_name:
