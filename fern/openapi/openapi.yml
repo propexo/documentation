@@ -24921,6 +24921,11 @@ components:
             - string
             - "null"
           description: The city associated with the property
+        code:
+          type:
+            - string
+            - "null"
+          description: The code associated with the property
         country:
           type:
             - string
@@ -25170,6 +25175,7 @@ components:
         - x_building_id
         - building_number
         - city
+        - code
         - country
         - county
         - custom_data
