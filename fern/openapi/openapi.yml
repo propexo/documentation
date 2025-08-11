@@ -301,6 +301,7 @@ components:
             - applications
             - contracts
             - crm_listings
+            - event_types
             - events
             - file_types
             - file_upload
@@ -34962,6 +34963,7 @@ paths:
               - applications
               - contracts
               - crm_listings
+              - event_types
               - events
               - file_types
               - file_upload
