@@ -24046,6 +24046,11 @@ components:
           description: The external ID of the location (exclusive to Rent Manager
             integrations). This is always null for non-Rent Manager
             integrations.
+        unit_type_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the unit type
       required:
         - id
         - created_at
@@ -24105,6 +24110,7 @@ components:
         - integration_id
         - integration_vendor
         - x_location_id
+        - unit_type_id
     _v1_listings__get_output:
       type: object
       properties:
@@ -31685,6 +31691,11 @@ components:
               property_id:
                 type: string
                 description: The Propexo unique identifier for the property
+              unit_type_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the unit type
             required:
               - id
               - created_at
@@ -31728,6 +31739,7 @@ components:
               - integration_id
               - integration_vendor
               - property_id
+              - unit_type_id
       required:
         - meta
         - results
@@ -32354,6 +32366,11 @@ components:
             property_id:
               type: string
               description: The Propexo unique identifier for the property
+            unit_type_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the unit type
           required:
             - id
             - created_at
@@ -32397,6 +32414,7 @@ components:
             - integration_id
             - integration_vendor
             - property_id
+            - unit_type_id
       required:
         - meta
         - results
