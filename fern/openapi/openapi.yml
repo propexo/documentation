@@ -732,6 +732,7 @@ components:
                         - REALPAGE_PROSPECT_MANAGEMENT
                         - REALPAGE_RESIDENTS
                         - REALPAGE_UNIT
+                        - REALPAGE_RPX_AMENITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
@@ -974,6 +975,7 @@ components:
                           - REALPAGE_PROSPECT_MANAGEMENT
                           - REALPAGE_RESIDENTS
                           - REALPAGE_UNIT
+                          - REALPAGE_RPX_AMENITIES
                           - REALPAGE_RPX_APPOINTMENTS
                           - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                           - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
@@ -3211,6 +3213,7 @@ components:
                       - REALPAGE_PROSPECT_MANAGEMENT
                       - REALPAGE_RESIDENTS
                       - REALPAGE_UNIT
+                      - REALPAGE_RPX_AMENITIES
                       - REALPAGE_RPX_APPOINTMENTS
                       - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                       - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
@@ -3453,6 +3456,7 @@ components:
                         - REALPAGE_PROSPECT_MANAGEMENT
                         - REALPAGE_RESIDENTS
                         - REALPAGE_UNIT
+                        - REALPAGE_RPX_AMENITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
