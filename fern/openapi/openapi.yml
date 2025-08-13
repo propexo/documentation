@@ -21256,7 +21256,9 @@ components:
             - OTHER
             - PENDING
             - EVICTED
-          description: The normalized status for the lease
+          description: The normalized status for the lease. Note that the status may be
+            called "EVICTED" but this can also refer to an active resident
+            undergoing a current eviction. This varies per PMS.
         status_raw:
           type:
             - string
