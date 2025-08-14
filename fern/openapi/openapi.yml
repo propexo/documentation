@@ -17381,6 +17381,10 @@ components:
             - SelfGuidedTour
             - Application
           description: The name or type of event
+        call_recording_url:
+          type: string
+          format: uri
+          description: Call Recording URL of the appointment
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source
