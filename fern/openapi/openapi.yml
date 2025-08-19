@@ -25166,11 +25166,71 @@ components:
                   - string
                   - "null"
                 description: Notes associated with the pet type
+              deposit_raw:
+                type:
+                  - string
+                  - "null"
+                description: The deposit amount associated with the pet type
+              deposit_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The deposit amount in cents associated with the pet type
+              fee_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw fee amount for the pet type
+              fee_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The fee amount in cents for the pet type
+              fee_min_raw:
+                type:
+                  - string
+                  - "null"
+                description: The minimum raw fee amount for the pet type
+              fee_min_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The minimum fee amount in cents for the pet type
+              fee_max_raw:
+                type:
+                  - string
+                  - "null"
+                description: The maxmimum raw fee amount for the pet type
+              fee_max_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The maxmimum raw fee amount in cents for the pet type
+              rent_amount_raw:
+                type:
+                  - string
+                  - "null"
+                description: The raw rent amount for the pet type
+              rent_amount_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The rent amount in cents for the pet type
             required:
               - name
               - is_allowed
               - description
               - notes
+              - deposit_raw
+              - deposit_in_cents
+              - fee_raw
+              - fee_in_cents
+              - fee_min_raw
+              - fee_min_in_cents
+              - fee_max_raw
+              - fee_max_in_cents
+              - rent_amount_raw
+              - rent_amount_in_cents
         associated_owner_ids:
           type: array
           items:
