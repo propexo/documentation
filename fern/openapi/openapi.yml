@@ -895,6 +895,7 @@ components:
                         - SAMPLE2_CREATE_APPOINTMENT
                         - SAMPLE2_CREATE_CHARGE
                         - SAMPLE2_CREATE_LEAD
+                        - SAMPLE2_READ_APPLICATIONS
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
                         - SAMPLE2_READ_FINANCIAL_ACCOUNTS
@@ -1138,6 +1139,7 @@ components:
                           - SAMPLE2_CREATE_APPOINTMENT
                           - SAMPLE2_CREATE_CHARGE
                           - SAMPLE2_CREATE_LEAD
+                          - SAMPLE2_READ_APPLICATIONS
                           - SAMPLE2_READ_APPOINTMENTS
                           - SAMPLE2_READ_EMPLOYEES
                           - SAMPLE2_READ_FINANCIAL_ACCOUNTS
@@ -3376,6 +3378,7 @@ components:
                       - SAMPLE2_CREATE_APPOINTMENT
                       - SAMPLE2_CREATE_CHARGE
                       - SAMPLE2_CREATE_LEAD
+                      - SAMPLE2_READ_APPLICATIONS
                       - SAMPLE2_READ_APPOINTMENTS
                       - SAMPLE2_READ_EMPLOYEES
                       - SAMPLE2_READ_FINANCIAL_ACCOUNTS
@@ -3619,6 +3622,7 @@ components:
                         - SAMPLE2_CREATE_APPOINTMENT
                         - SAMPLE2_CREATE_CHARGE
                         - SAMPLE2_CREATE_LEAD
+                        - SAMPLE2_READ_APPLICATIONS
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
                         - SAMPLE2_READ_FINANCIAL_ACCOUNTS
