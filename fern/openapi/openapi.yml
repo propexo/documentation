@@ -907,6 +907,7 @@ components:
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_TENANT_LEDGERS
                         - SAMPLE2_READ_UNITS
+                        - SAMPLE2_READ_VENDORS
                         - SAMPLE2_UPDATE_LEAD
                         - SAMPLE2_UPDATE_APPOINTMENT
                         - SAMPLE2_BASE
@@ -1151,6 +1152,7 @@ components:
                           - SAMPLE2_READ_SERVICE_REQUESTS
                           - SAMPLE2_READ_TENANT_LEDGERS
                           - SAMPLE2_READ_UNITS
+                          - SAMPLE2_READ_VENDORS
                           - SAMPLE2_UPDATE_LEAD
                           - SAMPLE2_UPDATE_APPOINTMENT
                           - SAMPLE2_BASE
@@ -3390,6 +3392,7 @@ components:
                       - SAMPLE2_READ_SERVICE_REQUESTS
                       - SAMPLE2_READ_TENANT_LEDGERS
                       - SAMPLE2_READ_UNITS
+                      - SAMPLE2_READ_VENDORS
                       - SAMPLE2_UPDATE_LEAD
                       - SAMPLE2_UPDATE_APPOINTMENT
                       - SAMPLE2_BASE
@@ -3634,6 +3637,7 @@ components:
                         - SAMPLE2_READ_SERVICE_REQUESTS
                         - SAMPLE2_READ_TENANT_LEDGERS
                         - SAMPLE2_READ_UNITS
+                        - SAMPLE2_READ_VENDORS
                         - SAMPLE2_UPDATE_LEAD
                         - SAMPLE2_UPDATE_APPOINTMENT
                         - SAMPLE2_BASE
