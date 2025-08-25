@@ -899,6 +899,7 @@ components:
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
                         - SAMPLE2_READ_FINANCIAL_ACCOUNTS
+                        - SAMPLE2_READ_INVOICES
                         - SAMPLE2_READ_LEADS
                         - SAMPLE2_READ_LISTINGS
                         - SAMPLE2_READ_PROPERTIES
@@ -1144,6 +1145,7 @@ components:
                           - SAMPLE2_READ_APPOINTMENTS
                           - SAMPLE2_READ_EMPLOYEES
                           - SAMPLE2_READ_FINANCIAL_ACCOUNTS
+                          - SAMPLE2_READ_INVOICES
                           - SAMPLE2_READ_LEADS
                           - SAMPLE2_READ_LISTINGS
                           - SAMPLE2_READ_PROPERTIES
@@ -3384,6 +3386,7 @@ components:
                       - SAMPLE2_READ_APPOINTMENTS
                       - SAMPLE2_READ_EMPLOYEES
                       - SAMPLE2_READ_FINANCIAL_ACCOUNTS
+                      - SAMPLE2_READ_INVOICES
                       - SAMPLE2_READ_LEADS
                       - SAMPLE2_READ_LISTINGS
                       - SAMPLE2_READ_PROPERTIES
@@ -3629,6 +3632,7 @@ components:
                         - SAMPLE2_READ_APPOINTMENTS
                         - SAMPLE2_READ_EMPLOYEES
                         - SAMPLE2_READ_FINANCIAL_ACCOUNTS
+                        - SAMPLE2_READ_INVOICES
                         - SAMPLE2_READ_LEADS
                         - SAMPLE2_READ_LISTINGS
                         - SAMPLE2_READ_PROPERTIES
