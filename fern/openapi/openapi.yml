@@ -755,6 +755,7 @@ components:
                         - REALPAGE_RPX_LEAD_SOURCES
                         - REALPAGE_RPX_LISTINGS
                         - REALPAGE_RPX_LEASING_AGENTS
+                        - REALPAGE_RPX_PET_TYPES
                         - REALPAGE_RPX_PROSPECTS_SURVEY
                         - REALPAGE_RPX_RESIDENT_SURVEY
                         - REALPAGE_RPX_READ_PROPERTIES
@@ -1001,6 +1002,7 @@ components:
                           - REALPAGE_RPX_LEAD_SOURCES
                           - REALPAGE_RPX_LISTINGS
                           - REALPAGE_RPX_LEASING_AGENTS
+                          - REALPAGE_RPX_PET_TYPES
                           - REALPAGE_RPX_PROSPECTS_SURVEY
                           - REALPAGE_RPX_RESIDENT_SURVEY
                           - REALPAGE_RPX_READ_PROPERTIES
@@ -3242,6 +3244,7 @@ components:
                       - REALPAGE_RPX_LEAD_SOURCES
                       - REALPAGE_RPX_LISTINGS
                       - REALPAGE_RPX_LEASING_AGENTS
+                      - REALPAGE_RPX_PET_TYPES
                       - REALPAGE_RPX_PROSPECTS_SURVEY
                       - REALPAGE_RPX_RESIDENT_SURVEY
                       - REALPAGE_RPX_READ_PROPERTIES
@@ -3488,6 +3491,7 @@ components:
                         - REALPAGE_RPX_LEAD_SOURCES
                         - REALPAGE_RPX_LISTINGS
                         - REALPAGE_RPX_LEASING_AGENTS
+                        - REALPAGE_RPX_PET_TYPES
                         - REALPAGE_RPX_PROSPECTS_SURVEY
                         - REALPAGE_RPX_RESIDENT_SURVEY
                         - REALPAGE_RPX_READ_PROPERTIES
