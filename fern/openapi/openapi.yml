@@ -788,6 +788,10 @@ components:
                         - ENTRATA_CONCESSIONS
                         - ENTRATA_CREATE_AMENITY
                         - ENTRATA_CREATE_APPLICANT
+                        - ENTRATA_CREATE_APPLICANT_PETS
+                        - ENTRATA_CREATE_APPLICANT_VEHICLES
+                        - ENTRATA_CREATE_APPLICANT_EMPLOYERS
+                        - ENTRATA_CREATE_APPLICANT_ADDONS
                         - ENTRATA_CREATE_EVENT
                         - ENTRATA_CREATE_INVOICE
                         - ENTRATA_CREATE_LEAD
@@ -1035,6 +1039,10 @@ components:
                           - ENTRATA_CONCESSIONS
                           - ENTRATA_CREATE_AMENITY
                           - ENTRATA_CREATE_APPLICANT
+                          - ENTRATA_CREATE_APPLICANT_PETS
+                          - ENTRATA_CREATE_APPLICANT_VEHICLES
+                          - ENTRATA_CREATE_APPLICANT_EMPLOYERS
+                          - ENTRATA_CREATE_APPLICANT_ADDONS
                           - ENTRATA_CREATE_EVENT
                           - ENTRATA_CREATE_INVOICE
                           - ENTRATA_CREATE_LEAD
@@ -3277,6 +3285,10 @@ components:
                       - ENTRATA_CONCESSIONS
                       - ENTRATA_CREATE_AMENITY
                       - ENTRATA_CREATE_APPLICANT
+                      - ENTRATA_CREATE_APPLICANT_PETS
+                      - ENTRATA_CREATE_APPLICANT_VEHICLES
+                      - ENTRATA_CREATE_APPLICANT_EMPLOYERS
+                      - ENTRATA_CREATE_APPLICANT_ADDONS
                       - ENTRATA_CREATE_EVENT
                       - ENTRATA_CREATE_INVOICE
                       - ENTRATA_CREATE_LEAD
@@ -3524,6 +3536,10 @@ components:
                         - ENTRATA_CONCESSIONS
                         - ENTRATA_CREATE_AMENITY
                         - ENTRATA_CREATE_APPLICANT
+                        - ENTRATA_CREATE_APPLICANT_PETS
+                        - ENTRATA_CREATE_APPLICANT_VEHICLES
+                        - ENTRATA_CREATE_APPLICANT_EMPLOYERS
+                        - ENTRATA_CREATE_APPLICANT_ADDONS
                         - ENTRATA_CREATE_EVENT
                         - ENTRATA_CREATE_INVOICE
                         - ENTRATA_CREATE_LEAD
@@ -7761,6 +7777,265 @@ components:
           type: string
           format: date-time
           description: The move-in date associated with the lease
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name associated with the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              type:
+                type: string
+                description: The type associated with the applicant pet (or breed). This field
+                  is not configurable on the Rentvine template and is always
+                  required
+              age_in_years:
+                type: integer
+                minimum: 0
+                description: The age in years of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              weight_in_pounds:
+                type: integer
+                minimum: 0
+                description: The weight in pounds of the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              is_trained:
+                type: boolean
+                description: Whether the applicant pet is trained. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the applicant pet. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              gender:
+                type: string
+                enum:
+                  - MALE
+                  - FEMALE
+                  - UNSPECIFIED
+                description: The gender of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_declawed:
+                type: boolean
+                description: Whether the applicant pet is declawed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_vaccinated:
+                type: boolean
+                description: Whether the applicant pet is vaccinated. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_fixed:
+                type: boolean
+                description: Whether the applicant pet is fixed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+            required:
+              - type
+          description: A list of applicant pets. Depending on the Rentvine template, this
+            array can be customized to be either required or optional. The
+            template may also require a minimum number of items in the array in
+            order to pass validation. You will need to work with your customer
+            directly to configure this field to your application requirements
+        vehicles:
+          type: array
+          items:
+            type: object
+            properties:
+              make:
+                type: string
+                description: The make of the vehicle. This field is not configurable on the
+                  Rentvine template and is always required
+              model:
+                type: string
+                description: The model of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              year:
+                type: integer
+                description: The year the vehicle was made. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              license_plate_number:
+                type: string
+                description: The license plate number of the vehicle. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              license_plate_state:
+                type: string
+                description: The issuing state of the license plate. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              monthly_payment_in_cents:
+                type: integer
+                minimum: 0
+                description: If the vehicle is leased or financed, the applicant's monthly
+                  payment for the vehicle in cents. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              insurance_carrier:
+                type: string
+                description: The insurance carrier for the applicant's vehicle. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - make
+          description: A list of vehicles for the application. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        employers:
+          type: array
+          items:
+            type: object
+            properties:
+              income_type:
+                type: string
+                enum:
+                  - CURRENT_EMPLOYER
+                  - PREVIOUS_EMPLOYER
+                  - OTHER_INCOME
+                description: The name associated with the income type
+              frequency:
+                type: string
+                enum:
+                  - WEEKLY
+                  - MONTHLY
+                  - YEARLY
+                description: The frequency of the applicant employer
+              position:
+                type: string
+                description: The position of the employee
+              institution_name:
+                type: string
+                description: The name of the institution associated with the employee
+              institution_phone_number:
+                type: string
+                description: Primary phone number associated with the institution
+              institution_address_1:
+                type: string
+                description: The first address line associated with the institution
+              institution_address_2:
+                type: string
+                description: The second address line associated with the institution
+              institution_address_3:
+                type: string
+                description: The third address line associated with the institution
+              institution_city:
+                type: string
+                description: The city associated with the institution
+              institution_state:
+                type: string
+                description: The state associated with the institution
+              institution_province:
+                type: string
+                description: The province associated with the institution
+              institution_zip:
+                type: string
+                description: The zip code associated with the institution
+              institution_country:
+                type: string
+                description: The country associated with the institution
+              amount_in_cents:
+                type: string
+                description: The amount of the employee
+              contact_name:
+                type: string
+                description: The name associated with the employee
+              contact_phone_1:
+                type: string
+                description: Primary phone number associated with the employee
+              contact_email_1:
+                type: string
+                description: The primary email address associated with the employee
+              income_effective_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The effective date of the income of the employee
+              date_started:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date the employee started
+              date_ended:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The date the employee ended
+            required:
+              - income_type
+              - frequency
+          description: Employers of the applicant
+        add_ons:
+          type: array
+          items:
+            type: object
+            properties:
+              rentable_item_id:
+                type: string
+                description: The Propexo unique identifier for the rentable item
+              employee_id:
+                type: string
+                description: The Propexo unique identifier for the employee
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date associated with the employee
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date associated with the employee
+            required:
+              - rentable_item_id
+              - employee_id
+          description: Add-ons of the applicant
         address_type_id:
           type: string
           description: The Propexo unique identifier for the address type
@@ -8146,68 +8421,6 @@ components:
             of items in the array in order to pass validation. You will need to
             work with your customer directly to configure this field to your
             application requirements
-        vehicles:
-          type: array
-          items:
-            type: object
-            properties:
-              make:
-                type: string
-                description: The make of the vehicle. This field is not configurable on the
-                  Rentvine template and is always required
-              model:
-                type: string
-                description: The model of the vehicle. Depending on the Rentvine template, this
-                  field can be customized to be either required or optional. You
-                  will need to work with your customer directly to configure
-                  this field to your application requirements
-              year:
-                type: integer
-                description: The year the vehicle was made. Depending on the Rentvine template,
-                  this field can be customized to be either required or
-                  optional. You will need to work with your customer directly to
-                  configure this field to your application requirements
-              color:
-                type: string
-                description: The color of the vehicle. Depending on the Rentvine template, this
-                  field can be customized to be either required or optional. You
-                  will need to work with your customer directly to configure
-                  this field to your application requirements
-              license_plate_number:
-                type: string
-                description: The license plate number of the vehicle. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              license_plate_state:
-                type: string
-                description: The issuing state of the license plate. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              monthly_payment_in_cents:
-                type: integer
-                minimum: 0
-                description: If the vehicle is leased or financed, the applicant's monthly
-                  payment for the vehicle in cents. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              insurance_carrier:
-                type: string
-                description: The insurance carrier for the applicant's vehicle. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-            required:
-              - make
-          description: A list of vehicles for the application. Depending on the Rentvine
-            template, this array can be customized to be either required or
-            optional. The template may also require a minimum number of items in
-            the array in order to pass validation. You will need to work with
-            your customer directly to configure this field to your application
-            requirements
         other_occupants:
           type: array
           items:
@@ -8260,85 +8473,6 @@ components:
             include any applicants in this list. If your application use case
             requires creating multiple applicants in the same application,
             please reach out to Propexo Support for help.
-        pets:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                description: The name associated with the applicant pet. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              type:
-                type: string
-                description: The type associated with the applicant pet (or breed). This field
-                  is not configurable on the Rentvine template and is always
-                  required
-              age_in_years:
-                type: integer
-                minimum: 0
-                description: The age in years of the applicant pet. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              weight_in_pounds:
-                type: integer
-                minimum: 0
-                description: The weight in pounds of the applicant pet. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              is_trained:
-                type: boolean
-                description: Whether the applicant pet is trained. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              color:
-                type: string
-                description: The color of the applicant pet. Depending on the Rentvine template,
-                  this field can be customized to be either required or
-                  optional. You will need to work with your customer directly to
-                  configure this field to your application requirements
-              gender:
-                type: string
-                enum:
-                  - MALE
-                  - FEMALE
-                  - UNSPECIFIED
-                description: The gender of the applicant pet. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              is_declawed:
-                type: boolean
-                description: Whether the applicant pet is declawed. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              is_vaccinated:
-                type: boolean
-                description: Whether the applicant pet is vaccinated. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              is_fixed:
-                type: boolean
-                description: Whether the applicant pet is fixed. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-            required:
-              - type
-          description: A list of applicant pets. Depending on the Rentvine template, this
-            array can be customized to be either required or optional. The
-            template may also require a minimum number of items in the array in
-            order to pass validation. You will need to work with your customer
-            directly to configure this field to your application requirements
         address_history:
           type: array
           items:
