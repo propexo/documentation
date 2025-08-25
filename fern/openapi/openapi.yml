@@ -34261,7 +34261,6 @@ components:
               - DATA_UPDATE
               - DATA_NEW
               - JOB_FAILURE
-              - JOB_SUCCESS
               - SYNC_COMPLETE
               - FIRST_SYNC_COMPLETE
           minItems: 1
