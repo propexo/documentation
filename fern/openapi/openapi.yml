@@ -25041,6 +25041,12 @@ components:
           description: The Propexo integration id
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
+        is_active:
+          anyOf:
+            - type: boolean
+            - type: string
+            - type: "null"
+          description: Active status of the property
     Property:
       type: object
       properties:
@@ -43876,6 +43882,16 @@ paths:
           required: false
           description: The integration vendor associated with the data diff
           name: integration_vendor
+          in: query
+        - schema:
+            anyOf:
+              - type: boolean
+              - type: string
+              - type: "null"
+            description: Active status of the property
+          required: false
+          description: Active status of the property
+          name: is_active
           in: query
       responses:
         "200":
