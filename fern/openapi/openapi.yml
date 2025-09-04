@@ -17413,10 +17413,22 @@ components:
             - Application
             - SelfGuidedTour
             - Application
+            - Approve
+            - CancelApplication
+            - ApplicationDenied
+            - Hold
+            - CancelAppointment
+            - LeaseSign
+            - Release
+            - ReturnVisit
           description: The name or type of event
         agent_name:
           type: string
           description: The name of the leasing agent associated with the event
+        rent_amount_in_cents:
+          type: number
+          minimum: 0
+          description: The rent amount in cents for the event. Required for LeaseSign event
       required:
         - integration_id
     _v1_events_applicants_post_output:
@@ -17554,6 +17566,14 @@ components:
             - Application
             - SelfGuidedTour
             - Application
+            - Approve
+            - CancelApplication
+            - ApplicationDenied
+            - Hold
+            - CancelAppointment
+            - LeaseSign
+            - Release
+            - ReturnVisit
           description: The name or type of event
         call_recording_url:
           type: string
@@ -17565,6 +17585,10 @@ components:
         agent_name:
           type: string
           description: The name of the leasing agent associated with the event
+        rent_amount_in_cents:
+          type: number
+          minimum: 0
+          description: The rent amount in cents for the event. Required for LeaseSign event
       required:
         - integration_id
     _v1_events_leads_post_output:
