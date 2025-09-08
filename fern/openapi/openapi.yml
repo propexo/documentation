@@ -25096,6 +25096,94 @@ components:
             - type: string
             - type: "null"
           description: Active status of the property
+    PetTypes:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name associated with the pet type
+        is_allowed:
+          type:
+            - boolean
+            - "null"
+          description: Whether the pet type is allowed or not
+        description:
+          type:
+            - string
+            - "null"
+          description: Description of the pet type
+        notes:
+          type:
+            - string
+            - "null"
+          description: Notes associated with the pet type
+        deposit_raw:
+          type:
+            - string
+            - "null"
+          description: The deposit amount associated with the pet type
+        deposit_in_cents:
+          type:
+            - number
+            - "null"
+          description: The deposit amount in cents associated with the pet type
+        fee_raw:
+          type:
+            - string
+            - "null"
+          description: The raw fee amount for the pet type
+        fee_in_cents:
+          type:
+            - number
+            - "null"
+          description: The fee amount in cents for the pet type
+        fee_min_raw:
+          type:
+            - string
+            - "null"
+          description: The minimum raw fee amount for the pet type
+        fee_min_in_cents:
+          type:
+            - number
+            - "null"
+          description: The minimum fee amount in cents for the pet type
+        fee_max_raw:
+          type:
+            - string
+            - "null"
+          description: The maxmimum raw fee amount for the pet type
+        fee_max_in_cents:
+          type:
+            - number
+            - "null"
+          description: The maxmimum raw fee amount in cents for the pet type
+        rent_amount_raw:
+          type:
+            - string
+            - "null"
+          description: The raw rent amount for the pet type
+        rent_amount_in_cents:
+          type:
+            - number
+            - "null"
+          description: The rent amount in cents for the pet type
+      required:
+        - name
+        - is_allowed
+        - description
+        - notes
+        - deposit_raw
+        - deposit_in_cents
+        - fee_raw
+        - fee_in_cents
+        - fee_min_raw
+        - fee_min_in_cents
+        - fee_max_raw
+        - fee_max_in_cents
+        - rent_amount_raw
+        - rent_amount_in_cents
+      x-propexo:
+        derivedFromModel: pet_types
     Property:
       type: object
       properties:
@@ -25351,91 +25439,7 @@ components:
         pet_types:
           type: array
           items:
-            type: object
-            properties:
-              name:
-                type: string
-                description: The name associated with the pet type
-              is_allowed:
-                type:
-                  - boolean
-                  - "null"
-                description: Whether the pet type is allowed or not
-              description:
-                type:
-                  - string
-                  - "null"
-                description: Description of the pet type
-              notes:
-                type:
-                  - string
-                  - "null"
-                description: Notes associated with the pet type
-              deposit_raw:
-                type:
-                  - string
-                  - "null"
-                description: The deposit amount associated with the pet type
-              deposit_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The deposit amount in cents associated with the pet type
-              fee_raw:
-                type:
-                  - string
-                  - "null"
-                description: The raw fee amount for the pet type
-              fee_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The fee amount in cents for the pet type
-              fee_min_raw:
-                type:
-                  - string
-                  - "null"
-                description: The minimum raw fee amount for the pet type
-              fee_min_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The minimum fee amount in cents for the pet type
-              fee_max_raw:
-                type:
-                  - string
-                  - "null"
-                description: The maxmimum raw fee amount for the pet type
-              fee_max_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The maxmimum raw fee amount in cents for the pet type
-              rent_amount_raw:
-                type:
-                  - string
-                  - "null"
-                description: The raw rent amount for the pet type
-              rent_amount_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The rent amount in cents for the pet type
-            required:
-              - name
-              - is_allowed
-              - description
-              - notes
-              - deposit_raw
-              - deposit_in_cents
-              - fee_raw
-              - fee_in_cents
-              - fee_min_raw
-              - fee_min_in_cents
-              - fee_max_raw
-              - fee_max_in_cents
-              - rent_amount_raw
-              - rent_amount_in_cents
+            $ref: "#/components/schemas/PetTypes"
         associated_owner_ids:
           type: array
           items:
