@@ -15959,6 +15959,7 @@ components:
             - number
             - "null"
           description: The amount of the fee, in cents
+          example: 12500
         amount_raw:
           type:
             - string
