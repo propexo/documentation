@@ -9193,6 +9193,326 @@ components:
         zip:
           type: string
           description: The zip code associated with the applicant
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name associated with the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              type:
+                type: string
+                description: The type associated with the applicant pet (or breed). This field
+                  is not configurable on the Rentvine template and is always
+                  required
+              age_in_years:
+                type: integer
+                minimum: 0
+                description: The age in years of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              weight_in_pounds:
+                type: integer
+                minimum: 0
+                description: The weight in pounds of the applicant pet. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              is_trained:
+                type: boolean
+                description: Whether the applicant pet is trained. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the applicant pet. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              gender:
+                type: string
+                enum:
+                  - MALE
+                  - FEMALE
+                  - UNSPECIFIED
+                description: The gender of the applicant pet. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_declawed:
+                type: boolean
+                description: Whether the applicant pet is declawed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_vaccinated:
+                type: boolean
+                description: Whether the applicant pet is vaccinated. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              is_fixed:
+                type: boolean
+                description: Whether the applicant pet is fixed. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+            required:
+              - type
+          description: A list of applicant pets. Depending on the Rentvine template, this
+            array can be customized to be either required or optional. The
+            template may also require a minimum number of items in the array in
+            order to pass validation. You will need to work with your customer
+            directly to configure this field to your application requirements
+        vehicles:
+          type: array
+          items:
+            type: object
+            properties:
+              make:
+                type: string
+                description: The make of the vehicle. This field is not configurable on the
+                  Rentvine template and is always required
+              model:
+                type: string
+                description: The model of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              year:
+                type: integer
+                description: The year the vehicle was made. Depending on the Rentvine template,
+                  this field can be customized to be either required or
+                  optional. You will need to work with your customer directly to
+                  configure this field to your application requirements
+              color:
+                type: string
+                description: The color of the vehicle. Depending on the Rentvine template, this
+                  field can be customized to be either required or optional. You
+                  will need to work with your customer directly to configure
+                  this field to your application requirements
+              license_plate_number:
+                type: string
+                description: The license plate number of the vehicle. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              license_plate_state:
+                type: string
+                description: The issuing state of the license plate. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              monthly_payment_in_cents:
+                type: integer
+                minimum: 0
+                description: If the vehicle is leased or financed, the applicant's monthly
+                  payment for the vehicle in cents. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              insurance_carrier:
+                type: string
+                description: The insurance carrier for the applicant's vehicle. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+            required:
+              - make
+          description: A list of vehicles for the application. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        employment_history:
+          type: array
+          items:
+            type: object
+            properties:
+              is_current_employer:
+                type: boolean
+                description: Whether this employment history entry is for a current employer.
+                  This field is not configurable on the Rentvine template and is
+                  always required
+              name:
+                type: string
+                description: The name of the employer. This field is not configurable on the
+                  Rentvine template and is always required
+              phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              address_1:
+                type: string
+                description: The first line of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              address_2:
+                type: string
+                description: The second line of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              city:
+                type: string
+                description: The city of the address of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              state:
+                type: string
+                description: The state of the address of the employer. Depending on the Rentvine
+                  template, this field can be customized to be either required
+                  or optional. You will need to work with your customer directly
+                  to configure this field to your application requirements
+              zip:
+                type: string
+                description: The zip code of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              country:
+                type: string
+                description: The country of the address of the employer. Depending on the
+                  Rentvine template, this field can be customized to be either
+                  required or optional. You will need to work with your customer
+                  directly to configure this field to your application
+                  requirements
+              supervisor_first_name:
+                type: string
+                description: The first name of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_last_name:
+                type: string
+                description: The last name of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_title:
+                type: string
+                description: The title of the applicant's supervisor at this employer. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              supervisor_phone:
+                type: string
+                pattern: ^\+?\d{1,50}$
+                description: The phone number of the applicant's supervisor at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              supervisor_email:
+                type: string
+                format: email
+                description: The email of the applicant's supervisor at this employer. Depending
+                  on the Rentvine template, this field can be customized to be
+                  either required or optional. You will need to work with your
+                  customer directly to configure this field to your application
+                  requirements
+              position:
+                type: string
+                description: The position held at this employer, or the job description of the
+                  applicant. Depending on the Rentvine template, this field can
+                  be customized to be either required or optional. You will need
+                  to work with your customer directly to configure this field to
+                  your application requirements
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: "The monthly income of the applicant at this employer in cents.
+                  This field is not configurable on the Rentvine template and is
+                  always required. DEPRECATED: Use income_in_cents instead"
+                deprecated: true
+              income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income of the applicant at this employer in cents. This
+                  field is not configurable on the Rentvine template and is
+                  always required
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date of the applicant's employment at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date of the applicant's employment at this employer.
+                  Depending on the Rentvine template, this field can be
+                  customized to be either required or optional. You will need to
+                  work with your customer directly to configure this field to
+                  your application requirements
+            required:
+              - is_current_employer
+              - name
+          description: The employment history of the applicant. Depending on the Rentvine
+            template, this array can be customized to be either required or
+            optional. The template may also require a minimum number of items in
+            the array in order to pass validation. You will need to work with
+            your customer directly to configure this field to your application
+            requirements
+        add_ons:
+          type: array
+          items:
+            type: object
+            properties:
+              rentable_item_id:
+                type: string
+                description: The Propexo unique identifier for the rentable item
+              employee_id:
+                type: string
+                description: The Propexo unique identifier for the employee
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date associated with the employee
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date associated with the employee
+            required:
+              - rentable_item_id
+              - employee_id
+          description: Add-ons of the applicant. These will be added as new add-ons for
+            the applicant
         address_type_id:
           type: string
           description: The Propexo unique identifier for the address type. This is
@@ -9580,68 +9900,6 @@ components:
             of items in the array in order to pass validation. You will need to
             work with your customer directly to configure this field to your
             application requirements
-        vehicles:
-          type: array
-          items:
-            type: object
-            properties:
-              make:
-                type: string
-                description: The make of the vehicle. This field is not configurable on the
-                  Rentvine template and is always required
-              model:
-                type: string
-                description: The model of the vehicle. Depending on the Rentvine template, this
-                  field can be customized to be either required or optional. You
-                  will need to work with your customer directly to configure
-                  this field to your application requirements
-              year:
-                type: integer
-                description: The year the vehicle was made. Depending on the Rentvine template,
-                  this field can be customized to be either required or
-                  optional. You will need to work with your customer directly to
-                  configure this field to your application requirements
-              color:
-                type: string
-                description: The color of the vehicle. Depending on the Rentvine template, this
-                  field can be customized to be either required or optional. You
-                  will need to work with your customer directly to configure
-                  this field to your application requirements
-              license_plate_number:
-                type: string
-                description: The license plate number of the vehicle. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              license_plate_state:
-                type: string
-                description: The issuing state of the license plate. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              monthly_payment_in_cents:
-                type: integer
-                minimum: 0
-                description: If the vehicle is leased or financed, the applicant's monthly
-                  payment for the vehicle in cents. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              insurance_carrier:
-                type: string
-                description: The insurance carrier for the applicant's vehicle. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-            required:
-              - make
-          description: A list of vehicles for the application. Depending on the Rentvine
-            template, this array can be customized to be either required or
-            optional. The template may also require a minimum number of items in
-            the array in order to pass validation. You will need to work with
-            your customer directly to configure this field to your application
-            requirements
         other_occupants:
           type: array
           items:
@@ -9694,85 +9952,6 @@ components:
             include any applicants in this list. If your application use case
             requires creating multiple applicants in the same application,
             please reach out to Propexo Support for help.
-        pets:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                description: The name associated with the applicant pet. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              type:
-                type: string
-                description: The type associated with the applicant pet (or breed). This field
-                  is not configurable on the Rentvine template and is always
-                  required
-              age_in_years:
-                type: integer
-                minimum: 0
-                description: The age in years of the applicant pet. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              weight_in_pounds:
-                type: integer
-                minimum: 0
-                description: The weight in pounds of the applicant pet. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              is_trained:
-                type: boolean
-                description: Whether the applicant pet is trained. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              color:
-                type: string
-                description: The color of the applicant pet. Depending on the Rentvine template,
-                  this field can be customized to be either required or
-                  optional. You will need to work with your customer directly to
-                  configure this field to your application requirements
-              gender:
-                type: string
-                enum:
-                  - MALE
-                  - FEMALE
-                  - UNSPECIFIED
-                description: The gender of the applicant pet. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              is_declawed:
-                type: boolean
-                description: Whether the applicant pet is declawed. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              is_vaccinated:
-                type: boolean
-                description: Whether the applicant pet is vaccinated. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              is_fixed:
-                type: boolean
-                description: Whether the applicant pet is fixed. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-            required:
-              - type
-          description: A list of applicant pets. Depending on the Rentvine template, this
-            array can be customized to be either required or optional. The
-            template may also require a minimum number of items in the array in
-            order to pass validation. You will need to work with your customer
-            directly to configure this field to your application requirements
         address_history:
           type: array
           items:
@@ -9996,155 +10175,6 @@ components:
             requirements. Assuming that a minimum number of addresses are
             required in the application template, the current address does not
             count towards the minimum number
-        employment_history:
-          type: array
-          items:
-            type: object
-            properties:
-              is_current_employer:
-                type: boolean
-                description: Whether this employment history entry is for a current employer.
-                  This field is not configurable on the Rentvine template and is
-                  always required
-              name:
-                type: string
-                description: The name of the employer. This field is not configurable on the
-                  Rentvine template and is always required
-              phone:
-                type: string
-                pattern: ^\+?\d{1,50}$
-                description: The phone number of the employer. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              address_1:
-                type: string
-                description: The first line of the address of the employer. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              address_2:
-                type: string
-                description: The second line of the address of the employer. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              city:
-                type: string
-                description: The city of the address of the employer. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              state:
-                type: string
-                description: The state of the address of the employer. Depending on the Rentvine
-                  template, this field can be customized to be either required
-                  or optional. You will need to work with your customer directly
-                  to configure this field to your application requirements
-              zip:
-                type: string
-                description: The zip code of the address of the employer. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              country:
-                type: string
-                description: The country of the address of the employer. Depending on the
-                  Rentvine template, this field can be customized to be either
-                  required or optional. You will need to work with your customer
-                  directly to configure this field to your application
-                  requirements
-              supervisor_first_name:
-                type: string
-                description: The first name of the applicant's supervisor at this employer.
-                  Depending on the Rentvine template, this field can be
-                  customized to be either required or optional. You will need to
-                  work with your customer directly to configure this field to
-                  your application requirements
-              supervisor_last_name:
-                type: string
-                description: The last name of the applicant's supervisor at this employer.
-                  Depending on the Rentvine template, this field can be
-                  customized to be either required or optional. You will need to
-                  work with your customer directly to configure this field to
-                  your application requirements
-              supervisor_title:
-                type: string
-                description: The title of the applicant's supervisor at this employer. Depending
-                  on the Rentvine template, this field can be customized to be
-                  either required or optional. You will need to work with your
-                  customer directly to configure this field to your application
-                  requirements
-              supervisor_phone:
-                type: string
-                pattern: ^\+?\d{1,50}$
-                description: The phone number of the applicant's supervisor at this employer.
-                  Depending on the Rentvine template, this field can be
-                  customized to be either required or optional. You will need to
-                  work with your customer directly to configure this field to
-                  your application requirements
-              supervisor_email:
-                type: string
-                format: email
-                description: The email of the applicant's supervisor at this employer. Depending
-                  on the Rentvine template, this field can be customized to be
-                  either required or optional. You will need to work with your
-                  customer directly to configure this field to your application
-                  requirements
-              position:
-                type: string
-                description: The position held at this employer, or the job description of the
-                  applicant. Depending on the Rentvine template, this field can
-                  be customized to be either required or optional. You will need
-                  to work with your customer directly to configure this field to
-                  your application requirements
-              monthly_income_in_cents:
-                type: integer
-                minimum: 0
-                description: "The monthly income of the applicant at this employer in cents.
-                  This field is not configurable on the Rentvine template and is
-                  always required. DEPRECATED: Use income_in_cents instead"
-                deprecated: true
-              income_in_cents:
-                type: integer
-                minimum: 0
-                description: The monthly income of the applicant at this employer in cents. This
-                  field is not configurable on the Rentvine template and is
-                  always required
-              start_date:
-                anyOf:
-                  - type: string
-                    format: date-time
-                  - type: string
-                    pattern: ^\d{4}-\d{2}-\d{2}$
-                description: The start date of the applicant's employment at this employer.
-                  Depending on the Rentvine template, this field can be
-                  customized to be either required or optional. You will need to
-                  work with your customer directly to configure this field to
-                  your application requirements
-              end_date:
-                anyOf:
-                  - type: string
-                    format: date-time
-                  - type: string
-                    pattern: ^\d{4}-\d{2}-\d{2}$
-                description: The end date of the applicant's employment at this employer.
-                  Depending on the Rentvine template, this field can be
-                  customized to be either required or optional. You will need to
-                  work with your customer directly to configure this field to
-                  your application requirements
-            required:
-              - is_current_employer
-              - name
-          description: The employment history of the applicant. Depending on the Rentvine
-            template, this array can be customized to be either required or
-            optional. The template may also require a minimum number of items in
-            the array in order to pass validation. You will need to work with
-            your customer directly to configure this field to your application
-            requirements
         other_income:
           type: array
           items:
@@ -11918,12 +11948,471 @@ components:
     _v1_applications_{id}_put_input:
       type: object
       properties:
+        applicant_id:
+          type: string
+          description: The Propexo unique identifier for the applicant
         application_id:
           type: string
           description: The Propexo unique identifier for the application
+        lease_period_id:
+          type: string
+          description: The Propexo unique identifier for the lease period
         unit_id:
           type: string
           description: The Propexo unique identifier for the unit for this application
+        lead_source_id:
+          type: string
+          description: The Propexo unique identifier for the lead source
+        address_1:
+          type: string
+          description: The first address line associated with the applicant
+        address_2:
+          type: string
+          description: The second address line associated with the applicant
+        application_status:
+          type: string
+          enum:
+            - COMPLETED
+            - APPROVED
+          description: The status associated with the application
+        attachments:
+          type: array
+          items:
+            type: object
+            properties:
+              file_data:
+                type: string
+                maxLength: 69730304
+                description: The contents of the file, as a base64 encoded string. The PMS has a
+                  max file size of 50 MB.
+              file_name:
+                type: string
+                description: 'The name of the file including the extension. Ex: "image.jpg"'
+              mime_type:
+                type: string
+                description: 'The mime type of the file. Ex: "image/jpeg"'
+              lease_file_type:
+                type: string
+                description: "Deprecated: Use the `file_type_id` field instead. The PMS specific
+                  lease file type of the document"
+              file_type_id:
+                type: string
+                description: The Propexo file type ID of the lease file type to upload. Prefer
+                  this over the raw input of the lease_file_type.
+              is_private:
+                type: boolean
+                description: If the file should be marked as private. If true the file will not
+                  be shown in the resident portal.
+            required:
+              - file_data
+              - file_name
+              - mime_type
+          description: Files to upload for the applicant. All the files can have a maximum
+            combined file size of 50 MB
+        city:
+          type: string
+          description: The city associated with the applicant
+        create_new_events_only:
+          anyOf:
+            - type: boolean
+            - type: string
+          description: Whether or not new events should be created on the applicant
+        date_of_birth:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The date of birth associated with the applicant
+        email_1:
+          type: string
+          format: email
+          description: The primary email address associated with the applicant
+        events:
+          type: array
+          items:
+            type: object
+            properties:
+              unit_id:
+                type: string
+                description: The Propexo unique identifier for the unit
+              x_type_id:
+                type: string
+                description: The PMS id for the event type.
+              x_leasing_agent_id:
+                type: string
+                description: The PMS id for the leasing agent.
+              x_sub_type_id:
+                type: string
+                description: The PMS id for the event sub type.
+              x_result_id:
+                type: string
+                description: The PMS id for the event result.
+              event_datetime:
+                type: string
+                format: date-time
+                description: The date and time that the event occured.
+              appointment_datetime:
+                type: string
+                format: date-time
+                description: The date and time that the appointment will occur. Required if
+                  using appointment type.
+              time_from:
+                type: string
+              time_to:
+                type: string
+              notes:
+                type: string
+                description: General notes about the event.
+              title:
+                type: string
+                description: Title for the event.
+              reasons_for_event:
+                type: string
+                description: The reason the event occurred.
+              id:
+                type: string
+                description: The Propexo unique identifier for the event. Only required if
+                  attempting to update an existing event.
+            required:
+              - x_type_id
+          description: "DEPRECATED: Please use /events endpoints to write events. Array of
+            events associated with this applicant"
+          deprecated: true
+        first_name:
+          type: string
+          description: The first name associated with the applicant
+        last_name:
+          type: string
+          description: The last name associated with the applicant
+        move_in_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The desired move-in date to the unit listed in the application
+        phone_1_type:
+          type: string
+          enum:
+            - FAX
+            - HOME
+            - MOBILE
+            - WORK
+          description: Type of the primary phone number
+        phone_1:
+          type: string
+          pattern: ^\d{10}$
+          description: Primary phone number associated with the applicant
+        state:
+          type: string
+          description: The state associated with the applicant
+        zip:
+          type: string
+          description: The zip code associated with the applicant
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                description: The type associated with the applicant pet
+              name:
+                type: string
+                description: The name associated with the applicant pet
+              age_in_years:
+                type: integer
+                minimum: 0
+                description: The age in years of the applicant pet
+              weight_in_pounds:
+                type: integer
+                minimum: 0
+                description: The weight in pounds of the applicant pet
+              breed:
+                type: string
+                description: The breed of the applicant pet
+              color:
+                type: string
+                description: The color of the applicant pet
+              gender:
+                type: string
+                description: The raw value for the gender of the applicant pet
+              is_fixed:
+                type: boolean
+                description: Whether the applicant pet is fixed
+              is_service_animal:
+                type: boolean
+                description: Whether the applicant pet is a service animal
+            required:
+              - type
+          maxItems: 6
+          default: []
+          description: A list of applicant pets. If any pets are provided, this list will
+            overwrite the existing list of pets
+        vehicles:
+          type: array
+          items:
+            type: object
+            properties:
+              make:
+                type: string
+                description: The make of the vehicle
+              model:
+                type: string
+                description: The model of the vehicle
+              year:
+                type: integer
+                description: The year the vehicle was made
+              color:
+                type: string
+                description: The color of the vehicle
+              license_plate_number:
+                type: string
+                description: The license plate number of the vehicle
+              license_plate_state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The issuing state of the license plate
+            required:
+              - make
+          maxItems: 4
+          default: []
+          description: A list of vehicles for the application
+        employment_history:
+          type: array
+          items:
+            type: object
+            properties:
+              is_current_employer:
+                type: boolean
+                description: Whether this employment history entry is for a current employer
+              name:
+                type: string
+                description: The name of the employer
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date of the applicant's employment at this employer
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date of the applicant's employment at this employer. Ignore
+                  this field if is_current_employer is set to true
+              address_1:
+                type: string
+                description: The first line of the address of the employer
+              city:
+                type: string
+                description: The city of the address of the employer
+              state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The state of the address of the employer
+              zip:
+                type: string
+                description: The zip code of the address of the employer
+              phone:
+                type: string
+                pattern: ^\d{10}$
+                description: The phone number of the employer
+              supervisor_first_name:
+                type: string
+                description: The first name of the applicant's supervisor at this employer
+              supervisor_last_name:
+                type: string
+                description: The last name of the applicant's supervisor at this employer
+              position:
+                type: string
+                description: The position held at this employer, or the job description of the
+                  applicant
+              monthly_income_in_cents:
+                type: integer
+                minimum: 0
+                description: The monthly income of the applicant at this employer in cents
+            required:
+              - is_current_employer
+              - name
+              - start_date
+              - monthly_income_in_cents
+          maxItems: 2
+          default: []
+          description: The employment history of the applicant
+        add_ons:
+          type: array
+          items:
+            type: object
+            properties:
+              rentable_item_id:
+                type: string
+                description: The Propexo unique identifier for the rentable item
+              employee_id:
+                type: string
+                description: The Propexo unique identifier for the employee
+              start_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The start date associated with the employee
+              end_date:
+                anyOf:
+                  - type: string
+                    format: date-time
+                  - type: string
+                    pattern: ^\d{4}-\d{2}-\d{2}$
+                description: The end date associated with the employee
+            required:
+              - rentable_item_id
+              - employee_id
+          description: Add-ons of the applicant
         employee_id:
           type:
             - string
@@ -11934,37 +12423,12 @@ components:
           type: string
           description: The Propexo unique identifier for the application status for this
             application
-        applicant_id:
-          type: string
-          description: The Propexo unique identifier for the applicant
-        first_name:
-          type: string
-          description: The first name associated with the applicant
-        last_name:
-          type: string
-          description: The last name associated with the applicant
         middle_name:
           type: string
           description: The middle name associated with the applicant
         maiden_name:
           type: string
           description: The maiden name associated with the applicant
-        email_1:
-          type: string
-          format: email
-          description: The primary email address associated with the applicant
-        phone_1:
-          type: string
-          pattern: ^\d{10}$
-          description: Primary phone number associated with the applicant
-        phone_1_type:
-          type: string
-          enum:
-            - FAX
-            - HOME
-            - MOBILE
-            - WORK
-          description: Type of the primary phone number
         phone_2:
           type: string
           pattern: ^\d{10}$
@@ -11977,13 +12441,6 @@ components:
             - MOBILE
             - WORK
           description: Type of the secondary phone number
-        move_in_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The desired move-in date to the unit listed in the application
         move_out_date:
           anyOf:
             - type: string
@@ -11994,13 +12451,6 @@ components:
         desired_lease_term_in_months:
           type: string
           description: The desired lease term in months of the applicant
-        date_of_birth:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The date of birth associated with the applicant
         notes:
           type: string
           description: Notes associated with the applicant
@@ -12310,141 +12760,6 @@ components:
           maxItems: 1
           default: []
           description: A list of emergency contacts for the applicant
-        employment_history:
-          type: array
-          items:
-            type: object
-            properties:
-              is_current_employer:
-                type: boolean
-                description: Whether this employment history entry is for a current employer
-              name:
-                type: string
-                description: The name of the employer
-              start_date:
-                anyOf:
-                  - type: string
-                    format: date-time
-                  - type: string
-                    pattern: ^\d{4}-\d{2}-\d{2}$
-                description: The start date of the applicant's employment at this employer
-              end_date:
-                anyOf:
-                  - type: string
-                    format: date-time
-                  - type: string
-                    pattern: ^\d{4}-\d{2}-\d{2}$
-                description: The end date of the applicant's employment at this employer. Ignore
-                  this field if is_current_employer is set to true
-              address_1:
-                type: string
-                description: The first line of the address of the employer
-              city:
-                type: string
-                description: The city of the address of the employer
-              state:
-                type: string
-                enum:
-                  - AA
-                  - AE
-                  - AK
-                  - AL
-                  - AP
-                  - AR
-                  - AS
-                  - AZ
-                  - CA
-                  - CO
-                  - CT
-                  - DC
-                  - DE
-                  - FL
-                  - FM
-                  - GA
-                  - GU
-                  - HI
-                  - IA
-                  - ID
-                  - IN
-                  - KS
-                  - KY
-                  - LA
-                  - MA
-                  - MD
-                  - ME
-                  - MH
-                  - MI
-                  - MN
-                  - MO
-                  - MP
-                  - MS
-                  - MT
-                  - NC
-                  - NE
-                  - NL
-                  - NJ
-                  - NM
-                  - NV
-                  - NY
-                  - OH
-                  - OK
-                  - OR
-                  - PA
-                  - PR
-                  - SD
-                  - TN
-                  - TX
-                  - UT
-                  - VA
-                  - VI
-                  - VT
-                  - WA
-                  - WI
-                  - WV
-                  - WY
-                  - AB
-                  - BC
-                  - MB
-                  - NB
-                  - NL
-                  - NT
-                  - NS
-                  - NU
-                  - ON
-                  - PE
-                  - QC
-                  - SK
-                  - YT
-                description: The state of the address of the employer
-              zip:
-                type: string
-                description: The zip code of the address of the employer
-              phone:
-                type: string
-                pattern: ^\d{10}$
-                description: The phone number of the employer
-              supervisor_first_name:
-                type: string
-                description: The first name of the applicant's supervisor at this employer
-              supervisor_last_name:
-                type: string
-                description: The last name of the applicant's supervisor at this employer
-              position:
-                type: string
-                description: The position held at this employer, or the job description of the
-                  applicant
-              monthly_income_in_cents:
-                type: integer
-                minimum: 0
-                description: The monthly income of the applicant at this employer in cents
-            required:
-              - is_current_employer
-              - name
-              - start_date
-              - monthly_income_in_cents
-          maxItems: 2
-          default: []
-          description: The employment history of the applicant
         other_income:
           type: array
           items:
@@ -12463,145 +12778,6 @@ components:
           maxItems: 2
           default: []
           description: A list of other income sources for the applicant
-        vehicles:
-          type: array
-          items:
-            type: object
-            properties:
-              make:
-                type: string
-                description: The make of the vehicle
-              model:
-                type: string
-                description: The model of the vehicle
-              year:
-                type: integer
-                description: The year the vehicle was made
-              color:
-                type: string
-                description: The color of the vehicle
-              license_plate_number:
-                type: string
-                description: The license plate number of the vehicle
-              license_plate_state:
-                type: string
-                enum:
-                  - AA
-                  - AE
-                  - AK
-                  - AL
-                  - AP
-                  - AR
-                  - AS
-                  - AZ
-                  - CA
-                  - CO
-                  - CT
-                  - DC
-                  - DE
-                  - FL
-                  - FM
-                  - GA
-                  - GU
-                  - HI
-                  - IA
-                  - ID
-                  - IN
-                  - KS
-                  - KY
-                  - LA
-                  - MA
-                  - MD
-                  - ME
-                  - MH
-                  - MI
-                  - MN
-                  - MO
-                  - MP
-                  - MS
-                  - MT
-                  - NC
-                  - NE
-                  - NL
-                  - NJ
-                  - NM
-                  - NV
-                  - NY
-                  - OH
-                  - OK
-                  - OR
-                  - PA
-                  - PR
-                  - SD
-                  - TN
-                  - TX
-                  - UT
-                  - VA
-                  - VI
-                  - VT
-                  - WA
-                  - WI
-                  - WV
-                  - WY
-                  - AB
-                  - BC
-                  - MB
-                  - NB
-                  - NL
-                  - NT
-                  - NS
-                  - NU
-                  - ON
-                  - PE
-                  - QC
-                  - SK
-                  - YT
-                description: The issuing state of the license plate
-            required:
-              - make
-          maxItems: 4
-          default: []
-          description: A list of vehicles for the application
-        pets:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-                description: The type associated with the applicant pet
-              name:
-                type: string
-                description: The name associated with the applicant pet
-              age_in_years:
-                type: integer
-                minimum: 0
-                description: The age in years of the applicant pet
-              weight_in_pounds:
-                type: integer
-                minimum: 0
-                description: The weight in pounds of the applicant pet
-              breed:
-                type: string
-                description: The breed of the applicant pet
-              color:
-                type: string
-                description: The color of the applicant pet
-              gender:
-                type: string
-                description: The raw value for the gender of the applicant pet
-              is_fixed:
-                type: boolean
-                description: Whether the applicant pet is fixed
-              is_service_animal:
-                type: boolean
-                description: Whether the applicant pet is a service animal
-            required:
-              - type
-          maxItems: 6
-          default: []
-          description: A list of applicant pets. If any pets are provided, this list will
-            overwrite the existing list of pets
         concession_fees:
           type: array
           items:
