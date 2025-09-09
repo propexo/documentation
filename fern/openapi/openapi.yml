@@ -21839,16 +21839,16 @@ components:
             not specified
         address_1:
           type: string
-          description: The first address line associated with the resident
+          description: The first address line associated with the applicant
         city:
           type: string
-          description: The city associated with the resident
+          description: The city associated with the applicant
         state:
           type: string
-          description: The state associated with the resident
+          description: The state associated with the applicant
         zip:
           type: string
-          description: The zip code associated with the resident
+          description: The zip code associated with the applicant
         country:
           type: string
           enum:
@@ -21999,8 +21999,11 @@ components:
           type: string
           enum:
             - PENDING
-            - ACTIVE
-          description: The status associated with the lease
+            - APPROVED
+            - CANCELED
+            - DENIED
+            - SIGNED
+          description: The status associated with the application
         resident_id:
           type: string
           description: The Propexo unique identifier for the resident
@@ -22262,6 +22265,23 @@ components:
           type: string
           description: The Propexo unique identifier for the lead. The lead will be
             converted to an applicant
+        application_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The application date associated with the applicant
+        rent_amount_market_in_cents:
+          type: integer
+          description: The market rent amount in cents for the lease
+        move_in_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The desired move-in date to the unit listed in the application
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source. Required if
@@ -22281,13 +22301,6 @@ components:
         maiden_name:
           type: string
           description: The maiden name associated with the applicant
-        move_in_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The desired move-in date to the unit listed in the application
         move_out_date:
           anyOf:
             - type: string
