@@ -26571,6 +26571,11 @@ components:
             - string
             - "null"
           description: The external ID of the invoice from the integration vendor
+        x_vendor_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the vendor from the integration vendor
         x_parent_purchase_order_id:
           type:
             - string
@@ -26702,6 +26707,11 @@ components:
             - string
             - "null"
           description: The Propexo unique identifier for the invoice
+        vendor_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the vendor
         parent_purchase_order_id:
           type:
             - string
@@ -26717,6 +26727,7 @@ components:
         - x_property_id
         - x_location_id
         - x_invoice_id
+        - x_vendor_id
         - x_parent_purchase_order_id
         - number
         - is_closed
@@ -26743,6 +26754,7 @@ components:
         - integration_id
         - integration_vendor
         - invoice_id
+        - vendor_id
         - parent_purchase_order_id
       x-propexo:
         derivedFromModel: purchase_orders
