@@ -7157,6 +7157,34 @@ components:
         email_1:
           type: string
           description: The primary email address associated with the applicant
+    IncomeSource:
+      type: object
+      properties:
+        amount_in_cents:
+          type:
+            - number
+            - "null"
+          description: The total income of the applicant, in cents
+        amount_raw:
+          type:
+            - string
+            - "null"
+          description: The total income amount of the applicant
+        type_normalized:
+          type:
+            - string
+            - "null"
+          description: The type of income of the applicant
+        type_raw:
+          type:
+            - string
+            - "null"
+          description: The type of income of the applicant
+      required:
+        - amount_in_cents
+        - amount_raw
+        - type_normalized
+        - type_raw
     Applicant:
       type: object
       properties:
@@ -7307,6 +7335,10 @@ components:
             - string
             - "null"
           description: The first name associated with the applicant
+        self_reported_income:
+          type: array
+          items:
+            $ref: "#/components/schemas/IncomeSource"
         last_name:
           type:
             - string
