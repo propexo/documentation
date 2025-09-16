@@ -5362,6 +5362,7 @@ components:
               - properties
               - purchase_orders
               - rentable_items
+              - recurring_resident_charges
               - resident_charges
               - resident_payments
               - residents
@@ -5420,6 +5421,7 @@ components:
               - properties
               - purchase_orders
               - rentable_items
+              - recurring_resident_charges
               - resident_charges
               - resident_payments
               - residents
