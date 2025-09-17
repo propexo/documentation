@@ -773,6 +773,7 @@ components:
                         - REALPAGE_RPX_UNITS
                         - REALPAGE_RPX_UNITS_BY_PROPERTY
                         - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                        - REALPAGE_RPX_ACTIVITY_RESULT_CODES
                         - REALPAGE_RPX_CONVERGENT_BILLING
                         - REALPAGE_RPX_FACILITIES
                         - REALPAGE_RPX_PRICING_AND_AVAILABILITY
@@ -1024,6 +1025,7 @@ components:
                           - REALPAGE_RPX_UNITS
                           - REALPAGE_RPX_UNITS_BY_PROPERTY
                           - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                          - REALPAGE_RPX_ACTIVITY_RESULT_CODES
                           - REALPAGE_RPX_CONVERGENT_BILLING
                           - REALPAGE_RPX_FACILITIES
                           - REALPAGE_RPX_PRICING_AND_AVAILABILITY
@@ -3270,6 +3272,7 @@ components:
                       - REALPAGE_RPX_UNITS
                       - REALPAGE_RPX_UNITS_BY_PROPERTY
                       - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                      - REALPAGE_RPX_ACTIVITY_RESULT_CODES
                       - REALPAGE_RPX_CONVERGENT_BILLING
                       - REALPAGE_RPX_FACILITIES
                       - REALPAGE_RPX_PRICING_AND_AVAILABILITY
@@ -3521,6 +3524,7 @@ components:
                         - REALPAGE_RPX_UNITS
                         - REALPAGE_RPX_UNITS_BY_PROPERTY
                         - REALPAGE_RPX_UPDATE_SITE_SUBSCRIPTION
+                        - REALPAGE_RPX_ACTIVITY_RESULT_CODES
                         - REALPAGE_RPX_CONVERGENT_BILLING
                         - REALPAGE_RPX_FACILITIES
                         - REALPAGE_RPX_PRICING_AND_AVAILABILITY
