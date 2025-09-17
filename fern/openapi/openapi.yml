@@ -241,6 +241,10 @@ components:
                 - "null"
             integration_id:
               type: string
+            associated_property_id:
+              type:
+                - string
+                - "null"
           required:
             - id
             - job_id
@@ -251,6 +255,7 @@ components:
             - root_job_id
             - job_schedule_id
             - integration_id
+            - associated_property_id
       required:
         - meta
         - results
@@ -458,6 +463,10 @@ components:
                   - "null"
               integration_id:
                 type: string
+              associated_property_id:
+                type:
+                  - string
+                  - "null"
             required:
               - id
               - job_id
@@ -468,6 +477,7 @@ components:
               - root_job_id
               - job_schedule_id
               - integration_id
+              - associated_property_id
       required:
         - meta
         - results
@@ -535,6 +545,10 @@ components:
                   - "null"
               integration_id:
                 type: string
+              associated_property_id:
+                type:
+                  - string
+                  - "null"
             required:
               - id
               - job_id
@@ -545,6 +559,7 @@ components:
               - root_job_id
               - job_schedule_id
               - integration_id
+              - associated_property_id
       required:
         - meta
         - results
