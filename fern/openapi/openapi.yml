@@ -21124,6 +21124,9 @@ components:
         desired_unit_type:
           type: string
           description: The desired type of unit
+        lead_relationship_id:
+          type: string
+          description: The Propexo unique identifier for the lead relationship
         date_of_birth:
           anyOf:
             - type: string
