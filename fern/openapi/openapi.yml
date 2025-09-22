@@ -23015,14 +23015,14 @@ components:
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The start date associated with the lease
+          description: The start date associated with the applicant
         end_date:
           anyOf:
             - type: string
               format: date-time
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The end date associated with the lease
+          description: The end date associated with the applicant
         is_eviction_pending:
           type: boolean
           default: false
@@ -23050,19 +23050,19 @@ components:
           description: The last name associated with the applicant
         address_1:
           type: string
-          description: The first address line associated with the resident
+          description: The first address line associated with the applicant
         address_2:
           type: string
           description: The second address line associated with the resident
         city:
           type: string
-          description: The city associated with the resident
+          description: The city associated with the applicant
         state:
           type: string
-          description: The state associated with the resident
+          description: The state associated with the applicant
         zip:
           type: string
-          description: The zip code associated with the resident
+          description: The zip code associated with the applicant
         email_1:
           type: string
           format: email
@@ -23104,12 +23104,12 @@ components:
         status:
           type: string
           enum:
-            - Draft
-            - Active
-            - Active - Notice Given
-            - Terminated
-            - Eviction
-          description: The status associated with the lease
+            - PENDING
+            - APPROVED
+            - CANCELED
+            - DENIED
+            - SIGNED
+          description: The status associated with the applicant
         tenant_ids:
           type: array
           items:
@@ -23163,12 +23163,16 @@ components:
           type: string
           format: date-time
           description: The move-out date associated with the lease
-        middle_name:
+        applicant_id:
           type: string
-          description: The middle name associated with the applicant
-        maiden_name:
-          type: string
-          description: The maiden name associated with the applicant
+          description: The Propexo unique identifier for the applicant
+        application_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The application date associated with the applicant
         phone_1_type:
           type: string
           enum:
@@ -23189,6 +23193,15 @@ components:
             - MOBILE
             - WORK
           description: Type of the secondary phone number
+        rent_amount_market_in_cents:
+          type: integer
+          description: The market rent amount in cents for the lease
+        middle_name:
+          type: string
+          description: The middle name associated with the applicant
+        maiden_name:
+          type: string
+          description: The maiden name associated with the applicant
         desired_lease_term_in_months:
           type: string
           description: The desired lease term in months of the applicant
