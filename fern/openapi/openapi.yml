@@ -940,6 +940,7 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
+                        - SAMPLE1_DEPOSIT_SUMMARIES
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
@@ -1193,6 +1194,7 @@ components:
                           - SAMPLE1_SERVICES
                           - SAMPLE1_JOB_COST
                           - SAMPLE1_VENDOR_INVOICING
+                          - SAMPLE1_DEPOSIT_SUMMARIES
                           - BUILDIUM_BASE
                           - PROPERTYWARE_BASE
                           - RENTMANAGER_BASE
@@ -3441,6 +3443,7 @@ components:
                       - SAMPLE1_SERVICES
                       - SAMPLE1_JOB_COST
                       - SAMPLE1_VENDOR_INVOICING
+                      - SAMPLE1_DEPOSIT_SUMMARIES
                       - BUILDIUM_BASE
                       - PROPERTYWARE_BASE
                       - RENTMANAGER_BASE
@@ -3694,6 +3697,7 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
+                        - SAMPLE1_DEPOSIT_SUMMARIES
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
                         - RENTMANAGER_BASE
