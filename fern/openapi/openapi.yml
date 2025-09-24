@@ -913,6 +913,7 @@ components:
                         - RESMAN_UPDATE_APPLICANT
                         - RESMAN_UPDATE_LEAD
                         - RESMAN_UPDATE_SERVICE_REQUEST
+                        - RESMAN_READ_DEPOSIT_SUMMARY_PARTNER_API
                         - SAMPLE2_CREATE_APPOINTMENT
                         - SAMPLE2_CREATE_CHARGE
                         - SAMPLE2_CREATE_LEAD
@@ -1165,6 +1166,7 @@ components:
                           - RESMAN_UPDATE_APPLICANT
                           - RESMAN_UPDATE_LEAD
                           - RESMAN_UPDATE_SERVICE_REQUEST
+                          - RESMAN_READ_DEPOSIT_SUMMARY_PARTNER_API
                           - SAMPLE2_CREATE_APPOINTMENT
                           - SAMPLE2_CREATE_CHARGE
                           - SAMPLE2_CREATE_LEAD
@@ -3412,6 +3414,7 @@ components:
                       - RESMAN_UPDATE_APPLICANT
                       - RESMAN_UPDATE_LEAD
                       - RESMAN_UPDATE_SERVICE_REQUEST
+                      - RESMAN_READ_DEPOSIT_SUMMARY_PARTNER_API
                       - SAMPLE2_CREATE_APPOINTMENT
                       - SAMPLE2_CREATE_CHARGE
                       - SAMPLE2_CREATE_LEAD
@@ -3664,6 +3667,7 @@ components:
                         - RESMAN_UPDATE_APPLICANT
                         - RESMAN_UPDATE_LEAD
                         - RESMAN_UPDATE_SERVICE_REQUEST
+                        - RESMAN_READ_DEPOSIT_SUMMARY_PARTNER_API
                         - SAMPLE2_CREATE_APPOINTMENT
                         - SAMPLE2_CREATE_CHARGE
                         - SAMPLE2_CREATE_LEAD
