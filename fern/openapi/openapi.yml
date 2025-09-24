@@ -6278,8 +6278,6 @@ components:
                 items:
                   type: string
                   example: https://loremflickr.com/640/480/apartment
-                  x-propexo:
-                    derivedFromField: image_urls_array
               is_unit_amenity:
                 type:
                   - boolean
@@ -6646,8 +6644,6 @@ components:
               items:
                 type: string
                 example: https://loremflickr.com/640/480/apartment
-                x-propexo:
-                  derivedFromField: image_urls_array
             is_unit_amenity:
               type:
                 - boolean
@@ -25239,6 +25235,9 @@ components:
           type: array
           items:
             type: string
+            x-propexo:
+              derivedFromModel: owners_to_properties
+              derivedFromField: property_id
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -25721,6 +25720,9 @@ components:
           type: array
           items:
             type: string
+            x-propexo:
+              derivedFromModel: owners_to_properties
+              derivedFromField: owner_id
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
