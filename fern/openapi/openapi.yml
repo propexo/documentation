@@ -20644,7 +20644,7 @@ components:
           type: boolean
           description: Whether or not the lead has pets that aren't dogs or cats
         desired_max_rent_in_cents:
-          type: number
+          type: integer
           minimum: 0
           description: The maximum rent cost the lead is looking to pay, in cents
         monthly_income_in_cents:
