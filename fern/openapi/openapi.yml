@@ -7519,7 +7519,9 @@ components:
                   - "null"
                 description: Notes associated with the applicant pet
               type:
-                type: string
+                type:
+                  - string
+                  - "null"
                 description: The type associated with the applicant pet
               weight_in_pounds:
                 type:
@@ -20389,7 +20391,9 @@ components:
                   - "null"
                 description: Notes associated with the lead pet
               type:
-                type: string
+                type:
+                  - string
+                  - "null"
                 description: The type associated with the lead pet
               weight_in_pounds:
                 type:
