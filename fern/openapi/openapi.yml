@@ -21496,6 +21496,11 @@ components:
           description: "Filter to residents moving out after this date. Format:
             YYYY-MM-DD. Date filter combinations will act with AND logic on a
             single record."
+        only_null_move_outs:
+          anyOf:
+            - type: boolean
+            - type: string
+          description: Filter to only return leases where the move-out date is null
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
         status_normalized:
@@ -43016,6 +43021,15 @@ paths:
             YYYY-MM-DD. Date filter combinations will act with AND logic on a
             single record."
           name: after_move_out_date
+          in: query
+        - schema:
+            anyOf:
+              - type: boolean
+              - type: string
+            description: Filter to only return leases where the move-out date is null
+          required: false
+          description: Filter to only return leases where the move-out date is null
+          name: only_null_move_outs
           in: query
         - schema:
             type: string
