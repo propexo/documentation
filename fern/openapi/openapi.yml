@@ -36200,7 +36200,11 @@ paths:
                 $ref: "#/components/schemas/errorResponse"
   /v1/admin/integrations/{integration_id}/back-sync:
     post:
-      description: Trigger a backsync on an integration.
+      description: A backsync operation retrieves historical baseline data for an
+        integration. When executed, the system extends all date ranges for
+        enabled models to January 1, 1970. This operation should be performed
+        only once per integration. Repeated backsync operations will result in
+        significant billing charges to your account.
       summary: Trigger a backsync on an integration.
       tags:
         - admin
@@ -36236,9 +36240,11 @@ paths:
                 $ref: "#/components/schemas/errorResponse"
   /v1/admin/integrations/{integration_id}/manual-sync:
     post:
-      description: Trigger a manual sync on an integration. This request has no impact
-        if a sync is already in progress, but the endpoint will return a 400
-        with a corresponding error code.
+      description: A manual sync operation overrides the configured sync schedule for
+        an integration. This operation is typically used during testing phases
+        but may be executed at any time as needed. However, frequent use of
+        manual syncs is not recommended. For questions regarding sync
+        operations, contact Propexo Support.
       summary: Trigger a manual sync on an integration.
       tags:
         - admin
