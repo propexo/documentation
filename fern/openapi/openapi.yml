@@ -18713,6 +18713,213 @@ components:
       required:
         - meta
         - results
+    _v1_accounting-entities__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+    _v1_accounting-entities__get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the accounting entity
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              entity_name:
+                type:
+                  - string
+                  - "null"
+                description: The name of the accounting entity
+              ledger_code:
+                type: string
+                description: The ledger code associated to the accounting entity
+              current_period:
+                type:
+                  - string
+                  - "null"
+                description: The current period of the accounting entity
+              is_active:
+                type:
+                  - boolean
+                  - "null"
+                description: Whether the accounting entity is active
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                $ref: "#/components/schemas/Enum1"
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - entity_name
+              - ledger_code
+              - current_period
+              - is_active
+              - integration_id
+              - integration_vendor
+              - property_id
+      required:
+        - meta
+        - results
+    _v1_accounting-entities_{accounting_entity_id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_accounting-entities_{accounting_entity_id}_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the accounting entity
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            entity_name:
+              type:
+                - string
+                - "null"
+              description: The name of the accounting entity
+            ledger_code:
+              type: string
+              description: The ledger code associated to the accounting entity
+            current_period:
+              type:
+                - string
+                - "null"
+              description: The current period of the accounting entity
+            is_active:
+              type:
+                - boolean
+                - "null"
+              description: Whether the accounting entity is active
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              $ref: "#/components/schemas/Enum1"
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - entity_name
+            - ledger_code
+            - current_period
+            - is_active
+            - integration_id
+            - integration_vendor
+            - property_id
+      required:
+        - meta
+        - results
     _v1_invoices__get_input:
       type: object
       properties:
@@ -41813,6 +42020,177 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_file-types_{file_type_id}_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/accounting-entities/:
+    get:
+      description: Get all accounting entities
+      summary: Get all accounting entities
+      tags:
+        - invoices
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_accounting-entities__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/accounting-entities/{accounting_entity_id}:
+    get:
+      description: Get accounting entity by id
+      summary: Get accounting entity by id
+      tags:
+        - invoices
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: accounting_entity_id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_accounting-entities_{accounting_entity_id}_get_\
+                  output"
         "400":
           description: Bad Request
           content:
