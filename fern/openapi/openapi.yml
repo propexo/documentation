@@ -18041,6 +18041,23 @@ components:
     _v1_deposit-summaries_{deposit_summary_id}_put_input:
       type: object
       properties:
+        check_number:
+          type: string
+          description: "The check number. Note: Must be unique per pay out."
+        post_month:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The post month of the check.
+        payment_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The payment date of the check.
         total_amount_in_cents:
           type: integer
           exclusiveMinimum: 0
@@ -18058,19 +18075,9 @@ components:
             - CHECK
             - EFT
           description: The payment method used for the refund payout.
-        check_number:
-          type: string
-          description: "The check number. Note: Must be unique per pay out."
         notes:
           type: string
           description: The notes for the check.
-        post_month:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The post month of the check.
         check_run_date:
           anyOf:
             - type: string
