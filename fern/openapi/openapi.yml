@@ -17329,353 +17329,6 @@ components:
       required:
         - meta
         - results
-    _v1_deposits__get_input:
-      type: object
-      properties:
-        order-by:
-          type: string
-          default: created_at:desc
-          description: "Order the results by a field. Optionally include asc or desc
-            preceded by a colon (default is asc). Example:
-            ?order-by=updated_at:desc"
-        offset:
-          type:
-            - integer
-            - "null"
-          minimum: 0
-          default: 0
-          description: Can be used for paginating results
-        limit:
-          type:
-            - integer
-            - "null"
-          minimum: 0
-          maximum: 250
-          default: 100
-          description: A number between 1 and 250 to determine the number of results to
-            return in a single query
-        location_id:
-          type: string
-          description: The Propexo unique identifier for the location associated with the
-            property (exclusive to Rent Manager integrations). This is always
-            null for non-Rent Manager integrations.
-        property_id:
-          type: string
-          description: The Propexo unique identifier for the property
-        resident_id:
-          type: string
-          description: The Propexo unique identifier for the resident
-        integration_id:
-          type: string
-          description: The Propexo unique identifier for the integration
-        integration_vendor:
-          $ref: "#/components/schemas/Enum1"
-        x_building_id:
-          type: string
-          description: The external ID of the building (not necessarily the property) from
-            the integration vendor
-        x_property_id:
-          type: string
-          description: The external ID of the property from the integration vendor
-        lease_id:
-          type: string
-          description: The Propexo unique identifier for the lease
-        refund_is_due:
-          anyOf:
-            - type: boolean
-            - type: string
-          description: Whether the refund is due for the deposit
-    _v1_deposits__get_output:
-      type: object
-      properties:
-        meta:
-          $ref: "#/components/schemas/ResponseMeta"
-        results:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                description: The Propexo unique identifier for the deposit
-              created_at:
-                type: string
-                description: The date record first entered Propexo
-              updated_at:
-                type: string
-                description: The date record was last updated in Propexo
-              last_seen:
-                type:
-                  - string
-                  - "null"
-                description: The date the record was last seen from the PMS
-              x_id:
-                type: string
-                description: The external ID from the integration vendor
-              x_property_id:
-                type: string
-                description: The external ID of the property from the integration vendor
-              x_resident_id:
-                type: string
-                description: The external ID of the resident from the integration vendor
-              x_building_id:
-                type:
-                  - string
-                  - "null"
-                description: The external ID of the building (not necessarily the property) from
-                  the integration vendor
-              x_deposit_type:
-                type:
-                  - string
-                  - "null"
-                description: The external type of the deposit from the integration vendor
-              x_lease_id:
-                type:
-                  - string
-                  - "null"
-                description: The external ID of the lease from the integration vendor
-              x_location_id:
-                type:
-                  - string
-                  - "null"
-                description: The external ID of the location (exclusive to Rent Manager
-                  integrations). This is always null for non-Rent Manager
-                  integrations.
-              amount_charged_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The amount charged in cents
-              amount_paid_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The amount paid in cents
-              amount_refunded_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The amount refunded in cents
-              notes:
-                type:
-                  - string
-                  - "null"
-                description: Notes associated with the deposit
-              refund_amount_due_in_cents:
-                type:
-                  - number
-                  - "null"
-                description: The refund amount due in cents
-              custom_data:
-                type:
-                  - object
-                  - "null"
-                properties: {}
-              integration_data:
-                type:
-                  - object
-                  - "null"
-                properties: {}
-              integration_id:
-                type: string
-                description: The Propexo unique identifier for the integration
-              integration_vendor:
-                $ref: "#/components/schemas/Enum1"
-              lease_id:
-                type:
-                  - string
-                  - "null"
-                description: The Propexo unique identifier for the lease
-              resident_id:
-                type: string
-                description: The Propexo unique identifier for the resident
-              property_id:
-                type: string
-                description: The Propexo unique identifier for the property
-            required:
-              - id
-              - created_at
-              - updated_at
-              - last_seen
-              - x_id
-              - x_property_id
-              - x_resident_id
-              - x_building_id
-              - x_deposit_type
-              - x_lease_id
-              - x_location_id
-              - amount_charged_in_cents
-              - amount_paid_in_cents
-              - amount_refunded_in_cents
-              - notes
-              - refund_amount_due_in_cents
-              - custom_data
-              - integration_data
-              - integration_id
-              - integration_vendor
-              - lease_id
-              - resident_id
-              - property_id
-      required:
-        - meta
-        - results
-    _v1_deposits_{id}_get_input:
-      type: object
-      properties:
-        order-by:
-          type: string
-          default: created_at:desc
-          description: "Order the results by a field. Optionally include asc or desc
-            preceded by a colon (default is asc). Example:
-            ?order-by=updated_at:desc"
-        offset:
-          type:
-            - integer
-            - "null"
-          minimum: 0
-          default: 0
-          description: Can be used for paginating results
-        limit:
-          type:
-            - integer
-            - "null"
-          minimum: 0
-          maximum: 250
-          default: 100
-          description: A number between 1 and 250 to determine the number of results to
-            return in a single query
-    _v1_deposits_{id}_get_output:
-      type: object
-      properties:
-        meta:
-          $ref: "#/components/schemas/ResponseMeta"
-        results:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The Propexo unique identifier for the deposit
-            created_at:
-              type: string
-              description: The date record first entered Propexo
-            updated_at:
-              type: string
-              description: The date record was last updated in Propexo
-            last_seen:
-              type:
-                - string
-                - "null"
-              description: The date the record was last seen from the PMS
-            x_id:
-              type: string
-              description: The external ID from the integration vendor
-            x_property_id:
-              type: string
-              description: The external ID of the property from the integration vendor
-            x_resident_id:
-              type: string
-              description: The external ID of the resident from the integration vendor
-            x_building_id:
-              type:
-                - string
-                - "null"
-              description: The external ID of the building (not necessarily the property) from
-                the integration vendor
-            x_deposit_type:
-              type:
-                - string
-                - "null"
-              description: The external type of the deposit from the integration vendor
-            x_lease_id:
-              type:
-                - string
-                - "null"
-              description: The external ID of the lease from the integration vendor
-            x_location_id:
-              type:
-                - string
-                - "null"
-              description: The external ID of the location (exclusive to Rent Manager
-                integrations). This is always null for non-Rent Manager
-                integrations.
-            amount_charged_in_cents:
-              type:
-                - number
-                - "null"
-              description: The amount charged in cents
-            amount_paid_in_cents:
-              type:
-                - number
-                - "null"
-              description: The amount paid in cents
-            amount_refunded_in_cents:
-              type:
-                - number
-                - "null"
-              description: The amount refunded in cents
-            notes:
-              type:
-                - string
-                - "null"
-              description: Notes associated with the deposit
-            refund_amount_due_in_cents:
-              type:
-                - number
-                - "null"
-              description: The refund amount due in cents
-            custom_data:
-              type:
-                - object
-                - "null"
-              properties: {}
-            integration_data:
-              type:
-                - object
-                - "null"
-              properties: {}
-            integration_id:
-              type: string
-              description: The Propexo unique identifier for the integration
-            integration_vendor:
-              $ref: "#/components/schemas/Enum1"
-            lease_id:
-              type:
-                - string
-                - "null"
-              description: The Propexo unique identifier for the lease
-            resident_id:
-              type: string
-              description: The Propexo unique identifier for the resident
-            property_id:
-              type: string
-              description: The Propexo unique identifier for the property
-          required:
-            - id
-            - created_at
-            - updated_at
-            - last_seen
-            - x_id
-            - x_property_id
-            - x_resident_id
-            - x_building_id
-            - x_deposit_type
-            - x_lease_id
-            - x_location_id
-            - amount_charged_in_cents
-            - amount_paid_in_cents
-            - amount_refunded_in_cents
-            - notes
-            - refund_amount_due_in_cents
-            - custom_data
-            - integration_data
-            - integration_id
-            - integration_vendor
-            - lease_id
-            - resident_id
-            - property_id
-      required:
-        - meta
-        - results
     _v1_deposit-summaries__get_input:
       type: object
       properties:
@@ -18032,6 +17685,353 @@ components:
             - integration_id
             - integration_vendor
             - invoice_id
+            - lease_id
+            - resident_id
+            - property_id
+      required:
+        - meta
+        - results
+    _v1_deposits__get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        resident_id:
+          type: string
+          description: The Propexo unique identifier for the resident
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+        x_building_id:
+          type: string
+          description: The external ID of the building (not necessarily the property) from
+            the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        lease_id:
+          type: string
+          description: The Propexo unique identifier for the lease
+        refund_is_due:
+          anyOf:
+            - type: boolean
+            - type: string
+          description: Whether the refund is due for the deposit
+    _v1_deposits__get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The Propexo unique identifier for the deposit
+              created_at:
+                type: string
+                description: The date record first entered Propexo
+              updated_at:
+                type: string
+                description: The date record was last updated in Propexo
+              last_seen:
+                type:
+                  - string
+                  - "null"
+                description: The date the record was last seen from the PMS
+              x_id:
+                type: string
+                description: The external ID from the integration vendor
+              x_property_id:
+                type: string
+                description: The external ID of the property from the integration vendor
+              x_resident_id:
+                type: string
+                description: The external ID of the resident from the integration vendor
+              x_building_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the building (not necessarily the property) from
+                  the integration vendor
+              x_deposit_type:
+                type:
+                  - string
+                  - "null"
+                description: The external type of the deposit from the integration vendor
+              x_lease_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the lease from the integration vendor
+              x_location_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the location (exclusive to Rent Manager
+                  integrations). This is always null for non-Rent Manager
+                  integrations.
+              amount_charged_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The amount charged in cents
+              amount_paid_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The amount paid in cents
+              amount_refunded_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The amount refunded in cents
+              notes:
+                type:
+                  - string
+                  - "null"
+                description: Notes associated with the deposit
+              refund_amount_due_in_cents:
+                type:
+                  - number
+                  - "null"
+                description: The refund amount due in cents
+              custom_data:
+                type:
+                  - object
+                  - "null"
+                properties: {}
+              integration_data:
+                type:
+                  - object
+                  - "null"
+                properties: {}
+              integration_id:
+                type: string
+                description: The Propexo unique identifier for the integration
+              integration_vendor:
+                $ref: "#/components/schemas/Enum1"
+              lease_id:
+                type:
+                  - string
+                  - "null"
+                description: The Propexo unique identifier for the lease
+              resident_id:
+                type: string
+                description: The Propexo unique identifier for the resident
+              property_id:
+                type: string
+                description: The Propexo unique identifier for the property
+            required:
+              - id
+              - created_at
+              - updated_at
+              - last_seen
+              - x_id
+              - x_property_id
+              - x_resident_id
+              - x_building_id
+              - x_deposit_type
+              - x_lease_id
+              - x_location_id
+              - amount_charged_in_cents
+              - amount_paid_in_cents
+              - amount_refunded_in_cents
+              - notes
+              - refund_amount_due_in_cents
+              - custom_data
+              - integration_data
+              - integration_id
+              - integration_vendor
+              - lease_id
+              - resident_id
+              - property_id
+      required:
+        - meta
+        - results
+    _v1_deposits_{id}_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+    _v1_deposits_{id}_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: object
+          properties:
+            id:
+              type: string
+              description: The Propexo unique identifier for the deposit
+            created_at:
+              type: string
+              description: The date record first entered Propexo
+            updated_at:
+              type: string
+              description: The date record was last updated in Propexo
+            last_seen:
+              type:
+                - string
+                - "null"
+              description: The date the record was last seen from the PMS
+            x_id:
+              type: string
+              description: The external ID from the integration vendor
+            x_property_id:
+              type: string
+              description: The external ID of the property from the integration vendor
+            x_resident_id:
+              type: string
+              description: The external ID of the resident from the integration vendor
+            x_building_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the building (not necessarily the property) from
+                the integration vendor
+            x_deposit_type:
+              type:
+                - string
+                - "null"
+              description: The external type of the deposit from the integration vendor
+            x_lease_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the lease from the integration vendor
+            x_location_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the location (exclusive to Rent Manager
+                integrations). This is always null for non-Rent Manager
+                integrations.
+            amount_charged_in_cents:
+              type:
+                - number
+                - "null"
+              description: The amount charged in cents
+            amount_paid_in_cents:
+              type:
+                - number
+                - "null"
+              description: The amount paid in cents
+            amount_refunded_in_cents:
+              type:
+                - number
+                - "null"
+              description: The amount refunded in cents
+            notes:
+              type:
+                - string
+                - "null"
+              description: Notes associated with the deposit
+            refund_amount_due_in_cents:
+              type:
+                - number
+                - "null"
+              description: The refund amount due in cents
+            custom_data:
+              type:
+                - object
+                - "null"
+              properties: {}
+            integration_data:
+              type:
+                - object
+                - "null"
+              properties: {}
+            integration_id:
+              type: string
+              description: The Propexo unique identifier for the integration
+            integration_vendor:
+              $ref: "#/components/schemas/Enum1"
+            lease_id:
+              type:
+                - string
+                - "null"
+              description: The Propexo unique identifier for the lease
+            resident_id:
+              type: string
+              description: The Propexo unique identifier for the resident
+            property_id:
+              type: string
+              description: The Propexo unique identifier for the property
+          required:
+            - id
+            - created_at
+            - updated_at
+            - last_seen
+            - x_id
+            - x_property_id
+            - x_resident_id
+            - x_building_id
+            - x_deposit_type
+            - x_lease_id
+            - x_location_id
+            - amount_charged_in_cents
+            - amount_paid_in_cents
+            - amount_refunded_in_cents
+            - notes
+            - refund_amount_due_in_cents
+            - custom_data
+            - integration_data
+            - integration_id
+            - integration_vendor
             - lease_id
             - resident_id
             - property_id
@@ -41448,223 +41448,15 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/errorResponse"
-  /v1/deposits/:
-    get:
-      description: Get all deposits
-      summary: Get all deposits
-      tags:
-        - deposits
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          description: "Order the results by a field. Optionally include asc or desc
-            preceded by a colon (default is asc). Example:
-            ?order-by=updated_at:desc"
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          description: Can be used for paginating results
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          description: A number between 1 and 250 to determine the number of results to
-            return in a single query
-          name: limit
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the location associated with the
-              property (exclusive to Rent Manager integrations). This is always
-              null for non-Rent Manager integrations.
-          required: false
-          description: The Propexo unique identifier for the location associated with the
-            property (exclusive to Rent Manager integrations). This is always
-            null for non-Rent Manager integrations.
-          name: location_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the property
-          required: false
-          description: The Propexo unique identifier for the property
-          name: property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the resident
-          required: false
-          description: The Propexo unique identifier for the resident
-          name: resident_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the integration
-          required: false
-          description: The Propexo unique identifier for the integration
-          name: integration_id
-          in: query
-        - schema:
-            type: string
-            enum:
-              - SAMPLE2
-              - BUILDIUM
-              - ENTRATA
-              - MRI
-              - PROPERTYWARE
-              - PROPERTYWARE_REST
-              - REALPAGE
-              - REALPAGE_RPX
-              - RENTMANAGER
-              - RENTVINE
-              - RESMAN
-              - SAMPLE1
-            description: The integration vendor associated with the data diff
-          required: false
-          description: The integration vendor associated with the data diff
-          name: integration_vendor
-          in: query
-        - schema:
-            type: string
-            description: The external ID of the building (not necessarily the property) from
-              the integration vendor
-          required: false
-          description: The external ID of the building (not necessarily the property) from
-            the integration vendor
-          name: x_building_id
-          in: query
-        - schema:
-            type: string
-            description: The external ID of the property from the integration vendor
-          required: false
-          description: The external ID of the property from the integration vendor
-          name: x_property_id
-          in: query
-        - schema:
-            type: string
-            description: The Propexo unique identifier for the lease
-          required: false
-          description: The Propexo unique identifier for the lease
-          name: lease_id
-          in: query
-        - schema:
-            anyOf:
-              - type: boolean
-              - type: string
-            description: Whether the refund is due for the deposit
-          required: false
-          description: Whether the refund is due for the deposit
-          name: refund_is_due
-          in: query
-      responses:
-        "200":
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/_v1_deposits__get_output"
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/errorResponse"
-  /v1/deposits/{id}:
-    get:
-      description: Get a deposit by ID
-      summary: Get a deposit by ID
-      tags:
-        - deposits
-      security:
-        - bearerAuth: []
-      parameters:
-        - schema:
-            type: string
-            description: The ID of the resource.
-          required: true
-          description: The ID of the resource.
-          name: id
-          in: path
-        - schema:
-            type: string
-            default: created_at:desc
-            description: "Order the results by a field. Optionally include asc or desc
-              preceded by a colon (default is asc). Example:
-              ?order-by=updated_at:desc"
-          required: false
-          description: "Order the results by a field. Optionally include asc or desc
-            preceded by a colon (default is asc). Example:
-            ?order-by=updated_at:desc"
-          name: order-by
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            default: 0
-            description: Can be used for paginating results
-          required: false
-          description: Can be used for paginating results
-          name: offset
-          in: query
-        - schema:
-            type:
-              - integer
-              - "null"
-            minimum: 0
-            maximum: 250
-            default: 100
-            description: A number between 1 and 250 to determine the number of results to
-              return in a single query
-          required: false
-          description: A number between 1 and 250 to determine the number of results to
-            return in a single query
-          name: limit
-          in: query
-      responses:
-        "200":
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/_v1_deposits_{id}_get_output"
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/errorResponse"
   /v1/deposit-summaries/:
     get:
       description: Get all deposit summaries
       summary: Get all deposit summaries
       tags:
-        - deposits
+        - deposit-summaries
       security:
         - bearerAuth: []
+      x-fern-availability: beta
       parameters:
         - schema:
             type: string
@@ -41812,9 +41604,10 @@ paths:
       description: Get a deposit summary by ID
       summary: Get a deposit summary by ID
       tags:
-        - deposits
+        - deposit-summaries
       security:
         - bearerAuth: []
+      x-fern-availability: beta
       parameters:
         - schema:
             type: string
@@ -41903,6 +41696,217 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_deposit-summaries_{deposit_summary_id}_put_outp\
                   ut"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/deposits/:
+    get:
+      description: Get all deposits
+      summary: Get all deposits
+      tags:
+        - deposits
+      security:
+        - bearerAuth: []
+      x-fern-availability: beta
+      parameters:
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the resident
+          required: false
+          description: The Propexo unique identifier for the resident
+          name: resident_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the building (not necessarily the property) from
+              the integration vendor
+          required: false
+          description: The external ID of the building (not necessarily the property) from
+            the integration vendor
+          name: x_building_id
+          in: query
+        - schema:
+            type: string
+            description: The external ID of the property from the integration vendor
+          required: false
+          description: The external ID of the property from the integration vendor
+          name: x_property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the lease
+          required: false
+          description: The Propexo unique identifier for the lease
+          name: lease_id
+          in: query
+        - schema:
+            anyOf:
+              - type: boolean
+              - type: string
+            description: Whether the refund is due for the deposit
+          required: false
+          description: Whether the refund is due for the deposit
+          name: refund_is_due
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_deposits__get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/deposits/{id}:
+    get:
+      description: Get a deposit by ID
+      summary: Get a deposit by ID
+      tags:
+        - deposits
+      security:
+        - bearerAuth: []
+      x-fern-availability: beta
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_deposits_{id}_get_output"
         "400":
           description: Bad Request
           content:
