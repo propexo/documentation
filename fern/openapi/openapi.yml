@@ -35789,6 +35789,8 @@ components:
             - crm_communities_to_attributions
             - crm_events
             - crm_listings
+            - deposit_summaries
+            - deposits
             - employees
             - entrata_lease_periods
             - entrata_unit_types
@@ -36110,6 +36112,8 @@ components:
             - crm_communities_to_attributions
             - crm_events
             - crm_listings
+            - deposit_summaries
+            - deposits
             - employees
             - entrata_lease_periods
             - entrata_unit_types
