@@ -6268,6 +6268,7 @@ components:
                   - number
                   - "null"
                 description: Cost in cents for the amenity
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -6460,6 +6461,7 @@ components:
                         - number
                         - "null"
                       description: Cost in cents for the amenity on a particular unit
+                      example: 100000
                   required:
                     - amenity_id
                     - unit_id
@@ -6634,6 +6636,7 @@ components:
                 - number
                 - "null"
               description: Cost in cents for the amenity
+              example: 100000
             custom_data:
               type:
                 - object
@@ -6826,6 +6829,7 @@ components:
                       - number
                       - "null"
                     description: Cost in cents for the amenity on a particular unit
+                    example: 100000
                 required:
                   - amenity_id
                   - unit_id
@@ -14651,6 +14655,7 @@ components:
             - number
             - "null"
           description: The amount of the resident charge, in cents
+          example: 100000
         amount_raw:
           type:
             - string
@@ -14661,6 +14666,7 @@ components:
             - number
             - "null"
           description: The amount open on the resident charge, in cents
+          example: 100000
         amount_open_raw:
           type:
             - string
@@ -14671,6 +14677,7 @@ components:
             - number
             - "null"
           description: The amount paid on the resident charge, in cents
+          example: 100000
         amount_paid_raw:
           type:
             - string
@@ -14788,6 +14795,7 @@ components:
                   - number
                   - "null"
                 description: The amount of the resident allocation, in cents
+                example: 100000
               amount_raw:
                 type:
                   - string
@@ -15141,6 +15149,7 @@ components:
             - number
             - "null"
           description: The total amount of the recurring resident charge
+          example: 100000
         amount_raw:
           type:
             - string
@@ -15569,6 +15578,7 @@ components:
                   - number
                   - "null"
                 description: The amount of the resident payment, in cents
+                example: 100000
               amount_raw:
                 type:
                   - string
@@ -15676,6 +15686,7 @@ components:
                         - number
                         - "null"
                       description: The amount of the resident allocation, in cents
+                      example: 100000
                     amount_raw:
                       type:
                         - string
@@ -15936,6 +15947,7 @@ components:
                 - number
                 - "null"
               description: The amount of the resident payment, in cents
+              example: 100000
             amount_raw:
               type:
                 - string
@@ -16043,6 +16055,7 @@ components:
                       - number
                       - "null"
                     description: The amount of the resident allocation, in cents
+                    example: 100000
                   amount_raw:
                     type:
                       - string
@@ -16608,6 +16621,7 @@ components:
             - number
             - "null"
           description: The total budget for the construction job
+          example: 100000
         custom_data:
           type:
             - object
@@ -16938,17 +16952,20 @@ components:
                   - number
                   - "null"
                 description: The original budget of the construction job detail
+                example: 100000
               revised_budget_in_cents:
                 type:
                   - number
                   - "null"
                 description: The revised budget of the construction job detail
+                example: 100000
               invoiced_total_in_cents:
                 type:
                   - number
                   - "null"
                 description: The total amount invoiced, in cents, for the construction job
                   detail
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -17077,6 +17094,7 @@ components:
             - number
             - "null"
           description: The total amount invoiced, in cents, for the contract
+          example: 100000
         notes:
           type:
             - string
@@ -17087,6 +17105,7 @@ components:
             - number
             - "null"
           description: The original amount of the contract
+          example: 100000
         retention_percent:
           type:
             - string
@@ -17112,6 +17131,7 @@ components:
             - number
             - "null"
           description: The total amount of the contract
+          example: 100000
         construction_job_id:
           type:
             - string
@@ -17263,6 +17283,7 @@ components:
             - number
             - "null"
           description: The total amount invoiced, in cents, for the contract detail
+          example: 100000
         notes:
           type:
             - string
@@ -17278,6 +17299,7 @@ components:
             - number
             - "null"
           description: The total amount of the contract detail
+          example: 100000
         contract_id:
           type: string
           description: The Propexo unique identifier for the contract
@@ -17450,16 +17472,19 @@ components:
                   - number
                   - "null"
                 description: The amount charged in cents
+                example: 100000
               amount_paid_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount paid in cents
+                example: 100000
               amount_refunded_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount refunded in cents
+                example: 100000
               notes:
                 type:
                   - string
@@ -17470,6 +17495,7 @@ components:
                   - number
                   - "null"
                 description: The refund amount due in cents
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -17613,16 +17639,19 @@ components:
                 - number
                 - "null"
               description: The amount charged in cents
+              example: 100000
             amount_paid_in_cents:
               type:
                 - number
                 - "null"
               description: The amount paid in cents
+              example: 100000
             amount_refunded_in_cents:
               type:
                 - number
                 - "null"
               description: The amount refunded in cents
+              example: 100000
             notes:
               type:
                 - string
@@ -17633,6 +17662,7 @@ components:
                 - number
                 - "null"
               description: The refund amount due in cents
+              example: 100000
             custom_data:
               type:
                 - object
@@ -17881,16 +17911,19 @@ components:
                   - number
                   - "null"
                 description: The amount charged in cents
+                example: 100000
               amount_paid_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount paid in cents
+                example: 100000
               amount_refunded_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount refunded in cents
+                example: 100000
               notes:
                 type:
                   - string
@@ -17901,6 +17934,7 @@ components:
                   - number
                   - "null"
                 description: The refund amount due in cents
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -18038,16 +18072,19 @@ components:
                 - number
                 - "null"
               description: The amount charged in cents
+              example: 100000
             amount_paid_in_cents:
               type:
                 - number
                 - "null"
               description: The amount paid in cents
+              example: 100000
             amount_refunded_in_cents:
               type:
                 - number
                 - "null"
               description: The amount refunded in cents
+              example: 100000
             notes:
               type:
                 - string
@@ -18058,6 +18095,7 @@ components:
                 - number
                 - "null"
               description: The refund amount due in cents
+              example: 100000
             custom_data:
               type:
                 - object
@@ -19805,11 +19843,13 @@ components:
                   - number
                   - "null"
                 description: The amount due on the invoice, in cents
+                example: 100000
               amount_paid_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount paid on the invoice, in cents
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -19825,6 +19865,7 @@ components:
                   - number
                   - "null"
                 description: The deposit amount in cents associated with the invoice
+                example: 100000
               discount_date:
                 type:
                   - string
@@ -19866,11 +19907,13 @@ components:
                   - number
                   - "null"
                 description: The sub total amount of the invoice
+                example: 100000
               total_amount_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount of the invoice, in cents
+                example: 100000
               property_id:
                 type: string
                 description: The Propexo unique identifier for the property
@@ -19937,6 +19980,7 @@ components:
                         - number
                         - "null"
                       description: The amount due on the invoice item, in cents
+                      example: 100000
                     notes:
                       type:
                         - string
@@ -19947,6 +19991,7 @@ components:
                         - number
                         - "null"
                       description: The amount of the invoice item, in cents
+                      example: 100000
                     property_id:
                       type: string
                       description: The Propexo unique identifier for the property
@@ -20250,11 +20295,13 @@ components:
                 - number
                 - "null"
               description: The amount due on the invoice, in cents
+              example: 100000
             amount_paid_in_cents:
               type:
                 - number
                 - "null"
               description: The amount paid on the invoice, in cents
+              example: 100000
             custom_data:
               type:
                 - object
@@ -20270,6 +20317,7 @@ components:
                 - number
                 - "null"
               description: The deposit amount in cents associated with the invoice
+              example: 100000
             discount_date:
               type:
                 - string
@@ -20311,11 +20359,13 @@ components:
                 - number
                 - "null"
               description: The sub total amount of the invoice
+              example: 100000
             total_amount_in_cents:
               type:
                 - number
                 - "null"
               description: The amount of the invoice, in cents
+              example: 100000
             property_id:
               type: string
               description: The Propexo unique identifier for the property
@@ -20382,6 +20432,7 @@ components:
                       - number
                       - "null"
                     description: The amount due on the invoice item, in cents
+                    example: 100000
                   notes:
                     type:
                       - string
@@ -20392,6 +20443,7 @@ components:
                       - number
                       - "null"
                     description: The amount of the invoice item, in cents
+                    example: 100000
                   property_id:
                     type: string
                     description: The Propexo unique identifier for the property
@@ -20572,11 +20624,13 @@ components:
             - number
             - "null"
           description: The amount due on the payable register, in cents
+          example: 100000
         amount_paid_in_cents:
           type:
             - number
             - "null"
           description: The amount paid on the payable register, in cents
+          example: 100000
         custom_data:
           type:
             - object
@@ -20592,6 +20646,7 @@ components:
             - number
             - "null"
           description: The discount, in cents, of the payable register
+          example: 100000
         discount_date:
           type:
             - string
@@ -20633,11 +20688,13 @@ components:
             - number
             - "null"
           description: The sub total amount of the payable register
+          example: 100000
         total_amount_in_cents:
           type:
             - number
             - "null"
           description: The amount of the payable register, in cents
+          example: 100000
         status:
           type:
             - string
@@ -20739,6 +20796,7 @@ components:
                   - number
                   - "null"
                 description: The amount due on the payable register item, in cents
+                example: 100000
               notes:
                 type:
                   - string
@@ -20749,6 +20807,7 @@ components:
                   - number
                   - "null"
                 description: The amount of the payable register item, in cents
+                example: 100000
               cost_code:
                 type:
                   - string
@@ -21244,6 +21303,7 @@ components:
             - number
             - "null"
           description: The desired maximum rent
+          example: 100000
         desired_max_square_ft:
           type:
             - number
@@ -21254,6 +21314,7 @@ components:
             - number
             - "null"
           description: The desired minimum rent
+          example: 100000
         desired_min_square_ft:
           type:
             - number
@@ -22637,6 +22698,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the lease
+          example: 100000
         deposit_date:
           type:
             - string
@@ -22668,11 +22730,13 @@ components:
             - number
             - "null"
           description: The rent amount in cents for the lease
+          example: 100000
         rent_amount_market_in_cents:
           type:
             - number
             - "null"
           description: The market rent amount in cents for the lease
+          example: 100000
         rent_due_day:
           type:
             - integer
@@ -22754,10 +22818,10 @@ components:
             identify a unit associated with a service request in some cases.
         write_off_amount_in_cents:
           type:
-            - string
+            - number
             - "null"
-          pattern: ^d+$
           description: The write off amount for the lease, in cents
+          example: 100000
         write_off_amount_raw:
           type:
             - string
@@ -22765,10 +22829,10 @@ components:
           description: The raw write off amount of the lease from the PMS
         balance_amount_in_cents:
           type:
-            - string
+            - number
             - "null"
-          pattern: ^d+$
           description: The balance amount for the lease, in cents
+          example: 100000
         balance_amount_raw:
           type:
             - string
@@ -22776,10 +22840,10 @@ components:
           description: The raw balance amount of the lease from the PMS
         past_due_balance_in_cents:
           type:
-            - string
+            - number
             - "null"
-          pattern: ^d+$
           description: The past due balance for the lease, in cents
+          example: 100000
         past_due_balance_raw:
           type:
             - string
@@ -25360,6 +25424,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the listing
+          example: 100000
         floor_plan_code:
           type:
             - string
@@ -25439,6 +25504,7 @@ components:
             - number
             - "null"
           description: The rent amount in cents for the listing
+          example: 100000
         specials:
           type:
             - string
@@ -25760,16 +25826,19 @@ components:
                   - number
                   - "null"
                 description: The base rent cost of the listing, in cents
+                example: 100000
               concession_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount of the concession for the listing, in cents
+                example: 100000
               effective_rent_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount of the effective rent for the listing, in cents
+                example: 100000
               start_date:
                 type:
                   - string
@@ -26424,6 +26493,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the pet type
+          example: 100000
         fee_raw:
           type:
             - string
@@ -26434,6 +26504,7 @@ components:
             - number
             - "null"
           description: The fee amount in cents for the pet type
+          example: 100000
         fee_min_raw:
           type:
             - string
@@ -26444,6 +26515,7 @@ components:
             - number
             - "null"
           description: The minimum fee amount in cents for the pet type
+          example: 100000
         fee_max_raw:
           type:
             - string
@@ -26454,6 +26526,7 @@ components:
             - number
             - "null"
           description: The maxmimum raw fee amount in cents for the pet type
+          example: 100000
         rent_amount_raw:
           type:
             - string
@@ -26464,6 +26537,7 @@ components:
             - number
             - "null"
           description: The rent amount in cents for the pet type
+          example: 100000
       required:
         - name
         - is_allowed
@@ -27119,6 +27193,7 @@ components:
             - number
             - "null"
           description: The amount of the rentable item, in cents
+          example: 100000
         description:
           type:
             - string
@@ -27698,6 +27773,7 @@ components:
             - number
             - "null"
           description: The amount of the purchase order, in cents
+          example: 100000
         order_date:
           type:
             - string
@@ -28613,11 +28689,13 @@ components:
             - number
             - "null"
           description: The unit price, in cents, of the purchase order item
+          example: 100000
         total_cost_in_cents:
           type:
             - number
             - "null"
           description: The total cost, in cents, of the purchase order item
+          example: 100000
         cost_code:
           type:
             - string
@@ -28853,6 +28931,7 @@ components:
                   - number
                   - "null"
                 description: The rent balance owed
+                example: 100000
               city_alternate:
                 type:
                   - string
@@ -28913,6 +28992,7 @@ components:
                   - number
                   - "null"
                 description: The past due rent balance owed
+                example: 100000
               middle_name:
                 type:
                   - string
@@ -29511,6 +29591,7 @@ components:
                 - number
                 - "null"
               description: The rent balance owed
+              example: 100000
             city_alternate:
               type:
                 - string
@@ -29571,6 +29652,7 @@ components:
                 - number
                 - "null"
               description: The past due rent balance owed
+              example: 100000
             middle_name:
               type:
                 - string
@@ -30364,6 +30446,7 @@ components:
                   - number
                   - "null"
                 description: The liability amount in cents
+                example: 100000
               liability_amount_raw:
                 type:
                   - string
@@ -30538,6 +30621,7 @@ components:
                 - number
                 - "null"
               description: The liability amount in cents
+              example: 100000
             liability_amount_raw:
               type:
                 - string
@@ -32879,11 +32963,13 @@ components:
             - number
             - "null"
           description: The minimum rent of the floor plan
+          example: 100000
         rent_maximum_in_cents:
           type:
             - number
             - "null"
           description: The maximum rent of the floor plan
+          example: 100000
         image_urls:
           type: array
           items:
@@ -32899,6 +32985,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the floor plan
+          example: 100000
         deposit_amount_raw:
           type:
             - string
@@ -32909,11 +32996,13 @@ components:
             - number
             - "null"
           description: The minimum deposit amount in cents associated with the floor plan
+          example: 100000
         deposit_amount_max_in_cents:
           type:
             - number
             - "null"
           description: The maximum deposit amount in cents associated with the floor plan
+          example: 100000
         deposit_amount_min_raw:
           type:
             - string
@@ -33195,16 +33284,19 @@ components:
                   - number
                   - "null"
                 description: The market rent amount in cents for the unit
+                example: 100000
               rent_amount_max_in_cents:
                 type:
                   - number
                   - "null"
                 description: The maximum rent amount in cents
+                example: 100000
               rent_amount_min_in_cents:
                 type:
                   - number
                   - "null"
                 description: The minimum rent amount in cents
+                example: 100000
               square_feet:
                 type:
                   - integer
@@ -33553,16 +33645,19 @@ components:
                   - number
                   - "null"
                 description: The market rent cost of the floor plan, in cents
+                example: 100000
               unit_market_rent_in_cents:
                 type:
                   - number
                   - "null"
                 description: The market rent cost of the unit, in cents
+                example: 100000
               base_rent_in_cents:
                 type:
                   - number
                   - "null"
                 description: The base rent cost of the unit, in cents
+                example: 100000
               unit_number:
                 type:
                   - string
@@ -33870,16 +33965,19 @@ components:
                 - number
                 - "null"
               description: The market rent amount in cents for the unit
+              example: 100000
             rent_amount_max_in_cents:
               type:
                 - number
                 - "null"
               description: The maximum rent amount in cents
+              example: 100000
             rent_amount_min_in_cents:
               type:
                 - number
                 - "null"
               description: The minimum rent amount in cents
+              example: 100000
             square_feet:
               type:
                 - integer
@@ -34206,11 +34304,13 @@ components:
                   - number
                   - "null"
                 description: The minimum rent of the unit type
+                example: 100000
               rent_maximum_in_cents:
                 type:
                   - number
                   - "null"
                 description: The maximum rent of the unit type
+                example: 100000
               unit_count:
                 type:
                   - integer
@@ -34222,6 +34322,7 @@ components:
                   - number
                   - "null"
                 description: The deposit amount in cents associated with the unit type
+                example: 100000
               deposit_amount_raw:
                 type:
                   - string
@@ -34366,11 +34467,13 @@ components:
                 - number
                 - "null"
               description: The minimum rent of the unit type
+              example: 100000
             rent_maximum_in_cents:
               type:
                 - number
                 - "null"
               description: The maximum rent of the unit type
+              example: 100000
             unit_count:
               type:
                 - integer
@@ -34382,6 +34485,7 @@ components:
                 - number
                 - "null"
               description: The deposit amount in cents associated with the unit type
+              example: 100000
             deposit_amount_raw:
               type:
                 - string
@@ -34519,16 +34623,19 @@ components:
                 - number
                 - "null"
               description: The market rent cost of the floor plan, in cents
+              example: 100000
             unit_market_rent_in_cents:
               type:
                 - number
                 - "null"
               description: The market rent cost of the unit, in cents
+              example: 100000
             base_rent_in_cents:
               type:
                 - number
                 - "null"
               description: The base rent cost of the unit, in cents
+              example: 100000
             unit_number:
               type:
                 - string
