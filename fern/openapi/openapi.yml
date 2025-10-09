@@ -751,6 +751,7 @@ components:
                         - REALPAGE_RPX_AMENITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                        - REALPAGE_RPX_CONCESSIONS
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                         - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                         - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
@@ -1005,6 +1006,7 @@ components:
                           - REALPAGE_RPX_AMENITIES
                           - REALPAGE_RPX_APPOINTMENTS
                           - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                          - REALPAGE_RPX_CONCESSIONS
                           - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                           - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                           - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
@@ -3254,6 +3256,7 @@ components:
                       - REALPAGE_RPX_AMENITIES
                       - REALPAGE_RPX_APPOINTMENTS
                       - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                      - REALPAGE_RPX_CONCESSIONS
                       - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                       - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                       - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
@@ -3508,6 +3511,7 @@ components:
                         - REALPAGE_RPX_AMENITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                        - REALPAGE_RPX_CONCESSIONS
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                         - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                         - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
