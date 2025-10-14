@@ -879,6 +879,7 @@ components:
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_READ_INVOICES
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_UPDATE_DOCUMENT
                         - PROPERTYWARE_REST_UPDATE_LEASE
@@ -1134,6 +1135,7 @@ components:
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                           - PROPERTYWARE_REST_READ_RESIDENTS
                           - PROPERTYWARE_REST_READ_UNITS
+                          - PROPERTYWARE_REST_READ_INVOICES
                           - PROPERTYWARE_REST_UPDATE_CONTACTS
                           - PROPERTYWARE_REST_UPDATE_DOCUMENT
                           - PROPERTYWARE_REST_UPDATE_LEASE
@@ -3384,6 +3386,7 @@ components:
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                       - PROPERTYWARE_REST_READ_RESIDENTS
                       - PROPERTYWARE_REST_READ_UNITS
+                      - PROPERTYWARE_REST_READ_INVOICES
                       - PROPERTYWARE_REST_UPDATE_CONTACTS
                       - PROPERTYWARE_REST_UPDATE_DOCUMENT
                       - PROPERTYWARE_REST_UPDATE_LEASE
@@ -3639,6 +3642,7 @@ components:
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_READ_INVOICES
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_UPDATE_DOCUMENT
                         - PROPERTYWARE_REST_UPDATE_LEASE
