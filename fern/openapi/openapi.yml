@@ -20525,7 +20525,43 @@ components:
         - results
     _v1_invoices_{invoice_id}_put_input:
       type: object
-      properties: {}
+      properties:
+        expense_period:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The expense period associated with the invoice
+        payment_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The payment date associated with the invoice
+        payment_period:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The accounting period in which you want to make the payment
+        check_number:
+          type: string
+          maxLength: 9
+          description: The check number associated with the invoice
+        status:
+          type: string
+          enum:
+            - PAY
+            - RELEASE
+            - HOLD
+          description: Status of invoice
+        item_number:
+          type: integer
+          exclusiveMinimum: 0
+          description: Line Item number of the Invoice record.
     _v1_invoices_{invoice_id}_put_output:
       type: object
       properties:
