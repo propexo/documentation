@@ -17419,6 +17419,12 @@ components:
             - type: boolean
             - type: string
           description: Whether the refund is due for the deposit summary
+        invoice_id_not_null:
+          anyOf:
+            - type: boolean
+            - type: string
+          description: Filter to only return deposit summaries where the invoice_id is not
+            null
     _v1_deposit-summaries__get_output:
       type: object
       properties:
@@ -41725,6 +41731,17 @@ paths:
           required: false
           description: Whether the refund is due for the deposit summary
           name: refund_is_due
+          in: query
+        - schema:
+            anyOf:
+              - type: boolean
+              - type: string
+            description: Filter to only return deposit summaries where the invoice_id is not
+              null
+          required: false
+          description: Filter to only return deposit summaries where the invoice_id is not
+            null
+          name: invoice_id_not_null
           in: query
       responses:
         "200":
