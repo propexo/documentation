@@ -2,6 +2,63 @@ openapi: 3.1.0
 info:
   version: 1.0.0
   title: Propexo API
+tags:
+  - name: invoices
+    x-displayName: Invoices
+  - name: admin
+    x-displayName: Admin
+  - name: amenities
+    x-displayName: Amenities
+  - name: applicants
+    x-displayName: Applicants
+  - name: applications
+    x-displayName: Applications
+  - name: appointments
+    x-displayName: Appointments
+  - name: call-logs
+    x-displayName: Call Logs
+  - name: billing-and-payments
+    x-displayName: Billing and Payments
+  - name: units
+    x-displayName: Units
+  - name: construction-job-cost
+    x-displayName: Construction Job Cost
+  - name: deposits
+    x-displayName: Deposits
+  - name: deposit-summaries
+    x-displayName: Deposit Summaries
+  - name: employees
+    x-displayName: Employees
+  - name: events
+    x-displayName: Events
+  - name: files
+    x-displayName: Files
+  - name: leads
+    x-displayName: Leads
+  - name: leases
+    x-displayName: Leases
+  - name: listings
+    x-displayName: Listings
+  - name: note-categories
+    x-displayName: Note Categories
+  - name: owners
+    x-displayName: Owners
+  - name: properties
+    x-displayName: Properties
+  - name: purchase-orders
+    x-displayName: Purchase Orders
+  - name: residents
+    x-displayName: Residents
+  - name: service-requests
+    x-displayName: Service Requests
+  - name: vendors
+    x-displayName: Vendors
+  - name: general-ledger
+    x-displayName: General Ledger
+  - name: timezones
+    x-displayName: Timezones
+  - name: webhooks
+    x-displayName: Webhooks
 servers:
   - url: https://api.propexo.com
     x-fern-server-name: Production
