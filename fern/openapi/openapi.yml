@@ -39460,7 +39460,9 @@ paths:
                 $ref: "#/components/schemas/errorResponse"
   /v1/appointment-availability/:
     post:
-      description: Query Realtime Appointment Availability
+      description: Query Realtime Appointment Availability. If no data has changed
+        since your last request, you will receive a 304 response from Sample3.
+        To observe changes, please implement data caching on your side.
       summary: Query Realtime Appointment Availability
       tags:
         - appointments
