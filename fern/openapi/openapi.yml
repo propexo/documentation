@@ -5935,7 +5935,10 @@ components:
       properties:
         integration_id:
           type: string
-          description: The ID of the integration the mappings are associated with, if any.
+          description: The ID of the integration for which to retrieve custom mappings. If
+            provided, returns integration-specific custom mappings (if they
+            exist). If omitted, returns the default system mappings for the
+            vendor.
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
       required:
@@ -5948,18 +5951,26 @@ components:
           properties:
             is_custom_mapping:
               type: boolean
-              description: Whether or not the mapping is user custom, or if it has been
-                specified by the user.
+              description: Whether the mapping has been customized by the user for this
+                specific integration. If true, these are custom user-defined
+                mappings. If false, these are the default system mappings
+                provided by Propexo.
             mappings:
               type: object
               additionalProperties:
                 type: string
-              description: Key-value pairs of mapping from PMS raw statuses to normalized
-                statuses.
+              description: 'Key-value pairs mapping PMS-specific raw values (keys) to
+                normalized Propexo values (values). For example, for
+                lease_status: {"current": "ACTIVE", "former": "INACTIVE",
+                "future": "PENDING"}. These mappings are applied when data is
+                synced from the PMS to normalize enum values to Propexo
+                standards.'
             default_value:
               type: string
-              description: The default value that the field will be set to if none of the
-                mappings apply.
+              description: The default normalized value to use when a PMS value does not match
+                any key in the mappings. This ensures all values can be
+                normalized even if they are not explicitly mapped. Typically set
+                to values like "OTHER" for catch-all cases.
           required:
             - is_custom_mapping
             - mappings
@@ -37812,8 +37823,31 @@ paths:
                 $ref: "#/components/schemas/errorResponse"
   /v1/admin/normalization/{model}/{field}:
     get:
-      description: Get the normalized values mappings for a specific field
-      summary: Get the normalized values mappings for a specific field
+      description: >-
+        Retrieves the custom enum mappings that normalize PMS-specific enum
+        values to standardized Propexo values. These mappings can be
+        user-customized per integration or use default system mappings. Custom
+        enum fields in the API schema are identified by types beginning with
+        "enum." (e.g., enum.lease_status, enum.applicant_status).
+
+
+        Valid model/field combinations:
+
+        - leases/status → Maps PMS-specific lease status values to normalized lease statuses. Used by the leases.status field. Custom enum type in schema: enum.lease_status Possible normalized values: ACTIVE, INACTIVE, OTHER, PENDING, EVICTED
+
+        - residents/type → Maps PMS-specific resident type values to normalized resident types. Used by the residents.type field. Custom enum type in schema: enum.resident_type Possible normalized values: PRIMARY, SECONDARY, GUARANTOR, OTHER
+
+        - billing/payment-method → Maps PMS-specific payment method values to normalized payment methods. Used by the billing.payment-method field (which corresponds to payment_method on transaction records). Custom enum type in schema: enum.transaction_payment_method Possible normalized values: CASH, CASHIERCHECK, CHECK, CREDITCARD, MONEYORDER, DIRECTDEPOSIT, ELECTRONICPAYMENT, OTHER
+
+        - properties/type → Maps PMS-specific property type values to normalized property types. Used by the properties.type field. Custom enum type in schema: enum.property_type Possible normalized values: SINGLE_FAMILY, MULTI_FAMILY, STUDENT_HOUSING, VACATION, COMMERCIAL, OTHER
+
+        - applicants/status → Maps PMS-specific applicant status values to normalized applicant statuses. Used by the applicants.status field. Custom enum type in schema: enum.applicant_status Possible normalized values: APPROVED, DENIED, CANCELED, OTHER, PENDING
+
+        - applicants/type → Maps PMS-specific applicant type values to normalized applicant types. Used by the applicants.type field. Custom enum type in schema: enum.applicant_type Possible normalized values: GUARANTOR, OTHER, PRIMARY, SECONDARY
+
+
+        Custom enum mappings allow user-configurable normalization of PMS-specific enum values to standardized Propexo values. You can identify custom enum fields in the schema by looking for types that begin with "enum." prefix (e.g., enum.lease_status, enum.applicant_status).
+      summary: Get custom enum mappings for normalizing PMS-specific field values
       tags:
         - admin
       security:
@@ -37821,23 +37855,41 @@ paths:
       parameters:
         - schema:
             type: string
-            description: The ID of the resource.
+            description: "The model name (route parameter). Must be one of: leases,
+              residents, billing, properties, or applicants. See the endpoint
+              description for valid model/field combinations."
           required: true
-          description: The ID of the resource.
+          description: "The model name (route parameter). Must be one of: leases,
+            residents, billing, properties, or applicants. See the endpoint
+            description for valid model/field combinations."
           name: model
           in: path
         - schema:
             type: string
-            description: The ID of the resource.
+            description: "The field name within the model (route parameter). Valid fields
+              depend on the model. For example: leases.status,
+              applicants.status, applicants.type, residents.type,
+              properties.type, billing.payment-method. See the endpoint
+              description for all valid model/field combinations."
           required: true
-          description: The ID of the resource.
+          description: "The field name within the model (route parameter). Valid fields
+            depend on the model. For example: leases.status, applicants.status,
+            applicants.type, residents.type, properties.type,
+            billing.payment-method. See the endpoint description for all valid
+            model/field combinations."
           name: field
           in: path
         - schema:
             type: string
-            description: The ID of the integration the mappings are associated with, if any.
+            description: The ID of the integration for which to retrieve custom mappings. If
+              provided, returns integration-specific custom mappings (if they
+              exist). If omitted, returns the default system mappings for the
+              vendor.
           required: false
-          description: The ID of the integration the mappings are associated with, if any.
+          description: The ID of the integration for which to retrieve custom mappings. If
+            provided, returns integration-specific custom mappings (if they
+            exist). If omitted, returns the default system mappings for the
+            vendor.
           name: integration_id
           in: query
         - schema:
