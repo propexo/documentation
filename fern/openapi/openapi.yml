@@ -17809,6 +17809,7 @@ components:
       properties:
         check_number:
           type: string
+          minLength: 1
           description: "The check number. Note: Must be unique per pay out."
         post_month:
           anyOf:
@@ -17832,6 +17833,7 @@ components:
             will not be marked as paid until the full amount is paid."
         x_bank_id:
           type: string
+          minLength: 1
           description: The external ID of the bank from the integration vendor. You'll
             likely want to work with your customer to find the appropriate value
             here.
@@ -17840,9 +17842,12 @@ components:
           enum:
             - CHECK
             - EFT
-          description: The payment method used for the refund payout.
+          description: "The payment method used for the refund payout. Note: To use EFT,
+            the associated bank account must be configured for electronic
+            payments."
         notes:
           type: string
+          minLength: 1
           description: The notes for the check.
         check_run_date:
           anyOf:
