@@ -20183,20 +20183,14 @@ components:
         vendor_id:
           type: string
           description: The Propexo unique identifier for the vendor
-        vendor_location_id:
-          type: string
-          description: The Propexo unique identifier for the vendor location
-        invoice_number:
-          type: string
-          description: The invoice or reference number that the vendor assigned to the
-            service request
         invoice_date:
           type: string
           format: date-time
           description: The date of issuance for the invoice
-        total_amount_in_cents:
-          type: number
-          description: The amount of the invoice, in cents
+        due_date:
+          type: string
+          format: date-time
+          description: The due date associated with the invoice
         invoice_items:
           type: array
           items:
@@ -20219,6 +20213,22 @@ components:
               - financial_account_id
               - total_amount_in_cents
               - notes
+        description:
+          type: string
+          description: Description of the invoice
+        invoice_number:
+          type: string
+          description: The invoice or reference number that the vendor assigned to the
+            service request
+        service_request_id:
+          type: string
+          description: The Propexo unique identifier for the service request
+        vendor_location_id:
+          type: string
+          description: The Propexo unique identifier for the vendor location
+        total_amount_in_cents:
+          type: number
+          description: The amount of the invoice, in cents
         ap_financial_account_id:
           type: string
           description: The Propexo unique identifier for the financial account. You'll
@@ -20236,10 +20246,6 @@ components:
           type: number
           description: The discount, in cents, of the invoice. This amount will be applied
             prior to the total amount being calculated.
-        due_date:
-          type: string
-          format: date-time
-          description: The due date associated with the invoice
         notes:
           type: string
           description: Notes associated with the invoice
@@ -20268,9 +20274,6 @@ components:
         partner_name:
           type: string
           description: The name of your integration with MRI
-        description:
-          type: string
-          description: Description of the invoice
         scanned_copy_url:
           type: string
           description: The URL assigned to the copy of the original invoice that was
