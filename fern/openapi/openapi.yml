@@ -914,6 +914,7 @@ components:
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
                         - ENTRATA_BASE
+                        - PROPERTYWARE_REST_CREATE_RESIDENT
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -1170,6 +1171,7 @@ components:
                           - ENTRATA_WORK_ORDER_PICK_LIST
                           - ENTRATA_WORK_ORDERS
                           - ENTRATA_BASE
+                          - PROPERTYWARE_REST_CREATE_RESIDENT
                           - PROPERTYWARE_REST_CREATE_DOCUMENT
                           - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                           - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -3421,6 +3423,7 @@ components:
                       - ENTRATA_WORK_ORDER_PICK_LIST
                       - ENTRATA_WORK_ORDERS
                       - ENTRATA_BASE
+                      - PROPERTYWARE_REST_CREATE_RESIDENT
                       - PROPERTYWARE_REST_CREATE_DOCUMENT
                       - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                       - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -3677,6 +3680,7 @@ components:
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
                         - ENTRATA_BASE
+                        - PROPERTYWARE_REST_CREATE_RESIDENT
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -29443,8 +29447,7 @@ components:
         email_2:
           type: string
           format: email
-          description: The secondary email address for the resident.  This value maps to
-            the altEmail property of the Contact object
+          description: The secondary email address associated with the resident
         date_of_birth:
           type: string
           format: date-time
@@ -29456,8 +29459,7 @@ components:
             of the primary address of the Tenant object
         address_2:
           type: string
-          description: Second line of the street address for the resident.  This maps to
-            the address2 property of the Contact object
+          description: The second address line associated with the resident
         city:
           type: string
           description: City of the resident's primary address
@@ -29468,9 +29470,13 @@ components:
           type: string
           description: Zip/Postal Code of the resident's primary address
         country:
-          type: string
-          description: Country of the resident's address.  This maps to the country
-            property of the Contact object
+          anyOf:
+            - type: string
+              enum:
+                - United States
+                - Canada
+            - type: string
+          description: The country associated with the resident
         address_1_alternate:
           type: string
           description: Secondary/alternate street address for the resident. This maps to
@@ -29499,32 +29505,28 @@ components:
           description: Notes about the resident
         phone_1:
           type: string
-          description: Primary phone number for the resident.  Depending on the value of
-            phone_1_type, this may map to the properties fax, homePhone,
-            mobilePhone, or workPhone.
+          description: Primary phone number associated with the resident
         phone_1_type:
           type: string
           enum:
+            - FAX
             - HOME
             - MOBILE
+            - OTHER
             - WORK
-            - FAX
-          description: The type of the primary phone. Must be one of 'HOME', 'MOBILE',
-            'WORK', or 'FAX'
+          description: Type of the primary phone number
         phone_2:
           type: string
-          description: Secondary phone number for the resident.  Depending on the value of
-            phone_1_type, this may map to the properties fax, homePhone,
-            mobilePhone, or workPhone.
+          description: Secondary phone number associated with the resident
         phone_2_type:
           type: string
           enum:
+            - FAX
             - HOME
             - MOBILE
+            - OTHER
             - WORK
-            - FAX
-          description: The type of the secondary phone. Must be one of 'HOME', 'MOBILE',
-            'WORK', or 'FAX'
+          description: Type of the secondary phone number
         custom_data:
           type: object
           properties: {}
