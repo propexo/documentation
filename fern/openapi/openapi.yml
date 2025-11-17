@@ -18557,6 +18557,12 @@ components:
         event_type_id:
           type: string
           description: The Propexo unique identifier for the event type
+        event_result_id:
+          type: string
+          description: The Propexo unique identifier for the event result
+        event_sub_type_id:
+          type: string
+          description: The Propexo unique identifier for the event sub type
         employee_id:
           type: string
           description: The Propexo unique identifier for the employee. Must have a role of
@@ -18583,6 +18589,59 @@ components:
         title:
           type: string
           description: The title associated with the event
+        call_phone_number_from:
+          type: string
+          description: The phone number that the call was made from. Required for call
+            event types.
+        call_phone_number_to:
+          type: string
+          description: The phone number that the call was received on. Required for call
+            event types.
+        call_status:
+          type: string
+          enum:
+            - BUSY
+            - ABANDONED
+            - DISCONNECTED
+            - FAILURE_TO_CONNECT
+            - NO_ANSWER
+            - ANSWER
+            - VOICEMAIL
+          description: The status of the call. Required for call event types.
+        call_duration:
+          type: integer
+          minimum: 0
+          maximum: 86400
+          description: The duration of the call in seconds. Required for call event types.
+        call_audio_link:
+          type: string
+          format: uri
+          description: The URL of the audio file for the call. This can be any valid URL
+            and doesn't necessarily need to link to a audio file. Required for
+            call event types.
+        email_body:
+          type: string
+          description: The body of the email.
+        email_subject:
+          type: string
+          description: The subject of the email.
+        email_from:
+          type: string
+          description: The email address that the email was sent from. Required for email
+            outgoing event types.
+        email_to:
+          type: string
+          description: The email address that the email was sent to. If specified, this
+            must be the same email address as the lead's primary email address
+        email_cc:
+          type: string
+          description: The carbon copy email address that the email was sent to.
+        email_bcc:
+          type: string
+          description: The blind carbon copy email address that the email was sent to.
+        email_send:
+          type: boolean
+          description: Whether the email should be sent.
         status:
           type: string
           enum:
