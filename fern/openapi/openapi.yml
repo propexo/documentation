@@ -28991,6 +28991,11 @@ components:
             - string
             - "null"
           description: The Propexo unique identifier for the construction job
+        financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the financial account
         custom_data:
           type:
             - object
@@ -29025,6 +29030,7 @@ components:
         - category_code
         - purchase_order_id
         - construction_job_id
+        - financial_account_id
         - custom_data
         - associated_invoice_ids
         - property_id
