@@ -13600,7 +13600,9 @@ components:
             - "null"
           items:
             type: string
-            example: cm2jebkdu00062qoz5xyu84qj
+            x-propexo:
+              derivedFromModel: applicants_to_events
+              derivedFromField: applicant_id
         associated_resident_ids:
           type:
             - array
