@@ -10512,6 +10512,202 @@ components:
       required:
         - job_id
         - data
+    _v1_applicants_{id}_rentable-items_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+    RentableItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The Propexo unique identifier for the rentable item
+        created_at:
+          type: string
+          description: The date record first entered Propexo
+        updated_at:
+          type: string
+          description: The date record was last updated in Propexo
+        last_seen:
+          type:
+            - string
+            - "null"
+          description: The date the record was last seen from the PMS
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        x_location_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
+        x_applicant_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the applicant from the integration vendor
+        x_lead_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the lead from the integration vendor
+        x_resident_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the resident from the integration vendor
+        x_type_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the type from the integration vendor
+        x_charge_code_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the charge code from the integration vendor
+        amount_in_cents:
+          type:
+            - number
+            - "null"
+          description: The amount of the rentable item, in cents
+          example: 100000
+        description:
+          type:
+            - string
+            - "null"
+          description: Description of the rentable item
+        is_available:
+          type:
+            - boolean
+            - "null"
+          description: Whether the rentable item is available
+        reserved_until_date:
+          type:
+            - string
+            - "null"
+          description: The date the rentable item is reserved until
+        type:
+          type:
+            - string
+            - "null"
+          description: The type associated with the rentable item
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        applicant_id:
+          type:
+            - string
+            - "null"
+          description: "Deprecated: Use the /applicants/:id/rentable-items endpoint
+            instead."
+          deprecated: true
+          x-fern-availability: deprecated
+        lead_id:
+          type:
+            - string
+            - "null"
+          description: "Deprecated: Use the /leads/:id/rentable-items endpoint instead."
+          deprecated: true
+          x-fern-availability: deprecated
+        resident_id:
+          type:
+            - string
+            - "null"
+          description: "Deprecated: Use the /residents/:id/rentable-items endpoint instead."
+          deprecated: true
+          x-fern-availability: deprecated
+        charge_code_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the charge code
+      required:
+        - id
+        - created_at
+        - updated_at
+        - last_seen
+        - x_id
+        - x_property_id
+        - x_location_id
+        - x_applicant_id
+        - x_lead_id
+        - x_resident_id
+        - x_type_id
+        - x_charge_code_id
+        - amount_in_cents
+        - description
+        - is_available
+        - reserved_until_date
+        - type
+        - integration_id
+        - integration_vendor
+        - property_id
+        - applicant_id
+        - lead_id
+        - resident_id
+        - charge_code_id
+      x-propexo:
+        derivedFromModel: rentable_items
+    _v1_applicants_{id}_rentable-items_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/RentableItem"
+      required:
+        - meta
+        - results
     _v1_rentable-items_applicants_assign_post_input:
       type: object
       properties:
@@ -22774,6 +22970,59 @@ components:
       required:
         - meta
         - results
+    _v1_leads_{id}_rentable-items_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+    _v1_leads_{id}_rentable-items_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/RentableItem"
+      required:
+        - meta
+        - results
     _v1_leases__get_input:
       type: object
       properties:
@@ -27412,142 +27661,6 @@ components:
           description: The Propexo unique identifier for the integration
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
-    RentableItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The Propexo unique identifier for the rentable item
-        created_at:
-          type: string
-          description: The date record first entered Propexo
-        updated_at:
-          type: string
-          description: The date record was last updated in Propexo
-        last_seen:
-          type:
-            - string
-            - "null"
-          description: The date the record was last seen from the PMS
-        x_id:
-          type: string
-          description: The external ID from the integration vendor
-        x_property_id:
-          type: string
-          description: The external ID of the property from the integration vendor
-        x_location_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the location (exclusive to Rent Manager
-            integrations). This is always null for non-Rent Manager
-            integrations.
-        x_applicant_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the applicant from the integration vendor
-        x_lead_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the lead from the integration vendor
-        x_resident_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the resident from the integration vendor
-        x_type_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the type from the integration vendor
-        x_charge_code_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the charge code from the integration vendor
-        amount_in_cents:
-          type:
-            - number
-            - "null"
-          description: The amount of the rentable item, in cents
-          example: 100000
-        description:
-          type:
-            - string
-            - "null"
-          description: Description of the rentable item
-        is_available:
-          type:
-            - boolean
-            - "null"
-          description: Whether the rentable item is available
-        reserved_until_date:
-          type:
-            - string
-            - "null"
-          description: The date the rentable item is reserved until
-        type:
-          type:
-            - string
-            - "null"
-          description: The type associated with the rentable item
-        integration_id:
-          type: string
-          description: The Propexo unique identifier for the integration
-        integration_vendor:
-          $ref: "#/components/schemas/Enum1"
-        property_id:
-          type: string
-          description: The Propexo unique identifier for the property
-        applicant_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the applicant
-        lead_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the lead
-        resident_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the resident
-        charge_code_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the charge code
-      required:
-        - id
-        - created_at
-        - updated_at
-        - last_seen
-        - x_id
-        - x_property_id
-        - x_location_id
-        - x_applicant_id
-        - x_lead_id
-        - x_resident_id
-        - x_type_id
-        - x_charge_code_id
-        - amount_in_cents
-        - description
-        - is_available
-        - reserved_until_date
-        - type
-        - integration_id
-        - integration_vendor
-        - property_id
-        - applicant_id
-        - lead_id
-        - resident_id
-        - charge_code_id
-      x-propexo:
-        derivedFromModel: rentable_items
     _v1_rentable-items__get_output:
       type: object
       properties:
@@ -30966,6 +31079,59 @@ components:
             - resident_id
           x-propexo:
             derivedFromModel: resident_insurance
+      required:
+        - meta
+        - results
+    _v1_residents_{id}_rentable-items_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+    _v1_residents_{id}_rentable-items_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/RentableItem"
       required:
         - meta
         - results
@@ -36183,6 +36349,7 @@ components:
             - applicants
             - applicants_to_applications
             - applicants_to_events
+            - applicants_to_rentable_items
             - application_statuses
             - applications
             - call_logs
@@ -36221,6 +36388,7 @@ components:
             - lead_sources
             - leads
             - leads_to_events
+            - leads_to_rentable_items
             - lease_services
             - lease_transfers
             - leases
@@ -36251,6 +36419,7 @@ components:
             - residents
             - residents_to_events
             - residents_to_leases
+            - residents_to_rentable_items
             - screenings
             - service_request_access_contacts
             - service_request_categories
@@ -36506,6 +36675,7 @@ components:
             - applicants
             - applicants_to_applications
             - applicants_to_events
+            - applicants_to_rentable_items
             - application_statuses
             - applications
             - call_logs
@@ -36544,6 +36714,7 @@ components:
             - lead_sources
             - leads
             - leads_to_events
+            - leads_to_rentable_items
             - lease_services
             - lease_transfers
             - leases
@@ -36574,6 +36745,7 @@ components:
             - residents
             - residents_to_events
             - residents_to_leases
+            - residents_to_rentable_items
             - screenings
             - service_request_access_contacts
             - service_request_categories
@@ -38924,6 +39096,124 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_applicants_{id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/applicants/{id}/rentable-items:
+    get:
+      description: Get all rentable items associated with a specific applicant
+      summary: Get rentable items for an applicant
+      tags:
+        - applicants
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_applicants_{id}_rentable-items_get_output"
         "400":
           description: Bad Request
           content:
@@ -44954,6 +45244,124 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/errorResponse"
+  /v1/leads/{id}/rentable-items:
+    get:
+      description: Get all rentable items associated with a specific lead
+      summary: Get rentable items for a lead
+      tags:
+        - leads
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_leads_{id}_rentable-items_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
   /v1/leases/:
     get:
       description: Get all leases
@@ -47816,6 +48224,124 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_resident-insurance_{resident_insurance_id}_get_\
                   output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/residents/{id}/rentable-items:
+    get:
+      description: Get all rentable items associated with a specific resident
+      summary: Get rentable items for a resident
+      tags:
+        - residents
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_residents_{id}_rentable-items_get_output"
         "400":
           description: Bad Request
           content:
