@@ -1001,6 +1001,7 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
+                        - SAMPLE1_LEASE_RENEWALS
                         - SAMPLE1_DEPOSIT_SUMMARIES
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
@@ -1258,6 +1259,7 @@ components:
                           - SAMPLE1_SERVICES
                           - SAMPLE1_JOB_COST
                           - SAMPLE1_VENDOR_INVOICING
+                          - SAMPLE1_LEASE_RENEWALS
                           - SAMPLE1_DEPOSIT_SUMMARIES
                           - BUILDIUM_BASE
                           - PROPERTYWARE_BASE
@@ -3510,6 +3512,7 @@ components:
                       - SAMPLE1_SERVICES
                       - SAMPLE1_JOB_COST
                       - SAMPLE1_VENDOR_INVOICING
+                      - SAMPLE1_LEASE_RENEWALS
                       - SAMPLE1_DEPOSIT_SUMMARIES
                       - BUILDIUM_BASE
                       - PROPERTYWARE_BASE
@@ -3767,6 +3770,7 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
+                        - SAMPLE1_LEASE_RENEWALS
                         - SAMPLE1_DEPOSIT_SUMMARIES
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
