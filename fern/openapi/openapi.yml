@@ -36332,6 +36332,7 @@ components:
               - JOB_FAILURE
               - SYNC_COMPLETE
               - FIRST_SYNC_COMPLETE
+              - WRITE_OPERATION_FAILURE
           minItems: 1
           description: The events that will trigger the webhook
         active:
@@ -36667,6 +36668,7 @@ components:
               - JOB_SUCCESS
               - SYNC_COMPLETE
               - FIRST_SYNC_COMPLETE
+              - WRITE_OPERATION_FAILURE
           minItems: 1
           description: The events that will trigger the webhook
         model:
