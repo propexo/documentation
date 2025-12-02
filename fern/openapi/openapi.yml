@@ -29097,7 +29097,6 @@ components:
             required:
               - property_id
               - description
-              - construction_job_id
               - stock_code
               - quantity_ordered
               - unit_price_in_cents
