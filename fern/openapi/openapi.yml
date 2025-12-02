@@ -5442,36 +5442,77 @@ components:
           items:
             type: string
             enum:
+              - accounting_entities
+              - address_types
               - amenities
+              - ap_codes
+              - applicant_pets
               - applicants
+              - application_statuses
               - applications
+              - call_logs
               - charge_codes
+              - concessions
               - construction_jobs
               - contracts
+              - deposit_summaries
+              - deposits
               - employees
+              - event_results
+              - event_sub_types
               - event_types
               - events
+              - fees
+              - file_types
               - financial_accounts
               - floor_plans
+              - invoice_items
               - invoices
+              - lead_pets
+              - lead_relationships
+              - lead_sources
               - leads
+              - lease_services
+              - lease_transfers
               - leases
               - listings
               - locations
+              - note_categories
               - owners
               - payable_registers
+              - pet_types
               - properties
+              - property_lists
+              - property_office_hours
               - purchase_orders
-              - rentable_items
               - recurring_resident_charges
+              - rentable_items
+              - resident_allocations
               - resident_charges
+              - resident_insurance
               - resident_payments
+              - resident_pets
+              - resident_vehicles
               - residents
-              - timezones
-              - units
               - screenings
-              - service_requests
+              - service_request_categories
+              - service_request_locations
+              - service_request_notes
+              - service_request_priorities
+              - service_request_problems
+              - service_request_statuses
+              - service_request_vendor_categories
+              - service_request_vendor_contacts
               - service_request_vendors
+              - service_request_vendors_insurance
+              - service_requests
+              - timezones
+              - unit_details
+              - unit_pricing
+              - units
+              - vendor_insurance_coverage_types
+              - vendor_insurance_policy_types
+              - vendor_payment_types
           description: A list of the specific models to sync. This will only ingest the
             models specified during the sync and any relational models. For
             example, requesting "residents" and "leases" will also query their
@@ -5501,36 +5542,77 @@ components:
           items:
             type: string
             enum:
+              - accounting_entities
+              - address_types
               - amenities
+              - ap_codes
+              - applicant_pets
               - applicants
+              - application_statuses
               - applications
+              - call_logs
               - charge_codes
+              - concessions
               - construction_jobs
               - contracts
+              - deposit_summaries
+              - deposits
               - employees
+              - event_results
+              - event_sub_types
               - event_types
               - events
+              - fees
+              - file_types
               - financial_accounts
               - floor_plans
+              - invoice_items
               - invoices
+              - lead_pets
+              - lead_relationships
+              - lead_sources
               - leads
+              - lease_services
+              - lease_transfers
               - leases
               - listings
               - locations
+              - note_categories
               - owners
               - payable_registers
+              - pet_types
               - properties
+              - property_lists
+              - property_office_hours
               - purchase_orders
-              - rentable_items
               - recurring_resident_charges
+              - rentable_items
+              - resident_allocations
               - resident_charges
+              - resident_insurance
               - resident_payments
+              - resident_pets
+              - resident_vehicles
               - residents
-              - timezones
-              - units
               - screenings
-              - service_requests
+              - service_request_categories
+              - service_request_locations
+              - service_request_notes
+              - service_request_priorities
+              - service_request_problems
+              - service_request_statuses
+              - service_request_vendor_categories
+              - service_request_vendor_contacts
               - service_request_vendors
+              - service_request_vendors_insurance
+              - service_requests
+              - timezones
+              - unit_details
+              - unit_pricing
+              - units
+              - vendor_insurance_coverage_types
+              - vendor_insurance_policy_types
+              - vendor_payment_types
           description: A list of the specific models to sync. This will only ingest the
             models specified during the sync and any relational models. For
             example, requesting "residents" and "leases" will also query their
@@ -36381,6 +36463,8 @@ components:
         model:
           type: string
           enum:
+            - accounting_entities
+            - address_types
             - amenities
             - ap_codes
             - ap_codes_to_construction_job
@@ -36399,12 +36483,15 @@ components:
             - contract_details
             - contracts
             - crm_agents
+            - crm_amenities
             - crm_attributions
             - crm_communities
             - crm_communities_to_agents
             - crm_communities_to_attributions
             - crm_events
             - crm_listings
+            - crm_pet_policies
+            - crm_prospects
             - deposit_summaries
             - deposits
             - employees
@@ -36416,6 +36503,7 @@ components:
             - event_sub_types
             - event_types
             - events
+            - fees
             - file_types
             - financial_accounts
             - floor_plans
@@ -36708,6 +36796,8 @@ components:
         model:
           type: string
           enum:
+            - accounting_entities
+            - address_types
             - amenities
             - ap_codes
             - ap_codes_to_construction_job
@@ -36726,12 +36816,15 @@ components:
             - contract_details
             - contracts
             - crm_agents
+            - crm_amenities
             - crm_attributions
             - crm_communities
             - crm_communities_to_agents
             - crm_communities_to_attributions
             - crm_events
             - crm_listings
+            - crm_pet_policies
+            - crm_prospects
             - deposit_summaries
             - deposits
             - employees
@@ -36743,6 +36836,7 @@ components:
             - event_sub_types
             - event_types
             - events
+            - fees
             - file_types
             - financial_accounts
             - floor_plans
