@@ -7481,6 +7481,11 @@ components:
                   - type: "null"
                 description: The normalized status associated with the applicant. Confirm these
                   derived values before using them in production.
+              custom_data:
+                type:
+                  - object
+                  - "null"
+                properties: {}
             required:
               - applicant_id
               - application_id
@@ -10932,6 +10937,11 @@ components:
                   - "null"
                 description: The normalized status associated with the applicant. Confirm these
                   derived values before using them in production.
+              custom_data:
+                type:
+                  - object
+                  - "null"
+                properties: {}
             required:
               - applicant_id
               - application_id
