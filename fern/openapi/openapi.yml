@@ -29073,6 +29073,9 @@ components:
               construction_job_id:
                 type: string
                 description: The Propexo unique identifier for the construction job
+              financial_account_id:
+                type: string
+                description: The Propexo unique identifier for the financial account
               stock_code:
                 type: string
                 description: The stock code for the purchase order item. You'll have to request
