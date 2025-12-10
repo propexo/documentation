@@ -31781,6 +31781,15 @@ components:
           type: string
           format: date-time
           description: The date the service request was completed
+        access_is_authorized_value:
+          type: string
+          enum:
+            - ENTER_AT_ANY_TIME
+            - BY_PERMISSION_ONLY
+            - CALL_FOR_ENTRY
+          description: 'Type of permission needed to enter the unit. Possible values:
+            "ENTER_AT_ANY_TIME" - Enter any time, "BY_PERMISSION_ONLY" - By
+            permission only, "CALL_FOR_ENTRY" - Call for entry'
         service_request_status_id:
           type: string
           description: The Propexo unique identifier for the service request status
