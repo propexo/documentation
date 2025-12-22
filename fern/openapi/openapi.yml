@@ -35983,6 +35983,7 @@ components:
           description: Whether the vendor is active
         notes:
           type: string
+          maxLength: 1998
           description: Notes associated with the vendor
         tax_id:
           type: string
