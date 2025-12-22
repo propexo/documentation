@@ -37196,8 +37196,14 @@ paths:
                 $ref: "#/components/schemas/errorResponse"
   /v1/admin/job-logs/{job_log_id}/data:
     get:
-      description: Get a link to the job log raw request and response data of a write
-        job. Only POST and PUT job payloads can be viewed.
+      description: >-
+        Get a link to the job log raw request and response data of a write job.
+        Only POST and PUT job payloads can be viewed. This endpoint will return
+        a 302 status code with a `Location` header that can be followed to
+        download the raw request and response data.
+
+
+        Some HTTP clients (including some older versions of cURL) will carry the `Authentication` header when the redirect is followed. This will cause an error conflicting with the authentication in the presigned URL being returned by this endpoint. If you see this error, you will need to make sure your HTTP client isn't passing `Authentication` headers on redirect. If you're using cURL, use the `-L` flag. For other HTTP client, consult their documentation.
       summary: Get a link to the job log raw request and response data of a write job.
       tags:
         - admin
