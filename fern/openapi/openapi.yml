@@ -40754,7 +40754,8 @@ paths:
     get:
       description: The Resident Charges model provides a limited, one-sided view of a
         resident's financial history with a PMC and should not be treated as a
-        comprehensive report of all charges that the resident owes.
+        comprehensive report of all charges that the resident owes. Credits to a
+        resident's ledger are stored as negative charges.
       summary: Get all resident charges
       tags:
         - billing-and-payments
@@ -40906,7 +40907,8 @@ paths:
     get:
       description: The Resident Charges model provides a limited, one-sided view of a
         resident's financial history with a PMC and should not be treated as a
-        comprehensive report of all charges that the resident owes.
+        comprehensive report of all charges that the resident owes. Credits to a
+        resident's ledger are stored as negative charges.
       summary: Get a resident charge by ID
       tags:
         - billing-and-payments
