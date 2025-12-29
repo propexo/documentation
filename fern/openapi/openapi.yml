@@ -10710,6 +10710,11 @@ components:
             - string
             - "null"
           description: Description of the rentable item
+        name:
+          type:
+            - string
+            - "null"
+          description: The name of the rentable item
         is_available:
           type:
             - boolean
@@ -10775,6 +10780,7 @@ components:
         - x_charge_code_id
         - amount_in_cents
         - description
+        - name
         - is_available
         - reserved_until_date
         - type
