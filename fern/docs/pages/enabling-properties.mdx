@@ -8,7 +8,7 @@ To resolve this common situation, we support explicitly enabling and disabling i
 We offer the ability to configure this either by our API or the Propexo Dashboard.
 
 <Callout intent="info">
-By default, an integration has all properties set to be enabled.
+By default, an integration has all properties set to be enabled. 
 This can be configured via the Propexo API and/or Dashboard.
 </Callout>
 
@@ -17,8 +17,8 @@ This can be configured via the Propexo API and/or Dashboard.
 When creating an integration (via the API or Dashboard), you'll have the option to enable or disable ingestion of all properties (see image below).
 ![Enable Properties: Create Integration Dashboard](https://propify-public-assets.s3.amazonaws.com/docs/enabled-properties-create-dashboard.png)
 
-The default setting is to always ingest all properties. If this option is disabled, Propexo will _not_ automatically populate child data for any properties as part of the first sync.
-Instead, once an initial sync has finished, a list of the available properties will be populated for you to inspect via the API or the Dashboard.
+The default setting is to always ingest all properties. If this option is disabled, Propexo will _not_ automatically populate property child data (`residents`, `leases`, etc.) for any properties as part of the first sync.
+Instead, once an initial sync has finished, a list of the disabled properties will be populated for you to inspect via the API or the Dashboard.
 You can selectively enable and disable properties as appropriate for your use case.
 After this, subsequent syncs will ingest data for the properties that remain enabled, and those listed as disabled will be ignored.
 
