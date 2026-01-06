@@ -28317,6 +28317,11 @@ components:
             - string
             - "null"
           description: The display type of the purchase order
+        status_raw:
+          type:
+            - string
+            - "null"
+          description: The raw status associated with the purchase order
         shipping_address_1:
           type:
             - string
@@ -28436,6 +28441,7 @@ components:
         - order_date
         - expense_type
         - display_type
+        - status_raw
         - shipping_address_1
         - shipping_address_2
         - shipping_city
