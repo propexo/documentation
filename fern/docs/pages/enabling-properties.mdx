@@ -5,26 +5,26 @@ It's common to have one of your customers want to run your product on only a sel
 In this case, it can be cumbersome to sift through data from all their properties when you only need a small amount of relevant data.
 
 To resolve this common situation, we support explicitly enabling and disabling ingestion of property data.
-We offer the ability to configure this either by our API or the Propexo Dashboard.
+We offer the ability to configure this either by AccessAPI or the Propexo Dashboard.
 
 <Callout intent="info">
 By default, an integration has all properties set to be enabled.
-This can be configured via the Propexo API and/or Dashboard.
+This can be configured via AccessAPI and/or Dashboard.
 </Callout>
 
 ## How it works
 
-When creating an integration (via the API or Dashboard), you'll have the option to enable or disable ingestion of all properties (see image below).
+When creating an integration (via AccessAPI or Dashboard), you'll have the option to enable or disable ingestion of all properties (see image below).
 ![Enable Properties: Create Integration Dashboard](https://propify-public-assets.s3.amazonaws.com/docs/enabled-properties-create-dashboard.png)
 
 The default setting is to always ingest all properties. If this option is disabled, Propexo will _not_ automatically populate child data for any properties as part of the first sync.
-Instead, once an initial sync has finished, a list of the available properties will be populated for you to inspect via the API or the Dashboard.
+Instead, once an initial sync has finished, a list of the available properties will be populated for you to inspect via AccessAPI or the Dashboard.
 You can selectively enable and disable properties as appropriate for your use case.
 After this, subsequent syncs will ingest data for the properties that remain enabled, and those listed as disabled will be ignored.
 
-## API
+## AccessAPI
 
-To view the list of properties and their ingestion status via the API, you can use [`/v1/admin/integrations/:integration_id/properties`](https://docs.propexo.com/api-reference/api-reference/admin/get-all-my-property-configurations).
+To view the list of properties and their ingestion status via AccessAPI, you can use [`/v1/admin/integrations/:integration_id/properties`](https://docs.propexo.com/api-reference/api-reference/admin/get-all-my-property-configurations).
 If you want to change the status of one of these properties, you can use [`/v1/admin/integrations/:integration_id/properties/:property_configuration_id`](https://docs.propexo.com/api-reference/api-reference/admin/update-a-property-configuration).
 Note that the last path parameter isn't the property ID, it's the id of the property configuration, which is identified by the `id` field on the `GET` endpoint.
 

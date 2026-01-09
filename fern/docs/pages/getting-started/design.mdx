@@ -1,14 +1,14 @@
 ## Introduction
 
-Welcome to Propexo! This guide is designed to help you integrate your application with the Propexo API for the first time. We will walk you through the steps necessary to set up initial synchronization, manage ongoing syncs, and understand how to use webhooks and API requests effectively.
+Welcome to Propexo! This guide is designed to help you integrate your application with AccessAPI for the first time. We will walk you through the steps necessary to set up initial synchronization, manage ongoing syncs, and understand how to use webhooks and AccessAPI requests effectively.
 
 ## Webhooks
 
-Webhooks are an important part of the Propexo integration process, providing real-time notifications for new and changed incoming data. Instead of polling the Propexo API, we recommend subscribing/configuring your server to listen for the events that you care about. Using webhooks will lower the amount of data transferred between our systems, and because we send webhooks within seconds of detecting a data sync during the sync process, your system will be able to react as quickly as possible to data updates.
+Webhooks are an important part of the Propexo integration process, providing real-time notifications for new and changed incoming data. Instead of polling AccessAPI, we recommend subscribing/configuring your server to listen for the events that you care about. Using webhooks will lower the amount of data transferred between our systems, and because we send webhooks within seconds of detecting a data sync during the sync process, your system will be able to react as quickly as possible to data updates.
 
 ### Understanding Webhook Payloads
 
-Webhooks should be relied on to deliver notifications with a minimal set of data. For instance, the `residents` model on the API includes an embedded array called `leases_meta_data`, which is only available via the API and not included in the webhooks payload for the same model.
+Webhooks should be relied on to deliver notifications with a minimal set of data. For instance, the `residents` model on AccessAPI includes an embedded array called `leases_meta_data`, which is only available via AccessAPI and not included in the webhooks payload for the same model.
 
 When subscribing to the `DATA_UPDATE` event, the payload includes only the data that has changed as part of the event, not the full payload for the model. For example, if subscribed to the `DATA_UPDATE` event for the `residents` model and a resident's first name changes, the payload will look like this:
 ```json
@@ -42,8 +42,8 @@ The primary difference between the initial sync and ongoing syncs (described bel
 #### Steps to Set Up Initial Synchronization
 
 1. **Create/Enable Integration**:
-   - Use the Propexo API or [Dashboard UI](https://app.propexo.com/integrations) to create and enable a new integration. This step sets up the initial connection between the PMS and Propexo.
-   - Follow the [Propexo API documentation](https://docs.propexo.com/api-reference/api-reference/admin/create-an-integration) to create an integration.
+   - Use AccessAPI or [Dashboard UI](https://app.propexo.com/integrations) to create and enable a new integration. This step sets up the initial connection between the PMS and Propexo.
+   - Follow the [AccessAPI documentation](https://docs.propexo.com/api-reference/api-reference/admin/create-an-integration) to create an integration.
 
 2. **Initiate Sync**:
    - Once the integration is enabled, Propexo will initiate the synchronization process.
@@ -109,8 +109,8 @@ After the initial synchronization, ongoing syncs ensure that your data remains u
 4. **Receive `FIRST_SYNC_COMPLETE` Event**:
    - After a few minutes, you will receive the `FIRST_SYNC_COMPLETE` event. There are several variables that can affect sync speed. The most common variables are (adjustable) concurrency configurations in Propexo, and the size of your customer. Larger customers tend to have more data which translates into lengthier sync times.
 
-5. **Make API Requests**:
-   - Make requests to the API for your enabled data models (e.g., properties, residents, leases).
+5. **Make AccessAPI Requests**:
+   - Make requests to the AccessAPI for your enabled data models (e.g., properties, residents, leases).
 
 6. **Handle Subsequent Syncs**:
    - For ongoing syncs, you will receive `DATA_NEW`, `DATA_UPDATE`, and `SYNC_COMPLETE` (if subscribed) events. Note that these events are disabled for the first sync due to the volume of new data.
@@ -120,4 +120,4 @@ After the initial synchronization, ongoing syncs ensure that your data remains u
 
 ## Conclusion
 
-By following this guide, you can effectively integrate your application with the Propexo API, ensuring data consistency and reliability. Utilize webhooks and the API efficiently to maintain up-to-date data with minimal effort. If you have any questions or need further assistance, please contact our support team.
+By following this guide, you can effectively integrate your application with AccessAPI, ensuring data consistency and reliability. Utilize webhooks and AccessAPI efficiently to maintain up-to-date data with minimal effort. If you have any questions or need further assistance, please contact our support team.

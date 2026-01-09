@@ -1,6 +1,6 @@
 # Understanding Propexo's Rate Limits
 
-To get the most out of the Propexo API, it’s important to understand how rate limits work and how to stay within them. This guide breaks it all down in simple terms and offers tips to help you manage your API usage efficiently.
+To get the most out of AccessAPI, it’s important to understand how rate limits work and how to stay within them. This guide breaks it all down in simple terms and offers tips to help you manage your AccessAPI usage efficiently.
 
 ---
 
@@ -14,9 +14,9 @@ If you're making frequent requests just to check for updates (known as **polling
 
 ---
 
-## When Is API Data Updated?
+## When Is AccessAPI Data Updated?
 
-The data returned by the API is refreshed in two situations:
+The data returned by AccessAPI is refreshed in two situations:
 
 1. **When a sync request runs with your property management system (PMS).**
 2. **After a successful write operation** (like updating or creating data).
@@ -27,13 +27,13 @@ These syncs usually happen **every 12 hours**, but your schedule might differ de
 
 ## How Can I Monitor My Usage, and How Are Limits Applied?
 
-Each API response includes helpful headers that show your current usage:
+Each AccessAPI response includes helpful headers that show your current usage:
 
 - `x-ratelimit-limit`: The total number of requests allowed per minute.
 - `x-ratelimit-remaining`: The number of requests you have left in the current minute.
 
-If you use **80%** of your allowed requests, the API will slow things down slightly by adding a **2-second delay** to each response.  
-If you hit **100%**, the API will return a **429 error** and block new requests until the minute resets. After that, you’re good to go again.
+If you use **80%** of your allowed requests, AccessAPI will slow things down slightly by adding a **2-second delay** to each response.  
+If you hit **100%**, AccessAPI will return a **429 error** and block new requests until the minute resets. After that, you’re good to go again.
 
 ---
 
@@ -44,4 +44,4 @@ If you hit **100%**, the API will return a **429 error** and block new requests 
 - Monitor the **rate limit headers** in responses to track your usage.
 - Keep in mind the rate limits of your PMS as well as Propexo’s.
 
-By following these simple practices, you’ll keep your API usage efficient, avoid rate limit errors, and ensure reliable performance for your applications. If you ever need a custom rate limit based on your use case, feel free to reach out to us.
+By following these simple practices, you’ll keep your AccessAPI usage efficient, avoid rate limit errors, and ensure reliable performance for your applications. If you ever need a custom rate limit based on your use case, feel free to reach out to us.

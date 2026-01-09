@@ -33,20 +33,20 @@ Some number of failed jobs is normal for a sync, as network blips or load on the
 
 ### Alerts for completed new customer syncs
 
-If you create new integrations for your users via our API, this webhook gives you a quick way to be alerted as to when their initial data import has been completed.
+If you create new integrations for your users via AccessAPI, this webhook gives you a quick way to be alerted as to when their initial data import has been completed.
 With this, you may want to alert them to a successful onboarding or reveal an appropriate UI to them.
 
 ### Periodic System Syncs
 
 On reception of this webhook, you know that Propexo has finished querying all new data for your PMS.
-This may be a great way to know that you can begin querying our API to get the freshest data related to an integration.
+This may be a great way to know that you can begin querying AccessAPI to get the freshest data related to an integration.
 
 In this case, though, we'd also like to mention the `DATA_NEW` and `DATA_UPDATE` webhooks as a potential solution as well.
 
 ## The `FIRST_SYNC_COMPLETE` Webhook
 
 We also offer a variant of the `SYNC_COMPLETE` webhook called `FIRST_SYNC_COMPLETE` which will only send webhooks on the completion of the first sync for an job schedule on an integration.
-This can be handy if you're onboarding your customers and creating their integrations via our API.
+This can be handy if you're onboarding your customers and creating their integrations via AccessAPI.
 If subscribed to `FIRST_SYNC_COMPLETE` webhooks you'll receive a specific event that will only trigger on the completion of their first full data sync.
 
 The common use case we've seen for this is when you want to be able to ingest your customer's data from Propexo as soon as you can to give your customers the most complete experience possible.

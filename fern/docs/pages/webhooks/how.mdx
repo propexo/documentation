@@ -6,7 +6,7 @@ Many of our customers use webhooks to get updates on events like lease status ch
 
 ## Why use webhooks?
 
-Webhooks are a way to integrate with Propexo so you know about changes to your data in real-time. Instead of polling the API for changes, you can register a webhook and we'll send you a notification when something changes. You can subscribe to changes on a per-data model basis, so you are only notified when the data you care about changes.
+Webhooks are a way to integrate with Propexo so you know about changes to your data in real-time. Instead of polling AccessAPI for changes, you can register a webhook and we'll send you a notification when something changes. You can subscribe to changes on a per-data model basis, so you are only notified when the data you care about changes.
 
 ## How do webhooks work?
 
@@ -74,7 +74,7 @@ When you subscribe to a `DATA_NEW` webhook event, it is automatically disabled u
 ## Sequencing
 Oftentimes Propexo needs to fully hydrate data over more than one request to a Property Management System. For example, several integrations provide a minimal set of data for residents, applicants, or leads. The minimal dataset might only include an ID and name. We then need to make a subsequent request to retrieve additional information like phone and email. In these cases, you should fully test to ensure that you are receiving all of the data you need with the subscribed webhook event. Some customers only need to subscribe to the `DATA_NEW` event, others may want to subscribe to the `DATA_UPDATE` event as well.
 
-Optionally, many customers use webhooks as a notification system and then query the associated API endpoint to retrieve a full data record. For example, you may subscribe to the `DATA_UPDATE` event for the `leases` model. When you receive a webhook event, you can then query the `/leases/:id` endpoint to retrieve the full lease record.
+Optionally, many customers use webhooks as a notification system and then query the associated AccessAPI endpoint to retrieve a full data record. For example, you may subscribe to the `DATA_UPDATE` event for the `leases` model. When you receive a webhook event, you can then query the `/leases/:id` endpoint to retrieve the full lease record.
 
 ## Signed Payloads
 
