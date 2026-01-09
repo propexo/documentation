@@ -1,10 +1,10 @@
 ## Introduction
-Propexo offers a unified API that simplifies integrating customer applications with property management software. This API uses two approaches to synchronization: Back-Sync and Date-Limited Sync. 
+Propexo offers a unified API (AccessAPI) that simplifies integrating customer applications with property management software. This API uses two approaches to synchronization: Back-Sync and Date-Limited Sync. 
 
 Understanding these concepts is crucial for developers and system architects to make informed decisions about data synchronization strategies appropriate for their use case.
 		
-## Propexo Unified API Overview
-The Propexo Unified API is an intermediate layer between customer applications and Property Management Systems (PMS). It delivers cached data hydrated by an Extract, Transform, Load (ETL) process. This ETL implements one of the following syncing strategies:
+## Propexo AccessAPI Overview
+AccessAPI is an intermediate layer between customer applications and Property Management Systems (PMS). It delivers cached data hydrated by an Extract, Transform, Load (ETL) process. This ETL implements one of the following syncing strategies:
 
 ## Strategy 1: Date-Limited Sync (default strategy)
 A Date-Limited Sync focuses on synchronizing data within a specific time frame. Instead of retrieving all historical data, only data within a predefined period is from the PMS. This approach is appropriate when historical data beyond a certain point isn't valuable, when there are PMS rate-limit concerns, or when a customer desires to reduce the costs incurred by syncing unneeded data.

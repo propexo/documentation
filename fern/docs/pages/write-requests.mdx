@@ -4,7 +4,7 @@
 With Propexo, you can move data to and from your customers' Property Management Systems (PMS). To understand how Propexo handles write requests, it is important to understand how we think about source-of-truth relationships.
 
 ## Source of Truth
-Propexo does not act as the source of truth. Instead, we rely on each PMS to maintain accurate records. This means that when you write data to Propexo's API, we will pass the request along to the PMS. The data in Propexo's caching layer will remain in it's original form (prior to your update) until we receive the updated record back from the PMS during your next sync window. We request an updated version of that record right away so that the cached data in Propexo is as fresh as possible. Since this is not enabled for all models across all PMSs, please ask us about this feature for your use case.
+Propexo does not act as the source of truth. Instead, we rely on each PMS to maintain accurate records. This means that when you write data to AccessAPI, we will pass the request along to the PMS. The data in Propexo's caching layer will remain in it's original form (prior to your update) until we receive the updated record back from the PMS during your next sync window. We request an updated version of that record right away so that the cached data in Propexo is as fresh as possible. Since this is not enabled for all models across all PMSs, please ask us about this feature for your use case.
 
 ## Generic Endpoints
 As a unified API solution, Propexo offers generic endpoints for all write (`POST` & `PUT`) requests. This means that you can use the same endpoint, regardless of the Property Management System. However, different PMSs require or restrict different sets of data in the request payload which introduces an element of complexity in maintaining a single entry point. To address this, Propexo has developed some utilities (outlined below) to help with your development process.
@@ -23,13 +23,13 @@ Generic endpoints are designed to be a single point of entry across all Property
 
 ## Checking the status of write requests
 
-Propexo makes sure to validate the input data for write requests as much as possible at our API so you can be informed of any possible errors as soon as possible.
+Propexo makes sure to validate the input data for write requests as much as possible at AccessAPI so you can be informed of any possible errors as soon as possible.
 
 However, there are some issues that involve data we don't have access to that will fail during our asynchronous write request to the PMS directly.
 For example, if you're updating a resident to be on a different lease, it's possible that Propexo doesn't currently have all the details on that individual and they may have already been reassigned within the PMS directly.
 In a case like this, Propexo will encounter and record the error.
 
-To see this error, you can use our [write operation status endpoint](https://docs.propexo.com/api-reference/api-reference/admin/check-the-status-of-a-write-operation) (`GET /v1/admin/write-status/:root_job_id`), where `root_job_id` is the `job_id` field returned from a successful write operation request to the Propexo API:
+To see this error, you can use our [write operation status endpoint](https://docs.propexo.com/api-reference/api-reference/admin/check-the-status-of-a-write-operation) (`GET /v1/admin/write-status/:root_job_id`), where `root_job_id` is the `job_id` field returned from a successful write operation request to AccessAPI:
 
 ```json
 {
