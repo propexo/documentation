@@ -2,6 +2,63 @@ openapi: 3.1.0
 info:
   version: 1.0.0
   title: Propexo API
+tags:
+  - name: invoices
+    x-displayName: Invoices
+  - name: admin
+    x-displayName: Admin
+  - name: amenities
+    x-displayName: Amenities
+  - name: applicants
+    x-displayName: Applicants
+  - name: applications
+    x-displayName: Applications
+  - name: appointments
+    x-displayName: Appointments
+  - name: call-logs
+    x-displayName: Call Logs
+  - name: billing-and-payments
+    x-displayName: Billing and Payments
+  - name: units
+    x-displayName: Units
+  - name: construction-job-cost
+    x-displayName: Construction Job Cost
+  - name: deposits
+    x-displayName: Deposits
+  - name: deposit-summaries
+    x-displayName: Deposit Summaries
+  - name: employees
+    x-displayName: Employees
+  - name: events
+    x-displayName: Events
+  - name: files
+    x-displayName: Files
+  - name: leads
+    x-displayName: Leads
+  - name: leases
+    x-displayName: Leases
+  - name: listings
+    x-displayName: Listings
+  - name: note-categories
+    x-displayName: Note Categories
+  - name: owners
+    x-displayName: Owners
+  - name: properties
+    x-displayName: Properties
+  - name: purchase-orders
+    x-displayName: Purchase Orders
+  - name: residents
+    x-displayName: Residents
+  - name: service-requests
+    x-displayName: Service Requests
+  - name: vendors
+    x-displayName: Vendors
+  - name: general-ledger
+    x-displayName: General Ledger
+  - name: timezones
+    x-displayName: Timezones
+  - name: webhooks
+    x-displayName: Webhooks
 servers:
   - url: https://api.propexo.com
     x-fern-server-name: Production
@@ -306,6 +363,7 @@ components:
             - applications
             - contracts
             - crm_listings
+            - deposit_summaries
             - event_types
             - events
             - file_types
@@ -750,6 +808,7 @@ components:
                         - REALPAGE_RPX_AMENITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                        - REALPAGE_RPX_CONCESSIONS
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                         - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                         - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
@@ -835,6 +894,7 @@ components:
                         - ENTRATA_LISTINGS
                         - ENTRATA_PROPERTIES
                         - ENTRATA_PET_TYPES
+                        - ENTRATA_PRICING_PICK_LIST
                         - ENTRATA_PROPERTY_PICK_LIST
                         - ENTRATA_PROSPECTS
                         - ENTRATA_PURCHASE_ORDERS
@@ -855,6 +915,7 @@ components:
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
                         - ENTRATA_BASE
+                        - PROPERTYWARE_REST_CREATE_RESIDENT
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -877,6 +938,7 @@ components:
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_READ_INVOICES
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_UPDATE_DOCUMENT
                         - PROPERTYWARE_REST_UPDATE_LEASE
@@ -940,6 +1002,7 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
+                        - SAMPLE1_LEASE_RENEWALS
                         - SAMPLE1_DEPOSIT_SUMMARIES
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
@@ -1004,6 +1067,7 @@ components:
                           - REALPAGE_RPX_AMENITIES
                           - REALPAGE_RPX_APPOINTMENTS
                           - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                          - REALPAGE_RPX_CONCESSIONS
                           - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                           - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                           - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
@@ -1089,6 +1153,7 @@ components:
                           - ENTRATA_LISTINGS
                           - ENTRATA_PROPERTIES
                           - ENTRATA_PET_TYPES
+                          - ENTRATA_PRICING_PICK_LIST
                           - ENTRATA_PROPERTY_PICK_LIST
                           - ENTRATA_PROSPECTS
                           - ENTRATA_PURCHASE_ORDERS
@@ -1109,6 +1174,7 @@ components:
                           - ENTRATA_WORK_ORDER_PICK_LIST
                           - ENTRATA_WORK_ORDERS
                           - ENTRATA_BASE
+                          - PROPERTYWARE_REST_CREATE_RESIDENT
                           - PROPERTYWARE_REST_CREATE_DOCUMENT
                           - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                           - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -1131,6 +1197,7 @@ components:
                           - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                           - PROPERTYWARE_REST_READ_RESIDENTS
                           - PROPERTYWARE_REST_READ_UNITS
+                          - PROPERTYWARE_REST_READ_INVOICES
                           - PROPERTYWARE_REST_UPDATE_CONTACTS
                           - PROPERTYWARE_REST_UPDATE_DOCUMENT
                           - PROPERTYWARE_REST_UPDATE_LEASE
@@ -1194,6 +1261,7 @@ components:
                           - SAMPLE1_SERVICES
                           - SAMPLE1_JOB_COST
                           - SAMPLE1_VENDOR_INVOICING
+                          - SAMPLE1_LEASE_RENEWALS
                           - SAMPLE1_DEPOSIT_SUMMARIES
                           - BUILDIUM_BASE
                           - PROPERTYWARE_BASE
@@ -3253,6 +3321,7 @@ components:
                       - REALPAGE_RPX_AMENITIES
                       - REALPAGE_RPX_APPOINTMENTS
                       - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                      - REALPAGE_RPX_CONCESSIONS
                       - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                       - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                       - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
@@ -3338,6 +3407,7 @@ components:
                       - ENTRATA_LISTINGS
                       - ENTRATA_PROPERTIES
                       - ENTRATA_PET_TYPES
+                      - ENTRATA_PRICING_PICK_LIST
                       - ENTRATA_PROPERTY_PICK_LIST
                       - ENTRATA_PROSPECTS
                       - ENTRATA_PURCHASE_ORDERS
@@ -3358,6 +3428,7 @@ components:
                       - ENTRATA_WORK_ORDER_PICK_LIST
                       - ENTRATA_WORK_ORDERS
                       - ENTRATA_BASE
+                      - PROPERTYWARE_REST_CREATE_RESIDENT
                       - PROPERTYWARE_REST_CREATE_DOCUMENT
                       - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                       - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -3380,6 +3451,7 @@ components:
                       - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                       - PROPERTYWARE_REST_READ_RESIDENTS
                       - PROPERTYWARE_REST_READ_UNITS
+                      - PROPERTYWARE_REST_READ_INVOICES
                       - PROPERTYWARE_REST_UPDATE_CONTACTS
                       - PROPERTYWARE_REST_UPDATE_DOCUMENT
                       - PROPERTYWARE_REST_UPDATE_LEASE
@@ -3443,6 +3515,7 @@ components:
                       - SAMPLE1_SERVICES
                       - SAMPLE1_JOB_COST
                       - SAMPLE1_VENDOR_INVOICING
+                      - SAMPLE1_LEASE_RENEWALS
                       - SAMPLE1_DEPOSIT_SUMMARIES
                       - BUILDIUM_BASE
                       - PROPERTYWARE_BASE
@@ -3507,6 +3580,7 @@ components:
                         - REALPAGE_RPX_AMENITIES
                         - REALPAGE_RPX_APPOINTMENTS
                         - REALPAGE_RPX_APPOINTMENT_AVAILABILITY
+                        - REALPAGE_RPX_CONCESSIONS
                         - REALPAGE_RPX_CONVERGENT_BILLING_LEASES
                         - REALPAGE_RPX_CONVERGENT_BILLING_RESIDENTS
                         - REALPAGE_RPX_CONVERGENT_BILLING_UNITS
@@ -3592,6 +3666,7 @@ components:
                         - ENTRATA_LISTINGS
                         - ENTRATA_PROPERTIES
                         - ENTRATA_PET_TYPES
+                        - ENTRATA_PRICING_PICK_LIST
                         - ENTRATA_PROPERTY_PICK_LIST
                         - ENTRATA_PROSPECTS
                         - ENTRATA_PURCHASE_ORDERS
@@ -3612,6 +3687,7 @@ components:
                         - ENTRATA_WORK_ORDER_PICK_LIST
                         - ENTRATA_WORK_ORDERS
                         - ENTRATA_BASE
+                        - PROPERTYWARE_REST_CREATE_RESIDENT
                         - PROPERTYWARE_REST_CREATE_DOCUMENT
                         - PROPERTYWARE_REST_CREATE_RECURRING_CHARGES
                         - PROPERTYWARE_REST_CREATE_RESIDENT_CHARGE
@@ -3634,6 +3710,7 @@ components:
                         - PROPERTYWARE_REST_READ_RECURRING_CHARGES
                         - PROPERTYWARE_REST_READ_RESIDENTS
                         - PROPERTYWARE_REST_READ_UNITS
+                        - PROPERTYWARE_REST_READ_INVOICES
                         - PROPERTYWARE_REST_UPDATE_CONTACTS
                         - PROPERTYWARE_REST_UPDATE_DOCUMENT
                         - PROPERTYWARE_REST_UPDATE_LEASE
@@ -3697,6 +3774,7 @@ components:
                         - SAMPLE1_SERVICES
                         - SAMPLE1_JOB_COST
                         - SAMPLE1_VENDOR_INVOICING
+                        - SAMPLE1_LEASE_RENEWALS
                         - SAMPLE1_DEPOSIT_SUMMARIES
                         - BUILDIUM_BASE
                         - PROPERTYWARE_BASE
@@ -5368,36 +5446,79 @@ components:
           items:
             type: string
             enum:
+              - accounting_entities
+              - address_types
               - amenities
+              - ap_codes
+              - applicant_pets
               - applicants
+              - application_statuses
               - applications
+              - call_logs
               - charge_codes
+              - charge_code_types
+              - charge_timings
+              - concessions
               - construction_jobs
               - contracts
+              - deposit_summaries
+              - deposits
               - employees
+              - event_results
+              - event_sub_types
               - event_types
               - events
+              - fees
+              - file_types
               - financial_accounts
               - floor_plans
+              - invoice_items
               - invoices
+              - lead_pets
+              - lead_relationships
+              - lead_sources
               - leads
+              - lease_services
+              - lease_transfers
               - leases
               - listings
               - locations
+              - note_categories
               - owners
               - payable_registers
+              - pet_types
               - properties
+              - property_lists
+              - property_office_hours
               - purchase_orders
-              - rentable_items
               - recurring_resident_charges
+              - rentable_items
+              - resident_allocations
               - resident_charges
+              - resident_insurance
               - resident_payments
+              - resident_pets
+              - resident_vehicles
               - residents
-              - timezones
-              - units
               - screenings
-              - service_requests
+              - service_request_categories
+              - service_request_locations
+              - service_request_notes
+              - service_request_priorities
+              - service_request_problems
+              - service_request_statuses
+              - service_request_vendor_categories
+              - service_request_vendor_contacts
               - service_request_vendors
+              - service_request_vendors_insurance
+              - service_requests
+              - timezones
+              - unit_details
+              - unit_pricing
+              - units
+              - vendor_insurance_coverage_types
+              - vendor_insurance_policy_types
+              - vendor_payment_types
           description: A list of the specific models to sync. This will only ingest the
             models specified during the sync and any relational models. For
             example, requesting "residents" and "leases" will also query their
@@ -5427,36 +5548,79 @@ components:
           items:
             type: string
             enum:
+              - accounting_entities
+              - address_types
               - amenities
+              - ap_codes
+              - applicant_pets
               - applicants
+              - application_statuses
               - applications
+              - call_logs
               - charge_codes
+              - charge_code_types
+              - charge_timings
+              - concessions
               - construction_jobs
               - contracts
+              - deposit_summaries
+              - deposits
               - employees
+              - event_results
+              - event_sub_types
               - event_types
               - events
+              - fees
+              - file_types
               - financial_accounts
               - floor_plans
+              - invoice_items
               - invoices
+              - lead_pets
+              - lead_relationships
+              - lead_sources
               - leads
+              - lease_services
+              - lease_transfers
               - leases
               - listings
               - locations
+              - note_categories
               - owners
               - payable_registers
+              - pet_types
               - properties
+              - property_lists
+              - property_office_hours
               - purchase_orders
-              - rentable_items
               - recurring_resident_charges
+              - rentable_items
+              - resident_allocations
               - resident_charges
+              - resident_insurance
               - resident_payments
+              - resident_pets
+              - resident_vehicles
               - residents
-              - timezones
-              - units
               - screenings
-              - service_requests
+              - service_request_categories
+              - service_request_locations
+              - service_request_notes
+              - service_request_priorities
+              - service_request_problems
+              - service_request_statuses
+              - service_request_vendor_categories
+              - service_request_vendor_contacts
               - service_request_vendors
+              - service_request_vendors_insurance
+              - service_requests
+              - timezones
+              - unit_details
+              - unit_pricing
+              - units
+              - vendor_insurance_coverage_types
+              - vendor_insurance_policy_types
+              - vendor_payment_types
           description: A list of the specific models to sync. This will only ingest the
             models specified during the sync and any relational models. For
             example, requesting "residents" and "leases" will also query their
@@ -5869,7 +6033,10 @@ components:
       properties:
         integration_id:
           type: string
-          description: The ID of the integration the mappings are associated with, if any.
+          description: The ID of the integration for which to retrieve custom mappings. If
+            provided, returns integration-specific custom mappings (if they
+            exist). If omitted, returns the default system mappings for the
+            vendor.
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
       required:
@@ -5882,18 +6049,26 @@ components:
           properties:
             is_custom_mapping:
               type: boolean
-              description: Whether or not the mapping is user custom, or if it has been
-                specified by the user.
+              description: Whether the mapping has been customized by the user for this
+                specific integration. If true, these are custom user-defined
+                mappings. If false, these are the default system mappings
+                provided by Propexo.
             mappings:
               type: object
               additionalProperties:
                 type: string
-              description: Key-value pairs of mapping from PMS raw statuses to normalized
-                statuses.
+              description: 'Key-value pairs mapping PMS-specific raw values (keys) to
+                normalized Propexo values (values). For example, for
+                lease_status: {"current": "ACTIVE", "former": "INACTIVE",
+                "future": "PENDING"}. These mappings are applied when data is
+                synced from the PMS to normalize enum values to Propexo
+                standards.'
             default_value:
               type: string
-              description: The default value that the field will be set to if none of the
-                mappings apply.
+              description: The default normalized value to use when a PMS value does not match
+                any key in the mappings. This ensures all values can be
+                normalized even if they are not explicitly mapped. Typically set
+                to values like "OTHER" for catch-all cases.
           required:
             - is_custom_mapping
             - mappings
@@ -6267,6 +6442,7 @@ components:
                   - number
                   - "null"
                 description: Cost in cents for the amenity
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -6459,6 +6635,7 @@ components:
                         - number
                         - "null"
                       description: Cost in cents for the amenity on a particular unit
+                      example: 100000
                   required:
                     - amenity_id
                     - unit_id
@@ -6633,6 +6810,7 @@ components:
                 - number
                 - "null"
               description: Cost in cents for the amenity
+              example: 100000
             custom_data:
               type:
                 - object
@@ -6825,6 +7003,7 @@ components:
                       - number
                       - "null"
                     description: Cost in cents for the amenity on a particular unit
+                    example: 100000
                 required:
                   - amenity_id
                   - unit_id
@@ -7310,6 +7489,11 @@ components:
                   - type: "null"
                 description: The normalized status associated with the applicant. Confirm these
                   derived values before using them in production.
+              custom_data:
+                type:
+                  - object
+                  - "null"
+                properties: {}
             required:
               - applicant_id
               - application_id
@@ -10427,6 +10611,208 @@ components:
       required:
         - job_id
         - data
+    _v1_applicants_{id}_rentable-items_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+    RentableItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The Propexo unique identifier for the rentable item
+        created_at:
+          type: string
+          description: The date record first entered Propexo
+        updated_at:
+          type: string
+          description: The date record was last updated in Propexo
+        last_seen:
+          type:
+            - string
+            - "null"
+          description: The date the record was last seen from the PMS
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        x_property_id:
+          type: string
+          description: The external ID of the property from the integration vendor
+        x_location_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the location (exclusive to Rent Manager
+            integrations). This is always null for non-Rent Manager
+            integrations.
+        x_applicant_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the applicant from the integration vendor
+        x_lead_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the lead from the integration vendor
+        x_resident_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the resident from the integration vendor
+        x_type_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the type from the integration vendor
+        x_charge_code_id:
+          type:
+            - string
+            - "null"
+          description: The external ID of the charge code from the integration vendor
+        amount_in_cents:
+          type:
+            - number
+            - "null"
+          description: The amount of the rentable item, in cents
+          example: 100000
+        description:
+          type:
+            - string
+            - "null"
+          description: Description of the rentable item
+        name:
+          type:
+            - string
+            - "null"
+          description: The name of the rentable item
+        is_available:
+          type:
+            - boolean
+            - "null"
+          description: Whether the rentable item is available
+        reserved_until_date:
+          type:
+            - string
+            - "null"
+          description: The date the rentable item is reserved until
+        type:
+          type:
+            - string
+            - "null"
+          description: The type associated with the rentable item
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        applicant_id:
+          type:
+            - string
+            - "null"
+          description: "Deprecated: Use the /applicants/:id/rentable-items endpoint
+            instead."
+          deprecated: true
+          x-fern-availability: deprecated
+        lead_id:
+          type:
+            - string
+            - "null"
+          description: "Deprecated: Use the /leads/:id/rentable-items endpoint instead."
+          deprecated: true
+          x-fern-availability: deprecated
+        resident_id:
+          type:
+            - string
+            - "null"
+          description: "Deprecated: Use the /residents/:id/rentable-items endpoint instead."
+          deprecated: true
+          x-fern-availability: deprecated
+        charge_code_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the charge code
+      required:
+        - id
+        - created_at
+        - updated_at
+        - last_seen
+        - x_id
+        - x_property_id
+        - x_location_id
+        - x_applicant_id
+        - x_lead_id
+        - x_resident_id
+        - x_type_id
+        - x_charge_code_id
+        - amount_in_cents
+        - description
+        - name
+        - is_available
+        - reserved_until_date
+        - type
+        - integration_id
+        - integration_vendor
+        - property_id
+        - applicant_id
+        - lead_id
+        - resident_id
+        - charge_code_id
+      x-propexo:
+        derivedFromModel: rentable_items
+    _v1_applicants_{id}_rentable-items_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/RentableItem"
+      required:
+        - meta
+        - results
     _v1_rentable-items_applicants_assign_post_input:
       type: object
       properties:
@@ -10565,6 +10951,11 @@ components:
                   - "null"
                 description: The normalized status associated with the applicant. Confirm these
                   derived values before using them in production.
+              custom_data:
+                type:
+                  - object
+                  - "null"
+                properties: {}
             required:
               - applicant_id
               - application_id
@@ -10654,19 +11045,19 @@ components:
             not specified
         address_1:
           type: string
-          description: The first address line associated with the application
+          description: The first address line associated with the applicant
         address_2:
           type: string
-          description: The second address line associated with the application
+          description: The second address line associated with the applicant
         city:
           type: string
-          description: The city associated with the application
+          description: The city associated with the applicant
         state:
           type: string
-          description: The state associated with the application
+          description: The state associated with the applicant
         zip:
           type: string
-          description: The zip code associated with the application
+          description: The zip code associated with the applicant
         attachments:
           type: array
           items:
@@ -11216,9 +11607,7 @@ components:
         rent_amount_in_cents:
           type: integer
           minimum: 0
-          description: The rent amount in cents that the applicant will pay for the unit.
-            This field is not configurable on the Rentvine template and is
-            always required
+          description: The rent amount in cents for the applicant
         security_deposit_in_cents:
           type: integer
           minimum: 0
@@ -11856,14 +12245,53 @@ components:
             of items in the array in order to pass validation. You will need to
             work with your customer directly to configure this field to your
             application requirements
-        lead_id:
-          type: string
-          description: The Propexo unique identifier for the lead. The lead will be
-            converted to an applicant
         employee_id:
           type: string
           description: The Propexo unique identifier for the employee. Employee must have
             a role of LEASING_AGENT. Required if lead_id is not specified
+        application_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The application date associated with the applicant
+        start_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The start date associated with the lease
+        end_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The end date associated with the lease
+        status:
+          type: string
+          enum:
+            - PENDING
+            - APPROVED
+            - CANCELED
+            - DENIED
+            - SIGNED
+          description: The status associated with the application
+        notes:
+          type: string
+          description: Notes associated with the applicant
+        desired_lease_term_in_months:
+          type: string
+          description: The desired lease term in months of the applicant
+        floor_plan_id:
+          type: string
+          description: The Propexo unique identifier for the floor plan
+        lead_id:
+          type: string
+          description: The Propexo unique identifier for the lead. The lead will be
+            converted to an applicant
         third_party_id:
           type: string
           minLength: 1
@@ -11880,12 +12308,6 @@ components:
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
           description: The desired move-out date to the unit listed in the application
-        desired_lease_term_in_months:
-          type: string
-          description: The desired lease term in months of the applicant
-        notes:
-          type: string
-          description: Notes associated with the applicant
         is_evicted:
           type: boolean
           description: Whether the applicant has been evicted
@@ -12018,7 +12440,7 @@ components:
           description: The Propexo unique identifier for the lease period
         unit_id:
           type: string
-          description: The Propexo unique identifier for the unit for this application
+          description: The Propexo unique identifier for the unit
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source
@@ -12473,21 +12895,42 @@ components:
               - employee_id
           description: Add-ons of the applicant
         employee_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the employee who is assigned to
-            process this application, or none to be assigned to nobody
+          type: string
+          description: The Propexo unique identifier for the employee
         application_status_id:
           type: string
           description: The Propexo unique identifier for the application status for this
             application
-        middle_name:
+        application_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The application date associated with the applicant
+        start_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The start date associated with the lease
+        end_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The end date associated with the lease
+        status:
           type: string
-          description: The middle name associated with the applicant
-        maiden_name:
-          type: string
-          description: The maiden name associated with the applicant
+          enum:
+            - PENDING
+            - APPROVED
+            - CANCELED
+            - DENIED
+            - SIGNED
+          description: The status associated with the application
         phone_2:
           type: string
           pattern: ^\d{10}$
@@ -12500,6 +12943,299 @@ components:
             - MOBILE
             - WORK
           description: Type of the secondary phone number
+        notes:
+          type: string
+          description: Notes associated with the applicant
+        rent_amount_in_cents:
+          type: integer
+          minimum: 0
+          description: The rent amount in cents for the applicant
+        desired_lease_term_in_months:
+          type: string
+          description: The desired lease term in months of the applicant
+        floor_plan_id:
+          type: string
+          description: The Propexo unique identifier for the floor plan
+        other_occupants:
+          type: array
+          items:
+            type: object
+            properties:
+              relationship:
+                type: string
+                enum:
+                  - ROOMMATE
+                  - SPOUSE
+                  - GUARANTOR
+                  - OTHER
+                description: The relationship of the occupant to the applicant
+              first_name:
+                type: string
+                description: The first name associated with the occupant
+              last_name:
+                type: string
+                description: The last name associated with the occupant
+              third_party_id:
+                type: string
+                minLength: 1
+                description: A unique ID you would like to associate with the occupant. This is
+                  not the Sample1 occupant ID
+              organization_name:
+                type: string
+                description: The name of your organization. Sample1 uses this for associating an
+                  occupant
+              email_1:
+                type: string
+                format: email
+                description: The primary email address associated with the occupant
+              phone_1:
+                type: string
+                pattern: ^\d{10}$
+                description: Primary phone number associated with the occupant
+              phone_1_type:
+                type: string
+                enum:
+                  - FAX
+                  - HOME
+                  - MOBILE
+                  - WORK
+                description: Type of the primary phone number
+              phone_2:
+                type: string
+                pattern: ^\d{10}$
+                description: Secondary phone number associated with the occupant
+              phone_2_type:
+                type: string
+                enum:
+                  - FAX
+                  - HOME
+                  - MOBILE
+                  - WORK
+                description: Type of the secondary phone number
+              address_1:
+                type: string
+                description: The first address line associated with the occupant
+              city:
+                type: string
+                description: The city associated with the occupant
+              state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The state associated with the occupant
+              zip:
+                type: string
+                description: The zip code associated with the occupant
+            required:
+              - relationship
+              - first_name
+              - last_name
+              - third_party_id
+              - organization_name
+          default: []
+          description: A list of other occupants for the application. Only new occupants
+            should be passed in, existing occupants cannot be updated
+        emergency_contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: The first name of the emergency contact
+              last_name:
+                type: string
+                description: The last name of the emergency contact
+              relationship:
+                type: string
+                enum:
+                  - DAUGHTER
+                  - FRIEND
+                  - HUSBAND
+                  - SON
+                  - WIFE
+                  - OTHER
+                description: The relationship of the emergency contact to the applicant
+              address_1:
+                type: string
+                description: The first line of the address of the emergency contact
+              city:
+                type: string
+                description: The city of the address of the emergency contact
+              state:
+                type: string
+                enum:
+                  - AA
+                  - AE
+                  - AK
+                  - AL
+                  - AP
+                  - AR
+                  - AS
+                  - AZ
+                  - CA
+                  - CO
+                  - CT
+                  - DC
+                  - DE
+                  - FL
+                  - FM
+                  - GA
+                  - GU
+                  - HI
+                  - IA
+                  - ID
+                  - IN
+                  - KS
+                  - KY
+                  - LA
+                  - MA
+                  - MD
+                  - ME
+                  - MH
+                  - MI
+                  - MN
+                  - MO
+                  - MP
+                  - MS
+                  - MT
+                  - NC
+                  - NE
+                  - NL
+                  - NJ
+                  - NM
+                  - NV
+                  - NY
+                  - OH
+                  - OK
+                  - OR
+                  - PA
+                  - PR
+                  - SD
+                  - TN
+                  - TX
+                  - UT
+                  - VA
+                  - VI
+                  - VT
+                  - WA
+                  - WI
+                  - WV
+                  - WY
+                  - AB
+                  - BC
+                  - MB
+                  - NB
+                  - NL
+                  - NT
+                  - NS
+                  - NU
+                  - ON
+                  - PE
+                  - QC
+                  - SK
+                  - YT
+                description: The state of the address of the emergency contact
+              zip:
+                type: string
+                description: The zip code of the address of the emergency contact
+              country:
+                anyOf:
+                  - type: string
+                    enum:
+                      - United States
+                      - Canada
+                  - type: string
+                description: The country of the address of the emergency contact. If your
+                  application needs to support submitting an applicant who
+                  resides in another country, please reach out to Propexo
+                  Support for help
+              phone_1:
+                type: string
+                pattern: ^\d{10}$
+                description: The phone number of the emergency contact
+            required:
+              - first_name
+              - last_name
+              - relationship
+          maxItems: 1
+          default: []
+          description: A list of emergency contacts for the applicant
+        middle_name:
+          type: string
+          description: The middle name associated with the applicant
+        maiden_name:
+          type: string
+          description: The maiden name associated with the applicant
         move_out_date:
           anyOf:
             - type: string
@@ -12507,12 +13243,6 @@ components:
             - type: string
               pattern: ^\d{4}-\d{2}-\d{2}$
           description: The desired move-out date to the unit listed in the application
-        desired_lease_term_in_months:
-          type: string
-          description: The desired lease term in months of the applicant
-        notes:
-          type: string
-          description: Notes associated with the applicant
         is_evicted:
           type: boolean
           description: Whether the applicant has been evicted
@@ -12693,132 +13423,6 @@ components:
           maxItems: 2
           default: []
           description: The address history of the applicant
-        emergency_contacts:
-          type: array
-          items:
-            type: object
-            properties:
-              first_name:
-                type: string
-                description: The first name of the emergency contact
-              last_name:
-                type: string
-                description: The last name of the emergency contact
-              relationship:
-                type: string
-                enum:
-                  - DAUGHTER
-                  - FRIEND
-                  - HUSBAND
-                  - SON
-                  - WIFE
-                  - OTHER
-                description: The relationship of the emergency contact to the applicant
-              address_1:
-                type: string
-                description: The first line of the address of the emergency contact
-              city:
-                type: string
-                description: The city of the address of the emergency contact
-              state:
-                type: string
-                enum:
-                  - AA
-                  - AE
-                  - AK
-                  - AL
-                  - AP
-                  - AR
-                  - AS
-                  - AZ
-                  - CA
-                  - CO
-                  - CT
-                  - DC
-                  - DE
-                  - FL
-                  - FM
-                  - GA
-                  - GU
-                  - HI
-                  - IA
-                  - ID
-                  - IN
-                  - KS
-                  - KY
-                  - LA
-                  - MA
-                  - MD
-                  - ME
-                  - MH
-                  - MI
-                  - MN
-                  - MO
-                  - MP
-                  - MS
-                  - MT
-                  - NC
-                  - NE
-                  - NL
-                  - NJ
-                  - NM
-                  - NV
-                  - NY
-                  - OH
-                  - OK
-                  - OR
-                  - PA
-                  - PR
-                  - SD
-                  - TN
-                  - TX
-                  - UT
-                  - VA
-                  - VI
-                  - VT
-                  - WA
-                  - WI
-                  - WV
-                  - WY
-                  - AB
-                  - BC
-                  - MB
-                  - NB
-                  - NL
-                  - NT
-                  - NS
-                  - NU
-                  - ON
-                  - PE
-                  - QC
-                  - SK
-                  - YT
-                description: The state of the address of the emergency contact
-              zip:
-                type: string
-                description: The zip code of the address of the emergency contact
-              country:
-                anyOf:
-                  - type: string
-                    enum:
-                      - United States
-                      - Canada
-                  - type: string
-                description: The country of the address of the emergency contact. If your
-                  application needs to support submitting an applicant who
-                  resides in another country, please reach out to Propexo
-                  Support for help
-              phone_1:
-                type: string
-                pattern: ^\d{10}$
-                description: The phone number of the emergency contact
-            required:
-              - first_name
-              - last_name
-              - relationship
-          maxItems: 1
-          default: []
-          description: A list of emergency contacts for the applicant
         other_income:
           type: array
           items:
@@ -12890,154 +13494,6 @@ components:
           description: A list of application fees for the application. Only new
             application fees should be passed in, existing fees cannot be
             updated
-        other_occupants:
-          type: array
-          items:
-            type: object
-            properties:
-              relationship:
-                type: string
-                enum:
-                  - ROOMMATE
-                  - SPOUSE
-                  - GUARANTOR
-                  - OTHER
-                description: The relationship of the occupant to the applicant
-              first_name:
-                type: string
-                description: The first name associated with the occupant
-              last_name:
-                type: string
-                description: The last name associated with the occupant
-              third_party_id:
-                type: string
-                minLength: 1
-                description: A unique ID you would like to associate with the occupant. This is
-                  not the Sample1 occupant ID
-              organization_name:
-                type: string
-                description: The name of your organization. Sample1 uses this for associating an
-                  occupant
-              email_1:
-                type: string
-                format: email
-                description: The primary email address associated with the occupant
-              phone_1:
-                type: string
-                pattern: ^\d{10}$
-                description: Primary phone number associated with the occupant
-              phone_1_type:
-                type: string
-                enum:
-                  - FAX
-                  - HOME
-                  - MOBILE
-                  - WORK
-                description: Type of the primary phone number
-              phone_2:
-                type: string
-                pattern: ^\d{10}$
-                description: Secondary phone number associated with the occupant
-              phone_2_type:
-                type: string
-                enum:
-                  - FAX
-                  - HOME
-                  - MOBILE
-                  - WORK
-                description: Type of the secondary phone number
-              address_1:
-                type: string
-                description: The first address line associated with the occupant
-              city:
-                type: string
-                description: The city associated with the occupant
-              state:
-                type: string
-                enum:
-                  - AA
-                  - AE
-                  - AK
-                  - AL
-                  - AP
-                  - AR
-                  - AS
-                  - AZ
-                  - CA
-                  - CO
-                  - CT
-                  - DC
-                  - DE
-                  - FL
-                  - FM
-                  - GA
-                  - GU
-                  - HI
-                  - IA
-                  - ID
-                  - IN
-                  - KS
-                  - KY
-                  - LA
-                  - MA
-                  - MD
-                  - ME
-                  - MH
-                  - MI
-                  - MN
-                  - MO
-                  - MP
-                  - MS
-                  - MT
-                  - NC
-                  - NE
-                  - NL
-                  - NJ
-                  - NM
-                  - NV
-                  - NY
-                  - OH
-                  - OK
-                  - OR
-                  - PA
-                  - PR
-                  - SD
-                  - TN
-                  - TX
-                  - UT
-                  - VA
-                  - VI
-                  - VT
-                  - WA
-                  - WI
-                  - WV
-                  - WY
-                  - AB
-                  - BC
-                  - MB
-                  - NB
-                  - NL
-                  - NT
-                  - NS
-                  - NU
-                  - ON
-                  - PE
-                  - QC
-                  - SK
-                  - YT
-                description: The state associated with the occupant
-              zip:
-                type: string
-                description: The zip code associated with the occupant
-            required:
-              - relationship
-              - first_name
-              - last_name
-              - third_party_id
-              - organization_name
-          default: []
-          description: A list of other occupants for the application. Only new occupants
-            should be passed in, existing occupants cannot be updated
     _v1_applications_{id}_put_output:
       type: object
       properties:
@@ -13484,7 +13940,9 @@ components:
             - "null"
           items:
             type: string
-            example: cm2jebkdu00062qoz5xyu84qj
+            x-propexo:
+              derivedFromModel: applicants_to_events
+              derivedFromField: applicant_id
         associated_resident_ids:
           type:
             - array
@@ -14650,6 +15108,7 @@ components:
             - number
             - "null"
           description: The amount of the resident charge, in cents
+          example: 100000
         amount_raw:
           type:
             - string
@@ -14660,6 +15119,7 @@ components:
             - number
             - "null"
           description: The amount open on the resident charge, in cents
+          example: 100000
         amount_open_raw:
           type:
             - string
@@ -14670,6 +15130,7 @@ components:
             - number
             - "null"
           description: The amount paid on the resident charge, in cents
+          example: 100000
         amount_paid_raw:
           type:
             - string
@@ -14787,6 +15248,7 @@ components:
                   - number
                   - "null"
                 description: The amount of the resident allocation, in cents
+                example: 100000
               amount_raw:
                 type:
                   - string
@@ -15140,6 +15602,7 @@ components:
             - number
             - "null"
           description: The total amount of the recurring resident charge
+          example: 100000
         amount_raw:
           type:
             - string
@@ -15568,6 +16031,7 @@ components:
                   - number
                   - "null"
                 description: The amount of the resident payment, in cents
+                example: 100000
               amount_raw:
                 type:
                   - string
@@ -15675,6 +16139,7 @@ components:
                         - number
                         - "null"
                       description: The amount of the resident allocation, in cents
+                      example: 100000
                     amount_raw:
                       type:
                         - string
@@ -15935,6 +16400,7 @@ components:
                 - number
                 - "null"
               description: The amount of the resident payment, in cents
+              example: 100000
             amount_raw:
               type:
                 - string
@@ -16042,6 +16508,7 @@ components:
                       - number
                       - "null"
                     description: The amount of the resident allocation, in cents
+                    example: 100000
                   amount_raw:
                     type:
                       - string
@@ -16607,6 +17074,7 @@ components:
             - number
             - "null"
           description: The total budget for the construction job
+          example: 100000
         custom_data:
           type:
             - object
@@ -16937,17 +17405,20 @@ components:
                   - number
                   - "null"
                 description: The original budget of the construction job detail
+                example: 100000
               revised_budget_in_cents:
                 type:
                   - number
                   - "null"
                 description: The revised budget of the construction job detail
+                example: 100000
               invoiced_total_in_cents:
                 type:
                   - number
                   - "null"
                 description: The total amount invoiced, in cents, for the construction job
                   detail
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -17076,6 +17547,7 @@ components:
             - number
             - "null"
           description: The total amount invoiced, in cents, for the contract
+          example: 100000
         notes:
           type:
             - string
@@ -17086,6 +17558,7 @@ components:
             - number
             - "null"
           description: The original amount of the contract
+          example: 100000
         retention_percent:
           type:
             - string
@@ -17111,6 +17584,7 @@ components:
             - number
             - "null"
           description: The total amount of the contract
+          example: 100000
         construction_job_id:
           type:
             - string
@@ -17262,6 +17736,7 @@ components:
             - number
             - "null"
           description: The total amount invoiced, in cents, for the contract detail
+          example: 100000
         notes:
           type:
             - string
@@ -17277,6 +17752,7 @@ components:
             - number
             - "null"
           description: The total amount of the contract detail
+          example: 100000
         contract_id:
           type: string
           description: The Propexo unique identifier for the contract
@@ -17388,6 +17864,12 @@ components:
             - type: boolean
             - type: string
           description: Whether the refund is due for the deposit summary
+        invoice_id_not_null:
+          anyOf:
+            - type: boolean
+            - type: string
+          description: Filter to only return deposit summaries where the invoice_id is not
+            null
     _v1_deposit-summaries__get_output:
       type: object
       properties:
@@ -17449,16 +17931,19 @@ components:
                   - number
                   - "null"
                 description: The amount charged in cents
+                example: 100000
               amount_paid_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount paid in cents
+                example: 100000
               amount_refunded_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount refunded in cents
+                example: 100000
               notes:
                 type:
                   - string
@@ -17469,6 +17954,7 @@ components:
                   - number
                   - "null"
                 description: The refund amount due in cents
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -17612,16 +18098,19 @@ components:
                 - number
                 - "null"
               description: The amount charged in cents
+              example: 100000
             amount_paid_in_cents:
               type:
                 - number
                 - "null"
               description: The amount paid in cents
+              example: 100000
             amount_refunded_in_cents:
               type:
                 - number
                 - "null"
               description: The amount refunded in cents
+              example: 100000
             notes:
               type:
                 - string
@@ -17632,6 +18121,7 @@ components:
                 - number
                 - "null"
               description: The refund amount due in cents
+              example: 100000
             custom_data:
               type:
                 - object
@@ -17691,6 +18181,83 @@ components:
       required:
         - meta
         - results
+    _v1_deposit-summaries_{deposit_summary_id}_put_input:
+      type: object
+      properties:
+        check_number:
+          type: string
+          minLength: 1
+          description: "The check number. Note: Must be unique per pay out."
+        post_month:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The post month of the check.
+        payment_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The payment date of the check.
+        total_amount_in_cents:
+          type: integer
+          exclusiveMinimum: 0
+          description: "The total amount in cents paid out to the resident for the deposit
+            refund. Note: Partial payments will be accepted, but the invoice
+            will not be marked as paid until the full amount is paid."
+        x_bank_id:
+          type: string
+          minLength: 1
+          description: The external ID of the bank from the integration vendor. You'll
+            likely want to work with your customer to find the appropriate value
+            here.
+        payment_method:
+          type: string
+          enum:
+            - CHECK
+            - EFT
+          description: "The payment method used for the refund payout. Note: To use EFT,
+            the associated bank account must be configured for electronic
+            payments."
+        notes:
+          type: string
+          minLength: 1
+          description: The notes for the check.
+        check_run_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The date the check was run.
+        financial_account_id:
+          type: string
+          description: The Propexo unique identifier for the financial account
+        check_cleared_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The date the check was cleared.
+        is_not_reconciled:
+          type: boolean
+          description: Whether the check is not reconciled
+    _v1_deposit-summaries_{deposit_summary_id}_put_output:
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The ID of the job created to handle this operation
+        data:
+          type: object
+          properties: {}
+      required:
+        - job_id
+        - data
     _v1_deposits__get_input:
       type: object
       properties:
@@ -17808,16 +18375,19 @@ components:
                   - number
                   - "null"
                 description: The amount charged in cents
+                example: 100000
               amount_paid_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount paid in cents
+                example: 100000
               amount_refunded_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount refunded in cents
+                example: 100000
               notes:
                 type:
                   - string
@@ -17828,6 +18398,7 @@ components:
                   - number
                   - "null"
                 description: The refund amount due in cents
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -17965,16 +18536,19 @@ components:
                 - number
                 - "null"
               description: The amount charged in cents
+              example: 100000
             amount_paid_in_cents:
               type:
                 - number
                 - "null"
               description: The amount paid in cents
+              example: 100000
             amount_refunded_in_cents:
               type:
                 - number
                 - "null"
               description: The amount refunded in cents
+              example: 100000
             notes:
               type:
                 - string
@@ -17985,6 +18559,7 @@ components:
                 - number
                 - "null"
               description: The refund amount due in cents
+              example: 100000
             custom_data:
               type:
                 - object
@@ -18038,78 +18613,6 @@ components:
       required:
         - meta
         - results
-    _v1_deposit-summaries_{deposit_summary_id}_put_input:
-      type: object
-      properties:
-        check_number:
-          type: string
-          description: "The check number. Note: Must be unique per pay out."
-        post_month:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The post month of the check.
-        payment_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The payment date of the check.
-        total_amount_in_cents:
-          type: integer
-          exclusiveMinimum: 0
-          description: "The total amount in cents paid out to the resident for the deposit
-            refund. Note: Partial payments will be accepted, but the invoice
-            will not be marked as paid until the full amount is paid."
-        x_bank_id:
-          type: string
-          description: The external ID of the bank from the integration vendor. You'll
-            likely want to work with your customer to find the appropriate value
-            here.
-        payment_method:
-          type: string
-          enum:
-            - CHECK
-            - EFT
-          description: The payment method used for the refund payout.
-        notes:
-          type: string
-          description: The notes for the check.
-        check_run_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The date the check was run.
-        financial_account_id:
-          type: string
-          description: The Propexo unique identifier for the financial account
-        check_cleared_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The date the check was cleared.
-        is_not_reconciled:
-          type: boolean
-          description: Whether the check is not reconciled
-    _v1_deposit-summaries_{deposit_summary_id}_put_output:
-      type: object
-      properties:
-        job_id:
-          type: string
-          description: The ID of the job created to handle this operation
-        data:
-          type: object
-          properties: {}
-      required:
-        - job_id
-        - data
     _v1_employees__get_input:
       type: object
       properties:
@@ -18396,6 +18899,12 @@ components:
         event_type_id:
           type: string
           description: The Propexo unique identifier for the event type
+        event_result_id:
+          type: string
+          description: The Propexo unique identifier for the event result
+        event_sub_type_id:
+          type: string
+          description: The Propexo unique identifier for the event sub type
         employee_id:
           type: string
           description: The Propexo unique identifier for the employee. Must have a role of
@@ -18422,6 +18931,59 @@ components:
         title:
           type: string
           description: The title associated with the event
+        call_phone_number_from:
+          type: string
+          description: The phone number that the call was made from. Required for call
+            event types.
+        call_phone_number_to:
+          type: string
+          description: The phone number that the call was received on. Required for call
+            event types.
+        call_status:
+          type: string
+          enum:
+            - BUSY
+            - ABANDONED
+            - DISCONNECTED
+            - FAILURE_TO_CONNECT
+            - NO_ANSWER
+            - ANSWER
+            - VOICEMAIL
+          description: The status of the call. Required for call event types.
+        call_duration:
+          type: integer
+          minimum: 0
+          maximum: 86400
+          description: The duration of the call in seconds. Required for call event types.
+        call_audio_link:
+          type: string
+          format: uri
+          description: The URL of the audio file for the call. This can be any valid URL
+            and doesn't necessarily need to link to a audio file. Required for
+            call event types.
+        email_body:
+          type: string
+          description: The body of the email.
+        email_subject:
+          type: string
+          description: The subject of the email.
+        email_from:
+          type: string
+          description: The email address that the email was sent from. Required for email
+            outgoing event types.
+        email_to:
+          type: string
+          description: The email address that the email was sent to. If specified, this
+            must be the same email address as the lead's primary email address
+        email_cc:
+          type: string
+          description: The carbon copy email address that the email was sent to.
+        email_bcc:
+          type: string
+          description: The blind carbon copy email address that the email was sent to.
+        email_send:
+          type: boolean
+          description: Whether the email should be sent.
         status:
           type: string
           enum:
@@ -18655,6 +19217,12 @@ components:
         event_type_id:
           type: string
           description: The Propexo unique identifier for the event type
+        event_result_id:
+          type: string
+          description: The Propexo unique identifier for the event result
+        event_sub_type_id:
+          type: string
+          description: The Propexo unique identifier for the event sub type
         employee_id:
           type: string
           description: The Propexo unique identifier for the employee. Must have a role of
@@ -18680,6 +19248,60 @@ components:
         title:
           type: string
           description: The title associated with the event
+        call_phone_number_from:
+          type: string
+          description: The phone number that the call was made from. Required for call
+            event types.
+        call_phone_number_to:
+          type: string
+          description: The phone number that the call was received on. Required for call
+            event types.
+        call_status:
+          type: string
+          enum:
+            - BUSY
+            - ABANDONED
+            - DISCONNECTED
+            - FAILURE_TO_CONNECT
+            - NO_ANSWER
+            - ANSWER
+            - VOICEMAIL
+          description: The status of the call. Required for call event types.
+        call_duration:
+          type: integer
+          minimum: 0
+          maximum: 86400
+          description: The duration of the call in seconds. Required for call event types.
+        call_audio_link:
+          type: string
+          format: uri
+          description: The URL of the audio file for the call. This can be any valid URL
+            and doesn't necessarily need to link to a audio file. Required for
+            call event types.
+        email_body:
+          type: string
+          description: The body of the email.
+        email_subject:
+          type: string
+          description: The subject of the email.
+        email_from:
+          type: string
+          description: The email address that the email was sent from. Required for email
+            outgoing event types.
+        email_to:
+          type: string
+          description: The email address that the email was sent to. If specified, this
+            must be the same email address as the resident's primary email
+            address
+        email_cc:
+          type: string
+          description: The carbon copy email address that the email was sent to.
+        email_bcc:
+          type: string
+          description: The blind carbon copy email address that the email was sent to.
+        email_send:
+          type: boolean
+          description: Whether the email should be sent.
         status:
           type: string
           enum:
@@ -19804,11 +20426,13 @@ components:
                   - number
                   - "null"
                 description: The amount due on the invoice, in cents
+                example: 100000
               amount_paid_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount paid on the invoice, in cents
+                example: 100000
               custom_data:
                 type:
                   - object
@@ -19824,6 +20448,7 @@ components:
                   - number
                   - "null"
                 description: The deposit amount in cents associated with the invoice
+                example: 100000
               discount_date:
                 type:
                   - string
@@ -19865,11 +20490,13 @@ components:
                   - number
                   - "null"
                 description: The sub total amount of the invoice
+                example: 100000
               total_amount_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount of the invoice, in cents
+                example: 100000
               property_id:
                 type: string
                 description: The Propexo unique identifier for the property
@@ -19936,6 +20563,7 @@ components:
                         - number
                         - "null"
                       description: The amount due on the invoice item, in cents
+                      example: 100000
                     notes:
                       type:
                         - string
@@ -19946,6 +20574,7 @@ components:
                         - number
                         - "null"
                       description: The amount of the invoice item, in cents
+                      example: 100000
                     property_id:
                       type: string
                       description: The Propexo unique identifier for the property
@@ -20019,20 +20648,14 @@ components:
         vendor_id:
           type: string
           description: The Propexo unique identifier for the vendor
-        vendor_location_id:
-          type: string
-          description: The Propexo unique identifier for the vendor location
-        invoice_number:
-          type: string
-          description: The invoice or reference number that the vendor assigned to the
-            service request
         invoice_date:
           type: string
           format: date-time
           description: The date of issuance for the invoice
-        total_amount_in_cents:
-          type: number
-          description: The amount of the invoice, in cents
+        due_date:
+          type: string
+          format: date-time
+          description: The due date associated with the invoice
         invoice_items:
           type: array
           items:
@@ -20055,6 +20678,22 @@ components:
               - financial_account_id
               - total_amount_in_cents
               - notes
+        description:
+          type: string
+          description: Description of the invoice
+        invoice_number:
+          type: string
+          description: The invoice or reference number that the vendor assigned to the
+            service request
+        service_request_id:
+          type: string
+          description: The Propexo unique identifier for the service request
+        vendor_location_id:
+          type: string
+          description: The Propexo unique identifier for the vendor location
+        total_amount_in_cents:
+          type: number
+          description: The amount of the invoice, in cents
         ap_financial_account_id:
           type: string
           description: The Propexo unique identifier for the financial account. You'll
@@ -20072,10 +20711,6 @@ components:
           type: number
           description: The discount, in cents, of the invoice. This amount will be applied
             prior to the total amount being calculated.
-        due_date:
-          type: string
-          format: date-time
-          description: The due date associated with the invoice
         notes:
           type: string
           description: Notes associated with the invoice
@@ -20101,6 +20736,32 @@ components:
               - mime_type
           description: Files to upload for the invoice. All the files can have a maximum
             combined file size of 50 MB
+        partner_name:
+          type: string
+          description: The name of your integration with MRI
+        scanned_copy_url:
+          type: string
+          description: The URL assigned to the copy of the original invoice that was
+            imported from a third-party system
+        purchase_order_number:
+          type: string
+          description: Set this parameter to the purchase order number that contains the
+            line items to be invoiced. MRI will validate and link the invoice to
+            the specified purchase order for processing.
+        separate_check:
+          type: boolean
+          description: Whether to group the invoice payment on the same check with other
+            invoices or pay the invoice separately on its own check
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location
+        post_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The post date for the invoice.
         property_id:
           type: string
           description: The Propexo unique identifier for the property
@@ -20230,11 +20891,13 @@ components:
                 - number
                 - "null"
               description: The amount due on the invoice, in cents
+              example: 100000
             amount_paid_in_cents:
               type:
                 - number
                 - "null"
               description: The amount paid on the invoice, in cents
+              example: 100000
             custom_data:
               type:
                 - object
@@ -20250,6 +20913,7 @@ components:
                 - number
                 - "null"
               description: The deposit amount in cents associated with the invoice
+              example: 100000
             discount_date:
               type:
                 - string
@@ -20291,11 +20955,13 @@ components:
                 - number
                 - "null"
               description: The sub total amount of the invoice
+              example: 100000
             total_amount_in_cents:
               type:
                 - number
                 - "null"
               description: The amount of the invoice, in cents
+              example: 100000
             property_id:
               type: string
               description: The Propexo unique identifier for the property
@@ -20362,6 +21028,7 @@ components:
                       - number
                       - "null"
                     description: The amount due on the invoice item, in cents
+                    example: 100000
                   notes:
                     type:
                       - string
@@ -20372,6 +21039,7 @@ components:
                       - number
                       - "null"
                     description: The amount of the invoice item, in cents
+                    example: 100000
                   property_id:
                     type: string
                     description: The Propexo unique identifier for the property
@@ -20439,7 +21107,43 @@ components:
         - results
     _v1_invoices_{invoice_id}_put_input:
       type: object
-      properties: {}
+      properties:
+        expense_period:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The expense period associated with the invoice
+        payment_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The payment date associated with the invoice
+        payment_period:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The accounting period in which you want to make the payment
+        check_number:
+          type: string
+          maxLength: 9
+          description: The check number associated with the invoice
+        status:
+          type: string
+          enum:
+            - PAY
+            - RELEASE
+            - HOLD
+          description: Status of invoice
+        item_number:
+          type: integer
+          exclusiveMinimum: 0
+          description: Line Item number of the Invoice record.
     _v1_invoices_{invoice_id}_put_output:
       type: object
       properties:
@@ -20552,11 +21256,13 @@ components:
             - number
             - "null"
           description: The amount due on the payable register, in cents
+          example: 100000
         amount_paid_in_cents:
           type:
             - number
             - "null"
           description: The amount paid on the payable register, in cents
+          example: 100000
         custom_data:
           type:
             - object
@@ -20572,6 +21278,7 @@ components:
             - number
             - "null"
           description: The discount, in cents, of the payable register
+          example: 100000
         discount_date:
           type:
             - string
@@ -20613,11 +21320,13 @@ components:
             - number
             - "null"
           description: The sub total amount of the payable register
+          example: 100000
         total_amount_in_cents:
           type:
             - number
             - "null"
           description: The amount of the payable register, in cents
+          example: 100000
         status:
           type:
             - string
@@ -20719,6 +21428,7 @@ components:
                   - number
                   - "null"
                 description: The amount due on the payable register item, in cents
+                example: 100000
               notes:
                 type:
                   - string
@@ -20729,6 +21439,7 @@ components:
                   - number
                   - "null"
                 description: The amount of the payable register item, in cents
+                example: 100000
               cost_code:
                 type:
                   - string
@@ -21224,6 +21935,7 @@ components:
             - number
             - "null"
           description: The desired maximum rent
+          example: 100000
         desired_max_square_ft:
           type:
             - number
@@ -21234,6 +21946,7 @@ components:
             - number
             - "null"
           description: The desired minimum rent
+          example: 100000
         desired_min_square_ft:
           type:
             - number
@@ -22401,6 +23114,59 @@ components:
       required:
         - meta
         - results
+    _v1_leads_{id}_rentable-items_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+    _v1_leads_{id}_rentable-items_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/RentableItem"
+      required:
+        - meta
+        - results
     _v1_leases__get_input:
       type: object
       properties:
@@ -22617,6 +23383,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the lease
+          example: 100000
         deposit_date:
           type:
             - string
@@ -22648,11 +23415,13 @@ components:
             - number
             - "null"
           description: The rent amount in cents for the lease
+          example: 100000
         rent_amount_market_in_cents:
           type:
             - number
             - "null"
           description: The market rent amount in cents for the lease
+          example: 100000
         rent_due_day:
           type:
             - integer
@@ -22734,10 +23503,10 @@ components:
             identify a unit associated with a service request in some cases.
         write_off_amount_in_cents:
           type:
-            - string
+            - number
             - "null"
-          pattern: ^d+$
           description: The write off amount for the lease, in cents
+          example: 100000
         write_off_amount_raw:
           type:
             - string
@@ -22745,10 +23514,10 @@ components:
           description: The raw write off amount of the lease from the PMS
         balance_amount_in_cents:
           type:
-            - string
+            - number
             - "null"
-          pattern: ^d+$
           description: The balance amount for the lease, in cents
+          example: 100000
         balance_amount_raw:
           type:
             - string
@@ -22756,10 +23525,10 @@ components:
           description: The raw balance amount of the lease from the PMS
         past_due_balance_in_cents:
           type:
-            - string
+            - number
             - "null"
-          pattern: ^d+$
           description: The past due balance for the lease, in cents
+          example: 100000
         past_due_balance_raw:
           type:
             - string
@@ -22896,16 +23665,16 @@ components:
             not specified
         address_1:
           type: string
-          description: The first address line associated with the applicant
+          description: The first address line associated with the resident
         city:
           type: string
-          description: The city associated with the applicant
+          description: The city associated with the resident
         state:
           type: string
-          description: The state associated with the applicant
+          description: The state associated with the resident
         zip:
           type: string
-          description: The zip code associated with the applicant
+          description: The zip code associated with the resident
         country:
           type: string
           enum:
@@ -23056,11 +23825,8 @@ components:
           type: string
           enum:
             - PENDING
-            - APPROVED
-            - CANCELED
-            - DENIED
-            - SIGNED
-          description: The status associated with the application
+            - ACTIVE
+          description: The status associated with the lease
         resident_id:
           type: string
           description: The Propexo unique identifier for the resident
@@ -23322,23 +24088,6 @@ components:
           type: string
           description: The Propexo unique identifier for the lead. The lead will be
             converted to an applicant
-        application_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The application date associated with the applicant
-        rent_amount_market_in_cents:
-          type: integer
-          description: The market rent amount in cents for the lease
-        move_in_date:
-          anyOf:
-            - type: string
-              format: date-time
-            - type: string
-              pattern: ^\d{4}-\d{2}-\d{2}$
-          description: The desired move-in date to the unit listed in the application
         lead_source_id:
           type: string
           description: The Propexo unique identifier for the lead source. Required if
@@ -23358,6 +24107,13 @@ components:
         maiden_name:
           type: string
           description: The maiden name associated with the applicant
+        move_in_date:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: string
+              pattern: ^\d{4}-\d{2}-\d{2}$
+          description: The desired move-in date to the unit listed in the application
         move_out_date:
           anyOf:
             - type: string
@@ -25340,6 +26096,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the listing
+          example: 100000
         floor_plan_code:
           type:
             - string
@@ -25419,6 +26176,7 @@ components:
             - number
             - "null"
           description: The rent amount in cents for the listing
+          example: 100000
         specials:
           type:
             - string
@@ -25740,16 +26498,19 @@ components:
                   - number
                   - "null"
                 description: The base rent cost of the listing, in cents
+                example: 100000
               concession_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount of the concession for the listing, in cents
+                example: 100000
               effective_rent_in_cents:
                 type:
                   - number
                   - "null"
                 description: The amount of the effective rent for the listing, in cents
+                example: 100000
               start_date:
                 type:
                   - string
@@ -26404,6 +27165,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the pet type
+          example: 100000
         fee_raw:
           type:
             - string
@@ -26414,6 +27176,7 @@ components:
             - number
             - "null"
           description: The fee amount in cents for the pet type
+          example: 100000
         fee_min_raw:
           type:
             - string
@@ -26424,6 +27187,7 @@ components:
             - number
             - "null"
           description: The minimum fee amount in cents for the pet type
+          example: 100000
         fee_max_raw:
           type:
             - string
@@ -26434,6 +27198,7 @@ components:
             - number
             - "null"
           description: The maxmimum raw fee amount in cents for the pet type
+          example: 100000
         rent_amount_raw:
           type:
             - string
@@ -26444,6 +27209,7 @@ components:
             - number
             - "null"
           description: The rent amount in cents for the pet type
+          example: 100000
       required:
         - name
         - is_allowed
@@ -27039,141 +27805,6 @@ components:
           description: The Propexo unique identifier for the integration
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
-    RentableItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The Propexo unique identifier for the rentable item
-        created_at:
-          type: string
-          description: The date record first entered Propexo
-        updated_at:
-          type: string
-          description: The date record was last updated in Propexo
-        last_seen:
-          type:
-            - string
-            - "null"
-          description: The date the record was last seen from the PMS
-        x_id:
-          type: string
-          description: The external ID from the integration vendor
-        x_property_id:
-          type: string
-          description: The external ID of the property from the integration vendor
-        x_location_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the location (exclusive to Rent Manager
-            integrations). This is always null for non-Rent Manager
-            integrations.
-        x_applicant_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the applicant from the integration vendor
-        x_lead_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the lead from the integration vendor
-        x_resident_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the resident from the integration vendor
-        x_type_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the type from the integration vendor
-        x_charge_code_id:
-          type:
-            - string
-            - "null"
-          description: The external ID of the charge code from the integration vendor
-        amount_in_cents:
-          type:
-            - number
-            - "null"
-          description: The amount of the rentable item, in cents
-        description:
-          type:
-            - string
-            - "null"
-          description: Description of the rentable item
-        is_available:
-          type:
-            - boolean
-            - "null"
-          description: Whether the rentable item is available
-        reserved_until_date:
-          type:
-            - string
-            - "null"
-          description: The date the rentable item is reserved until
-        type:
-          type:
-            - string
-            - "null"
-          description: The type associated with the rentable item
-        integration_id:
-          type: string
-          description: The Propexo unique identifier for the integration
-        integration_vendor:
-          $ref: "#/components/schemas/Enum1"
-        property_id:
-          type: string
-          description: The Propexo unique identifier for the property
-        applicant_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the applicant
-        lead_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the lead
-        resident_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the resident
-        charge_code_id:
-          type:
-            - string
-            - "null"
-          description: The Propexo unique identifier for the charge code
-      required:
-        - id
-        - created_at
-        - updated_at
-        - last_seen
-        - x_id
-        - x_property_id
-        - x_location_id
-        - x_applicant_id
-        - x_lead_id
-        - x_resident_id
-        - x_type_id
-        - x_charge_code_id
-        - amount_in_cents
-        - description
-        - is_available
-        - reserved_until_date
-        - type
-        - integration_id
-        - integration_vendor
-        - property_id
-        - applicant_id
-        - lead_id
-        - resident_id
-        - charge_code_id
-      x-propexo:
-        derivedFromModel: rentable_items
     _v1_rentable-items__get_output:
       type: object
       properties:
@@ -27678,6 +28309,7 @@ components:
             - number
             - "null"
           description: The amount of the purchase order, in cents
+          example: 100000
         order_date:
           type:
             - string
@@ -27693,6 +28325,11 @@ components:
             - string
             - "null"
           description: The display type of the purchase order
+        status_raw:
+          type:
+            - string
+            - "null"
+          description: The raw status associated with the purchase order
         shipping_address_1:
           type:
             - string
@@ -27812,6 +28449,7 @@ components:
         - order_date
         - expense_type
         - display_type
+        - status_raw
         - shipping_address_1
         - shipping_address_2
         - shipping_city
@@ -28465,6 +29103,9 @@ components:
               construction_job_id:
                 type: string
                 description: The Propexo unique identifier for the construction job
+              financial_account_id:
+                type: string
+                description: The Propexo unique identifier for the financial account
               stock_code:
                 type: string
                 description: The stock code for the purchase order item. You'll have to request
@@ -28489,7 +29130,6 @@ components:
             required:
               - property_id
               - description
-              - construction_job_id
               - stock_code
               - quantity_ordered
               - unit_price_in_cents
@@ -28593,11 +29233,13 @@ components:
             - number
             - "null"
           description: The unit price, in cents, of the purchase order item
+          example: 100000
         total_cost_in_cents:
           type:
             - number
             - "null"
           description: The total cost, in cents, of the purchase order item
+          example: 100000
         cost_code:
           type:
             - string
@@ -28616,6 +29258,11 @@ components:
             - string
             - "null"
           description: The Propexo unique identifier for the construction job
+        financial_account_id:
+          type:
+            - string
+            - "null"
+          description: The Propexo unique identifier for the financial account
         custom_data:
           type:
             - object
@@ -28650,6 +29297,7 @@ components:
         - category_code
         - purchase_order_id
         - construction_job_id
+        - financial_account_id
         - custom_data
         - associated_invoice_ids
         - property_id
@@ -28833,6 +29481,7 @@ components:
                   - number
                   - "null"
                 description: The rent balance owed
+                example: 100000
               city_alternate:
                 type:
                   - string
@@ -28893,6 +29542,7 @@ components:
                   - number
                   - "null"
                 description: The past due rent balance owed
+                example: 100000
               middle_name:
                 type:
                   - string
@@ -29199,8 +29849,7 @@ components:
         email_2:
           type: string
           format: email
-          description: The secondary email address for the resident.  This value maps to
-            the altEmail property of the Contact object
+          description: The secondary email address associated with the resident
         date_of_birth:
           type: string
           format: date-time
@@ -29212,8 +29861,7 @@ components:
             of the primary address of the Tenant object
         address_2:
           type: string
-          description: Second line of the street address for the resident.  This maps to
-            the address2 property of the Contact object
+          description: The second address line associated with the resident
         city:
           type: string
           description: City of the resident's primary address
@@ -29224,9 +29872,13 @@ components:
           type: string
           description: Zip/Postal Code of the resident's primary address
         country:
-          type: string
-          description: Country of the resident's address.  This maps to the country
-            property of the Contact object
+          anyOf:
+            - type: string
+              enum:
+                - United States
+                - Canada
+            - type: string
+          description: The country associated with the resident
         address_1_alternate:
           type: string
           description: Secondary/alternate street address for the resident. This maps to
@@ -29255,32 +29907,28 @@ components:
           description: Notes about the resident
         phone_1:
           type: string
-          description: Primary phone number for the resident.  Depending on the value of
-            phone_1_type, this may map to the properties fax, homePhone,
-            mobilePhone, or workPhone.
+          description: Primary phone number associated with the resident
         phone_1_type:
           type: string
           enum:
+            - FAX
             - HOME
             - MOBILE
+            - OTHER
             - WORK
-            - FAX
-          description: The type of the primary phone. Must be one of 'HOME', 'MOBILE',
-            'WORK', or 'FAX'
+          description: Type of the primary phone number
         phone_2:
           type: string
-          description: Secondary phone number for the resident.  Depending on the value of
-            phone_1_type, this may map to the properties fax, homePhone,
-            mobilePhone, or workPhone.
+          description: Secondary phone number associated with the resident
         phone_2_type:
           type: string
           enum:
+            - FAX
             - HOME
             - MOBILE
+            - OTHER
             - WORK
-            - FAX
-          description: The type of the secondary phone. Must be one of 'HOME', 'MOBILE',
-            'WORK', or 'FAX'
+          description: Type of the secondary phone number
         custom_data:
           type: object
           properties: {}
@@ -29491,6 +30139,7 @@ components:
                 - number
                 - "null"
               description: The rent balance owed
+              example: 100000
             city_alternate:
               type:
                 - string
@@ -29551,6 +30200,7 @@ components:
                 - number
                 - "null"
               description: The past due rent balance owed
+              example: 100000
             middle_name:
               type:
                 - string
@@ -30344,6 +30994,7 @@ components:
                   - number
                   - "null"
                 description: The liability amount in cents
+                example: 100000
               liability_amount_raw:
                 type:
                   - string
@@ -30518,6 +31169,7 @@ components:
                 - number
                 - "null"
               description: The liability amount in cents
+              example: 100000
             liability_amount_raw:
               type:
                 - string
@@ -30579,6 +31231,59 @@ components:
             - resident_id
           x-propexo:
             derivedFromModel: resident_insurance
+      required:
+        - meta
+        - results
+    _v1_residents_{id}_rentable-items_get_input:
+      type: object
+      properties:
+        order-by:
+          type: string
+          default: created_at:desc
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+        offset:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          default: 0
+          description: Can be used for paginating results
+        limit:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 250
+          default: 100
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+        x_id:
+          type: string
+          description: The external ID from the integration vendor
+        location_id:
+          type: string
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+        property_id:
+          type: string
+          description: The Propexo unique identifier for the property
+        integration_id:
+          type: string
+          description: The Propexo unique identifier for the integration
+        integration_vendor:
+          $ref: "#/components/schemas/Enum1"
+    _v1_residents_{id}_rentable-items_get_output:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/ResponseMeta"
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/RentableItem"
       required:
         - meta
         - results
@@ -31096,6 +31801,15 @@ components:
           type: string
           format: date-time
           description: The date the service request was completed
+        access_is_authorized_value:
+          type: string
+          enum:
+            - ENTER_AT_ANY_TIME
+            - BY_PERMISSION_ONLY
+            - CALL_FOR_ENTRY
+          description: 'Type of permission needed to enter the unit. Possible values:
+            "ENTER_AT_ANY_TIME" - Enter any time, "BY_PERMISSION_ONLY" - By
+            permission only, "CALL_FOR_ENTRY" - Call for entry'
         service_request_status_id:
           type: string
           description: The Propexo unique identifier for the service request status
@@ -32859,11 +33573,13 @@ components:
             - number
             - "null"
           description: The minimum rent of the floor plan
+          example: 100000
         rent_maximum_in_cents:
           type:
             - number
             - "null"
           description: The maximum rent of the floor plan
+          example: 100000
         image_urls:
           type: array
           items:
@@ -32879,6 +33595,7 @@ components:
             - number
             - "null"
           description: The deposit amount in cents associated with the floor plan
+          example: 100000
         deposit_amount_raw:
           type:
             - string
@@ -32889,11 +33606,13 @@ components:
             - number
             - "null"
           description: The minimum deposit amount in cents associated with the floor plan
+          example: 100000
         deposit_amount_max_in_cents:
           type:
             - number
             - "null"
           description: The maximum deposit amount in cents associated with the floor plan
+          example: 100000
         deposit_amount_min_raw:
           type:
             - string
@@ -33175,16 +33894,19 @@ components:
                   - number
                   - "null"
                 description: The market rent amount in cents for the unit
+                example: 100000
               rent_amount_max_in_cents:
                 type:
                   - number
                   - "null"
                 description: The maximum rent amount in cents
+                example: 100000
               rent_amount_min_in_cents:
                 type:
                   - number
                   - "null"
                 description: The minimum rent amount in cents
+                example: 100000
               square_feet:
                 type:
                   - integer
@@ -33533,16 +34255,19 @@ components:
                   - number
                   - "null"
                 description: The market rent cost of the floor plan, in cents
+                example: 100000
               unit_market_rent_in_cents:
                 type:
                   - number
                   - "null"
                 description: The market rent cost of the unit, in cents
+                example: 100000
               base_rent_in_cents:
                 type:
                   - number
                   - "null"
                 description: The base rent cost of the unit, in cents
+                example: 100000
               unit_number:
                 type:
                   - string
@@ -33850,16 +34575,19 @@ components:
                 - number
                 - "null"
               description: The market rent amount in cents for the unit
+              example: 100000
             rent_amount_max_in_cents:
               type:
                 - number
                 - "null"
               description: The maximum rent amount in cents
+              example: 100000
             rent_amount_min_in_cents:
               type:
                 - number
                 - "null"
               description: The minimum rent amount in cents
+              example: 100000
             square_feet:
               type:
                 - integer
@@ -34186,11 +34914,13 @@ components:
                   - number
                   - "null"
                 description: The minimum rent of the unit type
+                example: 100000
               rent_maximum_in_cents:
                 type:
                   - number
                   - "null"
                 description: The maximum rent of the unit type
+                example: 100000
               unit_count:
                 type:
                   - integer
@@ -34202,6 +34932,7 @@ components:
                   - number
                   - "null"
                 description: The deposit amount in cents associated with the unit type
+                example: 100000
               deposit_amount_raw:
                 type:
                   - string
@@ -34346,11 +35077,13 @@ components:
                 - number
                 - "null"
               description: The minimum rent of the unit type
+              example: 100000
             rent_maximum_in_cents:
               type:
                 - number
                 - "null"
               description: The maximum rent of the unit type
+              example: 100000
             unit_count:
               type:
                 - integer
@@ -34362,6 +35095,7 @@ components:
                 - number
                 - "null"
               description: The deposit amount in cents associated with the unit type
+              example: 100000
             deposit_amount_raw:
               type:
                 - string
@@ -34499,16 +35233,19 @@ components:
                 - number
                 - "null"
               description: The market rent cost of the floor plan, in cents
+              example: 100000
             unit_market_rent_in_cents:
               type:
                 - number
                 - "null"
               description: The market rent cost of the unit, in cents
+              example: 100000
             base_rent_in_cents:
               type:
                 - number
                 - "null"
               description: The base rent cost of the unit, in cents
+              example: 100000
             unit_number:
               type:
                 - string
@@ -35266,6 +36003,7 @@ components:
           description: Whether the vendor is active
         notes:
           type: string
+          maxLength: 1998
           description: Notes associated with the vendor
         tax_id:
           type: string
@@ -35752,6 +36490,7 @@ components:
               - JOB_FAILURE
               - SYNC_COMPLETE
               - FIRST_SYNC_COMPLETE
+              - WRITE_OPERATION_FAILURE
           minItems: 1
           description: The events that will trigger the webhook
         active:
@@ -35766,6 +36505,8 @@ components:
         model:
           type: string
           enum:
+            - accounting_entities
+            - address_types
             - amenities
             - ap_codes
             - ap_codes_to_construction_job
@@ -35773,22 +36514,31 @@ components:
             - applicants
             - applicants_to_applications
             - applicants_to_events
+            - applicants_to_rentable_items
             - application_statuses
             - applications
             - call_logs
+            - charge_code_types
+            - charge_code_types_to_charge_timings
             - charge_codes
+            - charge_timings
             - concessions
             - construction_job_details
             - construction_jobs
             - contract_details
             - contracts
             - crm_agents
+            - crm_amenities
             - crm_attributions
             - crm_communities
             - crm_communities_to_agents
             - crm_communities_to_attributions
             - crm_events
             - crm_listings
+            - crm_pet_policies
+            - crm_prospects
+            - deposit_summaries
+            - deposits
             - employees
             - entrata_lease_periods
             - entrata_unit_types
@@ -35798,6 +36548,7 @@ components:
             - event_sub_types
             - event_types
             - events
+            - fees
             - file_types
             - financial_accounts
             - floor_plans
@@ -35809,6 +36560,7 @@ components:
             - lead_sources
             - leads
             - leads_to_events
+            - leads_to_rentable_items
             - lease_services
             - lease_transfers
             - leases
@@ -35839,6 +36591,7 @@ components:
             - residents
             - residents_to_events
             - residents_to_leases
+            - residents_to_rentable_items
             - screenings
             - service_request_access_contacts
             - service_request_categories
@@ -36082,11 +36835,14 @@ components:
               - JOB_SUCCESS
               - SYNC_COMPLETE
               - FIRST_SYNC_COMPLETE
+              - WRITE_OPERATION_FAILURE
           minItems: 1
           description: The events that will trigger the webhook
         model:
           type: string
           enum:
+            - accounting_entities
+            - address_types
             - amenities
             - ap_codes
             - ap_codes_to_construction_job
@@ -36094,22 +36850,31 @@ components:
             - applicants
             - applicants_to_applications
             - applicants_to_events
+            - applicants_to_rentable_items
             - application_statuses
             - applications
             - call_logs
+            - charge_code_types
+            - charge_code_types_to_charge_timings
             - charge_codes
+            - charge_timings
             - concessions
             - construction_job_details
             - construction_jobs
             - contract_details
             - contracts
             - crm_agents
+            - crm_amenities
             - crm_attributions
             - crm_communities
             - crm_communities_to_agents
             - crm_communities_to_attributions
             - crm_events
             - crm_listings
+            - crm_pet_policies
+            - crm_prospects
+            - deposit_summaries
+            - deposits
             - employees
             - entrata_lease_periods
             - entrata_unit_types
@@ -36119,6 +36884,7 @@ components:
             - event_sub_types
             - event_types
             - events
+            - fees
             - file_types
             - financial_accounts
             - floor_plans
@@ -36130,6 +36896,7 @@ components:
             - lead_sources
             - leads
             - leads_to_events
+            - leads_to_rentable_items
             - lease_services
             - lease_transfers
             - leases
@@ -36160,6 +36927,7 @@ components:
             - residents
             - residents_to_events
             - residents_to_leases
+            - residents_to_rentable_items
             - screenings
             - service_request_access_contacts
             - service_request_categories
@@ -36455,8 +37223,14 @@ paths:
                 $ref: "#/components/schemas/errorResponse"
   /v1/admin/job-logs/{job_log_id}/data:
     get:
-      description: Get a link to the job log raw request and response data of a write
-        job. Only POST and PUT job payloads can be viewed.
+      description: >-
+        Get a link to the job log raw request and response data of a write job.
+        Only POST and PUT job payloads can be viewed. This endpoint will return
+        a 302 status code with a `Location` header that can be followed to
+        download the raw request and response data.
+
+
+        Some HTTP clients (including some older versions of cURL) will carry the `Authentication` header when the redirect is followed. This will cause an error conflicting with the authentication in the presigned URL being returned by this endpoint. If you see this error, you will need to make sure your HTTP client isn't passing `Authentication` headers on redirect. If you're using cURL, use the `-L` flag. For other HTTP client, consult their documentation.
       summary: Get a link to the job log raw request and response data of a write job.
       tags:
         - admin
@@ -36551,6 +37325,7 @@ paths:
               - applications
               - contracts
               - crm_listings
+              - deposit_summaries
               - event_types
               - events
               - file_types
@@ -37573,8 +38348,31 @@ paths:
                 $ref: "#/components/schemas/errorResponse"
   /v1/admin/normalization/{model}/{field}:
     get:
-      description: Get the normalized values mappings for a specific field
-      summary: Get the normalized values mappings for a specific field
+      description: >-
+        Retrieves the custom enum mappings that normalize PMS-specific enum
+        values to standardized Propexo values. These mappings can be
+        user-customized per integration or use default system mappings. Custom
+        enum fields in the API schema are identified by types beginning with
+        "enum." (e.g., enum.lease_status, enum.applicant_status).
+
+
+        Valid model/field combinations:
+
+        - leases/status → Maps PMS-specific lease status values to normalized lease statuses. Used by the leases.status field. Custom enum type in schema: enum.lease_status Possible normalized values: ACTIVE, INACTIVE, OTHER, PENDING, EVICTED
+
+        - residents/type → Maps PMS-specific resident type values to normalized resident types. Used by the residents.type field. Custom enum type in schema: enum.resident_type Possible normalized values: PRIMARY, SECONDARY, GUARANTOR, OTHER
+
+        - billing/payment-method → Maps PMS-specific payment method values to normalized payment methods. Used by the billing.payment-method field (which corresponds to payment_method on transaction records). Custom enum type in schema: enum.transaction_payment_method Possible normalized values: CASH, CASHIERCHECK, CHECK, CREDITCARD, MONEYORDER, DIRECTDEPOSIT, ELECTRONICPAYMENT, OTHER
+
+        - properties/type → Maps PMS-specific property type values to normalized property types. Used by the properties.type field. Custom enum type in schema: enum.property_type Possible normalized values: SINGLE_FAMILY, MULTI_FAMILY, STUDENT_HOUSING, VACATION, COMMERCIAL, OTHER
+
+        - applicants/status → Maps PMS-specific applicant status values to normalized applicant statuses. Used by the applicants.status field. Custom enum type in schema: enum.applicant_status Possible normalized values: APPROVED, DENIED, CANCELED, OTHER, PENDING
+
+        - applicants/type → Maps PMS-specific applicant type values to normalized applicant types. Used by the applicants.type field. Custom enum type in schema: enum.applicant_type Possible normalized values: GUARANTOR, OTHER, PRIMARY, SECONDARY
+
+
+        Custom enum mappings allow user-configurable normalization of PMS-specific enum values to standardized Propexo values. You can identify custom enum fields in the schema by looking for types that begin with "enum." prefix (e.g., enum.lease_status, enum.applicant_status).
+      summary: Get custom enum mappings for normalizing PMS-specific field values
       tags:
         - admin
       security:
@@ -37582,23 +38380,41 @@ paths:
       parameters:
         - schema:
             type: string
-            description: The ID of the resource.
+            description: "The model name (route parameter). Must be one of: leases,
+              residents, billing, properties, or applicants. See the endpoint
+              description for valid model/field combinations."
           required: true
-          description: The ID of the resource.
+          description: "The model name (route parameter). Must be one of: leases,
+            residents, billing, properties, or applicants. See the endpoint
+            description for valid model/field combinations."
           name: model
           in: path
         - schema:
             type: string
-            description: The ID of the resource.
+            description: "The field name within the model (route parameter). Valid fields
+              depend on the model. For example: leases.status,
+              applicants.status, applicants.type, residents.type,
+              properties.type, billing.payment-method. See the endpoint
+              description for all valid model/field combinations."
           required: true
-          description: The ID of the resource.
+          description: "The field name within the model (route parameter). Valid fields
+            depend on the model. For example: leases.status, applicants.status,
+            applicants.type, residents.type, properties.type,
+            billing.payment-method. See the endpoint description for all valid
+            model/field combinations."
           name: field
           in: path
         - schema:
             type: string
-            description: The ID of the integration the mappings are associated with, if any.
+            description: The ID of the integration for which to retrieve custom mappings. If
+              provided, returns integration-specific custom mappings (if they
+              exist). If omitted, returns the default system mappings for the
+              vendor.
           required: false
-          description: The ID of the integration the mappings are associated with, if any.
+          description: The ID of the integration for which to retrieve custom mappings. If
+            provided, returns integration-specific custom mappings (if they
+            exist). If omitted, returns the default system mappings for the
+            vendor.
           name: integration_id
           in: query
         - schema:
@@ -38468,6 +39284,124 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_applicants_{id}_put_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/applicants/{id}/rentable-items:
+    get:
+      description: Get all rentable items associated with a specific applicant
+      summary: Get rentable items for an applicant
+      tags:
+        - applicants
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_applicants_{id}_rentable-items_get_output"
         "400":
           description: Bad Request
           content:
@@ -39840,7 +40774,8 @@ paths:
     get:
       description: The Resident Charges model provides a limited, one-sided view of a
         resident's financial history with a PMC and should not be treated as a
-        comprehensive report of all charges that the resident owes.
+        comprehensive report of all charges that the resident owes. Credits to a
+        resident's ledger are stored as negative charges.
       summary: Get all resident charges
       tags:
         - billing-and-payments
@@ -39992,7 +40927,8 @@ paths:
     get:
       description: The Resident Charges model provides a limited, one-sided view of a
         resident's financial history with a PMC and should not be treated as a
-        comprehensive report of all charges that the resident owes.
+        comprehensive report of all charges that the resident owes. Credits to a
+        resident's ledger are stored as negative charges.
       summary: Get a resident charge by ID
       tags:
         - billing-and-payments
@@ -41586,6 +42522,17 @@ paths:
           description: Whether the refund is due for the deposit summary
           name: refund_is_due
           in: query
+        - schema:
+            anyOf:
+              - type: boolean
+              - type: string
+            description: Filter to only return deposit summaries where the invoice_id is not
+              null
+          required: false
+          description: Filter to only return deposit summaries where the invoice_id is not
+            null
+          name: invoice_id_not_null
+          in: query
       responses:
         "200":
           description: Successful response
@@ -41671,7 +42618,7 @@ paths:
       description: Update a deposit summary for an integration.
       summary: Update deposit summary
       tags:
-        - deposits
+        - deposit-summaries
       security:
         - bearerAuth: []
       parameters:
@@ -44481,6 +45428,124 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/_v1_lead-sources_{lead_source_id}_get_output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/leads/{id}/rentable-items:
+    get:
+      description: Get all rentable items associated with a specific lead
+      summary: Get rentable items for a lead
+      tags:
+        - leads
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_leads_{id}_rentable-items_get_output"
         "400":
           description: Bad Request
           content:
@@ -47349,6 +48414,124 @@ paths:
               schema:
                 $ref: "#/components/schemas/_v1_resident-insurance_{resident_insurance_id}_get_\
                   output"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /v1/residents/{id}/rentable-items:
+    get:
+      description: Get all rentable items associated with a specific resident
+      summary: Get rentable items for a resident
+      tags:
+        - residents
+      security:
+        - bearerAuth: []
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          description: The ID of the resource.
+          name: id
+          in: path
+        - schema:
+            type: string
+            default: created_at:desc
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=updated_at:desc"
+          required: false
+          description: "Order the results by a field. Optionally include asc or desc
+            preceded by a colon (default is asc). Example:
+            ?order-by=updated_at:desc"
+          name: order-by
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            default: 0
+            description: Can be used for paginating results
+          required: false
+          description: Can be used for paginating results
+          name: offset
+          in: query
+        - schema:
+            type:
+              - integer
+              - "null"
+            minimum: 0
+            maximum: 250
+            default: 100
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+          required: false
+          description: A number between 1 and 250 to determine the number of results to
+            return in a single query
+          name: limit
+          in: query
+        - schema:
+            type: string
+            description: The external ID from the integration vendor
+          required: false
+          description: The external ID from the integration vendor
+          name: x_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the location associated with the
+              property (exclusive to Rent Manager integrations). This is always
+              null for non-Rent Manager integrations.
+          required: false
+          description: The Propexo unique identifier for the location associated with the
+            property (exclusive to Rent Manager integrations). This is always
+            null for non-Rent Manager integrations.
+          name: location_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the property
+          required: false
+          description: The Propexo unique identifier for the property
+          name: property_id
+          in: query
+        - schema:
+            type: string
+            description: The Propexo unique identifier for the integration
+          required: false
+          description: The Propexo unique identifier for the integration
+          name: integration_id
+          in: query
+        - schema:
+            type: string
+            enum:
+              - SAMPLE2
+              - BUILDIUM
+              - ENTRATA
+              - MRI
+              - PROPERTYWARE
+              - PROPERTYWARE_REST
+              - REALPAGE
+              - REALPAGE_RPX
+              - RENTMANAGER
+              - RENTVINE
+              - RESMAN
+              - SAMPLE1
+            description: The integration vendor associated with the data diff
+          required: false
+          description: The integration vendor associated with the data diff
+          name: integration_vendor
+          in: query
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_v1_residents_{id}_rentable-items_get_output"
         "400":
           description: Bad Request
           content:
