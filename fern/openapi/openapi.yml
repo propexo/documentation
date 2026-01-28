@@ -964,6 +964,7 @@ components:
                         - RESMAN_READ_LISTINGS
                         - RESMAN_READ_MOVE_OUTS
                         - RESMAN_READ_PROPERTIES
+                        - RESMAN_READ_RESIDENTS
                         - RESMAN_READ_RESIDENTS_AND_APPLICANTS
                         - RESMAN_READ_RESIDENTS_DOB
                         - RESMAN_READ_RESIDENT_CHARGE_CODES
@@ -1224,6 +1225,7 @@ components:
                           - RESMAN_READ_LISTINGS
                           - RESMAN_READ_MOVE_OUTS
                           - RESMAN_READ_PROPERTIES
+                          - RESMAN_READ_RESIDENTS
                           - RESMAN_READ_RESIDENTS_AND_APPLICANTS
                           - RESMAN_READ_RESIDENTS_DOB
                           - RESMAN_READ_RESIDENT_CHARGE_CODES
@@ -3479,6 +3481,7 @@ components:
                       - RESMAN_READ_LISTINGS
                       - RESMAN_READ_MOVE_OUTS
                       - RESMAN_READ_PROPERTIES
+                      - RESMAN_READ_RESIDENTS
                       - RESMAN_READ_RESIDENTS_AND_APPLICANTS
                       - RESMAN_READ_RESIDENTS_DOB
                       - RESMAN_READ_RESIDENT_CHARGE_CODES
@@ -3739,6 +3742,7 @@ components:
                         - RESMAN_READ_LISTINGS
                         - RESMAN_READ_MOVE_OUTS
                         - RESMAN_READ_PROPERTIES
+                        - RESMAN_READ_RESIDENTS
                         - RESMAN_READ_RESIDENTS_AND_APPLICANTS
                         - RESMAN_READ_RESIDENTS_DOB
                         - RESMAN_READ_RESIDENT_CHARGE_CODES
