@@ -33371,6 +33371,12 @@ components:
             - string
             - "null"
           description: The raw value for the lease term
+        concession_formula_raw:
+          type:
+            - string
+            - "null"
+          description: The raw formula name used to calculate the concession (e.g., "Fixed
+            Amount", "Percent of Charge Code Group")
         integration_id:
           type: string
           description: The Propexo unique identifier for the integration
@@ -33415,6 +33421,7 @@ components:
         - percentage_amount
         - lease_term_in_months
         - lease_term_raw
+        - concession_formula_raw
         - integration_id
         - integration_vendor
         - property_id
