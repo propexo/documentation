@@ -7369,6 +7369,10 @@ components:
         email_1:
           type: string
           description: The primary email address associated with the applicant
+        phone_1:
+          type: string
+          pattern: ^[2-9]\d{9}$
+          description: Filter by phone number (10 digit format only)
     IncomeSource:
       type: object
       properties:
@@ -21852,6 +21856,10 @@ components:
           description: The Propexo integration id
         integration_vendor:
           $ref: "#/components/schemas/Enum1"
+        phone_1:
+          type: string
+          pattern: ^[2-9]\d{9}$
+          description: Filter by phone number (10 digit format only)
     Lead:
       type: object
       properties:
@@ -29399,6 +29407,10 @@ components:
         email_1:
           type: string
           description: The primary email address associated with the resident
+        phone_1:
+          type: string
+          pattern: ^[2-9]\d{9}$
+          description: Filter by phone number (10 digit format only)
     _v1_residents__get_output:
       type: object
       properties:
@@ -39227,6 +39239,14 @@ paths:
           description: The primary email address associated with the applicant
           name: email_1
           in: query
+        - schema:
+            type: string
+            pattern: ^[2-9]\d{9}$
+            description: Filter by phone number (10 digit format only)
+          required: false
+          description: Filter by phone number (10 digit format only)
+          name: phone_1
+          in: query
       responses:
         "200":
           description: Successful response
@@ -45076,6 +45096,14 @@ paths:
           description: The integration vendor associated with the data diff
           name: integration_vendor
           in: query
+        - schema:
+            type: string
+            pattern: ^[2-9]\d{9}$
+            description: Filter by phone number (10 digit format only)
+          required: false
+          description: Filter by phone number (10 digit format only)
+          name: phone_1
+          in: query
       responses:
         "200":
           description: Successful response
@@ -48130,6 +48158,14 @@ paths:
           required: false
           description: The primary email address associated with the resident
           name: email_1
+          in: query
+        - schema:
+            type: string
+            pattern: ^[2-9]\d{9}$
+            description: Filter by phone number (10 digit format only)
+          required: false
+          description: Filter by phone number (10 digit format only)
+          name: phone_1
           in: query
       responses:
         "200":
