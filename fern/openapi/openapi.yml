@@ -33335,7 +33335,14 @@ components:
           type:
             - integer
             - "null"
-          description: The monthly percentage amount of the concession
+          description: The monthly percentage amount of the concession. This is rounded to
+            the nearest percent
+        monthly_percentage_raw:
+          type:
+            - string
+            - "null"
+          description: The raw monthly percentage amount of the concession as a string,
+            preserving decimal precision
         one_time_fixed_amount_in_cents:
           type:
             - integer
@@ -33345,7 +33352,14 @@ components:
           type:
             - integer
             - "null"
-          description: The one time percentage amount of the concession
+          description: The one time percentage amount of the concession. This is rounded
+            to the nearest percent
+        one_time_percentage_raw:
+          type:
+            - string
+            - "null"
+          description: The raw one time percentage amount of the concession as a string,
+            preserving decimal precision
         number_of_occurrences:
           type:
             - integer
@@ -33360,7 +33374,14 @@ components:
           type:
             - integer
             - "null"
-          description: The percentage amount of the concession
+          description: The percentage amount of the concession. This is rounded to the
+            nearest percent
+        percentage_raw:
+          type:
+            - string
+            - "null"
+          description: The raw percentage amount of the concession as a string, preserving
+            decimal precision
         lease_term_in_months:
           type:
             - integer
@@ -33414,11 +33435,14 @@ components:
         - is_recurring
         - monthly_fixed_amount_in_cents
         - monthly_percentage_amount
+        - monthly_percentage_raw
         - one_time_fixed_amount_in_cents
         - one_time_percentage_amount
+        - one_time_percentage_raw
         - number_of_occurrences
         - fixed_amount_in_cents
         - percentage_amount
+        - percentage_raw
         - lease_term_in_months
         - lease_term_raw
         - concession_formula_raw
