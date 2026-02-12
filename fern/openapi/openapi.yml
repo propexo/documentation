@@ -33864,6 +33864,11 @@ components:
                   - string
                   - "null"
                 description: The external ID of the floor plan from the integration vendor
+              x_unit_type_id:
+                type:
+                  - string
+                  - "null"
+                description: The external ID of the unit type from the integration vendor
               bathrooms:
                 type:
                   - string
@@ -34059,6 +34064,7 @@ components:
               - x_id
               - x_property_id
               - x_floor_plan_id
+              - x_unit_type_id
               - bathrooms
               - bathrooms_full
               - bathrooms_half
@@ -34545,6 +34551,11 @@ components:
                 - string
                 - "null"
               description: The external ID of the floor plan from the integration vendor
+            x_unit_type_id:
+              type:
+                - string
+                - "null"
+              description: The external ID of the unit type from the integration vendor
             bathrooms:
               type:
                 - string
@@ -34740,6 +34751,7 @@ components:
             - x_id
             - x_property_id
             - x_floor_plan_id
+            - x_unit_type_id
             - bathrooms
             - bathrooms_full
             - bathrooms_half
